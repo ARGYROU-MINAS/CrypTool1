@@ -72,7 +72,6 @@ CDlgHybridEncryptionDemo::CDlgHybridEncryptionDemo(CWnd* pParent /*=NULL*/)
 	m_setMatrix[10][6]=true;
 
 	PlainText = CipherText = 0;
-	m_bAuswahlDat = true;
 }
 
 

@@ -109,7 +109,7 @@ BOOL CDlgHybridDecryptionDemo::OnInitDialog()
 	
 	HIDE_HOUR_GLASS
 	
-	UpdateData();	
+	UpdateData(false);	
 	
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX-Eigenschaftenseiten sollten FALSE zurückgeben
