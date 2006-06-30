@@ -1,0 +1,5 @@
+CheckResourceIDs.bat
+Checking CrypTool.rc and $(InputPath) (->CheckResourceIDs.*)
+CheckResourceIDs.log
+CrypTool.rc
+
