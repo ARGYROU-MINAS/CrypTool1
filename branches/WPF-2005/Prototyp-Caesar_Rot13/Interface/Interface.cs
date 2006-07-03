@@ -7,6 +7,16 @@ namespace Interface
 {
     public class Interface
     {
-        AppLogic appLog;
+        AppLogic.ManTextOptions manTextOptions;
+
+        public Interface()
+        {
+            manTextOptions = new AppLogic.ManTextOptions();
+        }
+
+        public String getAlphabet()
+        {
+            return manTextOptions.getAlphabet();
+        }
     }
 }

@@ -60,6 +60,7 @@
     <ApplicationDefinition Include="App.xaml" />
     <Page Include="DlgCaesarRot13.xaml" />
     <Page Include="DlgMain.xaml" />
+    <Page Include="DlgTippsNTricks.xaml" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -73,6 +74,10 @@
     <Compile Include="DlgCaesarRot13.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>DlgCaesarRot13.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DlgTippsNTricks.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DlgTippsNTricks.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExcReaction.cs" />
     <Compile Include="GUIInterface.cs" />
@@ -113,6 +118,9 @@
       <Project>{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}</Project>
       <Name>Interface</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bitmaps\DerEinstiegInCrypTool_de.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />

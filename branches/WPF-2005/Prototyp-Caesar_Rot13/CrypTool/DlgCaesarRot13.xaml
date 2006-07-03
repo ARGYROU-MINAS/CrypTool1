@@ -4,20 +4,20 @@
     Title="Schlüsseleingabe: Caesar / Rot-13" Height="403" Width="501" ResizeMode="NoResize">
     <Grid>
     <GroupBox Margin="14,11,0,0" Name="groupBox1" Height="115" HorizontalAlignment="Left" VerticalAlignment="Top" Width="463">Variante auswählen</GroupBox>
-    <RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="41.75,43.7233333333333,0,0" Name="radioButton1" VerticalAlignment="Top" Width="74.25">Caesar</RadioButton>
+    <RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="41.75,43.7233333333333,0,0" Name="radioButton1" VerticalAlignment="Top" Width="74.25" IsChecked="True">Caesar</RadioButton>
     <RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="41,78,0,0" VerticalAlignment="Top" Width="74.25">Rot-13</RadioButton>
     <Label Height="23.2766666666667" HorizontalAlignment="Left" Margin="120.37,55.7233333333333,0,0" Name="label1" VerticalAlignment="Top" Width="56.63">Schlüssel</Label>
-    <TextBox Height="25.2766666666667" HorizontalAlignment="Left" Margin="185,54.7233333333333,0,0" Name="textBox1" VerticalAlignment="Top" Width="100">textBox</TextBox>
-    <Button Height="33" HorizontalAlignment="Right" Margin="0,51,162,0" Name="button1" VerticalAlignment="Top" Width="38">Button</Button>
+    <TextBox Height="25.2766666666667" HorizontalAlignment="Left" Margin="185,54.7233333333333,0,0" Name="textBox1" VerticalAlignment="Top" Width="100"></TextBox>
+    <Button Height="33" HorizontalAlignment="Right" Margin="0,51,162,0" Name="button1" VerticalAlignment="Top" Width="38"></Button>
     <GroupBox Margin="13,132,0,0" Name="groupBox2" Height="185" HorizontalAlignment="Left" VerticalAlignment="Top" Width="465">Informationen zur Verschlüsselung</GroupBox>
-    <Button Height="35" HorizontalAlignment="Left" Margin="12,324,0,0" Name="button2" VerticalAlignment="Top" Width="101" Click="onEncode">Verschlüsseln</Button>
-    <Button Height="35" HorizontalAlignment="Left" Margin="120,325,0,0" Name="button3" VerticalAlignment="Top" Width="100">Entschlüsseln</Button>
+    <Button Height="35" HorizontalAlignment="Left" Margin="12,324,0,0" Name="button2" VerticalAlignment="Top" Width="101" Click="onEncode" IsEnabled="False">Verschlüsseln</Button>
+    <Button Height="35" HorizontalAlignment="Left" Margin="120,325,0,0" Name="button3" VerticalAlignment="Top" Width="100" IsEnabled="False">Entschlüsseln</Button>
     <Button Height="36" HorizontalAlignment="Left" Margin="359,323,0,0" Name="button4" VerticalAlignment="Top" Width="121" Click="CloseDlgCaesarRot13">Abbrechen</Button>
     <Label Height="27.2766666666667" HorizontalAlignment="Left" Margin="37.37,158.723333333333,0,0" Name="label2" VerticalAlignment="Top" Width="106.63">Verschiebung um</Label>
-    <Label HorizontalAlignment="Left" Margin="36.37,189.723333333333,0,0" Name="label3" Width="235.63" Height="30.2766666666666" VerticalAlignment="Top">Das Alphabet (26 Zeichen) wir abgebildet:</Label>
+    <Label HorizontalAlignment="Left" Margin="36.37,189.723333333333,0,0" Name="label3" Width="235.63" Height="30.2766666666666" VerticalAlignment="Top"></Label>
     <Label Height="23.2766666666666" HorizontalAlignment="Left" Margin="37.37,227.723333333333,0,0" Name="label4" VerticalAlignment="Top" Width="35.63">von:</Label>
     <Label Height="23.2766666666666" HorizontalAlignment="Left" Margin="36.37,259.723333333333,0,0" Name="label5" VerticalAlignment="Top" Width="35.63">auf:</Label>
-    <TextBox Height="24.2766666666666" HorizontalAlignment="Left" Margin="82,226.723333333333,0,0" Name="textBox2" VerticalAlignment="Top" Width="386">textBox</TextBox>
-    <TextBox Height="26.2766666666666" HorizontalAlignment="Left" Margin="81,258.723333333333,0,0" Name="textBox3" VerticalAlignment="Top" Width="387">textBox</TextBox>
+    <TextBox Height="24.2766666666666" HorizontalAlignment="Left" Margin="82,226.723333333333,0,0" Name="textBox2" VerticalAlignment="Top" Width="386"></TextBox>
+    <TextBox Height="26.2766666666666" HorizontalAlignment="Left" Margin="81,258.723333333333,0,0" Name="textBox3" VerticalAlignment="Top" Width="387"></TextBox>
   </Grid>
 </Window>

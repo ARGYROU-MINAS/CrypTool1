@@ -19,11 +19,13 @@ namespace CrypTool
 
     public partial class DlgMain : Window
     {
+        Window DlgEdit;
+        DlgTippsNTricks dlgTippsNTricks;
 
         public DlgMain()
         {
             InitializeComponent();
-            CreateDlgEdit();
+            CreateDlgTippsNTricks();
         }
         private void CloseDlgMain(object sender, RoutedEventArgs e)
         {
@@ -36,8 +38,16 @@ namespace CrypTool
         }
         private void CreateDlgEdit()
         {
-            Window DlgEdit = new Window();
+            DlgEdit = new Window();
+            DlgEdit.Width = 350;
+            DlgEdit.Height = 200;
             DlgEdit.Show();
+        }
+        private void CreateDlgTippsNTricks()
+        {
+            dlgTippsNTricks = new DlgTippsNTricks();
+            dlgTippsNTricks.
+            dlgTippsNTricks.Show();
         }
 
     }
