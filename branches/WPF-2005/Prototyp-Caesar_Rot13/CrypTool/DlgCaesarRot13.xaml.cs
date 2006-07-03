@@ -30,8 +30,7 @@ namespace CrypTool
         }
         private void onEncode(object sender, RoutedEventArgs e)
         {
-            AppLogic.ManTextOptions txtOpt = new AppLogic.ManTextOptions();
-                textBox2.Text = txtOpt.getAlphabet();
+
         }
     }
 }

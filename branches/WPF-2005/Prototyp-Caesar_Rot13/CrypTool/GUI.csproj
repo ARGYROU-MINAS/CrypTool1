@@ -109,9 +109,9 @@
     <Resource Include="bitmaps\idr_main.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AppLogic\AppLogic.vcproj">
-      <Project>{1375BD94-148F-4F7B-9DC5-7F5E98ED25F9}</Project>
-      <Name>AppLogic</Name>
+    <ProjectReference Include="..\Interface\Interface.csproj">
+      <Project>{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}</Project>
+      <Name>Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

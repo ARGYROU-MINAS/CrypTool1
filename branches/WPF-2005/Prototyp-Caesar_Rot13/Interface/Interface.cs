@@ -7,5 +7,6 @@ namespace Interface
 {
     public class Interface
     {
+        AppLogic appLog;
     }
 }
