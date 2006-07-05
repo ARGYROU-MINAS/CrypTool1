@@ -108,9 +108,9 @@ int main()
 /* get message */
     printf("signed file = ");
     gets(ifname);
-    strcpy(ofname,ifname);
+    strcpy_s(ofname,_countof(ofname),ifname);
     strip(ofname);
-    strcat(ofname,".ecs");
+    strcat_s(ofname,strlen(ofname),".ecs");
     if ((fp=fopen(ifname,"rb"))==NULL)
     { /* no message */
         printf("Unable to open file %s\n",ifname);

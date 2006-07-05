@@ -290,10 +290,10 @@ void VernamBin(const char *infile, const char *OldTitle)
 		DWORD   dwFlags(OFN_FILEMUSTEXIST | OFN_HIDEREADONLY | OFN_PATHMUSTEXIST);
 		sFileFilter.LoadString(IDS_OPEN_DOCUMENT_FILTER);
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_VERNAM_KEYFILE,pc_str,STR_LAENGE_STRING_TABLE);
-		strcpy(title, OldTitle);
+		strcpy_s(title, OldTitle);
 		if ( strlen(title) > 32 )
 		{
-			strcpy(title+29, "...");
+			strcpy_s(title+29,strlen(title+29), "...");
 		}
 		sprintf(line, pc_str, title);
 		sTitle = line;
@@ -304,8 +304,8 @@ void VernamBin(const char *infile, const char *OldTitle)
 
 		if(doc->DoModal()==IDOK)// Aufruf des File-Dialogs
 		{			
-			strcpy(ftitle, LPCTSTR (doc->GetFileName()));
-			strcpy(fname, LPCTSTR (doc->GetPathName()));
+			strcpy_s(ftitle, LPCTSTR (doc->GetFileName()));
+			strcpy_s(fname, LPCTSTR (doc->GetPathName()));
 			delete doc;
 		}
 		else
@@ -983,7 +983,7 @@ UINT Periode(PVOID p)
 	LoadString(AfxGetInstanceHandle(),IDS_STRING_PA_FSBDTITLE,fboxtitle,128);
 	ofn.Flags = OFN_HIDEREADONLY;
 	LoadString(AfxGetInstanceHandle(),IDS_STRING_PA_FILENAME,pc_str,STR_LAENGE_STRING_TABLE);
-	ofn.lpstrFile = fname;	strcpy(fname, pc_str);
+	ofn.lpstrFile = fname;	strcpy_s(fname, pc_str);
 	ofn.nMaxFile = sizeof(fname)-1;
 	ofn.lpstrFileTitle = ftitle;	ftitle[0] = '\0';
 	ofn.nMaxFileTitle = sizeof(ftitle);
@@ -1120,7 +1120,7 @@ UINT Autocorr(PVOID p)
 		fclose(fo);
 
 		// get the tmp name without file extension
-		strcpy(name2, name);
+		strcpy_s(name2, name);
 		name2[strlen(name)-4] = 0x0;
 	
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_AUTOCORRELATION_OF,pc_str,STR_LAENGE_STRING_TABLE);
@@ -1273,7 +1273,7 @@ UINT FloatingEntropy(PVOID p)
 	fclose(fo);
 
 	// get the tmp name without file extension
-	strcpy(name2, name);
+	strcpy_s(name2, name);
 	name2[strlen(name)-4] = 0x0;
 	
 	//////// string name aendern
@@ -1342,7 +1342,7 @@ void HistogramASCII(const char *infile, const char *OldTitle)
 
 	distr.Show(OStream(name)<< OStream::Title(0) << OStream::Description(0) << OStream::Summary(0) << OStream::Percent());
 	// get the tmp name without file extension
-	strcpy(name2, name);
+	strcpy_s(name2, name);
 	name2[strlen(name)-4] = 0x0;
 
 	if( f.Open( name2, CFile::modeCreate | CFile::modeWrite ) ) {
@@ -1386,7 +1386,7 @@ void HistogramBin(const char *infile, const char *OldTitle)
 	distr.Show(OStream(name)<< OStream::Title(0) << OStream::Description(0) << OStream::Summary(0) << OStream::Percent());
 
 	// get the tmp name without file extension
-	strcpy(name2, name);
+	strcpy_s(name2, name);
 	name2[strlen(name)-4] = 0x0;
 
 	if( f.Open( name2, CFile::modeCreate | CFile::modeWrite ) ) {
@@ -2890,13 +2890,13 @@ void NGramAsc(const char *infile, const char *OldTitle)
 			char title[128], method[20]; 
 			switch ( DiaNGram.m_N_NGram )  {
 			case 0: LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_HISTOGRAM,pc_str,STR_LAENGE_STRING_TABLE);
-				strcpy( method, pc_str );
+				strcpy_s( method, pc_str );
 				break;
 			case 1: LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_DIGRAM,pc_str,STR_LAENGE_STRING_TABLE);
-				strcpy( method, pc_str );
+				strcpy_s( method, pc_str );
 				break;
 			case 2: LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_TRIGRAM,pc_str,STR_LAENGE_STRING_TABLE);
-				strcpy( method, pc_str );
+				strcpy_s( method, pc_str );
 				break;
 			case 3:  LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_NGRAM,pc_str,STR_LAENGE_STRING_TABLE);
 				sprintf( method, pc_str, DiaNGram.m_NrNGram );
@@ -2935,13 +2935,13 @@ void NGramBin(const char *infile, const char *OldTitle)
 			char title[128], method[20]; 
 			switch ( DiaNGram.m_N_NGram )  {
 			case 0: LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_HISTOGRAM,pc_str,STR_LAENGE_STRING_TABLE);
-				strcpy( method, pc_str );
+				strcpy_s( method, pc_str );
 				break;
 			case 1: LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_DIGRAM,pc_str,STR_LAENGE_STRING_TABLE);
-				strcpy( method, pc_str );
+				strcpy_s( method, pc_str );
 				break;
 			case 2: LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_TRIGRAM,pc_str,STR_LAENGE_STRING_TABLE);
-				strcpy( method, pc_str );
+				strcpy_s( method, pc_str );
 				break;
 			case 3:  LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_NGRAM,pc_str,STR_LAENGE_STRING_TABLE);
 				sprintf( method, pc_str, DiaNGram.m_NrNGram );
@@ -3283,8 +3283,8 @@ void HashOfAFile()
 
 		if(doc->DoModal()==IDOK)// Aufruf des File-Dialogs
 		{			
-			strcpy(ftitle, LPCTSTR (doc->GetFileName()));
-			strcpy(fname, LPCTSTR (doc->GetPathName()));
+			strcpy_s(ftitle, LPCTSTR (doc->GetFileName()));
+			strcpy_s(fname, LPCTSTR (doc->GetPathName()));
 			delete doc;
 		}
 		else

@@ -99,7 +99,7 @@ void CDlgShowKeyParameter::OnUpdate()
 
 void CDlgShowKeyParameter::addentry(char *bez,L_NUMBER *num)
 {
-	strcpy(m_data[m_entries].titel,bez);
+	strcpy_s(m_data[m_entries].titel,bez);
 	memcpy(m_data[m_entries].data,num,MAXLGTH*sizeof(L_NUMBER));
 	m_entries++;
 }

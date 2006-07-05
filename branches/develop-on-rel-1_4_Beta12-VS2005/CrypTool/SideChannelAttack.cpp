@@ -1305,11 +1305,11 @@ void extractHybridEncryptedFileInformation(const char *receivedFile, hybEncInfo 
 	extractCertInfo(receivedFile, receiverFirstname, receiverLastname, receiverKeyType, receiverIDStamp, receiverKeyId);
 
 	// Rückgabestruktur definieren
-	strcpy(hi.receiverFirstname, (char*)(LPCTSTR)receiverFirstname);
-	strcpy(hi.receiverLastname, (char*)(LPCTSTR)receiverLastname);
-	strcpy(hi.receiverKeyType, (char*)(LPCTSTR)receiverKeyType);
-	strcpy(hi.receiverIDStamp, (char*)(LPCTSTR)receiverIDStamp);
-	strcpy(hi.receiverKeyId, (char*)(LPCTSTR)receiverKeyId);
+	strcpy_s(hi.receiverFirstname, (char*)(LPCTSTR)receiverFirstname);
+	strcpy_s(hi.receiverLastname, (char*)(LPCTSTR)receiverLastname);
+	strcpy_s(hi.receiverKeyType, (char*)(LPCTSTR)receiverKeyType);
+	strcpy_s(hi.receiverIDStamp, (char*)(LPCTSTR)receiverIDStamp);
+	strcpy_s(hi.receiverKeyId, (char*)(LPCTSTR)receiverKeyId);
 
 	hi.sessionKeyEncrypted.octets = new char[encryptedSessionKey->noctets];
 	if(!hi.sessionKeyEncrypted.octets) throw SCA_Error(E_SCA_MEMORY_ALLOCATION);
@@ -1336,73 +1336,73 @@ void generateSCAReport(SCA_Client *_alice, SCA_Server *_bob, SCA_Attacker *_trud
 	// *** PREPARATIONS ***
 	// Sub-Überschrift erstellen
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_HEADINGPREPARATIONS, pc_str, STR_LAENGE_STRING_TABLE);
-	strcat(protocolString, pc_str);
+	strcat_s(protocolString, pc_str);
 	// Fallunterscheidung (Alice hat hybridverschlüsselte Datei SELBST ERSTELLT oder NICHT)
 	if(_alice->getStatusInfo().hasCreatedMessage)
 	{
 		// Alice hat eine Nachricht M erstellt, die sie an Bob versenden möchte
 		LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_ALICECREATEDMESSAGE, pc_str, STR_LAENGE_STRING_TABLE);
-		strcat(protocolString, pc_str);
+		strcat_s(protocolString, pc_str);
 		// Alice hat einen zufälligen Session Key gewählt
 		LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_ALICECHOSESESSIONKEY, pc_str, STR_LAENGE_STRING_TABLE);
-		strcat(protocolString, pc_str);
+		strcat_s(protocolString, pc_str);
 		// Ausgabe des Session Keys
-		strcat(protocolString, (char*)_alice->getSessionKey().c_str());
+		strcat_s(protocolString, (char*)_alice->getSessionKey().c_str());
 		// Alice hat die Nachricht M symmetrisch mit dem Session Key verschlüsselt
 		LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_ALICEENCRYPTEDMESSAGE, pc_str, STR_LAENGE_STRING_TABLE);
-		strcat(protocolString, pc_str);
+		strcat_s(protocolString, pc_str);
 		// Alice wählt Bobs öffentlichen RSA-Schlüssel e
 		LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_ALICECHOSEPUBLICKEY, pc_str, STR_LAENGE_STRING_TABLE);
-		strcat(protocolString, pc_str);
+		strcat_s(protocolString, pc_str);
 		// Ausgabe des öffentlichen Schlüssels
 		convertBigNumberToOctetString(_bob->getPublicKey(), &tempOctetString);
 		convertOctetStringToHexString(&tempOctetString, temp);
-		strcat(protocolString, temp);
+		strcat_s(protocolString, temp);
 		// Alice verschlüsselt den Session Key symmetrisch mit e zu SK'
 		LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_ALICEENCRYPTEDSESSIONKEY, pc_str, STR_LAENGE_STRING_TABLE);
-		strcat(protocolString, pc_str);
+		strcat_s(protocolString, pc_str);
 		// Ausgabe des verschlüsselten Session Keys
 		convertOctetStringToHexString(&_alice->getHybEncFile().sessionKeyEncrypted, temp);
-		strcat(protocolString, temp);
-		strcat(protocolString, "\n");
+		strcat_s(protocolString, temp);
+		strcat_s(protocolString, "\n");
 	}
 	else
 	{
 		// Alice hat eine FREMDE, BEREITS ERSTELLTE Nachricht M verwendet
 		LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_ALICETOOKEXISTINGFILE, pc_str, STR_LAENGE_STRING_TABLE);
-		strcat(protocolString, pc_str);
+		strcat_s(protocolString, pc_str);
 	}
 
 	// *** MESSAGE TRANSMISSION ***
 	// Sub-Überschrift erstellen
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_HEADINGMESSAGETRANSMISSION, pc_str, STR_LAENGE_STRING_TABLE);
-	strcat(protocolString, pc_str);
+	strcat_s(protocolString, pc_str);
 	// Alice hat die Nachricht an Bob übertragen
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_ALICETRANSMITTEDMESSAGE, pc_str, STR_LAENGE_STRING_TABLE);
-	strcat(protocolString, pc_str);
+	strcat_s(protocolString, pc_str);
 
 	// *** MESSAGE INTERCEPTION ***
 	// Sub-Überschrift erstellen
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_HEADINGMESSAGEINTERCEPTION, pc_str, STR_LAENGE_STRING_TABLE);
-	strcat(protocolString, pc_str);
+	strcat_s(protocolString, pc_str);
 	// Trudy fängt die Nachricht ab
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_TRUDYINTERCEPTEDMESSAGE, pc_str, STR_LAENGE_STRING_TABLE);
-	strcat(protocolString, pc_str);
+	strcat_s(protocolString, pc_str);
 	// Ausgabe des abgefangenen, verschlüsselten Session Keys
 	convertOctetStringToHexString( &_trudy->getInterceptedSessionKey(), temp);
-	strcat(protocolString, temp);
+	strcat_s(protocolString, temp);
 
 	// *** ATTACK CYCLE ***
 	// Sub-Überschrift erstellen
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_HEADINGATTACKCYCLE, pc_str, STR_LAENGE_STRING_TABLE);
-	strcat(protocolString, pc_str);
+	strcat_s(protocolString, pc_str);
 	// Trudy modifiziert den Session Key
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_TRUDYMODIFIEDSESSIONKEYS, pc_str, STR_LAENGE_STRING_TABLE);
-	strcat(protocolString, pc_str);
+	strcat_s(protocolString, pc_str);
 	// Dieser Schritt wird SCA_SIGNIFICANT_BITS+2 mal durchgeführt
 	LoadString(AfxGetInstanceHandle(), IDS_SCA_REPORT_TRUDYREPEATSMODIFICATION, pc_str, STR_LAENGE_STRING_TABLE);
 	sprintf(temp, pc_str, _trudy->getNumberOfModifications());
-	strcat(protocolString, temp);
+	strcat_s(protocolString, temp);
 
 	// *** DATEN IN AUSGABEDATEI SCHREIBEN ***
 	ofstream outfile(filename);

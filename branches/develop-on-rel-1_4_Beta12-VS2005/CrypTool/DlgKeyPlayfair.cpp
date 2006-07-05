@@ -233,7 +233,7 @@ void CDlgKeyPlayfair::OnChange()
 	int i,j;
 
 	UpdateData(TRUE);
-	strcpy(tmp,m_text);
+	strcpy_s(tmp,m_text);
 	m_Alg->SetPass( tmp );
 	for (i=0;i<m_Alg->getSize();i++)
 	{

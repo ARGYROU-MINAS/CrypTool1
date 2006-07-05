@@ -383,7 +383,7 @@ void CDlgSignatureAttack::OnCompute()
 
 		#endif
 
-							strcpy(tmpStr, "");
+							strcpy_s(tmpStr, "");
 							max_strLength = 1024;
 							CT_READ_REGISTRY(tmpStr, "Comments", max_strLength);
 							CT_CLOSE_REGISTRY();
@@ -596,7 +596,7 @@ BOOL CDlgSignatureAttack::OnInitDialog()
 		CT_READ_REGISTRY_DEFAULT(tmpStr, "SignatureAttackHarmlessFile", tmpStr, max_StrLength);
 		m_file_harmless = tmpStr;
 
-		strcpy(tmpStr, "");
+		strcpy_s(tmpStr, "");
 		max_StrLength = 1024;
 		CT_READ_REGISTRY_DEFAULT(tmpStr, "SignatureAttackDangerousFile", tmpStr, max_StrLength);
 		m_file_dangerous = tmpStr;

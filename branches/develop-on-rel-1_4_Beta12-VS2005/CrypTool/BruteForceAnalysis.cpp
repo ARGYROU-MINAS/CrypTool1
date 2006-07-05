@@ -142,35 +142,35 @@ UINT Brute(PVOID p)
 	switch (AlgId){
 	case 1://IDEA
 		info.subjectAI=theApp.SecudeLib.idea_aid;
-		strcpy(AlgTitel,"IDEA");
+		strcpy_s(AlgTitel,"IDEA");
 		break;
 	case 2://DES-ECB
 		info.subjectAI=theApp.SecudeLib.desECB_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_DES_ECB,pc_str,STR_LAENGE_STRING_TABLE);
-		strcpy(AlgTitel,pc_str);
+		strcpy_s(AlgTitel,pc_str);
 		break;
 	case 3://DES-CBC (Padding)
 		info.subjectAI=theApp.SecudeLib.desCBC_pad_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_DES_CBC,pc_str,STR_LAENGE_STRING_TABLE);
-		strcpy(AlgTitel,pc_str);
+		strcpy_s(AlgTitel,pc_str);
 		break;
 	case 4://Triple-DES (CBC mode)
 		info.subjectAI=theApp.SecudeLib.desCBC3_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_TRIPLE_DES_CBC,pc_str,STR_LAENGE_STRING_TABLE);
-		strcpy(AlgTitel,pc_str);
+		strcpy_s(AlgTitel,pc_str);
 		break;
 	case 5://Triple-DES (ECB mode)
 		info.subjectAI=theApp.SecudeLib.desEDE_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_TRIPLE_DES_ECB,pc_str,STR_LAENGE_STRING_TABLE);
-		strcpy(AlgTitel,pc_str);
+		strcpy_s(AlgTitel,pc_str);
 		break;
 	case 6://RC4
 		info.subjectAI=theApp.SecudeLib.rc4_aid;
-		strcpy(AlgTitel,"RC4");
+		strcpy_s(AlgTitel,"RC4");
 		break;
 	case 7://RC2
 		info.subjectAI=theApp.SecudeLib.rc2CBC_aid;
-		strcpy(AlgTitel,"RC2");
+		strcpy_s(AlgTitel,"RC2");
 		break;
 	}
 	

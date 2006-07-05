@@ -317,8 +317,8 @@ void CDlgDiffieHellmanVisualization::OnButtonalice1()
 		{
 			char tmp[1024];
 			LoadString(AfxGetInstanceHandle(),IDS_DH_SECRET_EXCEEDS_PRIME, tmp, STR_LAENGE_STRING_TABLE);
-			strcat(pc_str, "\n\n");
-			strcat(pc_str, tmp);
+			strcat_s(pc_str, "\n\n");
+			strcat_s(pc_str, tmp);
 		}
 		MessageBox(pc_str, "CrypTool", MB_ICONINFORMATION);
 	}
@@ -363,8 +363,8 @@ void CDlgDiffieHellmanVisualization::OnButtonbob1()
 		{
 			char tmp[1024];
 			LoadString(AfxGetInstanceHandle(),IDS_DH_SECRET_EXCEEDS_PRIME, tmp, STR_LAENGE_STRING_TABLE);
-			strcat(pc_str, "\n\n");
-			strcat(pc_str, tmp);
+			strcat_s(pc_str, "\n\n");
+			strcat_s(pc_str, tmp);
 		}
 		MessageBox(pc_str, "CrypTool", MB_ICONINFORMATION);
 	}

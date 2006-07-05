@@ -450,7 +450,7 @@ void CAscDoc::Serialize(CArchive& ar)
 		char name[128];
 		CFile f;
 
-		strcpy(name, ar.m_strFileName);
+		strcpy_s(name, ar.m_strFileName);
 		name[strlen(name)-4]=0x0;
 		if( f.Open( name, CFile::modeRead ) )
 		{
@@ -1853,7 +1853,7 @@ void CCryptDoc::OnAnalysisRandom3dVisualization()
     UpdateContent();
 	// TODO: Code für Befehlsbehandlungsroutine hier einfügen
 	CDlgVisualizePhaseSpace dialog;
-	strcpy(dialog.Filename, ContentName);
+	strcpy_s(dialog.Filename, ContentName);
 	dialog.DoModal();
 #endif
 
@@ -1907,7 +1907,7 @@ void CCryptDoc::OnShowKey()
 			char CryptMethod[KEYDATA_HASHSTRING_LENGTH+1];
 			if ( ExtractStrKeyType( CryptMethod, Title ) )
 			{
-				strcpy( AusgabeFenster.strTitle, CryptMethod );
+				strcpy_s( AusgabeFenster.strTitle, CryptMethod );
 				AusgabeFenster.m_Key = Key;
 				AusgabeFenster.DoModal();
 			}

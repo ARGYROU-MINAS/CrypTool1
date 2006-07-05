@@ -363,9 +363,9 @@ int CDlgKeyPermutation::PrintPerm(char *dest, int *perm, int len)
 	sprintf(dest,"( %d", perm[0]+1);
 	for(i=1;i<len;i++) {
 		sprintf(buffer,", %d", perm[i]+1);
-		strcat(dest, buffer);
+		strcat_s(dest,strlen(dest), buffer);
 	}
-	strcat(dest, " )");
+	strcat_s(dest,strlen(dest), " )");
 	return strlen(dest);
 }
 

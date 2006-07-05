@@ -342,7 +342,7 @@ BOOL CStringFormulaToBig(CString &CStrNumber, Big &t )
 	t = 0;
 	char *tmp;
 	tmp = new char[CStrNumber.GetLength()+1];
-	strcpy(tmp, CStrNumber.GetBuffer( CStrNumber.GetLength()+1));
+	strcpy_s(tmp,strlen(tmp), CStrNumber.GetBuffer( CStrNumber.GetLength()+1));
 	BOOL success=evaluate::CEvalIntExpr(t, tmp); 
 	if ( !success ) t = 0;	
 	delete []tmp;
@@ -570,7 +570,7 @@ void BigToString(const Big&t, char *NumStr, int base, size_t OutLength)
 	size_t diff;
     	diff = ( OutLength > strlen(tmpStr) ) ? OutLength - strlen(tmpStr) : 0;
     	if (diff > 0) for(i=0; i<diff; i++) NumStr[i] = '0';
-    	strcpy(NumStr+diff, tmpStr);
+    	strcpy_s(NumStr+diff,strlen(NumStr+diff), tmpStr);
 	mip->IOBASE = oldBase;
 }
 

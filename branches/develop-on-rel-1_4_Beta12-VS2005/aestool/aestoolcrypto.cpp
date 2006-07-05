@@ -71,11 +71,11 @@ void aescbc(const void *key,int keylen,const void *iv,char direction,const void 
 
 	p = (unsigned char*)key;
 	for(i=0; i < keylen; i++)
-		sprintf(keyhex+2*i,"%02.2X", i < keylen0 ? p[i] : 0);
+		sprintf_s(keyhex+2*i,strlen(keyhex+2*i),"%02.2X", i < keylen0 ? p[i] : 0);
 	
 	p = (unsigned char*)iv;
 	for(i=0; i < AESIVLEN; i++)
-		sprintf(ivhex+2*i,"%02.2X", p[i]);
+		sprintf_s(ivhex+2*i,strlen(ivhex+2*i),"%02.2X", p[i]);
 	
 	keyInstanceRijndael keyin;
 	cipherInstanceRijndael cipher;
@@ -133,11 +133,11 @@ bool AesToolDecrypt(const void *key,int keylen,const SrcInfo &srcinfo,
 
 		unsigned char * p = (unsigned char*)key;
 		for(i=0; i < keylen; i++)
-			sprintf(keyhex+2*i,"%02.2X", i < keylen0 ? p[i] : 0);
+			sprintf_s(keyhex+2*i,strlen(keyhex+2*i),"%02.2X", i < keylen0 ? p[i] : 0);
 	
 		p = (unsigned char *) srcinfo.getIV();
 		for(i=0; i < AESIVLEN; i++)
-			sprintf(ivhex+2*i,"%02.2X", p[i]);
+			sprintf_s(ivhex+2*i,strlen(ivhex+2*i),"%02.2X", p[i]);
 
 		keyInstanceRijndael keyin;
 		cipherInstanceRijndael cipher;
@@ -274,11 +274,11 @@ bool AesToolEncrypt(const void *key,int keylen,const SrcInfo &srcinfo,
 
 		unsigned char * p = (unsigned char*)key;
 		for(i=0; i < keylen; i++)
-			sprintf(keyhex+2*i,"%02.2X", i < keylen0 ? p[i] : 0);
+			sprintf_s(keyhex+2*i,strlen(keyhex+2*i),"%02.2X", i < keylen0 ? p[i] : 0);
 	
 		p = (unsigned char*)iv;
 		for(i=0; i < AESIVLEN; i++)
-			sprintf(ivhex+2*i,"%02.2X", p[i]);
+			sprintf_s(ivhex+2*i,strlen(ivhex+2*i),"%02.2X", p[i]);
 
 		keyInstanceRijndael keyin;
 		cipherInstanceRijndael cipher;

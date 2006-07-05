@@ -88,11 +88,11 @@ int CKeyFile::DeleteUserKeyFiles(CString user_file, CString& passwd, int filetyp
 	// OctetString *privKeyOctStr;
 
 	LPTSTR string1 = new TCHAR[PseDataFile.GetLength()+1];
-	_tcscpy(string1, PseDataFile);		
+	strcpy_s(string1,strlen(string1), PseDataFile);		
 	char *psefile_name = string1;
 
 	LPTSTR string2 = new TCHAR[passwd.GetLength()+1];
-	_tcscpy(string2, passwd);		
+	strcpy_s(string2,strlen(string2), passwd);		
 	char *user_pincode = string2;
 
 	// Die Gültigkeit des Passworts passwd ist sichergestellt, wenn man die PSE damit lesen kann
@@ -172,7 +172,7 @@ int CKeyFile::CreateEcKeyFiles(CString filename, CString& passwd, EcDomParam_ac_
 
 	// Kopieren von CString privfilename nach char *privfile_name
 	LPTSTR string1 = new TCHAR[privfilename.GetLength()+1];
-	_tcscpy(string1, privfilename);		
+	strcpy_s(string1,strlen(string1), privfilename);		
 	char *privfile_name = string1;
 
 	// save domainparameter and public key (all not encrypted) in the File pubfilename_path
@@ -234,7 +234,7 @@ int CKeyFile::CreateEcKeyFiles(CString filename, CString& passwd, EcDomParam_ac_
 	// TRUE          : Dieser Parameter hat bei Ellipt. Kurven Schlüsseln zur Zeit keine Bedeutung.
 
 	LPTSTR string2 = new TCHAR[passwd.GetLength()+1];
-	_tcscpy(string2, passwd);		
+	strcpy_s(string2,strlen(string2), passwd);		
 	char *user_pincode = string2;
 
 	PseHandle=theApp.SecudeLib.af_create (privfile_name, NULL, user_pincode, NULL, FALSE);
@@ -299,36 +299,36 @@ int CKeyFile::GetEcPublicParam(CString user_file, EcDomParam_ac_ptr userCurvePar
 
 		/*
 		LPTSTR string1 = new TCHAR[privfilename.GetLength()+1];
-		_tcscpy(string1, privfilename);		
+		strcpy_s(string1,strlen(string1), privfilename);		
 		char *privfile_name = string1;
 		*/
 
 		LPTSTR temp = new TCHAR[userCurveParamStr.a.GetLength()+1];
-		_tcscpy(temp, userCurveParamStr.a);
+		strcpy_s(temp,strlen(temp), userCurveParamStr.a);
 		char *str_a = temp;
 		error += string_to_ln(str_a, userCurveParam->E->a);
 		delete str_a;
 
 		LPTSTR temp2 =  new TCHAR[userCurveParamStr.b.GetLength()+1];
-		_tcscpy(temp2, userCurveParamStr.b);
+		strcpy_s(temp2,strlen(temp2), userCurveParamStr.b);
 		char *str_b = temp2;
 		error += string_to_ln(str_b, userCurveParam->E->b);
 		delete str_b;
 	
 		LPTSTR temp3 = new TCHAR[userCurveParamStr.p.GetLength()+1];
-		_tcscpy(temp3, userCurveParamStr.p);
+		strcpy_s(temp3,strlen(temp3), userCurveParamStr.p);
 		char *str_p = temp3; 
 		error += string_to_ln(str_p, userCurveParam->E->p);
 		delete str_p;
 
 		LPTSTR temp4 = new TCHAR[userCurveParamStr.G_xcoord.GetLength()+1];
-		_tcscpy(temp4, userCurveParamStr.G_xcoord);
+		strcpy_s(temp4,strlen(temp4), userCurveParamStr.G_xcoord);
 		char *str_Gx = temp4;
 		error += string_to_ln(str_Gx, userCurveParam->G->x);
 		delete str_Gx;
 
 		LPTSTR temp5 = new TCHAR[userCurveParamStr.G_ycoord.GetLength()+1];
-		_tcscpy(temp5, userCurveParamStr.G_ycoord);
+		strcpy_s(temp5,strlen(temp5), userCurveParamStr.G_ycoord);
 		char *str_Gy = temp5;
 		error += string_to_ln(str_Gy, userCurveParam->G->y);
 		delete str_Gy;
@@ -336,25 +336,25 @@ int CKeyFile::GetEcPublicParam(CString user_file, EcDomParam_ac_ptr userCurvePar
 		userCurveParam->G->infinity=0;
 
 		LPTSTR temp6 = new TCHAR[userCurveParamStr.k.GetLength()+1];
-		_tcscpy(temp6, userCurveParamStr.k);
+		strcpy_s(temp6,strlen(temp6), userCurveParamStr.k);
 		char *str_k = temp6; 
 		error += string_to_ln(str_k, userCurveParam->k);
 		delete str_k;
 	
 		LPTSTR temp7 = new TCHAR[userCurveParamStr.r.GetLength()+1];
-		_tcscpy(temp7, userCurveParamStr.r);
+		strcpy_s(temp7,strlen(temp7), userCurveParamStr.r);
 		char *str_r = temp7;
 		error += string_to_ln(str_r, userCurveParam->r);
 		delete str_r;
 
 		LPTSTR temp8 = new TCHAR[userCurveParamStr.pubKey_xcoord.GetLength()+1];
-		_tcscpy(temp8, userCurveParamStr.pubKey_xcoord);
+		strcpy_s(temp8,strlen(temp8), userCurveParamStr.pubKey_xcoord);
 		char *str_Pubx = temp8;
 		error += string_to_ln(str_Pubx, userCurveParam->pubKey->x);
 		delete str_Pubx;
 
 		LPTSTR temp9 = new TCHAR[userCurveParamStr.pubKey_ycoord.GetLength()+1];
-		_tcscpy(temp9, userCurveParamStr.pubKey_ycoord);
+		strcpy_s(temp9,strlen(temp9), userCurveParamStr.pubKey_ycoord);
 		char *str_Puby = temp9;
 		error += string_to_ln(str_Puby, userCurveParam->pubKey->y);
 		delete str_Puby;
@@ -378,11 +378,11 @@ int CKeyFile::GetEcAllParam(CString user_file, CString& passwd, EcDomParam_ac_pt
 	OctetString *privKeyOctStr;
 
 	LPTSTR string1 = new TCHAR[PseDataFile.GetLength()+1];
-	_tcscpy(string1, PseDataFile);		
+	strcpy_s(string1,strlen(string1), PseDataFile);		
 	char *psefile_name = string1;
 
 	LPTSTR string2 = new TCHAR[passwd.GetLength()+1];
-	_tcscpy(string2, passwd);		
+	strcpy_s(string2,strlen(string2), passwd);		
 	char *user_pincode = string2;
 
 	PseHandle = theApp.SecudeLib.af_open (psefile_name, NULL, user_pincode, NULL); // Auslesen aus psefile_name
@@ -414,7 +414,7 @@ int CKeyFile::GetEcAllParam(CString user_file, CString& passwd, EcDomParam_ac_pt
 		// error: couldn't open inputfile
 
 		LPTSTR string3 = new TCHAR[PubDataFile.GetLength()+1];
-		_tcscpy(string3, PubDataFile);		
+		strcpy_s(string3,strlen(string3), PubDataFile);		
 		char *toc_file = string3;
 
 		Message(IDS_STRING_EC_ERROR_LOADING_KEYFILE,MB_ICONINFORMATION, toc_file);
@@ -439,36 +439,36 @@ int CKeyFile::GetEcAllParam(CString user_file, CString& passwd, EcDomParam_ac_pt
 
 		/*
 		LPTSTR string1 = new TCHAR[privfilename.GetLength()+1];
-		_tcscpy(string1, privfilename);		
+		strcpy_s(string1,strlen(string1), privfilename);		
 		char *privfile_name = string1;
 		*/
 
 		LPTSTR temp = new TCHAR[userCurveParamStr.a.GetLength()+1];
-		_tcscpy(temp, userCurveParamStr.a);
+		strcpy_s(temp,strlen(temp), userCurveParamStr.a);
 		char *str_a = temp;
 		error += string_to_ln(str_a, userCurveParam->E->a);
 		delete str_a;
 
 		LPTSTR temp2 =  new TCHAR[userCurveParamStr.b.GetLength()+1];
-		_tcscpy(temp2, userCurveParamStr.b);
+		strcpy_s(temp2,strlen(temp2), userCurveParamStr.b);
 		char *str_b = temp2;
 		error += string_to_ln(str_b, userCurveParam->E->b);
 		delete str_b;
 	
 		LPTSTR temp3 = new TCHAR[userCurveParamStr.p.GetLength()+1];
-		_tcscpy(temp3, userCurveParamStr.p);
+		strcpy_s(temp3,strlen(temp3), userCurveParamStr.p);
 		char *str_p = temp3; 
 		error += string_to_ln(str_p, userCurveParam->E->p);
 		delete str_p;
 
 		LPTSTR temp4 = new TCHAR[userCurveParamStr.G_xcoord.GetLength()+1];
-		_tcscpy(temp4, userCurveParamStr.G_xcoord);
+		strcpy_s(temp4,strlen(temp4), userCurveParamStr.G_xcoord);
 		char *str_Gx = temp4;
 		error += string_to_ln(str_Gx, userCurveParam->G->x);
 		delete str_Gx;
 
 		LPTSTR temp5 = new TCHAR[userCurveParamStr.G_ycoord.GetLength()+1];
-		_tcscpy(temp5, userCurveParamStr.G_ycoord);
+		strcpy_s(temp5,strlen(temp5), userCurveParamStr.G_ycoord);
 		char *str_Gy = temp5;
 		error += string_to_ln(str_Gy, userCurveParam->G->y);
 		delete str_Gy;
@@ -476,25 +476,25 @@ int CKeyFile::GetEcAllParam(CString user_file, CString& passwd, EcDomParam_ac_pt
 		userCurveParam->G->infinity=0;
 
 		LPTSTR temp6 = new TCHAR[userCurveParamStr.k.GetLength()+1];
-		_tcscpy(temp6, userCurveParamStr.k);
+		strcpy_s(temp6,strlen(temp6), userCurveParamStr.k);
 		char *str_k = temp6; 
 		error += string_to_ln(str_k, userCurveParam->k);
 		delete str_k;
 	
 		LPTSTR temp7 = new TCHAR[userCurveParamStr.r.GetLength()+1];
-		_tcscpy(temp7, userCurveParamStr.r);
+		strcpy_s(temp7,strlen(temp7), userCurveParamStr.r);
 		char *str_r = temp7;
 		error += string_to_ln(str_r, userCurveParam->r);
 		delete str_r;
 
 		LPTSTR temp8 = new TCHAR[userCurveParamStr.pubKey_xcoord.GetLength()+1];
-		_tcscpy(temp8, userCurveParamStr.pubKey_xcoord);
+		strcpy_s(temp8,strlen(temp8), userCurveParamStr.pubKey_xcoord);
 		char *str_Pubx = temp8;
 		error += string_to_ln(str_Pubx, userCurveParam->pubKey->x);
 		delete str_Pubx;
 
 		LPTSTR temp9 = new TCHAR[userCurveParamStr.pubKey_ycoord.GetLength()+1];
-		_tcscpy(temp9, userCurveParamStr.pubKey_ycoord);
+		strcpy_s(temp9,strlen(temp9), userCurveParamStr.pubKey_ycoord);
 		char *str_Puby = temp9;
 		error += string_to_ln(str_Puby, userCurveParam->pubKey->y);
 		delete str_Puby;
@@ -516,11 +516,11 @@ int CKeyFile::GetEcPrivateKey(CString user_file, CString& passwd, L_NUMBER * pri
 	OctetString *privKeyOctStr;
 
 	LPTSTR string1 = new TCHAR[PseDataFile.GetLength()+1];
-	_tcscpy(string1, PseDataFile);		
+	strcpy_s(string1,strlen(string1), PseDataFile);		
 	char *psefile_name = string1;
 
 	LPTSTR string2 = new TCHAR[passwd.GetLength()+1];
-	_tcscpy(string2, passwd);		
+	strcpy_s(string2,strlen(string2), passwd);		
 	char *user_pincode = string2;
 
 	PseHandle = theApp.SecudeLib.af_open (psefile_name, NULL, user_pincode, NULL); // Auslesen aus psefile_name
@@ -602,7 +602,7 @@ bool CKeyFile::FilenameExisting(CString user_file)
 	CString key_identifier;
 		
 	LPTSTR help1 = new TCHAR[filename.GetLength()+1];
-	_tcscpy(help1, filename);
+	strcpy_s(help1,strlen(help1), filename);
 	char *filename2=help1;
 
 	filehandle = _findfirst(filename2, &fileinfo);
@@ -679,7 +679,7 @@ int CKeyFile::ExtractData(CString filename, char **ctstr, char **creatime, char 
 	Name.TrimLeft();
 	Name.TrimRight();	
 	LPTSTR string1 = new TCHAR[Name.GetLength()+1];
-	_tcscpy(string1, Name);
+	strcpy_s(string1,strlen(string1), Name);
 	*name = string1;
 
 	// mache aus dem "[" bei pos1 und dem "]" bei pos2 jeweils ein "_"
@@ -700,7 +700,7 @@ int CKeyFile::ExtractData(CString filename, char **ctstr, char **creatime, char 
 	Firstname.TrimLeft();
 	Firstname.TrimRight();	
 	LPTSTR string2 = new TCHAR[Firstname.GetLength()+1];
-	_tcscpy(string2, Firstname);
+	strcpy_s(string2,strlen(string2), Firstname);
 	*firstname = string2;
 
 	// mache aus dem "[" bei pos1 und dem "]" bei pos2 jeweils ein "_"
@@ -723,7 +723,7 @@ int CKeyFile::ExtractData(CString filename, char **ctstr, char **creatime, char 
 	KeyType.TrimLeft();
 	KeyType.TrimRight();	
 	LPTSTR string3 = new TCHAR[KeyType.GetLength()+1];
-	_tcscpy(string3, KeyType);
+	strcpy_s(string3,strlen(string3), KeyType);
 	*keyType = string3;
 
 	// mache aus dem "[" bei pos1 und dem "]" bei pos2 jeweils ein "_"
@@ -748,7 +748,7 @@ int CKeyFile::ExtractData(CString filename, char **ctstr, char **creatime, char 
 	CreatTime.TrimLeft();
 	CreatTime.TrimRight();
 	LPTSTR string4 = new TCHAR[CreatTime.GetLength()+1];
-	_tcscpy(string4, CreatTime);
+	strcpy_s(string4,strlen(string4), CreatTime);
 	*ctstr = string4; // ctstr: Time in seconds since UTC 1/1/70
 	time_t elapstime = atol( *ctstr ); // Zeitpunkt der Erstellung als time_t Typ
 	struct tm *timeofcreat;
@@ -778,7 +778,7 @@ int CKeyFile::ExtractData(CString filename, char **ctstr, char **creatime, char 
 
 	CreatTime = Mday + ((CString)".") + Month + ((CString)".") + (CString) year + ((CString)" ") + Hour + ((CString)":") + Min + ((CString)":") + Sec; 
 	LPTSTR string5 = new TCHAR[CreatTime.GetLength()+1];
-	_tcscpy(string5, CreatTime);
+	strcpy_s(string5,strlen(string5), CreatTime);
 	*creatime = string5;
 
 	// mache aus dem "[" bei pos1 und dem "]" bei pos2 jeweils ein "_"
@@ -800,7 +800,7 @@ int CKeyFile::ExtractData(CString filename, char **ctstr, char **creatime, char 
 		KeyInfo.TrimLeft();
 		KeyInfo.TrimRight();	
 		LPTSTR string6 = new TCHAR[KeyInfo.GetLength()+1];
-		_tcscpy(string6, KeyInfo);
+		strcpy_s(string6,strlen(string6), KeyInfo);
 		*keyID = string6;
 	}
 	return 0;
@@ -875,7 +875,7 @@ int CAvailabAsymmKeys::GetKeyList(CSortAsymKeyList& sortedAsymKeyList, unsigned 
 
 	CString filename=(CString)PseVerzeichnis+((CString)"/*.*");		
 	LPTSTR help1 = new TCHAR[filename.GetLength()+1];
-	_tcscpy(help1, filename);
+	strcpy_s(help1,strlen(help1), filename);
 	char *filename2=help1;
 
 	filehandle = _findfirst(filename2, &fileinfo);

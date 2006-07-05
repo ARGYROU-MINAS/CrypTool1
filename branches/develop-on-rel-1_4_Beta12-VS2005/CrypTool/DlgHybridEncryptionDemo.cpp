@@ -425,7 +425,7 @@ void CDlgHybridEncryptionDemo::OnButtonEncDocumentSym()
 	//der Verschluesselte Text geschrieben werden soll
 	//der Name wird in die Variable strPathEncDocument geschrieben
 	char key[100];
-	strcpy(key,(LPCTSTR)m_strSymKey);
+	strcpy_s(key,(LPCTSTR)m_strSymKey);
 
 	SHOW_HOUR_GLASS
 

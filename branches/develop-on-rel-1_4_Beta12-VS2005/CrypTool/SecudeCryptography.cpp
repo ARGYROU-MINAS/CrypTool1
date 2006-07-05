@@ -114,35 +114,35 @@ void Crypt (char* infile, const char *OldTitle, int keylenmin, int keylenmax, in
 	switch (AlgId){
 	case 1://IDEA
 		info.subjectAI=theApp.SecudeLib.idea_aid;
-		sprintf(AlgTitel, "IDEA");
+		sprintf_s(AlgTitel,strlen(AlgTitel), "IDEA");
 		break;
 	case 2://DES-ECB
 		info.subjectAI=theApp.SecudeLib.desECB_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_DES_ECB,pc_str,STR_LAENGE_STRING_TABLE);
-		sprintf(AlgTitel, pc_str);
+		sprintf_s(AlgTitel,strlen(AlgTitel), pc_str);
 		break;
 	case 3://DES-CBC (Padding)
 		info.subjectAI=theApp.SecudeLib.desCBC_pad_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_DES_CBC,pc_str,STR_LAENGE_STRING_TABLE);
-		sprintf(AlgTitel, pc_str);
+		sprintf_s(AlgTitel,strlen(AlgTitel), pc_str);
 		break;
 	case 4://Triple-DES (CBC mode)
 		info.subjectAI=theApp.SecudeLib.desCBC3_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_TRIPLE_DES_CBC,pc_str,STR_LAENGE_STRING_TABLE);
-		sprintf(AlgTitel, pc_str);
+		sprintf_s(AlgTitel,strlen(AlgTitel), pc_str);
 		break;
 	case 5://Triple-DES (ECB mode)
 		info.subjectAI=theApp.SecudeLib.desEDE_aid;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_TRIPLE_DES_ECB,pc_str,STR_LAENGE_STRING_TABLE);
-		sprintf(AlgTitel, pc_str);
+		sprintf_s(AlgTitel,strlen(AlgTitel), pc_str);
 		break;
 	case 6://RC4
 		info.subjectAI=theApp.SecudeLib.rc4_aid;
-		sprintf(AlgTitel, "RC4");
+		sprintf_s(AlgTitel,strlen(AlgTitel), "RC4");
 		break;
 	case 7://RC2
 		info.subjectAI=theApp.SecudeLib.rc2CBC_aid;
-		sprintf(AlgTitel, "RC2");
+		sprintf_s(AlgTitel,strlen(AlgTitel), "RC2");
 		break;
 	}
 

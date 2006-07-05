@@ -345,8 +345,8 @@ UINT AutoAnaSubst(PVOID p)
 		LoadString(AfxGetInstanceHandle(), IDS_MONO_SUBST_AUTO_FILE_OPEN_ERROR, pc_str, STR_LAENGE_STRING_TABLE);
 		message = (char*)malloc((strlen(pc_str)+strlen(par->infile)+1)*sizeof(char));
 		message[0]='\0';
-		strcat(message, pc_str);
-		strcat(message, par->infile);
+		strcat_s(message,strlen(message), pc_str);
+		strcat_s(message,strlen(message), par->infile);
 		AfxMessageBox(message, MB_ICONINFORMATION|MB_OK);
 		return 0;
 	}
@@ -470,8 +470,8 @@ UINT AutoAnaSubst(PVOID p)
 				LoadString(AfxGetInstanceHandle(), IDS_MONO_SUBST_AUTO_FILE_OPEN_ERROR, pc_str, STR_LAENGE_STRING_TABLE);
 				message = (char*)malloc((strlen(pc_str)+strlen(outfile)+1)*sizeof(char));
 				message[0]='\0';
-				strcat(message, pc_str);
-				strcat(message, outfile);
+				strcat_s(message, strlen(message), pc_str);
+				strcat_s(message, strlen(message),outfile);
 				AfxMessageBox(message, MB_ICONINFORMATION|MB_OK);
 				return 0;
 			}
@@ -497,9 +497,9 @@ UINT AutoAnaSubst(PVOID p)
 			{
 				char *title = (char *)malloc ((strlen(par->OldTitle)+60)*sizeof(char));
 				title[0] = '\0'; 
-				strcat(title, par->OldTitle);
-				strcat(title, " -Substitution- ");
-				strcat(title, Dialog.getKey());
+				strcat_s(title,strlen(title), par->OldTitle);
+				strcat_s(title,strlen(title), " -Substitution- ");
+				strcat_s(title,strlen(title), Dialog.getKey());
 				theApp.ThreadOpenDocumentFileNoMRU(outfile, title, "");
 				remove(outfile);
 				free (title);
@@ -664,8 +664,8 @@ int initializeStandardDMatrix(float *stats, MonoSubstCrackerParameters *paramete
 		LoadString(AfxGetInstanceHandle(), IDS_MONO_SUBST_AUTO_FILE_OPEN_ERROR, pc_str, STR_LAENGE_STRING_TABLE);
 		message = (char*)malloc((strlen(pc_str)+strlen(theApp.TextOptions.m_StrRefFile)+1)*sizeof(char));
 		message[0]='\0';
-		strcat(message, pc_str);
-		strcat(message, theApp.TextOptions.m_StrRefFile);
+		strcat_s(message,strlen(message), pc_str);
+		strcat_s(message,strlen(message), theApp.TextOptions.m_StrRefFile);
 		AfxMessageBox(message, MB_ICONINFORMATION|MB_OK);
 		// Cannot open file containing reference data
 		return FILE_OPENING_ERROR;

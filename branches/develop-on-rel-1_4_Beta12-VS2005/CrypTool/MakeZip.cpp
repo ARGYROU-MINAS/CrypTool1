@@ -89,7 +89,7 @@ void dozip(const char *infile, const char *OldTitle)
 	if (LaengeVorher > 0)
 	{
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_MSG_KOMPRESSION_FACTOR,pc_str,STR_LAENGE_STRING_TABLE);
-		sprintf(pc_str1,pc_str,(LaengeVorher-LaengeNachher)*100/LaengeVorher);
+		sprintf_s(pc_str1,strlen(pc_str1),pc_str,(LaengeVorher-LaengeNachher)*100/LaengeVorher);
 		AfxMessageBox(pc_str1, MB_ICONINFORMATION);
 	}
 	fclose(fi);

@@ -253,7 +253,7 @@ int HexDumpToData( CString &hexDump, char *data )
 {
 	char *tmp;
 	tmp = new char[hexDump.GetLength()+1];
-	strcpy( tmp, hexDump.GetBuffer(0) );
+	strcpy_s( tmp,strlen(tmp), hexDump.GetBuffer(0) );
 	int retVal = HexDumpToData( tmp, data );
 	hexDump = tmp;
 	delete []tmp;
@@ -406,7 +406,7 @@ int decodeASCII(      char *strOut, int &strOutPtr, const int strOutSize,
 		}
 	}
 	m_outStr[ptr] = '\0';
-	strcpy( strOut + strOutPtr, m_outStr );
+	strcpy_s( strOut + strOutPtr,strlen(strOut + strOutPtr), m_outStr );
 	strOutPtr += ptr;
 	return done;
 }

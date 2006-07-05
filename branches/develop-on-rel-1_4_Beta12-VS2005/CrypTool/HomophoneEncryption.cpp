@@ -339,7 +339,7 @@ const char* CHomophoneEncryption::GetKeyStr()
 	int k, l, j = 0;
 	char hexStr[10];
 
-	sprintf(hexStr, "%X", data.SizeHomophoneKey);
+	sprintf_s(hexStr,strlen(hexStr), "%X", data.SizeHomophoneKey);
 	for ( k=0; hexStr[k]!=0; ) keyStr[j++] = hexStr[k++];
 	keyStr[j++] = '#';
 	keyStr[j++] = '#';
@@ -349,12 +349,12 @@ const char* CHomophoneEncryption::GetKeyStr()
 	{
 		if(data.encryptionData1[i]>0)
 		{
-			sprintf(hexStr, "%X", i);
+			sprintf_s(hexStr,strlen(hexStr), "%X", i);
 			for ( k=0; hexStr[k]!=0; ) keyStr[j++] = hexStr[k++];
 			keyStr[j++] = ':';
 			for ( l=0; l<data.encryptionData1[i]; l++)
 			{
-				sprintf(hexStr, "%X", data.key[data.encryptionData0[i]+l]);
+				sprintf_s(hexStr,strlen(hexStr), "%X", data.key[data.encryptionData0[i]+l]);
 				for ( k=0; hexStr[k]!=0; ) keyStr[j++] = hexStr[k++];
 				if (l+1<data.encryptionData1[i]) keyStr[j++] = ',';
 			}

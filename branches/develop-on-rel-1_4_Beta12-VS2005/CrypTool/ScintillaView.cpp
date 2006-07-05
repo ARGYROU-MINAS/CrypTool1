@@ -538,7 +538,7 @@ void CScintillaView::OnUpdateViewWhitespace(CCmdUI* pCmdUI)
 void CScintillaView::setTextFont(int size, const char* fontClass)
 {
 	fontSize = size;
-	strcpy(fontFace, fontClass);
+	strcpy_s(fontFace, fontClass);
 
 	CWnd *pActiveWindow = this->GetTopWindow();
 	if(pActiveWindow)

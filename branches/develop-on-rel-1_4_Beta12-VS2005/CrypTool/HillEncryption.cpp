@@ -585,9 +585,9 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			if (i == floor_rows && j >= remainder) break;
 			MatOut = MatOut + (char)my_int_to_char(ndx) + ' ' + CString(" --> ")  + '\t';
 			if ( modul > 100 )
-				sprintf(num, "%03i", ndx);
+				sprintf_s(num,strlen(num), "%03i", ndx);
 			else 
-				sprintf(num, "%02i", ndx);
+				sprintf_s(num,strlen(num), "%02i", ndx);
 			MatOut = MatOut + CString(num) + ' ';
 		    MatOut = MatOut + '\t';
 			ndx += floor_rows;
@@ -621,8 +621,8 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			MatOut = MatOut + CString("\t[\t");
 			for (j=0; j<dim; j++)
 			{
-				if ( modul > 100 ) sprintf(num, "%03i", (*enc_mat)(i,j));	
-				else               sprintf(num, "%02i", (*enc_mat)(i,j));
+				if ( modul > 100 ) sprintf_s(num,strlen(num), "%03i", (*enc_mat)(i,j));	
+				else               sprintf_s(num,strlen(num), "%02i", (*enc_mat)(i,j));
 				MatOut = MatOut + num + '\t';
 			}
 			MatOut = MatOut + ']' + '\n';
@@ -632,7 +632,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 		LoadString(AfxGetInstanceHandle(),IDS_HILLEXAMPLE_HLENCRYPT,pc_str,STR_LAENGE_STRING_TABLE);
 		{
 			char line[1024];
-			sprintf(line, pc_str, c_act_example);
+			sprintf_s(line,strlen(line), pc_str, c_act_example);
 			MatOut = MatOut + '\n' + '\n' + CString(line) + '\n';
 		}
 
@@ -641,9 +641,9 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 		for (i=0; i<dim; i++)
 		{
 			if ( modul > 100 )
-				sprintf(num, "%03i", i_act_example[i]);
+				sprintf_s(num,strlen(num), "%03i", i_act_example[i]);
 			else 
-				sprintf(num, "%02i", i_act_example[i]);
+				sprintf_s(num,strlen(num), "%02i", i_act_example[i]);
 			MatOut = MatOut + num + '\t';
 		}
 		MatOut = MatOut + ']';
@@ -664,8 +664,8 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			i_res_example[i] = ciph;
 			c_res_example[i] = (char)my_int_to_char(ciph);
 			
-			if ( modul > 100 )	sprintf(num, "%03i", ciph);
-			else 	            sprintf(num, "%02i", ciph);					
+			if ( modul > 100 )	sprintf_s(num,strlen(num), "%03i", ciph);
+			else 	            sprintf_s(num,strlen(num), "%02i", ciph);					
 
 			MatOut = MatOut + (char)my_int_to_char(ciph) + CString("\t<--\t") + CString(num) + CString(" = ");
 			for (j=0; j<dim; j++)
@@ -673,19 +673,19 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 				char num2[3];
 				if ( modul > 100 )				
 				{
-					sprintf(num, "%03i", i_act_example[j]);
-					sprintf(num2, "%03i", (*enc_mat)(j,i));					
+					sprintf_s(num,strlen(num), "%03i", i_act_example[j]);
+					sprintf_s(num2,strlen(num2), "%03i", (*enc_mat)(j,i));					
 				}
 				else 
 				{
-					sprintf(num, "%02i", i_act_example[j]);
-					sprintf(num2, "%02i", (*enc_mat)(j,i));
+					sprintf_s(num,strlen(num), "%02i", i_act_example[j]);
+					sprintf_s(num2,strlen(num2), "%02i", (*enc_mat)(j,i));
 				}
 				MatOut = MatOut + CString(num) + '*' + CString(num2) + ' ';
 				if ( j < dim-1 ) MatOut = MatOut + '+' + ' ';
 			}
-			if ( modul > 100 )	sprintf(num, "%03i", modul);
-			else 	            sprintf(num, "%02i", modul);					
+			if ( modul > 100 )	sprintf_s(num,strlen(num), "%03i", modul);
+			else 	            sprintf_s(num,strlen(num), "%02i", modul);					
 			MatOut = MatOut + CString(" (mod ") + CString(num) + ')' + '\n';
 		}
 
@@ -697,7 +697,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
         LoadString(AfxGetInstanceHandle(),IDS_HILLEXAMPLE_RESULT_ENCRYPTION,pc_str,STR_LAENGE_STRING_TABLE);
 		{
 			char line[1024];
-			sprintf(line, pc_str, c_act_example);
+			sprintf_s(line,strlen(line), pc_str, c_act_example);
 			MatOut = MatOut + '\n' + CString(line) + '\n' +'\n' + '\n';
 		}		
 	}
@@ -724,8 +724,8 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			MatOut = MatOut + CString("\t[\t");
 			for (j=0; j<dim; j++)
 			{
-				if ( modul > 100 ) sprintf(num, "%03i", (*dec_mat)(i,j));	
-				else               sprintf(num, "%02i", (*dec_mat)(i,j));
+				if ( modul > 100 ) sprintf_s(num,strlen(num), "%03i", (*dec_mat)(i,j));	
+				else               sprintf_s(num,strlen(num), "%02i", (*dec_mat)(i,j));
 				MatOut = MatOut + num + '\t';
 			}
 			MatOut = MatOut + ']' + '\n';
@@ -735,7 +735,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 		LoadString(AfxGetInstanceHandle(),IDS_HILLEXAMPLE_HLDECRYPT,pc_str,STR_LAENGE_STRING_TABLE);
 		{
 			char line[1024];
-			sprintf(line, pc_str, c_act_example);
+			sprintf_s(line,strlen(line), pc_str, c_act_example);
 			MatOut = MatOut + '\n' + '\n' + CString(line) + '\n';
 		}
 
@@ -744,9 +744,9 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 		for (i=0; i<dim; i++)
 		{
 			if ( modul > 100 )
-				sprintf(num, "%03i", i_act_example[i]);
+				sprintf_s(num,strlen(num), "%03i", i_act_example[i]);
 			else 
-				sprintf(num, "%02i", i_act_example[i]);
+				sprintf_s(num,strlen(num), "%02i", i_act_example[i]);
 			MatOut = MatOut + num + '\t';
 		}
 		MatOut = MatOut + ']';
@@ -767,8 +767,8 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			i_res_example[i] = ciph;
 			c_res_example[i] = (char)my_int_to_char(ciph);
 			
-			if ( modul > 100 )	sprintf(num, "%03i", ciph);
-			else 	            sprintf(num, "%02i", ciph);					
+			if ( modul > 100 )	sprintf_s(num,strlen(num), "%03i", ciph);
+			else 	            sprintf_s(num,strlen(num), "%02i", ciph);					
 
 			MatOut = MatOut + (char)my_int_to_char(ciph) + CString("\t<--\t") + CString(num) + CString(" = ");
 			for (j=0; j<dim; j++)
@@ -776,19 +776,19 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 				char num2[3];
 				if ( modul > 100 )				
 				{
-					sprintf(num, "%03i", i_act_example[j]);
-					sprintf(num2, "%03i", (*dec_mat)(j,i));					
+					sprintf_s(num,strlen(num), "%03i", i_act_example[j]);
+					sprintf_s(num2,strlen(num2), "%03i", (*dec_mat)(j,i));					
 				}
 				else 
 				{
-					sprintf(num, "%02i", i_act_example[j]);
-					sprintf(num2, "%02i", (*dec_mat)(j,i));
+					sprintf_s(num,strlen(num), "%02i", i_act_example[j]);
+					sprintf_s(num2,strlen(num2), "%02i", (*dec_mat)(j,i));
 				}
 				MatOut = MatOut + CString(num) + '*' + CString(num2) + ' ';
 				if ( j < dim-1 ) MatOut = MatOut + '+' + ' ';
 			}
-			if ( modul > 100 )	sprintf(num, "%03i", modul);
-			else 	            sprintf(num, "%02i", modul);					
+			if ( modul > 100 )	sprintf_s(num,strlen(num), "%03i", modul);
+			else 	            sprintf_s(num,strlen(num), "%02i", modul);					
 			MatOut = MatOut + CString(" (mod ") + CString(num) + ')' + '\n';
 		}
 
@@ -800,7 +800,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
         LoadString(AfxGetInstanceHandle(),IDS_HILLEXAMPLE_RESULT_DECRYPTION,pc_str,STR_LAENGE_STRING_TABLE);
 		{
 			char line[1024];
-			sprintf(line, pc_str, c_act_example);
+			sprintf_s(line,strlen(line), pc_str, c_act_example);
 			MatOut = MatOut + '\n' + CString(line) + '\n' +'\n' + '\n';
 		}		
 

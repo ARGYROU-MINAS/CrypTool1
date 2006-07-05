@@ -138,8 +138,8 @@ void  CPlotDocument::x_axis_add(double x){
 		anItem3->aPoint.y = Y_BOTTOM - TEXT_DIST;
 		anItem3->aPoint.x = anItem1->aPoint.x;
 
-		if(m_xchar == '0') sprintf(buffer, "%d", (int) x); // print figures
-		else sprintf(buffer, "%c", theApp.TextOptions.m_alphabet[(int)x-1] /*m_xchar + (int) x*/); // print capital letters 
+		if(m_xchar == '0') sprintf_s(buffer,strlen(buffer), "%d", (int) x); // print figures
+		else sprintf_s(buffer,strlen(buffer), "%c", theApp.TextOptions.m_alphabet[(int)x-1] /*m_xchar + (int) x*/); // print capital letters 
 
 		anItem3->x = len = strlen(buffer);
 
@@ -180,7 +180,7 @@ void  CPlotDocument::y_axis_add(double y, double y_inc){
 
 		anItem3->aPoint.x = X_LEFT - TEXT_DIST;
 		anItem3->aPoint.y = anItem1->aPoint.y;
-		sprintf(buffer, "%.*f", prec, y);
+		sprintf_s(buffer,strlen(buffer), "%.*f", prec, y);
 		anItem3->x = len = strlen(buffer);
 		anItem3->aString=new char[len];
 		strncpy(anItem3->aString, buffer,len);
@@ -351,7 +351,7 @@ void CPlotDocument::Serialize(CArchive& ar)
 
 		Load_Values(ar); // read them from the file into a list
 		Convert_Values(); // convert the values into logical display coordinates
-		strcpy(name, ar.m_strFileName);
+		strcpy_s(name, ar.m_strFileName);
 		name[strlen(name)-4]=0x0;
 		if( !f.Open( name, CFile::modeRead ) )
 		{

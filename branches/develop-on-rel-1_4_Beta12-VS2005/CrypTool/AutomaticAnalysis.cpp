@@ -149,7 +149,7 @@ void CaesarAuto(const char *infile, const char *OldTitle)
 		c.Show(OStream(name)<< OStream::Title(0) << OStream::Description(0) << OStream::Summary(0));
 		
 		// == get the tmp name without file extension
-		strcpy(name2, name);
+		strcpy_s(name2, name);
 		name2[strlen(name)-4] = 0x0;
 		
 		if( f.Open( name2, CFile::modeCreate | CFile::modeWrite ) ) {
@@ -334,7 +334,7 @@ UINT VigenereAuto(PVOID p)
 			c.Show(OStream(name)<< OStream::Title(0) << OStream::Description(0) << OStream::Summary(0));
 			
 			// get the tmp name without file extension
-			strcpy(name2, name);
+			strcpy_s(name2, name);
 			name2[strlen(name)-4] = 0x0;
 			
 			if( f.Open( name2, CFile::modeCreate | CFile::modeWrite ) ) {
@@ -377,7 +377,7 @@ UINT VigenereAuto(PVOID p)
 		CDlgKeyVigenereAnalyisis dia;
 		dia.m_Str = key;
 		if(IDCANCEL == dia.DoModal()) return 0;
-		strcpy(key,dia.m_Str);
+		strcpy_s(key,dia.m_Str);
 	}
 	periode = strlen(key); // check for iterated key
 	for(i=1;i<periode;i++) {

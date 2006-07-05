@@ -32,19 +32,19 @@ static char sbuf[256];
 
 char *FileName(const char* stem, const char *ext)
 {
-   strcpy(sbuf, stem);
-   strcat(sbuf, "-");
-   strcat(sbuf, ext);
+   strcpy_s(sbuf, stem);
+   strcat_s(sbuf, "-");
+   strcat_s(sbuf, ext);
 
    return sbuf;
 }
 
 char *FileName(const char* stem, const char *ext, long d)
 {
-   strcpy(sbuf, stem);
-   strcat(sbuf, "-");
-   strcat(sbuf, ext);
-   strcat(sbuf, "-");
+   strcpy_s(sbuf, stem);
+   strcat_s(sbuf, "-");
+   strcat_s(sbuf, ext);
+   strcat_s(sbuf, "-");
 
    char dbuf[6];
    dbuf[5] = '\0';
@@ -55,7 +55,7 @@ char *FileName(const char* stem, const char *ext, long d)
       dd = dd / 10;
    }
 
-   strcat(sbuf, dbuf);
+   strcat_s(sbuf, dbuf);
 
    return sbuf;
 }

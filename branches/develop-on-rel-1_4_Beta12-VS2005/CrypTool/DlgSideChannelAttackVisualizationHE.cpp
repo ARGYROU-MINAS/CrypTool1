@@ -483,11 +483,11 @@ void CDlgSideChannelAttackVisualizationHE::OnPreparations()
 			// öffentlichen Schlüssel konvertieren
 			numberTemp = publicKeyTemp;
 			BaseRepr(numberTemp, 16, 10);
-			strcpy(publicKeyTemp, (char*)(LPCTSTR)numberTemp);
+			strcpy_s(publicKeyTemp, (char*)(LPCTSTR)numberTemp);
 			// Modulus konvertieren
 			numberTemp = modulusTemp;
 			BaseRepr(numberTemp, 16, 10);
-			strcpy(modulusTemp, (char*)(LPCTSTR)numberTemp);
+			strcpy_s(modulusTemp, (char*)(LPCTSTR)numberTemp);
 			// öffentlichen Schlüssel (e UND n) setzen
 			serverPublicKey = publicKeyTemp;
 			serverModulus = modulusTemp;

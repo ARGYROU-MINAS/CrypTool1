@@ -121,11 +121,11 @@ public:
 			time_t t1, t2;
 			
 			LPTSTR string1 = new TCHAR[UTCstring.GetLength()+1];
-			_tcscpy(string1, UTCstring);
+			strcpy_s(string1,strlen(string1), UTCstring);
 			char *cstr1 = string1;
 
 			LPTSTR string2 = new TCHAR[a.UTCstring.GetLength()+1];
-			_tcscpy(string2, a.UTCstring);
+			strcpy_s(string2,strlen(string2), a.UTCstring);
 			char *cstr2 = string2;
 
 			t1 = atol(cstr1);

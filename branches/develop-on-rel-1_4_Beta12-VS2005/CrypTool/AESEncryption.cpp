@@ -225,13 +225,13 @@ void AESCrypt (char* infile, const char *OldTitle, int AlgId, bool Enc_Or_Dec, c
 		for(i=0;i<keylen; i++) keybuffbin[i] = key[i];
 				
 		for(i=0; i<keylen; i++) 
-			sprintf(keybuffhex+2*i,"%02.2X",keybuffbin[i]);
+			sprintf_s(keybuffhex+2*i,strlen(keybuffhex+2*i),"%02.2X",keybuffbin[i]);
 	}
 	else
 	{
 		tag=1;
 		keylen=16;
-		strcpy(keybuffhex,NewFileKey);
+		strcpy_s(keybuffhex,NewFileKey);
 
 	}
 	borg = (unsigned char *) malloc(datalen+32);
@@ -278,7 +278,7 @@ void AESCrypt (char* infile, const char *OldTitle, int AlgId, bool Enc_Or_Dec, c
 	}
 	else
 	{
-		strcpy( outfile, NewFileName );
+		strcpy_s( outfile, NewFileName );
 	}
 	
 	// nur niederwertigsten 128 Bit (16 Byte = 32 Hex-Halb-Bytes) betrachten
@@ -377,7 +377,7 @@ UINT AESBrute(PVOID p)
 	
 	AlgId = *((int *) par->key);  // Namen setzen
 
-	strcpy(AlgTitel,"");           // Name setzen
+	strcpy_s(AlgTitel,"");           // Name setzen
 	switch (AlgId)
 	{
 	case 1:                        // Mars
@@ -397,7 +397,7 @@ UINT AESBrute(PVOID p)
 		break;
 	}
 	LoadString(AfxGetInstanceHandle(),titleID,pc_str,STR_LAENGE_STRING_TABLE);
-	strcpy( AlgTitel, pc_str );
+	strcpy_s( AlgTitel, pc_str );
 	
 	fi = fopen(par->infile,"rb");
 	fread(borg,1,datalen,fi);
@@ -430,7 +430,7 @@ UINT AESBrute(PVOID p)
 	
 	keylen = KeyDialog.GetBinlen();
 	keyhex=KeyDialog.GetData();
-	strcpy(kfound,keyhex);
+	strcpy_s(kfound,keyhex);
 	
     GetTmpName(outfile,"cry",".tmp");
 
@@ -464,7 +464,7 @@ UINT AESBrute(PVOID p)
 		if(entr > emax)
 		{
 			emax = entr;
-			strcpy(kfound,keyhex);
+			strcpy_s(kfound,keyhex);
 		}
 	}
 	

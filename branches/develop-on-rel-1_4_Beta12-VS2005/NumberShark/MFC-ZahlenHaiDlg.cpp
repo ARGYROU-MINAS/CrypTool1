@@ -644,7 +644,7 @@ void CMFCZahlenHaiDlg::updateButtons()
 	//"Zahlen ohne Teiler für den Zahlenhai"
 	
 	
-	for(i= upperLimit; i > upperLimit/2; i--)
+	for(int i= upperLimit; i > upperLimit/2; i--)
 	{
 		found=false;
 		
@@ -668,7 +668,7 @@ void CMFCZahlenHaiDlg::updateButtons()
 	CString bla="";
 	found=false;
 	int counter=0;
-	for(i= upperLimit; i > upperLimit/2; i--)
+	for(int i= upperLimit; i > upperLimit/2; i--)
 	{
 		found=false;
 		for(int j=1; j<=i/2 && found==false && numbersTemp[i]==FREE; j++)
@@ -1150,7 +1150,7 @@ void CMFCZahlenHaiDlg::writeLogFile()
 	//i durchläuft die Zeilen und j die jeweiligen Spalten 
 	//VC7 kann den Gültigkeitsbereich von i bei mehrfachen Konstrukten for(int i ...) korrekt
 	//    verarbeiten. Da VC6 dies nicht kann, wurde i hier nicht noch einmal deklariert.
-	for(i =0;i <ListControl.GetItemCount();i++)
+	for(int i =0;i <ListControl.GetItemCount();i++)
 	{
 		CString line="\r\n";
 		for(int j =0;j < ListControl.GetHeaderCtrl()->GetItemCount();j++)

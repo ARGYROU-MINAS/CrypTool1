@@ -105,7 +105,7 @@ BOOL CHexEditCtrlDoc::OnNewDocument()
 	delete []m_pData;
 	m_nSize = strlen(DOC_EMPTY_STR)+1;
 	m_pData = new BYTE[m_nSize];
-	strcpy((char*)m_pData, DOC_EMPTY_STR);
+	strcpy((char*)m_pData,  DOC_EMPTY_STR);
 	return TRUE;
 }
 

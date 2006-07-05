@@ -145,7 +145,7 @@ BOOL CopyKey ( const char* KeyType, const CString &Key )
 		hash = (hash+1) % KEYDATA_TABLE_SIZE; // suche 
 		if ( counter++ > KEYDATA_TABLE_SIZE ) exit(0);
 	}
-	if ( keylist[hash].keytype[0] == '\0' ) strcpy( keylist[hash].keytype, intKeyType );
+	if ( keylist[hash].keytype[0] == '\0' ) strcpy_s( keylist[hash].keytype, intKeyType );
 	keylist[hash].key = Key;
 	return TRUE;
 }

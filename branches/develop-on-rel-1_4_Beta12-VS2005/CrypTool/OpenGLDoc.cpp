@@ -25,7 +25,7 @@ COpenGLDoc::COpenGLDoc()
 	this->setShift(50);
 	this->setVoxelSize(1);
 	this->setWordLen(4);
-	strcpy(sFile, "");
+	strcpy_s(sFile, "");
 
 }
 
@@ -37,7 +37,7 @@ COpenGLDoc::COpenGLDoc(int arg_resolution, int arg_density, int arg_shift, int a
 	this->setShift(arg_shift);
 	this->setVoxelSize(1);
 	this->setWordLen(arg_wordlen);
-	strcpy(sFile, "");
+	strcpy_s(sFile, "");
 }
 
 BOOL COpenGLDoc::OnNewDocument()
@@ -89,7 +89,7 @@ void COpenGLDoc::Serialize(CArchive& ar)
 		// ZU ERLEDIGEN: Code zum Laden hier einfügen
 
 		char name[1024];
-		strcpy(name, ar.m_strFileName);
+		strcpy_s(name, ar.m_strFileName);
 		ifstream f;
 		f.open(name);
 		if (!f.is_open())

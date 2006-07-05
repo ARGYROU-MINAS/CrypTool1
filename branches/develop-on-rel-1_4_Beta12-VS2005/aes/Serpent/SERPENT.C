@@ -58,7 +58,7 @@ int makeKeySerpent(keyInstanceSerpent *key, BYTE direction, int keyLen,
 
   key->direction=direction;
   key->keyLen=keyLen;
-  strncpy(key->keyMaterial, keyMaterial, MAX_KEY_SIZE+1);
+  strncpy_s(key->keyMaterial,strlen(key->keyMaterial), keyMaterial, MAX_KEY_SIZE+1);
 
   rc=serpent_convert_from_string(keyLen, keyMaterial, key->key);
   if(rc<=0)
@@ -560,16 +560,16 @@ int serpent_convert_from_string(int len, char *str, unsigned long *val)
   for(is=slen, iv=0; is>=8; is-=8, iv++)
     {
       unsigned long t;
-      sscanf(&str[is-8], "%08lx", &t);
+      sscanf_s(&str[is-8], "%08lx", &t);
       val[iv] = t;
     }
   if(is>0)
     {
       char tmp[10];
       unsigned long t;
-      strncpy(tmp, str, is);
+      strncpy_s(tmp,strlen(tmp), str, is);
       tmp[is] = 0;
-      sscanf(tmp, "%08lx", &t);
+      sscanf_s(tmp, "%08lx", &t);
       val[iv++] = t;
     }
   for(; iv<(len+31)/32; iv++)
@@ -590,14 +590,14 @@ char *serpent_convert_to_string(int len, unsigned long val[8], char *str)
   if((len&31)>0)
     {
       char tmp[10];
-      sprintf(tmp, "%08lx", val[i]&(((len&31)<<1)-1));
-      strcat(str, &tmp[8-(((len&31)+3)/4)]);
+      sprintf_s(tmp,strlen(tmp), "%08lx", val[i]&(((len&31)<<1)-1));
+      strcat_s(str,strlen(str), &tmp[8-(((len&31)+3)/4)]);
     }
   for(i--; i>=0; i--)
     {
       char tmp[10];
-      sprintf(tmp, "%08lX", val[i]);
-      strcat(str, tmp);
+      sprintf_s(tmp,strlen(tmp), "%08lX", val[i]);
+      strcat_s(str,strlen(str), tmp);
     }
   return str;
 }

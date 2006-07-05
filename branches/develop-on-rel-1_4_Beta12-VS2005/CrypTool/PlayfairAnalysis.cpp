@@ -689,10 +689,10 @@ void playfair_letterlist::print (char *s, bool withWeight)
 	char s2[7*40];
 	s2[0] = '\0';
 	for (int i=0; i < my_maxLen; i++) {
-		sprintf (s, "%s%c%d ", s2, my_pfletters[i]->getValue(), my_pfletters[i]->getWeight());
-		sprintf (s2, "%s", s);
+		sprintf_s (s,strlen(s), "%s%c%d ", s2, my_pfletters[i]->getValue(), my_pfletters[i]->getWeight());
+		sprintf_s (s2,strlen(s2), "%s", s);
 	}
-	sprintf (s, "%s\n", s);
+	sprintf_s (s,strlen(s), "%s\n", s);
 }
 
 void playfair_letterlist::copy (playfair_letterlist* dst, playfair_letterlist* src)
@@ -989,7 +989,7 @@ CPlayfairAnalysis::CPlayfairAnalysis(void)
 	myAlphabet = new playfair_alphabet(6);
 	myLetterlist = new playfair_letterlist(myAlphabet);
 	UseOfDoublesInPass=0; /* default: only use the first appearance of distinguished letters in passphrase */
-	strcpy(passphrase,"PLAYFIR");
+	strcpy_s(passphrase,"PLAYFIR");
 	ReFormat=1;
 	ConvertCase=1;
 	SetSize(1);
@@ -1112,7 +1112,7 @@ char *CPlayfairAnalysis::CreatePassfromMatrix()
 	while (maxkeyval(p,j)+1==keyval(p[j])&&j>=0)
 		p[j--]=0;
 	
-	strcpy(passphrase,p);
+	strcpy_s(passphrase,p);
 	return passphrase;
 }
 
@@ -1174,8 +1174,8 @@ CPlayfairAnalysis::CPlayfairAnalysis(char *p,int sechs,const char *in,const char
 	UseOfDoublesInPass=use;
 	ReFormat=r;
 	ConvertCase=c;
-	strcpy(infile,in);
-	strcpy(outfile,out);
+	strcpy_s(infile,in);
+	strcpy_s(outfile,out);
 	
 	myAlphabet = NULL;	myLetterlist = NULL;
 	my_matrix = NULL;	my_digrams = NULL;
@@ -1293,7 +1293,7 @@ void CPlayfairAnalysis::SetPass(char *passw)
 	int i,j;
 	char tmp[100];
 
-	strcpy(tmp,passw);
+	strcpy_s(tmp,passw);
 	strupr( tmp ); /* only capital letters allowed */
 	for(i=0,j=0;i<(int)strlen(tmp);i++)
 	{
@@ -1372,7 +1372,7 @@ void CPlayfairAnalysis::CreateMatrixFromPass()
 		ordered_alph[i] = NULLELEMENT;
 
 	if (iLenP)
-		strcpy((char *)ordered_alph, tmp);
+		strcpy_s((char *)ordered_alph,strlen((char *)ordered_alph), tmp);
 	for ( i=0, j=iLenP; i<iLenA; i++ )
 	{
 		if ( '0'== marked[i] )
@@ -1455,7 +1455,7 @@ void CPlayfairAnalysis::ApplyPlayfairPreformat( bool DecEnc,char *prename,char *
 	
 	DoCipher(true, DecEnc,inbuflen);
 	
-	strcpy(outfile,o);
+	strcpy_s(outfile,o);
 	outfp=fopen(outfile,"wb");
 	fwrite(outbuf,1,outbuflen,outfp);
 	fclose(outfp);

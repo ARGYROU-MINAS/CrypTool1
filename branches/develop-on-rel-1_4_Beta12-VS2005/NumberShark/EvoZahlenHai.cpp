@@ -60,7 +60,7 @@ EvoZahlenHai::EvoZahlenHai(CString serStr)
 	//optimalNumbers
 	optimalNumbers = new int[upperLimit+1];
 	
-	for(i=1; i<=upperLimit; i++)
+	for(int i=1; i<=upperLimit; i++)
 	{
 		if(i < upperLimit)
 		{
@@ -84,7 +84,7 @@ EvoZahlenHai::EvoZahlenHai(CString serStr)
 
 	computerNumbers.pNumbers = new int[upperLimit+1];
 	
-	for(i=1; i<=upperLimit; i++)
+	for(int i=1; i<=upperLimit; i++)
 	{
 		
 		if(i < upperLimit)
@@ -386,7 +386,7 @@ CString EvoZahlenHai::toString()
 	writeBuffer += " | ";
 	
 	//optimalNumbers
-	for(i=1; i<=optimalNumbersCount; i++)
+	for(int i=1; i<=optimalNumbersCount; i++)
 	{
 		itoa(optimalNumbers[i], charWriteBuffer, 10);
 		writeBuffer += charWriteBuffer;

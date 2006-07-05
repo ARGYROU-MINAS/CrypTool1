@@ -1916,7 +1916,7 @@ void NewDDF(vec_pair_ZZ_pX_long& factors,
    }
 
    if (!ZZ_pX_stem[0])
-      sprintf(ZZ_pX_stem, "ddf-%ld", RandomBnd(10000));
+	   sprintf_s(ZZ_pX_stem,strlen(ZZ_pX_stem), "ddf-%ld", RandomBnd(10000));
       
    long B = deg(f)/2;
    long k = SqrRoot(B);

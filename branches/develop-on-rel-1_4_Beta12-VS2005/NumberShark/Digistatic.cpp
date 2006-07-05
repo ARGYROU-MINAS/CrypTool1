@@ -1032,7 +1032,7 @@ void CDigiStatic::OnPaint()
 
 	CRgn* region = m_bTransparent ? new CRgn : NULL;
 	// Draw all characters...
-	for (iChar = 0; iChar < m_CharArray.GetSize(); iChar++)
+	for (int iChar = 0; iChar < m_CharArray.GetSize(); iChar++)
 	{
 
 		CharRect.SetRect(CharRect.left, CharRect.top,

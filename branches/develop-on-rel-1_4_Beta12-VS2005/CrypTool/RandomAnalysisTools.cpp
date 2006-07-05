@@ -218,13 +218,13 @@ void CRandomAnalysisTools::WriteAnalyse(char *name,const char *titel)
 	}
 	fclose(fo);
 
-	strcpy(name2, name);
+	strcpy_s(name2, name);
 	name2[strlen(name)-4] = 0x0;
 	
 	if( f.Open( name2, CFile::modeCreate | CFile::modeWrite ) )
 	{
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_AVERAGE_VARIATION,pc_str,STR_LAENGE_STRING_TABLE);
-		sprintf(line,pc_str,mea,var/mea);
+		sprintf_s(line,strlen(line),pc_str,mea,var/mea);
 		CArchive ar( &f, CArchive::store);
 		CString s1 = line;
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_VERTICES,pc_str,STR_LAENGE_STRING_TABLE);

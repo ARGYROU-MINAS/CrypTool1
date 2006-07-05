@@ -65,7 +65,7 @@ void GetTmpName( char *dest, const char *prefix, const char *ext )
 
     for(;cnt<10000;) {
 		cnt++;
-        sprintf(dest,"%s\\%s%d%s",temp,prefix,cnt,ext);
+        sprintf_s(dest,strlen(dest),"%s\\%s%d%s",temp,prefix,cnt,ext);
         f = fopen(dest,"r");
         if(!f) return;
         fclose(f);
@@ -123,10 +123,10 @@ int HexDumpMem(char *Dest, int DestSize, unsigned char *Src, int SrcSize, const 
 
 	p = Dest;
     for(i=0;i<SrcSize;i+=len) {
-        sprintf(p,"%5.05X  ",i+start); // = MAX_ADR_LEN Zeichen
+        sprintf_s(p,strlen(p),"%5.05X  ",i+start); // = MAX_ADR_LEN Zeichen
 		p += 7;
         for(j=i;j<i+len;j++) {
-            if(j<SrcSize) sprintf(p,"%02.2X",Src[j]);
+            if(j<SrcSize) sprintf_s(p,strlen(p),"%02.2X",Src[j]);
             else p[0] = p[1] = ' ';
 			p[2] = ' '; // = HEX_SEP Zeichen
 			p += 3;
@@ -229,10 +229,10 @@ int HexDumpOct(OctetString& Dest, OctetString& Src, const int len, long start)
 
 	char* p = Dest.octets;
     for(i=0; i<Src.noctets; i+=len) {
-        sprintf(p,"%5.05X  ",i+start); // = MAX_ADR_LEN Zeichen
+        sprintf_s(p,strlen(p),"%5.05X  ",i+start); // = MAX_ADR_LEN Zeichen
 		p += 7;
         for(j=i;j<i+len;j++) {
-            if(j<Src.noctets) sprintf(p,"%02.2X",Src.octets[j]);
+            if(j<Src.noctets) sprintf_s(p,strlen(p),"%02.2X",Src.octets[j]);
             else p[0] = p[1] = ' ';
 			p[2] = ' '; // = HEX_SEP Zeichen
 			p += 3;
