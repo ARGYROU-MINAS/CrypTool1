@@ -99,7 +99,7 @@ BOOL ExtractStrKeyType( char * KeyType, const char* keyStr )
 		LoadString(AfxGetInstanceHandle(),CryptMethods[j++],pc_str,STR_LAENGE_STRING_TABLE);		
 		if ( 0 <= (i = KeyString.Find( pc_str )) )
 		{
-			strncpy( KeyType, pc_str, KEYDATA_HASHSTRING_LENGTH );
+			strncpy_s( KeyType, strlen(KeyType), pc_str, KEYDATA_HASHSTRING_LENGTH );
 			KeyType[KEYDATA_HASHSTRING_LENGTH] = '\0';
 			return TRUE;
 		}

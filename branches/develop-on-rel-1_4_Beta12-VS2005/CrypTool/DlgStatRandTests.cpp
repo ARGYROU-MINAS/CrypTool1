@@ -108,7 +108,7 @@ void CDlgFreqTest::DoDataExchange(CDataExchange* pDX)
 
 void CDlgFreqTest::SetAlternativeWindowText(LPCTSTR s_title)
 {
-    strncpy(s_alternativeWindowText, s_title, 126);
+    strncpy_s(s_alternativeWindowText, strlen(s_alternativeWindowText), s_title, 126);
 	s_alternativeWindowText[126]=0;
 }
 
@@ -391,7 +391,7 @@ BOOL CDlgRunsTest::OnInitDialog()
 
 void CDlgRunsTest::SetAlternativeWindowText(LPCTSTR s_title)
 {
-    strncpy(s_alternativeWindowText, s_title, 126);
+    strncpy_s(s_alternativeWindowText,strlen(s_alternativeWindowText), s_title, 126);
 	s_alternativeWindowText[126]=0;
 }
 
@@ -957,7 +957,7 @@ void CDlgFIPSTest140_1::init(const char *Infile_, const char *OldTitle_)
 
 void CDlgFIPSTest140_1::SetAlternativeWindowText(LPCTSTR s_title)
 {
-    strncpy(s_alternativeWindowText, s_title, 126);
+    strncpy_s(s_alternativeWindowText,strlen(s_alternativeWindowText), s_title, 126);
 	s_alternativeWindowText[126]=0;
 }
 

@@ -1236,7 +1236,7 @@ void CDlgHybridEncryptionDemo::OnButtonDatenausgabe()
 	int Keylength=8*(EncSymKey->noctets);
 	char Keylen_in_bits_str[20];
 	// schreibe die zahl Keylength im Dezimalsystem nach Keylen_in_bits_str
-	_itoa(Keylength, Keylen_in_bits_str, 10);
+	_itoa_s(Keylength, Keylen_in_bits_str,strlen(Keylen_in_bits_str), 10);
 	Text.noctets=strlen(Keylen_in_bits_str);
 	Text.octets=Keylen_in_bits_str;
 	theApp.SecudeLib.aux_OctetString2file(&Text,outfile,3);

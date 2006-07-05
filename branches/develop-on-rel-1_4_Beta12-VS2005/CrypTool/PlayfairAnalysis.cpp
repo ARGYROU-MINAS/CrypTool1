@@ -1445,7 +1445,7 @@ void CPlayfairAnalysis::ApplyPlayfairPreformat( bool DecEnc,char *prename,char *
 	free(inbuf);
 	inbuflen=j;
     inbuf=(char *)malloc(inbuflen+1);
-	strncpy(inbuf, prebuf, inbuflen);
+	strncpy_s(inbuf,strlen(inbuf), prebuf, inbuflen);
 	inbuf[inbuflen] = 0;
 	free(prebuf);
 	
@@ -1623,7 +1623,7 @@ bool CPlayfairAnalysis::DoCipher( bool withConvert, bool Dec, int len, char *sti
 	// Gehört mit zum BugFix (Koy 23. Nov 2000)
 	free(outbuf);
 	outbuf = (char*)malloc(outbuflen+1);
-	strncpy(outbuf, CipherBufTemp, outbuflen);
+	strncpy_s(outbuf,strlen(outbuf), CipherBufTemp, outbuflen);
 	outbuf[outbuflen]=0;
 	free(CipherBufTemp);
 	return (true);

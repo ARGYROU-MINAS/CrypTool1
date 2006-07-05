@@ -190,7 +190,7 @@ void CDlgKey::OnEncrypt()
 
 void CDlgKey::SetAlternativeWindowText(LPCTSTR s_title)
 {
-    strncpy(s_alternativeWindowText, s_title, 126);
+    strncpy_s(s_alternativeWindowText,strlen(s_alternativeWindowText), s_title, 126);
 	s_alternativeWindowText[126]=0;
 }
 

@@ -2146,7 +2146,7 @@ CString CDlgSolitaire::FormatKey()
 	CString sKey;
 	sKey.Format(NUMBER_OF_CARDS "%d;" SORT_METHOD "%d;" MANUAL "X;",myD->anzahl,InitialArt);
 #if 0
-	sKey +=   CString(NUMBER_OF_CARDS) + CString(_itoa(myD->anzahl, tmpStr, 10)) + CString(";")
+	sKey +=   CString(NUMBER_OF_CARDS) + CString(_itoa_s(myD->anzahl, tmpStr,strlen(tmpStr), 10)) + CString(";")
 		    + CString(SORT_METHOD)  + InitialArt + CString(";") 
 			+ CString(MANUAL) + CString("X;");   // FIXME
 #endif

@@ -311,7 +311,7 @@ void CCryptDoc::OnCloseDocument()
 		 name2[128];
 
     // PRESENTATION_NAME strncpy(name1,PresentationName,sizeof(name1));
-    strncpy(name2,ContentName,sizeof(name2));
+    strncpy_s(name2,strlen(name2),ContentName,sizeof(name2));
 	CAppDocument::OnCloseDocument();
     // PRESENTATION_NAME remove(name1);
     remove(name2);

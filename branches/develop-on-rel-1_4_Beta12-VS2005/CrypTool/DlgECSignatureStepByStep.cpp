@@ -148,7 +148,7 @@ BOOL CDlgECSignatureStepByStep::OnInitDialog()
 	LONG defaultFontWeight;
 	CFont *defaultFont = m_ContinueButtonCtrl.GetFont();
 	defaultFont->GetLogFont( &LogFont ); // Default Systemschrift ermitteln
-	strncpy(DefaultFontName, LogFont.lfFaceName, 32); // Default Wert sichern
+	strncpy_s(DefaultFontName,strlen(DefaultFontName), LogFont.lfFaceName, 32); // Default Wert sichern
 	defaultFontWeight = LogFont.lfWeight; // Default Wert sichern
 	LogFont.lfWeight = FW_BOLD; // Auf Fettdruck umstellen
 	m_Font.CreateFontIndirect( &LogFont ); // Font initialisieren
@@ -156,7 +156,7 @@ BOOL CDlgECSignatureStepByStep::OnInitDialog()
 	m_TextSignStepsCtrl.SetFont(&m_Font);
 	m_StepCtrl.SetFont(&m_Font);
 	LogFont.lfWeight = defaultFontWeight; // Auf default Wert zurückstellen
-	strncpy(LogFont.lfFaceName, "Courier", 32); // Auf Courier umstellen	
+	strncpy_s(LogFont.lfFaceName,strlen(LogFont.lfFaceName), "Courier", 32); // Auf Courier umstellen	
 	m_Font2.CreateFontIndirect( &LogFont ); // Font2 initialisieren
 	//strncpy(LogFont.lfFaceName, DefaultFontStyle, 32);
 

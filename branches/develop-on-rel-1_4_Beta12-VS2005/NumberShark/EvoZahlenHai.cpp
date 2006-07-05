@@ -400,7 +400,7 @@ CString EvoZahlenHai::toString()
 	writeBuffer += charWriteBuffer;
 	writeBuffer += " | ";
 	//computerNumbers.pnumbers
-	for(i=1; i<=computerNumbers.n; i++)
+	for(int i=1; i<=computerNumbers.n; i++)
 	{
 		itoa(computerNumbers.pNumbers[i], charWriteBuffer, 10);
 		writeBuffer += charWriteBuffer;

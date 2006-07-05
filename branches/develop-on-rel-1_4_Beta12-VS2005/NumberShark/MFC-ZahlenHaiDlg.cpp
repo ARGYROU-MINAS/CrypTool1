@@ -1150,7 +1150,8 @@ void CMFCZahlenHaiDlg::writeLogFile()
 	//i durchläuft die Zeilen und j die jeweiligen Spalten 
 	//VC7 kann den Gültigkeitsbereich von i bei mehrfachen Konstrukten for(int i ...) korrekt
 	//    verarbeiten. Da VC6 dies nicht kann, wurde i hier nicht noch einmal deklariert.
-	for(int i =0;i <ListControl.GetItemCount();i++)
+	int i;
+	for(i =0;i <ListControl.GetItemCount();i++)
 	{
 		CString line="\r\n";
 		for(int j =0;j < ListControl.GetHeaderCtrl()->GetItemCount();j++)
@@ -1472,7 +1473,7 @@ void CMFCZahlenHaiDlg::arrowKeyPressed(WPARAM wParam)
 						}
 					}
 					//alle Buttons rechts von dem bereits vergebenne werden durchsucht, bis ein freier gefunden wurde
-					for(i=0; i<maxStepsRight; i++)
+					for(int i=0; i<maxStepsRight; i++)
 					{
 						//+i+1, da i bei 0 anfängt zu zählen
 						if(numbersTemp[buttonID-IDC_BUTTON01+20+tab*MAX_ZAHLENHAI_BUTTON + i+2] == FREE)
@@ -1565,7 +1566,7 @@ void CMFCZahlenHaiDlg::arrowKeyPressed(WPARAM wParam)
 						}
 					}
 					//alle Buttons links von dem breits vergebenen werden durchsuchr, bis ein freier gefunden wurde
-					for(i=0; i<maxStepsLeft; i++)
+					for(int i=0; i<maxStepsLeft; i++)
 					{
 						if(numbersTemp[buttonID-IDC_BUTTON01-19+tab*MAX_ZAHLENHAI_BUTTON-i-1]==FREE)
 						{
@@ -1625,7 +1626,7 @@ void CMFCZahlenHaiDlg::nextFreeButtonAbove(int buttonID, int maxStepsLeft, int m
 			break;
 		}
 	}
-	for(i=0; i<maxStepsRight; i++)
+	for(int i=0; i<maxStepsRight; i++)
 	{
 		//+i+1, da i bei 0 anfängt zu zählen
 		if(numbersTemp[buttonID-IDC_BUTTON01-9+tab*MAX_ZAHLENHAI_BUTTON + i+1] == FREE)
@@ -1662,7 +1663,7 @@ void CMFCZahlenHaiDlg::nextFreeButtonBelow(int buttonID, int maxStepsLeft, int m
 			break;
 		}
 	}
-	for(i=0; i<maxStepsRight; i++)
+	for(int i=0; i<maxStepsRight; i++)
 	{
 		//+i+1, da i bei 0 anfängt zu zählen
 		if(numbersTemp[buttonID-IDC_BUTTON01+11+tab*MAX_ZAHLENHAI_BUTTON+i+1]==FREE)

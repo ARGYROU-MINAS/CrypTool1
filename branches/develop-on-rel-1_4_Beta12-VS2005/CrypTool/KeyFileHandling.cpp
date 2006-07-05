@@ -754,27 +754,27 @@ int CKeyFile::ExtractData(CString filename, char **ctstr, char **creatime, char 
 	struct tm *timeofcreat;
 	timeofcreat = localtime( &elapstime );
 	char sec[3];
-	_itoa(timeofcreat->tm_sec, sec, 10);
+	_itoa_s(timeofcreat->tm_sec, sec,strlen(sec), 10);
 	CString Sec = (CString) sec;
 	if (Sec.GetLength() < 2) Sec = ((CString)"0") + Sec; // 0,1,2, .., 9 sek --> 00,01,02, .., 09 sek
 	char min[3];
-	_itoa(timeofcreat->tm_min, min, 10);
+	_itoa_s(timeofcreat->tm_min, min,strlen(min), 10);
 	CString Min = (CString) min;
 	if (Min.GetLength() < 2) Min = ((CString)"0") + Min; // 0,1,2, .., 9 min --> 00,01,02, .., 09 min
 	char hour[3];
-	_itoa(timeofcreat->tm_hour, hour, 10);
+	_itoa_s(timeofcreat->tm_hour, hour,strlen(hour), 10);
 	CString Hour = (CString) hour;
 	if (Hour.GetLength() < 2) Hour = ((CString)"0") + Hour; // 0,1,2, .., 9 std --> 00,01,02, .., 09 std
 	char mday[3];
-	_itoa(timeofcreat->tm_mday, mday, 10);
+	_itoa_s(timeofcreat->tm_mday, mday,strlen(mday), 10);
 	CString Mday = (CString) mday;
 	if (Mday.GetLength() < 2) Mday = ((CString)"0") + Mday; // 1,2, .., 9  --> 01,02, .., 09 
 	char month[3];
-	_itoa(timeofcreat->tm_mon+1, month, 10);
+	_itoa_s(timeofcreat->tm_mon+1, month,strlen(month), 10);
 	CString Month = (CString) month;
 	if (Month.GetLength() < 2) Month = ((CString)"0") + Month; // 1,2, .., 9  --> 01,02, .., 09 
 	char year[5];
-	_itoa(timeofcreat->tm_year+1900, year, 10);
+	_itoa_s(timeofcreat->tm_year+1900, year,strlen(year), 10);
 
 	CreatTime = Mday + ((CString)".") + Month + ((CString)".") + (CString) year + ((CString)" ") + Hour + ((CString)":") + Min + ((CString)":") + Sec; 
 	LPTSTR string5 = new TCHAR[CreatTime.GetLength()+1];

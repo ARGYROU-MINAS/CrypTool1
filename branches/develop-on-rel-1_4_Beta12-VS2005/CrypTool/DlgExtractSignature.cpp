@@ -158,7 +158,7 @@ BOOL CDlgExtractSignature::OnInitDialog()
 	LONG defaultFontWeight;
 	CFont *defaultFont = m_DefEditCtrl.GetFont();
 	defaultFont->GetLogFont( &LogFont ); // Default Systemschrift ermitteln
-	strncpy(DefaultFontName, LogFont.lfFaceName, 32); // Default Wert sichern
+	strncpy_s(DefaultFontName, strlen(DefaultFontName),LogFont.lfFaceName, 32); // Default Wert sichern
 	defaultFontWeight = LogFont.lfWeight; // Default Wert sichern
 	LogFont.lfWeight = FW_BOLD; // Auf Fettdruck umstellen
 	Font.CreateFontIndirect( &LogFont ); // Font initialisieren
@@ -169,7 +169,7 @@ BOOL CDlgExtractSignature::OnInitDialog()
 	m_TextAlgCtrl.SetFont(&Font);
 
 	LogFont.lfWeight = defaultFontWeight; // Auf default Wert zurückstellen
-	strncpy(LogFont.lfFaceName, "Courier", 32); // Auf Courier umstellen
+	strncpy_s(LogFont.lfFaceName,strlen(LogFont.lfFaceName), "Courier", 32); // Auf Courier umstellen
 	Font2.CreateFontIndirect( &LogFont ); // Font2 initialisieren
     m_MessageCtrl.SetFont(&Font2);
 	m_SignatureCtrl.SetFont(&Font2);
@@ -330,7 +330,7 @@ BOOL CDlgExtractSignature::OnInitDialog()
 	}
 	// Länge der signierten Nachricht
 	char buffer[30];
-	_itoa( message.noctets, buffer, 10 );
+	_itoa_s( message.noctets, buffer,strlen(buffer), 10 );
 	LoadString(AfxGetInstanceHandle(),IDS_STRING_SIGNATURE_MESSAGE_LENGTH,pc_str1,STR_LAENGE_STRING_TABLE);
 	sprintf(pc_str, pc_str1,((CString)buffer));
 	m_MessageLength = (CString) pc_str;
@@ -345,7 +345,7 @@ BOOL CDlgExtractSignature::OnInitDialog()
 		int signlength = theApp.SecudeLib.lngtouse(c)+theApp.SecudeLib.lngtouse(d)+2;// Bit-Länge der Signatur
 
 		char buffer[30];
-		_itoa( signlength, buffer, 10 );
+		_itoa_s( signlength, buffer,strlen(buffer), 10 );
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_SIGNATURE_LENGTH,pc_str1,STR_LAENGE_STRING_TABLE);
 		sprintf(pc_str, pc_str1,((CString)buffer));
 		m_SignatureLength = (CString) pc_str;
@@ -376,7 +376,7 @@ BOOL CDlgExtractSignature::OnInitDialog()
 		free(sigdata);
 		
 		char buffer[30];
-		_itoa( Signatur.signature.nbits, buffer, 10 );
+		_itoa_s( Signatur.signature.nbits, buffer,strlen(buffer), 10 );
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_SIGNATURE_LENGTH,pc_str1,STR_LAENGE_STRING_TABLE);
 		sprintf(pc_str, pc_str1,((CString)buffer));
 		m_SignatureLength = (CString) pc_str;
@@ -550,7 +550,7 @@ int CDlgExtractSignature::UpdateSigEditBox()
 			UpdateData(FALSE);
 			
 			char buffer[30];
-			_itoa( Signatur.signature.nbits, buffer, 10 );
+			_itoa_s( Signatur.signature.nbits, buffer,strlen(buffer), 10 );
 			LoadString(AfxGetInstanceHandle(),IDS_STRING_SIGNATURE_LENGTH,pc_str1,STR_LAENGE_STRING_TABLE);
 			sprintf(pc_str, pc_str1,((CString)buffer));
 			m_SignatureLength = (CString) pc_str;

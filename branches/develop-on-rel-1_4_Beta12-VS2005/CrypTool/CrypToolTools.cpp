@@ -180,7 +180,7 @@ BOOL CT_READ_REGISTRY_DEFAULT	(char *value, const char *ID, const char *default_
 {
 	if (ERROR_SUCCESS != theApp.localRegistry.QueryValue(value, ID, &length))
 	{
-		strncpy(value, default_value, length-1);
+		strncpy_s(value,strlen(value), default_value, length-1);
 		value[length-1]='\0';
 		if (ERROR_SUCCESS != theApp.localRegistry.SetValue(value, ID))
 			return FALSE;

@@ -477,19 +477,19 @@ void CDlgKeyAsymGeneration::UpdateEcListBox(EcDomParam_ac_ptr curveParameter, Ec
 		m_dom_param_listview.SetItemText( 1, 1, ecParamString->a );
 		// l = lngtouse(L_NUMBER r); /* l+1 == (length of r in bits) */
 		bitlength = theApp.SecudeLib.lngtouse(curveParameter->E->a);
-		_itoa(bitlength+1, pc_str, 10);
+		_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 		m_dom_param_listview.SetItemText( 2, 2, pc_str ); // Bitlänge von a
 
 		m_dom_param_listview.InsertItem( 2, "b" );
 		m_dom_param_listview.SetItemText( 2, 1, ecParamString->b );
 		bitlength = theApp.SecudeLib.lngtouse(curveParameter->E->b);
-		_itoa(bitlength+1, pc_str, 10);
+		_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 		m_dom_param_listview.SetItemText( 2, 2, pc_str ); // Bitlänge von b
 
 		m_dom_param_listview.InsertItem( 3, "p" );
 		m_dom_param_listview.SetItemText( 3, 1, ecParamString->p );
 		bitlength = theApp.SecudeLib.lngtouse(curveParameter->E->p);
-		_itoa(bitlength+1, pc_str, 10);
+		_itoa_s(bitlength+1, pc_str, strlen(pc_str),10);
 		m_dom_param_listview.SetItemText( 3, 2, pc_str ); // Bitlänge von p
 
 	// == EC curve point G = (x,y)
@@ -502,13 +502,13 @@ void CDlgKeyAsymGeneration::UpdateEcListBox(EcDomParam_ac_ptr curveParameter, Ec
 		m_dom_param_listview.InsertItem( 6, "x" );
 		m_dom_param_listview.SetItemText( 6, 1, ecParamString->G_xcoord );
 		bitlength = theApp.SecudeLib.lngtouse(curveParameter->G->x);
-		_itoa(bitlength+1, pc_str, 10);
+		_itoa_s(bitlength+1, pc_str, strlen(pc_str),10);
 		m_dom_param_listview.SetItemText( 6, 2, pc_str ); // Bitlänge von x coord of G
 
 		m_dom_param_listview.InsertItem( 7, "y" );
 		m_dom_param_listview.SetItemText( 7, 1, ecParamString->G_ycoord );
 		bitlength = theApp.SecudeLib.lngtouse(curveParameter->G->y);
-		_itoa(bitlength+1, pc_str, 10);
+		_itoa_s(bitlength+1, pc_str, strlen(pc_str),10);
 		m_dom_param_listview.SetItemText( 7, 2, pc_str ); // Bitlänge von y coord of G
 
 	// == EC kofactor k, the prime number r is the order of G
@@ -521,13 +521,13 @@ void CDlgKeyAsymGeneration::UpdateEcListBox(EcDomParam_ac_ptr curveParameter, Ec
 		m_dom_param_listview.InsertItem( 10, "k" );
 		m_dom_param_listview.SetItemText( 10, 1, ecParamString->k );
 		bitlength = theApp.SecudeLib.lngtouse(curveParameter->k);
-		_itoa(bitlength+1, pc_str, 10);
+		_itoa_s(bitlength+1, pc_str, strlen(pc_str),10);
 		m_dom_param_listview.SetItemText( 10, 2, pc_str ); // Bitlänge von k
 
 		m_dom_param_listview.InsertItem( 11, "r" );
 		m_dom_param_listview.SetItemText( 11, 1, ecParamString->r );
 		bitlength = theApp.SecudeLib.lngtouse(curveParameter->r);
-		_itoa(bitlength+1, pc_str, 10);
+		_itoa_s(bitlength+1, pc_str, strlen(pc_str),10);
 		m_dom_param_listview.SetItemText( 11, 2, pc_str ); // Bitlänge von r
 
 		m_dom_param_listview.InsertItem( 12, " " );
@@ -798,7 +798,7 @@ void CDlgKeyAsymGeneration::CreateAsymKeys()
 		char buffer[20];
 		time_t aclock;
 		time( &aclock ); // Get time in seconds
-		_itoa(aclock, buffer, 10);
+		_itoa_s(aclock, buffer, strlen(buffer),10);
 		time_of_creat = (CString) buffer; // time_of_creat: Time in seconds since UTC 1/1/70
 
 		UserKeyId = KeyHandling.CreateFilename(UserName, UserFirstName, EC_KEYFILE_IDSTRING, m_ec_dom_par_str, time_of_creat, m_user_keyinfo);
@@ -842,7 +842,7 @@ void CDlgKeyAsymGeneration::CreateAsymKeys()
 		char buffer[20];
 		time_t aclock;
 		time( &aclock ); // Get time in seconds
-		_itoa(aclock, buffer, 10);
+		_itoa_s(aclock, buffer,strlen(buffer), 10);
 		time_of_creat = (CString) buffer; // time_of_creat: Time in seconds since UTC 1/1/70
 
 		// Anlegen der PSE mit den Daten aus den Eingabefeldern der Dialogbox, dabei werden zusätzliche

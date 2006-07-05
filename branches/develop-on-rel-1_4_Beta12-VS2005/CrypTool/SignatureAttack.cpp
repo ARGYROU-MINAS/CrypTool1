@@ -273,7 +273,7 @@ UINT SignatureAttack::Do_Floyd()
 			m_TotalAttemptsCounter, m_OptSigAtt->GetHashOp()->GetHashAlgorithmID(), m_OptSigAtt->GetSignificantBitLength());
 	}
 	
-	_ftime32(&time_start);	// Zeitmessung beginnt
+	_ftime32_s(&time_start);	// Zeitmessung beginnt
 
 #ifdef _SIG_ATT_HASH_ONLY
 
@@ -339,7 +339,7 @@ UINT SignatureAttack::Do_Floyd()
 				memcpy(HashValue_confirm_step, HashValue_init, HashAlgorithmByteLength);
 				if (true == CollisionConfirmation(HashValue_single_step, HashValue_confirm_step))
 				{
-					_ftime32(&time_finish);	// Zeitmessung endet
+					_ftime32_s(&time_finish);	// Zeitmessung endet
 					DocumentsFound = true;	// aüßere while-Schleife wird verlassen
 				}
 				
@@ -374,7 +374,7 @@ UINT SignatureAttack::Do_Floyd()
 		{
 			if (false == DocumentsFound)
 			{
-				_ftime32(&time_finish);	// Zeitmessung endet
+				_ftime32_s(&time_finish);	// Zeitmessung endet
 			}
 
 			break;	// es wurden 10 Runs durchlaufen und kein Nachrichtenpaar gefunden -> Suche beenden

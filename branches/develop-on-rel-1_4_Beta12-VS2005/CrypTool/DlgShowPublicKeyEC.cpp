@@ -181,17 +181,17 @@ void CDlgShowPublicKeyEC::UpdateEcListBox()
 	m_dom_param_listview.InsertItem( 1, "a" );
 	m_dom_param_listview.SetItemText( 1, 1, ecParamString.a );
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->E->a);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 	m_dom_param_listview.SetItemText( 2, 2, pc_str ); // Bitlänge von a
 	m_dom_param_listview.InsertItem( 2, "b" );
 	m_dom_param_listview.SetItemText( 2, 1, ecParamString.b );
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->E->b);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 	m_dom_param_listview.SetItemText( 2, 2, pc_str ); // Bitlänge von b
 	m_dom_param_listview.InsertItem( 3, "p" );
 	m_dom_param_listview.SetItemText( 3, 1, ecParamString.p );
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->E->p);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str, strlen(pc_str),10);
 	m_dom_param_listview.SetItemText( 3, 2, pc_str ); // Bitlänge von p
 // == EC curve point G = (x,y)
 	m_dom_param_listview.InsertItem( 4, " " );
@@ -202,12 +202,12 @@ void CDlgShowPublicKeyEC::UpdateEcListBox()
 	m_dom_param_listview.InsertItem( 6, "x" );
 	m_dom_param_listview.SetItemText( 6, 1, ecParamString.G_xcoord );
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->G->x);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 	m_dom_param_listview.SetItemText( 6, 2, pc_str ); // Bitlänge von x coord of G
 	m_dom_param_listview.InsertItem( 7, "y" );
 	m_dom_param_listview.SetItemText( 7, 1, ecParamString.G_ycoord );
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->G->y);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 	m_dom_param_listview.SetItemText( 7, 2, pc_str ); // Bitlänge von y coord of G
 // == EC kofactor k, the prime number r is the order of G
 	m_dom_param_listview.InsertItem( 8, " " );
@@ -218,12 +218,12 @@ void CDlgShowPublicKeyEC::UpdateEcListBox()
 	m_dom_param_listview.InsertItem( 10, "k" );
 	m_dom_param_listview.SetItemText( 10, 1, ecParamString.k );
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->k);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 	m_dom_param_listview.SetItemText( 10, 2, pc_str ); // Bitlänge von k
 	m_dom_param_listview.InsertItem( 11, "r" );
 	m_dom_param_listview.SetItemText( 11, 1, ecParamString.r );
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->r);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 	m_dom_param_listview.SetItemText( 11, 2, pc_str ); // Bitlänge von r
 	m_dom_param_listview.InsertItem( 12, " " );
 
@@ -232,11 +232,11 @@ void CDlgShowPublicKeyEC::UpdateEcListBox()
 	m_pubKey_listview.InsertItem( 0, " ");
 	m_pubKey_listview.InsertItem( 1, ((CString)"x = ") + ecParamString.pubKey_xcoord);
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->pubKey->x);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str,strlen(pc_str), 10);
 	m_pubKey_listview.SetItemText( 1, 1, pc_str ); // Bitlänge von x
 	m_pubKey_listview.InsertItem( 2, ((CString)"y = ") + ecParamString.pubKey_ycoord);
 	bitlength = theApp.SecudeLib.lngtouse(curveParameter->pubKey->y);
-	_itoa(bitlength+1, pc_str, 10);
+	_itoa_s(bitlength+1, pc_str, strlen(pc_str),10);
 	m_pubKey_listview.SetItemText( 2, 1, pc_str ); // Bitlänge von y
 	m_pubKey_listview.InsertItem( 3, " ");
 }

@@ -264,7 +264,7 @@ BOOL CDlgKeyHomophone::OnInitDialog()
 	LOGFONT LogFont;
 	CFont *defaultFont=m_listview.GetFont();				// this->GetFont() sollte auch funktionieren
 	defaultFont->GetLogFont(&LogFont);						// Default Systemschrift ermitteln
-	strncpy(LogFont.lfFaceName,"Courier",32);				// Auf Courier umstellen
+	strncpy_s(LogFont.lfFaceName,strlen(LogFont.lfFaceName),"Courier",32);				// Auf Courier umstellen
 	m_Font.CreateFontIndirect(&LogFont);					// Font initialisieren
 	m_listview.SetFont(&m_Font);
 
@@ -371,9 +371,9 @@ void CDlgKeyHomophone::LoadListBox()
 	// Insert CPlayfairLetter
 			for (k=0; k<=6; k++) string[k] =' '; 
 			string[k] = 0;
-			if ( char(i) == '\n' )      strncpy(string, "<LF>", 4); 
-			else if ( char(i) == '\t' ) strncpy(string, "<TAB>", 5);
-			else if ( char(i) == '\r' ) strncpy(string, "<CR>", 4); 
+			if ( char(i) == '\n' )      strncpy_s(string,strlen(string), "<LF>", 4); 
+			else if ( char(i) == '\t' ) strncpy_s(string,strlen(string), "<TAB>", 5);
+			else if ( char(i) == '\r' ) strncpy_s(string,strlen(string), "<CR>", 4); 
 			else string[0]=i;
 
 			j=m_listview.InsertItem(i,string);

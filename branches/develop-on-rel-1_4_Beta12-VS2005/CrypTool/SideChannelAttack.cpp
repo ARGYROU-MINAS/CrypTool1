@@ -87,14 +87,14 @@ void HybridEncryptedFileInfo::free()
 
 void HybridEncryptedFileInfo::operator=(HybridEncryptedFileInfo &_hi)
 {
-	strncpy(receiverString, _hi.receiverString, SCA_MAX_LENGTH_RECEIVERSTRING);
-	strncpy(receiverFirstname, _hi.receiverFirstname, SCA_MAX_LENGTH_RECEIVERFIRSTNAME);
-	strncpy(receiverLastname, _hi.receiverLastname, SCA_MAX_LENGTH_RECEIVERLASTNAME);
-	strncpy(receiverKeyType, _hi.receiverKeyType, SCA_MAX_LENGTH_RECEIVERKEYTYPE);
-	strncpy(receiverIDStamp, _hi.receiverIDStamp, SCA_MAX_LENGTH_RECEIVERIDSTAMP);
-	strncpy(sessionKeyLength, _hi.sessionKeyLength, SCA_MAX_LENGTH_SESSIONKEYLENGTH);
-	strncpy(symmetricMethod, _hi.symmetricMethod, SCA_MAX_LENGTH_SYMMETRICMETHOD);
-	strncpy(asymmetricMethod, _hi.asymmetricMethod, SCA_MAX_LENGTH_ASYMMETRICMETHOD);
+	strncpy_s(receiverString, strlen(receiverString), _hi.receiverString, SCA_MAX_LENGTH_RECEIVERSTRING);
+	strncpy_s(receiverFirstname,strlen(receiverFirstname), _hi.receiverFirstname, SCA_MAX_LENGTH_RECEIVERFIRSTNAME);
+	strncpy_s(receiverLastname,strlen(receiverLastname), _hi.receiverLastname, SCA_MAX_LENGTH_RECEIVERLASTNAME);
+	strncpy_s(receiverKeyType,strlen(receiverKeyType), _hi.receiverKeyType, SCA_MAX_LENGTH_RECEIVERKEYTYPE);
+	strncpy_s(receiverIDStamp,strlen(receiverIDStamp), _hi.receiverIDStamp, SCA_MAX_LENGTH_RECEIVERIDSTAMP);
+	strncpy_s(sessionKeyLength,strlen(sessionKeyLength), _hi.sessionKeyLength, SCA_MAX_LENGTH_SESSIONKEYLENGTH);
+	strncpy_s(symmetricMethod, strlen(symmetricMethod),_hi.symmetricMethod, SCA_MAX_LENGTH_SYMMETRICMETHOD);
+	strncpy_s(asymmetricMethod,strlen(asymmetricMethod), _hi.asymmetricMethod, SCA_MAX_LENGTH_ASYMMETRICMETHOD);
 
 	if(sessionKeyEncrypted.octets) delete sessionKeyEncrypted.octets;
 	sessionKeyEncrypted.octets = new char[_hi.sessionKeyEncrypted.noctets];
@@ -1305,11 +1305,11 @@ void extractHybridEncryptedFileInformation(const char *receivedFile, hybEncInfo 
 	extractCertInfo(receivedFile, receiverFirstname, receiverLastname, receiverKeyType, receiverIDStamp, receiverKeyId);
 
 	// Rückgabestruktur definieren
-	strcpy_s(hi.receiverFirstname, (char*)(LPCTSTR)receiverFirstname);
-	strcpy_s(hi.receiverLastname, (char*)(LPCTSTR)receiverLastname);
-	strcpy_s(hi.receiverKeyType, (char*)(LPCTSTR)receiverKeyType);
-	strcpy_s(hi.receiverIDStamp, (char*)(LPCTSTR)receiverIDStamp);
-	strcpy_s(hi.receiverKeyId, (char*)(LPCTSTR)receiverKeyId);
+	strcpy_s(hi.receiverFirstname,strlen(hi.receiverFirstname), (char*)(LPCTSTR)receiverFirstname);
+	strcpy_s(hi.receiverLastname,strlen(hi.receiverLastname), (char*)(LPCTSTR)receiverLastname);
+	strcpy_s(hi.receiverKeyType,strlen(hi.receiverKeyType), (char*)(LPCTSTR)receiverKeyType);
+	strcpy_s(hi.receiverIDStamp,strlen(hi.receiverIDStamp), (char*)(LPCTSTR)receiverIDStamp);
+	strcpy_s(hi.receiverKeyId,strlen(hi.receiverKeyId), (char*)(LPCTSTR)receiverKeyId);
 
 	hi.sessionKeyEncrypted.octets = new char[encryptedSessionKey->noctets];
 	if(!hi.sessionKeyEncrypted.octets) throw SCA_Error(E_SCA_MEMORY_ALLOCATION);
@@ -1437,7 +1437,7 @@ void getPublicKey(const char *_f, const char *_l, const char *_t, char *publicKe
 	// cDB_keyid_name: unter diesem Bezeichner/Namen wurde das Zertifikat in die CA-Datenbank geschrieben	
 
 	LPTSTR string3 = new TCHAR[caDB_keyid_name.GetLength()+1];
-	_tcscpy(string3, caDB_keyid_name);
+	strcpy_s(string3,strlen(string3), caDB_keyid_name);
 	char *string4=string3; // string4 wird benutzt, um in der CA-Datenbank die Parameter abzufragen 
 
 	// Öffnen der CA-PSE
@@ -1495,7 +1495,7 @@ void getPublicKey(const char *_f, const char *_l, const char *_t, char *publicKe
 
 	}
 	// nicht die ersten beiden Stellen (0x) mit kopieren
-	strcpy(modulusHEX, pc_str+2);
+	strcpy_s(modulusHEX,strlen(modulusHEX), pc_str+2);
 
 	int mlen2 = ki->part2.noctets;
 	unsigned char* buf2 = (unsigned char*) ki->part2.octets;
@@ -1506,5 +1506,5 @@ void getPublicKey(const char *_f, const char *_l, const char *_t, char *publicKe
 
 	}
 	// nicht die ersten beiden Stellen (0x) mit kopieren
-	strcpy(publicKeyHEX, pc_str+2);
+	strcpy_s(publicKeyHEX,strlen(publicKeyHEX), pc_str+2);
 }

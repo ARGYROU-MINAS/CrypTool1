@@ -389,7 +389,7 @@ UINT AutoAnaSubst(PVOID p)
 			if (isalpha((unsigned char)ciphertext[count]) || (space_in_alphabet && ciphertext[count]==0x20))
 				characterNumber++;
 		char tempbuffer[20];
-		_itoa(characterNumber, tempbuffer, 10);
+		_itoa_s(characterNumber, tempbuffer,strlen(tempbuffer), 10);
 		Dialog.setCharacterNumber(tempbuffer);
 
 		if ((lang = guessLanguage(ciphertext)) == LANGUAGE_UNKNOWN_ERROR)

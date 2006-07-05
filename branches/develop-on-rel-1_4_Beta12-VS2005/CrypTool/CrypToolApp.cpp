@@ -673,9 +673,9 @@ void CCrypToolApp::ThreadOpenDocumentFileNoMRU(const char * name, const char * t
 
 	for(i=0;((i<50)&&(OpenBGFlag==2));i++) Sleep(100);
 	OpenBGFlag=2;
-	strncpy(OpenTitle, title, sizeof(OpenTitle)-1);
+	strncpy_s(OpenTitle,strlen(OpenTitle), title, sizeof(OpenTitle)-1);
 	OpenTitle[sizeof(OpenTitle)-1]=0;
-	strncpy(theApp.OpenPath, name, sizeof(OpenPath)-1);
+	strncpy_s(theApp.OpenPath,strlen(theApp.OpenPath), name, sizeof(OpenPath)-1);
 	OpenPath[sizeof(OpenPath)-1]=0;
 	KeyOpenDocumentFile = Key;
 	KeyTypeOpenDocumentFile = KeyType;
@@ -822,7 +822,7 @@ void CCrypToolApp::WinHelpInternal( DWORD_PTR dwData, UINT nCmd)
 			int len = strlen(alinkid);
 			if (len > 0 && len < sizeof(alinkid))
 				alinkid[len++] = '_';
-			strncpy(alinkid+len,mi,sizeof(alinkid)-len);
+			strncpy_s(alinkid+len,strlen(alinkid+len),mi,sizeof(alinkid)-len);
 			alinkid[sizeof(alinkid) - 1] = '\0';
 		}
 		// perpare help macro string

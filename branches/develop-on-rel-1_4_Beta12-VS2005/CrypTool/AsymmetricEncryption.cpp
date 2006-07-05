@@ -182,7 +182,7 @@ BOOL extract( OctetString *in, CString &Result, int ID, int &pos )
 	{
 		char *tmp;
 		tmp = new char[start-pos+1];
-		strncpy( tmp, in->octets+pos, start-pos );
+		strncpy_s( tmp,strlen(tmp), in->octets+pos, start-pos );
 		tmp[start-pos] = '\0';
 		Result = tmp;
 		Result.TrimLeft();
@@ -903,7 +903,7 @@ int PrintSignData(char *infile, const char *OldTitle, OctetString *in, bool& zug
 	theApp.SecudeLib.aux_OctetString2file(&Text,outfile,3);
 	char signlen_in_bits_str[20];
 	// schreibe die zahl signlength im Dezimalsystem nach signlen_in_bits_str
-	_itoa(signlength, signlen_in_bits_str, 10);
+	_itoa_s(signlength, signlen_in_bits_str,strlen(signlen_in_bits_str), 10);
 	Text.noctets=strlen(signlen_in_bits_str);
 	Text.octets=signlen_in_bits_str;
 	theApp.SecudeLib.aux_OctetString2file(&Text,outfile,3);
@@ -1037,7 +1037,7 @@ BOOL PrintSignature(OctetString&		SignText,
 	// Ausgabe: 'Signaturlänge' in Anzahl der Octets
 	char signlength[20];
 	sText.LoadString(IDS_STRING_HEADING_SIGNATURELENGTH);
-	_itoa(Signature.noctets*8, signlength, 10); 
+	_itoa_s(Signature.noctets*8, signlength, strlen(signlength),10); 
 	sText += signlength;
 	//while (sText.GetLength()<16) sText += ' ';
 	Add2OString(&SignText, LPCSTR(sText), sText.GetLength());

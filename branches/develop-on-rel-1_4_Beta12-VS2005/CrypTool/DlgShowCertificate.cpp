@@ -114,7 +114,7 @@ BOOL CDlgShowCertificate::OnInitDialog()
 	LOGFONT LogFont;
 	CFont *defaultFont = m_dummyCtrl.GetFont(); // this->GetFont() sollte auch funktionieren
 	defaultFont->GetLogFont( &LogFont ); // Default Systemschrift ermitteln
-	strncpy(LogFont.lfFaceName, "Courier", 32); // Auf Courier umstellen
+	strncpy_s(LogFont.lfFaceName,strlen(LogFont.lfFaceName), "Courier", 32); // Auf Courier umstellen
 	m_Font.CreateFontIndirect( &LogFont ); // Font initialisieren
 	m_CertEditCtrl.SetFont(&m_Font);
 
