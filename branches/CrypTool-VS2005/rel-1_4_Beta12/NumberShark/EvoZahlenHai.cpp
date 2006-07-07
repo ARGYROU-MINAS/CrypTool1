@@ -453,11 +453,11 @@ CString EvoZahlenHai::setSeperators(int seperateNumber)
 	
 	//fängt an der linken Seite des Strings an zu suchen und gibt das erste gefundene Zeichen wieder
 	//nicht 0 basiert
-	int stelle=zahl.Find(".", 0);
+//	int stelle=zahl.Find(".", 0);
 
 	//beginnt bei an der linken Seite des Strings zu suchen und gibt das letzte gefundene Zeichen wieder
 	//nicht 0 basiert
-	int stelle2=zahl.ReverseFind('.');
+//	int stelle2=zahl.ReverseFind('.');
 
 	for(int i=zahl.GetLength(); i>=1; i--)
 	{
