@@ -1758,7 +1758,8 @@ int CMFCZahlenHaiDlg::readRegistry()
 	if(returnKey == ERROR_SUCCESS)
 	{
 		regKey.Open(HKEY_CURRENT_USER, "Software\\Zahlenhai\\Settings",KEY_ALL_ACCESS);
-		strcpy(valueName, "OptionenSettings");
+//		strcpy(valueName, "OptionenSettings");
+		strcpy_s(valueName, "OptionenSettings");
 		regKey.QueryStringValue(valueName,valueOptionen, &strLength);
         optionenSetting=valueOptionen;
 		
