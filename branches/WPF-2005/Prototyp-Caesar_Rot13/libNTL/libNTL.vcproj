@@ -4,6 +4,7 @@
 	Version="8,00"
 	Name="libNTL"
 	ProjectGUID="{D11F006A-BAEF-43B8-8EF6-FED5021E17F2}"
+	RootNamespace="libNTL"
 	Keyword="MFCProj"
 	>
 	<Platforms>
@@ -93,7 +94,7 @@
 			Name="Debug|Win32"
 			OutputDirectory=".\Debug"
 			IntermediateDirectory=".\Debug"
-			ConfigurationType="4"
+			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="1"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -116,11 +117,14 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalOptions="/clr"
 				Optimization="0"
 				AdditionalIncludeDirectories=".\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
-				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
+				ExceptionHandling="0"
+				BasicRuntimeChecks="0"
+				SmallerTypeCheck="false"
+				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
 				PrecompiledHeaderFile=".\Debug/libNTL.pch"
 				AssemblerListingLocation=".\Debug/"
@@ -128,7 +132,7 @@
 				ProgramDataBaseFileName=".\Debug/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
 			<Tool
@@ -143,12 +147,13 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				OutputFile=".\Debug\libNTL.lib"
-				SuppressStartupBanner="true"
+				Name="VCLinkerTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -158,6 +163,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -192,7 +203,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -217,7 +228,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -242,7 +253,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -267,7 +278,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -292,7 +303,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -317,7 +328,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -342,7 +353,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -367,7 +378,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -392,7 +403,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -417,7 +428,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -442,7 +453,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -467,7 +478,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -492,7 +503,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -517,7 +528,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -542,7 +553,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -567,7 +578,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -592,7 +603,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -617,7 +628,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -642,7 +653,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -667,7 +678,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -692,7 +703,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -717,7 +728,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -742,7 +753,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -767,7 +778,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -792,7 +803,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -817,7 +828,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -842,7 +853,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -867,7 +878,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -892,7 +903,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -917,7 +928,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -942,7 +953,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -967,7 +978,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -992,7 +1003,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1017,7 +1028,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1042,7 +1053,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1067,7 +1078,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1092,7 +1103,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1117,7 +1128,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1142,7 +1153,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1167,7 +1178,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1192,7 +1203,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1217,7 +1228,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1242,7 +1253,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1267,7 +1278,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1292,7 +1303,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1317,7 +1328,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1342,7 +1353,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1367,7 +1378,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1392,7 +1403,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1417,7 +1428,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1442,7 +1453,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1467,7 +1478,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1492,7 +1503,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1517,7 +1528,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1542,7 +1553,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1567,7 +1578,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1592,7 +1603,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1617,7 +1628,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1642,7 +1653,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1667,7 +1678,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1692,7 +1703,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1717,7 +1728,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1742,7 +1753,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1767,7 +1778,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1792,7 +1803,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1817,7 +1828,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1842,7 +1853,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1867,7 +1878,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1892,7 +1903,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1917,7 +1928,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1942,7 +1953,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1967,7 +1978,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1992,7 +2003,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2017,7 +2028,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2042,7 +2053,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2067,7 +2078,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2092,7 +2103,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2117,7 +2128,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2142,7 +2153,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2167,7 +2178,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2192,7 +2203,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2217,7 +2228,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2242,7 +2253,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2267,7 +2278,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2292,7 +2303,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2317,7 +2328,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2342,7 +2353,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2367,7 +2378,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2392,7 +2403,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2417,7 +2428,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2442,7 +2453,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2467,7 +2478,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2492,7 +2503,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>
@@ -2517,7 +2528,7 @@
 						Optimization="0"
 						AdditionalIncludeDirectories=""
 						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
+						BasicRuntimeChecks="0"
 					/>
 				</FileConfiguration>
 			</File>

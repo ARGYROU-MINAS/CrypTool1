@@ -16,6 +16,7 @@ namespace CrypTool
         public App()
         {
             InitializeComponent();
+
         }
 
     }

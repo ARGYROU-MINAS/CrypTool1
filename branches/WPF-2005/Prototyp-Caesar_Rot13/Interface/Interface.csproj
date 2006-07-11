@@ -33,12 +33,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface.cs" />
+    <Compile Include="Rot13Caesar.cs" />
+    <Compile Include="TextOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AppLogic\AppLogic.vcproj">
-      <Project>{1375BD94-148F-4F7B-9DC5-7F5E98ED25F9}</Project>
+    <ProjectReference Include="..\AppLogic\AppLogic.csproj">
+      <Project>{B304A45A-CFE6-42D2-9D8D-450117EB76A9}</Project>
       <Name>AppLogic</Name>
     </ProjectReference>
   </ItemGroup>

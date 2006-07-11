@@ -46,7 +46,6 @@ namespace CrypTool
         private void CreateDlgTippsNTricks()
         {
             dlgTippsNTricks = new DlgTippsNTricks();
-            dlgTippsNTricks.
             dlgTippsNTricks.Show();
         }
 
