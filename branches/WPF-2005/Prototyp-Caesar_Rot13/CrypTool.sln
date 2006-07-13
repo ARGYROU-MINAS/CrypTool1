@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "CrypTool\GUI.csproj", "{9E533973-2017-40CE-A2E8-1CE3EB92B304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interface\Interfaces.csproj", "{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibAnalyse", "libanalyse\LibAnalyse.vcproj", "{8C1D5DE7-80B6-4510-BB64-9F271F0E3C37}"
 EndProject

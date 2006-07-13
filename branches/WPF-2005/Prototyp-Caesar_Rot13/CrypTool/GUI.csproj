@@ -120,9 +120,13 @@
     <Resource Include="bitmaps\idr_main.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interface\Interface.csproj">
+    <ProjectReference Include="..\AppLogic\AppLogic.csproj">
+      <Project>{B304A45A-CFE6-42D2-9D8D-450117EB76A9}</Project>
+      <Name>AppLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interface\Interfaces.csproj">
       <Project>{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}</Project>
-      <Name>Interface</Name>
+      <Name>Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

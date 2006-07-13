@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppLogic
 {
-    public class TextOptions
+    public static class TextOptions
     {
         static private String m_alphabet;
         static private String m_StrRefFile;
@@ -22,7 +22,7 @@ namespace AppLogic
         static private bool m_IgnoreCase;
 
 
-        public TextOptions()
+        static TextOptions()
         {
             setStandard();
         }

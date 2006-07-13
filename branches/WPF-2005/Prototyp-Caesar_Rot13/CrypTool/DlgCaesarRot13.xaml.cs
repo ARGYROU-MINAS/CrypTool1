@@ -34,11 +34,11 @@ namespace CrypTool
             String strAlphabetLen;
 
             strAlphabetLen  = "Das Alphabet (";
-            strAlphabetLen += Interface.TextOptions.getAlphabet().Length.ToString();
+            strAlphabetLen += AppLogic.TextOptions.getAlphabet().Length.ToString();
             strAlphabetLen += " Zeichen) wir abgebildet";
 
             label3.Content = strAlphabetLen;
-            textBox2.Text = Interface.TextOptions.getAlphabet();
+            textBox2.Text = AppLogic.TextOptions.getAlphabet();
 
         }
         private void onEncode(object sender, RoutedEventArgs e)
