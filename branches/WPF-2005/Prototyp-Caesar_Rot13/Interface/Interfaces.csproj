@@ -7,8 +7,8 @@
     <ProjectGuid>{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interface</RootNamespace>
-    <AssemblyName>Interface</AssemblyName>
+    <RootNamespace>Interfaces</RootNamespace>
+    <AssemblyName>Interfaces</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,15 +33,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Rot13Caesar.cs" />
-    <Compile Include="TextOptions.cs" />
+    <Compile Include="IEncryptionAlgorithm.cs" />
+    <Compile Include="IEncryptionClassic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AppLogic\AppLogic.csproj">
-      <Project>{B304A45A-CFE6-42D2-9D8D-450117EB76A9}</Project>
-      <Name>AppLogic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
