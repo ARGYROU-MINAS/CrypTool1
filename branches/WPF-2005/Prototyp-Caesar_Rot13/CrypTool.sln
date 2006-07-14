@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "CrypTool\GUI.csproj", "{9E533973-2017-40CE-A2E8-1CE3EB92B304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interface\Interfaces.csproj", "{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibAnalyse", "libanalyse\LibAnalyse.vcproj", "{8C1D5DE7-80B6-4510-BB64-9F271F0E3C37}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibEc", "libec\LibEc.vcproj", "{5EAE4FD1-DCD7-4CE8-A988-1700249BBF04}"
@@ -19,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLogic", "AppLogic\AppLogic.csproj", "{B304A45A-CFE6-42D2-9D8D-450117EB76A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsApplication1", "WindowsApplication1\WindowsApplication1.csproj", "{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,16 +40,6 @@ Global
 		{9E533973-2017-40CE-A2E8-1CE3EB92B304}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9E533973-2017-40CE-A2E8-1CE3EB92B304}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9E533973-2017-40CE-A2E8-1CE3EB92B304}.Release|Win32.ActiveCfg = Release|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{1CA5AF30-E5FC-4589-AFEC-1BE9419DDF87}.Release|Win32.ActiveCfg = Release|Any CPU
 		{8C1D5DE7-80B6-4510-BB64-9F271F0E3C37}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{8C1D5DE7-80B6-4510-BB64-9F271F0E3C37}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
 		{8C1D5DE7-80B6-4510-BB64-9F271F0E3C37}.Debug|Mixed Platforms.Build.0 = Debug|Win32
@@ -100,6 +90,16 @@ Global
 		{B304A45A-CFE6-42D2-9D8D-450117EB76A9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B304A45A-CFE6-42D2-9D8D-450117EB76A9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B304A45A-CFE6-42D2-9D8D-450117EB76A9}.Release|Win32.ActiveCfg = Release|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C4F05109-02AB-4DE1-8CA4-96BF9A9BB6E7}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

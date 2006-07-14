@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AppLogic
+namespace CrypTool.AppLogic
 {
     public static class TextOptions
     {
