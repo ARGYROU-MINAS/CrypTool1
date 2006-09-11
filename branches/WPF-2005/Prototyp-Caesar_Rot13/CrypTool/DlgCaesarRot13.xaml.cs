@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CrypTool.AppLogic;
+using System.Security.Cryptography;
 
 
 namespace CrypTool
@@ -43,7 +45,24 @@ namespace CrypTool
         }
         private void onEncode(object sender, RoutedEventArgs e)
         {
+                        Rot13Caesar rot = new Rot13Caesar();
 
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+            //create Rot13 Encryptor from this instance
+            ICryptoTransform encrypt = rot.CreateEncryptor();
+
+
+
+            CryptoStream cryptostream = new CryptoStream(ms, encrypt, CryptoStreamMode.Write);
+
+
+            cryptostream.Write(Encoding.Unicode.GetBytes(textBox1.Text), 0, Encoding.Unicode.GetBytes(textBox1.Text).Length);
+
+            cryptostream.Close();
+
+   
+            label6.Content = Encoding.Unicode.GetString(ms.ToArray());
         }
     }
 }

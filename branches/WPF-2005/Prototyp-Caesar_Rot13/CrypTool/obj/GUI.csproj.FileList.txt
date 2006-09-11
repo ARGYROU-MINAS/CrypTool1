@@ -46,3 +46,6 @@ D:\Cryptool\SVN\WPF-2005\Prototyp-Caesar_Rot13\CrypTool\obj\Debug\DlgTextOptions
 D:\Cryptool\SVN\WPF-2005\Prototyp-Caesar_Rot13\CrypTool\obj\Debug\DlgTippsNTricks.g.cs
 D:\Cryptool\SVN\WPF-2005\Prototyp-Caesar_Rot13\CrypTool\obj\Debug\App.g.cs
 D:\Cryptool\SVN\WPF-2005\Prototyp-Caesar_Rot13\CrypTool\obj\Debug\CrypTool_MarkupCompile.cache
+.\bin\Debug\PresentationDesignDeveloper.DLL
+.\bin\Debug\PresentationDesignFramework.dll
+.\bin\Debug\PresentationDesignCore.dll
