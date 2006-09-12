@@ -68,7 +68,9 @@
       </MenuItem>
       <MenuItem Name="MenuItem36" Header="Einzelverfahren"/>
       <MenuItem Name="MenuItem37" Header="Analyse"/>
-      <MenuItem Name="MenuItem38" Header="Optionen"/>
+      <MenuItem Name="MenuItem38" Header="Optionen">
+        <MenuItem Name="MenuItemTxtOption" Header="Text Optionen" Click="OpenDlgTextOptions"/>
+      </MenuItem>
       <MenuItem Name="MenuItem39" Header="Fenster"/>
       <MenuItem Name="MenuItem40" Header="Hilfe"/>
     </Menu>

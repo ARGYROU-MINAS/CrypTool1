@@ -21,7 +21,7 @@ namespace CrypTool
 
     public partial class DlgCaesarRot13 : Window
     {
-      
+
         public DlgCaesarRot13()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace CrypTool
         {
             String strAlphabetLen;
 
-            strAlphabetLen  = "Das Alphabet (";
+            strAlphabetLen = "Das Alphabet (";
             strAlphabetLen += AppLogic.TextOptions.getAlphabet().Length.ToString();
             strAlphabetLen += " Zeichen) wir abgebildet";
 
@@ -45,24 +45,34 @@ namespace CrypTool
         }
         private void onEncode(object sender, RoutedEventArgs e)
         {
-                        Rot13Caesar rot = new Rot13Caesar();
+            Rot13Caesar rot = new Rot13Caesar();
 
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
 
             //create Rot13 Encryptor from this instance
             ICryptoTransform encrypt = rot.CreateEncryptor();
 
-
-
             CryptoStream cryptostream = new CryptoStream(ms, encrypt, CryptoStreamMode.Write);
-
 
             cryptostream.Write(Encoding.Unicode.GetBytes(textBox1.Text), 0, Encoding.Unicode.GetBytes(textBox1.Text).Length);
 
             cryptostream.Close();
 
-   
-            label6.Content = Encoding.Unicode.GetString(ms.ToArray());
+            textBox1.Text = Encoding.Unicode.GetString(ms.ToArray());
+        }
+        private void onDecode(object sender, RoutedEventArgs e)
+        {
+            Rot13Caesar rot = new Rot13Caesar();
+
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+            ICryptoTransform decrypt = rot.CreateDecryptor();
+
+            CryptoStream cryptostream = new CryptoStream(ms, decrypt, CryptoStreamMode.Write);
+
+            cryptostream.Write(Encoding.Unicode.GetBytes(textBox1.Text), 0, Encoding.Unicode.GetBytes(textBox1.Text).Length);
+            cryptostream.Close();
+            textBox1.Text = Encoding.Unicode.GetString(ms.ToArray());
         }
     }
 }

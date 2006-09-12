@@ -34,7 +34,7 @@ namespace CrypTool
         private void OpenDlgCaesarRot13(object sender, RoutedEventArgs e)
         {
             DlgCaesarRot13 dlgCaesarRot13 = new DlgCaesarRot13();
-            dlgCaesarRot13.Show();
+            dlgCaesarRot13.ShowDialog();
         }
         private void CreateDlgEdit()
         {
@@ -47,6 +47,11 @@ namespace CrypTool
         {
             dlgTippsNTricks = new DlgTippsNTricks();
             dlgTippsNTricks.Show();
+        }
+        private void OpenDlgTextOptions(object sender, RoutedEventArgs e)
+        {
+            DlgTextOptions dlgTextOption = new DlgTextOptions();
+            dlgTextOption.ShowDialog();
         }
 
     }

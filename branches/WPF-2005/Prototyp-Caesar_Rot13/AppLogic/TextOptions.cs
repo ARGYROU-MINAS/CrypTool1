@@ -27,6 +27,7 @@ namespace CrypTool.AppLogic
             setStandard();
         }
 
+        #region Getter/Setter
         //SetMethods
         public static void setStrRefFile(String strRefFile)
         {
@@ -150,6 +151,7 @@ namespace CrypTool.AppLogic
         {
             return m_IgnoreCase;
         }
-        
+        #endregion
+
     }
 }
