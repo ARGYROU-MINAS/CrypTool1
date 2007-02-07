@@ -7,20 +7,17 @@
 #include <time.h>
 #include "math.h"
 #include "zahl.h"
-#include "MFC-ZahlenHaiDlg.h"
 
 __int64 numberOfRounds;
 
 bool ContinueSearchFromFile;
 
-//int globalPoints;
-int endSearch;
+int globalPoints;
 int maxEndPoints;
 int endTime;
 
 int doSearch;
 
-CMFCZahlenHaiDlg zahlenHaiDlg;
 EvoZahlenHai optimalesSpiel;
 
 CString bestWay;
@@ -168,7 +165,7 @@ void writeSearchState(item *Stack, int StackPointer, int upperLimit, __int64 num
 void SucheNRek(EvoZahlenHai &Spiel, int startTime)
 {
 	item *Stack;
-    endSearch = 0;
+    
 	CStdioFile file;
 	int openStatus;
 	openStatus=file.Open("Test",CFile::modeCreate | CFile::modeReadWrite);
@@ -234,6 +231,7 @@ void SucheNRek(EvoZahlenHai &Spiel, int startTime)
 
 	do {
 
+
 		if (Stack[StackPointer].index <= upperLimit)
 		{
 			//Kontrolle ob die ausgewählte Zahl noch FREE ist 
@@ -281,8 +279,6 @@ void SucheNRek(EvoZahlenHai &Spiel, int startTime)
 			}
 			StackPointer--;
 		}
-		if(endSearch==-1)
-			StackPointer=endSearch;
 	}
 	while (StackPointer >= 0);
 	// wenn keine Zahl mehr FREE ist, wird die ermittelte höchste Punktezahl mit vorherigen
@@ -404,13 +400,9 @@ UINT maxPointsStatic(LPVOID param)
 			bestWay += " , ";
 	}
 
-	//globalPoints = maxEndPoints;
+	globalPoints = maxEndPoints;
 	if(doSearch==0)
 		maxEndPoints = -1;
-
-	if(endSearch != -1)
-        zahlenHaiDlg.calculationResult(maxEndPoints, upperLimit);
-
 	return maxEndPoints;
 }
 

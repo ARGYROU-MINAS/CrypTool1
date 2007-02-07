@@ -95,7 +95,7 @@ statement from your version.
 #include "DlgSolitaireAnalyse.h"
 #include ".\cryptdoc.h"
 
-#include "ECIESMain.h"
+
 
 
 
@@ -281,8 +281,6 @@ BEGIN_MESSAGE_MAP(CCryptDoc, CAppDocument)
 	ON_COMMAND(ID_DECODE_UU, OnDecodeUu)
 	//}}AFX_MSG_MAP
 
-	ON_COMMAND(ID_HYBRID_ECCENC, OnHybridEccEnc)
-	ON_COMMAND(ID_HYBRID_ECCDEC, OnHybridEccDec)
 	END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1421,9 +1419,7 @@ void CCryptDoc::OnAnalyseZufallstestsFrequencytest()
 		CDlgFreqTest FREQT;
 		FREQT.SetCurrentTest( &test );
 		FREQT.init(ContentName, GetTitle());
-		//sprintf(FREQT.tmpStr, "Frequency Test");
-		LoadString(AfxGetInstanceHandle(), IDS_STRING_TEST_FREQ, FREQT.tmpStr, STR_LAENGE_STRING_TABLE);
-		
+		sprintf(FREQT.tmpStr, "Frequency Test");
 		LoadString(AfxGetInstanceHandle(), IDS_STRING_CAPTATION_FREQUENCY_TEST, pc_str, STR_LAENGE_STRING_TABLE);
 		char tmpstr[127];
 		sprintf(tmpstr, pc_str, GetTitle());
@@ -1454,8 +1450,8 @@ void CCryptDoc::OnAnalyseZufallstestsSerialtest()
 		CDlgFreqTest SERT;
 		SERT.SetCurrentTest( &test );
 		SERT.init(ContentName, GetTitle());
-		//sprintf(SERT.tmpStr, "Serial Test");
-		LoadString(AfxGetInstanceHandle(), IDS_STRING_TEST_SERIAL,SERT.tmpStr, STR_LAENGE_STRING_TABLE);
+		sprintf(SERT.tmpStr, "Serial Test");
+
 		LoadString(AfxGetInstanceHandle(), IDS_STRING_CAPTATION_SERIAL_TEST, pc_str, STR_LAENGE_STRING_TABLE);
 		char tmpstr[127];
 		sprintf(tmpstr, pc_str, GetTitle());
@@ -1513,8 +1509,8 @@ void CCryptDoc::OnAnalyseZufallstestsPokertest()
 		POKT.Set_Poker_Flag( TRUE );
 		POKT.SetCurrentTest( &test );
 		POKT.init(ContentName, GetTitle());
-	//	sprintf(POKT.tmpStr, "Poker-Test");
-		LoadString(AfxGetInstanceHandle(),IDS_STRING_TEST_POKER,POKT.tmpStr,STR_LAENGE_STRING_TABLE);
+		sprintf(POKT.tmpStr, "Poker Test");
+
 		LoadString(AfxGetInstanceHandle(),IDS_STRING_CAPTATION_POKER_TEST,pc_str,STR_LAENGE_STRING_TABLE);
 		char tmpStr[256];
 		sprintf( tmpStr, pc_str, GetTitle());
@@ -1841,7 +1837,7 @@ void CCryptDoc::OnRot13caesarAsc()
 	{
 		return;
 	}
-	Rot13CaesarAscFinish(text, ContentName, Dlg.m_key.GetBuffer(1), Dlg.m_Decrypt, GetTitle(), Dlg.m_type,Dlg.firstPosNull);	
+	Rot13CaesarAscFinish(text, ContentName, Dlg.m_key.GetBuffer(1), Dlg.m_Decrypt, GetTitle(), Dlg.m_type);	
 }
 
 
@@ -1981,18 +1977,8 @@ void CCryptDoc::OnEncodeUu()
 
 void CCryptDoc::OnDecodeUu()
 {
+	
     UpdateContent();
 	douudec(ContentName, GetTitle());
-}
 
-void CCryptDoc::OnHybridEccEnc()
-{
-    UpdateContent();
-    ECCEnc(ContentName, GetTitle());
-}
-
-void CCryptDoc::OnHybridEccDec()
-{
-    UpdateContent();
-    ECCDec(ContentName, GetTitle());
 }

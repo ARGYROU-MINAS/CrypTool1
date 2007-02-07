@@ -56,8 +56,6 @@ statement from your version.
 #include "HillEncryption.h"
 #include "ChrTools.h"
 #include "KeyRepository.h"
-#include "DlgHillOptions.h"
-#include "CrypToolTools.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // Dialogfeld CDlgKeyHill5x5 
@@ -65,7 +63,6 @@ statement from your version.
 
 CDlgKeyHill5x5::CDlgKeyHill5x5(CHillEncryption *hillkl, CWnd* pParent /*=NULL*/)
 	: CDialog(CDlgKeyHill5x5::IDD, pParent)
-	, m_pHillAlphInfo(_T(""))
 {
 	hillklasse = hillkl;
 	m_decrypt = 0;
@@ -114,32 +111,6 @@ void CDlgKeyHill5x5::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_EDIT54, m_Feld54);
 	DDX_Control(pDX, IDC_EDIT55, m_Feld55);
 	//}}AFX_DATA_MAP
-	DDX_Control(pDX, IDC_EDIT36, m_Feld36);
-	DDX_Control(pDX, IDC_EDIT37, m_Feld37);
-	DDX_Control(pDX, IDC_EDIT38, m_Feld38);
-	DDX_Control(pDX, IDC_EDIT40, m_Feld40);
-	DDX_Control(pDX, IDC_EDIT46, m_Feld46);
-	DDX_Control(pDX, IDC_EDIT47, m_Feld47);
-	DDX_Control(pDX, IDC_EDIT48, m_Feld48);
-	DDX_Control(pDX, IDC_EDIT49, m_Feld49);
-	DDX_Control(pDX, IDC_EDIT50, m_Feld50);
-	DDX_Control(pDX, IDC_EDIT111, m_Feld111);
-	DDX_Control(pDX, IDC_EDIT57, m_Feld57);
-	DDX_Control(pDX, IDC_EDIT58, m_Feld58);
-	DDX_Control(pDX, IDC_EDIT59, m_Feld59);
-	DDX_Control(pDX, IDC_EDIT56, m_Feld56);
-	DDX_Control(pDX, IDC_EDIT115, m_Feld115);
-	DDX_Control(pDX, IDC_EDIT60, m_Feld60);
-	DDX_Control(pDX, IDC_EDIT61, m_Feld61);
-	DDX_Control(pDX, IDC_EDIT62, m_Feld62);
-	DDX_Control(pDX, IDC_EDIT116, m_Feld116);
-	DDX_Control(pDX, IDC_EDIT117, m_Feld117);
-	DDX_Control(pDX, IDC_EDIT63, m_Feld63);
-	DDX_Control(pDX, IDC_EDIT64, m_Feld64);
-	DDX_Control(pDX, IDC_EDIT69, m_Feld69);
-	DDX_Control(pDX, IDC_EDIT65, m_Feld65);
-	DDX_Control(pDX, IDC_EDIT66, m_Feld66);
-	DDX_Text(pDX, IDC_EDIT3, m_pHillAlphInfo);
 }
 
 
@@ -175,73 +146,10 @@ BEGIN_MESSAGE_MAP(CDlgKeyHill5x5, CDialog)
 	ON_EN_UPDATE(IDC_EDIT53, OnUpdateMat53)
 	ON_EN_UPDATE(IDC_EDIT54, OnUpdateMat54)
 	ON_EN_UPDATE(IDC_EDIT55, OnUpdateMat55)
-
-	ON_EN_UPDATE(IDC_EDIT36, OnUpdateMat36)
-	ON_EN_UPDATE(IDC_EDIT37, OnUpdateMat37)
-	ON_EN_UPDATE(IDC_EDIT38, OnUpdateMat38)
-	ON_EN_UPDATE(IDC_EDIT40, OnUpdateMat40)
-	ON_EN_UPDATE(IDC_EDIT46, OnUpdateMat46)
-	ON_EN_UPDATE(IDC_EDIT47, OnUpdateMat47)
-	ON_EN_UPDATE(IDC_EDIT48, OnUpdateMat48)
-	ON_EN_UPDATE(IDC_EDIT49, OnUpdateMat49)
-	ON_EN_UPDATE(IDC_EDIT50, OnUpdateMat50)
-	ON_EN_UPDATE(IDC_EDIT111, OnUpdateMat111)
-	ON_EN_UPDATE(IDC_EDIT57, OnUpdateMat57)
-	ON_EN_UPDATE(IDC_EDIT58, OnUpdateMat58)
-	ON_EN_UPDATE(IDC_EDIT59, OnUpdateMat59)
-	ON_EN_UPDATE(IDC_EDIT56, OnUpdateMat56)
-	ON_EN_UPDATE(IDC_EDIT115, OnUpdateMat115)
-	ON_EN_UPDATE(IDC_EDIT60, OnUpdateMat60)
-	ON_EN_UPDATE(IDC_EDIT61, OnUpdateMat61)
-	ON_EN_UPDATE(IDC_EDIT62, OnUpdateMat62)
-	ON_EN_UPDATE(IDC_EDIT116, OnUpdateMat116)
-	ON_EN_UPDATE(IDC_EDIT117, OnUpdateMat117)
-	ON_EN_UPDATE(IDC_EDIT63, OnUpdateMat63)
-	ON_EN_UPDATE(IDC_EDIT64, OnUpdateMat64)
-	ON_EN_UPDATE(IDC_EDIT69, OnUpdateMat69)
-	ON_EN_UPDATE(IDC_EDIT65, OnUpdateMat65)
-	ON_EN_UPDATE(IDC_EDIT66, OnUpdateMat66)
-
-	ON_BN_CLICKED(IDC_RADIO6, OnDisableAlphCode)
-	ON_BN_CLICKED(IDC_RADIO7, OnEnableAlphCode)
-
-	ON_BN_CLICKED(IDC_RADIO8, OnRowVectorMatrix)
-	ON_BN_CLICKED(IDC_RADIO9, OnMatrixColumnVector)
-	
-	ON_EN_KILLFOCUS(IDC_EDIT36, OnExitMat36)
-	ON_EN_KILLFOCUS(IDC_EDIT37, OnExitMat37)
-	ON_EN_KILLFOCUS(IDC_EDIT38, OnExitMat38)
-	ON_EN_KILLFOCUS(IDC_EDIT40, OnExitMat40)
-	ON_EN_KILLFOCUS(IDC_EDIT46, OnExitMat46)
-	ON_EN_KILLFOCUS(IDC_EDIT47, OnExitMat47)
-	ON_EN_KILLFOCUS(IDC_EDIT48, OnExitMat48)
-	ON_EN_KILLFOCUS(IDC_EDIT49, OnExitMat49)
-	ON_EN_KILLFOCUS(IDC_EDIT50, OnExitMat50)
-	ON_EN_KILLFOCUS(IDC_EDIT111, OnExitMat111)
-	ON_EN_KILLFOCUS(IDC_EDIT57, OnExitMat57)
-	ON_EN_KILLFOCUS(IDC_EDIT58, OnExitMat58)
-	ON_EN_KILLFOCUS(IDC_EDIT59, OnExitMat59)
-	ON_EN_KILLFOCUS(IDC_EDIT56, OnExitMat56)
-	ON_EN_KILLFOCUS(IDC_EDIT115, OnExitMat115)
-	ON_EN_KILLFOCUS(IDC_EDIT60, OnExitMat60)
-	ON_EN_KILLFOCUS(IDC_EDIT61, OnExitMat61)
-	ON_EN_KILLFOCUS(IDC_EDIT62, OnExitMat62)
-	ON_EN_KILLFOCUS(IDC_EDIT116, OnExitMat116)
-	ON_EN_KILLFOCUS(IDC_EDIT117, OnExitMat117)
-	ON_EN_KILLFOCUS(IDC_EDIT63, OnExitMat63)
-	ON_EN_KILLFOCUS(IDC_EDIT64, OnExitMat64)
-	ON_EN_KILLFOCUS(IDC_EDIT69, OnExitMat69)
-	ON_EN_KILLFOCUS(IDC_EDIT65, OnExitMat65)
-	ON_EN_KILLFOCUS(IDC_EDIT66, OnExitMat66)
-
-
 	ON_BN_CLICKED(IDC_BUTTON3, OnZufaelligerSchluessel)
 	ON_BN_CLICKED(IDC_BUTTON4, OnGroessereSchluessel)
 	ON_BN_CLICKED(IDC_BUTTON5, OnDecrypt)
 	ON_BN_CLICKED(IDC_BUTTON2, OnPasteKey)
-	ON_BN_CLICKED(IDC_BUTTON1,	OnHillOptions)
-
-	ON_BN_CLICKED(IDC_CHECK1, OnVerbose)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -259,386 +167,131 @@ void CDlgKeyHill5x5::OnUpdateMat11()
 	// TODO: Code für die Behandlungsroutine der Steuerelement-Benachrichtigung hier einfügen
 	
 	UpdateFeld(m_pFelder[0][0]);
-	setFeldAlphCode(m_pFelder[0][0],m_pAlphCode[0][0]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat12() 
 {
 	UpdateFeld(m_pFelder[0][1]);
-	setFeldAlphCode(m_pFelder[0][1],m_pAlphCode[0][1]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat13() 
 {
 	UpdateFeld(m_pFelder[0][2]);
-	setFeldAlphCode(m_pFelder[0][2],m_pAlphCode[0][2]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat14() 
 {
 	UpdateFeld(m_pFelder[0][3]);
-	setFeldAlphCode(m_pFelder[0][3],m_pAlphCode[0][3]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat15() 
 {
 	UpdateFeld(m_pFelder[0][4]);
-	setFeldAlphCode(m_pFelder[0][4],m_pAlphCode[0][4]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat21() 
 {
 	UpdateFeld(m_pFelder[1][0]);
-	setFeldAlphCode(m_pFelder[1][0],m_pAlphCode[1][0]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat22() 
 {
 	UpdateFeld(m_pFelder[1][1]);
-	setFeldAlphCode(m_pFelder[1][1],m_pAlphCode[1][1]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat23() 
 {
 	UpdateFeld(m_pFelder[1][2]);
-	setFeldAlphCode(m_pFelder[1][2],m_pAlphCode[1][2]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat24() 
 {
 	UpdateFeld(m_pFelder[1][3]);
-	setFeldAlphCode(m_pFelder[1][3],m_pAlphCode[1][3]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat25() 
 {
 	UpdateFeld(m_pFelder[1][4]);
-	setFeldAlphCode(m_pFelder[1][4],m_pAlphCode[1][4]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat31() 
 {
 	UpdateFeld(m_pFelder[2][0]);
-	setFeldAlphCode(m_pFelder[2][0],m_pAlphCode[2][0]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat32() 
 {
 	UpdateFeld(m_pFelder[2][1]);
-	setFeldAlphCode(m_pFelder[2][1],m_pAlphCode[2][1]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat33() 
 {
 	UpdateFeld(m_pFelder[2][2]);
-	setFeldAlphCode(m_pFelder[2][2],m_pAlphCode[2][2]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat34() 
 {
 	UpdateFeld(m_pFelder[2][3]);
-	setFeldAlphCode(m_pFelder[2][3],m_pAlphCode[2][3]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat35() 
 {
 	UpdateFeld(m_pFelder[2][4]);
-	setFeldAlphCode(m_pFelder[2][4],m_pAlphCode[2][4]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat41() 
 {
 	UpdateFeld(m_pFelder[3][0]);
-	setFeldAlphCode(m_pFelder[3][0],m_pAlphCode[3][0]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat42() 
 {
 	UpdateFeld(m_pFelder[3][1]);
-	setFeldAlphCode(m_pFelder[3][1],m_pAlphCode[3][1]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat43() 
 {
 	UpdateFeld(m_pFelder[3][2]);
-	setFeldAlphCode(m_pFelder[3][2],m_pAlphCode[3][2]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat44() 
 {
 	UpdateFeld(m_pFelder[3][3]);
-	setFeldAlphCode(m_pFelder[3][3],m_pAlphCode[3][3]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat45() 
 {
 	UpdateFeld(m_pFelder[3][4]);
-	setFeldAlphCode(m_pFelder[3][4],m_pAlphCode[3][4]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat51() 
 {
 	UpdateFeld(m_pFelder[4][0]);
-	setFeldAlphCode(m_pFelder[4][0],m_pAlphCode[4][0]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat52() 
 {
 	UpdateFeld(m_pFelder[4][1]);
-	setFeldAlphCode(m_pFelder[4][1],m_pAlphCode[4][1]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat53() 
 {
 	UpdateFeld(m_pFelder[4][2]);
-	setFeldAlphCode(m_pFelder[4][2],m_pAlphCode[4][2]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat54() 
 {
 	UpdateFeld(m_pFelder[4][3]);
-	setFeldAlphCode(m_pFelder[4][3],m_pAlphCode[4][3]);
 }
 
 void CDlgKeyHill5x5::OnUpdateMat55() 
 {
 	UpdateFeld(m_pFelder[4][4]);
-	setFeldAlphCode(m_pFelder[4][4],m_pAlphCode[4][4]);
-}
-
-void CDlgKeyHill5x5::OnUpdateMat36()
-{
-	UpdateAlphCode(m_pAlphCode[0][0]);
-	setFeldAlph(m_pFelder[0][0],m_pAlphCode[0][0]);
-}
-void CDlgKeyHill5x5::OnUpdateMat37()
-{
-	UpdateAlphCode(m_pAlphCode[0][1]);
-	setFeldAlph(m_pFelder[0][1],m_pAlphCode[0][1]);
-}
-void CDlgKeyHill5x5::OnUpdateMat38()
-{
-	UpdateAlphCode(m_pAlphCode[0][2]);
-	setFeldAlph(m_pFelder[0][2],m_pAlphCode[0][2]);
-}
-void CDlgKeyHill5x5::OnUpdateMat40()
-{
-	UpdateAlphCode(m_pAlphCode[0][3]);
-	setFeldAlph(m_pFelder[0][3],m_pAlphCode[0][3]);
-}
-void CDlgKeyHill5x5::OnUpdateMat46()
-{
-	UpdateAlphCode(m_pAlphCode[0][4]);
-	setFeldAlph(m_pFelder[0][4],m_pAlphCode[0][4]);
-}
-void CDlgKeyHill5x5::OnUpdateMat47()
-{
-	UpdateAlphCode(m_pAlphCode[1][0]);
-	setFeldAlph(m_pFelder[1][0],m_pAlphCode[1][0]);
-}
-void CDlgKeyHill5x5::OnUpdateMat48()
-{
-	UpdateAlphCode(m_pAlphCode[1][1]);
-	setFeldAlph(m_pFelder[1][1],m_pAlphCode[1][1]);
-}
-void CDlgKeyHill5x5::OnUpdateMat49()
-{
-	UpdateAlphCode(m_pAlphCode[1][2]);
-	setFeldAlph(m_pFelder[1][2],m_pAlphCode[1][2]);
-}
-void CDlgKeyHill5x5::OnUpdateMat50()
-{
-	UpdateAlphCode(m_pAlphCode[1][3]);
-	setFeldAlph(m_pFelder[1][3],m_pAlphCode[1][3]);
-}
-void CDlgKeyHill5x5::OnUpdateMat111()
-{
-	UpdateAlphCode(m_pAlphCode[1][4]);
-	setFeldAlph(m_pFelder[1][4],m_pAlphCode[1][4]);
-}
-void CDlgKeyHill5x5::OnUpdateMat57()
-{
-	UpdateAlphCode(m_pAlphCode[2][0]);
-	setFeldAlph(m_pFelder[2][0],m_pAlphCode[2][0]);
-}
-void CDlgKeyHill5x5::OnUpdateMat58()
-{
-	UpdateAlphCode(m_pAlphCode[2][1]);
-	setFeldAlph(m_pFelder[2][1],m_pAlphCode[2][1]);
-}
-void CDlgKeyHill5x5::OnUpdateMat59()
-{
-	UpdateAlphCode(m_pAlphCode[2][2]);
-	setFeldAlph(m_pFelder[2][2],m_pAlphCode[2][2]);
-}
-void CDlgKeyHill5x5::OnUpdateMat56()
-{
-	UpdateAlphCode(m_pAlphCode[2][3]);
-	setFeldAlph(m_pFelder[2][3],m_pAlphCode[2][3]);
-}
-void CDlgKeyHill5x5::OnUpdateMat115()
-{
-	UpdateAlphCode(m_pAlphCode[2][4]);
-	setFeldAlph(m_pFelder[2][4],m_pAlphCode[2][4]);
-}
-void CDlgKeyHill5x5::OnUpdateMat60()
-{
-	UpdateAlphCode(m_pAlphCode[3][0]);
-	setFeldAlph(m_pFelder[3][0],m_pAlphCode[3][0]);
-}
-void CDlgKeyHill5x5::OnUpdateMat61()
-{
-	UpdateAlphCode(m_pAlphCode[3][1]);
-	setFeldAlph(m_pFelder[3][1],m_pAlphCode[3][1]);
-}
-void CDlgKeyHill5x5::OnUpdateMat62()
-{
-	UpdateAlphCode(m_pAlphCode[3][2]);
-	setFeldAlph(m_pFelder[3][2],m_pAlphCode[3][2]);
-}
-void CDlgKeyHill5x5::OnUpdateMat116()
-{
-	UpdateAlphCode(m_pAlphCode[3][3]);
-	setFeldAlph(m_pFelder[3][3],m_pAlphCode[3][3]);
-}
-void CDlgKeyHill5x5::OnUpdateMat117()
-{
-	UpdateAlphCode(m_pAlphCode[3][4]);
-	setFeldAlph(m_pFelder[3][4],m_pAlphCode[3][4]);
-}
-void CDlgKeyHill5x5::OnUpdateMat63()
-{
-	UpdateAlphCode(m_pAlphCode[4][0]);
-	setFeldAlph(m_pFelder[4][0],m_pAlphCode[4][0]);
-}
-void CDlgKeyHill5x5::OnUpdateMat64()
-{
-	UpdateAlphCode(m_pAlphCode[4][1]);
-	setFeldAlph(m_pFelder[4][1],m_pAlphCode[4][1]);
-}
-void CDlgKeyHill5x5::OnUpdateMat69()
-{
-	UpdateAlphCode(m_pAlphCode[4][2]);
-	setFeldAlph(m_pFelder[4][2],m_pAlphCode[4][2]);
-}
-void CDlgKeyHill5x5::OnUpdateMat65()
-{
-	UpdateAlphCode(m_pAlphCode[4][3]);
-	setFeldAlph(m_pFelder[4][3],m_pAlphCode[4][3]);
-}
-void CDlgKeyHill5x5::OnUpdateMat66()
-{
-	UpdateAlphCode(m_pAlphCode[4][4]);
-	setFeldAlph(m_pFelder[4][4],m_pAlphCode[4][4]);
-}
-
-
-void CDlgKeyHill5x5::OnExitMat36()
-{
-	setDoublePos(m_pAlphCode[0][0]);
-}
-void CDlgKeyHill5x5::OnExitMat37()
-{
-	setDoublePos(m_pAlphCode[0][1]);
-}
-void CDlgKeyHill5x5::OnExitMat38()
-{
-	setDoublePos(m_pAlphCode[0][2]);
-}
-void CDlgKeyHill5x5::OnExitMat40()
-{
-	setDoublePos(m_pAlphCode[0][3]);
-}
-void CDlgKeyHill5x5::OnExitMat46()
-{
-	setDoublePos(m_pAlphCode[0][4]);
-}
-void CDlgKeyHill5x5::OnExitMat47()
-{
-	setDoublePos(m_pAlphCode[1][0]);
-}
-void CDlgKeyHill5x5::OnExitMat48()
-{
-	setDoublePos(m_pAlphCode[1][1]);
-}
-void CDlgKeyHill5x5::OnExitMat49()
-{
-	setDoublePos(m_pAlphCode[1][2]);
-}
-void CDlgKeyHill5x5::OnExitMat50()
-{
-	setDoublePos(m_pAlphCode[1][3]);
-}
-void CDlgKeyHill5x5::OnExitMat111()
-{
-	setDoublePos(m_pAlphCode[1][4]);
-}
-void CDlgKeyHill5x5::OnExitMat57()
-{
-	setDoublePos(m_pAlphCode[2][0]);
-}
-void CDlgKeyHill5x5::OnExitMat58()
-{
-	setDoublePos(m_pAlphCode[2][1]);
-}
-void CDlgKeyHill5x5::OnExitMat59()
-{
-	setDoublePos(m_pAlphCode[2][2]);
-}
-void CDlgKeyHill5x5::OnExitMat56()
-{
-	setDoublePos(m_pAlphCode[2][3]);
-}
-void CDlgKeyHill5x5::OnExitMat115()
-{
-	setDoublePos(m_pAlphCode[2][4]);
-}
-void CDlgKeyHill5x5::OnExitMat60()
-{
-	setDoublePos(m_pAlphCode[3][0]);
-}
-void CDlgKeyHill5x5::OnExitMat61()
-{
-	setDoublePos(m_pAlphCode[3][1]);
-}
-void CDlgKeyHill5x5::OnExitMat62()
-{
-	setDoublePos(m_pAlphCode[3][2]);
-}
-void CDlgKeyHill5x5::OnExitMat116()
-{
-	setDoublePos(m_pAlphCode[3][3]);
-}
-void CDlgKeyHill5x5::OnExitMat117()
-{
-	setDoublePos(m_pAlphCode[3][4]);
-}
-void CDlgKeyHill5x5::OnExitMat63()
-{
-	setDoublePos(m_pAlphCode[4][0]);
-}
-void CDlgKeyHill5x5::OnExitMat64()
-{
-	setDoublePos(m_pAlphCode[4][1]);
-}
-void CDlgKeyHill5x5::OnExitMat69()
-{
-	setDoublePos(m_pAlphCode[4][2]);
-}
-void CDlgKeyHill5x5::OnExitMat65()
-{
-	setDoublePos(m_pAlphCode[4][3]);
-}
-void CDlgKeyHill5x5::OnExitMat66()
-{
-	setDoublePos(m_pAlphCode[4][4]);
 }
 
 
 void CDlgKeyHill5x5::UpdateFeld(CEdit *feld)
 {
-	if(!alphCode)
-	{
 	CString cs;
 	feld->GetWindowText(cs);
 
@@ -673,28 +326,8 @@ void CDlgKeyHill5x5::UpdateFeld(CEdit *feld)
 			feld->SetWindowText(cs);
 		}
 	}
-	}
 }
-void CDlgKeyHill5x5::UpdateAlphCode(CEdit *feld)
-{
-	if(alphCode)
-	{
-	CString cs;
-	feld->GetWindowText(cs);
-	if(cs.GetLength() == 2)
-	{
-		if(_ttoi(cs) < 0 || _ttoi(cs) > theApp.TextOptions.m_alphabet.GetLength())
-		{
-			cs.Empty();
-			feld->SetWindowText(cs);
-		}
-		else
-		{
-			NextDlgCtrl();
-		}
-	}
-	}
-}
+
 
 int CDlgKeyHill5x5::Display(CHillEncryption *hillklasse)
 {
@@ -731,22 +364,11 @@ void CDlgKeyHill5x5::OnOK()
 	// Falls die Matrix nicht invertierbar ist, wieder ins Fenster zurueckspringen
 	if ( ! mat->invert(&mat1))
 	{
-		char msg[1024];
 		LoadString(AfxGetInstanceHandle(),IDS_HILL_BAD_KEY_INV,pc_str,STR_LAENGE_STRING_TABLE);
 		LoadString(AfxGetInstanceHandle(),IDS_HILL_BAD_KEY,pc_str1,STR_LAENGE_STRING_TABLE);
-		sprintf(msg,pc_str,getDimMessage(),theApp.TextOptions.m_alphabet.GetLength());
-		MessageBox(msg, pc_str1, MB_ICONWARNING|MB_OK);
-
-		if(!alphCode)
-		{
-			m_pFelder[0][0]->SetFocus();
-			m_pFelder[0][0]->SetSel(0,-1);
-		}
-		else
-		{
-			m_pAlphCode[0][0]->SetFocus();
-			m_pAlphCode[0][0]->SetSel(0,-1);
-		}
+		MessageBox(pc_str, pc_str1, MB_ICONWARNING|MB_OK);
+		m_pFelder[0][0]->SetFocus();
+		m_pFelder[0][0]->SetSel(0,-1);
 		return;
 	}
 	else
@@ -754,11 +376,11 @@ void CDlgKeyHill5x5::OnOK()
 		m_decrypt = 0;
 		CDialog::OnOK();
 	}
-
 }
 
 void CDlgKeyHill5x5::OnDecrypt()
 {
+
 	// Matrizen anlegen und Daten aus Eingabefenster auslesen
 	CSquareMatrixModN mat1(dim,hillklasse->get_modul());
 
@@ -780,22 +402,11 @@ void CDlgKeyHill5x5::OnDecrypt()
 	// Falls die Matrix nicht invertierbar ist, wieder ins Fenster zurueckspringen
 	if ( ! mat->invert(&mat1))
 	{
-		char msg[1024];
 		LoadString(AfxGetInstanceHandle(),IDS_HILL_BAD_KEY_INV,pc_str,STR_LAENGE_STRING_TABLE);
 		LoadString(AfxGetInstanceHandle(),IDS_HILL_BAD_KEY,pc_str1,STR_LAENGE_STRING_TABLE);
-		sprintf(msg,pc_str,getDimMessage(),theApp.TextOptions.m_alphabet.GetLength());
-		MessageBox(msg, pc_str1, MB_ICONWARNING|MB_OK);
-	
-		if(!alphCode)
-		{
-			m_pFelder[0][0]->SetFocus();
-			m_pFelder[0][0]->SetSel(0,-1);
-		}
-		else
-		{
-			m_pAlphCode[0][0]->SetFocus();
-			m_pAlphCode[0][0]->SetSel(0,-1);
-		}
+		MessageBox(pc_str, pc_str1, MB_ICONWARNING|MB_OK);
+		m_pFelder[0][0]->SetFocus();
+		m_pFelder[0][0]->SetSel(0,-1);
 		return;
 	}
 	else
@@ -808,53 +419,8 @@ void CDlgKeyHill5x5::OnDecrypt()
 BOOL CDlgKeyHill5x5::OnInitDialog() 
 {
 	CDialog::OnInitDialog();
-
-	m_Verbose = bGlobVerbose;
 	
-	CheckRadioButton(IDC_RADIO6,IDC_RADIO7,IDC_RADIO6);
-
-	if(iHillMultiplicationType)
-		CheckRadioButton(IDC_RADIO8,IDC_RADIO9,IDC_RADIO8);
-	else
-		CheckRadioButton(IDC_RADIO8,IDC_RADIO9,IDC_RADIO9);
-
 	// TODO: Zusätzliche Initialisierung hier einfügen
-	int len = theApp.TextOptions.m_alphabet.GetLength();
-
-	LoadString(AfxGetInstanceHandle(),IDS_HILL_CASE,pc_str,STR_LAENGE_STRING_TABLE);
-	char l_str[1024];
-	sprintf(l_str,pc_str,len);
-	
-	GetDlgItem(IDC_STATIC_HILL_ALPH)->SetWindowText(l_str);
-
-
-	alphCode = 0;
-	firstPosNull = 1;
-	if(CT_OPEN_REGISTRY_SETTINGS(KEY_READ) == ERROR_SUCCESS)
-	{
-		
-		CT_READ_REGISTRY_DEFAULT(firstPosNull, "firstPosNull", firstPosNull);
-		CT_READ_REGISTRY_DEFAULT(alphCode,"alphCode",alphCode);
-		
-		UpdateData(false);
-
-		CT_CLOSE_REGISTRY();
-	}
-
-	if(!alphCode)
-	{
-		CheckRadioButton(IDC_RADIO6, IDC_RADIO7, IDC_RADIO6);
-	}
-	else
-	{
-		CheckRadioButton(IDC_RADIO6, IDC_RADIO7, IDC_RADIO7);
-	}
-
-
-
-	m_pHillAlphInfo = theApp.TextOptions.m_alphabet;
-
-	UpdateData(FALSE);
 
 	m_pFelder[0][0] = &m_Feld11;
 	m_pFelder[0][1] = &m_Feld12;
@@ -882,33 +448,6 @@ BOOL CDlgKeyHill5x5::OnInitDialog()
 	m_pFelder[4][3] = &m_Feld54;
 	m_pFelder[4][4] = &m_Feld55;
 
-	m_pAlphCode[0][0] = &m_Feld36;
-	m_pAlphCode[0][1] = &m_Feld37;
-	m_pAlphCode[0][2] = &m_Feld38;
-	m_pAlphCode[0][3] = &m_Feld40;
-	m_pAlphCode[0][4] = &m_Feld46;
-	m_pAlphCode[1][0] = &m_Feld47;
-	m_pAlphCode[1][1] = &m_Feld48;
-	m_pAlphCode[1][2] = &m_Feld49;
-	m_pAlphCode[1][3] = &m_Feld50;
-	m_pAlphCode[1][4] = &m_Feld111;
-	m_pAlphCode[2][0] = &m_Feld57;
-	m_pAlphCode[2][1] = &m_Feld58;
-	m_pAlphCode[2][2] = &m_Feld59;
-	m_pAlphCode[2][3] = &m_Feld56;
-	m_pAlphCode[2][4] = &m_Feld115;
-	m_pAlphCode[3][0] = &m_Feld60;
-	m_pAlphCode[3][1] = &m_Feld61;
-	m_pAlphCode[3][2] = &m_Feld62;
-	m_pAlphCode[3][3] = &m_Feld116;
-	m_pAlphCode[3][4] = &m_Feld117;
-	m_pAlphCode[4][0] = &m_Feld63;
-	m_pAlphCode[4][1] = &m_Feld64;
-	m_pAlphCode[4][2] = &m_Feld69;
-	m_pAlphCode[4][3] = &m_Feld65;
-	m_pAlphCode[4][4] = &m_Feld66;
-
-
 	
 	// Font mit fester Breite erstellen und fuer alle Schluesselfelder setzen
 	cf.CreatePointFont(80,"Courier");
@@ -917,7 +456,6 @@ BOOL CDlgKeyHill5x5::OnInitDialog()
 		for (int j=0; j<HILL_MAX_DIM; j++)
 		{
 			m_pFelder[i][j]->SetFont(&cf);
-			m_pAlphCode[i][j]->SetFont(&cf);
 		}
 	}
 
@@ -959,17 +497,6 @@ BOOL CDlgKeyHill5x5::OnInitDialog()
 
 	AnzeigeDimensionSetzen(dim);
 
-
-
-	//Read the matrix entries from hill10x10
-	for(int i=0;i<dim;i++)
-	{
-		for(int j=0;j<dim;j++)
-		{
-			m_pFelder[i][j]->SetWindowText(sHillGlobalKey[i][j]);
-		}
-	}
-
 	// Die Matrix enthaelt am Ende die Daten der Eingabemaske
 	// Sie wird in der Nachrichtenbehandlungsfunktion "OnOK" angelegt und 
 	// im Destruktor wieder freigegeben.
@@ -991,16 +518,7 @@ BOOL CDlgKeyHill5x5::OnInitDialog()
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX-Eigenschaftenseiten sollten FALSE zurückgeben
 }
-void CDlgKeyHill5x5::OnEnableAlphCode()
-{
-	alphCode = 1;
-	AnzeigeDimensionSetzen(dim);
-}
-void CDlgKeyHill5x5::OnDisableAlphCode()
-{
-	alphCode = 0;
-	AnzeigeDimensionSetzen(dim);
-}
+
 void CDlgKeyHill5x5::OnDimension1() 
 {
 	// TODO: Code für die Behandlungsroutine der Steuerelement-Benachrichtigung hier einfügen
@@ -1009,16 +527,8 @@ void CDlgKeyHill5x5::OnDimension1()
 	iHillSchluesselDim = dim;
 	AnzeigeDimensionSetzen(dim);
 
-	if(!alphCode)
-	{
-		m_pFelder[0][0]->SetFocus();
-		m_pFelder[0][0]->SetSel(0,-1);
-	}
-	else
-	{
-		m_pAlphCode[0][0]->SetFocus();
-		m_pAlphCode[0][0]->SetSel(0,-1);
-	}
+	m_pFelder[0][0]->SetFocus();
+	m_pFelder[0][0]->SetSel(0,-1);
 }
 
 void CDlgKeyHill5x5::OnDimension2() 
@@ -1029,16 +539,8 @@ void CDlgKeyHill5x5::OnDimension2()
 	iHillSchluesselDim = dim;
 	AnzeigeDimensionSetzen(dim);
 
-	if(!alphCode)
-	{
-		m_pFelder[0][0]->SetFocus();
-		m_pFelder[0][0]->SetSel(0,-1);
-	}
-	else
-	{
-		m_pAlphCode[0][0]->SetFocus();
-		m_pAlphCode[0][0]->SetSel(0,-1);
-	}
+	m_pFelder[0][0]->SetFocus();
+	m_pFelder[0][0]->SetSel(0,-1);
 }
 
 void CDlgKeyHill5x5::OnDimension3() 
@@ -1049,16 +551,8 @@ void CDlgKeyHill5x5::OnDimension3()
 	iHillSchluesselDim = dim;
 	AnzeigeDimensionSetzen(dim);
 
-	if(!alphCode)
-	{
-		m_pFelder[0][0]->SetFocus();
-		m_pFelder[0][0]->SetSel(0,-1);
-	}
-	else
-	{
-		m_pAlphCode[0][0]->SetFocus();
-		m_pAlphCode[0][0]->SetSel(0,-1);
-	}
+	m_pFelder[0][0]->SetFocus();
+	m_pFelder[0][0]->SetSel(0,-1);
 }
 
 void CDlgKeyHill5x5::OnDimension4() 
@@ -1069,16 +563,8 @@ void CDlgKeyHill5x5::OnDimension4()
 	iHillSchluesselDim = dim;
 	AnzeigeDimensionSetzen(dim);
 
-	if(!alphCode)
-	{
-		m_pFelder[0][0]->SetFocus();
-		m_pFelder[0][0]->SetSel(0,-1);
-	}
-	else
-	{
-		m_pAlphCode[0][0]->SetFocus();
-		m_pAlphCode[0][0]->SetSel(0,-1);
-	}
+	m_pFelder[0][0]->SetFocus();
+	m_pFelder[0][0]->SetSel(0,-1);
 }
 
 void CDlgKeyHill5x5::OnDimension5() 
@@ -1089,42 +575,12 @@ void CDlgKeyHill5x5::OnDimension5()
 	iHillSchluesselDim = dim;
 	AnzeigeDimensionSetzen(dim);
 
-	if(!alphCode)
-	{
-		m_pFelder[0][0]->SetFocus();
-		m_pFelder[0][0]->SetSel(0,-1);
-	}
-	else
-	{
-		m_pAlphCode[0][0]->SetFocus();
-		m_pAlphCode[0][0]->SetSel(0,-1);
-	}
+	m_pFelder[0][0]->SetFocus();
+	m_pFelder[0][0]->SetSel(0,-1);
 }
 
 void CDlgKeyHill5x5::AnzeigeDimensionSetzen(int dim)
 {
-
-		for(int i=0;i<5;i++)
-		{
-			for(int j=0;j<5;j++)
-			{
-				if(alphCode)
-				{
-					m_pFelder[i][j]->EnableWindow(FALSE);
-					m_pAlphCode[i][j]->EnableWindow(TRUE);
-				}
-				if(!alphCode)
-				{
-					m_pAlphCode[i][j]->EnableWindow(FALSE);
-					m_pFelder[i][j]->EnableWindow(TRUE);
-				}
-			}
-		}
-
-
-
-
-
 	ASSERT ((1 <= dim) && (dim <= HILL_MAX_DIM));
 
 	BOOL mybool;
@@ -1143,22 +599,8 @@ void CDlgKeyHill5x5::AnzeigeDimensionSetzen(int dim)
 				// Eine Eingabe in die Felder darf nicht moeglich sein
 				mybool = FALSE;
 			}
-			if(!alphCode)
-				m_pFelder[i][j]->EnableWindow(mybool);
-			if(alphCode)
-				m_pAlphCode[i][j]->EnableWindow(mybool);
+			m_pFelder[i][j]->EnableWindow(mybool);
 		}
-	}
-
-	if(!alphCode)
-	{
-		m_pFelder[0][0]->SetFocus();
-		m_pFelder[0][0]->SetSel(0,-1);
-	}
-	else
-	{
-		m_pAlphCode[0][0]->SetFocus();
-		m_pAlphCode[0][0]->SetSel(0,-1);
 	}
 }
 
@@ -1181,17 +623,8 @@ int CDlgKeyHill5x5::AlleFelderKorrekt(int dim)
 				LoadString(AfxGetInstanceHandle(),IDS_HILL_BAD_KEY_NONVALID_CHAR,pc_str,STR_LAENGE_STRING_TABLE);
 				LoadString(AfxGetInstanceHandle(),IDS_STRING_ASYMKEY_ERR_INPUT_UNCOMPLETED,pc_str1,STR_LAENGE_STRING_TABLE);
 				MessageBox(pc_str, pc_str1, MB_ICONWARNING|MB_OK);
-				
-				if(!alphCode)
-				{
-					m_pFelder[0][0]->SetFocus();
-					m_pFelder[0][0]->SetSel(0,-1);
-				}
-				else
-				{
-					m_pAlphCode[0][0]->SetFocus();
-					m_pAlphCode[0][0]->SetSel(0,-1);
-				}
+				m_pFelder[i][j]->SetFocus();
+				m_pFelder[i][j]->SetSel(0,-1);
 				return FALSE;
 			}
 		}
@@ -1393,16 +826,6 @@ void CDlgKeyHill5x5::OnZufaelligerSchluessel()
 		MessageBox(pc_str, NULL, MB_ICONERROR|MB_OK);
 
 	}
-
-	CString str;
-	for(int i=0;i<5;i++)
-	{
-		for(int j=0;j<5;j++)
-		{
-			m_pFelder[i][j]->GetWindowText(str);
-			m_pAlphCode[i][j]->SetWindowText(getAlphCode(str));
-		}
-	}
 }
 
 
@@ -1410,26 +833,8 @@ void CDlgKeyHill5x5::OnGroessereSchluessel()
 {
 	// TODO: Code für die Behandlungsroutine der Steuerelement-Benachrichtigung hier einfügen
 
-	UpdateData(true);
-	if ( CT_OPEN_REGISTRY_SETTINGS( KEY_WRITE ) == ERROR_SUCCESS )
-	{
-		CT_WRITE_REGISTRY(unsigned long(firstPosNull), "firstPosNull");
-		CT_WRITE_REGISTRY(unsigned long(alphCode), "alphCode");
-		CT_CLOSE_REGISTRY();
-	}
-
 	iHillSchluesselFensterGroesse = HILL_SCHLUESSEL_GROSS;
-	bGlobVerbose = m_Verbose;
 
-
-	//save matrix entries for hill10x10
-	for(int i=0;i<dim;i++)
-	{
-		for(int j=0;j<dim;j++)
-		{
-			m_pFelder[i][j]->GetWindowText(sHillGlobalKey[i][j]);
-		}
-	}
 	CDialog::OnOK();	
 }
 
@@ -1444,137 +849,3 @@ void CHiEdit::OnLButtonUp(UINT nFlags, CPoint point )
 	CEdit::OnLButtonUp(nFlags,point);
 	SetSel(0, -1);
 } 
-CString CDlgKeyHill5x5::getAlphCode(CString alphChar)
-{
-	CString str;
-	for(int i=0;i<theApp.TextOptions.m_alphabet.GetLength();i++)
-	{
-		if(theApp.TextOptions.m_alphabet[i] == alphChar)
-		{
-			if(getFirstPosNull())
-				str.Format("%d",i);
-			else
-				str.Format("%d",i+1);
-			
-			if(str.GetLength() == 1)
-				str.Insert(0,"0");
-			return str;
-		}
-	}
-	return "";
-}
-CString CDlgKeyHill5x5::getAlphChar(CString alphPos)
-{
-		int pos = _ttoi(alphPos);
-
-		if(!getFirstPosNull())
-			pos--;
-		
-		if(pos < 0 || pos > theApp.TextOptions.m_alphabet.GetLength())
-			return "";
-		else
-			return theApp.TextOptions.m_alphabet[pos];
-}
-void CDlgKeyHill5x5::setFeldAlphCode(CEdit *feld,CEdit *feldAlph)
-{
-	if(!alphCode)
-	{
-		CString str;
-		feld->GetWindowText(str);
-		feldAlph->SetWindowText(getAlphCode(str));
-	}
-}
-void CDlgKeyHill5x5::setFeldAlph(CEdit *feld,CEdit *feldAlph)
-{
-    if(alphCode)
-	{
-		CString str;
-		feldAlph->GetWindowText(str);
-		if(str.GetLength() == 2)
-			feld->SetWindowText(getAlphChar(str));
-	}
-}
-void CDlgKeyHill5x5::setDoublePos(CEdit *feld)
-{
-	CString cs;
-	feld->GetWindowText(cs);
-
-	if(cs.GetLength() == 1)
-	{
-		if(_ttoi(cs) < 1 || _ttoi(cs) > theApp.TextOptions.m_alphabet.GetLength())
-		{
-			cs.Empty();
-			feld->SetWindowText(cs);
-		}
-		else
-		{
-			cs.Insert(0,"0");
-			feld->SetWindowText(cs);
-		}
-		PrevDlgCtrl(); //because Tab and UpdateFeld makes both NextDlgCtrl
-	}
-}
-void CDlgKeyHill5x5::OnRowVectorMatrix()
-{
-	iHillMultiplicationType = 1;
-}
-void CDlgKeyHill5x5::OnMatrixColumnVector()
-{
-	iHillMultiplicationType = 0;
-}
-void CDlgKeyHill5x5::OnHillOptions()
-{
-	DlgHillOptions hillOpt;
-	hillOpt.DoModal();
-	
-	CString str;
-	for(int i=0;i<5;i++)
-	{
-		for(int j=0;j<5;j++)
-		{
-			m_pFelder[i][j]->GetWindowText(str);
-			m_pAlphCode[i][j]->SetWindowText(getAlphCode(str));
-		}
-	}
-
-}
-BOOL CDlgKeyHill5x5::getFirstPosNull()
-{
-	unsigned long firstPosNull;
-
-	firstPosNull = 1;
-	if(CT_OPEN_REGISTRY_SETTINGS(KEY_READ) == ERROR_SUCCESS)
-	{		
-		CT_READ_REGISTRY_DEFAULT(firstPosNull, "firstPosNull", firstPosNull);
-		
-		UpdateData(false);
-
-		CT_CLOSE_REGISTRY();
-	}
-	return firstPosNull;
-}
-CString CDlgKeyHill5x5::getDimMessage()
-{
-	int iHillKeyDim = dim;
-
-	switch (iHillKeyDim)
-	{
-		case 1:	
-			return "1*1";
-		case 2:	
-			return "2*2";
-		case 3:	
-			return "3*3";
-		case 4:	
-			return "4*4";
-		case 5:	
-			return "5*5";
-		default:
-			return "2*2";
-	}
-}
-void CDlgKeyHill5x5::OnVerbose()
-{
-	CButton* pCheck = (CButton*)GetDlgItem(IDC_CHECK1);
-	m_Verbose = pCheck->GetCheck();
-}

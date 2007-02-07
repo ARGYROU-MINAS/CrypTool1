@@ -70,5 +70,4 @@ public:
 	CString disclaimerText;
 	CString infoText;
 	CRichEditCtrl richEditIdea;
-	CStatic accControl;
 };

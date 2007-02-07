@@ -822,10 +822,8 @@ void CDlgPlayfairAnalysis::UpdatePassword()
 		}
 	}
 	p[j--]=0;
-
 	UpdateData(TRUE);
- 	m_password=p;
-//	m_password=m_Alg->CreatePassfromMatrix();
+	m_password=m_Alg->CreatePassfromMatrix();
 	UpdateData(FALSE);
 } 
 

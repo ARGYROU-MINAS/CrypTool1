@@ -65,8 +65,7 @@ statement from your version.
 // Klasse fuer Hill-Cipher
 
 #define HILL_MAX_DIM 5 
-#define HILL_MAX_DIM_GROSS 10
-
+#define HILL_MAX_DIM_GROSS 10 
 
 // Rueckgabewerte der Klasse beim Angriff:
 #define HILL_UNDEF                        -1
@@ -88,8 +87,6 @@ private:
 		*ciphertext;
 	long laenge_plain,   // Laenge der Felder plaintext und ciphertext
         laenge_cipher;
-
-	unsigned long firstPosNull;  //if firstPosNull==1 - >A=0 else A=1
 	
 	// Felder fuer den Angriff (Funktion SucheSchluessel)
 	// Diese Felder haben alle die Laenge modul; der Speicher wird im Konstruktor 
@@ -152,8 +149,6 @@ private:
 	// Hilfsfunktion fuer den Angriff zum Berechnen der Faktoren fuer die
 	// Linearkombination 
 	void BerechneFaktoren(int, long);
-
-	int getPositionOfCharForOutput(int iPos);
 	
 public:
 	CHillEncryption(char*);

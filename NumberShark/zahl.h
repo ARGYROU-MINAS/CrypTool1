@@ -14,7 +14,6 @@ bool isPrime(int upperLimit);
 int getNextIntValue(CString &str, char Sep='|');
 __int64 getNextInt64Value(CString &str, char Sep='|');
 
-//extern int globalPoints;
-extern int endSearch;
+extern int globalPoints;
 UINT maxPointsStatic(LPVOID param);
 

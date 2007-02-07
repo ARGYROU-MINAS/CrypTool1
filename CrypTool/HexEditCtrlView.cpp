@@ -191,8 +191,6 @@ void CHexEditCtrlView::OnHistogram()
 
 void CHexEditCtrlView::OnTotxt()
 {
-	bHexEnabled = false;
-
  	CAppDocument *NewDoc;
  	char outfile[128];
  	BOOL Modified;

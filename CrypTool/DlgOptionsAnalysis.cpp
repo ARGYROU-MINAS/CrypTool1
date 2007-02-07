@@ -64,7 +64,6 @@ static char THIS_FILE[] = __FILE__;
 
 CDlgOptionsAnalysis::CDlgOptionsAnalysis(CWnd* pParent /*=NULL*/)
 	: CDialog(CDlgOptionsAnalysis::IDD, pParent)
-	, i_alphabetOptions(0)
 {
 	//{{AFX_DATA_INIT(CDlgOptionsAnalysis)
 	m_CKey = TRUE;
@@ -76,7 +75,6 @@ CDlgOptionsAnalysis::CDlgOptionsAnalysis(CWnd* pParent /*=NULL*/)
 	m_VBase = FALSE;
 	m_BFEntropyWindow = 128;
 	//}}AFX_DATA_INIT
-	i_alphabetOptions = 0;
 }
 
 static long GetWindowTextAsLong(CWnd *wnd)
@@ -104,7 +102,6 @@ void CDlgOptionsAnalysis::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDIT_ENTROPY_WINDOW, m_BFEntropyWindow);
 	//}}AFX_DATA_MAP
 	//DDV_MinMaxLong(pDX, m_BFEntropyWindow, 32, 4096); // see remark above
-	DDX_Radio(pDX, IDC_RADIO1, i_alphabetOptions);
 }
 
 

@@ -104,8 +104,6 @@ statement from your version.
 #include "DlgSecretSharingSetup.h"
 #include "DlgPrimeTest.h"
 
-#include "HillEncryption.h"
-
 // #if !defined(_MSC_VER) || _MSC_VER <= 1200
 #include "RSABloemerMayDlg.h"
 #include "RSAStereotypedMSGDlg.h"
@@ -135,14 +133,6 @@ char *CaPseDatei; // =Pfad+"/PSE/PSECA/pseca";
 // Werte: siehe CrypTool.h
 int iHillSchluesselFensterGroesse;
 int iHillSchluesselDim;
-CString sHillGlobalKey[HILL_MAX_DIM_GROSS][HILL_MAX_DIM_GROSS];
-int iHillMultiplicationType = 0;  //0: (matrix)*(column vector) 1:(row vector)*(matrix)
-bool bHexEnabled = false;
-bool bGlobVerbose = false;
-
-CString sNotInFileChars;
-int iClearTextAlphCharCount;
-int iClearTextNotAlphCharCount;
 
 // globale Variable, in der immer die Fenster Handle des aktive Fensters steht
 HWND hWndAktivesFenster;
@@ -216,7 +206,6 @@ BEGIN_MESSAGE_MAP(CCrypToolApp, CWinApp)
 // ENDE
 ON_COMMAND(ID_PRIMENUMBER_TEST, OnPrimenumberTest)
 ON_COMMAND(ID_AES_SELFEXTRACT, OnAesSelfextract)
-ON_COMMAND(ID_INDIV_POINTADDITIONONELLIPTICCURVES, OnIndivPointadditiononellipticcurves)
 END_MESSAGE_MAP()
 
 
@@ -327,7 +316,7 @@ BOOL CCrypToolApp::InitInstance()
 
 	//Ende der Initialiserung der globalen Variablen
 
-	SetRegistryKey("HKEY_CURRENT_USER\\Software\\CrypTool\\Most Recently Used Files"); // No .Ini File#
+	// Enable3dControls(); // deprecated, no longer necessary
 	/* Einstellen der Länge der MRU-Liste */
 	LoadStdProfileSettings(10);
     MRU_Flag = TRUE;
@@ -1210,20 +1199,4 @@ void CCrypToolApp::OnAesSelfextract()
 //	int intptr_t = _spawnl(_P_NOWAIT, strmod, strmod, NULL, NULL);
 	int intptr_t = _spawnl(_P_NOWAIT, theApp.m_Selfextract_EXE, str_m_Selfextract_EXE_Quoted, NULL, NULL);
 	// FIXME: Interpret return value of _spawnl
-}
-
-void CCrypToolApp::OnIndivPointadditiononellipticcurves()
-{
-	CString ECCPath, ECCFile, ECCExecutable;
-// Punktaddition auf einer Elliptischen Kurve
-
-	LoadString(AfxGetInstanceHandle(),IDS_ECCDemo_EXECUTABLE,pc_str,STR_LAENGE_STRING_TABLE);
-	ECCExecutable = pc_str; //IDS_ECCDemo_EXECUTABLE     java.exe
-
-	LoadString(AfxGetInstanceHandle(),IDS_ECCDemo_FILE,pc_str,STR_LAENGE_STRING_TABLE);
-	ECCFile = pc_str; //IDS_ECCDemo_FILE .\\ECCDemo.jar
-
-	HINSTANCE hInst=ShellExecute(NULL,NULL,ECCExecutable,ECCFile,NULL,SW_HIDE);
-
-	if ( reinterpret_cast<int>(hInst) <= 32 ) Message(IDS_ERROPEN_ECCDemo, MB_ICONSTOP);
 }

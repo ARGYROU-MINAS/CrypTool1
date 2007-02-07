@@ -61,7 +61,6 @@ statement from your version.
 
 #include "HillEncryption.h"
 #include "CrypToolApp.h"
-#include "CrypToolTools.h"
 #include <string.h>
 
 //////////////////////////////////////////////////////////////////
@@ -111,85 +110,29 @@ void CHillEncryption::init_zahlen_zeichen (char* erlaubte_zeichen)
 	}
 
 	// jetzt die Felder, die gefuellt werden muessen, fuellen
-	if(firstPosNull)
+	for (i=0; i<modul; i++)
 	{
-		for (i=0; i<modul; i++)
-		{
-			//if(!firstPosNull)
-			//	zeichen[i] = erlaubte_zeichen[(i-1) % modul];
-			//else
-				zeichen[i] = erlaubte_zeichen[i];
+		zeichen[i] = erlaubte_zeichen[i];
 
-			// Dieses ASSERT fuehrt zum Abbruch, falls Zeichen im String doppelt vorkommen
-			ASSERT (zahlen[(unsigned char)erlaubte_zeichen[i]] == -1);
+		// Dieses ASSERT fuehrt zum Abbruch, falls Zeichen im String doppelt vorkommen
+		ASSERT (zahlen[(unsigned char)erlaubte_zeichen[i]] == -1);
 
-			//if(!firstPosNull)
-			//	zahlen[(unsigned char)erlaubte_zeichen[i]] = (i+1) % modul;
-			//else
-				zahlen[(unsigned char)erlaubte_zeichen[i]] = i;
-		}
-	}
-	else
-	{
-		for (i=0; i<modul; i++)
-		{
-			
-			zeichen[i] = erlaubte_zeichen[(i+modul-1)%modul];
-
-			// Dieses ASSERT fuehrt zum Abbruch, falls Zeichen im String doppelt vorkommen
-			ASSERT (zahlen[(unsigned char)erlaubte_zeichen[i]] == -1);
-
-			
-			zahlen[(unsigned char)erlaubte_zeichen[i]] = (i+1) % modul;
-		}
-	
+		zahlen[(unsigned char)erlaubte_zeichen[i]] = i;
 	}
 
 	// ASCII-maessig kleinste Zeichen suchen. Dies wird das Fuellzeichen.
 	// wir benutzen hier unsigned Vergleiche, damit das Leerzeichen dann
 	// das Fuellzeichen wird, wenn es im Alphabet vorhanden ist und keine
 	// Steuerzeichen (0x00-0x1f) im Alphabet vorhanden sind.
-	
-	
 	ASSERT(modul >= 1);
-	//read from registry
-	unsigned long useFirstCharFromAlph = 1;
-	CString strOwnCharForPadding;
-
-	if(CT_OPEN_REGISTRY_SETTINGS(KEY_READ) == ERROR_SUCCESS)
+	fuellzeichen = zeichen[0];
+	for (i=0; i<modul; i++)
 	{
-		char cFirstCharFromAlph[1024];
-		CString strAlph = zeichen[0];
-		strncpy(cFirstCharFromAlph,strAlph.GetBuffer(0),strAlph.GetLength());
-		cFirstCharFromAlph[strAlph.GetLength()] = '\0';
-		unsigned long u_length = 1024;
-
-		CT_READ_REGISTRY_DEFAULT(useFirstCharFromAlph, "useFirstCharFromAlph", useFirstCharFromAlph);
-		CT_READ_REGISTRY(cFirstCharFromAlph,"ownCharForPadding",u_length);
-
-		strOwnCharForPadding = cFirstCharFromAlph;
-
-		CT_CLOSE_REGISTRY();
+		if ((unsigned char)zeichen[i] < (unsigned char)fuellzeichen)
+		{
+			fuellzeichen = zeichen[i];
+		}
 	}
-
-	CString strCharForPadding;
-	if(useFirstCharFromAlph == 1)
-		strCharForPadding = zeichen[0];
-	if(useFirstCharFromAlph == 0)
-		strCharForPadding = strOwnCharForPadding;
-	
-	//fuellzeichen = zeichen[0];
-
-	
-	fuellzeichen = *(LPCTSTR)strCharForPadding;
-
-	//for (i=0; i<modul; i++)
-	//{
-	//	if ((unsigned char)zeichen[i] < (unsigned char)fuellzeichen)
-	//	{
-	//		fuellzeichen = zeichen[i];
-	//	}
-	//}
 }
 
 
@@ -202,14 +145,6 @@ void CHillEncryption::init_zahlen_zeichen (char* erlaubte_zeichen)
 // (Die Dimension wird standardmaessig auf 1 gesetzt.)
 CHillEncryption::CHillEncryption(char* erlaubte_zeichen)
 {
-		//read from registry
-	firstPosNull = 1;
-
-	if(CT_OPEN_REGISTRY_SETTINGS(KEY_READ) == ERROR_SUCCESS)
-	{
-		CT_READ_REGISTRY_DEFAULT(firstPosNull, "firstPosNull", firstPosNull);
-		CT_CLOSE_REGISTRY();
-	}
 	init_zahlen_zeichen(erlaubte_zeichen);
 	laPositionVektor = new long[modul];
 	iaLinearKombination1 = new int[modul];
@@ -225,14 +160,6 @@ CHillEncryption::CHillEncryption(char* erlaubte_zeichen)
 // Konstruktor mit Dimension
 CHillEncryption::CHillEncryption(char* erlaubte_zeichen, int d)
 {
-		//read from registry
-	firstPosNull = 1;
-
-	if(CT_OPEN_REGISTRY_SETTINGS(KEY_READ) == ERROR_SUCCESS)
-	{
-		CT_READ_REGISTRY_DEFAULT(firstPosNull, "firstPosNull", firstPosNull);
-		CT_CLOSE_REGISTRY();
-	}
 	init_zahlen_zeichen(erlaubte_zeichen);
 	laPositionVektor = new long[modul];
 	iaLinearKombination1 = new int[modul];
@@ -498,11 +425,7 @@ BOOL CHillEncryption::verschluesseln()
 				long hilf = 0;
 				for (int k=0; k<dim; k++)
 				{
-					if(iHillMultiplicationType)
-						hilf += (*enc_mat)(k,j) * plaintext[dim*i+k];
-					else
-						hilf += (*enc_mat)(j,k) * plaintext[dim*i+k];
-
+					hilf += (*enc_mat)(k,j) * plaintext[dim*i+k];
 					hilf %= modul;
 				}
 				ciphertext[dim*i+j] = hilf;
@@ -535,10 +458,7 @@ BOOL CHillEncryption::verschluesseln()
 		{
 			for (int my_j=0; my_j<dim; my_j++)
 			{
-				if(iHillMultiplicationType)
-					TRACE("%d ", (*enc_mat)(my_i,my_j));
-				else
-					TRACE("%d ", (*enc_mat)(my_j,my_i));
+				TRACE("%d ", (*enc_mat)(my_i,my_j));
 			}
 			TRACE("\n");
 		}
@@ -574,11 +494,7 @@ BOOL CHillEncryption::entschluesseln()
 				long hilf = 0;
 				for (int k=0; k<dim; k++)
 				{
-					if(iHillMultiplicationType)
-						hilf += (*dec_mat)(k,j) * ciphertext[dim*i+k];
-					else
-						hilf += (*dec_mat)(j,k) * ciphertext[dim*i+k];
-
+					hilf += (*dec_mat)(k,j) * ciphertext[dim*i+k];
 					hilf %= modul;
 				}
 				plaintext[dim*i+j] = hilf;
@@ -611,10 +527,7 @@ BOOL CHillEncryption::entschluesseln()
 		{
 			for (int my_j=0; my_j<dim; my_j++)
 			{
-				if(iHillMultiplicationType)
-					TRACE("%3d ", (*dec_mat)(my_i,my_j));
-				else
-					TRACE("%3d ", (*dec_mat)(my_j,my_i));
+				TRACE("%3d ", (*dec_mat)(my_i,my_j));
 			}
 			TRACE("\n");
 		}
@@ -641,38 +554,13 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
     MatOut = _T("");
 	char num[3];
 
-
-	CString strExmpl;
-
-	//reading example from userinput
-	for(int x = 0; x < laenge_plain; x++)
-	{
-		for(int y = 0; y < theApp.TextOptions.m_alphabet.GetLength();y++)
-		{
-			if((CString)my_int_to_char(plaintext[x]) == (CString)theApp.TextOptions.m_alphabet[y])
-			{
-				strExmpl += (CString)my_int_to_char(plaintext[x]);
-				break;
-			}
-		}
-		if(strExmpl.GetLength() == 10)
-			break;
-	}
-
-
-	LPCTSTR example = strExmpl;
-
-
+	const char example[] = "CIPHERTEXT";
 	int  i_act_example[256];
 	char c_act_example[256];  
 	ASSERT(strlen(example) < INT_MAX);
 	for (i=0; i<(int)strlen(example); i++)
 	{
-		if(!firstPosNull)
-			i_act_example[i] = ((example[i] - theApp.TextOptions.m_alphabet[0])+1)%modul;
-		else
-			i_act_example[i] = (example[i] - theApp.TextOptions.m_alphabet[0]) % modul;
-
+		i_act_example[i] = (example[i] - 'A') % modul;
 		c_act_example[i] = (char)my_int_to_char(i_act_example[i]);
 	}
 	c_act_example[dim] = '\0';
@@ -685,31 +573,21 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 	int floor_rows = modul / 4;
 	int remainder = modul % 4;
 
-	int iShiftPos = 0;
-	if(!firstPosNull)iShiftPos = 1;
-
 	LoadString(AfxGetInstanceHandle(),IDS_HILLEXAMPLE_CODE_ALPHABET,pc_str,STR_LAENGE_STRING_TABLE);
 	MatOut = MatOut + CString(pc_str) + '\n';
 	for (i=0; i<=floor_rows; i++)
 	{
 		int ndx = i;
-		
-		
 		if ( i == floor_rows && 0 == remainder ) break;
 		MatOut = MatOut +'\t';
 		for (j=0; j<4; j++)
 		{
 			if (i == floor_rows && j >= remainder) break;
-
-			if(!firstPosNull)
-				MatOut = MatOut + (char)my_int_to_char((ndx + 1)%modul/*ndx*/) + ' ' + CString(" --> ")  + '\t';	
-			else
-				MatOut = MatOut + (char)my_int_to_char(ndx) + ' ' + CString(" -->") + '\t';
-				
+			MatOut = MatOut + (char)my_int_to_char(ndx) + ' ' + CString(" --> ")  + '\t';
 			if ( modul > 100 )
-				sprintf(num, "%03i", ndx+iShiftPos);
+				sprintf(num, "%03i", ndx);
 			else 
-				sprintf(num, "%02i", ndx+iShiftPos);
+				sprintf(num, "%02i", ndx);
 			MatOut = MatOut + CString(num) + ' ';
 		    MatOut = MatOut + '\t';
 			ndx += floor_rows;
@@ -718,57 +596,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 		MatOut = MatOut + '\n';
 	}
 
-	MatOut = MatOut + '\n';
-
-	char cTempStr[1000];
-
-	LoadString(AfxGetInstanceHandle(),IDS_STRING_HILL_DETAILS_CHARS, pc_str, STR_LAENGE_STRING_TABLE);
-	sprintf(cTempStr, pc_str, theApp.TextOptions.m_alphabet.GetLength());
-	MatOut += CString(cTempStr);
-
-	MatOut += ' ';
-
-	LoadString(AfxGetInstanceHandle(),IDS_STRING_HILL_DETAILS_FIRSTPOS, pc_str, STR_LAENGE_STRING_TABLE);
-	if(firstPosNull)
-		sprintf(cTempStr, pc_str, 0);
-	else
-		sprintf(cTempStr, pc_str, 1);
-
-	MatOut += CString(cTempStr) + '\n';
-
-
-	if(!iHillMultiplicationType)
-		LoadString(AfxGetInstanceHandle(), IDS_STRING_HILL_DETAILS_MULT0, pc_str, STR_LAENGE_STRING_TABLE);
-	if(iHillMultiplicationType)
-		LoadString(AfxGetInstanceHandle(), IDS_STRING_HILL_DETAILS_MULT1, pc_str, STR_LAENGE_STRING_TABLE);
-
-	MatOut += CString(pc_str) + '\n';
-
-		
-	LoadString(AfxGetInstanceHandle(), IDS_STRING_HILL_DETAILS_DIM, pc_str, STR_LAENGE_STRING_TABLE);
-	sprintf(cTempStr, pc_str,dim,dim);
-	MatOut += CString(cTempStr) + '\n';
-
-	MatOut += '\n';
-    
-	if(sNotInFileChars.GetLength() > 0)
-	{
-		if(iClearTextNotAlphCharCount > 3)
-			sNotInFileChars += "...";
-
-		LoadString(AfxGetInstanceHandle(), IDS_HILL_DETAILS_IS_NOT_ALPHCHAR, pc_str, STR_LAENGE_STRING_TABLE);
-		sprintf(cTempStr, pc_str,iClearTextAlphCharCount,iClearTextNotAlphCharCount,sNotInFileChars,dim);
-	}
-	else
-	{
-		LoadString(AfxGetInstanceHandle(), IDS_HILL_DETAILS_IS_ALPHCHAR, pc_str, STR_LAENGE_STRING_TABLE);
-		sprintf(cTempStr, pc_str,iClearTextAlphCharCount,dim);
-	}
-
-	MatOut += CString(cTempStr) + '\n';
-
-
-	MatOut += '\n';
+	MatOut = MatOut + '\n' + '\n';
 
 	// Encryption matrix
 	if ( enc_mat )
@@ -780,10 +608,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			MatOut = MatOut + CString("\t[\t");
 			for (j=0; j<dim; j++)
 			{
-				if(iHillMultiplicationType)				
-					MatOut = MatOut + (char)my_int_to_char((*enc_mat)(i,j)) + '\t';
-				else
-					MatOut = MatOut + (char)my_int_to_char((*enc_mat)(j,i)) + '\t';
+				MatOut = MatOut + (char)my_int_to_char((*enc_mat)(i,j)) + '\t';
 			}
 			MatOut = MatOut + ']' + '\n';
 		} 
@@ -796,16 +621,8 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			MatOut = MatOut + CString("\t[\t");
 			for (j=0; j<dim; j++)
 			{
-				if(iHillMultiplicationType)
-				{
-					if ( modul > 100 ) sprintf(num, "%03i", getPositionOfCharForOutput(((*enc_mat)(i,j))));	
-					else               sprintf(num, "%02i", getPositionOfCharForOutput(((*enc_mat)(i,j))));
-				}
-				else
-				{
-					if(modul > 100) sprintf(num, "%03i", getPositionOfCharForOutput(((*enc_mat)(j,i))));
-					else			sprintf(num, "%02i", getPositionOfCharForOutput(((*enc_mat)(j,i))));
-				}
+				if ( modul > 100 ) sprintf(num, "%03i", (*enc_mat)(i,j));	
+				else               sprintf(num, "%02i", (*enc_mat)(i,j));
 				MatOut = MatOut + num + '\t';
 			}
 			MatOut = MatOut + ']' + '\n';
@@ -824,9 +641,9 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 		for (i=0; i<dim; i++)
 		{
 			if ( modul > 100 )
-				sprintf(num, "%03i", getPositionOfCharForOutput(i_act_example[i]));
+				sprintf(num, "%03i", i_act_example[i]);
 			else 
-				sprintf(num, "%02i", getPositionOfCharForOutput(i_act_example[i]));
+				sprintf(num, "%02i", i_act_example[i]);
 			MatOut = MatOut + num + '\t';
 		}
 		MatOut = MatOut + ']';
@@ -841,10 +658,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			int ciph = 0;
 			for (j=0; j<dim; j++)
 			{
-				if(iHillMultiplicationType)
-					ciph +=i_act_example[j]*(*enc_mat)(j,i);
-				else
-					ciph +=i_act_example[j]*(*enc_mat)(i,j);
+				ciph +=i_act_example[j]*(*enc_mat)(j,i);
 				ciph %= modul;
 			}
 			i_res_example[i] = ciph;
@@ -860,18 +674,12 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 				if ( modul > 100 )				
 				{
 					sprintf(num, "%03i", i_act_example[j]);
-					if(iHillMultiplicationType)
-						sprintf(num2, "%03i", getPositionOfCharForOutput(((*enc_mat)(j,i))));					
-					else
-						sprintf(num2, "%03i", getPositionOfCharForOutput(((*enc_mat)(i,j))));
+					sprintf(num2, "%03i", (*enc_mat)(j,i));					
 				}
 				else 
 				{
 					sprintf(num, "%02i", i_act_example[j]);
-					if(iHillMultiplicationType)
-						sprintf(num2, "%02i", getPositionOfCharForOutput(((*enc_mat)(j,i))));
-					else
-						sprintf(num2, "%02i", getPositionOfCharForOutput(((*enc_mat)(i,j))));
+					sprintf(num2, "%02i", (*enc_mat)(j,i));
 				}
 				MatOut = MatOut + CString(num) + '*' + CString(num2) + ' ';
 				if ( j < dim-1 ) MatOut = MatOut + '+' + ' ';
@@ -904,10 +712,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			MatOut = MatOut + CString("\t[\t");
 			for (j=0; j<dim; j++)
 			{
-				if(iHillMultiplicationType)
-					MatOut = MatOut + (char)my_int_to_char(((*dec_mat)(i,j))) + '\t';
-				else
-					MatOut = MatOut + (char)my_int_to_char(((*dec_mat)(i,j))) + '\t';
+				MatOut = MatOut + (char)my_int_to_char((*dec_mat)(i,j)) + '\t';
 			}
 			MatOut = MatOut + ']' + '\n';
 		}
@@ -919,16 +724,8 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			MatOut = MatOut + CString("\t[\t");
 			for (j=0; j<dim; j++)
 			{
-				if(iHillMultiplicationType)
-				{
-					if ( modul > 100 ) sprintf(num, "%03i", getPositionOfCharForOutput(((*dec_mat)(i,j))));	
-					else               sprintf(num, "%02i", getPositionOfCharForOutput(((*dec_mat)(i,j))));
-				}
-				else
-				{
-					if( modul > 100)	sprintf(num, "%03i", getPositionOfCharForOutput(((*dec_mat)(j,i))));
-					else				sprintf(num, "%02i", getPositionOfCharForOutput(((*dec_mat)(j,i))));
-				}
+				if ( modul > 100 ) sprintf(num, "%03i", (*dec_mat)(i,j));	
+				else               sprintf(num, "%02i", (*dec_mat)(i,j));
 				MatOut = MatOut + num + '\t';
 			}
 			MatOut = MatOut + ']' + '\n';
@@ -947,9 +744,9 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 		for (i=0; i<dim; i++)
 		{
 			if ( modul > 100 )
-				sprintf(num, "%03i", getPositionOfCharForOutput(i_act_example[i]));
+				sprintf(num, "%03i", i_act_example[i]);
 			else 
-				sprintf(num, "%02i", getPositionOfCharForOutput(i_act_example[i]));
+				sprintf(num, "%02i", i_act_example[i]);
 			MatOut = MatOut + num + '\t';
 		}
 		MatOut = MatOut + ']';
@@ -964,10 +761,7 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 			int ciph = 0;
 			for (j=0; j<dim; j++)
 			{
-				if(iHillMultiplicationType)
-					ciph +=i_act_example[j]*(*dec_mat)(j,i);
-				else
-					ciph +=i_act_example[j]*(*dec_mat)(i,j);
+				ciph +=i_act_example[j]*(*dec_mat)(j,i);
 				ciph %= modul;
 			}
 			i_res_example[i] = ciph;
@@ -983,18 +777,12 @@ void CHillEncryption::OutputHillmatrix(CString &MatOut)
 				if ( modul > 100 )				
 				{
 					sprintf(num, "%03i", i_act_example[j]);
-					if(iHillMultiplicationType)
-						sprintf(num2, "%03i", getPositionOfCharForOutput(((*dec_mat)(j,i))));					
-					else
-						sprintf(num2, "%03i", getPositionOfCharForOutput(((*dec_mat)(i,j))));
+					sprintf(num2, "%03i", (*dec_mat)(j,i));					
 				}
 				else 
 				{
 					sprintf(num, "%02i", i_act_example[j]);
-					if(iHillMultiplicationType)
-						sprintf(num2, "%02i", getPositionOfCharForOutput(((*dec_mat)(j,i))));
-					else
-						sprintf(num2, "%02i", getPositionOfCharForOutput(((*dec_mat)(i,j))));
+					sprintf(num2, "%02i", (*dec_mat)(j,i));
 				}
 				MatOut = MatOut + CString(num) + '*' + CString(num2) + ' ';
 				if ( j < dim-1 ) MatOut = MatOut + '+' + ' ';
@@ -1722,15 +1510,4 @@ void CHillEncryption::BerechneFaktoren(int i, long lAnzahlBloecke)
 				 (iaLinearKombination2[i] == HILL_LIN_KOMB_INIT) );
 		iaFaktoren[i]++;
 	}
-}
-int CHillEncryption::getPositionOfCharForOutput(int iPos)
-{
-
-	if(!firstPosNull)
-	{
-		if(iPos == 0)
-			iPos = modul;
-	}
-	
-	return iPos;
 }

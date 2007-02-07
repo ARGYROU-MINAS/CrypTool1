@@ -172,12 +172,12 @@ void doaescrypt(int AlgId,char mode,int keylen,char *keybuffhex,unsigned char *b
 	3 steht für Rijndael
 	4 steht für Serpent
 	5 steht für Twofish */
-void AESCrypt (const char* infile, const char *OldTitle, int AlgId, bool Enc_Or_Dec, const char * NewFileName, const char* NewFileKey)
+void AESCrypt (char* infile, const char *OldTitle, int AlgId, bool Enc_Or_Dec, char * NewFileName, char* NewFileKey)
 {
 	
-	char outfile[CRYPTOOL_PATH_LENGTH], keybuffhex[256/4+1],title[200];
+    char outfile[CRYPTOOL_PATH_LENGTH], keybuffhex[200],title[200];
 	CString AlgTitle,Title;
-	unsigned char keybuffbin[256/8];
+	unsigned char keybuffbin[33];
 	unsigned char *borg, *bcip, *key;
 	char mode;
 	int keylen;
@@ -222,10 +222,8 @@ void AESCrypt (const char* infile, const char *OldTitle, int AlgId, bool Enc_Or_
 		key = (unsigned char *) KeyDialog.GetKeyBytes();
 		keylen = KeyDialog.GetKeyByteLength();
 
-		ASSERT(keylen <= sizeof keybuffbin);
 		for(i=0;i<keylen; i++) keybuffbin[i] = key[i];
-		
-		ASSERT(2*keylen + 1 <= sizeof keybuffhex);
+				
 		for(i=0; i<keylen; i++) 
 			sprintf(keybuffhex+2*i,"%02.2X",keybuffbin[i]);
 	}
@@ -233,13 +231,9 @@ void AESCrypt (const char* infile, const char *OldTitle, int AlgId, bool Enc_Or_
 	{
 		tag=1;
 		keylen=16;
-	// nur niederwertigsten 128 Bit (16 Byte = 32 Hex-Halb-Bytes) betrachten
-		int len = strlen(NewFileKey);
-		ASSERT(len >= keylen*2);
-		ASSERT(2*keylen + 1 <= sizeof keybuffhex);
-		strcpy(keybuffhex,NewFileKey + len - keylen*2);
-	}
+		strcpy(keybuffhex,NewFileKey);
 
+	}
 	borg = (unsigned char *) malloc(datalen+32);
 	bcip = (unsigned char *) malloc(datalen+64);
 	
@@ -287,6 +281,13 @@ void AESCrypt (const char* infile, const char *OldTitle, int AlgId, bool Enc_Or_
 		strcpy( outfile, NewFileName );
 	}
 	
+	// nur niederwertigsten 128 Bit (16 Byte = 32 Hex-Halb-Bytes) betrachten
+	int length = strlen(keybuffhex);
+	char *temp = new char[length];
+	memcpy(temp, keybuffhex + (length - 32), 32);
+	memcpy(keybuffhex, temp, 32);
+	memcpy(keybuffhex + 32, "\0", 1);
+	
 	doaescrypt(AlgId,mode,keylen,keybuffhex,borg,datalen,bcip);
 	
 	free(borg);
@@ -295,7 +296,7 @@ void AESCrypt (const char* infile, const char *OldTitle, int AlgId, bool Enc_Or_
     if( tag==0 && mode == DIR_DECRYPT)
 	{	                           // Entschlüsselung ausgewählt
 		// Padding entfernen
-		for(datalen--; 0 == bcip[datalen]; datalen--); // FIXME: ensure datalen >= 0
+		for(datalen--; 0 == bcip[datalen]; datalen--);
 	}
 	if( tag==1 && !Enc_Or_Dec)
 	{	                           // Entschlüsselung ausgewählt

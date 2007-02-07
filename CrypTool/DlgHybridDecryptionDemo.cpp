@@ -467,8 +467,10 @@ void CDlgHybridDecryptionDemo::RsaDec()
 void CDlgHybridDecryptionDemo::OnOK() 
 {
 	// Hybrid-Entschlüsselung + Ausgabe der Entschlüsselung 
-	char outfile[CRYPTOOL_PATH_LENGTH];
-	
+	char outfile[200];
+	char key[200];
+	strcpy(key,DecSessionKey.GetBuffer(0));
+
 	int AlgId=3;
 
 	GetTmpName(outfile,"cry",".hex");
@@ -477,7 +479,7 @@ void CDlgHybridDecryptionDemo::OnOK()
 		
 	SHOW_HOUR_GLASS
 	
-	AESCrypt(outfile, m_strTitle1, AlgId, false, outfile,(PCTSTR)DecSessionKey); // assuming null padding
+	AESCrypt(outfile, m_strTitle1, AlgId, false, outfile,key); // "true" steht für eine Verschlüsselung
 
 	remove(outfile);
 	

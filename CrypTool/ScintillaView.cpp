@@ -24,8 +24,6 @@
 // Suchen und ersetzen
 #include "DlgFindAndReplace.h"
 
-#include "cryptoolapp.h"
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -565,7 +563,7 @@ void CScintillaView::OnInitialUpdate()
 //
 void CScintillaView::OnEditCopy() 
 {
-	m_wndScintilla.CopyCut(SCI_COPY);
+	m_wndScintilla.Copy();
 }
 /////////////////////////////////////
 // @mfunc menu check handler - do nothing
@@ -581,7 +579,7 @@ void CScintillaView::OnUpdateEditCopy(
 //
 void CScintillaView::OnEditCut() 
 {
-	m_wndScintilla.CopyCut(SCI_CUT);
+	m_wndScintilla.Cut();
 }
 /////////////////////////////////////
 // @mfunc menu check handler - do nothing
@@ -887,8 +885,6 @@ void CScintillaView::OnViewFontCourier12()
 
 void CScintillaView::OnTohex()
 {
-	bHexEnabled = true;
-
 	CAppDocument *NewDoc;
 	char outfile[128];
 	BOOL Modified;

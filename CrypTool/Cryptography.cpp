@@ -465,11 +465,6 @@ void Hill(const char *infile, const char *OldTitle)
 	// Überprüfung, ob Eingabedatei mindestens ein Zeichen enthält. 
 	CFile datei(infile, CFile::modeRead);
 
-	sNotInFileChars = ""; //clear because of not wrong counting past userinput
-
-	iClearTextAlphCharCount = 0;
-	iClearTextNotAlphCharCount = 0;
-
 	long infile_zeichen_anz = 0;
 	char c;
 	while(datei.Read(&c,1))
@@ -482,18 +477,8 @@ void Hill(const char *infile, const char *OldTitle)
 		{
 			infile_zeichen_anz++;
 		}
-		else
-		{
-			iClearTextNotAlphCharCount++;
-
-			if(sNotInFileChars.GetLength() < 3) //to show only first 3 chars in hill details
-				sNotInFileChars += (CString)c; //if not exists in alph
-
-		}
-		iClearTextAlphCharCount++;
 	}
 	datei.Close();
-
 
 	if (! infile_zeichen_anz)
 	{
@@ -822,7 +807,7 @@ void Hill(const char *infile, const char *OldTitle)
 		if (NewDoc) {
 			char title[128]; 
 			// LoadString(AfxGetInstanceHandle(),IDS_STRING_NGRAM_ANALYSIS_OF,pc_str,STR_LAENGE_STRING_TABLE);
-			GetNewDocTitle(schluessel, OldTitle, IDS_STRING_HILL_DETAILS, title, 128, i_m_decrypt, SCHLUESSEL_QUADRATISCH );
+			GetNewDocTitle(schluessel, OldTitle, IDS_STRING_HILL, title, 128, i_m_decrypt, SCHLUESSEL_QUADRATISCH );
 			NewDoc->SetTitle(title);
 		}
 
@@ -3558,13 +3543,12 @@ BOOL Rot13CaesarAsc(SymbolArray & text, const char *infile)
 	return TRUE;
 }
 
-void Rot13CaesarAscFinish(SymbolArray & text, const char * infile, char * sKey, BOOL bDecrypt, const char *OldTitle, UINT type,unsigned long firstPosNull)
+void Rot13CaesarAscFinish(SymbolArray & text, const char * infile, char * sKey, BOOL bDecrypt, const char *OldTitle, UINT type)
 {
 	char outfile[1024];
 	SymbolArray Key(AppConv);
 	Key.ReadString(sKey);
-	if(firstPosNull == 0) //If Caesar A=0 or A=1
-		Key += 1;
+	Key += 1;
 
 // == Encryption / Decryption
 	SHOW_HOUR_GLASS

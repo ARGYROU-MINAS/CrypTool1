@@ -55,7 +55,6 @@ statement from your version.
 #include "ChrTools.h"
 #include "DialogeMessage.h"
 #include "DlgTextOptions.h"
-#include ".\dlgtextoptions.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -142,7 +141,6 @@ BEGIN_MESSAGE_MAP(CDlgTextOptions, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_TEXTOPTIONEN_SUCHE_REFERENZDATEI, OnButtonTextoptionenSucheReferenzdatei)
 	ON_EN_UPDATE(IDC_EDIT_TEXTOPTIONEN_REFERENZDATEI, OnUpdateEditTextoptionenReferenzdatei)
 	//}}AFX_MSG_MAP
-	ON_BN_CLICKED(IDOK, OnBnClickedOk)
 END_MESSAGE_MAP()
 
 
@@ -546,10 +544,4 @@ void CDlgTextOptions::UpdateHeaderAlphabet()
 	char line[256];
 	sprintf(line, pc_str, m_alphabet.GetLength());
 	m_InformationAlphabetSize.SetWindowText(line);
-}
-
-void CDlgTextOptions::OnBnClickedOk()
-{
-	// TODO: Add your control notification handler code here
-	OnOK();
 }

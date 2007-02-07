@@ -127,8 +127,6 @@ private:
 	CString OldAlphabet;
 	BOOL	OldFormat;
 	BOOL	OldCase;
-public:
-	afx_msg void OnBnClickedOk();
 };
 
 

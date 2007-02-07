@@ -130,8 +130,6 @@ void CHexEditCtrlDoc::Dump(CDumpContext& dc) const
 
 void CHexEditCtrlDoc::OnTotxt() 
 {
-	bHexEnabled = false;
-
 	CAppDocument *NewDoc;
  	char outfile[128];
  	BOOL Modified;

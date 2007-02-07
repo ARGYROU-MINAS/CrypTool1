@@ -52,7 +52,6 @@ statement from your version.
 #include "RandomTest.h"
 #include "ParseIniFile2.h"
 #include "DialogeMessage.h"
-#include ".\dlgstatrandtests.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -180,7 +179,6 @@ BEGIN_MESSAGE_MAP(CDlgFreqTest, CDialog)
 	ON_BN_CLICKED(IDC_CHECK2, OnCheck2)
 	ON_CBN_SELCHANGE(IDC_TUPELCOMBO, OnSelchangeTupelcombo)
 	//}}AFX_MSG_MAP
-	ON_STN_CLICKED(IDC_INFO_STATIC, OnStnClickedInfoStatic)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -481,14 +479,13 @@ void CDlgRunsTest::OnTestbutton()
 		LR_test.test();
 		if ( LR_test.GetResult() == TRUE )
 		{
-			char tmpStr[128];
 			UpdateData(TRUE);
 			m_Run_Ergebnis = _T("");
 			m_Longrun_Hak_Ctrl.ShowWindow(TRUE);
 			m_Longrun_Kre_Ctrl.ShowWindow(FALSE);
-			LoadString(AfxGetInstanceHandle(), IDS_STRING_TEST_LONGRUN_BESTANDEN, tmpStr, STR_LAENGE_STRING_TABLE);
-			
-		//	sprintf(tmpStr, pc_str, "Longrun Test");
+			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_BESTANDEN, pc_str, STR_LAENGE_STRING_TABLE);
+			char tmpStr[128];
+			sprintf(tmpStr, pc_str, "Longrun Test");
 			m_Longrun_Ergebnis = tmpStr;
 			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_INFO_LONGRUN, pc_str, STR_LAENGE_STRING_TABLE);
 			sprintf(tmpStr, pc_str, m_Longrunlang, LR_test.longest_run_final);
@@ -497,14 +494,13 @@ void CDlgRunsTest::OnTestbutton()
 		}
 		else if ( LR_test.GetResult() == FALSE )
 		{
-				char tmpStr[128];
 			UpdateData(TRUE);
 			m_Run_Ergebnis = _T("");
 			m_Longrun_Hak_Ctrl.ShowWindow(FALSE);
 			m_Longrun_Kre_Ctrl.ShowWindow(TRUE);
-			LoadString(AfxGetInstanceHandle(), IDS_STRING_TEST_LONGRUN_NICHT_BESTANDEN, tmpStr, STR_LAENGE_STRING_TABLE);
-		
-			//sprintf(tmpStr, pc_str, "Longrun Test");
+			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_NICHT_BESTANDEN, pc_str, STR_LAENGE_STRING_TABLE);
+			char tmpStr[128];
+			sprintf(tmpStr, pc_str, "Longrun Test");
 			m_Longrun_Ergebnis = tmpStr;
 			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_INFO_LONGRUN, pc_str, STR_LAENGE_STRING_TABLE);
 			sprintf(tmpStr, pc_str, m_Longrunlang, LR_test.longest_run_final);
@@ -543,12 +539,11 @@ void CDlgRunsTest::OnTestbutton()
 
 		if(!RT_test.GetResult())
 		{
-			char tmpStr[128];
 			m_Run_Hak_Ctrl.ShowWindow(FALSE);
 			m_Run_Kre_Ctrl.ShowWindow(TRUE);
-			LoadString(AfxGetInstanceHandle(), IDS_STRING_TEST_RUNS_NICHT_BESTANDEN, tmpStr, STR_LAENGE_STRING_TABLE);
-			
-		//	sprintf(tmpStr, pc_str, "Run Test");
+			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_NICHT_BESTANDEN, pc_str, STR_LAENGE_STRING_TABLE);
+			char tmpStr[128];
+			sprintf(tmpStr, pc_str, "Run Test");
 			m_Run_Ergebnis = tmpStr;
 			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_INFO, pc_str, STR_LAENGE_STRING_TABLE);
 			sprintf(tmpStr, pc_str, RT_test.Get_DefParam(), RT_test.Get_test_ergeb());
@@ -557,13 +552,12 @@ void CDlgRunsTest::OnTestbutton()
 		}
 		else
 		{
-			char tmpStr[128];
 			m_Run_Kre_Ctrl.ShowWindow(FALSE);
 			m_Run_Hak_Ctrl.ShowWindow(TRUE);
 			UpdateData(TRUE);
-			LoadString(AfxGetInstanceHandle(), IDS_STRING_TEST_RUNS_BESTANDEN, tmpStr, STR_LAENGE_STRING_TABLE);
-			
-		//	sprintf(tmpStr, pc_str, "Run Test");
+			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_BESTANDEN, pc_str, STR_LAENGE_STRING_TABLE);
+			char tmpStr[128];
+			sprintf(tmpStr, pc_str, "Run Test");
 			m_Run_Ergebnis = tmpStr;
 			LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_INFO, pc_str, STR_LAENGE_STRING_TABLE);
 			sprintf(tmpStr, pc_str, RT_test.Get_DefParam(), RT_test.Get_test_ergeb());
@@ -809,7 +803,7 @@ void CDlgFIPSTest140_1::OnBatterietest()
 		UpdateData(TRUE);
 		LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_BESTANDEN, pc_str, STR_LAENGE_STRING_TABLE);
 		char tmpStr[128];
-		sprintf(tmpStr, pc_str, "Poker-Test");
+		sprintf(tmpStr, pc_str, "Poker Test");
 		m_Pokertest_Static = tmpStr;
 		UpdateData(FALSE);
 		tests++;
@@ -819,7 +813,7 @@ void CDlgFIPSTest140_1::OnBatterietest()
 		m_Poker_Hak_Ctrl.ShowWindow(FALSE);
 		m_Poker_Kre_Ctrl.ShowWindow(TRUE);
 		UpdateData(TRUE);
-		LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_NICHT_BESTANDEN,pc_str, STR_LAENGE_STRING_TABLE);
+		LoadString(AfxGetInstanceHandle(), IDS_STRING_TESTS_ERGEBNIS_NICHT_BESTANDEN, pc_str, STR_LAENGE_STRING_TABLE);
 		char tmpStr[128];
 		sprintf(tmpStr, pc_str, "Poker Test");
 		m_Pokertest_Static = tmpStr;
@@ -980,9 +974,3 @@ BOOL CDlgFreqTest::LoadAlphaList()
 	if (iniFile.GetAlphaList(AlphaList) == -1) return FALSE;
 	else									   return TRUE;
 }
-
-void CDlgFreqTest::OnStnClickedInfoStatic()
-{
-	// TODO: Fügen Sie hier Ihren Kontrollbehandlungscode für die Benachrichtigung ein.
-}
-
