@@ -1,0 +1,1 @@
+java -cp animal -jar animal\Animal.jar %1 %2 %3
