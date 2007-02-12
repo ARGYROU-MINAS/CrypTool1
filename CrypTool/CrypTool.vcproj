@@ -279,6 +279,73 @@
 			<Tool
 				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
 		</Configuration>
+		<Configuration
+			Name="Release_pl|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			UseOfMFC="1"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="..\libNTL\include;&quot;.\dialogue-buttons&quot;;..\ChallengeResponse;..;..\Secude;..\Libec\include;.\;..\libmiracl\include;..\OpenSSL;..\scintilla\include;..\libVolRen;..\libgmp"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderFile=".\..\Release_pl/CrypTool.pch"
+				AssemblerListingLocation=".\..\Release_pl/"
+				ObjectFile=".\..\Release_pl/"
+				ProgramDataBaseFileName=".\..\Release_pl/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="..\LibAnalyse\Release\LibAnalyse.lib ..\Libec\Lib\EcBibV2.lib ..\libmiracl\Release\LibMiracl.lib ..\OpenSSL\libeay32.lib ..\libNTL\Release\libNTL.lib htmlhelp.lib openGL32.lib ..\libgmp\lib\gmp.lib"
+				OutputFile=".\..\Release_pl/CrypTool.exe"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				IgnoreDefaultLibraryNames="libc"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\..\Release_pl/CrypTool.pdb"
+				SubSystem="2"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\..\Release_en/CrypTool.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG;AFX_RESOURCE_DLL;AFX_TARG_PLK"
+				Culture="1045"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
@@ -345,6 +412,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="AppDocument.cpp">
@@ -380,6 +456,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -459,6 +544,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="AscEdit.h">
@@ -497,6 +591,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -540,6 +643,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="AsymmetricEncryption.h">
@@ -578,6 +690,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -683,6 +804,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -1038,18 +1168,36 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
-		</File>
-		<File
-			RelativePath=".\res\SCABitmaps_en\bmps\Button10_G_D.bmp">
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps\bmps\Button10_G_D.bmp">
 		</File>
 		<File
-			RelativePath=".\res\SCABitmaps\bmps\Button10_G_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_en\bmps\Button10_G_D.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\Button10_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps\bmps\Button10_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_G_U.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\Button10_G_U.bmp">
@@ -1058,16 +1206,25 @@
 			RelativePath=".\res\SCABitmaps\bmps\Button10_G_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps\bmps\Button10_G_X.bmp">
+		</File>
+		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\Button10_G_X.bmp">
 		</File>
 		<File
-			RelativePath=".\res\SCABitmaps\bmps\Button10_G_X.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_G_X.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps\bmps\Button10_R_D.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\Button10_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_R_F.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\Button10_R_F.bmp">
@@ -1079,7 +1236,13 @@
 			RelativePath=".\res\SCABitmaps_en\bmps\Button10_R_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_R_U.bmp">
+		</File>
+		<File
 			RelativePath=".\res\SCABitmaps\bmps\Button10_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button10_R_X.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\Button10_R_X.bmp">
@@ -1088,7 +1251,13 @@
 			RelativePath=".\res\SCABitmaps\bmps\Button10_R_X.bmp">
 		</File>
 		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button1_G_D.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button1_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button1_G_D.bmp">
@@ -1097,7 +1266,13 @@
 			RelativePath="res\SCABitmaps\bmps\Button1_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button1_G_D.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button1_G_F.bmp">
@@ -1112,40 +1287,58 @@
 			RelativePath="res\DHBitmaps_en\bmps\Button1_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button1_G_U.bmp">
+			RelativePath="res\DHBitmaps\bmps\Button1_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button1_G_U.bmp">
+			RelativePath="res\SCABitmaps_en\bmps\Button1_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button1_G_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_G_U.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button1_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button1_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button1_G_X.bmp">
-		</File>
-		<File
-			RelativePath="res\SCABitmaps\bmps\Button1_G_X.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button1_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button1_R_D.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button1_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button1_R_D.bmp">
+			RelativePath="res\SCABitmaps_en\bmps\Button1_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button1_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button1_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button1_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button1_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button1_R_F.bmp">
@@ -1157,13 +1350,19 @@
 			RelativePath="res\SCABitmaps_en\bmps\Button1_R_F.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_R_F.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps\bmps\Button1_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button1_R_U.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button1_R_U.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button1_R_U.bmp">
@@ -1172,40 +1371,70 @@
 			RelativePath="res\DHBitmaps\bmps\Button1_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button1_R_X.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button1_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button1_R_X.bmp">
-		</File>
-		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button1_R_X.bmp">
+			RelativePath="res\DHBitmaps_en\bmps\Button1_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button1_R_X.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button2_G_D.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button1_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button1_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button1_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button1_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button1_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button2_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button2_G_D.bmp">
-		</File>
-		<File
 			RelativePath="res\DHBitmaps\bmps\Button2_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button2_G_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_G_D.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button2_G_D.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button2_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button2_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button2_G_F.bmp">
+			RelativePath="res\DHBitmaps_en\bmps\Button2_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button2_G_F.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button2_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button2_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button2_G_U.bmp">
@@ -1214,22 +1443,34 @@
 			RelativePath="res\SCABitmaps\bmps\Button2_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button2_G_U.bmp">
-		</File>
-		<File
 			RelativePath="res\DHBitmaps\bmps\Button2_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button2_G_X.bmp">
-		</File>
-		<File
-			RelativePath="res\DHBitmaps\bmps\Button2_G_X.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button2_G_X.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_G_X.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button2_G_X.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button2_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_G_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button2_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button2_R_D.bmp">
@@ -1244,16 +1485,28 @@
 			RelativePath="res\SCABitmaps\bmps\Button2_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button2_R_F.bmp">
-		</File>
-		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button2_R_F.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button2_R_F.bmp">
 		</File>
 		<File
+			RelativePath="res\DHBitmaps\bmps\Button2_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_R_F.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button2_R_F.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps\bmps\Button2_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button2_R_U.bmp">
@@ -1268,28 +1521,43 @@
 			RelativePath="res\SCABitmaps\bmps\Button2_R_U.bmp">
 		</File>
 		<File
+			RelativePath="res\DHBitmaps\bmps\Button2_R_X.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps\bmps\Button2_R_X.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button2_R_X.bmp">
-		</File>
-		<File
-			RelativePath="res\DHBitmaps\bmps\Button2_R_X.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button2_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button2_R_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button3_G_D.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button2_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button2_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button3_G_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_G_D.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps\bmps\Button3_G_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_G_D.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button3_G_D.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button3_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button3_G_F.bmp">
@@ -1304,19 +1572,25 @@
 			RelativePath="res\SCABitmaps\bmps\Button3_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button3_G_U.bmp">
-		</File>
-		<File
-			RelativePath="res\SCABitmaps\bmps\Button3_G_U.bmp">
-		</File>
-		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button3_G_U.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button3_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button3_G_X.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button3_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button3_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button3_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button3_G_X.bmp">
@@ -1325,43 +1599,76 @@
 			RelativePath="res\DHBitmaps_en\bmps\Button3_G_X.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_G_X.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps\bmps\Button3_G_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button3_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button3_R_D.bmp">
 		</File>
 		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button3_R_D.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps\bmps\Button3_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button3_R_D.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button3_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button3_R_F.bmp">
+			RelativePath="res\DHBitmaps_en\bmps\Button3_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button3_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button3_R_F.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button3_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button3_R_U.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button3_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button3_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button3_R_U.bmp">
+			RelativePath="res\SCABitmaps_en\bmps\Button3_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button3_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_R_U.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button3_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button3_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button3_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button3_R_X.bmp">
@@ -1382,10 +1689,22 @@
 			RelativePath="res\SCABitmaps_en\bmps\Button4_G_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_G_D.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps\bmps\Button4_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button4_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_G_F.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button4_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button4_G_F.bmp">
@@ -1394,16 +1713,10 @@
 			RelativePath="res\DHBitmaps_en\bmps\Button4_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button4_G_F.bmp">
-		</File>
-		<File
 			RelativePath="res\DHBitmaps\bmps\Button4_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button4_G_U.bmp">
-		</File>
-		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button4_G_U.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button4_G_U.bmp">
@@ -1412,10 +1725,19 @@
 			RelativePath="res\SCABitmaps\bmps\Button4_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button4_G_X.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button4_G_X.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button4_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button4_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button4_G_X.bmp">
@@ -1424,7 +1746,13 @@
 			RelativePath="res\DHBitmaps_en\bmps\Button4_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button4_R_D.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button4_G_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button4_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button4_R_D.bmp">
@@ -1436,10 +1764,19 @@
 			RelativePath="res\SCABitmaps\bmps\Button4_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button4_R_F.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button4_R_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button4_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button4_R_F.bmp">
@@ -1448,40 +1785,67 @@
 			RelativePath="res\DHBitmaps_en\bmps\Button4_R_F.bmp">
 		</File>
 		<File
+			RelativePath="res\SCABitmaps\bmps\Button4_R_F.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button4_R_F.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button4_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button4_R_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_R_U.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button4_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button4_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button4_R_X.bmp">
+			RelativePath="res\DHBitmaps\bmps\Button4_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button4_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button4_R_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button4_R_X.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button4_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button4_R_X.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button5_G_D.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button4_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button5_G_D.bmp">
 		</File>
 		<File
+			RelativePath="res\DHBitmaps\bmps\Button5_G_D.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button5_G_D.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button5_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Button5_G_D.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_G_D.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button5_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button5_G_F.bmp">
@@ -1490,28 +1854,43 @@
 			RelativePath="res\DHBitmaps_en\bmps\Button5_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button5_G_F.bmp">
-		</File>
-		<File
 			RelativePath="res\DHBitmaps\bmps\Button5_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button5_G_U.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button5_G_U.bmp">
-		</File>
-		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button5_G_U.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button5_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button5_G_X.bmp">
+			RelativePath="res\DHBitmaps_en\bmps\Button5_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button5_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button5_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button5_G_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button5_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button5_G_X.bmp">
@@ -1520,22 +1899,22 @@
 			RelativePath="res\DHBitmaps_en\bmps\Button5_G_X.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_R_D.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button5_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button5_R_D.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button5_R_D.bmp">
 		</File>
 		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button5_R_D.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps\bmps\Button5_R_D.bmp">
-		</File>
-		<File
-			RelativePath="res\DHBitmaps\bmps\Button5_R_F.bmp">
-		</File>
-		<File
-			RelativePath="res\SCABitmaps\bmps\Button5_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Button5_R_F.bmp">
@@ -1544,19 +1923,37 @@
 			RelativePath="res\SCABitmaps_en\bmps\Button5_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button5_R_U.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button5_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_R_F.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Button5_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button5_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button5_R_U.bmp">
-		</File>
-		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button5_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Button5_R_X.bmp">
+			RelativePath="res\DHBitmaps_en\bmps\Button5_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_R_U.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button5_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button5_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Button5_R_X.bmp">
@@ -1568,10 +1965,22 @@
 			RelativePath="res\SCABitmaps\bmps\Button5_R_X.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button6_G_D.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Button5_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Button5_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button6_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_G_D.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button6_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button6_G_F.bmp">
@@ -1580,40 +1989,58 @@
 			RelativePath="res\SCABitmaps_en\bmps\Button6_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button6_G_U.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button6_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button6_G_X.bmp">
+			RelativePath="res\SCABitmaps_en\bmps\Button6_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button6_G_X.bmp">
 		</File>
 		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button6_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_G_X.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button6_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button6_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button6_R_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button6_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button6_R_U.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button6_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button6_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button6_R_X.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_R_U.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button6_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button6_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button6_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button6_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button7_G_D.bmp">
@@ -1622,25 +2049,40 @@
 			RelativePath="res\SCABitmaps_en\bmps\Button7_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button7_G_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button7_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button7_G_U.bmp">
+			RelativePath="res\SCABitmaps_en\bmps\Button7_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button7_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button7_G_X.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button7_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button7_G_X.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_G_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button7_G_X.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button7_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button7_R_D.bmp">
@@ -1652,10 +2094,19 @@
 			RelativePath="res\SCABitmaps_en\bmps\Button7_R_F.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_R_F.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps\bmps\Button7_R_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_R_U.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button7_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button7_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button7_R_X.bmp">
@@ -1664,16 +2115,25 @@
 			RelativePath="res\SCABitmaps\bmps\Button7_R_X.bmp">
 		</File>
 		<File
+			RelativePath="res\SCABitmaps\bmps\Button8_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_G_D.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button8_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button8_G_D.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button8_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button8_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button8_G_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button8_G_U.bmp">
@@ -1688,10 +2148,19 @@
 			RelativePath="res\SCABitmaps_en\bmps\Button8_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button8_R_D.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button8_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button8_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button8_R_F.bmp">
@@ -1706,58 +2175,88 @@
 			RelativePath="res\SCABitmaps\bmps\Button8_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button8_R_X.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button8_R_X.bmp">
 		</File>
 		<File
+			RelativePath="res\SCABitmaps\bmps\Button8_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button8_R_X.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button9_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button9_G_D.bmp">
 		</File>
 		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button9_G_F.bmp">
+		</File>
+		<File
 			RelativePath="res\SCABitmaps\bmps\Button9_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button9_G_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button9_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button9_G_U.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button9_G_X.bmp">
+			RelativePath="res\SCABitmaps_en\bmps\Button9_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button9_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button9_R_D.bmp">
+			RelativePath="res\SCABitmaps_en\bmps\Button9_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button9_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button9_R_F.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button9_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button9_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\Button9_R_U.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_R_F.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\bmps\Button9_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps_en\bmps\Button9_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps_en\bmps\Button9_R_X.bmp">
+			RelativePath="res\SCABitmaps\bmps\Button9_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\Button9_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\Button9_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps_en\bmps\Button9_R_X.bmp">
 		</File>
 		<File
 			RelativePath="ButtonControl.cpp">
@@ -1797,18 +2296,33 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="ButtonControl.h">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Calculate_G_D.bmp">
-		</File>
-		<File
 			RelativePath="res\DHBitmaps_en\bmps\Calculate_G_D.bmp">
 		</File>
 		<File
+			RelativePath="res\DHBitmaps\bmps\Calculate_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_G_D.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps_en\bmps\Calculate_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Calculate_G_F.bmp">
@@ -1820,16 +2334,28 @@
 			RelativePath="res\DHBitmaps_en\bmps\Calculate_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Calculate_G_X.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Calculate_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Calculate_R_D.bmp">
+			RelativePath="res\DHBitmaps_en\bmps\Calculate_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Calculate_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Calculate_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Calculate_R_F.bmp">
@@ -1838,16 +2364,22 @@
 			RelativePath="res\DHBitmaps\bmps\Calculate_R_F.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_R_U.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps_en\bmps\Calculate_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Calculate_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Calculate_R_X.bmp">
+			RelativePath="res\DHBitmaps\bmps\Calculate_R_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Calculate_R_X.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Calculate_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Calculate_R_X.bmp">
 		</File>
 		<File
 			RelativePath="res\cancel_g.bmp">
@@ -1892,6 +2424,15 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="Debug|Win32">
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Copying template PSE to $(OutDir)"
+					CommandLine="xcopy /s/y &quot;$(InputDir)..&quot; &quot;$(OutDir)\pse\&quot;
+"
+					Outputs="$(OutDir)\pse\pseca\capse.cse"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
 				<Tool
 					Name="VCCustomBuildTool"
 					Description="Copying template PSE to $(OutDir)"
@@ -1944,6 +2485,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="ChrTools.h">
@@ -1962,6 +2512,9 @@
 		</File>
 		<File
 			RelativePath="res\COMBINE_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\COMBINE_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\COMBINE_G_U.bmp">
@@ -2012,6 +2565,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -2114,10 +2676,10 @@
 			RelativePath=".\res\CRT_wrong.gif">
 		</File>
 		<File
-			RelativePath=".\res\Crt\CrtAstronomy.gif">
+			RelativePath=".\res\CrtAstronomy.gif">
 		</File>
 		<File
-			RelativePath=".\res\CrtAstronomy.gif">
+			RelativePath=".\res\Crt\CrtAstronomy.gif">
 		</File>
 		<File
 			RelativePath=".\res\Crt\CrtBasis.bmp">
@@ -2175,6 +2737,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="CryptDoc.h">
@@ -2217,6 +2788,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="CryptDocTemplate.h">
@@ -2255,6 +2835,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -2304,52 +2893,18 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="CrypToolApp.h">
-		</File>
-		<File
-			RelativePath="CrypToolPopupMenuIDs.txt">
-			<FileConfiguration
-				Name="Release_en|Win32">
-				<Tool
-					Name="VCCustomBuildTool"
-					Description="Checking CrypTool.rc and $(InputPath) (-&gt;CheckResourceIDs.*)"
-					CommandLine="CheckResourceIDs.bat
-"
-					AdditionalDependencies="CrypTool.rc;"
-					Outputs="CheckResourceIDs.log"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release_de|Win32">
-				<Tool
-					Name="VCCustomBuildTool"
-					Description="Checking CrypTool.rc and $(InputPath) (-&gt;CheckResourceIDs.*)"
-					CommandLine="CheckResourceIDs.bat
-"
-					AdditionalDependencies="CrypTool.rc;"
-					Outputs="CheckResourceIDs.log"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32">
-				<Tool
-					Name="VCCustomBuildTool"
-					Description="Checking CrypTool.rc and $(InputPath) (-&gt;CheckResourceIDs.*)"
-					CommandLine="CheckResourceIDs.bat
-"
-					AdditionalDependencies="CrypTool.rc;"
-					Outputs="CheckResourceIDs.log"/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Win32">
-				<Tool
-					Name="VCCustomBuildTool"
-					Description="Checking CrypTool.rc and $(InputPath) (-&gt;CheckResourceIDs.*)"
-					CommandLine="CheckResourceIDs.bat
-"
-					AdditionalDependencies="CrypTool.rc;"
-					Outputs="CheckResourceIDs.log"/>
-			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="CrypToolTools.cpp">
@@ -2389,6 +2944,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="CrypToolTools.h">
@@ -2419,6 +2983,9 @@
 		</File>
 		<File
 			RelativePath="DefinesForSignatureAttack.h">
+		</File>
+		<File
+			RelativePath=".\res\DerEinstiegCrypTool_pl.bmp">
 		</File>
 		<File
 			RelativePath="res\DerEinstiegInCrypTool.bmp">
@@ -2470,6 +3037,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DialogeMessage.h">
@@ -2508,6 +3084,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -2554,6 +3139,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DiffieHellmanButtonControl.h">
@@ -2592,6 +3186,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -2638,6 +3241,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DiffieHellmanParty.h">
@@ -2676,6 +3288,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -2746,6 +3367,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgASN1PSEPINPrompt.h">
@@ -2784,6 +3414,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -2842,6 +3481,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgBruteForceAES.h">
@@ -2880,6 +3528,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -2926,6 +3583,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgCertificateGeneration.h">
@@ -2964,6 +3630,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3052,6 +3727,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgDemoRSAKeyGeneration.h">
@@ -3090,6 +3774,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3136,6 +3829,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgDiffieHellmanExchangeSharedKeys.h">
@@ -3174,6 +3876,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3220,6 +3931,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgDiffieHellmanGenerateFinalKey.h">
@@ -3258,6 +3978,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3304,6 +4033,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgDiffieHellmanKeyInformation.h">
@@ -3342,6 +4080,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3388,6 +4135,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgDiffieHellmanSecretInput.h">
@@ -3426,6 +4182,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3472,6 +4237,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgDiffieHellmanSetSecrets.h">
@@ -3510,6 +4284,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3556,6 +4339,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgECGeneration.h">
@@ -3594,6 +4386,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3640,6 +4441,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgEntropyInfo.h">
@@ -3678,6 +4488,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3724,6 +4543,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgFactorisationDemo.h">
@@ -3762,6 +4590,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3820,6 +4657,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgFurtherOptions.h">
@@ -3858,6 +4704,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3904,6 +4759,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgHashDemo.h">
@@ -3942,6 +4806,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -3994,6 +4867,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgHybridDecryptionDemo.h">
@@ -4032,6 +4914,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4078,6 +4969,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgICGRandomParamater.h">
@@ -4116,6 +5016,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4162,6 +5071,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyAsym.h">
@@ -4200,6 +5118,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4246,6 +5173,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyFromPassword.h">
@@ -4284,6 +5220,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4330,6 +5275,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyHexAnalysis.h">
@@ -4368,6 +5322,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4414,6 +5377,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyHill10x10.h">
@@ -4452,6 +5424,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4498,6 +5479,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyHomophone.h">
@@ -4536,6 +5526,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4582,6 +5581,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyPermutation.h">
@@ -4620,6 +5628,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4666,6 +5683,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyPlayfair.h">
@@ -4704,6 +5730,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4750,6 +5785,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgKeyVigenere.h">
@@ -4792,6 +5836,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgLCGRandomParameter.h">
@@ -4830,6 +5883,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4882,6 +5944,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgNGramAnalysis.h">
@@ -4920,6 +5991,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -4972,6 +6052,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgOptionsRSADemo.h">
@@ -5010,6 +6099,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5056,6 +6154,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgOptionsStartoptions.h">
@@ -5094,6 +6201,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5140,6 +6256,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgPeriodicityAnalysis.h">
@@ -5178,6 +6303,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5224,6 +6358,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgPlayfairAnalysis.h">
@@ -5262,6 +6405,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5320,6 +6472,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgProgressFactorisation.h">
@@ -5362,6 +6523,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgRandomGenerator.h">
@@ -5400,6 +6570,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5452,6 +6631,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgRSADecryption.h">
@@ -5494,6 +6682,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgRSADemo.h">
@@ -5532,6 +6729,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5614,6 +6820,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSelectHashFunction.h">
@@ -5652,6 +6867,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5698,6 +6922,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgShowHash.h">
@@ -5736,6 +6969,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5782,6 +7024,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgShowKeyHill10x10.h">
@@ -5820,6 +7071,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5866,6 +7126,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgShowKeyParameter.h">
@@ -5904,6 +7173,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -5950,6 +7228,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgShowPrivateKeyEC.h">
@@ -5988,6 +7275,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6034,6 +7330,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgShowPublicKeyEC.h">
@@ -6072,6 +7377,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6118,6 +7432,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSideChannelAttackVisualizationHEAlice.h">
@@ -6156,6 +7479,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6202,6 +7534,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSideChannelAttackVisualizationHEBob.h">
@@ -6240,6 +7581,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6286,6 +7636,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSideChannelAttackVisualizationHEIntroduction.h">
@@ -6324,6 +7683,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6370,6 +7738,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSideChannelAttackVisualizationHEMessageTransmission.h">
@@ -6408,6 +7785,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6472,6 +7858,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSideChannelAttackVisualizationHEPSEPINPrompt.h">
@@ -6510,6 +7905,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6556,6 +7960,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSideChannelAttackVisualizationHETrudy.h">
@@ -6594,6 +8007,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6640,6 +8062,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSignature.h">
@@ -6682,6 +8113,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgSignatureAttack.h">
@@ -6720,6 +8160,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6778,6 +8227,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgStatisticsSignatureAttack.h">
@@ -6816,6 +8274,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6862,6 +8329,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgTextOptions.h">
@@ -6900,6 +8376,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -6946,6 +8431,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgVerifyECSignatureStepByStep.h">
@@ -6988,6 +8482,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="DlgVerifySignature.h">
@@ -7026,6 +8529,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -7075,6 +8587,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="..\LibEc\include\ECSSA.H">
@@ -7113,6 +8634,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -7158,6 +8688,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -7249,6 +8788,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="FileTools.h">
@@ -7287,6 +8835,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -7335,6 +8892,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -7579,6 +9145,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="HashingOperations.h">
@@ -7620,6 +9195,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -7684,6 +9268,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="HillEncryption.h">
@@ -7722,6 +9315,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -7891,6 +9493,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="IntegerArithmetic.h">
@@ -7899,7 +9510,13 @@
 			RelativePath="res\DHBitmaps_en\bmps\Key_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Key_D.bmp">
+		</File>
+		<File
 			RelativePath="res\DHBitmaps\bmps\Key_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Key_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Key_F.bmp">
@@ -7908,16 +9525,22 @@
 			RelativePath="res\DHBitmaps\bmps\Key_F.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Key_U.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Key_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Key_U.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Key_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Key_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Key_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Key_X.bmp">
 		</File>
 		<File
 			RelativePath=".\res\KEYD.bmp">
@@ -7956,6 +9579,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -8005,6 +9637,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="KeyFileHandling.h">
@@ -8043,6 +9684,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -8089,6 +9739,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="KeyParameterHomophone.h">
@@ -8131,6 +9790,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="KeyRepository.h">
@@ -8163,10 +9831,16 @@
 			RelativePath="res\logo_fzi.bmp">
 		</File>
 		<File
+			RelativePath=".\res\logo_pw.bmp">
+		</File>
+		<File
 			RelativePath="res\logo_sec.bmp">
 		</File>
 		<File
 			RelativePath="res\logo_secude.bmp">
+		</File>
+		<File
+			RelativePath=".\res\logopw.bmp">
 		</File>
 		<File
 			RelativePath=".\Mac.h">
@@ -8175,16 +9849,22 @@
 			RelativePath="res\magnify.cur">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\MainBackground.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\MainBackground.bmp">
+		</File>
+		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\MainBackground.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\MainBackground.bmp">
+			RelativePath=".\res\SCABitmaps\bmps\MainBackground.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\MainBackground.bmp">
 		</File>
 		<File
-			RelativePath=".\res\SCABitmaps\bmps\MainBackground.bmp">
+			RelativePath="res\DHBitmaps\bmps\MainBackground.bmp">
 		</File>
 		<File
 			RelativePath="res\mainfram.bmp">
@@ -8226,6 +9906,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -8272,6 +9961,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="MakeZip.h">
@@ -8310,6 +10008,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -8368,6 +10075,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="ModifiedDocument_Attachments.h">
@@ -8410,6 +10126,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="ModifiedDocument_Blanks.h">
@@ -8448,6 +10173,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -8496,6 +10230,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -8629,6 +10372,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="OptionsForSignatureAttack.h">
@@ -8652,6 +10404,12 @@
 			RelativePath="res\Bitmaps_en\Oval1_G_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Oval1_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Oval1_G_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Oval1_G_F.bmp">
 		</File>
 		<File
@@ -8661,13 +10419,19 @@
 			RelativePath="res\Bitmaps_en\Oval1_G_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Oval1_G_U.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Oval1_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Oval1_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Oval1_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Oval1_U.bmp">
+			RelativePath="res\Bitmaps_en\Oval2_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Oval2_D.bmp">
@@ -8676,16 +10440,16 @@
 			RelativePath="res\Oval2_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Oval2_D.bmp">
+			RelativePath="res\Oval2_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Oval2_F.bmp">
+			RelativePath="res\Bitmaps_en\Oval2_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Oval2_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Oval2_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Oval2_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Oval2_G_D.bmp">
@@ -8694,13 +10458,19 @@
 			RelativePath="res\Bitmaps_en\Oval2_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Oval2_G_F.bmp">
-		</File>
-		<File
 			RelativePath="res\Bitmaps_en\Oval2_G_F.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Oval2_G_F.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Oval2_G_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps_en\Oval2_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Oval2_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Oval2_G_U.bmp">
@@ -8715,19 +10485,22 @@
 			RelativePath="res\Oval2_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Bitmaps_en\Oval2_X.bmp">
+			RelativePath="res\Bitmaps_en\Oval2_X.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Oval2_X.bmp">
+			RelativePath="res\Bitmaps\Bitmaps_en\Oval2_X.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Oval2_X.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Oval2_X_U.bmp">
+			RelativePath=".\res\Bitmaps_pl\Oval2_X_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Oval2_X_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Oval2_X_U.bmp">
 		</File>
 		<File
 			RelativePath="..\ChallengeResponse\Packet.cpp">
@@ -8776,6 +10549,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="ParseIniFile.h">
@@ -8818,9 +10600,21 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="ParseIniFile2.h">
+		</File>
+		<File
+			RelativePath=".\res\pewu.bmp">
 		</File>
 		<File
 			RelativePath="res\PfeilUnten.bmp">
@@ -8866,6 +10660,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="PictureEx.h">
@@ -8875,6 +10678,255 @@
 		</File>
 		<File
 			RelativePath=".\PictureExLoop.h">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_CANCEL_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_CANCEL_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_CANCEL_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_CANCEL_Y_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_CANCEL_Y_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_CANCEL_Y_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMBINE_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMBINE_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMBINE_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMBINE_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMBINE_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMBINE_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMBINE_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMPUTE_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMPUTE_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMPUTE_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMPUTE_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMPUTE_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMPUTE_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_COMPUTE_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_ENCRYPT_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_ENCRYPT_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_ENCRYPT_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_ENCRYPT_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_ENCRYPT_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_ENCRYPT_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_ENCRYPT_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENCERT_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENCERT_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENCERT_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENCERT_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENCERT_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENCERT_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENKEY_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENKEY_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENKEY_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENKEY_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENKEY_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_GENKEY_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOALG_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOALG_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOALG_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOALG_B_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOCERT_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOCERT_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOCERT_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOCERT_B_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFODOC_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFODOC_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFODOC_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFODOC_B_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOENC_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOENC_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOENC_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOENC_B_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOHASH_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOHASH_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOHASH_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOHASH_B_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOKEY_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOKEY_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOKEY_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOKEY_B_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOSIGN_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOSIGN_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOSIGN_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_INFOSIGN_B_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OK_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OK_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OK_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OK_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OPENDOC_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OPENDOC_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OPENDOC_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OPENDOC_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OPENDOC_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_OPENDOC_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_SELECTALG_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_SELECTALG_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_SELECTALG_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_SELECTALG_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_SELECTALG_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\PL_SELECTALG_R_U.bmp">
 		</File>
 		<File
 			RelativePath="PlayfairAnalysis.cpp">
@@ -8910,6 +10962,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -8956,6 +11017,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="PlayfairStructures.cpp">
@@ -8991,6 +11061,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -9037,6 +11116,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="res\plottype.ico">
@@ -9075,6 +11163,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -9121,6 +11218,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="POLY.H">
@@ -9159,6 +11265,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -9223,9 +11338,21 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="PSEDemo.h">
+		</File>
+		<File
+			RelativePath=".\res\pw.bmp">
 		</File>
 		<File
 			RelativePath="RandomAnalysisTools.cpp">
@@ -9261,6 +11388,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -9307,6 +11443,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="RandomTest.h">
@@ -9315,19 +11460,28 @@
 			RelativePath="res\Bitmaps\Raute1_B_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Raute1_B_D.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps_en\Raute1_B_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute1_B_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute1_B_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute1_B_F.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Raute1_B_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute1_B_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute1_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute1_B_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute1_D.bmp">
@@ -9342,22 +11496,28 @@
 			RelativePath="res\Bitmaps\Raute1_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute1_U.bmp">
-		</File>
-		<File
 			RelativePath="res\Bitmaps_en\Raute1_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute1_X.bmp">
+			RelativePath="res\Bitmaps\Raute1_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute1_X.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute1_X_U.bmp">
+			RelativePath="res\Bitmaps_en\Raute1_X.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute1_X_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute1_X_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Raute1_X_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute2_B_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute2_B_D.bmp">
@@ -9366,22 +11526,28 @@
 			RelativePath="res\Bitmaps_en\Raute2_B_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute2_B_F.bmp">
+			RelativePath="res\Bitmaps_en\Raute2_B_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute2_B_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute2_B_F.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Raute2_B_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute2_B_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Raute2_B_U.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps_en\Raute2_B_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute2_D.bmp">
+			RelativePath="res\Bitmaps_en\Raute2_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute2_D.bmp">
+			RelativePath="res\Bitmaps\Raute2_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute2_F.bmp">
@@ -9390,10 +11556,10 @@
 			RelativePath="res\Bitmaps\Raute2_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute2_U.bmp">
+			RelativePath="res\Bitmaps\Raute2_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute2_U.bmp">
+			RelativePath="res\Bitmaps_en\Raute2_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute2_X.bmp">
@@ -9402,13 +11568,19 @@
 			RelativePath="res\Bitmaps_en\Raute2_X.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute2_X_U.bmp">
-		</File>
-		<File
 			RelativePath="res\Bitmaps_en\Raute2_X_U.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Raute2_X_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Raute2_X_U.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps_en\Raute3_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute3_B_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute3_B_D.bmp">
@@ -9417,25 +11589,31 @@
 			RelativePath="res\Bitmaps\Raute3_B_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute3_B_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute3_B_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute3_B_U.bmp">
+			RelativePath="res\Bitmaps_en\Raute3_B_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute3_B_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute3_D.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute3_B_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Raute3_B_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute3_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute3_F.bmp">
+			RelativePath="res\Bitmaps_en\Raute3_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute3_F.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Raute3_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute3_U.bmp">
@@ -9444,10 +11622,13 @@
 			RelativePath="res\Bitmaps_en\Raute3_U.bmp">
 		</File>
 		<File
+			RelativePath="res\Bitmaps_en\Raute3_X.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Raute3_X.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute3_X.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute3_X_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute3_X_U.bmp">
@@ -9456,10 +11637,16 @@
 			RelativePath="res\Bitmaps\Raute3_X_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute4_B_D.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute4_B_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute4_B_D.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Raute4_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute4_B_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute4_B_F.bmp">
@@ -9468,28 +11655,31 @@
 			RelativePath="res\Bitmaps_en\Raute4_B_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute4_B_U.bmp">
-		</File>
-		<File
 			RelativePath="res\Bitmaps\Raute4_B_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute4_D.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute4_B_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Raute4_B_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute4_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute4_F.bmp">
+			RelativePath="res\Bitmaps_en\Raute4_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute4_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute4_U.bmp">
+			RelativePath="res\Bitmaps_en\Raute4_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute4_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Raute4_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute4_X.bmp">
@@ -9501,31 +11691,43 @@
 			RelativePath="res\Bitmaps\Raute4_X_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute4_X_U.bmp">
+			RelativePath=".\res\Bitmaps_pl\Raute4_X_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute5_B_D.bmp">
+			RelativePath="res\Bitmaps_en\Raute4_X_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute5_B_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute5_B_F.bmp">
+			RelativePath="res\Bitmaps_en\Raute5_B_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute5_B_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute5_B_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute5_B_U.bmp">
+			RelativePath="res\Bitmaps_en\Raute5_B_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute5_B_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute5_B_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute5_D.bmp">
+			RelativePath="res\Bitmaps\Raute5_B_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute5_B_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute5_D.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Raute5_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute5_F.bmp">
@@ -9540,16 +11742,19 @@
 			RelativePath="res\Bitmaps\Raute5_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Raute5_X.bmp">
+			RelativePath="res\Bitmaps_en\Raute5_X.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Raute5_X.bmp">
+			RelativePath="res\Bitmaps\Raute5_X.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Raute5_X_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Raute5_X_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Raute5_X_U.bmp">
 		</File>
 		<File
 			RelativePath="hlp-de\bitmaps\RauteDaten.bmp">
@@ -9592,39 +11797,63 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="..\AES\RC6\rc6.h">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Rechteck1_G_D.bmp">
+			RelativePath=".\res\Bitmaps_pl\Rechteck1_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Rechteck1_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Rechteck1_G_F.bmp">
+			RelativePath="res\Bitmaps_en\Rechteck1_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck1_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Rechteck1_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Rechteck1_G_U.bmp">
+			RelativePath="res\Bitmaps_en\Rechteck1_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck1_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Rechteck1_R_D.bmp">
+			RelativePath=".\res\Bitmaps_pl\Rechteck1_G_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Rechteck1_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck1_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Rechteck1_R_F.bmp">
+			RelativePath="res\Bitmaps\Rechteck1_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck1_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck1_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck1_R_F.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Rechteck1_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck1_R_U.bmp">
@@ -9633,16 +11862,25 @@
 			RelativePath="res\Bitmaps\Rechteck1_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Rechteck1_X_U.bmp">
+			RelativePath=".\res\Bitmaps_pl\Rechteck1_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck1_X_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Rechteck2_G_D.bmp">
+			RelativePath="res\Bitmaps\Rechteck1_X_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck1_X_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Rechteck2_G_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck2_G_D.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Rechteck2_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck2_G_F.bmp">
@@ -9651,10 +11889,19 @@
 			RelativePath="res\Bitmaps\Rechteck2_G_F.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck2_G_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps_en\Rechteck2_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Rechteck2_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck2_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck2_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck2_R_D.bmp">
@@ -9669,16 +11916,25 @@
 			RelativePath="res\Bitmaps_en\Rechteck2_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Rechteck2_R_U.bmp">
+			RelativePath=".\res\Bitmaps_pl\Rechteck2_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck2_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Rechteck2_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Rechteck2_X_U.bmp">
+			RelativePath="res\Bitmaps\Rechteck2_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Rechteck2_X_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Rechteck2_X_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Rechteck2_X_U.bmp">
 		</File>
 		<File
 			RelativePath="resource.h">
@@ -9717,6 +11973,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -9763,6 +12028,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="..\AES\Rijndael\rijndael-alg-fst.h">
@@ -9801,6 +12075,15 @@
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -9868,6 +12151,15 @@
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="..\LibEc\include\s_prng.h">
@@ -9876,16 +12168,22 @@
 			RelativePath="res\sarrows.cur">
 		</File>
 		<File
-			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_failure.gif">
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_ab_arrow_failure.gif">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\gifs\sca_ab_arrow_failure.gif">
 		</File>
 		<File
-			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_interception.gif">
+			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_failure.gif">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\gifs\sca_ab_arrow_interception.gif">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_interception.gif">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_ab_arrow_interception.gif">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\gifs\sca_ab_arrow_static.gif">
@@ -9894,22 +12192,37 @@
 			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_static.gif">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_ab_arrow_static.gif">
+		</File>
+		<File
 			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_success.gif">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_ab_arrow_success.gif">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\gifs\sca_ab_arrow_success.gif">
 		</File>
 		<File
-			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_transmission.gif">
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_ab_arrow_transmission.gif">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\gifs\sca_ab_arrow_transmission.gif">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\gifs\sca_ab_arrow_transmission_trudybob.gif">
+			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_transmission.gif">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_ab_arrow_transmission_trudybob.gif">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\gifs\sca_ab_arrow_transmission_trudybob.gif">
+		</File>
+		<File
+			RelativePath="res\SCABitmaps\gifs\sca_ab_arrow_transmission_trudybob.gif">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\sca_alice_small.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\sca_alice_small.bmp">
@@ -9936,10 +12249,16 @@
 			RelativePath=".\res\SCABitmaps_en\bmps\sca_bob_small.bmp">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\sca_bob_small.bmp">
+		</File>
+		<File
 			RelativePath="res\sca_butt.bmp">
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\sca_gapfiller.bmp">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\bmps\sca_gapfiller.bmp">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\sca_gapfiller.bmp">
@@ -9957,6 +12276,12 @@
 			RelativePath="res\SCABitmaps\gifs\sca_lights.gif">
 		</File>
 		<File
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_lights.gif">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_lights_green.gif">
+		</File>
+		<File
 			RelativePath=".\res\SCABitmaps_en\gifs\sca_lights_green.gif">
 		</File>
 		<File
@@ -9967,6 +12292,9 @@
 		</File>
 		<File
 			RelativePath=".\res\SCABitmaps_en\gifs\sca_lights_red.gif">
+		</File>
+		<File
+			RelativePath=".\res\SCABitmaps_pl\gifs\sca_lights_red.gif">
 		</File>
 		<File
 			RelativePath="res\SCABitmaps\bmps\sca_nextstep_D.bmp">
@@ -9984,10 +12312,13 @@
 			RelativePath="res\sca_red_error.gif">
 		</File>
 		<File
+			RelativePath="res\SCABitmaps\bmps\sca_trudy_small.bmp">
+		</File>
+		<File
 			RelativePath=".\res\SCABitmaps_en\bmps\sca_trudy_small.bmp">
 		</File>
 		<File
-			RelativePath="res\SCABitmaps\bmps\sca_trudy_small.bmp">
+			RelativePath=".\res\SCABitmaps_pl\bmps\sca_trudy_small.bmp">
 		</File>
 		<File
 			RelativePath="..\ChallengeResponse\Scenario.cpp">
@@ -10042,6 +12373,19 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 "
 					Outputs="$(OutDir)\$(InputFileName)"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="copying template DLLs to $(OutDir)"
+					CommandLine="cmd /c copy /y &quot;$(InputDir)*.dll&quot; &quot;$(OutDir)&quot;
+cmd /c copy /y &quot;$(InputDir)*.ini&quot; &quot;$(OutDir)&quot;
+cmd /c copy /y &quot;$(InputDir)*.xml&quot; &quot;$(OutDir)&quot;
+cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
+
+"
+					Outputs="$(OutDir)\$(InputFileName)"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\ScintillaDoc.cpp">
@@ -10071,10 +12415,13 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps_en\Sechseck1_D.bmp">
 		</File>
 		<File
+			RelativePath="res\Bitmaps_en\Sechseck1_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Sechseck1_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck1_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Sechseck1_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck1_G_D.bmp">
@@ -10083,10 +12430,16 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps_en\Sechseck1_G_D.bmp">
 		</File>
 		<File
+			RelativePath="res\Bitmaps\Sechseck1_G_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps_en\Sechseck1_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Sechseck1_G_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Sechseck1_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck1_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck1_G_U.bmp">
@@ -10101,76 +12454,103 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps_en\Sechseck1_R_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck1_R_D.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Sechseck1_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck1_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck1_R_U.bmp">
+			RelativePath=".\res\Bitmaps_pl\Sechseck1_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck1_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck1_U.bmp">
+			RelativePath="res\Bitmaps_en\Sechseck1_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck1_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck1_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck2_D.bmp">
+			RelativePath="res\Bitmaps_en\Sechseck1_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck2_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck2_F.bmp">
+			RelativePath="res\Bitmaps_en\Sechseck2_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck2_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck2_G_D.bmp">
+			RelativePath="res\Bitmaps_en\Sechseck2_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck2_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck2_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck2_G_F.bmp">
+			RelativePath="res\Bitmaps_en\Sechseck2_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck2_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Sechseck2_G_U.bmp">
+			RelativePath="res\Bitmaps_en\Sechseck2_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck2_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck2_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Sechseck2_R_D.bmp">
+			RelativePath="res\Bitmaps\Sechseck2_G_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck2_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck2_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Sechseck2_R_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Sechseck2_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps\Sechseck2_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck2_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck2_R_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Sechseck2_R_U.bmp">
+			RelativePath="res\Bitmaps\Sechseck2_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck2_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck2_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck2_U.bmp">
+			RelativePath="res\Bitmaps\Sechseck2_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck2_U.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Sechseck2_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck3_D.bmp">
@@ -10179,10 +12559,13 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps\Sechseck3_D.bmp">
 		</File>
 		<File
+			RelativePath="res\Bitmaps_en\Sechseck3_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Sechseck3_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck3_F.bmp">
+			RelativePath=".\res\Bitmaps_pl\Sechseck3_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck3_G_D.bmp">
@@ -10191,22 +12574,31 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps_en\Sechseck3_G_D.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck3_G_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps_en\Sechseck3_G_F.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck3_G_F.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Sechseck3_G_U.bmp">
+			RelativePath=".\res\Bitmaps_pl\Sechseck3_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck3_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Sechseck3_R_D.bmp">
+			RelativePath="res\Bitmaps\Sechseck3_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Sechseck3_R_D.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck3_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\Bitmaps_en\Sechseck3_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck3_R_F.bmp">
@@ -10215,10 +12607,16 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps\Sechseck3_R_F.bmp">
 		</File>
 		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck3_R_F.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Sechseck3_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck3_R_U.bmp">
+		</File>
+		<File
+			RelativePath=".\res\Bitmaps_pl\Sechseck3_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Sechseck3_U.bmp">
@@ -10227,16 +12625,25 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps\Sechseck3_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Secret_G_D.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Secret_G_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Secret_G_F.bmp">
+			RelativePath="res\DHBitmaps\bmps\Secret_G_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Secret_G_F.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Secret_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_G_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_G_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Secret_G_U.bmp">
@@ -10245,22 +12652,31 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\DHBitmaps_en\bmps\Secret_G_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Secret_G_X.bmp">
-		</File>
-		<File
 			RelativePath="res\DHBitmaps_en\bmps\Secret_G_X.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Secret_R_D.bmp">
+			RelativePath="res\DHBitmaps\bmps\Secret_G_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_G_X.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Secret_R_D.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Secret_R_F.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_R_D.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Secret_R_D.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Secret_R_F.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_R_F.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Secret_R_F.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Secret_R_U.bmp">
@@ -10269,10 +12685,16 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\DHBitmaps\bmps\Secret_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Secret_R_X.bmp">
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_R_U.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps_en\bmps\Secret_R_X.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps\bmps\Secret_R_X.bmp">
+		</File>
+		<File
+			RelativePath=".\res\DHBitmaps_pl\bmps\Secret_R_X.bmp">
 		</File>
 		<File
 			RelativePath=".\SecretSharingLog.cpp">
@@ -10314,6 +12736,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -10360,6 +12791,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="SecudeLib.h">
@@ -10398,6 +12838,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -10465,6 +12914,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="..\AES\Serpent\SERPENT.H">
@@ -10506,6 +12964,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -10552,6 +13019,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="SideChannelAttackButtonControl.h">
@@ -10594,6 +13070,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="SignatureAttack.h">
@@ -10632,6 +13117,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -10696,6 +13190,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="SquareMatrixModN.h">
@@ -10738,15 +13241,24 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="stdafx.h">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Step_1.bmp">
+			RelativePath="res\DHBitmaps_en\bmps\Step_1.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Step_1.bmp">
+			RelativePath="res\DHBitmaps\bmps\Step_1.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Step_2.bmp">
@@ -10761,16 +13273,16 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\DHBitmaps\bmps\Step_3.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps\bmps\Step_4.bmp">
-		</File>
-		<File
 			RelativePath="res\DHBitmaps_en\bmps\Step_4.bmp">
 		</File>
 		<File
-			RelativePath="res\DHBitmaps_en\bmps\Step_5.bmp">
+			RelativePath="res\DHBitmaps\bmps\Step_4.bmp">
 		</File>
 		<File
 			RelativePath="res\DHBitmaps\bmps\Step_5.bmp">
+		</File>
+		<File
+			RelativePath="res\DHBitmaps_en\bmps\Step_5.bmp">
 		</File>
 		<File
 			RelativePath=".\StereotypedAttack.cpp">
@@ -10824,6 +13336,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -10891,6 +13412,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\uucode.cpp">
@@ -10939,6 +13469,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="ValueList.h">
@@ -10974,25 +13513,25 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps\Viereck1_R_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Viereck1_U.bmp">
-		</File>
-		<File
 			RelativePath="res\Bitmaps\Viereck1_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Viereck1_X.bmp">
+			RelativePath="res\Bitmaps_en\Viereck1_U.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Viereck1_X.bmp">
 		</File>
 		<File
+			RelativePath="res\Bitmaps\Viereck1_X.bmp">
+		</File>
+		<File
 			RelativePath="res\Bitmaps\Viereck1_X_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Viereck2_D.bmp">
+			RelativePath="res\Bitmaps\Viereck2_D.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Viereck2_D.bmp">
+			RelativePath="res\Bitmaps_en\Viereck2_D.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps_en\Viereck2_F.bmp">
@@ -11025,10 +13564,10 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 			RelativePath="res\Bitmaps_en\Viereck2_U.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps\Viereck2_X.bmp">
+			RelativePath="res\Bitmaps_en\Viereck2_X.bmp">
 		</File>
 		<File
-			RelativePath="res\Bitmaps_en\Viereck2_X.bmp">
+			RelativePath="res\Bitmaps\Viereck2_X.bmp">
 		</File>
 		<File
 			RelativePath="res\Bitmaps\Viereck2_X_U.bmp">
@@ -11092,6 +13631,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="zip\zdeflate.c">
@@ -11127,6 +13675,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -11170,6 +13727,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="zip\zglobals.c">
@@ -11205,6 +13771,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -11248,6 +13823,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="zip\zip.c">
@@ -11283,6 +13867,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -11326,6 +13919,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="zip\ztrees.c">
@@ -11365,6 +13967,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="zip\zunzip.c">
@@ -11400,6 +14011,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>
@@ -11445,6 +14065,15 @@ cmd /c copy /y &quot;$(InputDir)ticket&quot; &quot;$(OutDir)&quot;
 				<Tool
 					Name="VCCLCompilerTool"
 					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=""
+					BrowseInformation="1"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release_pl|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
 					AdditionalIncludeDirectories=""
 					PreprocessorDefinitions=""
 					BrowseInformation="1"/>

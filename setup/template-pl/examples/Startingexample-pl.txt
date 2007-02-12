@@ -1,0 +1,19 @@
+CrypTool
+
+To jest plik tekstowy, pokazany, aby pomóc Tobie stawiaæ pierwsze kroki w pracy z CrypToolem.
+
+1) Pierwsza rzecz¹, któr¹ mo¿esz zrobiæ jest zaszyfrowanie tego pliku algorytmem Cezara [poprzez menu Szyfrowanie / Historyczne "].
+
+2) Najlepszy pogl¹d na temat wszystkich opcji dostêpnych w CrypToolu, daje strona startowa pomocy on-line, która zawiera odnoœniki do wszystkich dostêpnych funkcji.
+Mo¿esz wywo³aæ stronê startow¹ poprzez menu "Pomoc \ Strona startowa".
+
+3) Przyk³ady (tutoriale) dostarczone w pomocy on-line, pomog¹ Tobie szybko zapoznaæ siê z programem. Te strony znajdziesz przez "Pomoc \ Scenariusze (Tutoriale)".
+
+4) Dalsze mo¿liwoœci odnajdziesz:
+- klikaj¹c po menu
+- przegl¹daj¹c plik ReadMe (tak¿e z menu "Pomoc").
+- przegl¹daj¹c prezentacjê (zobacz sekcjê "Documentation" na stronie startowej pomocy on-line).
+- zagl¹daj¹c na stronê www.cryptool.org
+
+Czerwiec 2006
+
