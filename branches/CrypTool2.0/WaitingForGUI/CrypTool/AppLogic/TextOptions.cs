@@ -24,7 +24,7 @@ namespace CrypTool.AppLogic
 
         static TextOptions()
         {
-            setStandard();
+            setDefault();
         }
 
         #region Getter/Setter
@@ -81,9 +81,9 @@ namespace CrypTool.AppLogic
         {
             m_IgnoreCase = bIgnoreCase;
         }
-        public static void setStandard()
+        public static void setDefault()
         {
-            m_StrRefFile = "c:\test.txt";
+            m_StrRefFile = "c:\\test.txt";
             m_Format = true;
             m_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             m_Case = false;

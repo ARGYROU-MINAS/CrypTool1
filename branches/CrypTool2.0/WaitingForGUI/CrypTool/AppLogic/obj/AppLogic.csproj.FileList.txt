@@ -3,3 +3,8 @@ bin\Debug\AppLogic.pdb
 obj\Debug\ResolveAssemblyReference.cache
 obj\Debug\AppLogic.dll
 obj\Debug\AppLogic.pdb
+bin\Release\AppLogic.dll
+bin\Release\AppLogic.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\AppLogic.dll
+obj\Release\AppLogic.pdb

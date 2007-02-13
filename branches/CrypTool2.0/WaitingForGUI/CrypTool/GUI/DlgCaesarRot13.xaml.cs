@@ -6,6 +6,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Security.Cryptography;
 
 namespace CrypTool
 {
@@ -21,7 +22,11 @@ namespace CrypTool
             InitializeComponent();
         }
         private void Encode(object sender, RoutedEventArgs e)
-        { 
+        {
+            CrypTool.AppLogic.Rot13Caesar rot = new CrypTool.AppLogic.Rot13Caesar();
+            byte[] Key = { "A" };
+            byte[] IV = { "Hallo" };
+            ICryptoTransform trans = rot.CreateEncryptor(Key, IV);
         
         }
         private void Decode(object sender, RoutedEventArgs e)
