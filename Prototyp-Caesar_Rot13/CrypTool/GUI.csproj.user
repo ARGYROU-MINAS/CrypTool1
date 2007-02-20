@@ -1,0 +1,14 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>http://localhost/CrypTool/|https://localhost/CrypTool/|D:\IIS\CrypTool\|Publish\|C:\Dokumente und Einstellungen\sebek\Desktop\publish\</PublishUrlHistory>
+    <InstallUrlHistory>http://localhost/CrypTool/|https://localhost/CrypTool/</InstallUrlHistory>
+    <SupportUrlHistory>
+    </SupportUrlHistory>
+    <UpdateUrlHistory>http://localhost/CrypTool/|https://localhost/CrypTool/</UpdateUrlHistory>
+    <BootstrapperUrlHistory>
+    </BootstrapperUrlHistory>
+    <ApplicationRevision>14</ApplicationRevision>
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+</Project>
