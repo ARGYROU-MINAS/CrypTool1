@@ -1,1 +1,0 @@
-MarkerOutline enum. Is this just a continuation of Marker?
