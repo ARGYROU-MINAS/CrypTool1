@@ -1,0 +1,9 @@
+bin\Debug\Be.Windows.Forms.HexBox.dll
+bin\Debug\Be.Windows.Forms.HexBox.pdb
+bin\Debug\Be.Windows.Forms.HexBox.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Be.Windows.Forms.HexBox.bmp
+obj\Debug\Be.Windows.Forms.HexBox.resources
+obj\Debug\Be.Windows.Forms.HexBox.csproj.GenerateResource.Cache
+obj\Debug\Be.Windows.Forms.HexBox.dll
+obj\Debug\Be.Windows.Forms.HexBox.pdb
