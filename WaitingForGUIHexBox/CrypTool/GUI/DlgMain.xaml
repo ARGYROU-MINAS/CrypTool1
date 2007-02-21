@@ -1,0 +1,25 @@
+﻿<Window x:Class="CrypTool.DlgMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="CrypTool2.0 Alpha WaitingForGUI" Height="60" Width="800"
+    Background="LightSlateGray">
+	<DockPanel>
+		<Menu Name="Menu" VerticalAlignment="Top" DockPanel.Dock="Top" Background="WhiteSmoke">
+			<MenuItem Name="MenuItemFile" Header="Datei">
+        <MenuItem Name="MenuItemNew" Header="Neu" Click="MenuItemNew_OnClick"/>
+        <MenuItem Name="MenuItemOpen" Header="Öffnen..." Click="MenuItemOpen_OnClick"/>
+        <MenuItem Name="MenuItemSave" Header="Speichern..." Click="MenuItemSave_OnClick"/>
+        <Separator/>
+				<MenuItem Name="MenuItemQuit" Header="Beenden" Click="CloseDlgMain"/>
+			</MenuItem>
+			<MenuItem Name="MenuItemEncryption" Header="Ver-/Entschlüsseln">
+				<MenuItem Name="MenuItemSymetricClass" Header="Symmetrisch (klassisch)">
+					<MenuItem Name="MenuItemCaesarRot13" Header="Caesar / Rot-13..." Click="ShowDlgCaesarRot13"></MenuItem>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem Name="Options" Header="Optionen">
+				<MenuItem Name="TextOptions" Header="Textoptionen" Click="ShowDlgTextOptions"></MenuItem>
+			</MenuItem>
+		</Menu>
+	</DockPanel>
+</Window>
