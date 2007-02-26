@@ -21,6 +21,8 @@ namespace CrypTool.AppLogic
         static private bool m_addx;
         static private bool m_IgnoreCase;
 
+        static public int Handle;
+
 
         static TextOptions()
         {
