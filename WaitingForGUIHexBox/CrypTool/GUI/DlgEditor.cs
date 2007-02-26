@@ -11,13 +11,17 @@ namespace CrypTool
 {
     public partial class DlgEditor : Form
     {
-        public DlgEditor()
+        System.Windows.Window FormMain;
+
+        public DlgEditor(System.Windows.Window FormMain)
         {
             InitializeComponent();
+            this.FormMain = FormMain;
         }
-        public DlgEditor(Stream stream)
+        public DlgEditor(System.Windows.Window FormMain, Stream stream)
         {
             InitializeComponent();
+            this.FormMain = FormMain;
             richTextBoxPlaintext.LoadFile(stream,RichTextBoxStreamType.PlainText);
         }
         public StreamReader getPlainText()
@@ -30,9 +34,14 @@ namespace CrypTool
         {
             //scintillaControlCipherText.Text = reader.ReadToEnd();
         }
-        private void scintillaControl1_Click(object sender, EventArgs e)
-        {
 
+        private void DlgEditor_Activated(object sender, EventArgs e)
+        {
+            
+        }
+        public void setText(String sText)
+        {
+            this.Text = sText;
         }
     }
 }

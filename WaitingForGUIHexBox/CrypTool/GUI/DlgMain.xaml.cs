@@ -20,8 +20,8 @@ namespace CrypTool
 
     public partial class DlgMain : Window
     {
-        [DllImport("user32.dll")]
-        private static extern int GetActiveWindow();
+        //[DllImport("user32.dll")]
+        //private static extern int GetActiveWindow();
 
 
         DlgEditor dlgEditor;
@@ -29,6 +29,7 @@ namespace CrypTool
         public DlgMain()
         {
             InitializeComponent();
+            System.Windows.Forms.Application.EnableVisualStyles();
         }
         private void CloseDlgMain(object sender, RoutedEventArgs e)
         {
@@ -46,7 +47,8 @@ namespace CrypTool
         }
         private void MenuItemNew_OnClick(object sender, RoutedEventArgs e)
         {
-            dlgEditor = new DlgEditor();
+            dlgEditor = new DlgEditor(this);
+            dlgEditor.Owner = (System.Windows.Forms.Form)this;
             dlgEditor.Show();
         }
         private void MenuItemOpen_OnClick(object sender, RoutedEventArgs e)
@@ -64,7 +66,7 @@ namespace CrypTool
                 {
                     //StreamReader reader = new StreamReader(openFileDialog.FileName, Encoding.UTF8);
 
-                    dlgEditor = new DlgEditor(myStream);
+                    dlgEditor = new DlgEditor(this, myStream);
                     dlgEditor.Show();
                 }
             }
@@ -72,9 +74,13 @@ namespace CrypTool
         }
         private void MenuItemSave_OnClick(object sender, RoutedEventArgs e)
         {
-            int handle = GetActiveWindow();
 
-            System.Windows.Forms.MessageBox.Show(handle.ToString());
+           // System.Windows.MessageBox.Show(CrypTool.AppLogic.TextOptions.Handle.ToString());
+
+            this.dlgEditor.Text = "Hallo";
+            //int handle = GetActiveWindow();
+
+            //System.Windows.Forms.MessageBox.Show(handle.ToString());
             
             //SaveFileDialog saveFileDialog = new SaveFileDialog();
 

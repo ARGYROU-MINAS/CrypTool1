@@ -30,9 +30,9 @@ namespace CrypTool
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePlainText = new System.Windows.Forms.TabPage();
+            this.richTextBoxPlaintext = new System.Windows.Forms.RichTextBox();
             this.tabPageCipherText = new System.Windows.Forms.TabPage();
             this.tabPageDetails = new System.Windows.Forms.TabPage();
-            this.richTextBoxPlaintext = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPagePlainText.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,15 @@ namespace CrypTool
             this.tabPagePlainText.Text = "Klartext";
             this.tabPagePlainText.UseVisualStyleBackColor = true;
             // 
+            // richTextBoxPlaintext
+            // 
+            this.richTextBoxPlaintext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxPlaintext.Location = new System.Drawing.Point(3, 3);
+            this.richTextBoxPlaintext.Name = "richTextBoxPlaintext";
+            this.richTextBoxPlaintext.Size = new System.Drawing.Size(570, 348);
+            this.richTextBoxPlaintext.TabIndex = 0;
+            this.richTextBoxPlaintext.Text = "";
+            // 
             // tabPageCipherText
             // 
             this.tabPageCipherText.Location = new System.Drawing.Point(4, 22);
@@ -80,15 +89,6 @@ namespace CrypTool
             this.tabPageDetails.Text = "Details";
             this.tabPageDetails.UseVisualStyleBackColor = true;
             // 
-            // richTextBoxPlaintext
-            // 
-            this.richTextBoxPlaintext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxPlaintext.Location = new System.Drawing.Point(3, 3);
-            this.richTextBoxPlaintext.Name = "richTextBoxPlaintext";
-            this.richTextBoxPlaintext.Size = new System.Drawing.Size(570, 348);
-            this.richTextBoxPlaintext.TabIndex = 0;
-            this.richTextBoxPlaintext.Text = "";
-            // 
             // DlgEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +97,7 @@ namespace CrypTool
             this.Controls.Add(this.tabControl1);
             this.Name = "DlgEditor";
             this.Text = "DlgEditor";
+            this.Activated += new System.EventHandler(this.DlgEditor_Activated);
             this.tabControl1.ResumeLayout(false);
             this.tabPagePlainText.ResumeLayout(false);
             this.ResumeLayout(false);
