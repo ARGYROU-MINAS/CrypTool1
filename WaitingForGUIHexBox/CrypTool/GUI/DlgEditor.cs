@@ -11,24 +11,22 @@ namespace CrypTool
 {
     public partial class DlgEditor : Form
     {
-        System.Windows.Window FormMain;
+        private DlgMain _FormMainReference = null;
 
-        public DlgEditor(System.Windows.Window FormMain)
+        public DlgEditor(DlgMain _MainForm)
         {
+            _FormMainReference = _MainForm;
             InitializeComponent();
-            this.FormMain = FormMain;
         }
-        public DlgEditor(System.Windows.Window FormMain, Stream stream)
+        public DlgEditor(DlgMain _MainForm, Stream stream)
         {
+            _FormMainReference = _MainForm;
             InitializeComponent();
-            this.FormMain = FormMain;
             richTextBoxPlaintext.LoadFile(stream,RichTextBoxStreamType.PlainText);
         }
-        public StreamReader getPlainText()
+        public void savePlainText(Stream stream)
         {
-            StreamReader reader = new StreamReader("");
-
-            return reader;
+            richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
         }
         public void setCipherText(StreamReader reader)
         {
@@ -37,7 +35,7 @@ namespace CrypTool
 
         private void DlgEditor_Activated(object sender, EventArgs e)
         {
-            
+            _FormMainReference.mainFormNotify(this);
         }
         public void setText(String sText)
         {

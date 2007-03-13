@@ -34,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaesarRot13.cs" />
+    <Compile Include="Rijndael.cs" />
     <Compile Include="TextOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

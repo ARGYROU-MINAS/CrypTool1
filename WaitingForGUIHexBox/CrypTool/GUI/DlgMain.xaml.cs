@@ -20,16 +20,25 @@ namespace CrypTool
 
     public partial class DlgMain : Window
     {
-        //[DllImport("user32.dll")]
-        //private static extern int GetActiveWindow();
-
-
-        DlgEditor dlgEditor;
+        private DlgEditor _lastNotifiedForm = null;
+        private String selectedLang;
+        System.Windows.Controls.MenuItem[] itemLang;
 
         public DlgMain()
         {
             InitializeComponent();
+            getLanguages();
             System.Windows.Forms.Application.EnableVisualStyles();
+        }
+        public void setLang(String selectedLang)
+        {
+            this.selectedLang = "/lng/";
+            this.selectedLang += selectedLang;
+            this.selectedLang += ".xml";
+        }
+        public String getLang()
+        {
+            return this.selectedLang;
         }
         private void CloseDlgMain(object sender, RoutedEventArgs e)
         {
@@ -47,55 +56,84 @@ namespace CrypTool
         }
         private void MenuItemNew_OnClick(object sender, RoutedEventArgs e)
         {
-            dlgEditor = new DlgEditor(this);
-            dlgEditor.Owner = (System.Windows.Forms.Form)this;
+            DlgEditor dlgEditor = new DlgEditor(this);
             dlgEditor.Show();
         }
         private void MenuItemOpen_OnClick(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            //openFileDialog.InitialDirectory =  System.Windows.Application.StartupPath;
+            openFileDialog.InitialDirectory = System.Windows.Forms.Application.StartupPath;
             openFileDialog.RestoreDirectory = true;
-            openFileDialog.Multiselect = false;
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "Text Datei (*.txt)|*.txt|Plot Datei (*.plt)|*.plt|"
+                                    + "Binäre Datei (*.hex)|*.hex|"
+                                    + "OpenGL Datei (*.ogl)|*.ogl|Alle Dateien (*.*)|*.*";
+            
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Stream myStream = openFileDialog.OpenFile();
-                if (null != myStream)
+                foreach(String file in openFileDialog.FileNames)
                 {
-                    //StreamReader reader = new StreamReader(openFileDialog.FileName, Encoding.UTF8);
-
-                    dlgEditor = new DlgEditor(this, myStream);
-                    dlgEditor.Show();
+                    System.IO.FileInfo fileInfo = new System.IO.FileInfo(file);
+                    System.IO.FileStream fileStream = fileInfo.OpenRead();
+                    Stream myStream = fileStream;
+                    if (null != myStream)
+                    {
+                        DlgEditor dlgEditor = new DlgEditor(this, myStream);
+                        dlgEditor.Show();
+                    }
+                    fileStream.Close();
                 }
             }
-
+        }
+        internal void mainFormNotify(DlgEditor notifingForm)
+        {
+            _lastNotifiedForm = notifingForm;
         }
         private void MenuItemSave_OnClick(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Datei (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.InitialDirectory = System.Windows.Forms.Application.StartupPath;
 
-           // System.Windows.MessageBox.Show(CrypTool.AppLogic.TextOptions.Handle.ToString());
-
-            this.dlgEditor.Text = "Hallo";
-            //int handle = GetActiveWindow();
-
-            //System.Windows.Forms.MessageBox.Show(handle.ToString());
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                DlgEditor dlg = _lastNotifiedForm;
+                dlg.savePlainText(saveFileDialog.OpenFile());
+            }           
+        }
+        private void MenuItemClose_OnClick(object sender, RoutedEventArgs e)
+        {
+            DlgEditor dlg = _lastNotifiedForm;
+            dlg.Close();
+        }
+        private void ShowDlgRijndael(object sender, RoutedEventArgs e)
+        { 
+        
+        }
+        private void getLanguages()
+        {
+            String langName;
+            DirectoryInfo di = new DirectoryInfo("lng");
+            FileInfo[] files = di.GetFiles("*.xml");
             
-            //SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            //saveFileDialog.RestoreDirectory = true;
-
-            //if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    StreamWriter writer = new StreamWriter(saveFileDialog.FileName, Encoding.UTF8);
-
-            //    writer.Write = dlgEditor.getText();
-            //    writer.
-            //}
-            //StreamReader reader = dlgEditor.getPlainText();
-            //dlgEditor.setCipherText(reader);
+            foreach (FileInfo fi in files)
+            {
+                langName = fi.Name;
+                langName = langName.Substring(0, langName.IndexOf(".xml"));                
+                itemLang[itemLang.Length] = new System.Windows.Controls.MenuItem();
+                itemLang[itemLang.Length].Header = langName;
+                //itemLang[itemLang.Length].Click += SelLang_OnClick;
+                //MenuItemLanguage.Items.Add(itemLang[itemLang.Length]);
+            }
+        }
+        void SelLang_OnClick(object sender, RoutedEventArgs args)
+        {
             
+            System.Windows.Controls.MenuItem item = args.Source as System.Windows.Controls.MenuItem;
+            item.IsChecked = true;
         }
     }
 }

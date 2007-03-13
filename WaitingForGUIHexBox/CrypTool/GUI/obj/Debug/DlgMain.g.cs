@@ -44,6 +44,8 @@ namespace CrypTool {
         
         internal System.Windows.Controls.MenuItem MenuItemOpen;
         
+        internal System.Windows.Controls.MenuItem MenuItemClose;
+        
         internal System.Windows.Controls.MenuItem MenuItemSave;
         
         internal System.Windows.Controls.MenuItem MenuItemQuit;
@@ -54,9 +56,15 @@ namespace CrypTool {
         
         internal System.Windows.Controls.MenuItem MenuItemCaesarRot13;
         
-        internal System.Windows.Controls.MenuItem Options;
+        internal System.Windows.Controls.MenuItem MenuItemSymetricModern;
         
-        internal System.Windows.Controls.MenuItem TextOptions;
+        internal System.Windows.Controls.MenuItem MenuItemRijndael;
+        
+        internal System.Windows.Controls.MenuItem MenuItemOptions;
+        
+        internal System.Windows.Controls.MenuItem MenuItemTextOptions;
+        
+        internal System.Windows.Controls.MenuItem MenuItemLanguage;
         
         private bool _contentLoaded;
         
@@ -88,7 +96,7 @@ namespace CrypTool {
             case 3:
             this.MenuItemNew = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 9 "..\..\DlgMain.xaml"
+            #line 12 "..\..\DlgMain.xaml"
             this.MenuItemNew.Click += new System.Windows.RoutedEventHandler(this.MenuItemNew_OnClick);
             
             #line default
@@ -97,56 +105,80 @@ namespace CrypTool {
             case 4:
             this.MenuItemOpen = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 10 "..\..\DlgMain.xaml"
+            #line 13 "..\..\DlgMain.xaml"
             this.MenuItemOpen.Click += new System.Windows.RoutedEventHandler(this.MenuItemOpen_OnClick);
             
             #line default
             #line hidden
             return;
             case 5:
-            this.MenuItemSave = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemClose = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 11 "..\..\DlgMain.xaml"
-            this.MenuItemSave.Click += new System.Windows.RoutedEventHandler(this.MenuItemSave_OnClick);
+            #line 14 "..\..\DlgMain.xaml"
+            this.MenuItemClose.Click += new System.Windows.RoutedEventHandler(this.MenuItemClose_OnClick);
             
             #line default
             #line hidden
             return;
             case 6:
-            this.MenuItemQuit = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSave = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 13 "..\..\DlgMain.xaml"
-            this.MenuItemQuit.Click += new System.Windows.RoutedEventHandler(this.CloseDlgMain);
+            #line 15 "..\..\DlgMain.xaml"
+            this.MenuItemSave.Click += new System.Windows.RoutedEventHandler(this.MenuItemSave_OnClick);
             
             #line default
             #line hidden
             return;
             case 7:
-            this.MenuItemEncryption = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 8:
-            this.MenuItemSymetricClass = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 9:
-            this.MenuItemCaesarRot13 = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemQuit = ((System.Windows.Controls.MenuItem)(target));
             
             #line 17 "..\..\DlgMain.xaml"
+            this.MenuItemQuit.Click += new System.Windows.RoutedEventHandler(this.CloseDlgMain);
+            
+            #line default
+            #line hidden
+            return;
+            case 8:
+            this.MenuItemEncryption = ((System.Windows.Controls.MenuItem)(target));
+            return;
+            case 9:
+            this.MenuItemSymetricClass = ((System.Windows.Controls.MenuItem)(target));
+            return;
+            case 10:
+            this.MenuItemCaesarRot13 = ((System.Windows.Controls.MenuItem)(target));
+            
+            #line 21 "..\..\DlgMain.xaml"
             this.MenuItemCaesarRot13.Click += new System.Windows.RoutedEventHandler(this.ShowDlgCaesarRot13);
             
             #line default
             #line hidden
             return;
-            case 10:
-            this.Options = ((System.Windows.Controls.MenuItem)(target));
-            return;
             case 11:
-            this.TextOptions = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSymetricModern = ((System.Windows.Controls.MenuItem)(target));
+            return;
+            case 12:
+            this.MenuItemRijndael = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 21 "..\..\DlgMain.xaml"
-            this.TextOptions.Click += new System.Windows.RoutedEventHandler(this.ShowDlgTextOptions);
+            #line 24 "..\..\DlgMain.xaml"
+            this.MenuItemRijndael.Click += new System.Windows.RoutedEventHandler(this.ShowDlgRijndael);
             
             #line default
             #line hidden
+            return;
+            case 13:
+            this.MenuItemOptions = ((System.Windows.Controls.MenuItem)(target));
+            return;
+            case 14:
+            this.MenuItemTextOptions = ((System.Windows.Controls.MenuItem)(target));
+            
+            #line 28 "..\..\DlgMain.xaml"
+            this.MenuItemTextOptions.Click += new System.Windows.RoutedEventHandler(this.ShowDlgTextOptions);
+            
+            #line default
+            #line hidden
+            return;
+            case 15:
+            this.MenuItemLanguage = ((System.Windows.Controls.MenuItem)(target));
             return;
             }
             this._contentLoaded = true;

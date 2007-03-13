@@ -50,6 +50,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
     <Page Include="DlgCaesarRot13.xaml" />
+    <Page Include="DlgKeySymModern.xaml" />
     <Page Include="DlgMain.xaml" />
     <Page Include="DlgTextOptions.xaml" />
     <Compile Include="App.xaml.cs">
@@ -71,6 +72,10 @@
     </Compile>
     <Compile Include="DlgEditor.Designer.cs">
       <DependentUpon>DlgEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgKeySymModern.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DlgKeySymModern.xaml</DependentUpon>
     </Compile>
     <Compile Include="DlgTextOptions.xaml.cs">
       <SubType>Code</SubType>
@@ -111,6 +116,12 @@
       <Project>{26C5F25F-B450-4CAF-AD8B-B8D11AE73457}</Project>
       <Name>Be.Windows.Forms.HexBox</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lng\german.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="lng\english.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
