@@ -3,22 +3,31 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="CrypTool2.0 Alpha WaitingForGUI" Height="60" Width="800"
     Background="LightSlateGray" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/german.xml" XPath="CrypTool"/>
+  </Window.Resources>
 	<DockPanel>
 		<Menu Name="Menu" VerticalAlignment="Top" DockPanel.Dock="Top" Background="WhiteSmoke">
-			<MenuItem Name="MenuItemFile" Header="Datei">
-        <MenuItem Name="MenuItemNew" Header="Neu" Click="MenuItemNew_OnClick"/>
-        <MenuItem Name="MenuItemOpen" Header="Öffnen..." Click="MenuItemOpen_OnClick"/>
-        <MenuItem Name="MenuItemSave" Header="Speichern..." Click="MenuItemSave_OnClick"/>
+			<MenuItem Name="MenuItemFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFile/@Header}">
+        <MenuItem Name="MenuItemNew" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemNew/@Header}" Click="MenuItemNew_OnClick"/>
+        <MenuItem Name="MenuItemOpen" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOpen/@Header}" Click="MenuItemOpen_OnClick"/>
+        <MenuItem Name="MenuItemClose" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemClose/@Header}" Click="MenuItemClose_OnClick"/>
+        <MenuItem Name="MenuItemSave" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSave/@Header}" Click="MenuItemSave_OnClick"/>
         <Separator/>
-				<MenuItem Name="MenuItemQuit" Header="Beenden" Click="CloseDlgMain"/>
+				<MenuItem Name="MenuItemQuit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemQuit/@Header}" Click="CloseDlgMain"/>
 			</MenuItem>
-			<MenuItem Name="MenuItemEncryption" Header="Ver-/Entschlüsseln">
-				<MenuItem Name="MenuItemSymetricClass" Header="Symmetrisch (klassisch)">
-					<MenuItem Name="MenuItemCaesarRot13" Header="Caesar / Rot-13..." Click="ShowDlgCaesarRot13"></MenuItem>
+			<MenuItem Name="MenuItemEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEncryption/@Header}">
+				<MenuItem Name="MenuItemSymetricClass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricClass/@Header}">
+					<MenuItem Name="MenuItemCaesarRot13" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCaesarRot13/@Header}" Click="ShowDlgCaesarRot13"></MenuItem>
 				</MenuItem>
+        <MenuItem Name="MenuItemSymetricModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricModern/@Header}">
+          <MenuItem Name="MenuItemRijndael" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRijndael/@Header}" Click="ShowDlgRijndael"></MenuItem>
+        </MenuItem>
 			</MenuItem>
-			<MenuItem Name="Options" Header="Optionen">
-				<MenuItem Name="TextOptions" Header="Textoptionen" Click="ShowDlgTextOptions"></MenuItem>
+			<MenuItem Name="MenuItemOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOptions/@Header}">
+				<MenuItem Name="MenuItemTextOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTextOptions/@Header}" Click="ShowDlgTextOptions"></MenuItem>
+        <Separator/>
+        <MenuItem Name="MenuItemLanguage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLanguage/@Header}"/>
 			</MenuItem>
 		</Menu>
 	</DockPanel>
