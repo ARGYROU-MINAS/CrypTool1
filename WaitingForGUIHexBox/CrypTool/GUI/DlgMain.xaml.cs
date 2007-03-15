@@ -27,14 +27,20 @@ namespace CrypTool
         public DlgMain()
         {
             InitializeComponent();
-            getLanguages();
+            readLangFiles();
+            MarkSelectedLang();
             System.Windows.Forms.Application.EnableVisualStyles();
         }
         public void setLang(String selectedLang)
         {
-            this.selectedLang = "/lng/";
-            this.selectedLang += selectedLang;
-            this.selectedLang += ".xml";
+            this.selectedLang = selectedLang;
+
+            String strLang;
+            strLang = "/lng/";
+            strLang += selectedLang;
+            strLang += ".xml";
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(strLang, UriKind.Relative);
         }
         public String getLang()
         {
@@ -113,27 +119,42 @@ namespace CrypTool
         { 
         
         }
-        private void getLanguages()
+        private void readLangFiles()
         {
             String langName;
             DirectoryInfo di = new DirectoryInfo("lng");
             FileInfo[] files = di.GetFiles("*.xml");
-            
-            foreach (FileInfo fi in files)
+
+            itemLang = new System.Windows.Controls.MenuItem[files.Length];
+
+            for(int i=0;i<files.Length;i++)
             {
-                langName = fi.Name;
-                langName = langName.Substring(0, langName.IndexOf(".xml"));                
-                itemLang[itemLang.Length] = new System.Windows.Controls.MenuItem();
-                itemLang[itemLang.Length].Header = langName;
-                //itemLang[itemLang.Length].Click += SelLang_OnClick;
-                //MenuItemLanguage.Items.Add(itemLang[itemLang.Length]);
+                langName = files[i].Name;
+                langName = langName.Substring(0, langName.IndexOf(".xml"));
+                itemLang[i] = new System.Windows.Controls.MenuItem();
+                itemLang[i].Header = langName;
+                itemLang[i].Click += SelLang_OnClick;
+                MenuItemLanguage.Items.Add(itemLang[i]);
             }
         }
         void SelLang_OnClick(object sender, RoutedEventArgs args)
         {
-            
+            //first uncheck all MenuItems
+            for (int i = 0; i < itemLang.Length; i++)
+                itemLang[i].IsChecked = false;
+
+            //check now the selected MenuItem            
             System.Windows.Controls.MenuItem item = args.Source as System.Windows.Controls.MenuItem;
             item.IsChecked = true;
+            setLang(item.Header.ToString());
+        }
+        void MarkSelectedLang()
+        {
+            String strLang = getLang();
+            for (int i = 0; i < itemLang.Length; i++)
+                if (itemLang[i].Header == strLang)
+                    itemLang[i].IsChecked = true;
+
         }
     }
 }

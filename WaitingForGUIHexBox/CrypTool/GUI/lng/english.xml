@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CrypTool>
+  <MenuItemFile Header="File"/>
+  <MenuItemNew Header="New"/>
+  <MenuItemOpen Header="Open"/>
+  <MenuItemClose Header="Close"/>
+  <MenuItemSave Header="Save as..."/>
+  <MenuItemQuit Header="Exit"/>
+  <MenuItemEncryption Header="Crypt/Decrypt"/>
+  <MenuItemSymetricClass Header="Symmetric (classic)"/>
+  <MenuItemCaesarRot13 Header="Caesar / Rot-13..."/>
+  <MenuItemSymetricModern Header="Symmetric (modern)"/>
+  <MenuItemRijndael Header="Rijndael (AES)..."/>
+  <MenuItemOptions Header="Options"/>
+  <MenuItemTextOptions Header="Text Options"/>
+  <MenuItemLanguage Header="Language"/>
+</CrypTool>
