@@ -21,30 +21,20 @@ namespace CrypTool
     public partial class DlgMain : Window
     {
         private DlgEditor _lastNotifiedForm = null;
-        private String selectedLang;
-        System.Windows.Controls.MenuItem[] itemLang;
+         System.Windows.Controls.MenuItem[] itemLang;
 
         public DlgMain()
         {
             InitializeComponent();
-            readLangFiles();
+            getLangItems();
             MarkSelectedLang();
             System.Windows.Forms.Application.EnableVisualStyles();
         }
-        public void setLang(String selectedLang)
+        public void updateLang()
         {
-            this.selectedLang = selectedLang;
-
-            String strLang;
-            strLang = "/lng/";
-            strLang += selectedLang;
-            strLang += ".xml";
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
             XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
-            xmlData.Source = new Uri(strLang, UriKind.Relative);
-        }
-        public String getLang()
-        {
-            return this.selectedLang;
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
         }
         private void CloseDlgMain(object sender, RoutedEventArgs e)
         {
@@ -119,18 +109,16 @@ namespace CrypTool
         { 
         
         }
-        private void readLangFiles()
+        private void getLangItems()
         {
             String langName;
-            DirectoryInfo di = new DirectoryInfo("lng");
-            FileInfo[] files = di.GetFiles("*.xml");
+            String[] langFiles = CrypTool.AppLogic.LanguageOptions.getLangFiles();
 
-            itemLang = new System.Windows.Controls.MenuItem[files.Length];
+            itemLang = new System.Windows.Controls.MenuItem[langFiles.Length];
 
-            for(int i=0;i<files.Length;i++)
+            for(int i=0;i<langFiles.Length;i++)
             {
-                langName = files[i].Name;
-                langName = langName.Substring(0, langName.IndexOf(".xml"));
+                langName = langFiles[i];
                 itemLang[i] = new System.Windows.Controls.MenuItem();
                 itemLang[i].Header = langName;
                 itemLang[i].Click += SelLang_OnClick;
@@ -146,13 +134,15 @@ namespace CrypTool
             //check now the selected MenuItem            
             System.Windows.Controls.MenuItem item = args.Source as System.Windows.Controls.MenuItem;
             item.IsChecked = true;
-            setLang(item.Header.ToString());
+            CrypTool.AppLogic.LanguageOptions.setLang(item.Header.ToString());
+            updateLang();
         }
         void MarkSelectedLang()
         {
-            String strLang = getLang();
+            //Only on Load
+            String strLang = CrypTool.AppLogic.LanguageOptions.getSelLang();
             for (int i = 0; i < itemLang.Length; i++)
-                if (itemLang[i].Header == strLang)
+                if (itemLang[i].Header.ToString() == strLang)
                     itemLang[i].IsChecked = true;
 
         }
