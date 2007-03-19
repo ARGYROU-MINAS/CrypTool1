@@ -123,6 +123,9 @@
   <ItemGroup>
     <Resource Include="lng\english.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CrypTool.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
 </Project>
