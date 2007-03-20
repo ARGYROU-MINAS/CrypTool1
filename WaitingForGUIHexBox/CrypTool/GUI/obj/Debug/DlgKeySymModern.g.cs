@@ -40,9 +40,19 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label label2;
         
-        internal System.Windows.Controls.ComboBox comboBox1;
+        internal System.Windows.Controls.ComboBox comboBoxKeyLen;
         
         internal System.Windows.Controls.Label label3;
+        
+        internal System.Windows.Controls.Button button1;
+        
+        internal System.Windows.Controls.Button button2;
+        
+        internal System.Windows.Controls.Button button3;
+        
+        internal System.Windows.Controls.RichTextBox richTextBox1;
+        
+        internal System.Windows.Controls.TextBox textBox1;
         
         private bool _contentLoaded;
         
@@ -72,10 +82,25 @@ namespace CrypTool {
             this.label2 = ((System.Windows.Controls.Label)(target));
             return;
             case 3:
-            this.comboBox1 = ((System.Windows.Controls.ComboBox)(target));
+            this.comboBoxKeyLen = ((System.Windows.Controls.ComboBox)(target));
             return;
             case 4:
             this.label3 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 5:
+            this.button1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 6:
+            this.button2 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 7:
+            this.button3 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 8:
+            this.richTextBox1 = ((System.Windows.Controls.RichTextBox)(target));
+            return;
+            case 9:
+            this.textBox1 = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;

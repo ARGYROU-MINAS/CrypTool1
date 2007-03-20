@@ -10,6 +10,8 @@ using System.IO;
 using System.Windows.Forms;
 using System.Text;
 using System.Runtime.InteropServices;
+using System.Collections;
+using System.Security.Cryptography;
 
 
 namespace CrypTool
@@ -20,12 +22,15 @@ namespace CrypTool
 
     public partial class DlgMain : Window
     {
+        private ArrayList _childFormList = new ArrayList();
         private DlgEditor _lastNotifiedForm = null;
-         System.Windows.Controls.MenuItem[] itemLang;
+        System.Windows.Controls.MenuItem[] itemLang;
+
 
         public DlgMain()
         {
             InitializeComponent();
+            updateLang();
             getLangItems();
             MarkSelectedLang();
             System.Windows.Forms.Application.EnableVisualStyles();
@@ -53,6 +58,7 @@ namespace CrypTool
         private void MenuItemNew_OnClick(object sender, RoutedEventArgs e)
         {
             DlgEditor dlgEditor = new DlgEditor(this);
+            _childFormList.Add(dlgEditor);
             dlgEditor.Show();
         }
         private void MenuItemOpen_OnClick(object sender, RoutedEventArgs e)
@@ -77,6 +83,7 @@ namespace CrypTool
                     if (null != myStream)
                     {
                         DlgEditor dlgEditor = new DlgEditor(this, myStream);
+                        _childFormList.Add(dlgEditor);
                         dlgEditor.Show();
                     }
                     fileStream.Close();
@@ -105,9 +112,25 @@ namespace CrypTool
             DlgEditor dlg = _lastNotifiedForm;
             dlg.Close();
         }
+        private void MenuItemCloseAll_OnClick(object sender, RoutedEventArgs e)
+        {
+            foreach (DlgEditor dlgEditor in _childFormList)
+            {
+                dlgEditor.Close();
+            }
+        }
         private void ShowDlgRijndael(object sender, RoutedEventArgs e)
-        { 
-        
+        {
+            RijndaelManaged rij = new RijndaelManaged();
+            ArrayList alKeyLen = new ArrayList();
+            KeySizes[] key = rij.LegalKeySizes;
+
+            for (int i = key[0].MinSize; i <= key[0].MaxSize; i += key[0].SkipSize)
+                alKeyLen.Add(i);
+
+            DlgKeySymModern dlgKeySym = new DlgKeySymModern(alKeyLen);
+            dlgKeySym.Title += " Rijndael (AES)";
+            dlgKeySym.Show();
         }
         private void getLangItems()
         {

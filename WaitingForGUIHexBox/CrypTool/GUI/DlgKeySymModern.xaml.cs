@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections;
 
 namespace CrypTool
 {
@@ -18,10 +19,20 @@ namespace CrypTool
 
     public partial class DlgKeySymModern : System.Windows.Window
     {
+        private ArrayList arKeyLen;
 
-        public DlgKeySymModern()
+        public DlgKeySymModern(ArrayList arKeyLen)
         {
+            this.arKeyLen = arKeyLen;
             InitializeComponent();
+            setKeyLen();
+
+            String test = "
+        }
+        private void setKeyLen()
+        {
+            for (int i = 0; i < this.arKeyLen.Count; i++)
+                comboBoxKeyLen.Items.Add(this.arKeyLen[i].ToString());
         }
 
     }
