@@ -4,6 +4,7 @@
   <MenuItemNew Header="New"/>
   <MenuItemOpen Header="Open"/>
   <MenuItemClose Header="Close"/>
+  <MenuItemCloseAll Header="Close all"/>
   <MenuItemSave Header="Save as..."/>
   <MenuItemQuit Header="Exit"/>
   <MenuItemEncryption Header="Crypt/Decrypt"/>

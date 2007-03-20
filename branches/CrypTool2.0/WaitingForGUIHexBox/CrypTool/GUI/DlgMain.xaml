@@ -12,6 +12,7 @@
         <MenuItem Name="MenuItemNew" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemNew/@Header}" Click="MenuItemNew_OnClick"/>
         <MenuItem Name="MenuItemOpen" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOpen/@Header}" Click="MenuItemOpen_OnClick"/>
         <MenuItem Name="MenuItemClose" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemClose/@Header}" Click="MenuItemClose_OnClick"/>
+        <MenuItem Name="MenuItemCloseAll" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCloseAll/@Header}" Click="MenuItemCloseAll_OnClick"/>
         <MenuItem Name="MenuItemSave" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSave/@Header}" Click="MenuItemSave_OnClick"/>
         <Separator/>
 				<MenuItem Name="MenuItemQuit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemQuit/@Header}" Click="CloseDlgMain"/>

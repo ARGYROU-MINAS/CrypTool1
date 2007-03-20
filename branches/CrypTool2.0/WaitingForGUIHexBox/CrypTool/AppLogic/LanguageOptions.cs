@@ -27,7 +27,6 @@ namespace CrypTool.AppLogic
 
             for (int i = 0; i < files.Length; i++)
             {
-           //     langFiles[i] = new String();
                 langFiles[i] = files[i].Name;
                 langFiles[i] = langFiles[i].Substring(0, langFiles[i].IndexOf(".xml"));
             }
@@ -61,6 +60,7 @@ namespace CrypTool.AppLogic
         { 
             selLang = selectedLang;
 
+            //save to CrypTool.xml
             XmlDocument doc = new XmlDocument();
             doc.Load("CrypTool.xml");
 
@@ -72,7 +72,7 @@ namespace CrypTool.AppLogic
 
             doc.Save("CrypTool.xml");
 
-            //save to CrypTool.xml
+           
         }
     }
 }
