@@ -128,7 +128,7 @@ namespace CrypTool
             for (int i = key[0].MinSize; i <= key[0].MaxSize; i += key[0].SkipSize)
                 alKeyLen.Add(i);
 
-            DlgKeySymModern dlgKeySym = new DlgKeySymModern(alKeyLen);
+            DlgKeySymModern dlgKeySym = new DlgKeySymModern(alKeyLen, 9 /*Rijndeal id*/);
             dlgKeySym.Title += " Rijndael (AES)";
             dlgKeySym.Show();
         }

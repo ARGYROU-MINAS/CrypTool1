@@ -19,20 +19,31 @@ namespace CrypTool
 
     public partial class DlgKeySymModern : System.Windows.Window
     {
-        private ArrayList arKeyLen;
+        private int AlgID;
 
-        public DlgKeySymModern(ArrayList arKeyLen)
+        public DlgKeySymModern(ArrayList arKeyLen,int AlgID)
         {
-            this.arKeyLen = arKeyLen;
             InitializeComponent();
-            setKeyLen();
+            setKeyLen(arKeyLen);
 
-            String test = "
+            this.AlgID = AlgID;
         }
-        private void setKeyLen()
+        private void setKeyLen(ArrayList arKeyLen)
         {
-            for (int i = 0; i < this.arKeyLen.Count; i++)
-                comboBoxKeyLen.Items.Add(this.arKeyLen[i].ToString());
+            for (int i = 0; i < arKeyLen.Count; i++)
+                comboBoxKeyLen.Items.Add(arKeyLen[i].ToString());
+        }
+        private void Encrypt(object sender, RoutedEventArgs arg)
+        { 
+            
+        }
+        private void Decrypt(object sender, RoutedEventArgs arg)
+        { 
+        
+        }
+        private void Cancel(object sender, RoutedEventArgs arg)
+        { 
+            
         }
 
     }
