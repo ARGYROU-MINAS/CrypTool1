@@ -44,11 +44,11 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label label3;
         
-        internal System.Windows.Controls.Button button1;
+        internal System.Windows.Controls.Button buttonEncrypt;
         
-        internal System.Windows.Controls.Button button2;
+        internal System.Windows.Controls.Button buttonDecrypt;
         
-        internal System.Windows.Controls.Button button3;
+        internal System.Windows.Controls.Button buttonCancel;
         
         internal System.Windows.Controls.RichTextBox richTextBox1;
         
@@ -88,13 +88,31 @@ namespace CrypTool {
             this.label3 = ((System.Windows.Controls.Label)(target));
             return;
             case 5:
-            this.button1 = ((System.Windows.Controls.Button)(target));
+            this.buttonEncrypt = ((System.Windows.Controls.Button)(target));
+            
+            #line 11 "..\..\DlgKeySymModern.xaml"
+            this.buttonEncrypt.Click += new System.Windows.RoutedEventHandler(this.Encrypt);
+            
+            #line default
+            #line hidden
             return;
             case 6:
-            this.button2 = ((System.Windows.Controls.Button)(target));
+            this.buttonDecrypt = ((System.Windows.Controls.Button)(target));
+            
+            #line 12 "..\..\DlgKeySymModern.xaml"
+            this.buttonDecrypt.Click += new System.Windows.RoutedEventHandler(this.Decrypt);
+            
+            #line default
+            #line hidden
             return;
             case 7:
-            this.button3 = ((System.Windows.Controls.Button)(target));
+            this.buttonCancel = ((System.Windows.Controls.Button)(target));
+            
+            #line 13 "..\..\DlgKeySymModern.xaml"
+            this.buttonCancel.Click += new System.Windows.RoutedEventHandler(this.Cancel);
+            
+            #line default
+            #line hidden
             return;
             case 8:
             this.richTextBox1 = ((System.Windows.Controls.RichTextBox)(target));
