@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Security.Cryptography;
 
-namespace AppLogic
+namespace CrypTool.AppLogic
 {
-    class CrypSymModern
+    public static class CrypSymModern
     {
+        static private byte[] cipherText;
+
         /// <summary>
         /// 0 = IDEA
         /// 1 = RC2
@@ -21,23 +24,29 @@ namespace AppLogic
         /// 11 = Twofish
         /// </summary>
         /// <param name="AlgID"></param>
-        public void CrypSymModernEncrypt(int AlgID,int KeySize,int BlockSize,byte[] PlainText)
+        public static byte[] CrypSymModernEncrypt(int AlgID,int KeySize,int BlockSize,byte[] PlainText)
         {
             switch (AlgID)
             { 
-                case 0:
+                case 9:
                     RijndaelEncrypt(KeySize,BlockSize,PlainText);
                     break;
             }
-            
+            return cipherText;
         }
-        public void CrypSymModernDecrypt(int AlgID, int KeySize,int BlockSize,byte[] CipherText)
+        public static void CrypSymModernDecrypt(int AlgID, int KeySize,int BlockSize,byte[] CipherText)
         { 
         
         }
-        private void RijndaelEncrypt(int KeySize,int BlockSize, byte[] PlainText)
-        { 
-            
+        private static void RijndaelEncrypt(int KeySize,int BlockSize, byte[] PlainText)
+        {
+            RijndaelManaged cipher = new RijndaelManaged();
+            cipher.KeySize = KeySize;
+            cipher.BlockSize = BlockSize;
+            cipher.Mode = CipherMode.ECB;
+            ICryptoTransform transform = cipher.CreateEncryptor();
+
+            cipherText = transform.TransformFinalBlock(PlainText, 0, PlainText.Length);
         }
 
     }

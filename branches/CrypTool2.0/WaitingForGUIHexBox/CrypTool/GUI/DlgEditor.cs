@@ -32,7 +32,12 @@ namespace CrypTool
         {
             //scintillaControlCipherText.Text = reader.ReadToEnd();
         }
+        public byte[] getPlainText()
+        {
+            byte[] PlainText = richTextBoxPlaintext.Lines.ToString();
 
+            return PlainText;
+        }
         private void DlgEditor_Activated(object sender, EventArgs e)
         {
             _FormMainReference.mainFormNotify(this);
