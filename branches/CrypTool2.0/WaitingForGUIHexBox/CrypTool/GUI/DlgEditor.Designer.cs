@@ -31,8 +31,6 @@ namespace CrypTool
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePlainText = new System.Windows.Forms.TabPage();
             this.richTextBoxPlaintext = new System.Windows.Forms.RichTextBox();
-            this.tabPageCipherText = new System.Windows.Forms.TabPage();
-            this.tabPageDetails = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPagePlainText.SuspendLayout();
             this.SuspendLayout();
@@ -40,8 +38,6 @@ namespace CrypTool
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPagePlainText);
-            this.tabControl1.Controls.Add(this.tabPageCipherText);
-            this.tabControl1.Controls.Add(this.tabPageDetails);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -57,7 +53,7 @@ namespace CrypTool
             this.tabPagePlainText.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePlainText.Size = new System.Drawing.Size(576, 354);
             this.tabPagePlainText.TabIndex = 0;
-            this.tabPagePlainText.Text = "Klartext";
+            this.tabPagePlainText.Text = "Plaintext";
             this.tabPagePlainText.UseVisualStyleBackColor = true;
             // 
             // richTextBoxPlaintext
@@ -68,26 +64,6 @@ namespace CrypTool
             this.richTextBoxPlaintext.Size = new System.Drawing.Size(570, 348);
             this.richTextBoxPlaintext.TabIndex = 0;
             this.richTextBoxPlaintext.Text = "";
-            // 
-            // tabPageCipherText
-            // 
-            this.tabPageCipherText.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCipherText.Name = "tabPageCipherText";
-            this.tabPageCipherText.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCipherText.Size = new System.Drawing.Size(576, 354);
-            this.tabPageCipherText.TabIndex = 1;
-            this.tabPageCipherText.Text = "Ciphertext";
-            this.tabPageCipherText.UseVisualStyleBackColor = true;
-            // 
-            // tabPageDetails
-            // 
-            this.tabPageDetails.Location = new System.Drawing.Point(4, 22);
-            this.tabPageDetails.Name = "tabPageDetails";
-            this.tabPageDetails.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDetails.Size = new System.Drawing.Size(576, 354);
-            this.tabPageDetails.TabIndex = 2;
-            this.tabPageDetails.Text = "Details";
-            this.tabPageDetails.UseVisualStyleBackColor = true;
             // 
             // DlgEditor
             // 
@@ -108,8 +84,6 @@ namespace CrypTool
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePlainText;
-        private System.Windows.Forms.TabPage tabPageCipherText;
-        private System.Windows.Forms.TabPage tabPageDetails;
         private System.Windows.Forms.RichTextBox richTextBoxPlaintext;
     }
 }

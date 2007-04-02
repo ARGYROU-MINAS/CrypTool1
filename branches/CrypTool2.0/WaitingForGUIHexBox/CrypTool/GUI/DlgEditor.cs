@@ -28,15 +28,26 @@ namespace CrypTool
         {
             richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
         }
-        public void setCipherText(StreamReader reader)
+        public void setCipherText(Stream stream)
         {
-            //scintillaControlCipherText.Text = reader.ReadToEnd();
-        }
-        public byte[] getPlainText()
-        {
-            byte[] PlainText = richTextBoxPlaintext.Lines.ToString();
+            stream.Position = 0;
 
-            return PlainText;
+            RichTextBox rtCipherText = new RichTextBox();
+            rtCipherText.Name = "rtCipherText";
+            rtCipherText.Dock = DockStyle.Fill;
+            rtCipherText.LoadFile(stream, RichTextBoxStreamType.PlainText);
+
+            TabPage tpCipherText = new TabPage("Ciphertext");
+            tpCipherText.Name = "tpCipherText";
+            tpCipherText.Controls.Add(rtCipherText);
+            tabControl1.TabPages.Add(tpCipherText);
+        }
+        public Stream getPlainText()
+        {
+            MemoryStream stream = new MemoryStream();
+            richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
+
+            return stream;
         }
         private void DlgEditor_Activated(object sender, EventArgs e)
         {

@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections;
+using System.IO;
 
 namespace CrypTool
 {
@@ -38,7 +39,11 @@ namespace CrypTool
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
             int BlockSize = KeySize / 8;
-            ////byte[] PlainText = _lastNotifiedForm.get
+            Stream stream = _lastNotifiedForm.getPlainText();
+            stream.Position = 0;
+           // _lastNotifiedForm.setCipherText(stream);
+            byte[] PlainText = new byte[256];
+            _lastNotifiedForm.getPlainText().Read(PlainText, 0, PlainText.Length);
             //AppLogic.CrypSymModern.CrypSymModernEncrypt(this.AlgID, KeySize, BlockSize, 0);
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
