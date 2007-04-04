@@ -39,16 +39,23 @@ namespace CrypTool
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
             int BlockSize = KeySize / 8;
-            Stream stream = _lastNotifiedForm.getPlainText();
-            //_lastNotifiedForm.setCipherText(stream);
-            byte[] PlainText = new byte[1024];
-            _lastNotifiedForm.getPlainText().Read(PlainText, 0, PlainText.Length);
 
-            byte[] CipherText = AppLogic.CrypSymModern.CrypSymModernEncrypt(this.AlgID, KeySize, BlockSize, 0);
+            byte[] plainText = new byte[_lastNotifiedForm.getPlainText().Length];
+            _lastNotifiedForm.getPlainText().Read(plainText, 0, plainText.Length);
+
+            MemoryStream cipherText = new MemoryStream(AppLogic.CrypSymModern.CrypSymModernEncrypt(this.AlgID, KeySize, BlockSize, plainText));
+            _lastNotifiedForm.setCipherText(cipherText);           
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
         {
+            int KeySize = int.Parse(comboBoxKeyLen.Text);
+            int BlockSize = KeySize / 8;
 
+            byte[] cipherText = new byte[_lastNotifiedForm.getPlainText().Length];
+            _lastNotifiedForm.getPlainText().Read(cipherText, 0, cipherText.Length);
+
+            MemoryStream plainText = new MemoryStream(AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, KeySize, BlockSize, cipherText));
+            //_lastNotifiedForm.setPlainText(plainText);
         }
         private void Cancel(object sender, RoutedEventArgs arg)
         {

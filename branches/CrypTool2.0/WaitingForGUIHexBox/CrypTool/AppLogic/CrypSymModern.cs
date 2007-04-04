@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace CrypTool.AppLogic
 {
     public static class CrypSymModern
     {
-        static private byte[] cipherText;
+        static private byte[] CipherText;
+        static private byte[] PlainText;
 
         /// <summary>
         /// 0 = IDEA
@@ -32,21 +34,40 @@ namespace CrypTool.AppLogic
                     RijndaelEncrypt(KeySize,BlockSize,PlainText);
                     break;
             }
-            return cipherText;
+            return CipherText;
         }
-        public static void CrypSymModernDecrypt(int AlgID, int KeySize,int BlockSize,byte[] CipherText)
-        { 
-        
+        public static byte[] CrypSymModernDecrypt(int AlgID, int KeySize,int BlockSize,byte[] CipherText)
+        {
+            switch (AlgID)
+            { 
+                case 9:
+                    RijndaelDecrypt(KeySize, BlockSize, CipherText);
+                    break;
+            }
+            return PlainText;
         }
         private static void RijndaelEncrypt(int KeySize,int BlockSize, byte[] PlainText)
         {
             RijndaelManaged cipher = new RijndaelManaged();
-            cipher.KeySize = KeySize;
-            cipher.BlockSize = BlockSize;
-            cipher.Mode = CipherMode.ECB;
-            ICryptoTransform transform = cipher.CreateEncryptor();
-
-            cipherText = transform.TransformFinalBlock(PlainText, 0, PlainText.Length);
+            ICryptoTransform encryptor = cipher.CreateEncryptor();
+            MemoryStream memoryStream = new MemoryStream();
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
+            cryptoStream.Write(PlainText, 0, PlainText.Length);
+            cryptoStream.FlushFinalBlock();
+            CipherText = memoryStream.ToArray();
+            memoryStream.Close();
+            cryptoStream.Close();
+        }
+        private static void RijndaelDecrypt(int KeySize, int BlockSize, byte[] CipherText)
+        {
+            RijndaelManaged cipher = new RijndaelManaged();
+            ICryptoTransform decryptor = cipher.CreateDecryptor();
+            MemoryStream memoryStream = new MemoryStream();
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
+            cryptoStream.Read(CipherText, 0, CipherText.Length);
+            PlainText = memoryStream.ToArray();
+            memoryStream.Close();
+            cryptoStream.Close();
         }
 
     }
