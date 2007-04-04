@@ -42,7 +42,28 @@ namespace CrypTool
             tpCipherText.Controls.Add(rtCipherText);
             tabControl1.TabPages.Add(tpCipherText);
         }
+        public void setPlainText(Stream stream)
+        {
+            stream.Position = 0;
+
+            RichTextBox rtPlainText = new RichTextBox();
+            rtPlainText.Name = "rtPlaintext";
+            rtPlainText.Dock = DockStyle.Fill;
+            rtPlainText.LoadFile(stream, RichTextBoxStreamType.PlainText);
+
+            TabPage tpPlainText = new TabPage("PlainText");
+            tpPlainText.Name = "tpPlainText";
+            tpPlainText.Controls.Add(rtPlainText);
+            tabControl1.TabPages.Add(tpPlainText);
+        }
         public Stream getPlainText()
+        {
+            MemoryStream stream = new MemoryStream();
+            richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
+
+            return stream;
+        }
+        public Stream getCipherText()
         {
             MemoryStream stream = new MemoryStream();
             richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
