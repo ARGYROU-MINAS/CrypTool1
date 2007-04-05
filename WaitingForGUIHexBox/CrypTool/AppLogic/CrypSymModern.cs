@@ -8,8 +8,8 @@ namespace CrypTool.AppLogic
 {
     public static class CrypSymModern
     {
-        static private byte[] CipherText;
-        static private byte[] PlainText;
+        static private byte[] globalCipherText;
+        static private byte[] globalPlainText;
 
         /// <summary>
         /// 0 = IDEA
@@ -34,7 +34,7 @@ namespace CrypTool.AppLogic
                     RijndaelEncrypt(KeySize,BlockSize,PlainText);
                     break;
             }
-            return CipherText;
+            return globalCipherText;
         }
         public static byte[] CrypSymModernDecrypt(int AlgID, int KeySize,int BlockSize,byte[] CipherText)
         {
@@ -44,7 +44,7 @@ namespace CrypTool.AppLogic
                     RijndaelDecrypt(KeySize, BlockSize, CipherText);
                     break;
             }
-            return PlainText;
+            return globalPlainText;
         }
         private static void RijndaelEncrypt(int KeySize,int BlockSize, byte[] PlainText)
         {
@@ -54,20 +54,40 @@ namespace CrypTool.AppLogic
             CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
             cryptoStream.Write(PlainText, 0, PlainText.Length);
             cryptoStream.FlushFinalBlock();
-            CipherText = memoryStream.ToArray();
+            globalCipherText = memoryStream.ToArray();
             memoryStream.Close();
             cryptoStream.Close();
         }
         private static void RijndaelDecrypt(int KeySize, int BlockSize, byte[] CipherText)
         {
+            //byte[] iv = Encoding.ASCII.GetBytes("@1B2c3D4e5F6g7H8");
+            //byte[] saltvalue = Encoding.ASCII.GetBytes("s@1tValue");
+            //string passphrase = "Pas5pr@se";
+            //PasswordDeriveBytes pass = new PasswordDeriveBytes(passphrase,saltvalue);
+            //byte[] keybytes = pass.GetBytes(256 / 8);
+            //RijndaelManaged cipher = new RijndaelManaged();
+            //ICryptoTransform decryptor = cipher.CreateDecryptor(keybytes,iv);
+            //MemoryStream memoryStream = new MemoryStream(CipherText);
+            //CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
+
+            //byte[] fromEncrypt = new byte[CipherText.Length];
+
+            //int len = cryptoStream.Read(fromEncrypt, 0, 3);
+
+            //globalPlainText = new byte[len];
+            //Array.Copy(fromEncrypt, globalPlainText, len);            
+
             RijndaelManaged cipher = new RijndaelManaged();
             ICryptoTransform decryptor = cipher.CreateDecryptor();
             MemoryStream memoryStream = new MemoryStream();
-            CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-            cryptoStream.Read(CipherText, 0, CipherText.Length);
-            PlainText = memoryStream.ToArray();
-            memoryStream.Close();
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Write);
+            cryptoStream.Write(CipherText, 0, CipherText.Length);
             cryptoStream.Close();
+
+            globalPlainText = memoryStream.ToArray();
+
+            memoryStream.Close();
+            cipher.Clear();
         }
 
     }
