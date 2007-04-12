@@ -11,7 +11,6 @@
     <Button Height="23" HorizontalAlignment="Left" Margin="13,0,0,17" Name="buttonEncrypt" VerticalAlignment="Bottom" Width="100" Click="Encrypt">Verschlüsseln</Button>
     <Button Height="23" HorizontalAlignment="Left" Margin="163,0,0,17" Name="buttonDecrypt" VerticalAlignment="Bottom" Width="104" Click="Decrypt">Entschlüsseln</Button>
     <Button Height="23" HorizontalAlignment="Right" Margin="0,0,28,16" Name="buttonCancel" VerticalAlignment="Bottom" Width="94" Click="Cancel">Abbrechen</Button>
-    <RichTextBox Margin="18,111,37,79" Name="richTextBox1" />
-    <TextBox Height="26" HorizontalAlignment="Right" Margin="0,50,144,0" Name="textBox1" VerticalAlignment="Top" Width="100"></TextBox>
+    <TextBox Margin="26,115,22,71" Name="textBox1"  ></TextBox>
   </Grid>
 </Window>
