@@ -50,8 +50,6 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Button buttonCancel;
         
-        internal System.Windows.Controls.RichTextBox richTextBox1;
-        
         internal System.Windows.Controls.TextBox textBox1;
         
         private bool _contentLoaded;
@@ -115,9 +113,6 @@ namespace CrypTool {
             #line hidden
             return;
             case 8:
-            this.richTextBox1 = ((System.Windows.Controls.RichTextBox)(target));
-            return;
-            case 9:
             this.textBox1 = ((System.Windows.Controls.TextBox)(target));
             return;
             }

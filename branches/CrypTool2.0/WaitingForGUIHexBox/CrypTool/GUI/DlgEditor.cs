@@ -28,53 +28,43 @@ namespace CrypTool
         {
             richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
         }
-        public void setCipherText(Stream stream)
+        public void setCipherText(string cipherText)
         {
-            stream.Position = 0;
-
             RichTextBox rtCipherText = new RichTextBox();
             rtCipherText.Name = "rtCipherText";
             rtCipherText.Dock = DockStyle.Fill;
-            rtCipherText.LoadFile(stream, RichTextBoxStreamType.PlainText);
+            rtCipherText.Text = cipherText;
 
             TabPage tpCipherText = new TabPage("Ciphertext");
             tpCipherText.Name = "tpCipherText";
             tpCipherText.Controls.Add(rtCipherText);
             tabControl1.TabPages.Add(tpCipherText);
         }
-        public void setPlainText(Stream stream)
+        public void setPlainText(string plainText)
         {
-            stream.Position = 0;
-
             RichTextBox rtPlainText = new RichTextBox();
             rtPlainText.Name = "rtPlaintext";
             rtPlainText.Dock = DockStyle.Fill;
-            rtPlainText.LoadFile(stream, RichTextBoxStreamType.PlainText);
+            rtPlainText.Text = plainText;
 
             TabPage tpPlainText = new TabPage("PlainText");
             tpPlainText.Name = "tpPlainText";
             tpPlainText.Controls.Add(rtPlainText);
             tabControl1.TabPages.Add(tpPlainText);
         }
-        public Stream getPlainText()
+        public string getPlainText()
         {
-            MemoryStream stream = new MemoryStream();
-            richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
-
-            return stream;
+            return richTextBoxPlaintext.Text;
         }
-        public Stream getCipherText()
+        public string getCipherText()
         {
-            MemoryStream stream = new MemoryStream();
-            richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
-
-            return stream;
+            return richTextBoxPlaintext.Text;
         }
         private void DlgEditor_Activated(object sender, EventArgs e)
         {
             _FormMainReference.mainFormNotify(this);
         }
-        public void setText(String sText)
+        public void setTitle(String sText)
         {
             this.Text = sText;
         }

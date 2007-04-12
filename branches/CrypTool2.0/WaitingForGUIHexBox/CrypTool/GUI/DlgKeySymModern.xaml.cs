@@ -38,24 +38,22 @@ namespace CrypTool
         private void Encrypt(object sender, RoutedEventArgs arg)
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
-            int BlockSize = KeySize / 8;
+            string passPhrase = textBox1.Text;
 
-            byte[] plainText = new byte[_lastNotifiedForm.getPlainText().Length];
-            _lastNotifiedForm.getPlainText().Read(plainText, 0, plainText.Length);
+            byte[] plainText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
 
-            MemoryStream cipherText = new MemoryStream(AppLogic.CrypSymModern.CrypSymModernEncrypt(this.AlgID, KeySize, BlockSize, plainText));
-            _lastNotifiedForm.setCipherText(cipherText);           
+            byte[] cipherText = AppLogic.CrypSymModern.CrypSymModernEncrypt(this.AlgID, passPhrase, KeySize, plainText);
+            _lastNotifiedForm.setCipherText(Convert.ToBase64String(cipherText));
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
-            int BlockSize = KeySize / 8;
+            string passPhrase = textBox1.Text;
 
-            byte[] cipherText = new byte[_lastNotifiedForm.getPlainText().Length];
-            _lastNotifiedForm.getPlainText().Read(cipherText, 0, cipherText.Length);
+            byte[] cipherText = Convert.FromBase64String(_lastNotifiedForm.getPlainText());
 
-            MemoryStream plainText = new MemoryStream(AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, KeySize, BlockSize, cipherText));
-            //_lastNotifiedForm.setPlainText(plainText);
+            byte[] plainText = AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, passPhrase, KeySize, cipherText);
+            _lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length));
         }
         private void Cancel(object sender, RoutedEventArgs arg)
         {
