@@ -26,24 +26,38 @@ namespace CrypTool
         {
             _lastNotifiedForm = _EditForm;
             InitializeComponent();
-            getMD5();
+            getHashValues();
         }
         private void OnButtonClose(object sender, RoutedEventArgs e)
         {
             Close();
         }
-        private void getMD5()
+        private void getHashValues()
         {
-            MD5 md5 = MD5.Create();
+            string strPlainText = _lastNotifiedForm.getPlainText();
 
-            byte[] data = md5.ComputeHash(Encoding.Default.GetBytes(_lastNotifiedForm.getPlainText()));
+            CrypTool.AppLogic.MD5 md5 = new CrypTool.AppLogic.MD5(strPlainText);
+            textBoxMD5.Text = md5.getHashValue();
 
-            StringBuilder str = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-                str.Append(data[i].ToString("x2"));
+            CrypTool.AppLogic.SHA1 sha1 = new CrypTool.AppLogic.SHA1(strPlainText);
+            textBoxSHA1.Text = sha1.getHashValue();
 
-            textBox1.Text = str.ToString();
+            CrypTool.AppLogic.SHA256 sha256 = new CrypTool.AppLogic.SHA256(strPlainText);
+            textBoxSHA256.Text = sha256.getHashValue();
+
+            CrypTool.AppLogic.SHA384 sha384 = new CrypTool.AppLogic.SHA384(strPlainText);
+            textBoxSHA384.Text = sha384.getHashValue();
+
+            CrypTool.AppLogic.SHA512 sha512 = new CrypTool.AppLogic.SHA512(strPlainText);
+            textBox1SHA512.Text = sha512.getHashValue();
         }
-
+        private void ButtonShowFileMD5_OnClick(object sender, RoutedEventArgs e)
+        {
+            showHashFile(textBoxMD5.Text);
+        }
+        private void showHashFile(string HashString)
+        {
+            _lastNotifiedForm.setCipherTextHEX(HashString);
+        }
     }
 }

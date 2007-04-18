@@ -78,12 +78,7 @@
   <MenuItemSignatureDemo Header="Signature Demonstration (Signature Generation)..."/>
   <MenuItemIndivProcedures Header="Indiv. Procedures"/>
   <MenuItemHash Header="Hash"/>
-  <MenuItemMD2 Header="MD2"/>
-  <MenuItemMD4 Header="MD4"/>
-  <MenuItemMD5 Header="MD5"/>
-  <MenuItemSHA Header="SHA"/>
-  <MenuItemSHA-1 Header="SHA-1"/>
-  <MenuItemRipemd-160 Header="RIPEMD-160"/>
+  <MenuItemGenHash Header="Generate Hash values"/>
   <MenuItemHashValueFile Header="Hash Value of a File..."/>
   <MenuItemHashDemo Header="Hash Demonstration..."/>
   <MenuItemKeyGenFromPass Header="Key Generation from Password (PKCS #5)..."/>

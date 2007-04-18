@@ -108,12 +108,7 @@
       </MenuItem>
       <MenuItem Name="MenuItemIndivPrcedures" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndivProcedures/@Header}">
         <MenuItem Name="MenuItemHash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}">
-          <MenuItem Name="MenuItemMD2" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMD2/@Header}"/>
-          <MenuItem Name="MenuItemMD4" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMD4/@Header}"/>
-          <MenuItem Name="MenuItemMD5" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMD5/@Header}" Click="ShowDlgHash"></MenuItem>
-          <MenuItem Name="MenuItemSHA" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSHA/@Header}"/>
-          <MenuItem Name="MenuItemSHA1" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSHA-1/@Header}"/>
-          <MenuItem Name="MenuItemRipemd160" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRipemd-160/@Header}"/>
+          <MenuItem Name="MenuItemGenHash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenHash/@Header}" Click="ShowDlgHash"/>
           <Separator/>
           <MenuItem Name="MenuItemHashValueFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashValueFile/@Header}"/>
           <MenuItem Name="MenuItemHashDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashDemo/@Header}"/>
