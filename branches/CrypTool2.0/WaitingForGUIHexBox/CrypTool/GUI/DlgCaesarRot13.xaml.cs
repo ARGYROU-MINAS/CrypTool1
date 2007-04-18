@@ -20,6 +20,7 @@ namespace CrypTool
         public DlgCaesarRot13()
         {
             InitializeComponent();
+            getSettings();
         }
         private void Encode(object sender, RoutedEventArgs e)
         {
@@ -36,6 +37,12 @@ namespace CrypTool
         private void CloseDlgCaesarRot13(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+        private void getSettings()
+        {
+            textBox2.Text = AppLogic.TextOptions.getAlphabet();
+            label3.Content = "Das Alphabet (" + AppLogic.TextOptions.getAlphabet().Length.ToString() +
+                " Zeichen) wir abgebildet";
         }
 
     }

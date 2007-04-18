@@ -6,30 +6,166 @@
   <Window.Resources>
     <XmlDataProvider x:Key="Lang" Source="/lng/german.xml" XPath="CrypTool"/>
   </Window.Resources>
-	<DockPanel>
-		<Menu Name="Menu" VerticalAlignment="Top" DockPanel.Dock="Top" Background="WhiteSmoke">
-			<MenuItem Name="MenuItemFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFile/@Header}">
+  <DockPanel>
+    <Menu Name="Menu" VerticalAlignment="Top" DockPanel.Dock="Top" Background="WhiteSmoke">
+      <MenuItem Name="MenuItemFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFile/@Header}">
         <MenuItem Name="MenuItemNew" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemNew/@Header}" Click="MenuItemNew_OnClick"/>
         <MenuItem Name="MenuItemOpen" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOpen/@Header}" Click="MenuItemOpen_OnClick"/>
         <MenuItem Name="MenuItemClose" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemClose/@Header}" Click="MenuItemClose_OnClick"/>
         <MenuItem Name="MenuItemCloseAll" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCloseAll/@Header}" Click="MenuItemCloseAll_OnClick"/>
         <MenuItem Name="MenuItemSave" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSave/@Header}" Click="MenuItemSave_OnClick"/>
+        <MenuItem Name="MenuItemSaveAs" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSaveAs/@Header}"/>
         <Separator/>
-				<MenuItem Name="MenuItemQuit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemQuit/@Header}" Click="CloseDlgMain"/>
-			</MenuItem>
-			<MenuItem Name="MenuItemEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEncryption/@Header}">
-				<MenuItem Name="MenuItemSymetricClass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricClass/@Header}">
-					<MenuItem Name="MenuItemCaesarRot13" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCaesarRot13/@Header}" Click="ShowDlgCaesarRot13"></MenuItem>
-				</MenuItem>
-        <MenuItem Name="MenuItemSymetricModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricModern/@Header}">
-          <MenuItem Name="MenuItemRijndael" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRijndael/@Header}" Click="ShowDlgRijndael"></MenuItem>
+        <MenuItem Name="MenuItemDocProperties" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDocProperties/@Header}"/>
+        <MenuItem Name="MenuItemPrint" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrint/@Header}"/>
+        <MenuItem Name="MenuItemPrintSetup" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintSetup/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemQuit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemQuit/@Header}" Click="CloseDlgMain"/>
+      </MenuItem>
+      <MenuItem Name="MenuItemEdit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEdit/@Header}">
+        <MenuItem Name="MenuItemUndo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemUndo/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemCut" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCut/@Header}"/>
+        <MenuItem Name="MenuItemCopy" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCopy/@Header}"/>
+        <MenuItem Name="MenuItemPaste" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPaste/@Header}"/>
+        <MenuItem Name="MenuItemDelete" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDelete/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemFindReplace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindReplace/@Header}"/>
+        <MenuItem Name="MenuItemFindNext" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindNext/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemSelAll" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSelAll/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemShowKey" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowKey/@Header}"/>
+        <MenuItem Name="MenuItemParentWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemParentWindow/@Header}"/>
+      </MenuItem>
+      <MenuItem Name="MenuItemView" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemView/@Header}">
+        <MenuItem Name="MenuItemToolbar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolbar/@Header}"/>
+        <MenuItem Name="MenuItemStatusBar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStatusBar/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemShowAsText" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowAsText/@Header}"/>
+        <MenuItem Name="MenuItemAsHexDump" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsHexDump/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemBarChart" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemBarChart/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemEndOfLine" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEndOfLine/@Header}"/>
+        <MenuItem Name="MenuItemLineWrap" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLineWrap/@Header}"/>
+        <MenuItem Name="MenuItemWhitespace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWhitespace/@Header}"/>
+        <MenuItem Name="MenuItemFont" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFont/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemShowBox" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowBox/@Header}"/>
+      </MenuItem>
+      <MenuItem Name="MenuItemEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEncryption/@Header}">
+        <MenuItem Name="MenuItemSymetricClass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricClass/@Header}">
+          <MenuItem Name="MenuItemCaesarRot13" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCaesarRot13/@Header}" Click="ShowDlgCaesarRot13"></MenuItem>
+          <MenuItem Name="MenuItemVigenere" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVigenere/@Header}"/>
+          <MenuItem Name="MenuItemHill" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHill/@Header}"/>
+          <MenuItem Name="MenuItemSubstitutionAtbash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSubstitutionAtbash/@Header}"/>
+          <MenuItem Name="MenuItemPalyfair" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPlayfair/@Header}"/>
+          <MenuItem Name="MenuItemADFGVX" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemADFGVX/@Header}"/>
+          <MenuItem Name="MenuItemByteAddition" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemByteAddition/@Header}"/>
+          <MenuItem Name="MenuItemXOR" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemXOR/@Header}"/>
+          <MenuItem Name="MenuItemVernam" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVernam/@Header}"/>
+          <MenuItem Name="MenuItemHomophone" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHomophone/@Header}"/>
+          <MenuItem Name="MenuItemPermutationTransposition" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPermutationTransposition/@Header}"/>
+          <MenuItem Name="MenuItemSolitaire" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSolitaire/@Header}"/>
         </MenuItem>
-			</MenuItem>
-			<MenuItem Name="MenuItemOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOptions/@Header}">
-				<MenuItem Name="MenuItemTextOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTextOptions/@Header}" Click="ShowDlgTextOptions"></MenuItem>
+        <MenuItem Name="MenuItemSymetricModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricModern/@Header}">
+          <MenuItem Name="MenuItemIDEA" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIDEA/@Header}"/>
+          <MenuItem Name="MenuItemRC2" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRC2/@Header}"/>
+          <MenuItem Name="MenuItemRC4" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRC4/@Header}"/>
+          <MenuItem Name="MenuItemDES_ECB" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDES_ECB/@Header}" Click="ShowDlgKeyDES_ECB"></MenuItem>
+          <MenuItem Name="MenuItemDES_CBC" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDES_CBC/@Header}" Click="ShowDlgKeyDES_CBC"></MenuItem>
+          <MenuItem Name="MenuItemTripleDES_ECB" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTripleDES_ECB/@Header}" Click="ShowDlgKeyTripleDES_ECB"></MenuItem>
+          <MenuItem Name="MenuItemTripleDES_CBC" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTripleDES_CBC/@Header}" Click="ShowDlgKeyTripleDES_CBC"></MenuItem>
+          <Separator/>
+          <MenuItem Name="MenuItemMars" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMars/@Header}"/>
+          <MenuItem Name="MenuItemRC6" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRC6/@Header}"/>
+          <MenuItem Name="MenuItemRijndael" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRijndael/@Header}" Click="ShowDlgKeyRijndael"></MenuItem>
+          <MenuItem Name="MenuItemSerpent" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSerpent/@Header}"/>
+          <MenuItem Name="MenuItemTwofish" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTwofish/@Header}"/>
+          <Separator/>
+          <MenuItem Name="MenuItemAES" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAES/@Header}"/>
+        </MenuItem>
+        <MenuItem Name="MenuItemAsymmetric" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsymmetric/@Header}">
+          <MenuItem Name="MenuItemRSAEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAEncryption/@Header}"/>
+          <MenuItem Name="MenuItemRSADecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSADecryption/@Header}"/>
+          <MenuItem Name="MenuItemRSADemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSADemo/@Header}"/>
+        </MenuItem>
+        <MenuItem Name="MenuItemHybrid" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHybrid/@Header}">
+          <MenuItem Name="MenuItemRSAAESEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAAESEncryption/@Header}"/>
+          <MenuItem Name="MenuItemRSAAESDecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAAESDecryption/@Header}"/>
+        </MenuItem>
+      </MenuItem>
+      <MenuItem Name="MenuItemDigSignature_PKI" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDigSignature_PKI/@Header}">
+        <MenuItem Name="MenuItemPKI" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPKI/@Header}">
+          <MenuItem Name="MenuItemKeyGenImport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyGenImport/@Header}"/>
+          <MenuItem Name="MenuItemKeyDisplayExport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyDisplayExport/@Header}"/>
+        </MenuItem>
+        <MenuItem Name="MenuItemSignDocument" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSignDocument/@Header}"/>
+        <MenuItem Name="MenuItemVerfiySignature" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVerifySignature/@Header}"/>
+        <MenuItem Name="MenuItemExtractSignature" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemExtractSignature/@Header}"/>
+        <MenuItem Name="MenuItemSignatureDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSignatureDemo/@Header}"/>
+      </MenuItem>
+      <MenuItem Name="MenuItemIndivPrcedures" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndivProcedures/@Header}">
+        <MenuItem Name="MenuItemHash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}">
+          <MenuItem Name="MenuItemMD2" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMD2/@Header}"/>
+          <MenuItem Name="MenuItemMD4" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMD4/@Header}"/>
+          <MenuItem Name="MenuItemMD5" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMD5/@Header}" Click="ShowDlgHash"></MenuItem>
+          <MenuItem Name="MenuItemSHA" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSHA/@Header}"/>
+          <MenuItem Name="MenuItemSHA1" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSHA-1/@Header}"/>
+          <MenuItem Name="MenuItemRipemd160" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRipemd-160/@Header}"/>
+          <Separator/>
+          <MenuItem Name="MenuItemHashValueFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashValueFile/@Header}"/>
+          <MenuItem Name="MenuItemHashDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashDemo/@Header}"/>
+          <MenuItem Name="MenuItemKeyGenFromPass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyGenFromPass/@Header}"/>
+          <MenuItem Name="MenuItemGenMac" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenMac/@Header}"/>
+        </MenuItem>
+        <MenuItem Name="MenuItemRSACryptoSystem" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSACryptoSystem/@Header}"/>
+        <MenuItem Name="MenuItemProtocols" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemProtocols/@Header}"/>
+        <MenuItem Name="MenuItemChineseRemTheoApp" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemChineseRemTheoApp/@Header}"/>
+        <MenuItem Name="MenuItemVisualAlgoAnimal" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVisualAlgoAnimal/@Header}"/>
+        <MenuItem Name="MenuItemSecretSharingDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSecretSharingDemo/@Header}"/>
         <Separator/>
+        <MenuItem Name="MenuItemCodes" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCodes/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemCompress" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCompress/@Header}"/>
+        <MenuItem Name="MenuItemGenRandNum" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenRandNum/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemEducatGames" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEducatGames/@Header}"/>
+      </MenuItem>
+      <MenuItem Name="MenuItemAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysis/@Header}">
+        <MenuItem Name="MenuItemToolsForAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolsForAnalysis/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemSymmetricEncryptionClassic" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymmetricEncryptionClassic/@Header}"/>
+        <MenuItem Name="MenuItemSymmetricEncryptionModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymmetricEncryptionModern/@Header}"/>
+        <MenuItem Name="MenuItemAsymmetricEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsymmetricEncryption/@Header}"/>
+        <MenuItem Name="MenuItemHashAnalyse" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}"/>
+        <MenuItem Name="MenuItemAnalyseRandomness" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalyseRandomness/@Header}"/>
+      </MenuItem>
+      <MenuItem Name="MenuItemOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOptions/@Header}">
+        <MenuItem Name="MenuItemPlotOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPlotOptions/@Header}"/>
+        <MenuItem Name="MenuItemAnalysisOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysisOptions/@Header}"/>
+        <MenuItem Name="MenuItemTextOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTextOptions/@Header}" Click="ShowDlgTextOptions"></MenuItem>
+        <MenuItem Name="MenuItemStartingOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStartingOptions/@Header}"/>
+        <MenuItem Name="MenuItemFurtherOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFurtherOptions/@Header}"/>
         <MenuItem Name="MenuItemLanguage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLanguage/@Header}"/>
-			</MenuItem>
-		</Menu>
-	</DockPanel>
+      </MenuItem>
+      <MenuItem Name="MenuItemWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWindow/@Header}">
+        <MenuItem Name="MenuItemCascade" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCascade/@Header}"/>
+        <MenuItem Name="MenuItemTile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTile/@Header}"/>
+        <MenuItem Name="MenuItemArrangeIcons" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemArrangeIcons/@Header}"/>
+        <MenuItem Name="MenuItemCloseAllWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCloseAll/@Header}"/>
+      </MenuItem>
+      <MenuItem Name="MenuItemHelp" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHelp/@Header}">
+        <MenuItem Name="MenuItemStartingPage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStartingPage/@Header}"/>
+        <MenuItem Name="MenuItemIndex" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndex/@Header}"/>
+        <MenuItem Name="MenuItemScenarios" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemScenarios/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemReadme" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemReadme/@Header}"/>
+        <MenuItem Name="MenuItemScript" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemScript/@Header}"/>
+        <Separator/>
+        <MenuItem Name="MenuItemAbout" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAbout/@Header}"/>
+      </MenuItem>
+    </Menu>
+  </DockPanel>
 </Window>

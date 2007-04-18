@@ -50,6 +50,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
     <Page Include="DlgCaesarRot13.xaml" />
+    <Page Include="DlgHash.xaml" />
     <Page Include="DlgKeySymModern.xaml" />
     <Page Include="DlgMain.xaml" />
     <Page Include="DlgTextOptions.xaml" />
@@ -72,6 +73,10 @@
     </Compile>
     <Compile Include="DlgEditor.Designer.cs">
       <DependentUpon>DlgEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgHash.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DlgHash.xaml</DependentUpon>
     </Compile>
     <Compile Include="DlgKeySymModern.xaml.cs">
       <SubType>Code</SubType>

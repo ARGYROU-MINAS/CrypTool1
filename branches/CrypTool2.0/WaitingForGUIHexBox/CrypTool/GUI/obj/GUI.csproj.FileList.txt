@@ -50,3 +50,5 @@ obj\Debug\GUI.exe
 obj\Debug\GUI.pdb
 D:\Daten\IMG\Subversion\CrypTool2.0\WaitingForGUIHexBox\CrypTool\GUI\obj\Debug\DlgKeySymModern.baml
 D:\Daten\IMG\Subversion\CrypTool2.0\WaitingForGUIHexBox\CrypTool\GUI\obj\Debug\DlgKeySymModern.g.cs
+D:\Daten\IMG\Subversion\CrypTool2.0\WaitingForGUIHexBox\CrypTool\GUI\obj\Debug\DlgHash.baml
+D:\Daten\IMG\Subversion\CrypTool2.0\WaitingForGUIHexBox\CrypTool\GUI\obj\Debug\DlgHash.g.cs
