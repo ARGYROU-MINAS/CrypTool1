@@ -1,0 +1,5 @@
+bin\Debug\AppLogic.dll
+bin\Debug\AppLogic.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AppLogic.dll
+obj\Debug\AppLogic.pdb
