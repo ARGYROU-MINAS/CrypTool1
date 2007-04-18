@@ -40,6 +40,21 @@ namespace CrypTool
             tpCipherText.Controls.Add(rtCipherText);
             tabControl1.TabPages.Add(tpCipherText);
         }
+        public void setCipherTextHEX(string cipherText)
+        {
+            Be.Windows.Forms.HexBox hexBoxCipherText = new Be.Windows.Forms.HexBox();
+            hexBoxCipherText.Name = "hexBoxCipherText";
+            hexBoxCipherText.Dock = DockStyle.Fill;
+            hexBoxCipherText.Text = cipherText;
+            
+            //string to stream in FileByteProvider
+            //Be.Windows.Forms.FileByteProvider fileByteProvider = new Be.Windows.Forms.FileByteProvider(
+
+            TabPage tpCipherText = new TabPage("Ciphertext");
+            tpCipherText.Name = "tpCipherText";
+            tpCipherText.Controls.Add(hexBoxCipherText);
+            tabControl1.TabPages.Add(tpCipherText);
+        }
         public void setPlainText(string plainText)
         {
             RichTextBox rtPlainText = new RichTextBox();

@@ -78,12 +78,7 @@
   <MenuItemSignatureDemo Header="Signaturdemo(Signaturerzeugung)..."/>
   <MenuItemIndivProcedures Header="Einzelverfahren"/>
   <MenuItemHash Header="Hashverfahren"/>
-  <MenuItemMD2 Header="MD2"/>
-  <MenuItemMD4 Header="MD4"/>
-  <MenuItemMD5 Header="MD5"/>
-  <MenuItemSHA Header="SHA"/>
-  <MenuItemSHA-1 Header="SHA-1"/>
-  <MenuItemRipemd-160 Header="RIPEMD-160"/>
+  <MenuItemGenHash Header="Hashwerte berechnen"/>
   <MenuItemHashValueFile Header="Hashwert einer Datei..."/>
   <MenuItemHashDemo Header="Hash-Demo..."/>
   <MenuItemKeyGenFromPass Header="Schlüssel aus Passwort generieren (PKCS #5)..."/>

@@ -36,7 +36,12 @@
     <Compile Include="CaesarRot13.cs" />
     <Compile Include="CrypSymModern.cs" />
     <Compile Include="LanguageOptions.cs" />
+    <Compile Include="MD5.cs" />
     <Compile Include="Rijndael.cs" />
+    <Compile Include="SHA1.cs" />
+    <Compile Include="SHA256.cs" />
+    <Compile Include="SHA384.cs" />
+    <Compile Include="SHA512.cs" />
     <Compile Include="TextOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
