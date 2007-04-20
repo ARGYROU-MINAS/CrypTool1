@@ -60,17 +60,23 @@ namespace Be.Windows.Forms
 		/// <summary>
 		/// Contains the file stream.
 		/// </summary>
-		FileStream _fileStream;
+        //FileStream _fileStream;
+        MemoryStream _fileStream;
 
 		/// <summary>
 		/// Initializes a new instance of the FileByteProvider class.
 		/// </summary>
-		/// <param name="fileName"></param>
-		public FileByteProvider(string fileName)
-		{
-			_fileName = fileName;
-			_fileStream = File.Open(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.Read);
-		}
+		/// <param name="Data"></param>
+        //public FileByteProvider(string fileName)
+        //{
+        //    _fileName = fileName;
+        //    _fileStream = File.Open(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.Read);
+        //}
+        public FileByteProvider(string Data)
+        {
+            _fileName = null;
+            _fileStream = new MemoryStream(System.Text.Encoding.ASCII.GetBytes(Data));
+        }
 
 		/// <summary>
 		/// Terminates the instance of the FileByteProvider class.
