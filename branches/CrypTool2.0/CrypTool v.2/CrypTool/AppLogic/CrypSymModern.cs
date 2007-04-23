@@ -12,7 +12,15 @@ namespace CrypTool.AppLogic
         static private byte[] globalPlainText;
         static private string initVector = "0123456789ABCDEF";
 
+        private PaddingMode[] padMode = {PaddingMode.None,PaddingMode.Zeros,
+                                         PaddingMode.PKCS7,PaddingMode.ANSIX923,
+                                         PaddingMode.ISO10126};
+
+        private CipherMode[] ciphMode = {CipherMode.ECB,CipherMode.CBC,CipherMode.OFB,
+                                         CipherMode.CFB,CipherMode.CTS};
+
         /// <summary>
+        /// AlgID
         /// 0 = IDEA
         /// 1 = RC2
         /// 2 = RC4
@@ -25,6 +33,19 @@ namespace CrypTool.AppLogic
         /// 9 = Rijndael (AES)
         /// 10 = Serpent
         /// 11 = Twofish
+        /// CipherModeID
+        /// 0 = ECB
+        /// 1 = CBC-CTS
+        /// 2 = OFB
+        /// 3 = CBC
+        /// 4 = CFB
+        /// 5 = CTR
+        /// Padding
+        /// 0 = None
+        /// 1 = Zeros
+        /// 2 = PKCS7
+        /// 3 = ANSIX923
+        /// 4 = ISO 10126
         /// </summary>
         /// <param name="AlgID"></param>
         public static byte[] CrypSymModernEncrypt(int AlgID,string passPhrase, int KeySize, byte[] PlainText)

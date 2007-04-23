@@ -19,7 +19,20 @@ namespace CrypTool
     /// </summary>
 
     public partial class DlgKeySymModern : System.Windows.Window
-    {
+    {        /// 0 = IDEA
+        /// 1 = RC2
+        /// 2 = RC4
+        /// 3 = DES (ECB)
+        /// 4 = DES (CBC)
+        /// 5 = Triple DES (ECB)
+        /// 6 = Triple DES (CBC)
+        /// 7 = Mars
+        /// 8 = RC6
+        /// 9 = Rijndael (AES)
+        /// 10 = Serpent
+        /// 11 = Twofish
+        private string[] AlgTitle = {   "IDEA","RC2","RC4","DES (ECB)","DES (CBC)","Trple DES (ECB)","Triple DES (CBC)",
+                                        "Mars","RC6","Rijndael (AES)","Serpent","Twofish"};
         private int AlgID;
         private DlgEditor _lastNotifiedForm = null;
 
@@ -43,7 +56,7 @@ namespace CrypTool
             byte[] plainText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
 
             byte[] cipherText = AppLogic.CrypSymModern.CrypSymModernEncrypt(this.AlgID, passPhrase, KeySize, plainText);
-            _lastNotifiedForm.setCipherText(Convert.ToBase64String(cipherText));
+            _lastNotifiedForm.setCipherText(Convert.ToBase64String(cipherText),this.AlgTitle[this.AlgID]);
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
         {
@@ -53,7 +66,7 @@ namespace CrypTool
             byte[] cipherText = Convert.FromBase64String(_lastNotifiedForm.getPlainText());
 
             byte[] plainText = AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, passPhrase, KeySize, cipherText);
-            _lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length));
+            _lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length),this.AlgTitle[this.AlgID]);
         }
         private void Cancel(object sender, RoutedEventArgs arg)
         {

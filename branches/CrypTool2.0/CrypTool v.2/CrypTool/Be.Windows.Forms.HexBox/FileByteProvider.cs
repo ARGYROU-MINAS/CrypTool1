@@ -72,6 +72,8 @@ namespace Be.Windows.Forms
         //    _fileName = fileName;
         //    _fileStream = File.Open(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.Read);
         //}
+
+        //Changed Original to get stream as input
         public FileByteProvider(string Data)
         {
             _fileName = null;

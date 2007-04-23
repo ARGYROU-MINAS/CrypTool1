@@ -22,6 +22,12 @@ namespace CrypTool
     {
         private DlgEditor _lastNotifiedForm = null;
 
+        CrypTool.AppLogic.MD5 md5;
+        CrypTool.AppLogic.SHA1 sha1;
+        CrypTool.AppLogic.SHA256 sha256;
+        CrypTool.AppLogic.SHA384 sha384;
+        CrypTool.AppLogic.SHA512 sha512;
+
         public DlgHash(DlgEditor _EditForm)
         {
             _lastNotifiedForm = _EditForm;
@@ -36,28 +42,64 @@ namespace CrypTool
         {
             string strPlainText = _lastNotifiedForm.getPlainText();
 
-            CrypTool.AppLogic.MD5 md5 = new CrypTool.AppLogic.MD5(strPlainText);
-            textBoxMD5.Text = md5.getHashValue();
+            this.md5 = new CrypTool.AppLogic.MD5(strPlainText);
+            textBoxMD5.Text = showHashInBlock(this.md5.getHashValue());
 
-            CrypTool.AppLogic.SHA1 sha1 = new CrypTool.AppLogic.SHA1(strPlainText);
-            textBoxSHA1.Text = sha1.getHashValue();
+            this.sha1 = new CrypTool.AppLogic.SHA1(strPlainText);
+            textBoxSHA1.Text = showHashInBlock(this.sha1.getHashValue());
 
-            CrypTool.AppLogic.SHA256 sha256 = new CrypTool.AppLogic.SHA256(strPlainText);
-            textBoxSHA256.Text = sha256.getHashValue();
+            this.sha256 = new CrypTool.AppLogic.SHA256(strPlainText);
+            textBoxSHA256.Text = showHashInBlock(this.sha256.getHashValue());
 
-            CrypTool.AppLogic.SHA384 sha384 = new CrypTool.AppLogic.SHA384(strPlainText);
-            textBoxSHA384.Text = sha384.getHashValue();
+            this.sha384 = new CrypTool.AppLogic.SHA384(strPlainText);
+            textBoxSHA384.Text = showHashInBlock(this.sha384.getHashValue());
 
-            CrypTool.AppLogic.SHA512 sha512 = new CrypTool.AppLogic.SHA512(strPlainText);
-            textBox1SHA512.Text = sha512.getHashValue();
+            this.sha512 = new CrypTool.AppLogic.SHA512(strPlainText);
+            textBox1SHA512.Text = showHashInBlock(this.sha512.getHashValue());
         }
         private void ButtonShowFileMD5_OnClick(object sender, RoutedEventArgs e)
         {
-            showHashFile(textBoxMD5.Text);
+            showHashFile(this.md5.getHashValue(),"MD5");
         }
-        private void showHashFile(string HashString)
+        private void ButtonShowFileSHA1_OnClick(object sender, RoutedEventArgs e)
         {
-            _lastNotifiedForm.setCipherTextHEX(HashString);
+            showHashFile(this.sha1.getHashValue(),"SHA1");
+        }
+        private void ButtonShowFileSHA256_OnClick(object sender, RoutedEventArgs e)
+        {
+            showHashFile(this.sha256.getHashValue(),"SHA256");
+        }
+        private void ButtonShowFileSHA384_OnClick(object sender, RoutedEventArgs e)
+        {
+            showHashFile(this.sha384.getHashValue(),"SHA384");
+        }
+        private void ButtonShowFileSHA512_OnClick(object sender, RoutedEventArgs e)
+        {
+            showHashFile(this.sha512.getHashValue(),"SHA512");
+        }
+        private void ButtonShowAllInFiles_OnClick(object sender, RoutedEventArgs e)
+        {
+            showHashFile(this.md5.getHashValue(),"MD5");
+            showHashFile(this.sha1.getHashValue(),"SHA1");
+            showHashFile(this.sha256.getHashValue(),"SHA256");
+            showHashFile(this.sha384.getHashValue(),"SHA384");
+            showHashFile(this.sha512.getHashValue(),"SHA512");
+        }
+        private string showHashInBlock(string strHash)
+        {
+            string strHashBlock = null;
+
+            for (int i = 0; i < strHash.Length; i++)
+            {
+                strHashBlock += strHash[i];
+                if (i % 2 == 1)
+                    strHashBlock += " ";
+            }
+            return strHashBlock;
+        }
+        private void showHashFile(string HashString,string Title)
+        {
+            _lastNotifiedForm.setCipherTextHEX(HashString,Title);
         }
     }
 }
