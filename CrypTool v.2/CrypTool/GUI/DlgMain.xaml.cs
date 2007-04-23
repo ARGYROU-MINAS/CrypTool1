@@ -22,6 +22,7 @@ namespace CrypTool
 
     public partial class DlgMain : Window
     {
+        private int _unnamedForm;
         private ArrayList _childFormList = new ArrayList();
         private DlgEditor _lastNotifiedForm = null;
         System.Windows.Controls.MenuItem[] itemLang;
@@ -30,6 +31,7 @@ namespace CrypTool
         public DlgMain()
         {
             InitializeComponent();
+            this._unnamedForm = 1;
             updateLang();
             getLangItems();
             MarkSelectedLang();
@@ -57,7 +59,9 @@ namespace CrypTool
         }
         private void MenuItemNew_OnClick(object sender, RoutedEventArgs e)
         {
-            DlgEditor dlgEditor = new DlgEditor(this);
+            string Title = "Unnamed[" + this._unnamedForm.ToString() + "]";
+            DlgEditor dlgEditor = new DlgEditor(this,Title);
+            this._unnamedForm++;
             _childFormList.Add(dlgEditor);
             dlgEditor.Show();
         }
@@ -82,7 +86,7 @@ namespace CrypTool
                     Stream myStream = fileStream;
                     if (null != myStream)
                     {
-                        DlgEditor dlgEditor = new DlgEditor(this, myStream);
+                        DlgEditor dlgEditor = new DlgEditor(this, myStream,fileInfo.FullName);
                         _childFormList.Add(dlgEditor);
                         dlgEditor.Show();
                     }
@@ -110,7 +114,10 @@ namespace CrypTool
         private void MenuItemClose_OnClick(object sender, RoutedEventArgs e)
         {
             DlgEditor dlg = _lastNotifiedForm;
+            if (_lastNotifiedForm.Text.IndexOf("[") > 0)
+                this._unnamedForm--;
             dlg.Close();
+
         }
         private void MenuItemCloseAll_OnClick(object sender, RoutedEventArgs e)
         {
@@ -233,6 +240,14 @@ namespace CrypTool
                 if (itemLang[i].Header.ToString() == strLang)
                     itemLang[i].IsChecked = true;
 
+        }
+        public void setOtherChildFormNonActive()
+        {
+            foreach (DlgEditor dlgEditor in _childFormList)
+            {
+                if (dlgEditor != _lastNotifiedForm)
+                    dlgEditor.setNonActiveText();
+            }
         }
     }
 }

@@ -68,6 +68,8 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label labelSHA512;
         
+        internal System.Windows.Controls.Button buttonShowAllInFiles;
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -115,15 +117,39 @@ namespace CrypTool {
             return;
             case 5:
             this.buttonShowFileSHA1 = ((System.Windows.Controls.Button)(target));
+            
+            #line 10 "..\..\DlgHash.xaml"
+            this.buttonShowFileSHA1.Click += new System.Windows.RoutedEventHandler(this.ButtonShowFileSHA1_OnClick);
+            
+            #line default
+            #line hidden
             return;
             case 6:
             this.buttonShowFileSHA256 = ((System.Windows.Controls.Button)(target));
+            
+            #line 11 "..\..\DlgHash.xaml"
+            this.buttonShowFileSHA256.Click += new System.Windows.RoutedEventHandler(this.ButtonShowFileSHA256_OnClick);
+            
+            #line default
+            #line hidden
             return;
             case 7:
             this.buttonShowFileSHA384 = ((System.Windows.Controls.Button)(target));
+            
+            #line 12 "..\..\DlgHash.xaml"
+            this.buttonShowFileSHA384.Click += new System.Windows.RoutedEventHandler(this.ButtonShowFileSHA384_OnClick);
+            
+            #line default
+            #line hidden
             return;
             case 8:
             this.buttonShowFileSHA512 = ((System.Windows.Controls.Button)(target));
+            
+            #line 13 "..\..\DlgHash.xaml"
+            this.buttonShowFileSHA512.Click += new System.Windows.RoutedEventHandler(this.ButtonShowFileSHA512_OnClick);
+            
+            #line default
+            #line hidden
             return;
             case 9:
             this.textBoxSHA1 = ((System.Windows.Controls.TextBox)(target));
@@ -148,6 +174,15 @@ namespace CrypTool {
             return;
             case 16:
             this.labelSHA512 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 17:
+            this.buttonShowAllInFiles = ((System.Windows.Controls.Button)(target));
+            
+            #line 22 "..\..\DlgHash.xaml"
+            this.buttonShowAllInFiles.Click += new System.Windows.RoutedEventHandler(this.ButtonShowAllInFiles_OnClick);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;
