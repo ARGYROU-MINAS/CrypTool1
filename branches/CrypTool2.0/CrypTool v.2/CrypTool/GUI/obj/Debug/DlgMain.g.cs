@@ -134,32 +134,6 @@ namespace CrypTool {
         
         internal System.Windows.Controls.MenuItem MenuItemSymetricModern;
         
-        internal System.Windows.Controls.MenuItem MenuItemIDEA;
-        
-        internal System.Windows.Controls.MenuItem MenuItemRC2;
-        
-        internal System.Windows.Controls.MenuItem MenuItemRC4;
-        
-        internal System.Windows.Controls.MenuItem MenuItemDES_ECB;
-        
-        internal System.Windows.Controls.MenuItem MenuItemDES_CBC;
-        
-        internal System.Windows.Controls.MenuItem MenuItemTripleDES_ECB;
-        
-        internal System.Windows.Controls.MenuItem MenuItemTripleDES_CBC;
-        
-        internal System.Windows.Controls.MenuItem MenuItemMars;
-        
-        internal System.Windows.Controls.MenuItem MenuItemRC6;
-        
-        internal System.Windows.Controls.MenuItem MenuItemRijndael;
-        
-        internal System.Windows.Controls.MenuItem MenuItemSerpent;
-        
-        internal System.Windows.Controls.MenuItem MenuItemTwofish;
-        
-        internal System.Windows.Controls.MenuItem MenuItemAES;
-        
         internal System.Windows.Controls.MenuItem MenuItemAsymmetric;
         
         internal System.Windows.Controls.MenuItem MenuItemRSAEncryption;
@@ -483,257 +457,194 @@ namespace CrypTool {
             return;
             case 49:
             this.MenuItemSymetricModern = ((System.Windows.Controls.MenuItem)(target));
+            
+            #line 72 "..\..\DlgMain.xaml"
+            this.MenuItemSymetricModern.Click += new System.Windows.RoutedEventHandler(this.ShowDlgKeySymModern);
+            
+            #line default
+            #line hidden
             return;
             case 50:
-            this.MenuItemIDEA = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 51:
-            this.MenuItemRC2 = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 52:
-            this.MenuItemRC4 = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 53:
-            this.MenuItemDES_ECB = ((System.Windows.Controls.MenuItem)(target));
-            
-            #line 76 "..\..\DlgMain.xaml"
-            this.MenuItemDES_ECB.Click += new System.Windows.RoutedEventHandler(this.ShowDlgKeyDES_ECB);
-            
-            #line default
-            #line hidden
-            return;
-            case 54:
-            this.MenuItemDES_CBC = ((System.Windows.Controls.MenuItem)(target));
-            
-            #line 77 "..\..\DlgMain.xaml"
-            this.MenuItemDES_CBC.Click += new System.Windows.RoutedEventHandler(this.ShowDlgKeyDES_CBC);
-            
-            #line default
-            #line hidden
-            return;
-            case 55:
-            this.MenuItemTripleDES_ECB = ((System.Windows.Controls.MenuItem)(target));
-            
-            #line 78 "..\..\DlgMain.xaml"
-            this.MenuItemTripleDES_ECB.Click += new System.Windows.RoutedEventHandler(this.ShowDlgKeyTripleDES_ECB);
-            
-            #line default
-            #line hidden
-            return;
-            case 56:
-            this.MenuItemTripleDES_CBC = ((System.Windows.Controls.MenuItem)(target));
-            
-            #line 79 "..\..\DlgMain.xaml"
-            this.MenuItemTripleDES_CBC.Click += new System.Windows.RoutedEventHandler(this.ShowDlgKeyTripleDES_CBC);
-            
-            #line default
-            #line hidden
-            return;
-            case 57:
-            this.MenuItemMars = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 58:
-            this.MenuItemRC6 = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 59:
-            this.MenuItemRijndael = ((System.Windows.Controls.MenuItem)(target));
-            
-            #line 83 "..\..\DlgMain.xaml"
-            this.MenuItemRijndael.Click += new System.Windows.RoutedEventHandler(this.ShowDlgKeyRijndael);
-            
-            #line default
-            #line hidden
-            return;
-            case 60:
-            this.MenuItemSerpent = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 61:
-            this.MenuItemTwofish = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 62:
-            this.MenuItemAES = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 63:
             this.MenuItemAsymmetric = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 64:
+            case 51:
             this.MenuItemRSAEncryption = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 65:
+            case 52:
             this.MenuItemRSADecryption = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 66:
+            case 53:
             this.MenuItemRSADemo = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 67:
+            case 54:
             this.MenuItemHybrid = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 68:
+            case 55:
             this.MenuItemRSAAESEncryption = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 69:
+            case 56:
             this.MenuItemRSAAESDecryption = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 70:
+            case 57:
             this.MenuItemDigSignature_PKI = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 71:
+            case 58:
             this.MenuItemPKI = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 72:
+            case 59:
             this.MenuItemKeyGenImport = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 73:
+            case 60:
             this.MenuItemKeyDisplayExport = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 74:
+            case 61:
             this.MenuItemSignDocument = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 75:
+            case 62:
             this.MenuItemVerfiySignature = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 76:
+            case 63:
             this.MenuItemExtractSignature = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 77:
+            case 64:
             this.MenuItemSignatureDemo = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 78:
+            case 65:
             this.MenuItemIndivPrcedures = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 79:
+            case 66:
             this.MenuItemHash = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 80:
+            case 67:
             this.MenuItemGenHash = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 111 "..\..\DlgMain.xaml"
+            #line 95 "..\..\DlgMain.xaml"
             this.MenuItemGenHash.Click += new System.Windows.RoutedEventHandler(this.ShowDlgHash);
             
             #line default
             #line hidden
             return;
-            case 81:
+            case 68:
             this.MenuItemHashValueFile = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 82:
+            case 69:
             this.MenuItemHashDemo = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 83:
+            case 70:
             this.MenuItemKeyGenFromPass = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 84:
+            case 71:
             this.MenuItemGenMac = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 85:
+            case 72:
             this.MenuItemRSACryptoSystem = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 86:
+            case 73:
             this.MenuItemProtocols = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 87:
+            case 74:
             this.MenuItemChineseRemTheoApp = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 88:
+            case 75:
             this.MenuItemVisualAlgoAnimal = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 89:
+            case 76:
             this.MenuItemSecretSharingDemo = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 90:
+            case 77:
             this.MenuItemCodes = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 91:
+            case 78:
             this.MenuItemCompress = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 92:
+            case 79:
             this.MenuItemGenRandNum = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 93:
+            case 80:
             this.MenuItemEducatGames = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 94:
+            case 81:
             this.MenuItemAnalysis = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 95:
+            case 82:
             this.MenuItemToolsForAnalysis = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 96:
+            case 83:
             this.MenuItemSymmetricEncryptionClassic = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 97:
+            case 84:
             this.MenuItemSymmetricEncryptionModern = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 98:
+            case 85:
             this.MenuItemAsymmetricEncryption = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 99:
+            case 86:
             this.MenuItemHashAnalyse = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 100:
+            case 87:
             this.MenuItemAnalyseRandomness = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 101:
+            case 88:
             this.MenuItemOptions = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 102:
+            case 89:
             this.MenuItemPlotOptions = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 103:
+            case 90:
             this.MenuItemAnalysisOptions = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 104:
+            case 91:
             this.MenuItemTextOptions = ((System.Windows.Controls.MenuItem)(target));
             
-            #line 143 "..\..\DlgMain.xaml"
+            #line 127 "..\..\DlgMain.xaml"
             this.MenuItemTextOptions.Click += new System.Windows.RoutedEventHandler(this.ShowDlgTextOptions);
             
             #line default
             #line hidden
             return;
-            case 105:
+            case 92:
             this.MenuItemStartingOptions = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 106:
+            case 93:
             this.MenuItemFurtherOptions = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 107:
+            case 94:
             this.MenuItemLanguage = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 108:
+            case 95:
             this.MenuItemWindow = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 109:
+            case 96:
             this.MenuItemCascade = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 110:
+            case 97:
             this.MenuItemTile = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 111:
+            case 98:
             this.MenuItemArrangeIcons = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 112:
+            case 99:
             this.MenuItemCloseAllWindow = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 113:
+            case 100:
             this.MenuItemHelp = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 114:
+            case 101:
             this.MenuItemStartingPage = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 115:
+            case 102:
             this.MenuItemIndex = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 116:
+            case 103:
             this.MenuItemScenarios = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 117:
+            case 104:
             this.MenuItemReadme = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 118:
+            case 105:
             this.MenuItemScript = ((System.Windows.Controls.MenuItem)(target));
             return;
-            case 119:
+            case 106:
             this.MenuItemAbout = ((System.Windows.Controls.MenuItem)(target));
             return;
             }

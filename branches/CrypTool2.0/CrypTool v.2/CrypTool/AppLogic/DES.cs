@@ -6,20 +6,17 @@ using System.IO;
 
 namespace CrypTool.AppLogic
 {
-    public class Rijndael
+    public class DES
     {
-        //provided by .NET Framework
-
-        public byte[] Encrypt(string passPhrase,byte[] PlainText,int KeySize,CipherMode ciphMode, PaddingMode padMode,string IV)
+        public byte[] Encrypt(string passPhrase, byte[] PlainText, int KeySize, CipherMode ciphMode, PaddingMode padMode, string IV)
         {
-            RijndaelManaged cipher = new RijndaelManaged();
-
+            DESCryptoServiceProvider cipher = new DESCryptoServiceProvider();
             cipher.Key = getpassPhraseByte(passPhrase, KeySize);
             cipher.IV = System.Text.Encoding.ASCII.GetBytes(IV);
             cipher.Padding = padMode;
             cipher.Mode = ciphMode;
 
-            ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key,cipher.IV);
+            ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key, cipher.IV);
             MemoryStream memoryStream = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
             cryptoStream.Write(PlainText, 0, PlainText.Length);
@@ -31,13 +28,11 @@ namespace CrypTool.AppLogic
         }
         public byte[] Decrypt(string passPhrase, byte[] CipherText, int KeySize, CipherMode ciphMode, PaddingMode padMode, string IV)
         {
-            RijndaelManaged cipher = new RijndaelManaged();
-
+            DESCryptoServiceProvider cipher = new DESCryptoServiceProvider();
             cipher.Key = getpassPhraseByte(passPhrase, KeySize);
             cipher.IV = System.Text.Encoding.ASCII.GetBytes(IV);
             cipher.Padding = padMode;
             cipher.Mode = ciphMode;
-
 
             ICryptoTransform decryptor = cipher.CreateDecryptor(cipher.Key, cipher.IV);
             MemoryStream memoryStream = new MemoryStream(CipherText);
@@ -50,11 +45,11 @@ namespace CrypTool.AppLogic
         }
         public string getDefaultIV()
         {
-            return "0000000000000000";
+            return "00000000";
         }
         public string getInternalRandomIV()
         {
-            RijndaelManaged cipher = new RijndaelManaged();
+            TripleDESCryptoServiceProvider cipher = new TripleDESCryptoServiceProvider();
             cipher.GenerateIV();
             return System.Text.Encoding.Default.GetString(cipher.Key);
         }

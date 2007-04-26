@@ -69,23 +69,7 @@
           <MenuItem Name="MenuItemPermutationTransposition" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPermutationTransposition/@Header}"/>
           <MenuItem Name="MenuItemSolitaire" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSolitaire/@Header}"/>
         </MenuItem>
-        <MenuItem Name="MenuItemSymetricModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricModern/@Header}">
-          <MenuItem Name="MenuItemIDEA" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIDEA/@Header}"/>
-          <MenuItem Name="MenuItemRC2" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRC2/@Header}"/>
-          <MenuItem Name="MenuItemRC4" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRC4/@Header}"/>
-          <MenuItem Name="MenuItemDES_ECB" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDES_ECB/@Header}" Click="ShowDlgKeyDES_ECB"></MenuItem>
-          <MenuItem Name="MenuItemDES_CBC" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDES_CBC/@Header}" Click="ShowDlgKeyDES_CBC"></MenuItem>
-          <MenuItem Name="MenuItemTripleDES_ECB" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTripleDES_ECB/@Header}" Click="ShowDlgKeyTripleDES_ECB"></MenuItem>
-          <MenuItem Name="MenuItemTripleDES_CBC" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTripleDES_CBC/@Header}" Click="ShowDlgKeyTripleDES_CBC"></MenuItem>
-          <Separator/>
-          <MenuItem Name="MenuItemMars" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemMars/@Header}"/>
-          <MenuItem Name="MenuItemRC6" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRC6/@Header}"/>
-          <MenuItem Name="MenuItemRijndael" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRijndael/@Header}" Click="ShowDlgKeyRijndael"></MenuItem>
-          <MenuItem Name="MenuItemSerpent" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSerpent/@Header}"/>
-          <MenuItem Name="MenuItemTwofish" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTwofish/@Header}"/>
-          <Separator/>
-          <MenuItem Name="MenuItemAES" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAES/@Header}"/>
-        </MenuItem>
+        <MenuItem Name="MenuItemSymetricModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricModern/@Header}" Click="ShowDlgKeySymModern"></MenuItem>
         <MenuItem Name="MenuItemAsymmetric" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsymmetric/@Header}">
           <MenuItem Name="MenuItemRSAEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAEncryption/@Header}"/>
           <MenuItem Name="MenuItemRSADecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSADecryption/@Header}"/>

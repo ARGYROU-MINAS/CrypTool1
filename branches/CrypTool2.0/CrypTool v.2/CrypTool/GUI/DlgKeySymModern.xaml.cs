@@ -19,60 +19,54 @@ namespace CrypTool
     /// </summary>
 
     public partial class DlgKeySymModern : System.Windows.Window
-    {        /// 0 = IDEA
-        /// 1 = RC2
-        /// 2 = RC4
-        /// 3 = DES (ECB)
-        /// 4 = DES (CBC)
-        /// 5 = Triple DES (ECB)
-        /// 6 = Triple DES (CBC)
-        /// 7 = Mars
-        /// 8 = RC6
-        /// 9 = Rijndael (AES)
-        /// 10 = Serpent
-        /// 11 = Twofish
-        private string[] AlgTitle = {   "IDEA","RC2","RC4","DES (ECB)","DES (CBC)","Trple DES (ECB)","Triple DES (CBC)",
-                                        "Mars","RC6","Rijndael (AES)","Serpent","Twofish"};
-        private int AlgID;
+    {
         private DlgEditor _lastNotifiedForm = null;
-
-        public DlgKeySymModern(DlgEditor _EditForm, ArrayList arKeyLen, int AlgID)
+        CrypTool.AppLogic.CrypSymModern crypModern;
+        
+        public DlgKeySymModern(DlgEditor _EditForm)
         {
             _lastNotifiedForm = _EditForm;
             InitializeComponent();
-            setKeyLen(arKeyLen);
-            this.AlgID = AlgID;
+            crypModern = new CrypTool.AppLogic.CrypSymModern();
+            getAlgItems();
+            getPadModes();
         }
-        private void setKeyLen(ArrayList arKeyLen)
+        private void getAlgItems()
         {
-            for (int i = 0; i < arKeyLen.Count; i++)
-                comboBoxKeyLen.Items.Add(arKeyLen[i].ToString());
+            for (int i = 0; i < this.crypModern.getAlgTitle().Length; i++)
+                comboBoxAlgTitle.Items.Add(this.crypModern.getAlgTitle()[i]);
+            comboBoxAlgTitle.SelectedIndex = 0;
+        }
+        private void getPadModes()
+        {
+            for (int i = 0; i < this.crypModern.getPaddingMode().Length; i++)
+                comboBoxPadding.Items.Add(this.crypModern.getPaddingMode()[i]);
+            comboBoxPadding.SelectedIndex = 1; //Zeros Padding
         }
         private void Encrypt(object sender, RoutedEventArgs arg)
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
-            string passPhrase = textBox1.Text;
+            int AlgID = 0;
+            string passPhrase = textBoxKey.Text;
             int ciphMode = 0;
             int padMode = 0;
             string IV = "0123456789ABCDEF";
 
             byte[] plainText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
 
-            CrypTool.AppLogic.CrypSymModern crypModern = new CrypTool.AppLogic.CrypSymModern();
-            byte[] cipherText = crypModern.CrypSymModernEncrypt(this.AlgID, passPhrase, KeySize, plainText,ciphMode,padMode,IV);
-            _lastNotifiedForm.setCipherText(Convert.ToBase64String(cipherText),this.AlgTitle[this.AlgID]);
+            byte[] cipherText = this.crypModern.CrypSymModernEncrypt(AlgID, passPhrase, KeySize, plainText,ciphMode,padMode,IV);
+            _lastNotifiedForm.setCipherText(Convert.ToBase64String(cipherText),this.crypModern.getAlgTitle()[AlgID]);
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
-            string passPhrase = textBox1.Text;
+            string passPhrase = textBoxKey.Text;
             int ciphMode = 0;
             int padMode = 0;
             string IV = "0123456789ABCDEF";
 
             byte[] cipherText = Convert.FromBase64String(_lastNotifiedForm.getPlainText());
 
-            CrypTool.AppLogic.CrypSymModern crypModern = new CrypTool.AppLogic.CrypSymModern();
             //byte[] plainText = AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, passPhrase, KeySize, cipherText);
             //_lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length),this.AlgTitle[this.AlgID]);
         }
