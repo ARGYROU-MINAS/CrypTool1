@@ -52,21 +52,29 @@ namespace CrypTool
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
             string passPhrase = textBox1.Text;
+            int ciphMode = 0;
+            int padMode = 0;
+            string IV = "0123456789ABCDEF";
 
             byte[] plainText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
 
-            byte[] cipherText = AppLogic.CrypSymModern.CrypSymModernEncrypt(this.AlgID, passPhrase, KeySize, plainText);
+            CrypTool.AppLogic.CrypSymModern crypModern = new CrypTool.AppLogic.CrypSymModern();
+            byte[] cipherText = crypModern.CrypSymModernEncrypt(this.AlgID, passPhrase, KeySize, plainText,ciphMode,padMode,IV);
             _lastNotifiedForm.setCipherText(Convert.ToBase64String(cipherText),this.AlgTitle[this.AlgID]);
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
         {
             int KeySize = int.Parse(comboBoxKeyLen.Text);
             string passPhrase = textBox1.Text;
+            int ciphMode = 0;
+            int padMode = 0;
+            string IV = "0123456789ABCDEF";
 
             byte[] cipherText = Convert.FromBase64String(_lastNotifiedForm.getPlainText());
 
-            byte[] plainText = AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, passPhrase, KeySize, cipherText);
-            _lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length),this.AlgTitle[this.AlgID]);
+            CrypTool.AppLogic.CrypSymModern crypModern = new CrypTool.AppLogic.CrypSymModern();
+            //byte[] plainText = AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, passPhrase, KeySize, cipherText);
+            //_lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length),this.AlgTitle[this.AlgID]);
         }
         private void Cancel(object sender, RoutedEventArgs arg)
         {
