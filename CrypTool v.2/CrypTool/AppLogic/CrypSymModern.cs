@@ -8,10 +8,6 @@ namespace CrypTool.AppLogic
 {
     public class CrypSymModern
     {
-        //static private byte[] globalCipherText;
-        //static private byte[] globalPlainText;
-        //static private string initVector = "0123456789ABCDEF";
-
         private PaddingMode[] padMode = {PaddingMode.None,PaddingMode.Zeros,
                                          PaddingMode.PKCS7,PaddingMode.ANSIX923,
                                          PaddingMode.ISO10126};
@@ -19,20 +15,25 @@ namespace CrypTool.AppLogic
         private CipherMode[] ciphMode = {CipherMode.ECB,CipherMode.CBC,CipherMode.OFB,
                                          CipherMode.CFB,CipherMode.CTS};
 
+        private string[] AlgTitle = {   "IDEA","RC2","RC4","DES",
+                                        "TripleDES","Mars","RC6",
+                                        "Rijndael(AES)","Serpent",
+                                        "Twofish"};
+        
+        private string[] strPadMode = { "No Padding", "Zeros Padding", "PKCS7 Padding", "ANSIX923 Padding", "ISO10126 Padding" };
+
         /// <summary>
         /// AlgID
         /// 0 = IDEA
         /// 1 = RC2
         /// 2 = RC4
-        /// 3 = DES (ECB)
-        /// 4 = DES (CBC)
-        /// 5 = Triple DES (ECB)
-        /// 6 = Triple DES (CBC)
-        /// 7 = Mars
-        /// 8 = RC6
-        /// 9 = Rijndael (AES)
-        /// 10 = Serpent
-        /// 11 = Twofish
+        /// 3 = DES
+        /// 4 = TripleDES
+        /// 5 = Mars
+        /// 6 = RC6
+        /// 7 = Rijndael(AES)
+        /// 8 = Serpent
+        /// 9 = Twofish
         /// CipherModeID
         /// 0 = ECB
         /// 1 = CTS
@@ -53,239 +54,144 @@ namespace CrypTool.AppLogic
             byte[] CipherText = null;
             switch (AlgID)
             { 
-                case 9:
-                    AppLogic.Rijndael rijndael = new AppLogic.Rijndael();
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
+                    CipherText = des.Encrypt(passPhrase, PlainText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    break;
+                case 4:
+                    CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
+                    CipherText = tripleDES.Encrypt(passPhrase, PlainText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
                     CipherText = rijndael.Encrypt(passPhrase, PlainText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
                     break;
-                //case 5:
-                //    TripleDES_ECB_Encrypt(passPhrase, KeySize, PlainText);
-                //    break;
-                //case 6:
-                //    TripleDES_CBC_Encrypt(passPhrase, KeySize, PlainText);
-                //    break;
-                //case 3:
-                //    DES_ECB_Encrypt(passPhrase, KeySize, PlainText);
-                //    break;
-                //case 4:
-                //    DES_CBC_Encrypt(passPhrase, KeySize, PlainText);
-                //    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
             }
             return CipherText;
         }
-        //public static byte[] CrypSymModernDecrypt(int AlgID, string passPhrase, int KeySize, byte[] CipherText)
-        //{
-        //    switch (AlgID)
-        //    { 
-        //        case 9:
-        //            RijndaelDecrypt(passPhrase, KeySize, CipherText);
-        //            break;
-        //        case 5:
-        //            TripleDES_ECB_Decrypt(passPhrase, KeySize, CipherText);
-        //            break;
-        //        case 6:
-        //            TripleDES_CBC_Decrypt(passPhrase, KeySize, CipherText);
-        //            break;
-        //        case 3:
-        //            DES_ECB_Decrypt(passPhrase, KeySize, CipherText);
-        //            break;
-        //        case 4:
-        //            DES_CBC_Decrypt(passPhrase, KeySize, CipherText);
-        //            break;
-        //    }
-        //    return globalPlainText;
-        //}
-        //private static void RijndaelEncrypt(string passPhrase, int KeySize, byte[] PlainText)
-        //{
-        //    RijndaelManaged cipher = new RijndaelManaged();
-
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(initVector);
-        //    cipher.Padding = PaddingMode.Zeros;
-
-        //    ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key,cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream();
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-        //    cryptoStream.Write(PlainText, 0, PlainText.Length);
-        //    cryptoStream.FlushFinalBlock();
-        //    globalCipherText = memoryStream.ToArray();
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-        //private static void RijndaelDecrypt(string passPhrase, int KeySize, byte[] CipherText)
-        //{
-        //    RijndaelManaged cipher = new RijndaelManaged();
-
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(initVector);
-        //    cipher.Padding = PaddingMode.Zeros;
-
-        //    ICryptoTransform decryptor = cipher.CreateDecryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream(CipherText);
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-        //    globalPlainText = new byte[CipherText.Length];
-        //    cryptoStream.Read(globalPlainText, 0, globalPlainText.Length);
-
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-        //private static void TripleDES_ECB_Encrypt(string passPhrase, int KeySize, byte[] PlainText)
-        //{
-        //    TripleDESCryptoServiceProvider cipher = new TripleDESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.ECB;
-
-        //    ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream();
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-        //    cryptoStream.Write(PlainText, 0, PlainText.Length);
-        //    cryptoStream.FlushFinalBlock();
-        //    globalCipherText = memoryStream.ToArray();
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-        //private static void TripleDES_ECB_Decrypt(string passPhrase, int KeySize, byte[] CipherText)
-        //{
-        //    TripleDESCryptoServiceProvider cipher = new TripleDESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.ECB;
-
-        //    ICryptoTransform decryptor = cipher.CreateDecryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream(CipherText);
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-        //    globalPlainText = new byte[CipherText.Length];
-        //    cryptoStream.Read(globalPlainText, 0, globalPlainText.Length);
-
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-        //private static void TripleDES_CBC_Encrypt(string passPhrase, int KeySize, byte[] PlainText)
-        //{
-        //    TripleDESCryptoServiceProvider cipher = new TripleDESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.CBC;
-
-        //    ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream();
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-        //    cryptoStream.Write(PlainText, 0, PlainText.Length);
-        //    cryptoStream.FlushFinalBlock();
-        //    globalCipherText = memoryStream.ToArray();
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-        //private static void TripleDES_CBC_Decrypt(string passPhrase, int KeySize, byte[] CipherText)
-        //{
-        //    TripleDESCryptoServiceProvider cipher = new TripleDESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.CBC;
-
-        //    ICryptoTransform decryptor = cipher.CreateDecryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream(CipherText);
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-        //    globalPlainText = new byte[CipherText.Length];
-        //    cryptoStream.Read(globalPlainText, 0, globalPlainText.Length);
-
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-
-
-        //private static void DES_CBC_Encrypt(string passPhrase, int KeySize, byte[] PlainText)
-        //{
-        //    DESCryptoServiceProvider cipher = new DESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.CBC;
-
-        //    ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream();
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-        //    cryptoStream.Write(PlainText, 0, PlainText.Length);
-        //    cryptoStream.FlushFinalBlock();
-        //    globalCipherText = memoryStream.ToArray();
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-        //private static void DES_CBC_Decrypt(string passPhrase, int KeySize, byte[] CipherText)
-        //{
-        //    DESCryptoServiceProvider cipher = new DESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.CBC;
-
-        //    ICryptoTransform decryptor = cipher.CreateDecryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream(CipherText);
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-        //    globalPlainText = new byte[CipherText.Length];
-        //    cryptoStream.Read(globalPlainText, 0, globalPlainText.Length);
-
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-
-        //private static void DES_ECB_Encrypt(string passPhrase, int KeySize, byte[] PlainText)
-        //{
-        //    DESCryptoServiceProvider cipher = new DESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.ECB;
-
-        //    ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream();
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-        //    cryptoStream.Write(PlainText, 0, PlainText.Length);
-        //    cryptoStream.FlushFinalBlock();
-        //    globalCipherText = memoryStream.ToArray();
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-        //private static void DES_ECB_Decrypt(string passPhrase, int KeySize, byte[] CipherText)
-        //{
-        //    DESCryptoServiceProvider cipher = new DESCryptoServiceProvider();
-        //    cipher.Key = getpassPhraseByte(passPhrase, KeySize);
-        //    string t = "12345678";
-        //    cipher.IV = System.Text.Encoding.ASCII.GetBytes(t);
-        //    cipher.Padding = PaddingMode.Zeros;
-        //    cipher.Mode = CipherMode.ECB;
-
-        //    ICryptoTransform decryptor = cipher.CreateDecryptor(cipher.Key, cipher.IV);
-        //    MemoryStream memoryStream = new MemoryStream(CipherText);
-        //    CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-        //    globalPlainText = new byte[CipherText.Length];
-        //    cryptoStream.Read(globalPlainText, 0, globalPlainText.Length);
-
-        //    memoryStream.Close();
-        //    cryptoStream.Close();
-        //}
-
-        private static byte[] getpassPhraseByte(string passPhrase, int keySize)
+        public byte[] CrypSymModernDecrypt(int AlgID, string passPhrase, int KeySize, byte[] CipherText, int ciphMode, int padMode, string IV)
         {
-            //appand 0 when passPhrase too short
-            int passPhraseLen = keySize / 8;
-            for (int i = passPhrase.Length; i < passPhraseLen; i++)
+            byte[] PlainText = null;
+            switch (AlgID)
             {
-                passPhrase += "0";
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
+                    CipherText = des.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    break;
+                case 4:
+                    CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
+                    CipherText = tripleDES.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
+                    CipherText = rijndael.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
             }
-            byte[] passPhraseByte = System.Text.Encoding.ASCII.GetBytes(passPhrase);
-            return passPhraseByte;
+            return PlainText;
+        }
+        public string getInternalRandomIV(int AlgID)
+        {
+            string strIntRandIV = null;
+            switch (AlgID)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
+                    strIntRandIV = des.getInternalRandomIV();
+                    break;
+                case 4:
+                    CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
+                    strIntRandIV = tripleDES.getInternalRandomIV();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
+                    strIntRandIV = rijndael.getInternalRandomIV();
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+            }
+            return strIntRandIV;
+        }
+        public string getDefaultIV(int AlgID)
+        {
+            string strDefaultIV = null;
+            switch (AlgID)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
+                    strDefaultIV = des.getDefaultIV();
+                    break;
+                case 4:
+                    CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
+                    strDefaultIV = tripleDES.getDefaultIV();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
+                    strDefaultIV = rijndael.getDefaultIV();
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+            }
+            return strDefaultIV;
+        }
+        public string[] getAlgTitle()
+        {
+            return this.AlgTitle;
+        }
+        public string[] getPaddingMode()
+        {
+            return this.strPadMode;
         }
 
     }

@@ -131,79 +131,11 @@ namespace CrypTool
             DlgHash dlgHash = new DlgHash(_lastNotifiedForm);
             dlgHash.Show();
         }
-
-        private void ShowDlgKeyRijndael(object sender, RoutedEventArgs e)
+        private void ShowDlgKeySymModern(object sender, RoutedEventArgs e)
         {
-            RijndaelManaged rij = new RijndaelManaged();
-            ArrayList alKeyLen = new ArrayList();
-            KeySizes[] key = rij.LegalKeySizes;
-
-            for (int i = key[0].MinSize; i <= key[0].MaxSize; i += key[0].SkipSize)
-                alKeyLen.Add(i);
-
-            DlgKeySymModern dlgKeySym = new DlgKeySymModern(_lastNotifiedForm, alKeyLen, 9 /*Rijndeal id*/);
-            dlgKeySym.Title += " Rijndael (AES)";
-            dlgKeySym.Show();
+            DlgKeySymModern dlgKeySymModern = new DlgKeySymModern(_lastNotifiedForm);
+            dlgKeySymModern.Show();
         }
-        private void ShowDlgKeyTripleDES_ECB(object sender, RoutedEventArgs e)
-        {
-            TripleDES tripleDES = TripleDES.Create();
-            tripleDES.Mode = CipherMode.ECB;
-            ArrayList alKeyLen = new ArrayList();
-            KeySizes[] key = tripleDES.LegalKeySizes;
-
-            for (int i = key[0].MinSize; i <= key[0].MaxSize; i += key[0].SkipSize)
-                alKeyLen.Add(i);
-
-            DlgKeySymModern dlgKeySym = new DlgKeySymModern(_lastNotifiedForm, alKeyLen, 5 /*TripleDES ECB*/);
-            dlgKeySym.Title += " Triple DES(ECB)";
-            dlgKeySym.Show();
-        }
-        private void ShowDlgKeyTripleDES_CBC(object sender, RoutedEventArgs e)
-        {
-            TripleDES tripleDES = TripleDES.Create();
-            tripleDES.Mode = CipherMode.CBC;
-            ArrayList alKeyLen = new ArrayList();
-            KeySizes[] key = tripleDES.LegalKeySizes;
-
-            for (int i = key[0].MinSize; i <= key[0].MaxSize; i += key[0].SkipSize)
-                alKeyLen.Add(i);
-
-            DlgKeySymModern dlgKeySym = new DlgKeySymModern(_lastNotifiedForm, alKeyLen, 6 /*TripleDES ECB*/);
-            dlgKeySym.Title += " Triple DES(CBC)";
-            dlgKeySym.Show();
-        }
-        private void ShowDlgKeyDES_ECB(object sender, RoutedEventArgs e)
-        {
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            des.Mode = CipherMode.ECB;
-            ArrayList alKeyLen = new ArrayList();
-            KeySizes[] key = des.LegalKeySizes;
-
-            //for (int i = key[0].MinSize; i <= key[0].MaxSize; i += key[0].SkipSize)
-            //    alKeyLen.Add(i);
-            alKeyLen.Add("64");
-            DlgKeySymModern dlgKeySym = new DlgKeySymModern(_lastNotifiedForm, alKeyLen, 3 /* DES (ECB)*/);
-            dlgKeySym.Title += " DES(ECB)";
-            dlgKeySym.Show();
-        }
-
-        private void ShowDlgKeyDES_CBC(object sender, RoutedEventArgs e)
-        {
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            des.Mode = CipherMode.CBC;
-            ArrayList alKeyLen = new ArrayList();
-            KeySizes[] key = des.LegalKeySizes;
-
-            //for (int i = key[0].MinSize; i <= key[0].MaxSize; i += key[0].SkipSize)
-            //    alKeyLen.Add(i);
-            alKeyLen.Add("64");
-
-            DlgKeySymModern dlgKeySym = new DlgKeySymModern(_lastNotifiedForm, alKeyLen, 4 /* DES (CBC)*/);
-            dlgKeySym.Title += " DES(CBC)";
-            dlgKeySym.Show();
-        }
-
         private void getLangItems()
         {
             String langName;

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="CaesarRot13.cs" />
     <Compile Include="CrypSymModern.cs" />
+    <Compile Include="DES.cs" />
     <Compile Include="LanguageOptions.cs" />
     <Compile Include="MD5.cs" />
     <Compile Include="Rijndael.cs" />
@@ -44,6 +45,7 @@
     <Compile Include="SHA512.cs" />
     <Compile Include="TextOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TripleDES.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
