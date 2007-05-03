@@ -56,7 +56,12 @@ namespace CrypTool.AppLogic
         {
             RijndaelManaged cipher = new RijndaelManaged();
             cipher.GenerateIV();
-            return System.Text.Encoding.Default.GetString(cipher.Key);
+            return System.Text.Encoding.Unicode.GetString(cipher.Key);
+        }
+        public int[] getKeySize()
+        {
+            int[] KeySize = {128,192,256};
+            return KeySize;
         }
         private static byte[] getpassPhraseByte(string passPhrase, int keySize)
         {
