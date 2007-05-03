@@ -8,6 +8,21 @@ namespace CrypTool.AppLogic
 {
     public class CrypSymModern
     {
+        private int AlgID;
+        private string strDefaultIV;
+        private string strIntRandIV;
+        private int[] KeySize;
+
+        public CrypSymModern()
+        { 
+        
+        }
+        public CrypSymModern(int AlgID)
+        {
+            this.AlgID = AlgID;
+            getAlgoPrefs();
+        }
+
         private PaddingMode[] padMode = {PaddingMode.None,PaddingMode.Zeros,
                                          PaddingMode.PKCS7,PaddingMode.ANSIX923,
                                          PaddingMode.ISO10126};
@@ -21,6 +36,47 @@ namespace CrypTool.AppLogic
                                         "Twofish"};
         
         private string[] strPadMode = { "No Padding", "Zeros Padding", "PKCS7 Padding", "ANSIX923 Padding", "ISO10126 Padding" };
+
+        private void getAlgoPrefs()
+        {
+            switch (this.AlgID)
+            {
+                case 0:
+                    CrypTool.AppLogic.IDEA idea = new CrypTool.AppLogic.IDEA();
+                    this.KeySize = idea.getKeySize();
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
+                    this.strDefaultIV = des.getDefaultIV();
+                    this.strIntRandIV = des.getInternalRandomIV();
+                    this.KeySize = des.getKeySize();
+                    break;
+                case 4:
+                    CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
+                    this.strDefaultIV = tripleDES.getDefaultIV();
+                    this.strIntRandIV = tripleDES.getInternalRandomIV();
+                    this.KeySize = tripleDES.getKeySize();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
+                    this.strDefaultIV = rijndael.getDefaultIV();
+                    this.strIntRandIV = rijndael.getInternalRandomIV();
+                    this.KeySize = rijndael.getKeySize();
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+            }
+        }
 
         /// <summary>
         /// AlgID
@@ -49,10 +105,10 @@ namespace CrypTool.AppLogic
         /// 4 = ISO 10126
         /// </summary>
         /// <param name="AlgID"></param>
-        public byte[] CrypSymModernEncrypt(int AlgID,string passPhrase, int KeySize, byte[] PlainText,int ciphMode, int padMode, string IV)
+        public byte[] CrypSymModernEncrypt(string passPhrase, int KeySize, byte[] PlainText,int ciphMode, int padMode, string IV)
         {
             byte[] CipherText = null;
-            switch (AlgID)
+            switch (this.AlgID)
             { 
                 case 0:
                     break;
@@ -83,10 +139,10 @@ namespace CrypTool.AppLogic
             }
             return CipherText;
         }
-        public byte[] CrypSymModernDecrypt(int AlgID, string passPhrase, int KeySize, byte[] CipherText, int ciphMode, int padMode, string IV)
+        public byte[] CrypSymModernDecrypt(string passPhrase, int KeySize, byte[] CipherText, int ciphMode, int padMode, string IV)
         {
             byte[] PlainText = null;
-            switch (AlgID)
+            switch (this.AlgID)
             {
                 case 0:
                     break;
@@ -117,74 +173,7 @@ namespace CrypTool.AppLogic
             }
             return PlainText;
         }
-        public string getInternalRandomIV(int AlgID)
-        {
-            string strIntRandIV = null;
-            switch (AlgID)
-            {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
-                    strIntRandIV = des.getInternalRandomIV();
-                    break;
-                case 4:
-                    CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
-                    strIntRandIV = tripleDES.getInternalRandomIV();
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
-                    strIntRandIV = rijndael.getInternalRandomIV();
-                    break;
-                case 8:
-                    break;
-                case 9:
-                    break;
-            }
-            return strIntRandIV;
-        }
-        public string getDefaultIV(int AlgID)
-        {
-            string strDefaultIV = null;
-            switch (AlgID)
-            {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
-                    strDefaultIV = des.getDefaultIV();
-                    break;
-                case 4:
-                    CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
-                    strDefaultIV = tripleDES.getDefaultIV();
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
-                    strDefaultIV = rijndael.getDefaultIV();
-                    break;
-                case 8:
-                    break;
-                case 9:
-                    break;
-            }
-            return strDefaultIV;
-        }
+        
         public string[] getAlgTitle()
         {
             return this.AlgTitle;
@@ -192,6 +181,18 @@ namespace CrypTool.AppLogic
         public string[] getPaddingMode()
         {
             return this.strPadMode;
+        }
+        public string getDefaultIV()
+        {
+            return this.strDefaultIV;
+        }
+        public string getIntRandIV()
+        {
+            return this.strIntRandIV;
+        }
+        public int[] getKeySize()
+        {
+            return this.KeySize;
         }
 
     }

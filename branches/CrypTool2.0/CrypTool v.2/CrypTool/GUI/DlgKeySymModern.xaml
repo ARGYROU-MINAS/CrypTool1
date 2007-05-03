@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Symmetrische Cryptography" Height="390" Width="689">
     <Grid>
-    <Label Height="23.2766666666667" HorizontalAlignment="Left" Margin="530.37,183.723333333333,0,0" Name="label2" VerticalAlignment="Top" Width="93.63">Schlüssellänge:</Label>
+    <Label Height="26.2766666666667" HorizontalAlignment="Right" Margin="0,0,58,149" Name="label2" VerticalAlignment="Bottom" Width="93.63">Schlüssellänge:</Label>
     <ComboBox HorizontalAlignment="Left" Margin="512,210,0,0" Name="comboBoxKeyLen" Width="121" SelectedIndex="0" Height="29" VerticalAlignment="Top" />
     <Label HorizontalAlignment="Left" Margin="634.37,211.723333333333,0,0" Name="label3" Width="25.63" Height="26.2766666666667" VerticalAlignment="Top">Bit</Label>
     <Button Height="23" Margin="358,322,0,0" Name="buttonEncrypt" VerticalAlignment="Top" Click="Encrypt" HorizontalAlignment="Left" Width="106">Verschlüsseln</Button>
@@ -11,23 +11,23 @@
     <Button Height="23" HorizontalAlignment="Left" Margin="579,320,0,0" Name="buttonCancel" VerticalAlignment="Top" Width="94" Click="Cancel">Abbrechen</Button>
     <TextBox Margin="40,212,0,0" Name="textBoxKey" HorizontalAlignment="Left" Width="465" Height="27" VerticalAlignment="Top"></TextBox>
      <GroupBox Header="Cryptographic Algorithm" Margin="28,10,0,0" Name="groupBoxCryptographicAlgorithm" HorizontalAlignment="Left" Width="342" Height="153" VerticalAlignment="Top"></GroupBox>
-    <ComboBox Height="26" HorizontalAlignment="Left" Margin="41,51,0,0" Name="comboBoxAlgTitle" VerticalAlignment="Top" Width="121" ></ComboBox>
+    <ComboBox Height="26" HorizontalAlignment="Left" Margin="41,51,0,0" Name="comboBoxAlgTitle" VerticalAlignment="Top" Width="121" SelectionChanged="setAlgID"></ComboBox>
     <TextBox Height="26" HorizontalAlignment="Left" Margin="166,51,0,0" Name="textBoxRounds" VerticalAlignment="Top" Width="48"></TextBox>
     <ComboBox Height="26" HorizontalAlignment="Left" Margin="217,51,0,0" Name="comboBoxPadding" VerticalAlignment="Top" Width="121" />
     <Label Height="23.2766666666667" Margin="163.37,27.7233333333333,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45.63">Rounds</Label>
-    <Label Height="23.2766666666667" Margin="219.37,27.7233333333333,0,0" Name="label4" VerticalAlignment="Top" HorizontalAlignment="Left" Width="112.63">Block Cipher Padding</Label>
-    <RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="43.75,93.7233333333333,0,0" Name="radioButtonECB" VerticalAlignment="Top" Width="149.25" GroupName="Alg" IsChecked="True">Electronic Codebook (ECB)</RadioButton>
-    <RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="43.75,117.723333333333,0,0" Name="radioButtonCBC" VerticalAlignment="Top" Width="153.25" GroupName="Alg">Cipher-Block Chaining (CBC)</RadioButton>
-    <RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="219.75,94.7233333333333,0,0" Name="radioButtonOFB" VerticalAlignment="Top" Width="133.25" GroupName="Alg">Output Feedback (OFB)</RadioButton>
-    <RadioButton Height="13.2766666666667" Margin="220.75,0,318,226" Name="radioButtonCTS" VerticalAlignment="Bottom" GroupName="Alg">Ciphertext Stealing (CTS)</RadioButton>
-    <RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="45.75,141.723333333333,0,0" Name="radioButtonCFB" VerticalAlignment="Top" Width="128.25" GroupName="Alg">Cipher Feedback (CFB)</RadioButton>
+    <Label Height="29.2766666666667" Margin="219.37,27.7233333333333,337,0" Name="label4" VerticalAlignment="Top"  >Block Cipher Padding</Label>
+    <RadioButton Height="20.2766666666667" HorizontalAlignment="Left" Margin="37.75,90.7233333333333,0,0" Name="radioButtonECB" VerticalAlignment="Top" Width="159.25" GroupName="Alg" IsChecked="True">Electronic Codebook (ECB)</RadioButton>
+    <RadioButton Height="18.2766666666667" HorizontalAlignment="Left" Margin="37.75,112.723333333333,0,0" Name="radioButtonCBC" VerticalAlignment="Top" Width="168.25" GroupName="Alg">Cipher-Block Chaining (CBC)</RadioButton>
+    <RadioButton Height="18.2766666666667" Margin="212.75,89.7233333333333,321,0" Name="radioButtonOFB" VerticalAlignment="Top" GroupName="Alg">Output Feedback (OFB)</RadioButton>
+    <RadioButton Height="19.2766666666667" Margin="212.75,113.723333333333,315,0" Name="radioButtonCTS" VerticalAlignment="Top" GroupName="Alg">Ciphertext Stealing (CTS)</RadioButton>
+    <RadioButton Height="19.2766666666667" HorizontalAlignment="Left" Margin="37.75,135.723333333333,0,0" Name="radioButtonCFB" VerticalAlignment="Top" Width="146.25" GroupName="Alg">Cipher Feedback (CFB)</RadioButton>
       <GroupBox Header="Initialization Vector"  Height="151" Margin="376,11.5441176470588,0,0" Name="groupBoxInitializationVector" VerticalAlignment="Top" HorizontalAlignment="Left" Width="291" IsEnabled="True">
         <StackPanel>
-        <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonDefault" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV" IsChecked="True">Default</RadioButton>
-          <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonManual" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV">Manual</RadioButton>
-          <RadioButton Height="18" Margin="5,5,5,5" Name="radioButtonInternalRandomNumberGen" VerticalAlignment="Top" HorizontalAlignment="Left" Width="202" GroupName="IV">Internal Random Number Generator</RadioButton>
+        <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonDefault" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV" IsChecked="True" Click="getDefaultIV">Default</RadioButton>
+          <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonManual" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV" Click="getManualIV">Manual</RadioButton>
+          <RadioButton Height="18" Margin="5,5,5,5" Name="radioButtonInternalRandomNumberGen" VerticalAlignment="Top" HorizontalAlignment="Left" Width="210" GroupName="IV" Click="getInternalRandomIV">Internal Random Number Generator</RadioButton>
           <WrapPanel>
-            <Button Height="23" Margin="5,5,5,5" Name="buttonGetIV" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59">Generate</Button>
+            <Button Height="23" Margin="5,5,5,5" Name="buttonGetIV" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" Click="getInternalRandomIV">Generate</Button>
             <TextBox Height="26" Margin="0,5,5,5" Name="textBoxIV" VerticalAlignment="Top" HorizontalAlignment="Right" Width="204"></TextBox>
           </WrapPanel>
         </StackPanel>

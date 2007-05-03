@@ -53,6 +53,11 @@ namespace CrypTool.AppLogic
             cipher.GenerateIV();
             return System.Text.Encoding.Default.GetString(cipher.Key);
         }
+        public int[] getKeySize()
+        {
+            int[] KeySize = {128};
+            return KeySize;
+        }
         private static byte[] getpassPhraseByte(string passPhrase, int keySize)
         {
             //appand 0 when passPhrase too short

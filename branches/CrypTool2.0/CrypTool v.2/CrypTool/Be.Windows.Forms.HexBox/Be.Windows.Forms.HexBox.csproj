@@ -114,6 +114,7 @@
     <EmbeddedResource Include="HexBox.bmp" />
     <EmbeddedResource Include="HexBox.resx">
       <DependentUpon>HexBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="HexBox.snk" />
   </ItemGroup>

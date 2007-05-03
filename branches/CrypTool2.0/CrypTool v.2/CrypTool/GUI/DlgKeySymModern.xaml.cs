@@ -20,27 +20,29 @@ namespace CrypTool
 
     public partial class DlgKeySymModern : System.Windows.Window
     {
+        private int AlgID;
         private DlgEditor _lastNotifiedForm = null;
-        CrypTool.AppLogic.CrypSymModern crypModern;
+        private CrypTool.AppLogic.CrypSymModern crypModern;
         
         public DlgKeySymModern(DlgEditor _EditForm)
         {
             _lastNotifiedForm = _EditForm;
             InitializeComponent();
-            crypModern = new CrypTool.AppLogic.CrypSymModern();
             getAlgItems();
             getPadModes();
         }
         private void getAlgItems()
         {
-            for (int i = 0; i < this.crypModern.getAlgTitle().Length; i++)
-                comboBoxAlgTitle.Items.Add(this.crypModern.getAlgTitle()[i]);
+            CrypTool.AppLogic.CrypSymModern crpMdrn = new CrypTool.AppLogic.CrypSymModern();
+            for (int i = 0; i < crpMdrn.getAlgTitle().Length; i++)
+                comboBoxAlgTitle.Items.Add(crpMdrn.getAlgTitle()[i]);
             comboBoxAlgTitle.SelectedIndex = 0;
         }
         private void getPadModes()
         {
-            for (int i = 0; i < this.crypModern.getPaddingMode().Length; i++)
-                comboBoxPadding.Items.Add(this.crypModern.getPaddingMode()[i]);
+            CrypTool.AppLogic.CrypSymModern crpMdrn = new CrypTool.AppLogic.CrypSymModern();
+            for (int i = 0; i < crpMdrn.getPaddingMode().Length; i++)
+                comboBoxPadding.Items.Add(crpMdrn.getPaddingMode()[i]);
             comboBoxPadding.SelectedIndex = 1; //Zeros Padding
         }
         private void Encrypt(object sender, RoutedEventArgs arg)
@@ -54,7 +56,7 @@ namespace CrypTool
 
             byte[] plainText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
 
-            byte[] cipherText = this.crypModern.CrypSymModernEncrypt(AlgID, passPhrase, KeySize, plainText,ciphMode,padMode,IV);
+            byte[] cipherText = this.crypModern.CrypSymModernEncrypt(passPhrase, KeySize, plainText,ciphMode,padMode,IV);
             _lastNotifiedForm.setCipherText(Convert.ToBase64String(cipherText),this.crypModern.getAlgTitle()[AlgID]);
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
@@ -74,6 +76,34 @@ namespace CrypTool
         {
             Close();
         }
-
+        private void getDefaultIV(object sender, RoutedEventArgs arg)
+        {
+            this.textBoxIV.Text = this.crypModern.getDefaultIV();
+            this.textBoxIV.IsReadOnly = true;
+        }
+        private void getManualIV(object sender, RoutedEventArgs arg)
+        {
+            this.textBoxIV.Text = this.crypModern.getDefaultIV();
+            this.textBoxIV.IsReadOnly = false;
+        }
+        private void getInternalRandomIV(object sender, RoutedEventArgs arg)
+        {
+            this.textBoxIV.Text = this.crypModern.getIntRandIV();
+            this.textBoxIV.IsReadOnly = true;
+        }
+        private void getKeySize()
+        {
+            int[] tmpKeySize = this.crypModern.getKeySize();
+            this.comboBoxKeyLen.Items.Clear();
+            for (int i = 0; i < tmpKeySize.Length ; i++)
+                this.comboBoxKeyLen.Items.Add(tmpKeySize[i].ToString());
+            this.comboBoxKeyLen.SelectedIndex = 0;
+        }
+        private void setAlgID(object sender, RoutedEventArgs arg)
+        {
+            this.AlgID = comboBoxAlgTitle.SelectedIndex;
+            this.crypModern = new CrypTool.AppLogic.CrypSymModern(this.AlgID);
+            getKeySize();
+        }
     }
 }
