@@ -11,6 +11,7 @@ namespace CrypTool.AppLogic
         private int AlgID;
         private string strDefaultIV;
         private string strIntRandIV;
+        private string strAlgInfo;
         private int[] KeySize;
 
         public CrypSymModern()
@@ -36,6 +37,10 @@ namespace CrypTool.AppLogic
                                         "Twofish"};
         
         private string[] strPadMode = { "No Padding", "Zeros Padding", "PKCS7 Padding", "ANSIX923 Padding", "ISO10126 Padding" };
+        
+        private string[] strCipherMode = {  "Electronic Codebook (ECB)","Cipher-Block Chaining (CBC)",
+                                            "Output Feedback (OFB)", "Cipher Feedback (CFB)",
+                                            "Ciphertext Stealing (CTS)"};
 
         private void getAlgoPrefs()
         {
@@ -44,6 +49,7 @@ namespace CrypTool.AppLogic
                 case 0:
                     CrypTool.AppLogic.IDEA idea = new CrypTool.AppLogic.IDEA();
                     this.KeySize = idea.getKeySize();
+                    this.strAlgInfo = idea.getAlgInfo();
                     break;
                 case 1:
                     break;
@@ -54,12 +60,14 @@ namespace CrypTool.AppLogic
                     this.strDefaultIV = des.getDefaultIV();
                     this.strIntRandIV = des.getInternalRandomIV();
                     this.KeySize = des.getKeySize();
+                    this.strAlgInfo = des.getAlgInfo();
                     break;
                 case 4:
                     CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
                     this.strDefaultIV = tripleDES.getDefaultIV();
                     this.strIntRandIV = tripleDES.getInternalRandomIV();
                     this.KeySize = tripleDES.getKeySize();
+                    this.strAlgInfo = tripleDES.getAlgInfo();
                     break;
                 case 5:
                     break;
@@ -70,6 +78,7 @@ namespace CrypTool.AppLogic
                     this.strDefaultIV = rijndael.getDefaultIV();
                     this.strIntRandIV = rijndael.getInternalRandomIV();
                     this.KeySize = rijndael.getKeySize();
+                    this.strAlgInfo = rijndael.getAlgInfo();
                     break;
                 case 8:
                     break;
@@ -152,11 +161,11 @@ namespace CrypTool.AppLogic
                     break;
                 case 3:
                     CrypTool.AppLogic.DES des = new CrypTool.AppLogic.DES();
-                    CipherText = des.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    PlainText = des.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
                     break;
                 case 4:
                     CrypTool.AppLogic.TripleDES tripleDES = new CrypTool.AppLogic.TripleDES();
-                    CipherText = tripleDES.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    PlainText = tripleDES.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
                     break;
                 case 5:
                     break;
@@ -164,7 +173,7 @@ namespace CrypTool.AppLogic
                     break;
                 case 7:
                     CrypTool.AppLogic.Rijndael rijndael = new CrypTool.AppLogic.Rijndael();
-                    CipherText = rijndael.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
+                    PlainText = rijndael.Decrypt(passPhrase, CipherText, KeySize, this.ciphMode[ciphMode], this.padMode[padMode], IV);
                     break;
                 case 8:
                     break;
@@ -193,6 +202,14 @@ namespace CrypTool.AppLogic
         public int[] getKeySize()
         {
             return this.KeySize;
+        }
+        public string[] getCipherModes()
+        {
+            return this.strCipherMode;
+        }
+        public string getAlgInfo()
+        {
+            return this.strAlgInfo;
         }
 
     }

@@ -30,6 +30,8 @@ namespace CrypTool
             InitializeComponent();
             getAlgItems();
             getPadModes();
+            getCipherModes();
+            setKeyInputMethod();
         }
         private void getAlgItems()
         {
@@ -37,6 +39,14 @@ namespace CrypTool
             for (int i = 0; i < crpMdrn.getAlgTitle().Length; i++)
                 comboBoxAlgTitle.Items.Add(crpMdrn.getAlgTitle()[i]);
             comboBoxAlgTitle.SelectedIndex = 0;
+        }
+        private void getCipherModes()
+        {
+            CrypTool.AppLogic.CrypSymModern crpMdrn = new CrypTool.AppLogic.CrypSymModern();
+            for (int i = 0; i < crpMdrn.getCipherModes().Length; i++)
+                comboBoxCipherMode.Items.Add(crpMdrn.getCipherModes()[i]);
+            comboBoxCipherMode.SelectedIndex = 0;
+                
         }
         private void getPadModes()
         {
@@ -47,12 +57,12 @@ namespace CrypTool
         }
         private void Encrypt(object sender, RoutedEventArgs arg)
         {
-            int KeySize = int.Parse(comboBoxKeyLen.Text);
-            int AlgID = 0;
-            string passPhrase = textBoxKey.Text;
-            int ciphMode = 0;
-            int padMode = 0;
-            string IV = "0123456789ABCDEF";
+            int KeySize = int.Parse(this.comboBoxKeyLen.Text);
+            int AlgID = this.comboBoxAlgTitle.SelectedIndex;
+            string passPhrase = this.textBoxKey.Text;
+            int ciphMode = this.comboBoxCipherMode.SelectedIndex;
+            int padMode = this.comboBoxPadding.SelectedIndex;
+            string IV = this.textBoxIV.Text;
 
             byte[] plainText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
 
@@ -61,16 +71,17 @@ namespace CrypTool
         }
         private void Decrypt(object sender, RoutedEventArgs arg)
         {
-            int KeySize = int.Parse(comboBoxKeyLen.Text);
-            string passPhrase = textBoxKey.Text;
-            int ciphMode = 0;
-            int padMode = 0;
-            string IV = "0123456789ABCDEF";
+            int KeySize = int.Parse(this.comboBoxKeyLen.Text);
+            int AlgID = this.comboBoxAlgTitle.SelectedIndex;
+            string passPhrase = this.textBoxKey.Text;
+            int ciphMode = this.comboBoxCipherMode.SelectedIndex;
+            int padMode = this.comboBoxPadding.SelectedIndex;
+            string IV = this.textBoxIV.Text;
 
             byte[] cipherText = Convert.FromBase64String(_lastNotifiedForm.getPlainText());
 
-            //byte[] plainText = AppLogic.CrypSymModern.CrypSymModernDecrypt(this.AlgID, passPhrase, KeySize, cipherText);
-            //_lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length),this.AlgTitle[this.AlgID]);
+            byte[] plainText = this.crypModern.CrypSymModernDecrypt(passPhrase, KeySize, cipherText,ciphMode,padMode,IV);
+            _lastNotifiedForm.setCipherText(Encoding.Unicode.GetString(plainText,0,plainText.Length),this.crypModern.getAlgTitle()[AlgID]);
         }
         private void Cancel(object sender, RoutedEventArgs arg)
         {
@@ -99,11 +110,22 @@ namespace CrypTool
                 this.comboBoxKeyLen.Items.Add(tmpKeySize[i].ToString());
             this.comboBoxKeyLen.SelectedIndex = 0;
         }
+        private void setAlgInfo()
+        {
+            this.textBoxInfo.Text = this.crypModern.getAlgInfo();
+        }
+        private void setKeyInputMethod()
+        {
+            this.comboBoxKeyInputMethod.Items.Add("String");
+            this.comboBoxKeyInputMethod.Items.Add("HEX");
+            this.comboBoxKeyInputMethod.SelectedIndex = 0;
+        }
         private void setAlgID(object sender, RoutedEventArgs arg)
         {
             this.AlgID = comboBoxAlgTitle.SelectedIndex;
             this.crypModern = new CrypTool.AppLogic.CrypSymModern(this.AlgID);
             getKeySize();
+            setAlgInfo();
         }
     }
 }

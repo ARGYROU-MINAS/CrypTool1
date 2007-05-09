@@ -40,9 +40,19 @@ namespace CrypTool
         }
         private void getSettings()
         {
-            textBox2.Text = AppLogic.TextOptions.getAlphabet();
-            label3.Content = "Das Alphabet (" + AppLogic.TextOptions.getAlphabet().Length.ToString() +
+            this.textBoxAlph.Text = AppLogic.TextOptions.getAlphabet();
+            this.label3.Content = "Das Alphabet (" + AppLogic.TextOptions.getAlphabet().Length.ToString() +
                 " Zeichen) wir abgebildet";
+        }
+        private void getCipherAlph(object sender, RoutedEventArgs a)
+        {
+            String strKey = this.textBoxKey.Text;
+
+            if (CrypTool.AppLogic.TextOptions.getAlphabet().IndexOf(strKey) > -1)
+            {
+                CrypTool.AppLogic.Rot13Caesar rot13 = new CrypTool.AppLogic.Rot13Caesar(this.textBoxKey.Text.ToCharArray());
+                this.textBoxCipherAlph.Text = new String(rot13.getCipherAlph());
+            }
         }
 
     }
