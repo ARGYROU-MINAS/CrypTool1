@@ -42,7 +42,7 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label label1;
         
-        internal System.Windows.Controls.TextBox textBox1;
+        internal System.Windows.Controls.TextBox textBoxKey;
         
         internal System.Windows.Controls.GroupBox groupBox2;
         
@@ -60,9 +60,9 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label label5;
         
-        internal System.Windows.Controls.TextBox textBox2;
+        internal System.Windows.Controls.TextBox textBoxAlph;
         
-        internal System.Windows.Controls.TextBox textBox3;
+        internal System.Windows.Controls.TextBox textBoxCipherAlph;
         
         private bool _contentLoaded;
         
@@ -95,7 +95,13 @@ namespace CrypTool {
             this.label1 = ((System.Windows.Controls.Label)(target));
             return;
             case 4:
-            this.textBox1 = ((System.Windows.Controls.TextBox)(target));
+            this.textBoxKey = ((System.Windows.Controls.TextBox)(target));
+            
+            #line 10 "..\..\DlgCaesarRot13.xaml"
+            this.textBoxKey.KeyUp += new System.Windows.Input.KeyEventHandler(this.getCipherAlph);
+            
+            #line default
+            #line hidden
             return;
             case 5:
             this.groupBox2 = ((System.Windows.Controls.GroupBox)(target));
@@ -140,10 +146,10 @@ namespace CrypTool {
             this.label5 = ((System.Windows.Controls.Label)(target));
             return;
             case 13:
-            this.textBox2 = ((System.Windows.Controls.TextBox)(target));
+            this.textBoxAlph = ((System.Windows.Controls.TextBox)(target));
             return;
             case 14:
-            this.textBox3 = ((System.Windows.Controls.TextBox)(target));
+            this.textBoxCipherAlph = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;

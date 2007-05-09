@@ -1,8 +1,8 @@
 ﻿<Window x:Class="CrypTool.DlgMain"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="CrypTool2.0 Alpha WaitingForGUI" Height="60" Width="800"
-    Background="LightSlateGray" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
+    Title="CrypTool v.2 Alpha" Height="54" Width="800"
+    Background="LightSlateGray" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
   <Window.Resources>
     <XmlDataProvider x:Key="Lang" Source="/lng/german.xml" XPath="CrypTool"/>
   </Window.Resources>

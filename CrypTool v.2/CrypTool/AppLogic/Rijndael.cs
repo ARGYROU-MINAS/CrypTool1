@@ -19,6 +19,7 @@ namespace CrypTool.AppLogic
             cipher.Padding = padMode;
             cipher.Mode = ciphMode;
 
+
             ICryptoTransform encryptor = cipher.CreateEncryptor(cipher.Key,cipher.IV);
             MemoryStream memoryStream = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
@@ -56,12 +57,16 @@ namespace CrypTool.AppLogic
         {
             RijndaelManaged cipher = new RijndaelManaged();
             cipher.GenerateIV();
-            return System.Text.Encoding.Unicode.GetString(cipher.Key);
+            return System.Text.Encoding.ASCII.GetString(cipher.Key);
         }
         public int[] getKeySize()
         {
             int[] KeySize = {128,192,256};
             return KeySize;
+        }
+        public string getAlgInfo()
+        {
+            return "Variable Key Length: Min 128, Max 256, Variable Block Size: Min 128, Max 256"; 
         }
         private static byte[] getpassPhraseByte(string passPhrase, int keySize)
         {

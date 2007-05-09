@@ -4,109 +4,55 @@ using System.Text;
 using System.Security.Cryptography;
 
 
-
 namespace CrypTool.AppLogic
 {
-    public sealed class Rot13Caesar : SymmetricAlgorithm, ICryptoTransform
+    public class Rot13Caesar
     {
+        private char[] cAlphArray = null;
+        private char[] cCipherAlphArray = null;
+        private char[] cKey = null;
+
         public Rot13Caesar()
         {
-            this.LegalKeySizesValue = new KeySizes[] { new KeySizes(16, 16, 0) };
-
-            this.KeySize = 16; // in bits
-
-            this.LegalBlockSizesValue = new KeySizes[] { new KeySizes(16, 16, 0) }; // this is in bits - typical of MS - always 16 bytes
-
-            this.BlockSize = 16; // set this to 16 bytes we cannot have any other value
+            setAlphArray();
+        }
+        public Rot13Caesar(char[] cKey)
+        {
+            this.cKey = cKey;
+            setAlphArray();
+            setCipherAlphArray();
         }
 
-        public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV)
+        private void setAlphArray()
         {
-            Key = rgbKey;
-            IV = rgbIV;
-            return this;
+            this.cAlphArray = CrypTool.AppLogic.TextOptions.getAlphabet().ToCharArray();
         }
-
-        public override ICryptoTransform CreateEncryptor(byte[] rgbKey, byte[] rgbIV)
+        private void setCipherAlphArray()
         {
-            Key = rgbKey;
-            IV = rgbIV;
-            return this;
-        }
+            this.cCipherAlphArray = new char[this.cAlphArray.Length];
 
-        public override void GenerateIV()
-        {
-            //Isn't used in Rot13Caesar
-            IVValue = new byte[BlockSize / 8];
-
-
-        }
-
-        public override void GenerateKey()
-        {
-            //Standard for Rot13Caesar is "M"
-            KeyValue = new byte[KeySize / 8];
-            Key = Encoding.Unicode.GetBytes("M");
-        }
-
-
-        #region ICryptoTransform Members
-
-        private bool canReuseTransform = false;
-        public bool CanReuseTransform
-        {
-            get { return canReuseTransform; }
-        }
-
-        private bool canTransformMultipleBlocks = false;
-        public bool CanTransformMultipleBlocks
-        {
-            get { return canTransformMultipleBlocks; }
-        }
-
-        public int InputBlockSize
-        {
-            get { return BlockSize / 8; }
-        }
-
-        public int OutputBlockSize
-        {
-            get { return BlockSize / 8; }
-        }
-
-        public int TransformBlock(byte[] inputBuffer, int inputOffset, int inputCount, byte[] outputBuffer, int outputOffset)
-        {
-            int bytesWritten = 0;
-            for (int i = inputOffset; i < inputOffset + inputCount; i = i + 2)
+            for (int i = 0; i < this.cAlphArray.Length; i++)
             {
-                //just as an example
-                outputBuffer[i + outputOffset - inputOffset] = (byte)(inputBuffer[i] + Key[0] - 65);
-                if (outputBuffer[i + outputOffset - inputOffset] > 90)
-                {
-                    outputBuffer[i + outputOffset - inputOffset] = (byte)(outputBuffer[i + outputOffset - inputOffset] - 90 + 65);
-                }
-                bytesWritten++;
+                int c = (this.cAlphArray[i] + this.cKey[0]) % this.cAlphArray.Length;
+                this.cCipherAlphArray[i] = this.cAlphArray[c];
             }
-
-            return bytesWritten * 2;
-
         }
 
-        public byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)
+        public void setKey(char[] cKey)
         {
-            for (int i = inputOffset; i < inputOffset + inputCount; i = i + 2)
-            {
-                //just as an example
-                inputBuffer[i] = (byte)(inputBuffer[i] + Key[0] - 65);
-                if (inputBuffer[i] > 90)
-                {
-                    inputBuffer[i] = (byte)(inputBuffer[i] - 90 + 65);
-                }
-            }
-            return inputBuffer;
-
+            this.cKey = cKey;
         }
-
-        #endregion
+        public char[] getCipherAlph()
+        {
+           return this.cCipherAlphArray;
+        }
+        //public byte[] Encrypt()
+        //{ 
+        
+        //}
+        //public byte[] Decrypt()
+        //{ 
+        
+        //}
     }
 }

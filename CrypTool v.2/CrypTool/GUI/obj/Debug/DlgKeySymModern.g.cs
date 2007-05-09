@@ -62,16 +62,6 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label label4;
         
-        internal System.Windows.Controls.RadioButton radioButtonECB;
-        
-        internal System.Windows.Controls.RadioButton radioButtonCBC;
-        
-        internal System.Windows.Controls.RadioButton radioButtonOFB;
-        
-        internal System.Windows.Controls.RadioButton radioButtonCTS;
-        
-        internal System.Windows.Controls.RadioButton radioButtonCFB;
-        
         internal System.Windows.Controls.GroupBox groupBoxInitializationVector;
         
         internal System.Windows.Controls.RadioButton radioButtonDefault;
@@ -89,6 +79,12 @@ namespace CrypTool {
         internal System.Windows.Controls.GroupBox groupBoxInfo;
         
         internal System.Windows.Controls.TextBox textBoxInfo;
+        
+        internal System.Windows.Controls.ComboBox comboBoxCipherMode;
+        
+        internal System.Windows.Controls.Label label5;
+        
+        internal System.Windows.Controls.ComboBox comboBoxKeyInputMethod;
         
         private bool _contentLoaded;
         
@@ -175,70 +171,64 @@ namespace CrypTool {
             this.label4 = ((System.Windows.Controls.Label)(target));
             return;
             case 14:
-            this.radioButtonECB = ((System.Windows.Controls.RadioButton)(target));
-            return;
-            case 15:
-            this.radioButtonCBC = ((System.Windows.Controls.RadioButton)(target));
-            return;
-            case 16:
-            this.radioButtonOFB = ((System.Windows.Controls.RadioButton)(target));
-            return;
-            case 17:
-            this.radioButtonCTS = ((System.Windows.Controls.RadioButton)(target));
-            return;
-            case 18:
-            this.radioButtonCFB = ((System.Windows.Controls.RadioButton)(target));
-            return;
-            case 19:
             this.groupBoxInitializationVector = ((System.Windows.Controls.GroupBox)(target));
             return;
-            case 20:
+            case 15:
             this.radioButtonDefault = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 26 "..\..\DlgKeySymModern.xaml"
+            #line 21 "..\..\DlgKeySymModern.xaml"
             this.radioButtonDefault.Click += new System.Windows.RoutedEventHandler(this.getDefaultIV);
             
             #line default
             #line hidden
             return;
-            case 21:
+            case 16:
             this.radioButtonManual = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 27 "..\..\DlgKeySymModern.xaml"
+            #line 22 "..\..\DlgKeySymModern.xaml"
             this.radioButtonManual.Click += new System.Windows.RoutedEventHandler(this.getManualIV);
             
             #line default
             #line hidden
             return;
-            case 22:
+            case 17:
             this.radioButtonInternalRandomNumberGen = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 28 "..\..\DlgKeySymModern.xaml"
+            #line 23 "..\..\DlgKeySymModern.xaml"
             this.radioButtonInternalRandomNumberGen.Click += new System.Windows.RoutedEventHandler(this.getInternalRandomIV);
             
             #line default
             #line hidden
             return;
-            case 23:
+            case 18:
             this.buttonGetIV = ((System.Windows.Controls.Button)(target));
             
-            #line 30 "..\..\DlgKeySymModern.xaml"
+            #line 25 "..\..\DlgKeySymModern.xaml"
             this.buttonGetIV.Click += new System.Windows.RoutedEventHandler(this.getInternalRandomIV);
             
             #line default
             #line hidden
             return;
-            case 24:
+            case 19:
             this.textBoxIV = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 25:
+            case 20:
             this.groupBoxKey = ((System.Windows.Controls.GroupBox)(target));
             return;
-            case 26:
+            case 21:
             this.groupBoxInfo = ((System.Windows.Controls.GroupBox)(target));
             return;
-            case 27:
+            case 22:
             this.textBoxInfo = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 23:
+            this.comboBoxCipherMode = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 24:
+            this.label5 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 25:
+            this.comboBoxKeyInputMethod = ((System.Windows.Controls.ComboBox)(target));
             return;
             }
             this._contentLoaded = true;

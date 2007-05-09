@@ -58,6 +58,10 @@ namespace CrypTool.AppLogic
             int[] KeySize = {64};
             return KeySize;
         }
+        public string getAlgInfo()
+        {
+            return "Fixed Key Length: 8 - Block Size: 8";
+        }
         private static byte[] getpassPhraseByte(string passPhrase, int keySize)
         {
             //appand 0 when passPhrase too short
