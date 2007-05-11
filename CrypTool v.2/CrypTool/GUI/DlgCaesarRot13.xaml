@@ -7,7 +7,7 @@
 			<RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="41.75,43.7233333333333,0,0" Name="radioButton1" VerticalAlignment="Top" Width="74.25" IsChecked="True">Caesar</RadioButton>
 			<RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="41,78,0,0" VerticalAlignment="Top" Width="74.25">Rot-13</RadioButton>
 			<Label Height="23.2766666666667" HorizontalAlignment="Left" Margin="120.37,55.7233333333333,0,0" Name="label1" VerticalAlignment="Top" Width="56.63">Schlüssel</Label>
-			<TextBox Height="25.2766666666667" Margin="182,52.7233333333333,0,0" Name="textBoxKey" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" KeyUp="getCipherAlph" CharacterCasing="Upper"></TextBox>
+			<TextBox Height="25.2766666666667" Margin="182,52.7233333333333,0,0" Name="textBoxKey" VerticalAlignment="Top" HorizontalAlignment="Left" Width="44" KeyUp="getCipherAlph" CharacterCasing="Upper" MaxLength="1"></TextBox>
 			<GroupBox Margin="13,132,15,53" Name="groupBox2" Header="Informationen zur Verschlüsselung"/>
 			<Button Height="35" HorizontalAlignment="Left" Margin="12,324,0,0" Name="button2" VerticalAlignment="Top" Width="101" Click="Encode" IsEnabled="True">Verschlüsseln</Button>
 			<Button Height="35" HorizontalAlignment="Left" Margin="120,325,0,0" Name="button3" VerticalAlignment="Top" Width="100" Click="Decode"  IsEnabled="True">Entschlüsseln</Button>
