@@ -64,6 +64,20 @@ namespace CrypTool {
         
         internal System.Windows.Controls.TextBox textBoxCipherAlph;
         
+        internal System.Windows.Controls.GroupBox groupBoxShifting;
+        
+        internal System.Windows.Controls.RadioButton radioButtonFirstPosZero;
+        
+        internal System.Windows.Controls.RadioButton radioButtonFirstPosOne;
+        
+        internal System.Windows.Controls.GroupBox groupBoxInputKey;
+        
+        internal System.Windows.Controls.Label label6;
+        
+        internal System.Windows.Controls.TextBox textBox1;
+        
+        internal System.Windows.Controls.TextBox textBoxRot13Status;
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -150,6 +164,27 @@ namespace CrypTool {
             return;
             case 14:
             this.textBoxCipherAlph = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 15:
+            this.groupBoxShifting = ((System.Windows.Controls.GroupBox)(target));
+            return;
+            case 16:
+            this.radioButtonFirstPosZero = ((System.Windows.Controls.RadioButton)(target));
+            return;
+            case 17:
+            this.radioButtonFirstPosOne = ((System.Windows.Controls.RadioButton)(target));
+            return;
+            case 18:
+            this.groupBoxInputKey = ((System.Windows.Controls.GroupBox)(target));
+            return;
+            case 19:
+            this.label6 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 20:
+            this.textBox1 = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 21:
+            this.textBoxRot13Status = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;
