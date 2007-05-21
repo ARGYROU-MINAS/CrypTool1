@@ -49,7 +49,7 @@ namespace CrypTool
         }
         private void ShowDlgCaesarRot13(object sender, RoutedEventArgs e)
         {
-            DlgCaesarRot13 dlgCaesarRot13 = new DlgCaesarRot13();
+            DlgCaesarRot13 dlgCaesarRot13 = new DlgCaesarRot13(this._lastNotifiedForm);
             dlgCaesarRot13.Show();
         }
         private void ShowDlgTextOptions(object sender, RoutedEventArgs e)
