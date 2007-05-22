@@ -16,6 +16,9 @@ namespace CrypTool
 
     public partial class DlgCaesarRot13 : Window
     {
+        private bool AlphInput;
+        private int FirstPos;
+
         private DlgEditor _lastNotifiedForm = null;
         CrypTool.AppLogic.Rot13Caesar rot13;
 
@@ -24,6 +27,8 @@ namespace CrypTool
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
             this.rot13 = new CrypTool.AppLogic.Rot13Caesar();
+            this.AlphInput = true;
+            this.FirstPos = 0;
             getSettings();
         }
         private void Encode(object sender, RoutedEventArgs e)
@@ -43,23 +48,36 @@ namespace CrypTool
         {
             Close();
         }
+        private void getRot13Char(object sender, RoutedEventArgs arg)
+        {
+            if (this.rot13.getRot13Status())
+                this.textBoxKey.Text = this.rot13.getRot13Char().ToString();
+        }
         private void getSettings()
         {
             this.textBoxAlph.Text = AppLogic.TextOptions.getAlphabet();
             this.label3.Content = "Das Alphabet (" + AppLogic.TextOptions.getAlphabet().Length.ToString() +
-                " Zeichen) wir abgebildet";
+                " Zeichen) wird abgebildet";
+            //Rot13 Status
             if (this.rot13.getRot13Status())
-                this.textBoxRot13Status.Visibility = Visibility.Visible;
-            else
                 this.textBoxRot13Status.Visibility = Visibility.Hidden;
-        }
-        private void getCipherAlph(object sender, RoutedEventArgs a)
-        {
-            String strKey = this.textBoxKey.Text;
+            else
+                this.textBoxRot13Status.Visibility = Visibility.Visible;
+            this.radioButtonRot13.IsEnabled = this.rot13.getRot13Status();
 
+            //Alphabet or value input
+            this.textBoxKey.IsEnabled = this.AlphInput;
+            this.textBoxKeyCif.IsEnabled = !this.AlphInput;
+        }
+        private void OnTextBoxKey_Changed(object sender, RoutedEventArgs arg)
+        {
+            getCipherAlph(this.textBoxKey.Text);
+        }
+        private void getCipherAlph(String strKey)
+        {
             if (strKey.Length > 0 && CrypTool.AppLogic.TextOptions.getAlphabet().IndexOf(strKey) > -1)
             {
-                 this.rot13 = new CrypTool.AppLogic.Rot13Caesar(strKey.ToCharArray()[0]);
+                this.rot13 = new CrypTool.AppLogic.Rot13Caesar(strKey.ToCharArray()[0],this.FirstPos);
                 this.textBoxCipherAlph.Text = new String(rot13.getCipherAlph());
             }
             else
@@ -68,6 +86,24 @@ namespace CrypTool
                 this.textBoxKey.Text = "";
             }
 
+        }
+        private void OnRadioButtonAlph_Click(object sender, RoutedEventArgs arg)
+        {
+            this.AlphInput = true;
+            getSettings();
+        }
+        private void OnRadioButtonCif_Click(object sender, RoutedEventArgs arg)
+        {
+            this.AlphInput = false;
+            getSettings();
+        }
+        private void OnRadioButtonFirstPosZero_Click(object sender, RoutedEventArgs arg)
+        {
+            this.FirstPos = 0;
+        }
+        private void OnRadioButtonFirstPosOne_Click(object sender, RoutedEventArgs arg)
+        {
+            this.FirstPos = 1;
         }
 
     }
