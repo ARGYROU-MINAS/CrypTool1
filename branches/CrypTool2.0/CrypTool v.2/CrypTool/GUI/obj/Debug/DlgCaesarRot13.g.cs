@@ -38,9 +38,9 @@ namespace CrypTool {
         
         internal System.Windows.Controls.GroupBox groupBox1;
         
-        internal System.Windows.Controls.RadioButton radioButton1;
+        internal System.Windows.Controls.RadioButton radioButtonCeasar;
         
-        internal System.Windows.Controls.Label label1;
+        internal System.Windows.Controls.RadioButton radioButtonRot13;
         
         internal System.Windows.Controls.TextBox textBoxKey;
         
@@ -72,11 +72,13 @@ namespace CrypTool {
         
         internal System.Windows.Controls.GroupBox groupBoxInputKey;
         
-        internal System.Windows.Controls.Label label6;
-        
-        internal System.Windows.Controls.TextBox textBox1;
+        internal System.Windows.Controls.TextBox textBoxKeyCif;
         
         internal System.Windows.Controls.TextBox textBoxRot13Status;
+        
+        internal System.Windows.Controls.RadioButton radioButtonAlph;
+        
+        internal System.Windows.Controls.RadioButton radioButtonCif;
         
         private bool _contentLoaded;
         
@@ -103,16 +105,22 @@ namespace CrypTool {
             this.groupBox1 = ((System.Windows.Controls.GroupBox)(target));
             return;
             case 2:
-            this.radioButton1 = ((System.Windows.Controls.RadioButton)(target));
+            this.radioButtonCeasar = ((System.Windows.Controls.RadioButton)(target));
             return;
             case 3:
-            this.label1 = ((System.Windows.Controls.Label)(target));
+            this.radioButtonRot13 = ((System.Windows.Controls.RadioButton)(target));
+            
+            #line 8 "..\..\DlgCaesarRot13.xaml"
+            this.radioButtonRot13.Click += new System.Windows.RoutedEventHandler(this.getRot13Char);
+            
+            #line default
+            #line hidden
             return;
             case 4:
             this.textBoxKey = ((System.Windows.Controls.TextBox)(target));
             
-            #line 10 "..\..\DlgCaesarRot13.xaml"
-            this.textBoxKey.KeyUp += new System.Windows.Input.KeyEventHandler(this.getCipherAlph);
+            #line 9 "..\..\DlgCaesarRot13.xaml"
+            this.textBoxKey.KeyUp += new System.Windows.Input.KeyEventHandler(this.OnTextBoxKey_Changed);
             
             #line default
             #line hidden
@@ -123,7 +131,7 @@ namespace CrypTool {
             case 6:
             this.button2 = ((System.Windows.Controls.Button)(target));
             
-            #line 12 "..\..\DlgCaesarRot13.xaml"
+            #line 11 "..\..\DlgCaesarRot13.xaml"
             this.button2.Click += new System.Windows.RoutedEventHandler(this.Encode);
             
             #line default
@@ -132,7 +140,7 @@ namespace CrypTool {
             case 7:
             this.button3 = ((System.Windows.Controls.Button)(target));
             
-            #line 13 "..\..\DlgCaesarRot13.xaml"
+            #line 12 "..\..\DlgCaesarRot13.xaml"
             this.button3.Click += new System.Windows.RoutedEventHandler(this.Decode);
             
             #line default
@@ -141,7 +149,7 @@ namespace CrypTool {
             case 8:
             this.button4 = ((System.Windows.Controls.Button)(target));
             
-            #line 14 "..\..\DlgCaesarRot13.xaml"
+            #line 13 "..\..\DlgCaesarRot13.xaml"
             this.button4.Click += new System.Windows.RoutedEventHandler(this.CloseDlgCaesarRot13);
             
             #line default
@@ -170,21 +178,48 @@ namespace CrypTool {
             return;
             case 16:
             this.radioButtonFirstPosZero = ((System.Windows.Controls.RadioButton)(target));
+            
+            #line 21 "..\..\DlgCaesarRot13.xaml"
+            this.radioButtonFirstPosZero.Click += new System.Windows.RoutedEventHandler(this.OnRadioButtonFirstPosZero_Click);
+            
+            #line default
+            #line hidden
             return;
             case 17:
             this.radioButtonFirstPosOne = ((System.Windows.Controls.RadioButton)(target));
+            
+            #line 22 "..\..\DlgCaesarRot13.xaml"
+            this.radioButtonFirstPosOne.Click += new System.Windows.RoutedEventHandler(this.OnRadioButtonFirstPosOne_Click);
+            
+            #line default
+            #line hidden
             return;
             case 18:
             this.groupBoxInputKey = ((System.Windows.Controls.GroupBox)(target));
             return;
             case 19:
-            this.label6 = ((System.Windows.Controls.Label)(target));
+            this.textBoxKeyCif = ((System.Windows.Controls.TextBox)(target));
             return;
             case 20:
-            this.textBox1 = ((System.Windows.Controls.TextBox)(target));
+            this.textBoxRot13Status = ((System.Windows.Controls.TextBox)(target));
             return;
             case 21:
-            this.textBoxRot13Status = ((System.Windows.Controls.TextBox)(target));
+            this.radioButtonAlph = ((System.Windows.Controls.RadioButton)(target));
+            
+            #line 26 "..\..\DlgCaesarRot13.xaml"
+            this.radioButtonAlph.Click += new System.Windows.RoutedEventHandler(this.OnRadioButtonAlph_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 22:
+            this.radioButtonCif = ((System.Windows.Controls.RadioButton)(target));
+            
+            #line 27 "..\..\DlgCaesarRot13.xaml"
+            this.radioButtonCif.Click += new System.Windows.RoutedEventHandler(this.OnRadioButtonCif_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

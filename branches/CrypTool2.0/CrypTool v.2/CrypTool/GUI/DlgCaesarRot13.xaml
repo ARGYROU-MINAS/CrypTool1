@@ -4,10 +4,9 @@
     Title="Schlüsseleingabe: Caesar / Rot-13" Height="495" Width="521" WindowStartupLocation="CenterScreen">
 		<Grid>
 			<GroupBox Margin="14,11,0,0" Name="groupBox1" Height="85" VerticalAlignment="Top" Header="Variante auswählen" HorizontalAlignment="Left" Width="132" />
-			<RadioButton Height="18.2766666666667" HorizontalAlignment="Left" Margin="41.75,35.7233333333333,0,0" Name="radioButton1" VerticalAlignment="Top" Width="74.25" IsChecked="True" GroupName="Variant">Caesar</RadioButton>
-			<RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="42,63,0,0" VerticalAlignment="Top" Width="74.25" GroupName="Variant">Rot-13</RadioButton>
-			<Label Margin="62.37,135.723333333333,0,0" Name="label1" HorizontalAlignment="Left" Width="100.63" Height="25.276666666667" VerticalAlignment="Top">Alphabetzeichen</Label>
-			<TextBox Margin="175,139.723333333333,0,0" Name="textBoxKey" HorizontalAlignment="Left" Width="44" KeyUp="getCipherAlph" CharacterCasing="Upper" MaxLength="1" Height="22.276666666667" VerticalAlignment="Top"></TextBox>
+			<RadioButton Height="18.2766666666667" HorizontalAlignment="Left" Margin="41.75,35.7233333333333,0,0" Name="radioButtonCeasar" VerticalAlignment="Top" Width="74.25" IsChecked="True" GroupName="Variant">Caesar</RadioButton>
+			<RadioButton Height="13.2766666666667" HorizontalAlignment="Left" Margin="42,63,0,0" VerticalAlignment="Top" Width="74.25" GroupName="Variant" Click="getRot13Char" Name="radioButtonRot13">Rot-13</RadioButton>
+    <TextBox Margin="175,139.723333333333,0,0" Name="textBoxKey" HorizontalAlignment="Left" Width="44" KeyUp="OnTextBoxKey_Changed" CharacterCasing="Upper" MaxLength="1" Height="22.276666666667" VerticalAlignment="Top"></TextBox>
 			<GroupBox Margin="12,242,16,0" Name="groupBox2" Header="Informationen zur Verschlüsselung" Height="160" VerticalAlignment="Top" />
 			<Button Height="35" Margin="165,0,247,13" Name="button2" VerticalAlignment="Bottom" Click="Encode" IsEnabled="True">Verschlüsseln</Button>
 			<Button Height="35" HorizontalAlignment="Right" Margin="0,0,142,12" Name="button3" VerticalAlignment="Bottom" Width="100" Click="Decode"  IsEnabled="True">Entschlüsseln</Button>
@@ -19,11 +18,12 @@
 			<TextBox Height="24.2766666666666" Margin="80,324.723333333333,29,0" Name="textBoxAlph" VerticalAlignment="Top" IsReadOnly="True" IsEnabled="False"></TextBox>
 			<TextBox Height="26.2766666666666" Margin="80,356.723333333333,28,0" Name="textBoxCipherAlph" VerticalAlignment="Top" IsEnabled="False" IsReadOnly="True"></TextBox>
       <GroupBox Height="80" Margin="152,16,21,0" Name="groupBoxShifting" VerticalAlignment="Top" Header="Optionen zur Interpretation des Alphabetszeichens"/>
-    <RadioButton Height="15.96" Margin="170.09,43.04,33,0" Name="radioButtonFirstPosZero" VerticalAlignment="Top" GroupName="AlphPos">Wert des ersten Alphabetszeichens = 0 (z.B. "A"=0)</RadioButton>
-    <RadioButton Height="15.96" Margin="170.09,66.04,35,0" Name="radioButtonFirstPosOne" VerticalAlignment="Top" GroupName="AlphPos">Wert des ersten Alphabetszeichens = 1 (z.B. "A"=1)</RadioButton>
+    <RadioButton Height="15.96" Margin="170.09,43.04,33,0" Name="radioButtonFirstPosZero" VerticalAlignment="Top" GroupName="AlphPos" IsChecked="True" Click="OnRadioButtonFirstPosZero_Click">Wert des ersten Alphabetszeichens = 0 (z.B. "A"=0)</RadioButton>
+    <RadioButton Height="15.96" Margin="170.09,66.04,35,0" Name="radioButtonFirstPosOne" VerticalAlignment="Top" GroupName="AlphPos" Click="OnRadioButtonFirstPosOne_Click">Wert des ersten Alphabetszeichens = 1 (z.B. "A"=1)</RadioButton>
       <GroupBox Margin="16,102,18,228" Name="groupBoxInputKey" Header="Schlüsseleingabe"/>
-    <Label Height="25.96" Margin="63.0066666666667,167.04,0,0" Name="label6" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70.9933333333333">Zahlenwert</Label>
-    <TextBox Height="26" Margin="176,166,0,0" Name="textBox1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42"></TextBox>
+    <TextBox Height="26" Margin="176,166,0,0" Name="textBoxKeyCif" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42"></TextBox>
     <TextBox TextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,124.875846501129,49,0" Name="textBoxRot13Status" Width="188" Height="83" VerticalAlignment="Top" IsEnabled="False" IsReadOnly="True" IsTabStop="False" TextAlignment="Center" VerticalContentAlignment="Center">Die Rot13-Verschlüsselung wurde deaktiviert, weil das Alphabet keine gerade Anzahl von Zeichen hat!</TextBox>
+    <RadioButton Height="15.96" HorizontalAlignment="Left" Margin="48.09,143.04,0,0" Name="radioButtonAlph" VerticalAlignment="Top" Width="113.91" GroupName="KeyInput" IsChecked="True" Click="OnRadioButtonAlph_Click">Alphabetzeichen</RadioButton>
+    <RadioButton Height="15.96" Margin="49.09,170.04,0,0" Name="radioButtonCif" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116.91" GroupName="KeyInput" Click="OnRadioButtonCif_Click">Zahlenwert</RadioButton>
   </Grid>
 </Window>

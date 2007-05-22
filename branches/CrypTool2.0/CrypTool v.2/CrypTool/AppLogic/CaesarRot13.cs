@@ -11,18 +11,18 @@ namespace CrypTool.AppLogic
         private char[] cAlphArray = null;
         private char[] cCipherAlphArray = null;
         private char cKey;
-        private int iKey;
+        private int iFirstPos;
 
         public Rot13Caesar()
         {
             setAlphArray();
         }
-        public Rot13Caesar(char cKey)
+        public Rot13Caesar(char cKey,int iFirstPos)
         {
             this.cKey = cKey;
+            this.iFirstPos = iFirstPos;
             setAlphArray();
             setCipherAlphArray();
-            setKeyPos(cKey);
         }
 
         private void setAlphArray()
@@ -35,37 +35,25 @@ namespace CrypTool.AppLogic
 
             for (int i = 0; i < this.cAlphArray.Length; i++)
             {
-                int c = (this.cAlphArray[i] + this.cKey) % this.cAlphArray.Length;
+                int c = (this.cAlphArray[i] + this.cKey + this.iFirstPos) % this.cAlphArray.Length;
                 this.cCipherAlphArray[i] = this.cAlphArray[c];
             }
         }
         private bool checkRot13Status()
         {
-            if ((CrypTool.AppLogic.TextOptions.getAlphabet().Length % 2) == 1)
+            int a = CrypTool.AppLogic.TextOptions.getAlphabet().Length % 2;
+            if ((CrypTool.AppLogic.TextOptions.getAlphabet().Length % 2) == 0)
                 return true;
             else
                 return false;
         }
-        private int getCipherChar(char cChar)
+        public int getKeyCif()
         {
-            for (int i = 0; i < this.cAlphArray.Length; i++)
-                if (this.cAlphArray[i] == cChar)
-                    return i;
-            return 0;
-        }
-        private void setKeyPos(char cKey)
-        {
-            for (int i = 0; i < this.cAlphArray.Length; i++)
-                if (this.cAlphArray[i] == cKey)
-                {
-                    this.iKey = i;
-                    return;
-                }
+            return (cKey % this.cAlphArray.Length);
         }
         public void setKey(char cKey)
         {
             this.cKey = cKey;
-            setKeyPos(cKey);
         }
         public char[] getCipherAlph()
         {
@@ -75,21 +63,37 @@ namespace CrypTool.AppLogic
         {
             return checkRot13Status();
         }
+        public char getRot13Char()
+        {
+            return this.cAlphArray[this.cAlphArray.Length / 2];
+        }
         public byte[] Encrypt(byte[] PlainText)
         {
+            char[] cPlainText = System.Text.Encoding.Unicode.GetString(PlainText).ToUpper().ToCharArray();
+            char[] cCipherText = new char[cPlainText.Length];
+
             int iPos;
-            byte[] CipherText = new byte[PlainText.Length];
-            for (int i = 0; i < PlainText.Length; i++)
+            for (int i = 0; i < cPlainText.Length; i++)
             {
-                //iPos = ((char)PlainText[i] + this.cKey) % this.cAlphArray.Length;
-                CipherText[i] = (byte)this.cAlphArray[i];
+                iPos = (cPlainText[i] + this.cKey + this.iFirstPos) % this.cAlphArray.Length;
+                cCipherText[i] = cAlphArray[iPos];
             }
-            
-            return CipherText;
+
+            byte[] bCipherText = System.Text.Encoding.Unicode.GetBytes(cCipherText);
+            return bCipherText;
         }
         public byte[] Decrypt(byte[] CipherText)
         {
-            return CipherText;
+            char[] cCipherText = System.Text.Encoding.Unicode.GetString(CipherText).ToUpper().ToCharArray();
+            char[] cPlainText = new char[cCipherText.Length];
+            int iPos;
+            for (int i = 0; i < cCipherText.Length; i++)
+            {
+                iPos = (cCipherText[i] - this.cKey - this.iFirstPos) % this.cAlphArray.Length;
+                cPlainText[i] = cAlphArray[iPos];
+            }
+            byte[] bPlainText = System.Text.Encoding.Unicode.GetBytes(cPlainText);
+            return bPlainText;
         }
     }
 }
