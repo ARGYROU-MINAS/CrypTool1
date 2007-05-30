@@ -1,0 +1,7 @@
+bin\Debug\CrypTool.exe
+bin\Debug\CrypTool.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\CrypTool.exe
+obj\Debug\CrypTool.pdb
+bin\Debug\AppLogic.dll
+bin\Debug\AppLogic.pdb

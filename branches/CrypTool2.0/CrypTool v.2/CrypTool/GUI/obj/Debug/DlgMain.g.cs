@@ -36,217 +36,217 @@ namespace CrypTool {
     /// </summary>
     public partial class DlgMain : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
-        internal System.Windows.Controls.Menu Menu;
+        internal System.Windows.Controls.TreeView Menu;
         
-        internal System.Windows.Controls.MenuItem MenuItemFile;
+        internal System.Windows.Controls.TreeViewItem MenuItemFile;
         
-        internal System.Windows.Controls.MenuItem MenuItemNew;
+        internal System.Windows.Controls.TreeViewItem MenuItemNew;
         
-        internal System.Windows.Controls.MenuItem MenuItemOpen;
+        internal System.Windows.Controls.TreeViewItem MenuItemOpen;
         
-        internal System.Windows.Controls.MenuItem MenuItemClose;
+        internal System.Windows.Controls.TreeViewItem MenuItemClose;
         
-        internal System.Windows.Controls.MenuItem MenuItemCloseAll;
+        internal System.Windows.Controls.TreeViewItem MenuItemCloseAll;
         
-        internal System.Windows.Controls.MenuItem MenuItemSave;
+        internal System.Windows.Controls.TreeViewItem MenuItemSave;
         
-        internal System.Windows.Controls.MenuItem MenuItemSaveAs;
+        internal System.Windows.Controls.TreeViewItem MenuItemSaveAs;
         
-        internal System.Windows.Controls.MenuItem MenuItemDocProperties;
+        internal System.Windows.Controls.TreeViewItem MenuItemDocProperties;
         
-        internal System.Windows.Controls.MenuItem MenuItemPrint;
+        internal System.Windows.Controls.TreeViewItem MenuItemPrint;
         
-        internal System.Windows.Controls.MenuItem MenuItemPrintSetup;
+        internal System.Windows.Controls.TreeViewItem MenuItemPrintSetup;
         
-        internal System.Windows.Controls.MenuItem MenuItemQuit;
+        internal System.Windows.Controls.TreeViewItem MenuItemQuit;
         
-        internal System.Windows.Controls.MenuItem MenuItemEdit;
+        internal System.Windows.Controls.TreeViewItem MenuItemEdit;
         
-        internal System.Windows.Controls.MenuItem MenuItemUndo;
+        internal System.Windows.Controls.TreeViewItem MenuItemUndo;
         
-        internal System.Windows.Controls.MenuItem MenuItemCut;
+        internal System.Windows.Controls.TreeViewItem MenuItemCut;
         
-        internal System.Windows.Controls.MenuItem MenuItemCopy;
+        internal System.Windows.Controls.TreeViewItem MenuItemCopy;
         
-        internal System.Windows.Controls.MenuItem MenuItemPaste;
+        internal System.Windows.Controls.TreeViewItem MenuItemPaste;
         
-        internal System.Windows.Controls.MenuItem MenuItemDelete;
+        internal System.Windows.Controls.TreeViewItem MenuItemDelete;
         
-        internal System.Windows.Controls.MenuItem MenuItemFindReplace;
+        internal System.Windows.Controls.TreeViewItem MenuItemFindReplace;
         
-        internal System.Windows.Controls.MenuItem MenuItemFindNext;
+        internal System.Windows.Controls.TreeViewItem MenuItemFindNext;
         
-        internal System.Windows.Controls.MenuItem MenuItemSelAll;
+        internal System.Windows.Controls.TreeViewItem MenuItemSelAll;
         
-        internal System.Windows.Controls.MenuItem MenuItemShowKey;
+        internal System.Windows.Controls.TreeViewItem MenuItemShowKey;
         
-        internal System.Windows.Controls.MenuItem MenuItemParentWindow;
+        internal System.Windows.Controls.TreeViewItem MenuItemParentWindow;
         
-        internal System.Windows.Controls.MenuItem MenuItemView;
+        internal System.Windows.Controls.TreeViewItem MenuItemView;
         
-        internal System.Windows.Controls.MenuItem MenuItemToolbar;
+        internal System.Windows.Controls.TreeViewItem MenuItemToolbar;
         
-        internal System.Windows.Controls.MenuItem MenuItemStatusBar;
+        internal System.Windows.Controls.TreeViewItem MenuItemStatusBar;
         
-        internal System.Windows.Controls.MenuItem MenuItemShowAsText;
+        internal System.Windows.Controls.TreeViewItem MenuItemShowAsText;
         
-        internal System.Windows.Controls.MenuItem MenuItemAsHexDump;
+        internal System.Windows.Controls.TreeViewItem MenuItemAsHexDump;
         
-        internal System.Windows.Controls.MenuItem MenuItemBarChart;
+        internal System.Windows.Controls.TreeViewItem MenuItemBarChart;
         
-        internal System.Windows.Controls.MenuItem MenuItemEndOfLine;
+        internal System.Windows.Controls.TreeViewItem MenuItemEndOfLine;
         
-        internal System.Windows.Controls.MenuItem MenuItemLineWrap;
+        internal System.Windows.Controls.TreeViewItem MenuItemLineWrap;
         
-        internal System.Windows.Controls.MenuItem MenuItemWhitespace;
+        internal System.Windows.Controls.TreeViewItem MenuItemWhitespace;
         
-        internal System.Windows.Controls.MenuItem MenuItemFont;
+        internal System.Windows.Controls.TreeViewItem MenuItemFont;
         
-        internal System.Windows.Controls.MenuItem MenuItemShowBox;
+        internal System.Windows.Controls.TreeViewItem MenuItemShowBox;
         
-        internal System.Windows.Controls.MenuItem MenuItemEncryption;
+        internal System.Windows.Controls.TreeViewItem MenuItemEncryption;
         
-        internal System.Windows.Controls.MenuItem MenuItemSymetricClass;
+        internal System.Windows.Controls.TreeViewItem MenuItemSymetricClass;
         
-        internal System.Windows.Controls.MenuItem MenuItemCaesarRot13;
+        internal System.Windows.Controls.TreeViewItem MenuItemCaesarRot13;
         
-        internal System.Windows.Controls.MenuItem MenuItemVigenere;
+        internal System.Windows.Controls.TreeViewItem MenuItemVigenere;
         
-        internal System.Windows.Controls.MenuItem MenuItemHill;
+        internal System.Windows.Controls.TreeViewItem MenuItemHill;
         
-        internal System.Windows.Controls.MenuItem MenuItemSubstitutionAtbash;
+        internal System.Windows.Controls.TreeViewItem MenuItemSubstitutionAtbash;
         
-        internal System.Windows.Controls.MenuItem MenuItemPalyfair;
+        internal System.Windows.Controls.TreeViewItem MenuItemPalyfair;
         
-        internal System.Windows.Controls.MenuItem MenuItemADFGVX;
+        internal System.Windows.Controls.TreeViewItem MenuItemADFGVX;
         
-        internal System.Windows.Controls.MenuItem MenuItemByteAddition;
+        internal System.Windows.Controls.TreeViewItem MenuItemByteAddition;
         
-        internal System.Windows.Controls.MenuItem MenuItemXOR;
+        internal System.Windows.Controls.TreeViewItem MenuItemXOR;
         
-        internal System.Windows.Controls.MenuItem MenuItemVernam;
+        internal System.Windows.Controls.TreeViewItem MenuItemVernam;
         
-        internal System.Windows.Controls.MenuItem MenuItemHomophone;
+        internal System.Windows.Controls.TreeViewItem MenuItemHomophone;
         
-        internal System.Windows.Controls.MenuItem MenuItemPermutationTransposition;
+        internal System.Windows.Controls.TreeViewItem MenuItemPermutationTransposition;
         
-        internal System.Windows.Controls.MenuItem MenuItemSolitaire;
+        internal System.Windows.Controls.TreeViewItem MenuItemSolitaire;
         
-        internal System.Windows.Controls.MenuItem MenuItemSymetricModern;
+        internal System.Windows.Controls.TreeViewItem MenuItemSymetricModern;
         
-        internal System.Windows.Controls.MenuItem MenuItemAsymmetric;
+        internal System.Windows.Controls.TreeViewItem MenuItemAsymmetric;
         
-        internal System.Windows.Controls.MenuItem MenuItemRSAEncryption;
+        internal System.Windows.Controls.TreeViewItem MenuItemRSAEncryption;
         
-        internal System.Windows.Controls.MenuItem MenuItemRSADecryption;
+        internal System.Windows.Controls.TreeViewItem MenuItemRSADecryption;
         
-        internal System.Windows.Controls.MenuItem MenuItemRSADemo;
+        internal System.Windows.Controls.TreeViewItem MenuItemRSADemo;
         
-        internal System.Windows.Controls.MenuItem MenuItemHybrid;
+        internal System.Windows.Controls.TreeViewItem MenuItemHybrid;
         
-        internal System.Windows.Controls.MenuItem MenuItemRSAAESEncryption;
+        internal System.Windows.Controls.TreeViewItem MenuItemRSAAESEncryption;
         
-        internal System.Windows.Controls.MenuItem MenuItemRSAAESDecryption;
+        internal System.Windows.Controls.TreeViewItem MenuItemRSAAESDecryption;
         
-        internal System.Windows.Controls.MenuItem MenuItemDigSignature_PKI;
+        internal System.Windows.Controls.TreeViewItem MenuItemDigSignature_PKI;
         
-        internal System.Windows.Controls.MenuItem MenuItemPKI;
+        internal System.Windows.Controls.TreeViewItem MenuItemPKI;
         
-        internal System.Windows.Controls.MenuItem MenuItemKeyGenImport;
+        internal System.Windows.Controls.TreeViewItem MenuItemKeyGenImport;
         
-        internal System.Windows.Controls.MenuItem MenuItemKeyDisplayExport;
+        internal System.Windows.Controls.TreeViewItem MenuItemKeyDisplayExport;
         
-        internal System.Windows.Controls.MenuItem MenuItemSignDocument;
+        internal System.Windows.Controls.TreeViewItem MenuItemSignDocument;
         
-        internal System.Windows.Controls.MenuItem MenuItemVerfiySignature;
+        internal System.Windows.Controls.TreeViewItem MenuItemVerfiySignature;
         
-        internal System.Windows.Controls.MenuItem MenuItemExtractSignature;
+        internal System.Windows.Controls.TreeViewItem MenuItemExtractSignature;
         
-        internal System.Windows.Controls.MenuItem MenuItemSignatureDemo;
+        internal System.Windows.Controls.TreeViewItem MenuItemSignatureDemo;
         
-        internal System.Windows.Controls.MenuItem MenuItemIndivPrcedures;
+        internal System.Windows.Controls.TreeViewItem MenuItemIndivPrcedures;
         
-        internal System.Windows.Controls.MenuItem MenuItemHash;
+        internal System.Windows.Controls.TreeViewItem MenuItemHash;
         
-        internal System.Windows.Controls.MenuItem MenuItemGenHash;
+        internal System.Windows.Controls.TreeViewItem MenuItemGenHash;
         
-        internal System.Windows.Controls.MenuItem MenuItemHashValueFile;
+        internal System.Windows.Controls.TreeViewItem MenuItemHashValueFile;
         
-        internal System.Windows.Controls.MenuItem MenuItemHashDemo;
+        internal System.Windows.Controls.TreeViewItem MenuItemHashDemo;
         
-        internal System.Windows.Controls.MenuItem MenuItemKeyGenFromPass;
+        internal System.Windows.Controls.TreeViewItem MenuItemKeyGenFromPass;
         
-        internal System.Windows.Controls.MenuItem MenuItemGenMac;
+        internal System.Windows.Controls.TreeViewItem MenuItemGenMac;
         
-        internal System.Windows.Controls.MenuItem MenuItemRSACryptoSystem;
+        internal System.Windows.Controls.TreeViewItem MenuItemRSACryptoSystem;
         
-        internal System.Windows.Controls.MenuItem MenuItemProtocols;
+        internal System.Windows.Controls.TreeViewItem MenuItemProtocols;
         
-        internal System.Windows.Controls.MenuItem MenuItemChineseRemTheoApp;
+        internal System.Windows.Controls.TreeViewItem MenuItemChineseRemTheoApp;
         
-        internal System.Windows.Controls.MenuItem MenuItemVisualAlgoAnimal;
+        internal System.Windows.Controls.TreeViewItem MenuItemVisualAlgoAnimal;
         
-        internal System.Windows.Controls.MenuItem MenuItemSecretSharingDemo;
+        internal System.Windows.Controls.TreeViewItem MenuItemSecretSharingDemo;
         
-        internal System.Windows.Controls.MenuItem MenuItemCodes;
+        internal System.Windows.Controls.TreeViewItem MenuItemCodes;
         
-        internal System.Windows.Controls.MenuItem MenuItemCompress;
+        internal System.Windows.Controls.TreeViewItem MenuItemCompress;
         
-        internal System.Windows.Controls.MenuItem MenuItemGenRandNum;
+        internal System.Windows.Controls.TreeViewItem MenuItemGenRandNum;
         
-        internal System.Windows.Controls.MenuItem MenuItemEducatGames;
+        internal System.Windows.Controls.TreeViewItem MenuItemEducatGames;
         
-        internal System.Windows.Controls.MenuItem MenuItemAnalysis;
+        internal System.Windows.Controls.TreeViewItem MenuItemAnalysis;
         
-        internal System.Windows.Controls.MenuItem MenuItemToolsForAnalysis;
+        internal System.Windows.Controls.TreeViewItem MenuItemToolsForAnalysis;
         
-        internal System.Windows.Controls.MenuItem MenuItemSymmetricEncryptionClassic;
+        internal System.Windows.Controls.TreeViewItem MenuItemSymmetricEncryptionClassic;
         
-        internal System.Windows.Controls.MenuItem MenuItemSymmetricEncryptionModern;
+        internal System.Windows.Controls.TreeViewItem MenuItemSymmetricEncryptionModern;
         
-        internal System.Windows.Controls.MenuItem MenuItemAsymmetricEncryption;
+        internal System.Windows.Controls.TreeViewItem MenuItemAsymmetricEncryption;
         
-        internal System.Windows.Controls.MenuItem MenuItemHashAnalyse;
+        internal System.Windows.Controls.TreeViewItem MenuItemHashAnalyse;
         
-        internal System.Windows.Controls.MenuItem MenuItemAnalyseRandomness;
+        internal System.Windows.Controls.TreeViewItem MenuItemAnalyseRandomness;
         
-        internal System.Windows.Controls.MenuItem MenuItemOptions;
+        internal System.Windows.Controls.TreeViewItem MenuItemOptions;
         
-        internal System.Windows.Controls.MenuItem MenuItemPlotOptions;
+        internal System.Windows.Controls.TreeViewItem MenuItemPlotOptions;
         
-        internal System.Windows.Controls.MenuItem MenuItemAnalysisOptions;
+        internal System.Windows.Controls.TreeViewItem MenuItemAnalysisOptions;
         
-        internal System.Windows.Controls.MenuItem MenuItemTextOptions;
+        internal System.Windows.Controls.TreeViewItem MenuItemTextOptions;
         
-        internal System.Windows.Controls.MenuItem MenuItemStartingOptions;
+        internal System.Windows.Controls.TreeViewItem MenuItemStartingOptions;
         
-        internal System.Windows.Controls.MenuItem MenuItemFurtherOptions;
+        internal System.Windows.Controls.TreeViewItem MenuItemFurtherOptions;
         
-        internal System.Windows.Controls.MenuItem MenuItemLanguage;
+        internal System.Windows.Controls.TreeViewItem MenuItemLanguage;
         
-        internal System.Windows.Controls.MenuItem MenuItemWindow;
+        internal System.Windows.Controls.TreeViewItem MenuItemWindow;
         
-        internal System.Windows.Controls.MenuItem MenuItemCascade;
+        internal System.Windows.Controls.TreeViewItem MenuItemCascade;
         
-        internal System.Windows.Controls.MenuItem MenuItemTile;
+        internal System.Windows.Controls.TreeViewItem MenuItemTile;
         
-        internal System.Windows.Controls.MenuItem MenuItemArrangeIcons;
+        internal System.Windows.Controls.TreeViewItem MenuItemArrangeIcons;
         
-        internal System.Windows.Controls.MenuItem MenuItemCloseAllWindow;
+        internal System.Windows.Controls.TreeViewItem MenuItemCloseAllWindow;
         
-        internal System.Windows.Controls.MenuItem MenuItemHelp;
+        internal System.Windows.Controls.TreeViewItem MenuItemHelp;
         
-        internal System.Windows.Controls.MenuItem MenuItemStartingPage;
+        internal System.Windows.Controls.TreeViewItem MenuItemStartingPage;
         
-        internal System.Windows.Controls.MenuItem MenuItemIndex;
+        internal System.Windows.Controls.TreeViewItem MenuItemIndex;
         
-        internal System.Windows.Controls.MenuItem MenuItemScenarios;
+        internal System.Windows.Controls.TreeViewItem MenuItemScenarios;
         
-        internal System.Windows.Controls.MenuItem MenuItemReadme;
+        internal System.Windows.Controls.TreeViewItem MenuItemReadme;
         
-        internal System.Windows.Controls.MenuItem MenuItemScript;
+        internal System.Windows.Controls.TreeViewItem MenuItemScript;
         
-        internal System.Windows.Controls.MenuItem MenuItemAbout;
+        internal System.Windows.Controls.TreeViewItem MenuItemAbout;
         
         private bool _contentLoaded;
         
@@ -270,382 +270,382 @@ namespace CrypTool {
             switch (connectionId)
             {
             case 1:
-            this.Menu = ((System.Windows.Controls.Menu)(target));
+            this.Menu = ((System.Windows.Controls.TreeView)(target));
             return;
             case 2:
-            this.MenuItemFile = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemFile = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 3:
-            this.MenuItemNew = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemNew = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 12 "..\..\DlgMain.xaml"
-            this.MenuItemNew.Click += new System.Windows.RoutedEventHandler(this.MenuItemNew_OnClick);
+            this.MenuItemNew.Selected += new System.Windows.RoutedEventHandler(this.MenuItemNew_OnClick);
             
             #line default
             #line hidden
             return;
             case 4:
-            this.MenuItemOpen = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemOpen = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 13 "..\..\DlgMain.xaml"
-            this.MenuItemOpen.Click += new System.Windows.RoutedEventHandler(this.MenuItemOpen_OnClick);
+            this.MenuItemOpen.Selected += new System.Windows.RoutedEventHandler(this.MenuItemOpen_OnClick);
             
             #line default
             #line hidden
             return;
             case 5:
-            this.MenuItemClose = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemClose = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 14 "..\..\DlgMain.xaml"
-            this.MenuItemClose.Click += new System.Windows.RoutedEventHandler(this.MenuItemClose_OnClick);
+            this.MenuItemClose.Selected += new System.Windows.RoutedEventHandler(this.MenuItemClose_OnClick);
             
             #line default
             #line hidden
             return;
             case 6:
-            this.MenuItemCloseAll = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCloseAll = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 15 "..\..\DlgMain.xaml"
-            this.MenuItemCloseAll.Click += new System.Windows.RoutedEventHandler(this.MenuItemCloseAll_OnClick);
+            this.MenuItemCloseAll.Selected += new System.Windows.RoutedEventHandler(this.MenuItemCloseAll_OnClick);
             
             #line default
             #line hidden
             return;
             case 7:
-            this.MenuItemSave = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSave = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 16 "..\..\DlgMain.xaml"
-            this.MenuItemSave.Click += new System.Windows.RoutedEventHandler(this.MenuItemSave_OnClick);
+            this.MenuItemSave.Selected += new System.Windows.RoutedEventHandler(this.MenuItemSave_OnClick);
             
             #line default
             #line hidden
             return;
             case 8:
-            this.MenuItemSaveAs = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSaveAs = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 9:
-            this.MenuItemDocProperties = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemDocProperties = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 10:
-            this.MenuItemPrint = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemPrint = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 11:
-            this.MenuItemPrintSetup = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemPrintSetup = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 12:
-            this.MenuItemQuit = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemQuit = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 23 "..\..\DlgMain.xaml"
-            this.MenuItemQuit.Click += new System.Windows.RoutedEventHandler(this.CloseDlgMain);
+            this.MenuItemQuit.Selected += new System.Windows.RoutedEventHandler(this.CloseDlgMain);
             
             #line default
             #line hidden
             return;
             case 13:
-            this.MenuItemEdit = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemEdit = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 14:
-            this.MenuItemUndo = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemUndo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 15:
-            this.MenuItemCut = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCut = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 16:
-            this.MenuItemCopy = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCopy = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 17:
-            this.MenuItemPaste = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemPaste = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 18:
-            this.MenuItemDelete = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemDelete = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 19:
-            this.MenuItemFindReplace = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemFindReplace = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 20:
-            this.MenuItemFindNext = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemFindNext = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 21:
-            this.MenuItemSelAll = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSelAll = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 22:
-            this.MenuItemShowKey = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemShowKey = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 23:
-            this.MenuItemParentWindow = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemParentWindow = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 24:
-            this.MenuItemView = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemView = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 25:
-            this.MenuItemToolbar = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemToolbar = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 26:
-            this.MenuItemStatusBar = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemStatusBar = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 27:
-            this.MenuItemShowAsText = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemShowAsText = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 28:
-            this.MenuItemAsHexDump = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemAsHexDump = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 29:
-            this.MenuItemBarChart = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemBarChart = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 30:
-            this.MenuItemEndOfLine = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemEndOfLine = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 31:
-            this.MenuItemLineWrap = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemLineWrap = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 32:
-            this.MenuItemWhitespace = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemWhitespace = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 33:
-            this.MenuItemFont = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemFont = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 34:
-            this.MenuItemShowBox = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemShowBox = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 35:
-            this.MenuItemEncryption = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 36:
-            this.MenuItemSymetricClass = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSymetricClass = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 37:
-            this.MenuItemCaesarRot13 = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCaesarRot13 = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 59 "..\..\DlgMain.xaml"
-            this.MenuItemCaesarRot13.Click += new System.Windows.RoutedEventHandler(this.ShowDlgCaesarRot13);
+            this.MenuItemCaesarRot13.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgCaesarRot13);
             
             #line default
             #line hidden
             return;
             case 38:
-            this.MenuItemVigenere = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemVigenere = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 39:
-            this.MenuItemHill = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHill = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 40:
-            this.MenuItemSubstitutionAtbash = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSubstitutionAtbash = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 41:
-            this.MenuItemPalyfair = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemPalyfair = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 42:
-            this.MenuItemADFGVX = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemADFGVX = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 43:
-            this.MenuItemByteAddition = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemByteAddition = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 44:
-            this.MenuItemXOR = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemXOR = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 45:
-            this.MenuItemVernam = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemVernam = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 46:
-            this.MenuItemHomophone = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHomophone = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 47:
-            this.MenuItemPermutationTransposition = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemPermutationTransposition = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 48:
-            this.MenuItemSolitaire = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSolitaire = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 49:
-            this.MenuItemSymetricModern = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSymetricModern = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 72 "..\..\DlgMain.xaml"
-            this.MenuItemSymetricModern.Click += new System.Windows.RoutedEventHandler(this.ShowDlgKeySymModern);
+            this.MenuItemSymetricModern.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgKeySymModern);
             
             #line default
             #line hidden
             return;
             case 50:
-            this.MenuItemAsymmetric = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemAsymmetric = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 51:
-            this.MenuItemRSAEncryption = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemRSAEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 52:
-            this.MenuItemRSADecryption = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemRSADecryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 53:
-            this.MenuItemRSADemo = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemRSADemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 54:
-            this.MenuItemHybrid = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHybrid = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 55:
-            this.MenuItemRSAAESEncryption = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemRSAAESEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 56:
-            this.MenuItemRSAAESDecryption = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemRSAAESDecryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 57:
-            this.MenuItemDigSignature_PKI = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemDigSignature_PKI = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 58:
-            this.MenuItemPKI = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemPKI = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 59:
-            this.MenuItemKeyGenImport = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemKeyGenImport = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 60:
-            this.MenuItemKeyDisplayExport = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemKeyDisplayExport = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 61:
-            this.MenuItemSignDocument = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSignDocument = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 62:
-            this.MenuItemVerfiySignature = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemVerfiySignature = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 63:
-            this.MenuItemExtractSignature = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemExtractSignature = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 64:
-            this.MenuItemSignatureDemo = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSignatureDemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 65:
-            this.MenuItemIndivPrcedures = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemIndivPrcedures = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 66:
-            this.MenuItemHash = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHash = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 67:
-            this.MenuItemGenHash = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemGenHash = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 95 "..\..\DlgMain.xaml"
-            this.MenuItemGenHash.Click += new System.Windows.RoutedEventHandler(this.ShowDlgHash);
+            this.MenuItemGenHash.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgHash);
             
             #line default
             #line hidden
             return;
             case 68:
-            this.MenuItemHashValueFile = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHashValueFile = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 69:
-            this.MenuItemHashDemo = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHashDemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 70:
-            this.MenuItemKeyGenFromPass = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemKeyGenFromPass = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 71:
-            this.MenuItemGenMac = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemGenMac = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 72:
-            this.MenuItemRSACryptoSystem = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemRSACryptoSystem = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 73:
-            this.MenuItemProtocols = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemProtocols = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 74:
-            this.MenuItemChineseRemTheoApp = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemChineseRemTheoApp = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 75:
-            this.MenuItemVisualAlgoAnimal = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemVisualAlgoAnimal = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 76:
-            this.MenuItemSecretSharingDemo = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSecretSharingDemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 77:
-            this.MenuItemCodes = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCodes = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 78:
-            this.MenuItemCompress = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCompress = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 79:
-            this.MenuItemGenRandNum = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemGenRandNum = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 80:
-            this.MenuItemEducatGames = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemEducatGames = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 81:
-            this.MenuItemAnalysis = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemAnalysis = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 82:
-            this.MenuItemToolsForAnalysis = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemToolsForAnalysis = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 83:
-            this.MenuItemSymmetricEncryptionClassic = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSymmetricEncryptionClassic = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 84:
-            this.MenuItemSymmetricEncryptionModern = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemSymmetricEncryptionModern = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 85:
-            this.MenuItemAsymmetricEncryption = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemAsymmetricEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 86:
-            this.MenuItemHashAnalyse = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHashAnalyse = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 87:
-            this.MenuItemAnalyseRandomness = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemAnalyseRandomness = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 88:
-            this.MenuItemOptions = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 89:
-            this.MenuItemPlotOptions = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemPlotOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 90:
-            this.MenuItemAnalysisOptions = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemAnalysisOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 91:
-            this.MenuItemTextOptions = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemTextOptions = ((System.Windows.Controls.TreeViewItem)(target));
             
             #line 127 "..\..\DlgMain.xaml"
-            this.MenuItemTextOptions.Click += new System.Windows.RoutedEventHandler(this.ShowDlgTextOptions);
+            this.MenuItemTextOptions.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgTextOptions);
             
             #line default
             #line hidden
             return;
             case 92:
-            this.MenuItemStartingOptions = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemStartingOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 93:
-            this.MenuItemFurtherOptions = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemFurtherOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 94:
-            this.MenuItemLanguage = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemLanguage = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 95:
-            this.MenuItemWindow = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemWindow = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 96:
-            this.MenuItemCascade = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCascade = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 97:
-            this.MenuItemTile = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemTile = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 98:
-            this.MenuItemArrangeIcons = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemArrangeIcons = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 99:
-            this.MenuItemCloseAllWindow = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemCloseAllWindow = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 100:
-            this.MenuItemHelp = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemHelp = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 101:
-            this.MenuItemStartingPage = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemStartingPage = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 102:
-            this.MenuItemIndex = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemIndex = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 103:
-            this.MenuItemScenarios = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemScenarios = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 104:
-            this.MenuItemReadme = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemReadme = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 105:
-            this.MenuItemScript = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemScript = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 106:
-            this.MenuItemAbout = ((System.Windows.Controls.MenuItem)(target));
+            this.MenuItemAbout = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             }
             this._contentLoaded = true;
