@@ -14,9 +14,9 @@
         <TreeViewItem Name="MenuItemClose" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemClose/@Header}" Selected="MenuItemClose_OnClick"/>
         <TreeViewItem Name="MenuItemCloseAll" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCloseAll/@Header}" Selected="MenuItemCloseAll_OnClick"/>
         <TreeViewItem Name="MenuItemSave" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSave/@Header}" Selected="MenuItemSave_OnClick"/>
-        <TreeViewItem Name="MenuItemSaveAs" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSaveAs/@Header}"/>
+        <TreeViewItem Name="MenuItemSaveAs" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSaveAs/@Header}" Selected="MenuItemSaveAs_OnClick"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemDocProperties" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDocProperties/@Header}"/>
+        <TreeViewItem Name="MenuItemDocProperties" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDocProperties/@Header}" Selected="ShowDlgDocPrefs"/>
         <TreeViewItem Name="MenuItemPrint" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrint/@Header}"/>
         <TreeViewItem Name="MenuItemPrintSetup" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintSetup/@Header}"/>
         <!--<Separator/>-->

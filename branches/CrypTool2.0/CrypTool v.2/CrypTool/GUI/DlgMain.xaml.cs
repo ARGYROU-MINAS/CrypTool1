@@ -100,16 +100,36 @@ namespace CrypTool
         }
         private void MenuItemSave_OnClick(object sender, RoutedEventArgs e)
         {
+            DlgEditor dlg = _lastNotifiedForm;
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text Datei (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
             saveFileDialog.RestoreDirectory = true;
             saveFileDialog.InitialDirectory = System.Windows.Forms.Application.StartupPath;
 
+            if (dlg.getHasSavePath())
+            {
+                saveFileDialog.FileName = dlg.getPlainTextPath();
+                dlg.savePlainText(saveFileDialog.OpenFile());                
+            }
+            else
+                if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    dlg.savePlainText(saveFileDialog.OpenFile());
+
+            dlg.setPlainTextTabTitle(saveFileDialog.FileName);
+        }
+        private void MenuItemSaveAs_OnClick(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Datei (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.InitialDirectory = System.Windows.Forms.Application.StartupPath;
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 DlgEditor dlg = _lastNotifiedForm;
                 dlg.savePlainText(saveFileDialog.OpenFile());
-            }           
+                dlg.setPlainTextTabTitle(saveFileDialog.FileName);
+            }
         }
         private void MenuItemClose_OnClick(object sender, RoutedEventArgs e)
         {
@@ -130,6 +150,11 @@ namespace CrypTool
         {
             DlgHash dlgHash = new DlgHash(_lastNotifiedForm);
             dlgHash.Show();
+        }
+        private void ShowDlgDocPrefs(object sender, RoutedEventArgs e)
+        {
+            DlgDocPrefs dlgDocPrefs = new DlgDocPrefs(_lastNotifiedForm);
+            dlgDocPrefs.Show();
         }
         private void ShowDlgKeySymModern(object sender, RoutedEventArgs e)
         {

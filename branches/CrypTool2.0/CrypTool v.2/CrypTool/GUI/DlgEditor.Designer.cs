@@ -64,6 +64,7 @@ namespace CrypTool
             this.richTextBoxPlaintext.Size = new System.Drawing.Size(570, 348);
             this.richTextBoxPlaintext.TabIndex = 0;
             this.richTextBoxPlaintext.Text = "";
+            this.richTextBoxPlaintext.TextChanged += new System.EventHandler(this.richTextBoxPlaintext_TextChanged);
             // 
             // DlgEditor
             // 
