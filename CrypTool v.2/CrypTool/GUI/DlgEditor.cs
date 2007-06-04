@@ -13,6 +13,8 @@ namespace CrypTool
     {
         private DlgMain _FormMainReference = null;
         private string DlgText;
+        private bool hasSavePath; //true: file hast save path
+        private string sPlainTextPath;
 
         public DlgEditor(DlgMain _MainForm,string Title)
         {
@@ -20,6 +22,8 @@ namespace CrypTool
             InitializeComponent();
             setTitle();
             tabPagePlainText.Text = Title;
+            checkSaveStatus(false);
+            this.hasSavePath = false;
         }
         public DlgEditor(DlgMain _MainForm, Stream stream,string Title)
         {
@@ -28,10 +32,14 @@ namespace CrypTool
             setTitle();
             richTextBoxPlaintext.LoadFile(stream,RichTextBoxStreamType.PlainText);
             tabPagePlainText.Text = Title;
+            checkSaveStatus(true);
+            this.hasSavePath = true;
         }
         public void savePlainText(Stream stream)
         {
             richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
+            checkSaveStatus(false);
+            this.hasSavePath = true;
         }
         public void setCipherText(string cipherText,string Title)
         {
@@ -61,6 +69,7 @@ namespace CrypTool
             hexBoxCipherText.VScrollBarVisible = true;
             hexBoxCipherText.Name = "hexBoxCipherText";
             hexBoxCipherText.Dock = DockStyle.Fill;
+            
 
             Be.Windows.Forms.FileByteProvider fileByteProvider = new Be.Windows.Forms.FileByteProvider(cipherText);
             hexBoxCipherText.ByteProvider = fileByteProvider;
@@ -106,9 +115,30 @@ namespace CrypTool
             this.DlgText = "CrypTool-Editor";
             setActiveText();
         }
+        public void setPlainTextTabTitle(string sTitle)
+        {
+            this.sPlainTextPath = sTitle;
+            this.tabPagePlainText.Text = this.sPlainTextPath;
+        }
+        public string getPlainTextTabTitle()
+        {
+            return this.tabPagePlainText.Text;
+        }
+        public string getPlainTextPath()
+        {
+            return this.sPlainTextPath;
+        }
         private void setActiveText()
         {
             this.Text = this.DlgText + " - [Active]";
+        }
+        private void checkSaveStatus(bool saveStatus)
+        {
+            if (saveStatus)
+                if(!(this.Text.IndexOf("*") > -1))
+                    this.Text = this.Text + "*";
+            else if (this.Text.IndexOf("*") > -1)
+                this.Text.Remove(this.Text.IndexOf("*"), 1);
         }
         public void setNonActiveText()
         {
@@ -117,6 +147,14 @@ namespace CrypTool
         public void setOtherFormNonActive()
         {
             _FormMainReference.setOtherChildFormNonActive();
+        }
+        public bool getHasSavePath()
+        {
+            return this.hasSavePath;
+        }
+        private void richTextBoxPlaintext_TextChanged(object sender, EventArgs e)
+        {
+            checkSaveStatus(true);
         }
     }
 }

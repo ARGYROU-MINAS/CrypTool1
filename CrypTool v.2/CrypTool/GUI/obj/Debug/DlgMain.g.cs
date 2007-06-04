@@ -322,9 +322,21 @@ namespace CrypTool {
             return;
             case 8:
             this.MenuItemSaveAs = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 17 "..\..\DlgMain.xaml"
+            this.MenuItemSaveAs.Selected += new System.Windows.RoutedEventHandler(this.MenuItemSaveAs_OnClick);
+            
+            #line default
+            #line hidden
             return;
             case 9:
             this.MenuItemDocProperties = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 19 "..\..\DlgMain.xaml"
+            this.MenuItemDocProperties.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgDocPrefs);
+            
+            #line default
+            #line hidden
             return;
             case 10:
             this.MenuItemPrint = ((System.Windows.Controls.TreeViewItem)(target));

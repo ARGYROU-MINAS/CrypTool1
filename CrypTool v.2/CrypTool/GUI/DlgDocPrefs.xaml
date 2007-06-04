@@ -1,0 +1,57 @@
+﻿<Window x:Class="CrypTool.DlgDocPrefs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Dokument-Eigenschaften" Height="306" Width="479"
+    >
+    <Grid>
+      <StackPanel>
+      <GroupBox Margin="5,5,5,5" Header="Informationen zum aktuell ausgewählten Dokument">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">Fenster-Titel:</Label>
+            <Label Name="labelWindowTitle" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"></Label>
+          
+            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Name der Datei:</Label>
+            <Label Name="labelFileName" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"></Label>            
+            
+            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Dokument-Typ:</Label>
+            <Label Name="labelDocumentType" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"></Label>
+          
+            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Dokument-Größe:</Label>
+            <Label Name="labelDocumentSize" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"></Label>
+          
+            <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Name der temporären Datei:</Label>
+            <Label Name="labelTempFile" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left"></Label>
+          </Grid>
+        </GroupBox>
+      <GroupBox Margin="5,5,5,5" Header="Pfad">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">für Dokumente:</Label>
+          <Label Name="labelDocumentPath" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"></Label>
+          
+          <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">für temporäre Dateien:</Label>
+          <Label Name="labelTempFilePath" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"></Label>
+        </Grid>
+      </GroupBox>
+        <Button Name="buttonClose" Margin="5,5,5,5" DockPanel.Dock="Right" Click="ButtonClose_OnClick">Schließen</Button>
+      </StackPanel>
+    </Grid>
+</Window>

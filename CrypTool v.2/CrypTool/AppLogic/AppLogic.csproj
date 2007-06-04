@@ -36,6 +36,7 @@
     <Compile Include="CaesarRot13.cs" />
     <Compile Include="CrypSymModern.cs" />
     <Compile Include="DES.cs" />
+    <Compile Include="DocProperties.cs" />
     <Compile Include="IDEA.cs" />
     <Compile Include="LanguageOptions.cs" />
     <Compile Include="MD5.cs" />

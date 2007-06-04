@@ -64,3 +64,5 @@ D:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgMain.
 D:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgTextOptions.g.cs
 D:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\App.g.cs
 D:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\GUI_MarkupCompile.cache
+D:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgDocPrefs.baml
+D:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgDocPrefs.g.cs
