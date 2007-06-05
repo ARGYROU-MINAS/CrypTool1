@@ -50,6 +50,8 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label labelTempFilePath;
         
+        internal System.Windows.Controls.Button buttonClose;
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -91,6 +93,15 @@ namespace CrypTool {
             return;
             case 7:
             this.labelTempFilePath = ((System.Windows.Controls.Label)(target));
+            return;
+            case 8:
+            this.buttonClose = ((System.Windows.Controls.Button)(target));
+            
+            #line 54 "..\..\DlgDocPrefs.xaml"
+            this.buttonClose.Click += new System.Windows.RoutedEventHandler(this.ButtonClose_OnClick);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

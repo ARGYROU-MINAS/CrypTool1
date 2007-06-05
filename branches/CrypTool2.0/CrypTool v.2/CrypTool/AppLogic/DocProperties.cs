@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace CrypToo.AppLogic
+namespace CrypTool.AppLogic
 {
     public class DocProperties
     {
+        FileInfo fileInfo;
         private String sFilePath;
 
         public DocProperties(String sFilePath)
         {
             this.sFilePath = sFilePath;
+            this.fileInfo = new FileInfo(sFilePath);
         }
 
         public String getShortFileName()
         {
-            FileInfo fileInfo = new FileInfo(this.sFilePath);
-            
+            return this.fileInfo.Name;            
         }
     }
 }

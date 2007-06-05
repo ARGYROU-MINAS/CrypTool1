@@ -25,6 +25,7 @@ namespace CrypTool
         {
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
+            getDocInfo();
         }
         private void ButtonClose_OnClick(object sender, RoutedEventArgs arg)
         {
@@ -33,12 +34,10 @@ namespace CrypTool
         private void getDocInfo()
         {
             DlgEditor dlgEditor = this._lastNotifiedForm;
-            if (dlgEditor.getHasSavePath())
-                labelFileName.Content = dlgEditor.getPlainTextPath();
-            else
-                labelDocumentPath.Content = "Neue Datei (noch nicht gesichert)";
+            CrypTool.AppLogic.DocProperties docProp = new CrypTool.AppLogic.DocProperties(dlgEditor.getPlainTextPath());
 
-            labelWindowTitle.Content = dlgEditor.getPlainTextTabTitle();
+            this.labelWindowTitle.Content = dlgEditor.getPlainTextTabTitle();
+            this.labelFileName.Content = docProp.getShortFileName();
 
         }
 
