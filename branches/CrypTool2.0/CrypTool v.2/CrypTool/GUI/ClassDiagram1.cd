@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="CrypTool.App" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App.xaml.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.DlgCaesarRot13" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DlgCaesarRot13.xaml.cs</FileName>
+      <HashCode>IAQAAAAAAAhJIAAAACAIAAAAAAQAAAAAAAAAwEAAAGA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.DlgDocPrefs" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DlgDocPrefs.xaml.cs</FileName>
+      <HashCode>IAAAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.DlgEditor">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DlgEditor.cs</FileName>
+      <HashCode>ICAAAAEAQCAIDABAAYSAACACAAgAQBABAQEAAAAwBAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.DlgHash" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DlgHash.xaml.cs</FileName>
+      <HashCode>AAAAAAAAIASAAAAAACAAAAgBAgAQgAAAAAAEQAGgQIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.DlgKeySymModern" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DlgKeySymModern.xaml.cs</FileName>
+      <HashCode>AQIBgCAAQEAACAAQACQACAAABgAAAAAAAAQAAAAAAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.DlgMain" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DlgMain.xaml.cs</FileName>
+      <HashCode>EAAAAIMAAQAAAAADACAAAEYABASACABIAAAAIJCAAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.DlgTextOptions" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DlgTextOptions.xaml.cs</FileName>
+      <HashCode>AAAAAAAIAAAAAIAAAAgAIAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrypTool.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

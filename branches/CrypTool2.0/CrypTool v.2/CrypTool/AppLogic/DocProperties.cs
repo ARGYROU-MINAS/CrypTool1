@@ -20,5 +20,37 @@ namespace CrypTool.AppLogic
         {
             return this.fileInfo.Name;            
         }
+        public String getLongFileName()
+        {
+            return this.fileInfo.FullName;
+        }
+        public String getFilePath()
+        {
+            return this.fileInfo.DirectoryName;
+        }
+        public long getFileSize()
+        {
+            return this.fileInfo.Length;
+        }
+        public FileAttributes getFileAttributes()
+        {
+            return this.fileInfo.Attributes;
+        }
+        public DateTime getFileCreationTime()
+        {
+            return this.fileInfo.CreationTime;
+        }
+        public String getFileExtension()
+        {
+            return this.fileInfo.Extension;
+        }
+        public DateTime getFileLastAccessTime()
+        {
+            return this.fileInfo.LastAccessTime;
+        }
+        public DateTime getFileLasWriteTime()
+        {
+            return this.fileInfo.LastWriteTime;
+        }
     }
 }

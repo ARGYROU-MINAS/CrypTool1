@@ -10,6 +10,7 @@ namespace CrypTool.CMD
         {
             Arguments cmdLine = new Arguments(args);
 
+            #region GETTER
             if (cmdLine["get"] != null)
             {
                 if (cmdLine["alphabet"] != null)
@@ -17,7 +18,10 @@ namespace CrypTool.CMD
                     Console.WriteLine(CrypTool.AppLogic.TextOptions.getAlphabet());
                 }
             }
+            #endregion
 
+            #region SETTER
+            #endregion
         }
     }
 }
