@@ -340,6 +340,12 @@ namespace CrypTool {
             return;
             case 10:
             this.MenuItemPrint = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 20 "..\..\DlgMain.xaml"
+            this.MenuItemPrint.Selected += new System.Windows.RoutedEventHandler(this.PrintDialog);
+            
+            #line default
+            #line hidden
             return;
             case 11:
             this.MenuItemPrintSetup = ((System.Windows.Controls.TreeViewItem)(target));

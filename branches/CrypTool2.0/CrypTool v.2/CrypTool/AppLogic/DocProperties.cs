@@ -52,5 +52,13 @@ namespace CrypTool.AppLogic
         {
             return this.fileInfo.LastWriteTime;
         }
+        public String getPathForDocuments()
+        {
+            return System.Reflection.Assembly.GetCallingAssembly().Location;
+        }
+        public String getPathForTempFiles()
+        {
+            return Path.GetTempPath();
+        }
     }
 }
