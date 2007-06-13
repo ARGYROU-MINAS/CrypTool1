@@ -88,6 +88,7 @@ namespace CrypTool
                     {
                         DlgEditor dlgEditor = new DlgEditor(this, myStream,fileInfo.FullName);
                         _childFormList.Add(dlgEditor);
+                        dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
                         dlgEditor.Show();
                     }
                     fileStream.Close();
@@ -160,6 +161,10 @@ namespace CrypTool
         {
             DlgKeySymModern dlgKeySymModern = new DlgKeySymModern(_lastNotifiedForm);
             dlgKeySymModern.Show();
+        }
+        private void PrintDialog(object sender, RoutedEventArgs e)
+        { 
+            
         }
         private void getLangItems()
         {

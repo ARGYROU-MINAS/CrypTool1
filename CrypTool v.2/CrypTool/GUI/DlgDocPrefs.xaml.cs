@@ -38,6 +38,18 @@ namespace CrypTool
 
             this.labelWindowTitle.Content = dlgEditor.getPlainTextTabTitle();
             this.labelFileName.Content = docProp.getShortFileName();
+            this.labelDocumentType.Content = docProp.getFileExtension();
+            this.labelDocumentSize.Content = docProp.getFileSize() + " bytes";
+            this.labelDocumentAttributes.Content = docProp.getFileAttributes().ToString();
+            this.labelDocumentCreationTime.Content = docProp.getFileCreationTime().ToLongDateString() + ", "
+                + docProp.getFileCreationTime().ToLongTimeString();
+            this.labelDocumentLastAccessTime.Content = docProp.getFileLastAccessTime().ToLongDateString() + ", "
+                + docProp.getFileLastAccessTime().ToLongTimeString();
+            this.labelDocumentLastWriteTime.Content = docProp.getFileLasWriteTime().ToLongDateString() + ", "
+                + docProp.getFileLasWriteTime().ToLongTimeString();
+            this.labelFilePath.Content = docProp.getFilePath();
+            this.labelDocumentPath.Content = docProp.getPathForDocuments();
+            this.labelTempFilePath.Content = docProp.getPathForTempFiles();
 
         }
 
