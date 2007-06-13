@@ -44,7 +44,17 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Label labelDocumentSize;
         
+        internal System.Windows.Controls.Label labelDocumentAttributes;
+        
+        internal System.Windows.Controls.Label labelDocumentCreationTime;
+        
+        internal System.Windows.Controls.Label labelDocumentLastAccessTime;
+        
+        internal System.Windows.Controls.Label labelDocumentLastWriteTime;
+        
         internal System.Windows.Controls.Label labelTempFile;
+        
+        internal System.Windows.Controls.Label labelFilePath;
         
         internal System.Windows.Controls.Label labelDocumentPath;
         
@@ -86,18 +96,33 @@ namespace CrypTool {
             this.labelDocumentSize = ((System.Windows.Controls.Label)(target));
             return;
             case 5:
-            this.labelTempFile = ((System.Windows.Controls.Label)(target));
+            this.labelDocumentAttributes = ((System.Windows.Controls.Label)(target));
             return;
             case 6:
-            this.labelDocumentPath = ((System.Windows.Controls.Label)(target));
+            this.labelDocumentCreationTime = ((System.Windows.Controls.Label)(target));
             return;
             case 7:
-            this.labelTempFilePath = ((System.Windows.Controls.Label)(target));
+            this.labelDocumentLastAccessTime = ((System.Windows.Controls.Label)(target));
             return;
             case 8:
+            this.labelDocumentLastWriteTime = ((System.Windows.Controls.Label)(target));
+            return;
+            case 9:
+            this.labelTempFile = ((System.Windows.Controls.Label)(target));
+            return;
+            case 10:
+            this.labelFilePath = ((System.Windows.Controls.Label)(target));
+            return;
+            case 11:
+            this.labelDocumentPath = ((System.Windows.Controls.Label)(target));
+            return;
+            case 12:
+            this.labelTempFilePath = ((System.Windows.Controls.Label)(target));
+            return;
+            case 13:
             this.buttonClose = ((System.Windows.Controls.Button)(target));
             
-            #line 54 "..\..\DlgDocPrefs.xaml"
+            #line 72 "..\..\DlgDocPrefs.xaml"
             this.buttonClose.Click += new System.Windows.RoutedEventHandler(this.ButtonClose_OnClick);
             
             #line default
