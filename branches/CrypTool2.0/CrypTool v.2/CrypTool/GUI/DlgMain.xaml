@@ -18,7 +18,8 @@
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemDocProperties" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDocProperties/@Header}" Selected="ShowDlgDocPrefs"/>
         <TreeViewItem Name="MenuItemPrint" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrint/@Header}" Selected="PrintDialog"/>
-        <TreeViewItem Name="MenuItemPrintSetup" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintSetup/@Header}"/>
+        <TreeViewItem Name="MenuItemPrintPreview" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintPreview/@Header}"/>
+        <TreeViewItem Name="MenuItemPrintSetup" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintSetup/@Header}" Selected="PrintSetup"/>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemQuit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemQuit/@Header}" Selected="CloseDlgMain"/>
       </TreeViewItem>

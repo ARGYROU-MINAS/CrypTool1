@@ -9,6 +9,7 @@
   <MenuItemSaveAs Header="Speichern als..."/>
   <MenuItemDocProperties Header="Dokument Eigenschaften..."/>
   <MenuItemPrint Header="Drucken..."/>
+  <MenuItemPrintPreview Header="Druckvorschau..."/>
   <MenuItemPrintSetup Header="Drucken einstellen..."/>
   <MenuItemQuit Header="Beenden"/>
   <MenuItemEdit Header="Bearbeiten"/>

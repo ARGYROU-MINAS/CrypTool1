@@ -31,12 +31,14 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaesarRot13.cs" />
     <Compile Include="CrypSymModern.cs" />
     <Compile Include="DES.cs" />
+    <Compile Include="DocPrint.cs" />
     <Compile Include="DocProperties.cs" />
     <Compile Include="IDEA.cs" />
     <Compile Include="LanguageOptions.cs" />
