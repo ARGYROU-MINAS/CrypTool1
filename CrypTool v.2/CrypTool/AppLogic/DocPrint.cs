@@ -2,15 +2,27 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CrypTool
+namespace CrypTool.AppLogic
 {
     public class DocPrint
     {
-        public void printDoc(String sText)
+        private string sText;
+        private System.Drawing.Printing.PrintDocument printDoc;
+
+        public DocPrint(String sText)
+        {
+            this.sText = sText;
+        }
+        public void printDoc()
         { 
         
         }
-        public void printPreview(String sText)
+        public void prinSetup()
+        {
+            System.Windows.Forms.PageSetupDialog pageSetup = new System.Windows.Forms.PageSetupDialog();
+            pageSetup.ShowDialog();
+        }
+        public void printPreview()
         {
             System.Windows.Forms.PrintPreviewDialog pPreview = new System.Windows.Forms.PrintPreviewDialog();
             pPreview.ShowDialog();

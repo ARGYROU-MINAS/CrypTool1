@@ -166,6 +166,18 @@ namespace CrypTool
         { 
             
         }
+        private void PrintDialogPreview(object sender, RoutedEventArgs e)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            CrypTool.AppLogic.DocPrint dPrint = new CrypTool.AppLogic.DocPrint();
+            dPrint.printPreview(dlgEditor.getPlainText());
+        }
+        private void PrintSetup(object sender, RoutedEventArgs e)
+        {
+            CrypTool.AppLogic.DocPrint dPrint = new CrypTool.AppLogic.DocPrint();
+            dPrint.prinSetup();
+
+        }
         private void getLangItems()
         {
             String langName;

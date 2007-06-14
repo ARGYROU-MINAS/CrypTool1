@@ -91,7 +91,6 @@
       <SubType>Code</SubType>
       <DependentUpon>DlgTextOptions.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DocPrint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DlgEditor.resx">
       <SubType>Designer</SubType>
