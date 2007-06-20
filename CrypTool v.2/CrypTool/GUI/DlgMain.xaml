@@ -7,8 +7,8 @@
     <XmlDataProvider x:Key="Lang" Source="/lng/german.xml" XPath="CrypTool"/>
   </Window.Resources>
   <DockPanel Background="WhiteSmoke">
-    <TreeView Name="Menu" VerticalAlignment="Top" DockPanel.Dock="Top" Background="WhiteSmoke">
-      <TreeViewItem Name="MenuItemFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFile/@Header}">
+    <TreeView FontSize="12" Name="Menu" VerticalAlignment="Top" DockPanel.Dock="Top" Background="WhiteSmoke">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFile/@Header}">
         <TreeViewItem Name="MenuItemNew" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemNew/@Header}"  Selected="MenuItemNew_OnClick"/>
         <TreeViewItem Name="MenuItemOpen" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOpen/@Header}" Selected="MenuItemOpen_OnClick"/>
         <TreeViewItem Name="MenuItemClose" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemClose/@Header}" Selected="MenuItemClose_OnClick"/>
@@ -17,13 +17,16 @@
         <TreeViewItem Name="MenuItemSaveAs" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSaveAs/@Header}" Selected="MenuItemSaveAs_OnClick"/>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemDocProperties" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDocProperties/@Header}" Selected="ShowDlgDocPrefs"/>
+        <TreeViewItem Name="MenuItemDocSetup" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDocSetup/@Header}" Selected="DocSetup"/>
         <TreeViewItem Name="MenuItemPrint" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrint/@Header}" Selected="PrintDialog"/>
-        <TreeViewItem Name="MenuItemPrintPreview" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintPreview/@Header}"/>
-        <TreeViewItem Name="MenuItemPrintSetup" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintSetup/@Header}" Selected="PrintSetup"/>
+        <TreeViewItem Name="MenuItemPrintPreview" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPrintPreview/@Header}" Selected="PrintDialogPreview"/>
         <!--<Separator/>-->
+        <TreeViewItem Name="MenuItemOpenFileHistory" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOpenFileHistory/@Header}">
+          
+        </TreeViewItem>
         <TreeViewItem Name="MenuItemQuit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemQuit/@Header}" Selected="CloseDlgMain"/>
       </TreeViewItem>
-      <TreeViewItem Name="MenuItemEdit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEdit/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemEdit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEdit/@Header}">
         <TreeViewItem Name="MenuItemUndo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemUndo/@Header}"/>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemCut" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCut/@Header}"/>
@@ -39,7 +42,7 @@
         <TreeViewItem Name="MenuItemShowKey" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowKey/@Header}"/>
         <TreeViewItem Name="MenuItemParentWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemParentWindow/@Header}"/>
       </TreeViewItem>
-      <TreeViewItem Name="MenuItemView" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemView/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemView" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemView/@Header}">
         <TreeViewItem Name="MenuItemToolbar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolbar/@Header}"/>
         <TreeViewItem Name="MenuItemStatusBar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStatusBar/@Header}"/>
         <!--<Separator/>-->
@@ -55,7 +58,7 @@
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemShowBox" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowBox/@Header}"/>
       </TreeViewItem>
-      <TreeViewItem Name="MenuItemEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEncryption/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEncryption/@Header}">
         <TreeViewItem Name="MenuItemSymetricClass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricClass/@Header}">
           <TreeViewItem Name="MenuItemCaesarRot13" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCaesarRot13/@Header}" Selected="ShowDlgCaesarRot13"></TreeViewItem>
           <TreeViewItem Name="MenuItemVigenere" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVigenere/@Header}"/>
@@ -81,7 +84,7 @@
           <TreeViewItem Name="MenuItemRSAAESDecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAAESDecryption/@Header}"/>
         </TreeViewItem>
       </TreeViewItem>
-      <TreeViewItem Name="MenuItemDigSignature_PKI" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDigSignature_PKI/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemDigSignature_PKI" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDigSignature_PKI/@Header}">
         <TreeViewItem Name="MenuItemPKI" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPKI/@Header}">
           <TreeViewItem Name="MenuItemKeyGenImport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyGenImport/@Header}"/>
           <TreeViewItem Name="MenuItemKeyDisplayExport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyDisplayExport/@Header}"/>
@@ -91,7 +94,7 @@
         <TreeViewItem Name="MenuItemExtractSignature" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemExtractSignature/@Header}"/>
         <TreeViewItem Name="MenuItemSignatureDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSignatureDemo/@Header}"/>
       </TreeViewItem>
-      <TreeViewItem Name="MenuItemIndivPrcedures" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndivProcedures/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemIndivPrcedures" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndivProcedures/@Header}">
         <TreeViewItem Name="MenuItemHash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}">
           <TreeViewItem Name="MenuItemGenHash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenHash/@Header}" Selected="ShowDlgHash"/>
           <!--<Separator/>-->
@@ -113,7 +116,7 @@
             <!--<Separator/>-->
         <TreeViewItem Name="MenuItemEducatGames" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEducatGames/@Header}"/>
           </TreeViewItem>
-      <TreeViewItem Name="MenuItemAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysis/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysis/@Header}">
         <TreeViewItem Name="MenuItemToolsForAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolsForAnalysis/@Header}"/>
             <!--<Separator/>-->
         <TreeViewItem Name="MenuItemSymmetricEncryptionClassic" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymmetricEncryptionClassic/@Header}"/>
@@ -122,7 +125,7 @@
         <TreeViewItem Name="MenuItemHashAnalyse" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}"/>
         <TreeViewItem Name="MenuItemAnalyseRandomness" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalyseRandomness/@Header}"/>
           </TreeViewItem>
-      <TreeViewItem Name="MenuItemOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOptions/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOptions/@Header}">
         <TreeViewItem Name="MenuItemPlotOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPlotOptions/@Header}"/>
         <TreeViewItem Name="MenuItemAnalysisOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysisOptions/@Header}"/>
         <TreeViewItem Name="MenuItemTextOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTextOptions/@Header}" Selected="ShowDlgTextOptions">
@@ -131,13 +134,13 @@
         <TreeViewItem Name="MenuItemFurtherOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFurtherOptions/@Header}"/>
         <TreeViewItem Name="MenuItemLanguage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLanguage/@Header}"/>
       </TreeViewItem>
-      <TreeViewItem Name="MenuItemWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWindow/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWindow/@Header}">
         <TreeViewItem Name="MenuItemCascade" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCascade/@Header}"/>
         <TreeViewItem Name="MenuItemTile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTile/@Header}"/>
         <TreeViewItem Name="MenuItemArrangeIcons" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemArrangeIcons/@Header}"/>
         <TreeViewItem Name="MenuItemCloseAllWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCloseAll/@Header}"/>
       </TreeViewItem>
-      <TreeViewItem Name="MenuItemHelp" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHelp/@Header}">
+      <TreeViewItem FontWeight="Bold" Name="MenuItemHelp" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHelp/@Header}">
         <TreeViewItem Name="MenuItemStartingPage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStartingPage/@Header}"/>
         <TreeViewItem Name="MenuItemIndex" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndex/@Header}"/>
         <TreeViewItem Name="MenuItemScenarios" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemScenarios/@Header}"/>
@@ -149,8 +152,8 @@
       </TreeViewItem>
     </TreeView>
     <StackPanel DockPanel.Dock="Bottom">
-      <Button>Neu</Button>
-      <Button>Beenden</Button>
+      <Button Click="MenuItemNew_OnClick">Neu</Button>
+      <Button Click="CloseDlgMain">Beenden</Button>
     </StackPanel>
 </DockPanel>
 </Window>

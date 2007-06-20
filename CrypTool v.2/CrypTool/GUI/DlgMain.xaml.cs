@@ -26,6 +26,7 @@ namespace CrypTool
         private ArrayList _childFormList = new ArrayList();
         private DlgEditor _lastNotifiedForm = null;
         System.Windows.Controls.MenuItem[] itemLang;
+        System.Drawing.Printing.PrintDocument printDoc;
 
 
         public DlgMain()
@@ -36,6 +37,8 @@ namespace CrypTool
             getLangItems();
             MarkSelectedLang();
             System.Windows.Forms.Application.EnableVisualStyles();
+            printDoc = new System.Drawing.Printing.PrintDocument();
+            getOpenFileHistoryItems();
         }
         public void updateLang()
         {
@@ -163,20 +166,30 @@ namespace CrypTool
             dlgKeySymModern.Show();
         }
         private void PrintDialog(object sender, RoutedEventArgs e)
-        { 
-            
+        {
+            System.Windows.Forms.PrintDialog pDialog = new System.Windows.Forms.PrintDialog();
+            pDialog.Document = this.printDoc;
+            if (pDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                DlgEditor dlgEditor = this._lastNotifiedForm;
+                CrypTool.AppLogic.DocPrint docPrint = new CrypTool.AppLogic.DocPrint(dlgEditor.getPlainText(), this.printDoc);
+                docPrint.PrintDoc();
+            }            
         }
         private void PrintDialogPreview(object sender, RoutedEventArgs e)
         {
-            //DlgEditor dlgEditor = this._lastNotifiedForm;
-            //CrypTool.AppLogic.DocPrint dPrint = new CrypTool.AppLogic.DocPrint();
-            //dPrint.printPreview(dlgEditor.getPlainText());
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            CrypTool.AppLogic.DocPrint docPrint = new CrypTool.AppLogic.DocPrint(dlgEditor.getPlainText(), this.printDoc);
+            
+            System.Windows.Forms.PrintPreviewDialog pPreview = new System.Windows.Forms.PrintPreviewDialog();
+            pPreview.Document = docPrint.getPrintDoc();
+            pPreview.ShowDialog();
         }
-        private void PrintSetup(object sender, RoutedEventArgs e)
+        private void DocSetup(object sender, RoutedEventArgs e)
         {
-            //CrypTool.AppLogic.DocPrint dPrint = new CrypTool.AppLogic.DocPrint();
-            //dPrint.prinSetup();
-
+            PageSetupDialog pSetup = new PageSetupDialog();
+            pSetup.PageSettings = this.printDoc.DefaultPageSettings;
+            pSetup.ShowDialog();
         }
         private void getLangItems()
         {
@@ -221,6 +234,19 @@ namespace CrypTool
             {
                 if (dlgEditor != _lastNotifiedForm)
                     dlgEditor.setNonActiveText();
+            }
+        }
+        private void getOpenFileHistoryItems()
+        {
+            CrypTool.AppLogic.OpenFileHistory openFile = new CrypTool.AppLogic.OpenFileHistory();
+            string[] openFiles = openFile.getOpenFileList();
+            System.Windows.Controls.MenuItem[] menuItemOpenFile = new System.Windows.Controls.MenuItem[openFiles.Length];
+            for (int i = 0; i < openFiles.Length; i++)
+            {
+                menuItemOpenFile[i] = new System.Windows.Controls.MenuItem();
+                menuItemOpenFile[i].Name = "menItemOpenFile" + i.ToString();
+                menuItemOpenFile[i].Header = openFiles[i];
+                this.MenuItemOpenFileHistory.Items.Add(menuItemOpenFile[i]);
             }
         }
     }
