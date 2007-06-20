@@ -8,9 +8,11 @@
   <MenuItemSave Header="Save"/>
   <MenuItemSaveAs Header="Save as..."/>
   <MenuItemDocProperties Header="Document Properties..."/>
+  <MenuItemDocSetup Header="Document Settings..."/>
   <MenuItemPrint Header="Print..."/>
   <MenuItemPrintPreview Header="Print preview..."/>
   <MenuItemPrintSetup Header="Print Setup..."/>
+  <MenuItemOpenFileHistory Header="Recently opened files"/>
   <MenuItemQuit Header="Exit"/>
   <MenuItemEdit Header="Edit"/>
   <MenuItemUndo Header="Undo"/>

@@ -43,6 +43,7 @@
     <Compile Include="IDEA.cs" />
     <Compile Include="LanguageOptions.cs" />
     <Compile Include="MD5.cs" />
+    <Compile Include="OpenFileHistory.cs" />
     <Compile Include="Rijndael.cs" />
     <Compile Include="SHA1.cs" />
     <Compile Include="SHA256.cs" />
@@ -54,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CrypTool.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
