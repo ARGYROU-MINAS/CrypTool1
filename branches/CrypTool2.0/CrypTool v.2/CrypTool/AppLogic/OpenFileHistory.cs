@@ -8,6 +8,8 @@ namespace CrypTool.AppLogic
 {
     public class OpenFileHistory
     {
+        const int nodeItems = 10;
+
         private ArrayList openFileList = new ArrayList();
 
         private void readOpenFileHistoryItems()
@@ -15,27 +17,48 @@ namespace CrypTool.AppLogic
             XmlDocument doc = new XmlDocument();
             doc.Load("CrypTool.xml");
 
-            XmlElement root = doc.DocumentElement;
+            //XmlElement root = doc.DocumentElement;
 
-            //for (int i = 0; i < openFileList.Count; i++)
-            //    this.openFileList.Add(root.SelectSingleNode("./OpenFileHistory" + i.ToString()).InnerText);
+            XmlNodeList nodeList;
 
-            this.openFileList.Add(root.SelectSingleNode("./OpenFileHistory1").InnerText);
-            //this.openFileList[0] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[1] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[2] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[3] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[4] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[5] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[6] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[7] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[8] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
-            //this.openFileList[9] = root.SelectSingleNode("./OpenFileHistory0").InnerText;
+            for (int i = 0; i < nodeItems; i++)
+            {
+                nodeList = doc.GetElementsByTagName("OpenFileHistory" + i.ToString());
+                if (nodeList[0].InnerText.Length > 0)
+                    this.openFileList.Add(nodeList[0].InnerText);
+            }
+            
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory0");
+            //if(nodeList[0].InnerText.Length > 0)
+            //    this.openFileList.Add(nodeList[0].InnerText);
+            
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory1");
+            //if(nodeList[0].in
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory2");
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory3");
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory4");
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory5");
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory6");
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory7");
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory8");
+            //this.openFileList.Add(nodeList[0].InnerText);
+            //nodeList = doc.GetElementsByTagName("OpenFileHistory9");
+            //this.openFileList.Add(nodeList[0].InnerText);
+
         }
         public string[] getOpenFileList()
         {
             readOpenFileHistoryItems();
             string[] strOpenFiles = new string[this.openFileList.Count];
+            for (int i = 0; i < this.openFileList.Count; i++)
+                strOpenFiles[i] = this.openFileList[i].ToString();
             return strOpenFiles;
         }
     }
