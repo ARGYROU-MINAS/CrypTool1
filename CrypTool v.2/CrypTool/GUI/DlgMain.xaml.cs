@@ -249,5 +249,22 @@ namespace CrypTool
                 this.MenuItemOpenFileHistory.Items.Add(menuItemOpenFile[i]);
             }
         }
+        private void openFileHistoryItem(object sender, RoutedEventArgs e)
+        {
+            String file = this.Menu.SelectedI
+
+
+                    System.IO.FileInfo fileInfo = new System.IO.FileInfo(file);
+                    System.IO.FileStream fileStream = fileInfo.OpenRead();
+                    Stream myStream = fileStream;
+                    if (null != myStream)
+                    {
+                        DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
+                        _childFormList.Add(dlgEditor);
+                        dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
+                        dlgEditor.Show();
+                    }
+                    fileStream.Close();
+        }
     }
 }
