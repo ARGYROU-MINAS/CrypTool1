@@ -238,6 +238,7 @@ namespace CrypTool
         }
         private void getOpenFileHistoryItems()
         {
+            this.MenuItemOpenFileHistory.Items.Clear();
             CrypTool.AppLogic.OpenFileHistory openFile = new CrypTool.AppLogic.OpenFileHistory();
             string[] openFiles = openFile.getOpenFileList();
             System.Windows.Controls.MenuItem[] menuItemOpenFile = new System.Windows.Controls.MenuItem[openFiles.Length];
@@ -246,25 +247,31 @@ namespace CrypTool
                 menuItemOpenFile[i] = new System.Windows.Controls.MenuItem();
                 menuItemOpenFile[i].Name = "menItemOpenFile" + i.ToString();
                 menuItemOpenFile[i].Header = openFiles[i];
+                menuItemOpenFile[i].Click += new RoutedEventHandler(this.openFileHistoryItem);
                 this.MenuItemOpenFileHistory.Items.Add(menuItemOpenFile[i]);
             }
         }
         private void openFileHistoryItem(object sender, RoutedEventArgs e)
         {
-            String file = this.Menu.SelectedI
+
+            /// Will nicht laufen, ich kann einfach nicht das selektierte Item auslesen !!!!
+            /// 
+            //System.Windows.Controls.TreeViewItem tvi = (System.Windows.Controls.TreeViewItem)(this.Menu.ItemContainerGenerator.ContainerFromItem(this.Menu.SelectedItem));
+            //System.Windows.MessageBox.Show(tvi.Header.ToString());
+            //String file = (String)tvi.Header;
 
 
-                    System.IO.FileInfo fileInfo = new System.IO.FileInfo(file);
-                    System.IO.FileStream fileStream = fileInfo.OpenRead();
-                    Stream myStream = fileStream;
-                    if (null != myStream)
-                    {
-                        DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
-                        _childFormList.Add(dlgEditor);
-                        dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
-                        dlgEditor.Show();
-                    }
-                    fileStream.Close();
+            //System.IO.FileInfo fileInfo = new System.IO.FileInfo(file);
+            //System.IO.FileStream fileStream = fileInfo.OpenRead();
+            //Stream myStream = fileStream;
+            //if (null != myStream)
+            //{
+            //    DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
+            //    _childFormList.Add(dlgEditor);
+            //    dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
+            //    dlgEditor.Show();
+            //}
+            //fileStream.Close();
         }
     }
 }

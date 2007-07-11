@@ -192,108 +192,6 @@
             Gets the length of the bytes in the byte collection.
             </summary>
         </member>
-        <member name="T:Be.Windows.Forms.ByteCollection">
-            <summary>
-            Represents a collection of bytes.
-            </summary>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.#ctor">
-            <summary>
-            Initializes a new instance of ByteCollection class.
-            </summary>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.#ctor(System.Byte[])">
-            <summary>
-            Initializes a new instance of ByteCollection class.
-            </summary>
-            <param name="bs">an array of bytes to add to collection</param>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.Add(System.Byte)">
-            <summary>
-            Adds a byte into the collection.
-            </summary>
-            <param name="b">the byte to add</param>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.AddRange(System.Byte[])">
-            <summary>
-            Adds a range of bytes to the collection.
-            </summary>
-            <param name="bs">the bytes to add</param>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.Remove(System.Byte)">
-            <summary>
-            Removes a byte from the collection.
-            </summary>
-            <param name="b">the byte to remove</param>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.RemoveRange(System.Int32,System.Int32)">
-            <summary>
-            Removes a range of bytes from the collection.
-            </summary>
-            <param name="index">the index of the start byte</param>
-            <param name="count">the count of the bytes to remove</param>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.InsertRange(System.Int32,System.Byte[])">
-            <summary>
-            Inserts a range of bytes to the collection.
-            </summary>
-            <param name="index">the index of start byte</param>
-            <param name="bs">an array of bytes to insert</param>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.GetBytes">
-            <summary>
-            Gets all bytes in the array
-            </summary>
-            <returns>an array of bytes.</returns>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.Insert(System.Int32,System.Byte)">
-            <summary>
-            Inserts a byte to the collection.
-            </summary>
-            <param name="index">the index</param>
-            <param name="b">a byte to insert</param>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.IndexOf(System.Byte)">
-            <summary>
-            Returns the index of the given byte.
-            </summary>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.Contains(System.Boolean)">
-            <summary>
-            Returns true, if the byte exists in the collection.
-            </summary>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.CopyTo(System.Byte[],System.Int32)">
-            <summary>
-            Copies the content of the collection into the given array.
-            </summary>
-        </member>
-        <member name="M:Be.Windows.Forms.ByteCollection.ToArray">
-            <summary>
-            Copies the content of the collection into an array.
-            </summary>
-            <returns>the array containing all bytes.</returns>
-        </member>
-        <member name="P:Be.Windows.Forms.ByteCollection.Item(System.Int32)">
-            <summary>
-            Gets or sets the value of a byte
-            </summary>
-        </member>
-        <member name="T:Be.Windows.Forms.Design.HexFontEditor">
-            <summary>
-            Display only fixed-piched fonts
-            </summary>
-        </member>
-        <member name="M:Be.Windows.Forms.Design.HexFontEditor.#ctor">
-            <summary>
-            Initializes an instance of HexFontEditor class.
-            </summary>
-        </member>
-        <member name="M:Be.Windows.Forms.Design.HexFontEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <summary>
-            Edits the value
-            </summary>
-        </member>
         <member name="T:Be.Windows.Forms.HexCasing">
             <summary>
             Specifies the case of hex characters in the HexBox control
@@ -1120,6 +1018,108 @@
         <member name="P:Be.Windows.Forms.FileByteProvider.WriteCollection.Item(System.Int64)">
             <summary>
             Gets or sets a byte in the collection
+            </summary>
+        </member>
+        <member name="T:Be.Windows.Forms.Design.HexFontEditor">
+            <summary>
+            Display only fixed-piched fonts
+            </summary>
+        </member>
+        <member name="M:Be.Windows.Forms.Design.HexFontEditor.#ctor">
+            <summary>
+            Initializes an instance of HexFontEditor class.
+            </summary>
+        </member>
+        <member name="M:Be.Windows.Forms.Design.HexFontEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits the value
+            </summary>
+        </member>
+        <member name="T:Be.Windows.Forms.ByteCollection">
+            <summary>
+            Represents a collection of bytes.
+            </summary>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.#ctor">
+            <summary>
+            Initializes a new instance of ByteCollection class.
+            </summary>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of ByteCollection class.
+            </summary>
+            <param name="bs">an array of bytes to add to collection</param>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.Add(System.Byte)">
+            <summary>
+            Adds a byte into the collection.
+            </summary>
+            <param name="b">the byte to add</param>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.AddRange(System.Byte[])">
+            <summary>
+            Adds a range of bytes to the collection.
+            </summary>
+            <param name="bs">the bytes to add</param>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.Remove(System.Byte)">
+            <summary>
+            Removes a byte from the collection.
+            </summary>
+            <param name="b">the byte to remove</param>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes a range of bytes from the collection.
+            </summary>
+            <param name="index">the index of the start byte</param>
+            <param name="count">the count of the bytes to remove</param>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.InsertRange(System.Int32,System.Byte[])">
+            <summary>
+            Inserts a range of bytes to the collection.
+            </summary>
+            <param name="index">the index of start byte</param>
+            <param name="bs">an array of bytes to insert</param>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.GetBytes">
+            <summary>
+            Gets all bytes in the array
+            </summary>
+            <returns>an array of bytes.</returns>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.Insert(System.Int32,System.Byte)">
+            <summary>
+            Inserts a byte to the collection.
+            </summary>
+            <param name="index">the index</param>
+            <param name="b">a byte to insert</param>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.IndexOf(System.Byte)">
+            <summary>
+            Returns the index of the given byte.
+            </summary>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.Contains(System.Boolean)">
+            <summary>
+            Returns true, if the byte exists in the collection.
+            </summary>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.CopyTo(System.Byte[],System.Int32)">
+            <summary>
+            Copies the content of the collection into the given array.
+            </summary>
+        </member>
+        <member name="M:Be.Windows.Forms.ByteCollection.ToArray">
+            <summary>
+            Copies the content of the collection into an array.
+            </summary>
+            <returns>the array containing all bytes.</returns>
+        </member>
+        <member name="P:Be.Windows.Forms.ByteCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the value of a byte
             </summary>
         </member>
     </members>
