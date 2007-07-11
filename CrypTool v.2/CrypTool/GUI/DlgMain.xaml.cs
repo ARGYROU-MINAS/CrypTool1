@@ -39,6 +39,7 @@ namespace CrypTool
             System.Windows.Forms.Application.EnableVisualStyles();
             printDoc = new System.Drawing.Printing.PrintDocument();
             getOpenFileHistoryItems();
+            ShowHowToDialog();
         }
         public void updateLang()
         {
@@ -57,7 +58,7 @@ namespace CrypTool
         }
         private void ShowDlgTextOptions(object sender, RoutedEventArgs e)
         {
-            DlgTextOptions dlgTextOptions = new DlgTextOptions();
+            DlgOptions dlgTextOptions = new DlgOptions();
             dlgTextOptions.Show();
         }
         private void MenuItemNew_OnClick(object sender, RoutedEventArgs e)
@@ -93,6 +94,9 @@ namespace CrypTool
                         _childFormList.Add(dlgEditor);
                         dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
                         dlgEditor.Show();
+                        CrypTool.AppLogic.OpenFileHistory openFile = new CrypTool.AppLogic.OpenFileHistory();
+                        openFile.inserNewFileItem(fileInfo.FullName);
+                        getOpenFileHistoryItems();
                     }
                     fileStream.Close();
                 }
@@ -253,25 +257,44 @@ namespace CrypTool
         }
         private void openFileHistoryItem(object sender, RoutedEventArgs e)
         {
-
             /// Will nicht laufen, ich kann einfach nicht das selektierte Item auslesen !!!!
             /// 
             //System.Windows.Controls.TreeViewItem tvi = (System.Windows.Controls.TreeViewItem)(this.Menu.ItemContainerGenerator.ContainerFromItem(this.Menu.SelectedItem));
             //System.Windows.MessageBox.Show(tvi.Header.ToString());
             //String file = (String)tvi.Header;
 
+            String sFile = "";
 
-            //System.IO.FileInfo fileInfo = new System.IO.FileInfo(file);
-            //System.IO.FileStream fileStream = fileInfo.OpenRead();
-            //Stream myStream = fileStream;
-            //if (null != myStream)
-            //{
-            //    DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
-            //    _childFormList.Add(dlgEditor);
-            //    dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
-            //    dlgEditor.Show();
-            //}
-            //fileStream.Close();
+            //try to open file from file history
+            try
+            {
+                System.IO.FileInfo fileInfo = new System.IO.FileInfo(sFile);
+                System.IO.FileStream fileStream = fileInfo.OpenRead();
+                Stream myStream = fileStream;
+                if (myStream != null)
+                {
+                    DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
+                    _childFormList.Add(dlgEditor);
+                    dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
+                    dlgEditor.Show();
+                }
+                fileStream.Close();
+            }
+            catch //if path not exit, dele from file history
+            {
+                CrypTool.AppLogic.OpenFileHistory openFile = new CrypTool.AppLogic.OpenFileHistory();
+                openFile.delFileItem(sFile);
+            }
+        }
+        private void ShowHowToDialog()
+        {
+            CrypTool.AppLogic.StartOptions startOptions = new CrypTool.AppLogic.StartOptions();
+            if (startOptions.getShowHowToStartDialog())
+            {
+                DlgHowTo dlgHowTo = new DlgHowTo();
+                dlgHowTo.Show();
+            }
+            
         }
     }
 }

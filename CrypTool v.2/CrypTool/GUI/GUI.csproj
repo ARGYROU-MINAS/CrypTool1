@@ -52,9 +52,10 @@
     <Page Include="DlgCaesarRot13.xaml" />
     <Page Include="DlgDocPrefs.xaml" />
     <Page Include="DlgHash.xaml" />
+    <Page Include="DlgHowTo.xaml" />
     <Page Include="DlgKeySymModern.xaml" />
     <Page Include="DlgMain.xaml" />
-    <Page Include="DlgTextOptions.xaml" />
+    <Page Include="DlgOptions.xaml" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -83,13 +84,17 @@
       <SubType>Code</SubType>
       <DependentUpon>DlgHash.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DlgHowTo.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DlgHowTo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DlgKeySymModern.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>DlgKeySymModern.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DlgTextOptions.xaml.cs">
+    <Compile Include="DlgOptions.xaml.cs">
       <SubType>Code</SubType>
-      <DependentUpon>DlgTextOptions.xaml</DependentUpon>
+      <DependentUpon>DlgOptions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DlgEditor.resx">
@@ -133,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="lng\english.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="examples\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />

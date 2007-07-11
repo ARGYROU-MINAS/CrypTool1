@@ -71,12 +71,14 @@ C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgDocPr
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgHash.baml
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgKeySymModern.baml
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgMain.baml
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgTextOptions.baml
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgCaesarRot13.g.cs
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgDocPrefs.g.cs
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgHash.g.cs
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgKeySymModern.g.cs
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgMain.g.cs
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgTextOptions.g.cs
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\App.g.cs
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\GUI_MarkupCompile.cache
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgOptions.baml
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgOptions.g.cs
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgHowTo.baml
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgHowTo.g.cs

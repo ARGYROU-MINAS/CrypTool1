@@ -12,6 +12,11 @@ namespace CrypTool.AppLogic
 
         private ArrayList openFileList = new ArrayList();
 
+        public OpenFileHistory()
+        {
+            readOpenFileHistoryItems();
+        }
+
         private void readOpenFileHistoryItems()
         {
             XmlDocument doc = new XmlDocument();
@@ -28,7 +33,6 @@ namespace CrypTool.AppLogic
         }
         public string[] getOpenFileList()
         {
-            readOpenFileHistoryItems();
             string[] strOpenFiles = new string[this.openFileList.Count];
             for (int i = 0; i < this.openFileList.Count; i++)
                 strOpenFiles[i] = this.openFileList[i].ToString();
@@ -41,19 +45,25 @@ namespace CrypTool.AppLogic
 
             XmlNodeList nodeList;
 
-            for (int i = 0; i < nodeItems; i++)
+            for (int i = 0; i < this.openFileList.Count; i++)
             {
                 nodeList = doc.GetElementsByTagName("OpenFileHistory" + i.ToString());
-                
+                nodeList[0].InnerText = this.openFileList[i].ToString();
             }
+            doc.Save("CrypTool.xml");
         }
         public void delFileItem(String sFilePath)
         {
             this.openFileList.Remove(sFilePath);
+            saveFileList();
         }
         public void inserNewFileItem(String sFilePath)
         {
+            delFileItem(sFilePath);
             this.openFileList.Insert(0, sFilePath);
+            if (this.openFileList.Count > 10)
+                this.openFileList.RemoveAt(10);
+            saveFileList();
         }
     }
 }

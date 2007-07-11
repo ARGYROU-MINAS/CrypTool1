@@ -10,19 +10,21 @@ using System.Windows.Shapes;
 namespace CrypTool
 {
     /// <summary>
-    /// Interaction logic for DlgTextOptions.xaml
+    /// Interaction logic for DlgOptions.xaml
     /// </summary>
 
-    public partial class DlgTextOptions : Window
+    public partial class DlgOptions : Window
     {
+        CrypTool.AppLogic.StartOptions startOptions;
 
-        public DlgTextOptions()
+        public DlgOptions()
         {
             InitializeComponent();
             LoadSettings();
         }
         private void LoadSettings()
         {
+            //TextOptions
             textBoxSeparator.Text = CrypTool.AppLogic.TextOptions.getTrenn();
             checkBoxUpper.IsChecked = CrypTool.AppLogic.TextOptions.getGrossVal();
             checkBoxLower.IsChecked = CrypTool.AppLogic.TextOptions.getKleinVal();
@@ -40,6 +42,11 @@ namespace CrypTool
             checkBoxDistinguishUpperLower.IsChecked = CrypTool.AppLogic.TextOptions.getCase();
             checkBoxNotInAlph.IsChecked = CrypTool.AppLogic.TextOptions.getFormat();
             checkBoxKeepUpperLower.IsChecked = CrypTool.AppLogic.TextOptions.getConvertCase();
+
+            //StartOptions
+            this.startOptions = new CrypTool.AppLogic.StartOptions();
+            this.checkBoxShowExampleDialog.IsChecked = this.startOptions.getShowExampleFile();
+            this.checkBoxShowHowToStartDialog.IsChecked = this.startOptions.getShowHowToStartDialog();
         }
         private void saveSettings()
         {
@@ -55,6 +62,11 @@ namespace CrypTool
             CrypTool.AppLogic.TextOptions.setCase((bool)checkBoxDistinguishUpperLower.IsChecked);
             CrypTool.AppLogic.TextOptions.setFormat((bool)checkBoxNotInAlph.IsChecked);
             CrypTool.AppLogic.TextOptions.setConvertCase((bool)checkBoxKeepUpperLower.IsChecked);
+
+            this.startOptions = new CrypTool.AppLogic.StartOptions();
+            this.startOptions.setShowExampleFile((bool)this.checkBoxShowExampleDialog.IsChecked);
+            this.startOptions.setShowHowToStartDialog((bool)this.checkBoxShowHowToStartDialog.IsChecked);
+            this.startOptions.saveOptions();
         }
         private void ButtonCancel_OnClick(object sender, RoutedEventArgs e)
         {
