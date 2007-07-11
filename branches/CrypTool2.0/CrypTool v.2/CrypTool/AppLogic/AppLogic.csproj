@@ -49,6 +49,7 @@
     <Compile Include="SHA256.cs" />
     <Compile Include="SHA384.cs" />
     <Compile Include="SHA512.cs" />
+    <Compile Include="StartOptions.cs" />
     <Compile Include="TextOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TripleDES.cs" />

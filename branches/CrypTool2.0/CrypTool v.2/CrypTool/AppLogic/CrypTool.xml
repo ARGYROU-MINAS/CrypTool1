@@ -13,4 +13,8 @@
     <OpenFileHistory8></OpenFileHistory8>
     <OpenFileHistory9></OpenFileHistory9>    
   </OpenFileHistory>
+  <StartOptions>
+    <ShowHowToStartDialog>1</ShowHowToStartDialog>
+    <ShowExampleFileOnStartup>1</ShowExampleFileOnStartup>
+  </StartOptions>
 </CrypTool> 
