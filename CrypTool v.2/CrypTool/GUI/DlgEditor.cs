@@ -156,5 +156,99 @@ namespace CrypTool
         {
             checkSaveStatus(true);
         }
+
+        private void menuItemUndo_Click(object sender, EventArgs e)
+        {
+            doUndo();
+        }
+        public void doUndo()
+        {
+            this.richTextBoxPlaintext.Undo();
+        }
+        public bool getUndo()
+        {
+            return this.richTextBoxPlaintext.CanUndo;
+        }
+        private void DlgEditor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            doRedo();
+        }
+        public void doRedo()
+        {
+            this.richTextBoxPlaintext.Redo();
+        }
+        public bool getRedo()
+        {
+            return this.richTextBoxPlaintext.CanRedo;
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            doCut();
+        }
+        public void doCut()
+        {
+            this.richTextBoxPlaintext.Cut();
+        }
+        public bool getCut()
+        {
+            if (this.richTextBoxPlaintext.SelectedText.Length > 0)
+                return true;
+            else
+                return false;
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            doCopy();
+        }
+        public void doCopy()
+        {
+            this.richTextBoxPlaintext.Copy();
+        }
+        public bool getCopy()
+        {
+            if (this.richTextBoxPlaintext.SelectedText.Length > 0)
+                return true;
+            else
+                return false;
+        }
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            doPaste();
+        }
+        public void doPaste()
+        {
+            this.richTextBoxPlaintext.Paste();
+        }
+        public bool getPaste()
+        {
+            DataFormats.Format pasteFormat = DataFormats.GetFormat(DataFormats.UnicodeText);
+            return this.richTextBoxPlaintext.CanPaste(pasteFormat);
+        }
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.richTextBoxPlaintext.Text = "";
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.richTextBoxPlaintext.SelectAll();
+        }
+
+
+        private void contextMenuRichTextBoxPlain_Opening(object sender, CancelEventArgs e)
+        {
+            this.redoToolStripMenuItem.Enabled = getRedo();
+            this.pasteToolStripMenuItem.Enabled = getPaste();
+            this.menuItemUndo.Enabled = getUndo();
+            this.copyToolStripMenuItem.Enabled = getCopy();
+            this.cutToolStripMenuItem.Enabled = getCut();
+        }
     }
 }

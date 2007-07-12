@@ -112,7 +112,7 @@ namespace CrypTool {
             case 1:
             this.buttonCancel = ((System.Windows.Controls.Button)(target));
             
-            #line 14 "..\..\DlgOptions.xaml"
+            #line 15 "..\..\DlgOptions.xaml"
             this.buttonCancel.Click += new System.Windows.RoutedEventHandler(this.ButtonCancel_OnClick);
             
             #line default
@@ -121,7 +121,7 @@ namespace CrypTool {
             case 2:
             this.buttonApply = ((System.Windows.Controls.Button)(target));
             
-            #line 15 "..\..\DlgOptions.xaml"
+            #line 16 "..\..\DlgOptions.xaml"
             this.buttonApply.Click += new System.Windows.RoutedEventHandler(this.ButtonApply_OnClick);
             
             #line default
@@ -193,7 +193,7 @@ namespace CrypTool {
             case 24:
             this.buttonDefault = ((System.Windows.Controls.Button)(target));
             
-            #line 40 "..\..\DlgOptions.xaml"
+            #line 41 "..\..\DlgOptions.xaml"
             this.buttonDefault.Click += new System.Windows.RoutedEventHandler(this.ButtonDefault_OnClick);
             
             #line default

@@ -25,7 +25,17 @@ namespace CrypTool
         }
         private void ButtonClose_OnClick(object sender, RoutedEventArgs arg)
         {
+            checkShowAgain();
             Close();
+        }
+        private void checkShowAgain()
+        {
+            if ((bool)this.checkBoxShowAgain.IsChecked)
+            {
+                CrypTool.AppLogic.StartOptions startOptions = new CrypTool.AppLogic.StartOptions();
+                startOptions.setShowHowToStartDialog(false);
+                startOptions.saveOptions();
+            }
         }
     }
 }

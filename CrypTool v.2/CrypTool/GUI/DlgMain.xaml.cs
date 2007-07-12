@@ -12,6 +12,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Collections;
 using System.Security.Cryptography;
+using System.Xml;
 
 
 namespace CrypTool
@@ -40,6 +41,7 @@ namespace CrypTool
             printDoc = new System.Drawing.Printing.PrintDocument();
             getOpenFileHistoryItems();
             ShowHowToDialog();
+            ShowExampleFile();
         }
         public void updateLang()
         {
@@ -296,5 +298,50 @@ namespace CrypTool
             }
             
         }
+        private void ShowExampleFile()
+        {
+            CrypTool.AppLogic.StartOptions startOptions = new CrypTool.AppLogic.StartOptions();
+            if (startOptions.getShowExampleFile())
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load("."+CrypTool.AppLogic.LanguageOptions.getSelLangFullPath());
+
+                XmlNodeList nodeList;
+
+                nodeList = doc.GetElementsByTagName("ExampleFileOnStartUp");
+
+                String sFileName = nodeList[0].InnerText;
+
+                try
+                {
+                    System.IO.FileInfo fileInfo = new System.IO.FileInfo(sFileName);
+                    System.IO.FileStream fileStream = fileInfo.OpenRead();
+                    Stream myStream = fileStream;
+                    if (myStream != null)
+                    {
+                        DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
+                        _childFormList.Add(dlgEditor);
+                        dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
+                        dlgEditor.Show();
+                    }
+                }
+                catch
+                {
+                    CrypTool.AppLogic.OpenFileHistory openFile = new CrypTool.AppLogic.OpenFileHistory();
+                    openFile.delFileItem(sFileName);
+                }
+            }
+        }
+        #region Edit-Menu
+        private void updateEditMenu()
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            this.MenuItemUndo.IsEnabled = dlgEditor.getUndo();
+            this.MenuItemRedo.IsEnabled = dlgEditor.getRedo();
+            this.MenuItemCut.IsEnabled = dlgEditor.getCut();
+            this.MenuItemCopy.IsEnabled = dlgEditor.getCopy();
+            this.MenuItemPaste.IsEnabled = dlgEditor.getPaste();
+        }
+        #endregion
     }
 }

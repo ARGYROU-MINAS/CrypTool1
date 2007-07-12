@@ -38,6 +38,8 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Button buttonClose;
         
+        internal System.Windows.Controls.CheckBox checkBoxShowAgain;
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -62,11 +64,14 @@ namespace CrypTool {
             case 1:
             this.buttonClose = ((System.Windows.Controls.Button)(target));
             
-            #line 57 "..\..\DlgHowTo.xaml"
+            #line 58 "..\..\DlgHowTo.xaml"
             this.buttonClose.Click += new System.Windows.RoutedEventHandler(this.ButtonClose_OnClick);
             
             #line default
             #line hidden
+            return;
+            case 2:
+            this.checkBoxShowAgain = ((System.Windows.Controls.CheckBox)(target));
             return;
             }
             this._contentLoaded = true;

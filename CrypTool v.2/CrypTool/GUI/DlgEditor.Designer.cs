@@ -28,11 +28,23 @@ namespace CrypTool
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePlainText = new System.Windows.Forms.TabPage();
             this.richTextBoxPlaintext = new System.Windows.Forms.RichTextBox();
+            this.contextMenuRichTextBoxPlain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuItemUndo = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPagePlainText.SuspendLayout();
+            this.contextMenuRichTextBoxPlain.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -58,6 +70,7 @@ namespace CrypTool
             // 
             // richTextBoxPlaintext
             // 
+            this.richTextBoxPlaintext.ContextMenuStrip = this.contextMenuRichTextBoxPlain;
             this.richTextBoxPlaintext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxPlaintext.Location = new System.Drawing.Point(3, 3);
             this.richTextBoxPlaintext.Name = "richTextBoxPlaintext";
@@ -65,6 +78,83 @@ namespace CrypTool
             this.richTextBoxPlaintext.TabIndex = 0;
             this.richTextBoxPlaintext.Text = "";
             this.richTextBoxPlaintext.TextChanged += new System.EventHandler(this.richTextBoxPlaintext_TextChanged);
+            // 
+            // contextMenuRichTextBoxPlain
+            // 
+            this.contextMenuRichTextBoxPlain.BindingContext = null;
+            this.contextMenuRichTextBoxPlain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemUndo,
+            this.redoToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.cutToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.selectAllToolStripMenuItem});
+            this.contextMenuRichTextBoxPlain.Name = "contextMenuRichTextBoxPlain";
+            this.contextMenuRichTextBoxPlain.Region = null;
+            this.contextMenuRichTextBoxPlain.Size = new System.Drawing.Size(153, 192);
+            this.contextMenuRichTextBoxPlain.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuRichTextBoxPlain_Opening);
+            // 
+            // menuItemUndo
+            // 
+            this.menuItemUndo.Name = "menuItemUndo";
+            this.menuItemUndo.Size = new System.Drawing.Size(152, 22);
+            this.menuItemUndo.Text = "Undo";
+            this.menuItemUndo.Click += new System.EventHandler(this.menuItemUndo_Click);
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Text = "Cut";
+            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // selectAllToolStripMenuItem
+            // 
+            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.selectAllToolStripMenuItem.Text = "Select All";
+            this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
             // 
             // DlgEditor
             // 
@@ -75,8 +165,10 @@ namespace CrypTool
             this.Name = "DlgEditor";
             this.Text = "DlgEditor";
             this.Activated += new System.EventHandler(this.DlgEditor_Activated);
+            this.Load += new System.EventHandler(this.DlgEditor_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPagePlainText.ResumeLayout(false);
+            this.contextMenuRichTextBoxPlain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -86,5 +178,15 @@ namespace CrypTool
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePlainText;
         private System.Windows.Forms.RichTextBox richTextBoxPlaintext;
+        private System.Windows.Forms.ContextMenuStrip contextMenuRichTextBoxPlain;
+        private System.Windows.Forms.ToolStripMenuItem menuItemUndo;
+        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
     }
 }
