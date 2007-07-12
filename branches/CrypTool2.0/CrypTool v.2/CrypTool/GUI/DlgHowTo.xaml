@@ -1,9 +1,10 @@
 ﻿<Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
     x:Class="CrypTool.DlgHowTo"
-    Title="CrypTool" Height="320" Width="480"
-    Background="#FF972B2B" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    Title="Wie Sie starten" Height="320" Width="480"
+    Background="#FF972B2B"
     >
     <Grid>
     	<Grid.Background>
@@ -43,17 +44,25 @@
     		<ColumnDefinition Width="0*"/>
     		<ColumnDefinition Width="*"/>
     	</Grid.ColumnDefinitions>
-    	<TextBlock RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" Margin="-21.558,107.236,-1.723,120.841" Grid.ColumnSpan="2" FontSize="48" FontWeight="Bold" TextWrapping="Wrap">
+    	<TextBlock RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" Margin="-13.558,83.236,-9.723,144.841" Grid.ColumnSpan="2" FontSize="48" FontWeight="Bold" TextWrapping="Wrap">
     		<TextBlock.RenderTransform>
     			<TransformGroup>
     				<ScaleTransform ScaleX="1" ScaleY="1"/>
     				<SkewTransform AngleX="0" AngleY="0"/>
-    				<RotateTransform Angle="-31.01"/>
+    				<RotateTransform Angle="-27.014"/>
     				<TranslateTransform X="0" Y="0"/>
     			</TransformGroup>
     		</TextBlock.RenderTransform>
     		<Run Language="de-de">CrypTool - HowTo ...</Run>
     	</TextBlock>
     	<Button Click="ButtonClose_OnClick" HorizontalAlignment="Right" Margin="0,0,8,8" x:Name="buttonClose" VerticalAlignment="Bottom" Width="111" Height="30" Content="Schließen" Grid.Column="1"/>
-    </Grid>
+    <CheckBox Grid.Column="1" Height="18.106" Margin="8,0,132.93,13.947" Name="checkBoxShowAgain" VerticalAlignment="Bottom" Content="Diesen Dialog in Zukunft nicht mehr zeigen." >
+    	<CheckBox.Foreground>
+    		<LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+    			<GradientStop Color="#FF000000" Offset="0.716"/>
+    			<GradientStop Color="#FFFFFFFF" Offset="0.798"/>
+    		</LinearGradientBrush>
+    	</CheckBox.Foreground>
+</CheckBox>
+  </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CrypTool>
+	<ExampleFileOnStartUp>.\examples\Startingexample-en.txt</ExampleFileOnStartUp>
   <MenuItemFile Header="File"/>
   <MenuItemNew Header="New"/>
   <MenuItemOpen Header="Open"/>

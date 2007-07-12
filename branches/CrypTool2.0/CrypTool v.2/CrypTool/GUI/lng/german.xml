@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CrypTool>
+  <ExampleFileOnStartUp>.\examples\Startbeispiel-de.txt</ExampleFileOnStartUp>
   <MenuItemFile Header="Datei"/>
   <MenuItemNew Header="Neu"/>
   <MenuItemOpen Header="Öffnen"/>
@@ -16,6 +17,7 @@
   <MenuItemQuit Header="Beenden"/>
   <MenuItemEdit Header="Bearbeiten"/>
   <MenuItemUndo Header="Rückgängig"/>
+  <MenuItemRedo Header="Wiederherstellen"/>
   <MenuItemCut Header="Ausschneiden"/>
   <MenuItemCopy Header="Kopieren"/>
   <MenuItemPaste Header="Einfügen"/>
