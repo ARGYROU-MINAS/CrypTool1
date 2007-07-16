@@ -15,6 +15,7 @@ namespace CrypTool
         private string DlgText;
         private bool hasSavePath; //true: file hast save path
         private string sPlainTextPath;
+        private RichTextBoxFinds FindOptions = RichTextBoxFinds.None;
 
         public DlgEditor(DlgMain _MainForm,string Title)
         {
@@ -255,9 +256,42 @@ namespace CrypTool
         #endregion
 
         #region Find/Replace
-        public void finText(String strFindText)
+        public void findText(String strFindText)
         {
-            this.richTextBoxPlaintext.Find(strFindText);
+            int startIndex;
+            int endIndex;
+
+            if ((this.FindOptions & RichTextBoxFinds.Reverse) == RichTextBoxFinds.Reverse)
+            {
+                startIndex = 0;
+                endIndex = this.richTextBoxPlaintext.SelectionStart;
+            }
+            else
+            {
+                startIndex = this.richTextBoxPlaintext.SelectionStart + this.richTextBoxPlaintext.SelectionLength;
+                endIndex = this.richTextBoxPlaintext.Text.Length;
+            }
+            int findIndex = this.richTextBoxPlaintext.Find(strFindText, startIndex, endIndex, this.FindOptions);
+
+            if (findIndex >= 0)
+            {
+                this.richTextBoxPlaintext.Select(findIndex, strFindText.Length);
+                this.richTextBoxPlaintext.Focus();
+            }
+            else
+            {
+                MessageBox.Show("No more occurences found", "Find complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public void setFindOptions(bool MatchCase, bool WholeWords, bool Reverse)
+        {
+            this.FindOptions = RichTextBoxFinds.None;
+            if (MatchCase)
+                this.FindOptions |= RichTextBoxFinds.MatchCase;
+            if (WholeWords)
+                this.FindOptions |= RichTextBoxFinds.WholeWord;
+            if (Reverse)
+                this.FindOptions |= RichTextBoxFinds.Reverse;
         }
         #endregion
     }

@@ -28,7 +28,8 @@ namespace CrypTool
         private void ButtonFind_OnClick(object sender, RoutedEventArgs arg)
         {
             DlgEditor dlgEditor = this._lastNotifiedForm;
-            dlgEditor.finText(this.ComboBoxFind.Text);
+            dlgEditor.setFindOptions((bool)CheckBoxMatchCase.IsChecked, (bool)CheckBoxWholeWords.IsChecked, (bool)CheckBoxFindReverse.IsChecked);
+            dlgEditor.findText(this.ComboBoxFind.Text);
         }
         private void ButtonReplace_OnClick(object sender, RoutedEventArgs arg)
         {
