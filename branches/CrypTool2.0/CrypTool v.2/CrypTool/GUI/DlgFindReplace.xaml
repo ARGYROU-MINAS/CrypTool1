@@ -9,15 +9,15 @@
         
     	<Label HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Content="Suchen:"/>
     	<Label HorizontalAlignment="Left" Margin="8,36.107,0,0" VerticalAlignment="Top" Content="Ersetzen:"/>
-    	<ComboBox Margin="96,12,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxFind"/>
-    	<ComboBox Margin="96,40.107,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxReplace"/>
+    	<ComboBox Margin="96,12,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxFind" IsEditable="True"/>
+    	<ComboBox Margin="96,40.107,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxReplace" IsEditable="True"/>
     	<Button d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,10,17.35,0" x:Name="ButtonFind" VerticalAlignment="Top" Height="Auto" Content="Suchen" Click="ButtonFind_OnClick"/>
     	<Button Content="Ersetzen" HorizontalAlignment="Right" Margin="0,38.107,9.257,0" x:Name="ButtonReplace" VerticalAlignment="Top" Click="ButtonReplace_OnClick"/>
     	<Button Content="Alle ersetzen" HorizontalAlignment="Right" Margin="0,92,8,0" x:Name="ButtonReplaceAll" VerticalAlignment="Top" Click="ButtonReplaceAll_OnClick"/>
     	<Button Content="Abbrechen" d:LayoutOverrides="Height" HorizontalAlignment="Right" Margin="0,0,8,11.893" x:Name="ButtonCancel" VerticalAlignment="Bottom" Click="ButtonCancel_OnClick"/>
-    	<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,97.893" VerticalAlignment="Bottom" Content="Groß-/Kleinschreibung beachten" x:Name="CheckBoxCaseSensitive"/>
-    	<CheckBox Content="Suchrichtung umkehren" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,75.786" VerticalAlignment="Bottom" x:Name="CheckBoxFindBackword"/>
-    	<CheckBox Content="Reguläre Ausdrücke im Suchfeld erlauben" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,53.68" VerticalAlignment="Bottom" x:Name="CheckBoxRegularExpressions"/>
+    	<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,97.893" VerticalAlignment="Bottom" Content="Groß-/Kleinschreibung beachten" x:Name="CheckBoxMatchCase"/>
+    	<CheckBox Content="Suchrichtung umkehren" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,75.786" VerticalAlignment="Bottom" x:Name="CheckBoxFindReverse"/>
+    	<CheckBox Content="Reguläre Ausdrücke im Suchfeld erlauben" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,53.68" VerticalAlignment="Bottom" x:Name="CheckBoxWholeWords"/>
         
     </Grid>
 </Window>

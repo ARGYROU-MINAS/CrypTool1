@@ -48,11 +48,11 @@ namespace CrypTool {
         
         internal System.Windows.Controls.Button ButtonCancel;
         
-        internal System.Windows.Controls.CheckBox CheckBoxCaseSensitive;
+        internal System.Windows.Controls.CheckBox CheckBoxMatchCase;
         
-        internal System.Windows.Controls.CheckBox CheckBoxFindBackword;
+        internal System.Windows.Controls.CheckBox CheckBoxFindReverse;
         
-        internal System.Windows.Controls.CheckBox CheckBoxRegularExpressions;
+        internal System.Windows.Controls.CheckBox CheckBoxWholeWords;
         
         private bool _contentLoaded;
         
@@ -118,13 +118,13 @@ namespace CrypTool {
             #line hidden
             return;
             case 7:
-            this.CheckBoxCaseSensitive = ((System.Windows.Controls.CheckBox)(target));
+            this.CheckBoxMatchCase = ((System.Windows.Controls.CheckBox)(target));
             return;
             case 8:
-            this.CheckBoxFindBackword = ((System.Windows.Controls.CheckBox)(target));
+            this.CheckBoxFindReverse = ((System.Windows.Controls.CheckBox)(target));
             return;
             case 9:
-            this.CheckBoxRegularExpressions = ((System.Windows.Controls.CheckBox)(target));
+            this.CheckBoxWholeWords = ((System.Windows.Controls.CheckBox)(target));
             return;
             }
             this._contentLoaded = true;
