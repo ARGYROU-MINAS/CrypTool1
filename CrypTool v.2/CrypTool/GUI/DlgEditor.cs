@@ -157,6 +157,7 @@ namespace CrypTool
             checkSaveStatus(true);
         }
 
+        #region Edit Menu
         private void menuItemUndo_Click(object sender, EventArgs e)
         {
             doUndo();
@@ -169,11 +170,6 @@ namespace CrypTool
         {
             return this.richTextBoxPlaintext.CanUndo;
         }
-        private void DlgEditor_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             doRedo();
@@ -233,15 +229,21 @@ namespace CrypTool
         }
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            doDelete();
+        }
+        public void doDelete()
+        {
             this.richTextBoxPlaintext.Text = "";
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            doSelectAll();
+        }
+        public void doSelectAll()
+        {
             this.richTextBoxPlaintext.SelectAll();
         }
-
-
         private void contextMenuRichTextBoxPlain_Opening(object sender, CancelEventArgs e)
         {
             this.redoToolStripMenuItem.Enabled = getRedo();
@@ -250,5 +252,13 @@ namespace CrypTool
             this.copyToolStripMenuItem.Enabled = getCopy();
             this.cutToolStripMenuItem.Enabled = getCut();
         }
+        #endregion
+
+        #region Find/Replace
+        public void finText(String strFindText)
+        {
+            this.richTextBoxPlaintext.Find(strFindText);
+        }
+        #endregion
     }
 }

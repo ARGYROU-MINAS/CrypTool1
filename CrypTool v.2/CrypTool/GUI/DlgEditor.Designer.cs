@@ -165,7 +165,6 @@ namespace CrypTool
             this.Name = "DlgEditor";
             this.Text = "DlgEditor";
             this.Activated += new System.EventHandler(this.DlgEditor_Activated);
-            this.Load += new System.EventHandler(this.DlgEditor_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPagePlainText.ResumeLayout(false);
             this.contextMenuRichTextBoxPlain.ResumeLayout(false);

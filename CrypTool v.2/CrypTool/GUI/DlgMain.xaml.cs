@@ -342,6 +342,51 @@ namespace CrypTool
             this.MenuItemCopy.IsEnabled = dlgEditor.getCopy();
             this.MenuItemPaste.IsEnabled = dlgEditor.getPaste();
         }
+        private void doUndo(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.doUndo();
+        }
+        private void doRedo(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.doRedo();
+        }
+        private void doCut(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.doCut();
+        }
+        private void doCopy(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.doCopy();
+        }
+        private void doPaste(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.doPaste();
+        }
+        private void doDelete(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.doDelete();
+        }
+        private void doSelectAll(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.doSelectAll();
+        }
+        private void showKeyDialog(object sender, RoutedEventArgs arg)
+        {
+            DlgShowKey dlgShowKey = new DlgShowKey();
+            dlgShowKey.Show();
+        }
+        private void showDialogFindReplace(object sender, RoutedEventArgs arg)
+        {
+            DlgFindReplace dlgFindReplace = new DlgFindReplace(this._lastNotifiedForm);
+            dlgFindReplace.Show();
+        }
         #endregion
     }
 }
