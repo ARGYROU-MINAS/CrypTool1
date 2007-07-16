@@ -82,3 +82,7 @@ C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgOptio
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgOptions.g.cs
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgHowTo.baml
 C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgHowTo.g.cs
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgShowKey.baml
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgShowKey.g.cs
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgFindReplace.baml
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypTool v.2\CrypTool\GUI\obj\Debug\DlgFindReplace.g.cs

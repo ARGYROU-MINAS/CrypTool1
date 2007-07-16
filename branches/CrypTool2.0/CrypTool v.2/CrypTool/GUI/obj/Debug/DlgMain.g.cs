@@ -388,33 +388,87 @@ namespace CrypTool {
             return;
             case 16:
             this.MenuItemUndo = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 37 "..\..\DlgMain.xaml"
+            this.MenuItemUndo.Selected += new System.Windows.RoutedEventHandler(this.doUndo);
+            
+            #line default
+            #line hidden
             return;
             case 17:
             this.MenuItemRedo = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 38 "..\..\DlgMain.xaml"
+            this.MenuItemRedo.Selected += new System.Windows.RoutedEventHandler(this.doRedo);
+            
+            #line default
+            #line hidden
             return;
             case 18:
             this.MenuItemCut = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 40 "..\..\DlgMain.xaml"
+            this.MenuItemCut.Selected += new System.Windows.RoutedEventHandler(this.doCut);
+            
+            #line default
+            #line hidden
             return;
             case 19:
             this.MenuItemCopy = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 41 "..\..\DlgMain.xaml"
+            this.MenuItemCopy.Selected += new System.Windows.RoutedEventHandler(this.doCopy);
+            
+            #line default
+            #line hidden
             return;
             case 20:
             this.MenuItemPaste = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 42 "..\..\DlgMain.xaml"
+            this.MenuItemPaste.Selected += new System.Windows.RoutedEventHandler(this.doPaste);
+            
+            #line default
+            #line hidden
             return;
             case 21:
             this.MenuItemDelete = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 43 "..\..\DlgMain.xaml"
+            this.MenuItemDelete.Selected += new System.Windows.RoutedEventHandler(this.doDelete);
+            
+            #line default
+            #line hidden
             return;
             case 22:
             this.MenuItemFindReplace = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 45 "..\..\DlgMain.xaml"
+            this.MenuItemFindReplace.Selected += new System.Windows.RoutedEventHandler(this.showDialogFindReplace);
+            
+            #line default
+            #line hidden
             return;
             case 23:
             this.MenuItemFindNext = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 24:
             this.MenuItemSelAll = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 48 "..\..\DlgMain.xaml"
+            this.MenuItemSelAll.Selected += new System.Windows.RoutedEventHandler(this.doSelectAll);
+            
+            #line default
+            #line hidden
             return;
             case 25:
             this.MenuItemShowKey = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 50 "..\..\DlgMain.xaml"
+            this.MenuItemShowKey.Selected += new System.Windows.RoutedEventHandler(this.showKeyDialog);
+            
+            #line default
+            #line hidden
             return;
             case 26:
             this.MenuItemParentWindow = ((System.Windows.Controls.TreeViewItem)(target));

@@ -46,11 +46,16 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.IdentityModel" />
+    <Page Include="DlgShowKey.xaml" />
+    <Compile Include="DlgShowKey.xaml.cs">
+      <DependentUpon>DlgShowKey.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
     <Page Include="DlgCaesarRot13.xaml" />
     <Page Include="DlgDocPrefs.xaml" />
+    <Page Include="DlgFindReplace.xaml" />
     <Page Include="DlgHash.xaml" />
     <Page Include="DlgHowTo.xaml" />
     <Page Include="DlgKeySymModern.xaml" />
@@ -78,7 +83,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DlgEditor.Designer.cs">
-      <DependentUpon>DlgEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DlgFindReplace.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DlgFindReplace.xaml</DependentUpon>
     </Compile>
     <Compile Include="DlgHash.xaml.cs">
       <SubType>Code</SubType>

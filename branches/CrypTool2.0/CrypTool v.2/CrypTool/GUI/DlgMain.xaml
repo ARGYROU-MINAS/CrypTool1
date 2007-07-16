@@ -34,21 +34,21 @@
         <TreeViewItem Name="MenuItemQuit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemQuit/@Header}" Selected="CloseDlgMain"/>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemEdit" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEdit/@Header}">
-        <TreeViewItem Name="MenuItemUndo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemUndo/@Header}"/>
-        <TreeViewItem Name="MenuItemRedo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRedo/@Header}"/>
+        <TreeViewItem Name="MenuItemUndo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemUndo/@Header}" Selected="doUndo"/>
+        <TreeViewItem Name="MenuItemRedo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRedo/@Header}" Selected="doRedo"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemCut" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCut/@Header}"/>
-        <TreeViewItem Name="MenuItemCopy" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCopy/@Header}"/>
-        <TreeViewItem Name="MenuItemPaste" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPaste/@Header}"/>
-        <TreeViewItem Name="MenuItemDelete" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDelete/@Header}"/>
+        <TreeViewItem Name="MenuItemCut" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCut/@Header}" Selected="doCut"/>
+        <TreeViewItem Name="MenuItemCopy" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCopy/@Header}" Selected="doCopy"/>
+        <TreeViewItem Name="MenuItemPaste" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPaste/@Header}" Selected="doPaste"/>
+        <TreeViewItem Name="MenuItemDelete" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDelete/@Header}" Selected="doDelete"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemFindReplace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindReplace/@Header}"/>
+        <TreeViewItem Name="MenuItemFindReplace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindReplace/@Header}" Selected="showDialogFindReplace"/>
         <TreeViewItem Name="MenuItemFindNext" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindNext/@Header}"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemSelAll" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSelAll/@Header}"/>
+        <TreeViewItem Name="MenuItemSelAll" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSelAll/@Header}" Selected="doSelectAll"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemShowKey" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowKey/@Header}"/>
-        <TreeViewItem Name="MenuItemParentWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemParentWindow/@Header}"/>
+        <TreeViewItem Name="MenuItemShowKey" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowKey/@Header}" Selected="showKeyDialog"/>
+        <TreeViewItem Name="MenuItemParentWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemParentWindow/@Header}" IsEnabled="False"/>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemView" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemView/@Header}">
         <TreeViewItem Name="MenuItemToolbar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolbar/@Header}"/>

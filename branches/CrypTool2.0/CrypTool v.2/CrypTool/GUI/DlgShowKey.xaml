@@ -1,0 +1,14 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="CrypTool.DlgShowKey"
+	x:Name="Window"
+	Title="Schlüssel"
+	Width="640" Height="314" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+	<Grid x:Name="LayoutRoot">
+		<GroupBox Margin="8,8,8,40" Header="Schlüssel"/>
+		<Button d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,0,82.877,6" VerticalAlignment="Bottom" Height="30" Content="Schlüssel kopieren" Click="ButtonCopyKey_OnClick"/>
+		<Button d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,0,8,6" VerticalAlignment="Bottom" Height="30" Content="Schließen" Click="ButtonClose_OnClick"/>
+	</Grid>
+</Window>
