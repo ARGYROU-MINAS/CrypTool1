@@ -387,6 +387,12 @@ namespace CrypTool
             DlgFindReplace dlgFindReplace = new DlgFindReplace(this._lastNotifiedForm);
             dlgFindReplace.Show();
         }
+        private void findNext(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.findText(CrypTool.AppLogic.GlobalValues.getCurrentSearchValue());
+            dlgEditor.Focus();
+        }
         #endregion
     }
 }

@@ -451,6 +451,12 @@ namespace CrypTool {
             return;
             case 23:
             this.MenuItemFindNext = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 46 "..\..\DlgMain.xaml"
+            this.MenuItemFindNext.Selected += new System.Windows.RoutedEventHandler(this.findNext);
+            
+            #line default
+            #line hidden
             return;
             case 24:
             this.MenuItemSelAll = ((System.Windows.Controls.TreeViewItem)(target));

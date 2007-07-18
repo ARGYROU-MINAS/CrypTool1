@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections;
 
 namespace CrypTool
 {
@@ -24,6 +25,8 @@ namespace CrypTool
         {
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
+            getSeachValues();
+            getReplaceValues();
         }
         private void ButtonFind_OnClick(object sender, RoutedEventArgs arg)
         {
@@ -33,15 +36,30 @@ namespace CrypTool
         }
         private void ButtonReplace_OnClick(object sender, RoutedEventArgs arg)
         {
-
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.replaceText(this.ComboBoxReplace.Text);
+            dlgEditor.findText(this.ComboBoxFind.Text);
         }
         private void ButtonReplaceAll_OnClick(object sender, RoutedEventArgs arg)
         {
-
+            DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.replaceAllText(this.ComboBoxReplace.Text, this.ComboBoxFind.Text);
         }
         private void ButtonCancel_OnClick(object sender, RoutedEventArgs arg)
         {
             Close();
+        }
+        private void getSeachValues()
+        {
+            for (int i = 0; i < CrypTool.AppLogic.GlobalValues.getSearchValues().Count; i++)
+                this.ComboBoxFind.Items.Add(CrypTool.AppLogic.GlobalValues.getSearchValues()[i].ToString());
+            this.ComboBoxFind.SelectedIndex = 0;
+        }
+        private void getReplaceValues()
+        {
+            for (int i = 0; i < CrypTool.AppLogic.GlobalValues.getReplaceValues().Count; i++)
+                this.ComboBoxFind.Items.Add(CrypTool.AppLogic.GlobalValues.getReplaceValues()[i].ToString());
+            this.ComboBoxReplace.SelectedIndex = 0;
         }
     }
 }
