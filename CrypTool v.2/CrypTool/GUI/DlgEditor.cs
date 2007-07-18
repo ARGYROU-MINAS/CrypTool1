@@ -258,6 +258,8 @@ namespace CrypTool
         #region Find/Replace
         public void findText(String strFindText)
         {
+            CrypTool.AppLogic.GlobalValues.addSearchValue(strFindText);
+
             int startIndex;
             int endIndex;
 
@@ -292,6 +294,16 @@ namespace CrypTool
                 this.FindOptions |= RichTextBoxFinds.WholeWord;
             if (Reverse)
                 this.FindOptions |= RichTextBoxFinds.Reverse;
+        }
+        public void replaceText(String strReplaceText)
+        {
+            this.richTextBoxPlaintext.SelectedText = strReplaceText;
+            this.richTextBoxPlaintext.Focus();
+        }
+        public void replaceAllText(String strReplaceText, String strFindText)
+        {
+            this.richTextBoxPlaintext.Text.Replace(strFindText, strReplaceText);
+            this.richTextBoxPlaintext.Focus();
         }
         #endregion
     }

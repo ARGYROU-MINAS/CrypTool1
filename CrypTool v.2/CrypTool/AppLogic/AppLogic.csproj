@@ -40,6 +40,7 @@
     <Compile Include="DES.cs" />
     <Compile Include="DocPrint.cs" />
     <Compile Include="DocProperties.cs" />
+    <Compile Include="GlobalValues.cs" />
     <Compile Include="IDEA.cs" />
     <Compile Include="LanguageOptions.cs" />
     <Compile Include="MD5.cs" />

@@ -43,7 +43,7 @@
         <TreeViewItem Name="MenuItemDelete" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDelete/@Header}" Selected="doDelete"/>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemFindReplace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindReplace/@Header}" Selected="showDialogFindReplace"/>
-        <TreeViewItem Name="MenuItemFindNext" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindNext/@Header}"/>
+        <TreeViewItem Name="MenuItemFindNext" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFindNext/@Header}" Selected="findNext"/>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemSelAll" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSelAll/@Header}" Selected="doSelectAll"/>
         <!--<Separator/>-->
