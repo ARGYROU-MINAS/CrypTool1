@@ -15,9 +15,13 @@
     	<Button Content="Ersetzen" HorizontalAlignment="Right" Margin="0,38.107,9.257,0" x:Name="ButtonReplace" VerticalAlignment="Top" Click="ButtonReplace_OnClick"/>
     	<Button Content="Alle ersetzen" HorizontalAlignment="Right" Margin="0,92,8,0" x:Name="ButtonReplaceAll" VerticalAlignment="Top" Click="ButtonReplaceAll_OnClick"/>
     	<Button Content="Abbrechen" d:LayoutOverrides="Height" HorizontalAlignment="Right" Margin="0,0,8,11.893" x:Name="ButtonCancel" VerticalAlignment="Bottom" Click="ButtonCancel_OnClick"/>
-    	<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,97.893" VerticalAlignment="Bottom" Content="Groß-/Kleinschreibung beachten" x:Name="CheckBoxMatchCase"/>
-    	<CheckBox Content="Suchrichtung umkehren" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,75.786" VerticalAlignment="Bottom" x:Name="CheckBoxFindReverse"/>
-    	<CheckBox Content="Reguläre Ausdrücke im Suchfeld erlauben" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,53.68" VerticalAlignment="Bottom" x:Name="CheckBoxWholeWords"/>
+    	<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,97.893" VerticalAlignment="Bottom" Content="Groß-/Kleinschreibung beachten" x:Name="CheckBoxMatchCase" Click="setFirstFind"/>
+    	<CheckBox Content="Suchrichtung umkehren" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,75.786" VerticalAlignment="Bottom" x:Name="CheckBoxFindReverse" Click="setFirstFind"/>
+    	<CheckBox Content="Reguläre Ausdrücke im Suchfeld erlauben" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,53.68" VerticalAlignment="Bottom" x:Name="CheckBoxRegularExpression" Click="setFirstFind"/>
+        
+    	<CheckBox Content="Platzhalter erlauben" x:Name="checkBoxUseWildcards" d:LayoutOverrides="Width" Margin="8,0,179.46,31.573" VerticalAlignment="Bottom" Click="setFirstFind"/>
+        
+    	<CheckBox Content="Gesamten Wörter" x:Name="checkBoxWholeWords" d:LayoutOverrides="Width" Margin="8,0,179.46,9.466" VerticalAlignment="Bottom" Click="setFirstFind"/>
         
     </Grid>
 </Window>

@@ -25,20 +25,20 @@ namespace CrypTool
         {
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
-            getSeachValues();
+            getSearchValues();
             getReplaceValues();
         }
         private void ButtonFind_OnClick(object sender, RoutedEventArgs arg)
         {
             DlgEditor dlgEditor = this._lastNotifiedForm;
-            dlgEditor.setFindOptions((bool)CheckBoxMatchCase.IsChecked, (bool)CheckBoxWholeWords.IsChecked, (bool)CheckBoxFindReverse.IsChecked);
+            dlgEditor.setFindOptions((bool)CheckBoxMatchCase.IsChecked, (bool)CheckBoxFindReverse.IsChecked,
+                (bool)CheckBoxRegularExpression.IsChecked, (bool)checkBoxUseWildcards.IsChecked, (bool)checkBoxWholeWords.IsChecked);
             dlgEditor.findText(this.ComboBoxFind.Text);
         }
         private void ButtonReplace_OnClick(object sender, RoutedEventArgs arg)
         {
             DlgEditor dlgEditor = this._lastNotifiedForm;
-            dlgEditor.replaceText(this.ComboBoxReplace.Text);
-            dlgEditor.findText(this.ComboBoxFind.Text);
+            dlgEditor.replaceText(this.ComboBoxFind.Text, this.ComboBoxReplace.Text);
         }
         private void ButtonReplaceAll_OnClick(object sender, RoutedEventArgs arg)
         {
@@ -49,7 +49,7 @@ namespace CrypTool
         {
             Close();
         }
-        private void getSeachValues()
+        private void getSearchValues()
         {
             for (int i = 0; i < CrypTool.AppLogic.GlobalValues.getSearchValues().Count; i++)
                 this.ComboBoxFind.Items.Add(CrypTool.AppLogic.GlobalValues.getSearchValues()[i].ToString());
@@ -60,6 +60,11 @@ namespace CrypTool
             for (int i = 0; i < CrypTool.AppLogic.GlobalValues.getReplaceValues().Count; i++)
                 this.ComboBoxFind.Items.Add(CrypTool.AppLogic.GlobalValues.getReplaceValues()[i].ToString());
             this.ComboBoxReplace.SelectedIndex = 0;
+        }
+        private void setFirstFind(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setFirstFind();
         }
     }
 }
