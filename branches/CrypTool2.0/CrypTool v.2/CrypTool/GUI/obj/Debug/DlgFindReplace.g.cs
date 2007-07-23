@@ -52,7 +52,11 @@ namespace CrypTool {
         
         internal System.Windows.Controls.CheckBox CheckBoxFindReverse;
         
-        internal System.Windows.Controls.CheckBox CheckBoxWholeWords;
+        internal System.Windows.Controls.CheckBox CheckBoxRegularExpression;
+        
+        internal System.Windows.Controls.CheckBox checkBoxUseWildcards;
+        
+        internal System.Windows.Controls.CheckBox checkBoxWholeWords;
         
         private bool _contentLoaded;
         
@@ -119,12 +123,48 @@ namespace CrypTool {
             return;
             case 7:
             this.CheckBoxMatchCase = ((System.Windows.Controls.CheckBox)(target));
+            
+            #line 18 "..\..\DlgFindReplace.xaml"
+            this.CheckBoxMatchCase.Click += new System.Windows.RoutedEventHandler(this.setFirstFind);
+            
+            #line default
+            #line hidden
             return;
             case 8:
             this.CheckBoxFindReverse = ((System.Windows.Controls.CheckBox)(target));
+            
+            #line 19 "..\..\DlgFindReplace.xaml"
+            this.CheckBoxFindReverse.Click += new System.Windows.RoutedEventHandler(this.setFirstFind);
+            
+            #line default
+            #line hidden
             return;
             case 9:
-            this.CheckBoxWholeWords = ((System.Windows.Controls.CheckBox)(target));
+            this.CheckBoxRegularExpression = ((System.Windows.Controls.CheckBox)(target));
+            
+            #line 20 "..\..\DlgFindReplace.xaml"
+            this.CheckBoxRegularExpression.Click += new System.Windows.RoutedEventHandler(this.setFirstFind);
+            
+            #line default
+            #line hidden
+            return;
+            case 10:
+            this.checkBoxUseWildcards = ((System.Windows.Controls.CheckBox)(target));
+            
+            #line 22 "..\..\DlgFindReplace.xaml"
+            this.checkBoxUseWildcards.Click += new System.Windows.RoutedEventHandler(this.setFirstFind);
+            
+            #line default
+            #line hidden
+            return;
+            case 11:
+            this.checkBoxWholeWords = ((System.Windows.Controls.CheckBox)(target));
+            
+            #line 24 "..\..\DlgFindReplace.xaml"
+            this.checkBoxWholeWords.Click += new System.Windows.RoutedEventHandler(this.setFirstFind);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

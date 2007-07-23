@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace CrypTool
 {
@@ -14,8 +15,21 @@ namespace CrypTool
         private DlgMain _FormMainReference = null;
         private string DlgText;
         private bool hasSavePath; //true: file hast save path
+        
         private string sPlainTextPath;
+        private string strLastFind;
+
         private RichTextBoxFinds FindOptions = RichTextBoxFinds.None;
+        
+        private bool Wildcards;
+        private bool WholeWords;
+        private bool Reverse;
+        private bool MatchCase;
+        private bool RegularExpression;
+        private bool isFirstFind = true;
+        
+        private Regex regex;
+        private Match match;
 
         public DlgEditor(DlgMain _MainForm,string Title)
         {
@@ -259,51 +273,138 @@ namespace CrypTool
         public void findText(String strFindText)
         {
             CrypTool.AppLogic.GlobalValues.addSearchValue(strFindText);
-
-            int startIndex;
-            int endIndex;
-
-            if ((this.FindOptions & RichTextBoxFinds.Reverse) == RichTextBoxFinds.Reverse)
+            if (strLastFind != strFindText)
             {
-                startIndex = 0;
-                endIndex = this.richTextBoxPlaintext.SelectionStart;
+                strLastFind = strFindText;
+                isFirstFind = true;
+            }
+
+            if (isFirstFind)
+            {
+                regex = getRegExpression(strFindText);
+                match = regex.Match(richTextBoxPlaintext.Text);
+                isFirstFind = false;
             }
             else
             {
-                startIndex = this.richTextBoxPlaintext.SelectionStart + this.richTextBoxPlaintext.SelectionLength;
-                endIndex = this.richTextBoxPlaintext.Text.Length;
+                match = regex.Match(richTextBoxPlaintext.Text, match.Index + 1);
             }
-            int findIndex = this.richTextBoxPlaintext.Find(strFindText, startIndex, endIndex, this.FindOptions);
 
-            if (findIndex >= 0)
+            if (match.Success)
             {
-                this.richTextBoxPlaintext.Select(findIndex, strFindText.Length);
-                this.richTextBoxPlaintext.Focus();
+                richTextBoxPlaintext.SelectionStart = match.Index;
+                richTextBoxPlaintext.SelectionLength = match.Length;
+                richTextBoxPlaintext.Focus();
             }
             else
             {
-                MessageBox.Show("No more occurences found", "Find complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(String.Format("Cannot find '{0}'.   ", strFindText));
+                isFirstFind = true;
             }
+            //int startIndex;
+            //int endIndex;
+
+            //if ((this.FindOptions & RichTextBoxFinds.Reverse) == RichTextBoxFinds.Reverse)
+            //{
+            //    startIndex = 0;
+            //    endIndex = this.richTextBoxPlaintext.SelectionStart;
+            //}
+            //else
+            //{
+            //    startIndex = this.richTextBoxPlaintext.SelectionStart + this.richTextBoxPlaintext.SelectionLength;
+            //    endIndex = this.richTextBoxPlaintext.Text.Length;
+            //}
+            //int findIndex = this.richTextBoxPlaintext.Find(strFindText, startIndex, endIndex, this.FindOptions);
+
+            //if (findIndex >= 0)
+            //{
+            //    this.richTextBoxPlaintext.Select(findIndex, strFindText.Length);
+            //    this.richTextBoxPlaintext.Focus();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No more occurences found", "Find complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
-        public void setFindOptions(bool MatchCase, bool WholeWords, bool Reverse)
+        public void setFindOptions(bool MatchCase, bool Reverse, bool RegularExpression,bool Wildcards,bool WholeWords)
         {
-            this.FindOptions = RichTextBoxFinds.None;
-            if (MatchCase)
-                this.FindOptions |= RichTextBoxFinds.MatchCase;
-            if (WholeWords)
-                this.FindOptions |= RichTextBoxFinds.WholeWord;
-            if (Reverse)
-                this.FindOptions |= RichTextBoxFinds.Reverse;
+            this.Wildcards = Wildcards;
+            this.MatchCase = MatchCase;
+            this.WholeWords = WholeWords;
+            this.Reverse = Reverse;
+            this.RegularExpression = RegularExpression;
         }
-        public void replaceText(String strReplaceText)
+        public void setFirstFind()
         {
-            this.richTextBoxPlaintext.SelectedText = strReplaceText;
-            this.richTextBoxPlaintext.Focus();
+            isFirstFind = true;
+        }
+        public void replaceText(String strFindText, String strReplaceText)
+        {
+            Regex regexText = getRegExpression(strFindText);
+            Match matchText = regexText.Match(richTextBoxPlaintext.SelectedText);
+
+            if (matchText.Success)
+            {
+                if (matchText.Value == richTextBoxPlaintext.SelectedText)
+                    richTextBoxPlaintext.SelectedText = strReplaceText;
+            }
+            findText(strFindText);
         }
         public void replaceAllText(String strReplaceText, String strFindText)
         {
-            this.richTextBoxPlaintext.Text.Replace(strFindText, strReplaceText);
+            Regex regExReplace = getRegExpression(strFindText);
+            String strReplacedText;
+
+            int iSelPos = richTextBoxPlaintext.SelectionStart;
+            strReplacedText = regExReplace.Replace(richTextBoxPlaintext.Text, strReplaceText);
+
+            if (richTextBoxPlaintext.Text != strReplaceText)
+            {
+                richTextBoxPlaintext.Text = strReplaceText;
+                MessageBox.Show("All replaced.");
+                richTextBoxPlaintext.SelectionStart = iSelPos;
+            }
+            else
+            {
+                MessageBox.Show(String.Format("Cannot find '{0}'.", strFindText));
+            }
+
             this.richTextBoxPlaintext.Focus();
+        }
+        private Regex getRegExpression(String strFindText)
+        {
+            Regex result;
+            String regExString;
+
+            regExString = strFindText;
+            if(this.RegularExpression)
+            {
+            }
+            else if(this.Wildcards)
+            {
+                regExString = regExString.Replace("*",@"\w*");  //multiple characters wildcard (*)
+                regExString = regExString.Replace("?",@"\w");  //single character wildcard (?)
+
+                regExString = String.Format("{0}{1}{0}",@"\b",regExString);
+            }
+            else
+            {
+                regExString = Regex.Escape(regExString);
+            }
+
+            if(this.WholeWords)
+            {
+                regExString = String.Format("{0}{1}{0}",@"\b",regExString);
+            }
+            if(this.MatchCase)
+            {
+                result = new Regex(regExString);
+            }
+            else
+            {
+                result = new Regex(regExString,RegexOptions.IgnoreCase);
+            }
+            return result;
         }
         #endregion
     }
