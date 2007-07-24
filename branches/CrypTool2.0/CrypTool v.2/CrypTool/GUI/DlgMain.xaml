@@ -51,11 +51,11 @@
         <TreeViewItem Name="MenuItemParentWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemParentWindow/@Header}" IsEnabled="False"/>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemView" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemView/@Header}">
-        <TreeViewItem Name="MenuItemToolbar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolbar/@Header}"/>
-        <TreeViewItem Name="MenuItemStatusBar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStatusBar/@Header}"/>
+        <TreeViewItem Name="MenuItemToolbar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolbar/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemStatusBar" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStatusBar/@Header}" IsEnabled="False"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemShowAsText" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowAsText/@Header}"/>
-        <TreeViewItem Name="MenuItemAsHexDump" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsHexDump/@Header}"/>
+        <TreeViewItem Name="MenuItemShowAsText" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowAsText/@Header}" Selected="showAsText"/>
+        <TreeViewItem Name="MenuItemAsHexDump" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsHexDump/@Header}" Selected="showAsHex"/>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemBarChart" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemBarChart/@Header}"/>
         <!--<Separator/>-->

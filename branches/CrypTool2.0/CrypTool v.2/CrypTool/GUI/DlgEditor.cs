@@ -13,14 +13,13 @@ namespace CrypTool
     public partial class DlgEditor : Form
     {
         private DlgMain _FormMainReference = null;
+        private Be.Windows.Forms.HexBox hexText;
         private string DlgText;
         private bool hasSavePath; //true: file hast save path
         
         private string sPlainTextPath;
         private string strLastFind;
-
-        private RichTextBoxFinds FindOptions = RichTextBoxFinds.None;
-        
+      
         private bool Wildcards;
         private bool WholeWords;
         private bool Reverse;
@@ -96,6 +95,32 @@ namespace CrypTool
 
             tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
         }
+        public void setPlainTextHEX(string plainText, string Title)
+        {
+            hexText = new Be.Windows.Forms.HexBox();
+            hexText.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+            hexText.HexCasing = Be.Windows.Forms.HexCasing.Lower;
+            hexText.LineInfoVisible = true;
+            hexText.SelectionLength = ((long)(0));
+            hexText.SelectionStart = ((long)(-1));
+            hexText.ShadowSelectionColor = System.Drawing.Color.FromArgb(((System.Byte)(100)), ((System.Byte)(60)), ((System.Byte)(188)), ((System.Byte)(255)));
+            hexText.StringViewVisible = true;
+            hexText.UseFixedBytesPerLine = true;
+            hexText.VScrollBarVisible = true;
+            hexText.Name = "hexBoxPlainText";
+            hexText.Dock = DockStyle.Fill;
+
+
+            Be.Windows.Forms.FileByteProvider fileByteProvider = new Be.Windows.Forms.FileByteProvider(plainText);
+            hexText.ByteProvider = fileByteProvider;
+
+            TabPage tpCipherText = new TabPage(Title);
+            tpCipherText.Name = "tpPlainText";
+            tpCipherText.Controls.Add(hexText);
+            tabControl1.TabPages.Add(tpCipherText);
+
+            tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
+        }
 
         public void setPlainText(string plainText, string Title)
         {
@@ -118,6 +143,10 @@ namespace CrypTool
         public string getCipherText()
         {
             return richTextBoxPlaintext.Text;
+        }
+        public string getPlainTextHex()
+        {
+            return hexText.Text;
         }
         private void DlgEditor_Activated(object sender, EventArgs e)
         {
@@ -255,10 +284,6 @@ namespace CrypTool
         {
             doSelectAll();
         }
-        public void doSelectAll()
-        {
-            this.richTextBoxPlaintext.SelectAll();
-        }
         private void contextMenuRichTextBoxPlain_Opening(object sender, CancelEventArgs e)
         {
             this.redoToolStripMenuItem.Enabled = getRedo();
@@ -287,7 +312,10 @@ namespace CrypTool
             }
             else
             {
-                match = regex.Match(richTextBoxPlaintext.Text, match.Index + 1);
+                if (!Reverse)
+                    match = regex.Match(richTextBoxPlaintext.Text, match.Index + 1);
+                else
+                    match = regex.Match(richTextBoxPlaintext.Text, match.Index - 1);
             }
 
             if (match.Success)
@@ -298,33 +326,9 @@ namespace CrypTool
             }
             else
             {
-                MessageBox.Show(String.Format("Cannot find '{0}'.   ", strFindText));
+                MessageBox.Show(String.Format("No more occurences found for '{0}'.   ", strFindText));
                 isFirstFind = true;
             }
-            //int startIndex;
-            //int endIndex;
-
-            //if ((this.FindOptions & RichTextBoxFinds.Reverse) == RichTextBoxFinds.Reverse)
-            //{
-            //    startIndex = 0;
-            //    endIndex = this.richTextBoxPlaintext.SelectionStart;
-            //}
-            //else
-            //{
-            //    startIndex = this.richTextBoxPlaintext.SelectionStart + this.richTextBoxPlaintext.SelectionLength;
-            //    endIndex = this.richTextBoxPlaintext.Text.Length;
-            //}
-            //int findIndex = this.richTextBoxPlaintext.Find(strFindText, startIndex, endIndex, this.FindOptions);
-
-            //if (findIndex >= 0)
-            //{
-            //    this.richTextBoxPlaintext.Select(findIndex, strFindText.Length);
-            //    this.richTextBoxPlaintext.Focus();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("No more occurences found", "Find complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
         }
         public void setFindOptions(bool MatchCase, bool Reverse, bool RegularExpression,bool Wildcards,bool WholeWords)
         {
@@ -358,15 +362,15 @@ namespace CrypTool
             int iSelPos = richTextBoxPlaintext.SelectionStart;
             strReplacedText = regExReplace.Replace(richTextBoxPlaintext.Text, strReplaceText);
 
-            if (richTextBoxPlaintext.Text != strReplaceText)
+            if (richTextBoxPlaintext.Text != strReplacedText)
             {
-                richTextBoxPlaintext.Text = strReplaceText;
-                MessageBox.Show("All replaced.");
+                richTextBoxPlaintext.Text = strReplacedText;
+                MessageBox.Show("All occurences replaced.");
                 richTextBoxPlaintext.SelectionStart = iSelPos;
             }
             else
             {
-                MessageBox.Show(String.Format("Cannot find '{0}'.", strFindText));
+                MessageBox.Show(String.Format("No more occurences found for '{0}'.", strFindText));
             }
 
             this.richTextBoxPlaintext.Focus();
@@ -404,7 +408,15 @@ namespace CrypTool
             {
                 result = new Regex(regExString,RegexOptions.IgnoreCase);
             }
+            if (Reverse)
+            {
+                result = new Regex(regExString, RegexOptions.RightToLeft);
+            }
             return result;
+        }
+        public void doSelectAll()
+        {
+            richTextBoxPlaintext.SelectAll();
         }
         #endregion
     }
