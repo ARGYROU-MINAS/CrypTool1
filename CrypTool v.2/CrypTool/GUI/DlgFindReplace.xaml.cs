@@ -43,6 +43,8 @@ namespace CrypTool
         private void ButtonReplaceAll_OnClick(object sender, RoutedEventArgs arg)
         {
             DlgEditor dlgEditor = this._lastNotifiedForm;
+            dlgEditor.setFindOptions((bool)CheckBoxMatchCase.IsChecked, false /*other wise it doesn't work*/,
+                (bool)CheckBoxRegularExpression.IsChecked, (bool)checkBoxUseWildcards.IsChecked, (bool)checkBoxWholeWords.IsChecked);
             dlgEditor.replaceAllText(this.ComboBoxReplace.Text, this.ComboBoxFind.Text);
         }
         private void ButtonCancel_OnClick(object sender, RoutedEventArgs arg)

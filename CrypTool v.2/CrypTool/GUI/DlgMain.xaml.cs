@@ -33,7 +33,7 @@ namespace CrypTool
         public DlgMain()
         {
             InitializeComponent();
-            this._unnamedForm = 1;
+            _unnamedForm = 1;
             updateLang();
             getLangItems();
             MarkSelectedLang();
@@ -67,7 +67,7 @@ namespace CrypTool
         {
             string Title = "Unnamed[" + this._unnamedForm.ToString() + "]";
             DlgEditor dlgEditor = new DlgEditor(this,Title);
-            this._unnamedForm++;
+            _unnamedForm++;
             _childFormList.Add(dlgEditor);
             dlgEditor.Show();
         }
@@ -145,7 +145,7 @@ namespace CrypTool
         {
             DlgEditor dlg = _lastNotifiedForm;
             if (_lastNotifiedForm.Text.IndexOf("[") > 0)
-                this._unnamedForm--;
+                _unnamedForm--;
             dlg.Close();
 
         }
@@ -174,18 +174,18 @@ namespace CrypTool
         private void PrintDialog(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.PrintDialog pDialog = new System.Windows.Forms.PrintDialog();
-            pDialog.Document = this.printDoc;
+            pDialog.Document = printDoc;
             if (pDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                DlgEditor dlgEditor = this._lastNotifiedForm;
-                CrypTool.AppLogic.DocPrint docPrint = new CrypTool.AppLogic.DocPrint(dlgEditor.getPlainText(), this.printDoc);
+                DlgEditor dlgEditor = _lastNotifiedForm;
+                CrypTool.AppLogic.DocPrint docPrint = new CrypTool.AppLogic.DocPrint(dlgEditor.getPlainText(), printDoc);
                 docPrint.PrintDoc();
             }            
         }
         private void PrintDialogPreview(object sender, RoutedEventArgs e)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
-            CrypTool.AppLogic.DocPrint docPrint = new CrypTool.AppLogic.DocPrint(dlgEditor.getPlainText(), this.printDoc);
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            CrypTool.AppLogic.DocPrint docPrint = new CrypTool.AppLogic.DocPrint(dlgEditor.getPlainText(), printDoc);
             
             System.Windows.Forms.PrintPreviewDialog pPreview = new System.Windows.Forms.PrintPreviewDialog();
             pPreview.Document = docPrint.getPrintDoc();
@@ -194,7 +194,7 @@ namespace CrypTool
         private void DocSetup(object sender, RoutedEventArgs e)
         {
             PageSetupDialog pSetup = new PageSetupDialog();
-            pSetup.PageSettings = this.printDoc.DefaultPageSettings;
+            pSetup.PageSettings = printDoc.DefaultPageSettings;
             pSetup.ShowDialog();
         }
         private void getLangItems()
@@ -244,7 +244,7 @@ namespace CrypTool
         }
         private void getOpenFileHistoryItems()
         {
-            this.MenuItemOpenFileHistory.Items.Clear();
+            MenuItemOpenFileHistory.Items.Clear();
             CrypTool.AppLogic.OpenFileHistory openFile = new CrypTool.AppLogic.OpenFileHistory();
             string[] openFiles = openFile.getOpenFileList();
             System.Windows.Controls.MenuItem[] menuItemOpenFile = new System.Windows.Controls.MenuItem[openFiles.Length];
@@ -254,7 +254,7 @@ namespace CrypTool
                 menuItemOpenFile[i].Name = "menItemOpenFile" + i.ToString();
                 menuItemOpenFile[i].Header = openFiles[i];
                 menuItemOpenFile[i].Click += new RoutedEventHandler(this.openFileHistoryItem);
-                this.MenuItemOpenFileHistory.Items.Add(menuItemOpenFile[i]);
+                MenuItemOpenFileHistory.Items.Add(menuItemOpenFile[i]);
             }
         }
         private void openFileHistoryItem(object sender, RoutedEventArgs e)
@@ -335,47 +335,48 @@ namespace CrypTool
         #region Edit-Menu
         private void updateEditMenu()
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
-            this.MenuItemUndo.IsEnabled = dlgEditor.getUndo();
-            this.MenuItemRedo.IsEnabled = dlgEditor.getRedo();
-            this.MenuItemCut.IsEnabled = dlgEditor.getCut();
-            this.MenuItemCopy.IsEnabled = dlgEditor.getCopy();
-            this.MenuItemPaste.IsEnabled = dlgEditor.getPaste();
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            MenuItemUndo.IsEnabled = dlgEditor.getUndo();
+            MenuItemRedo.IsEnabled = dlgEditor.getRedo();
+            MenuItemCut.IsEnabled = dlgEditor.getCut();
+            MenuItemCopy.IsEnabled = dlgEditor.getCopy();
+            MenuItemPaste.IsEnabled = dlgEditor.getPaste();
         }
         private void doUndo(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.doUndo();
         }
         private void doRedo(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.doRedo();
         }
         private void doCut(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.doCut();
         }
         private void doCopy(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.doCopy();
         }
         private void doPaste(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.doPaste();
         }
         private void doDelete(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.doDelete();
         }
         private void doSelectAll(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.doSelectAll();
+            dlgEditor.Focus();
         }
         private void showKeyDialog(object sender, RoutedEventArgs arg)
         {
@@ -384,14 +385,27 @@ namespace CrypTool
         }
         private void showDialogFindReplace(object sender, RoutedEventArgs arg)
         {
-            DlgFindReplace dlgFindReplace = new DlgFindReplace(this._lastNotifiedForm);
+            DlgFindReplace dlgFindReplace = new DlgFindReplace(_lastNotifiedForm);
             dlgFindReplace.Show();
         }
         private void findNext(object sender, RoutedEventArgs arg)
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.findText(CrypTool.AppLogic.GlobalValues.getCurrentSearchValue());
             dlgEditor.Focus();
+        }
+        #endregion
+
+        #region MenuItem-View
+        private void showAsText(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setPlainText(dlgEditor.getPlainTextHex(),dlgEditor.getPlainTextTabTitle());            
+        }
+        private void showAsHex(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setPlainTextHEX(dlgEditor.getPlainText(), dlgEditor.getPlainTextTabTitle());
         }
         #endregion
     }

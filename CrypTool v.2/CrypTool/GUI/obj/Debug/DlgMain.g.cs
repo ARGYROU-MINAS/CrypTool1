@@ -490,9 +490,21 @@ namespace CrypTool {
             return;
             case 30:
             this.MenuItemShowAsText = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 57 "..\..\DlgMain.xaml"
+            this.MenuItemShowAsText.Selected += new System.Windows.RoutedEventHandler(this.showAsText);
+            
+            #line default
+            #line hidden
             return;
             case 31:
             this.MenuItemAsHexDump = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 58 "..\..\DlgMain.xaml"
+            this.MenuItemAsHexDump.Selected += new System.Windows.RoutedEventHandler(this.showAsHex);
+            
+            #line default
+            #line hidden
             return;
             case 32:
             this.MenuItemBarChart = ((System.Windows.Controls.TreeViewItem)(target));
