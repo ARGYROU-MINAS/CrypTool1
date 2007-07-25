@@ -33,6 +33,7 @@
   <MenuItemShowAsText Header="Als Text anzeigen"/>
   <MenuItemAsHexDump Header="Als HexDump"/>
   <MenuItemBarChart Header="Balkendiagramm"/>
+  <MenuItemAlphabet Header="Alphabet"/>
   <MenuItemEndOfLine Header="Zeilenende"/>
   <MenuItemLineWrap Header="Zeilenumbruch"/>
   <MenuItemWhitespace Header="Leerzeichen"/>

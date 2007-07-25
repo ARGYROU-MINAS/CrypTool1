@@ -59,6 +59,7 @@
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemBarChart" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemBarChart/@Header}"/>
         <!--<Separator/>-->
+        <TreeViewItem Name="MenuItemAlphabet" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAlphabet/@Header}" Selected="setAlphabetHighLight"/>
         <TreeViewItem Name="MenuItemEndOfLine" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEndOfLine/@Header}"/>
         <TreeViewItem Name="MenuItemLineWrap" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLineWrap/@Header}"/>
         <TreeViewItem Name="MenuItemWhitespace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWhitespace/@Header}"/>
