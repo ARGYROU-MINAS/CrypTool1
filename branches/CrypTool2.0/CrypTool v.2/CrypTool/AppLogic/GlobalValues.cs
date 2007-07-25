@@ -9,11 +9,13 @@ namespace CrypTool.AppLogic
     {
         static private ArrayList searchValues;
         static private ArrayList replaceValues;
+        static private bool bHighLightText;
 
         static GlobalValues()
         {
             searchValues = new ArrayList();
             replaceValues = new ArrayList();
+            bHighLightText = false;
         }
         public static void addSearchValue(String strSearchValue)
         {
@@ -40,6 +42,14 @@ namespace CrypTool.AppLogic
         public static ArrayList getReplaceValues()
         {
             return replaceValues;
+        }
+        public static void setHighLightText(bool bHighLight)
+        {
+            bHighLightText = bHighLight;
+        }
+        public static bool getHighLightText()
+        {
+            return bHighLightText;
         }
     }
 }

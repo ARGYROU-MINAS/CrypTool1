@@ -33,6 +33,7 @@
   <MenuItemShowAsText Header="Show as Text"/>
   <MenuItemAsHexDump Header="As Hex Dump"/>
   <MenuItemBarChart Header="Bar Chart"/>
+  <MenuItemAlphabet Header="Alphabet"/>
   <MenuItemEndOfLine Header="End of Line"/>
   <MenuItemLineWrap Header="Lein Wrap"/>
   <MenuItemWhitespace Header="Whitespace"/>

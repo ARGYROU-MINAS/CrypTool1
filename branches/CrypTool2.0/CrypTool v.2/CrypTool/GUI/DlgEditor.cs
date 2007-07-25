@@ -199,6 +199,7 @@ namespace CrypTool
         private void richTextBoxPlaintext_TextChanged(object sender, EventArgs e)
         {
             checkSaveStatus(true);
+            doHighlightText();
         }
 
         #region Edit Menu
@@ -418,6 +419,18 @@ namespace CrypTool
         {
             richTextBoxPlaintext.SelectAll();
         }
+        public void doHighlightText()
+        {
+            if (CrypTool.AppLogic.GlobalValues.getHighLightText())
+            {
+                richTextBoxPlaintext.ForeColor = Color.Blue;
+            }
+            else
+            {
+                richTextBoxPlaintext.ForeColor = Color.Black;
+            }
+        }
         #endregion
+
     }
 }
