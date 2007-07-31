@@ -421,14 +421,25 @@ namespace CrypTool
         }
         public void doHighlightText()
         {
-            if (CrypTool.AppLogic.GlobalValues.getHighLightText())
-            {
-                richTextBoxPlaintext.ForeColor = Color.Blue;
-            }
-            else
-            {
-                richTextBoxPlaintext.ForeColor = Color.Black;
-            }
+            //if (CrypTool.AppLogic.GlobalValues.getHighLightText())
+            //{
+                char[] keywords = CrypTool.AppLogic.TextOptions.getAlphabet().ToCharArray();
+
+                bool equalsKeyword = false;
+
+                for (int i = 0; i < keywords.Length; i++)
+                    if(richTextBoxPlaintext.SelectionStart.ToString() == keywords[i].ToString())
+                        equalsKeyword = true;
+                if (equalsKeyword)
+                    richTextBoxPlaintext.ForeColor = Color.Red;
+                else
+                    richTextBoxPlaintext.ForeColor = Color.Black;
+                
+            //}
+            //else
+            //{
+            //    richTextBoxPlaintext.ForeColor = Color.Black;
+            //}
         }
         #endregion
 

@@ -412,13 +412,12 @@ namespace CrypTool
             if (CrypTool.AppLogic.GlobalValues.getHighLightText())
             {
                 CrypTool.AppLogic.GlobalValues.setHighLightText(false);
-                MenuItemAlphabet.IsSelected = false;
             }
             else
             {
                 CrypTool.AppLogic.GlobalValues.setHighLightText(true);
-                MenuItemAlphabet.IsSelected = true;
             }
+
         }
         #endregion
     }
