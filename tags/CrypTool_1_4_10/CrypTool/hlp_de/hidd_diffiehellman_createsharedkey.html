@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Diffie-Hellman-Schlüsselaustausch: Öffentlichen Teilschlüssel erzeugen</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT ID="Object1">
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Öffentliche Teilschlüssel erzeugen</h3>
+
+<P>Dieser Dialog erscheint, wenn Sie die <a href="hidd_diffiehellmanvisualization.html">Diffie-Hellman-Demo</a> aufrufen und dort die Schaltfläche <B>Öffentliche Teilschlüssel erzeugen</B> klicken.</P>
+
+<P>Nach einem Klick auf die Schaltfläche <B>OK</B> lassen sich die öffentlichen Teilschlüssel für Alice und Bob erzeugen.</P>
+
+<P>Beachten Sie, dass Sie den öffentlichen Teilschlüssel von Alice und Bob <U>ausschließlich</U> dann erzeugen lassen können, wenn Sie zuvor ein Geheimnis für die entsprechende Partei gewählt haben.</P>
+
+<P>Dieser Umstand lässt sich leicht nachvollziehen, wenn man die Gleichung für den öffentlichen Schlüssel von Alice betrachtet:</P>
+
+<div style="text-align:center">
+
+<P><!--ZZZFORMEL--> <I>A</I> = <I>g</I><SUP>a</SUP>mod <I>p</I> </P>
+
+</div>
+
+<P>Bobs öffentlicher Schlüssel B wird nach dem gleichen Muster berechnet, allerdings potenziert man nicht mit dem Geheimnis von Alice (a), sondern mit dem Geheimnis von Bob (b).</P>
+
+<P>Die Gleichung zeigt, dass zur Berechnung der öffentlichen Schlüssel unbedingt das Geheimnis der entsprechenden Partei nötig ist.</P>
+
+<P><B>Aus diesem Grund kann es möglich sein, dass Sie an dieser Stelle nur einen der beiden öffentlichen Schlüssel erzeugen können</B>! Bitte ergänzen Sie in diesem Fall Ihre Eingaben, indem Sie auch das noch offene Geheimnis festlegen.</P>
+
+</BODY>
+</HTML>
