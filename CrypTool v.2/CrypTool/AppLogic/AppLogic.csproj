@@ -35,6 +35,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlphabetHilighter.cs" />
     <Compile Include="CaesarRot13.cs" />
     <Compile Include="CrypSymModern.cs" />
     <Compile Include="DES.cs" />

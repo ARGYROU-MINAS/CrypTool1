@@ -30,17 +30,26 @@ namespace CrypTool
         private Regex regex;
         private Match match;
 
-        public DlgEditor(DlgMain _MainForm,string Title)
+        private CrypTool.AppLogic.AlphabetHighlighter alphKeywordHighlighter;
+
+        private string[] keywords;
+
+
+
+        public DlgEditor(DlgMain _MainForm, string Title)
         {
+            getKeyWords();
             _FormMainReference = _MainForm;
             InitializeComponent();
             setTitle();
             tabPagePlainText.Text = Title;
             checkSaveStatus(false);
             this.hasSavePath = false;
+            
         }
         public DlgEditor(DlgMain _MainForm, Stream stream,string Title)
         {
+            getKeyWords();
             _FormMainReference = _MainForm;
             InitializeComponent();
             setTitle();
@@ -419,29 +428,36 @@ namespace CrypTool
         {
             richTextBoxPlaintext.SelectAll();
         }
-        public void doHighlightText()
-        {
-            //if (CrypTool.AppLogic.GlobalValues.getHighLightText())
-            //{
-                char[] keywords = CrypTool.AppLogic.TextOptions.getAlphabet().ToCharArray();
-
-                bool equalsKeyword = false;
-
-                for (int i = 0; i < keywords.Length; i++)
-                    if(richTextBoxPlaintext.SelectionStart.ToString() == keywords[i].ToString())
-                        equalsKeyword = true;
-                if (equalsKeyword)
-                    richTextBoxPlaintext.ForeColor = Color.Red;
-                else
-                    richTextBoxPlaintext.ForeColor = Color.Black;
-                
-            //}
-            //else
-            //{
-            //    richTextBoxPlaintext.ForeColor = Color.Black;
-            //}
-        }
         #endregion
 
+        #region View
+        private void getKeyWords()
+        {
+            keywords = new string[CrypTool.AppLogic.TextOptions.getAlphabet().Length];
+            for (int i = 0; i < keywords.Length; i++)
+                keywords[i] = CrypTool.AppLogic.TextOptions.getAlphabet().Substring(i, 1);
+        }
+        public CrypTool.AppLogic.AlphabetHighlighter KeywordHilighter
+        {
+            get
+            {
+                if (alphKeywordHighlighter == null)
+                {
+                    alphKeywordHighlighter = new CrypTool.AppLogic.AlphabetHighlighter();
+                    alphKeywordHighlighter.RichTextBox = this.richTextBoxPlaintext;
+                    alphKeywordHighlighter.AlphKeywords = this.keywords;
+                }
+                return alphKeywordHighlighter;
+            }
+        }
+        public void doHighlightText()
+        {
+            if (CrypTool.AppLogic.GlobalValues.getHighLightText())
+            {
+                int index = richTextBoxPlaintext.SelectionStart;
+                KeywordHilighter.HilightAt(index);
+            }
+        }
+        #endregion
     }
 }
