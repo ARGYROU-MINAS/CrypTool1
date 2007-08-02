@@ -458,6 +458,17 @@ namespace CrypTool
                 KeywordHilighter.HilightAt(index);
             }
         }
+        public void showEndOfLine()
+        {
+            richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace("a", ((char)Convert.ToInt32("13")).ToString());
+        }
+        public void setWordWrap()
+        {
+            if (richTextBoxPlaintext.WordWrap)
+                richTextBoxPlaintext.WordWrap = false;
+            else
+                richTextBoxPlaintext.WordWrap = true;
+        }
         #endregion
     }
 }

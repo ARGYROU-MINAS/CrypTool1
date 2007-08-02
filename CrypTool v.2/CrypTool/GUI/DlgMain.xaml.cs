@@ -419,6 +419,16 @@ namespace CrypTool
             }
 
         }
+        private void showEndOfLine(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.showEndOfLine();
+        }
+        private void setWordWrap(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setWordWrap();
+        }
         #endregion
     }
 }
