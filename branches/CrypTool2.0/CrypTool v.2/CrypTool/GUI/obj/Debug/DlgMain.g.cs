@@ -522,9 +522,21 @@ namespace CrypTool {
             return;
             case 34:
             this.MenuItemEndOfLine = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 63 "..\..\DlgMain.xaml"
+            this.MenuItemEndOfLine.Selected += new System.Windows.RoutedEventHandler(this.showEndOfLine);
+            
+            #line default
+            #line hidden
             return;
             case 35:
             this.MenuItemLineWrap = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 64 "..\..\DlgMain.xaml"
+            this.MenuItemLineWrap.Selected += new System.Windows.RoutedEventHandler(this.setWordWrap);
+            
+            #line default
+            #line hidden
             return;
             case 36:
             this.MenuItemWhitespace = ((System.Windows.Controls.TreeViewItem)(target));
