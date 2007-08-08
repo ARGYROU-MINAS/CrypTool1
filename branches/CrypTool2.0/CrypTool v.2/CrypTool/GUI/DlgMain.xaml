@@ -57,107 +57,107 @@
         <TreeViewItem Name="MenuItemShowAsText" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowAsText/@Header}" Selected="showAsText"/>
         <TreeViewItem Name="MenuItemAsHexDump" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsHexDump/@Header}" Selected="showAsHex"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemBarChart" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemBarChart/@Header}"/>
+        <TreeViewItem Name="MenuItemBarChart" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemBarChart/@Header}" IsEnabled="False"/>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemAlphabet" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAlphabet/@Header}" Selected="setAlphabetHighLight"/>
         <TreeViewItem Name="MenuItemEndOfLine" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEndOfLine/@Header}" Selected="showEndOfLine"/>
         <TreeViewItem Name="MenuItemLineWrap" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLineWrap/@Header}" Selected="setWordWrap"/>
-        <TreeViewItem Name="MenuItemWhitespace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWhitespace/@Header}"/>
+        <TreeViewItem Name="MenuItemWhitespace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWhitespace/@Header}" Selected="setWhiteSpaces"/>
         <TreeViewItem Name="MenuItemFont" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFont/@Header}"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemShowBox" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowBox/@Header}"/>
+        <TreeViewItem Name="MenuItemShowBox" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowBox/@Header}" IsEnabled="False"/>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEncryption/@Header}">
         <TreeViewItem Name="MenuItemSymetricClass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricClass/@Header}">
           <TreeViewItem Name="MenuItemCaesarRot13" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCaesarRot13/@Header}" Selected="ShowDlgCaesarRot13"></TreeViewItem>
-          <TreeViewItem Name="MenuItemVigenere" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVigenere/@Header}"/>
-          <TreeViewItem Name="MenuItemHill" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHill/@Header}"/>
-          <TreeViewItem Name="MenuItemSubstitutionAtbash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSubstitutionAtbash/@Header}"/>
-          <TreeViewItem Name="MenuItemPalyfair" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPlayfair/@Header}"/>
-          <TreeViewItem Name="MenuItemADFGVX" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemADFGVX/@Header}"/>
-          <TreeViewItem Name="MenuItemByteAddition" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemByteAddition/@Header}"/>
-          <TreeViewItem Name="MenuItemXOR" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemXOR/@Header}"/>
-          <TreeViewItem Name="MenuItemVernam" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVernam/@Header}"/>
-          <TreeViewItem Name="MenuItemHomophone" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHomophone/@Header}"/>
-          <TreeViewItem Name="MenuItemPermutationTransposition" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPermutationTransposition/@Header}"/>
-          <TreeViewItem Name="MenuItemSolitaire" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSolitaire/@Header}"/>
+          <TreeViewItem Name="MenuItemVigenere" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVigenere/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemHill" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHill/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemSubstitutionAtbash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSubstitutionAtbash/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemPalyfair" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPlayfair/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemADFGVX" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemADFGVX/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemByteAddition" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemByteAddition/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemXOR" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemXOR/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemVernam" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVernam/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemHomophone" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHomophone/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemPermutationTransposition" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPermutationTransposition/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemSolitaire" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSolitaire/@Header}" IsEnabled="False"/>
         </TreeViewItem>
         <TreeViewItem Name="MenuItemSymetricModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymetricModern/@Header}" Selected="ShowDlgKeySymModern"></TreeViewItem>
         <TreeViewItem Name="MenuItemAsymmetric" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsymmetric/@Header}">
-          <TreeViewItem Name="MenuItemRSAEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAEncryption/@Header}"/>
-          <TreeViewItem Name="MenuItemRSADecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSADecryption/@Header}"/>
-          <TreeViewItem Name="MenuItemRSADemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSADemo/@Header}"/>
+          <TreeViewItem Name="MenuItemRSAEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAEncryption/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemRSADecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSADecryption/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemRSADemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSADemo/@Header}" IsEnabled="False"/>
         </TreeViewItem>
         <TreeViewItem Name="MenuItemHybrid" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHybrid/@Header}">
-          <TreeViewItem Name="MenuItemRSAAESEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAAESEncryption/@Header}"/>
-          <TreeViewItem Name="MenuItemRSAAESDecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAAESDecryption/@Header}"/>
+          <TreeViewItem Name="MenuItemRSAAESEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAAESEncryption/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemRSAAESDecryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSAAESDecryption/@Header}" IsEnabled="False"/>
         </TreeViewItem>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemDigSignature_PKI" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemDigSignature_PKI/@Header}">
         <TreeViewItem Name="MenuItemPKI" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPKI/@Header}">
-          <TreeViewItem Name="MenuItemKeyGenImport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyGenImport/@Header}"/>
-          <TreeViewItem Name="MenuItemKeyDisplayExport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyDisplayExport/@Header}"/>
+          <TreeViewItem Name="MenuItemKeyGenImport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyGenImport/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemKeyDisplayExport" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyDisplayExport/@Header}" IsEnabled="False"/>
         </TreeViewItem>
-        <TreeViewItem Name="MenuItemSignDocument" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSignDocument/@Header}"/>
-        <TreeViewItem Name="MenuItemVerfiySignature" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVerifySignature/@Header}"/>
-        <TreeViewItem Name="MenuItemExtractSignature" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemExtractSignature/@Header}"/>
-        <TreeViewItem Name="MenuItemSignatureDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSignatureDemo/@Header}"/>
+        <TreeViewItem Name="MenuItemSignDocument" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSignDocument/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemVerfiySignature" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVerifySignature/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemExtractSignature" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemExtractSignature/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemSignatureDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSignatureDemo/@Header}" IsEnabled="False"/>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemIndivPrcedures" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndivProcedures/@Header}">
         <TreeViewItem Name="MenuItemHash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}">
           <TreeViewItem Name="MenuItemGenHash" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenHash/@Header}" Selected="ShowDlgHash"/>
           <!--<Separator/>-->
-          <TreeViewItem Name="MenuItemHashValueFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashValueFile/@Header}"/>
-          <TreeViewItem Name="MenuItemHashDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashDemo/@Header}"/>
-          <TreeViewItem Name="MenuItemKeyGenFromPass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyGenFromPass/@Header}"/>
-          <TreeViewItem Name="MenuItemGenMac" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenMac/@Header}"/>
+          <TreeViewItem Name="MenuItemHashValueFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashValueFile/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemHashDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHashDemo/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemKeyGenFromPass" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemKeyGenFromPass/@Header}" IsEnabled="False"/>
+          <TreeViewItem Name="MenuItemGenMac" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenMac/@Header}" IsEnabled="False"/>
         </TreeViewItem>
-        <TreeViewItem Name="MenuItemRSACryptoSystem" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSACryptoSystem/@Header}"/>
-        <TreeViewItem Name="MenuItemProtocols" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemProtocols/@Header}"/>
-        <TreeViewItem Name="MenuItemChineseRemTheoApp" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemChineseRemTheoApp/@Header}"/>
-        <TreeViewItem Name="MenuItemVisualAlgoAnimal" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVisualAlgoAnimal/@Header}"/>
-        <TreeViewItem Name="MenuItemSecretSharingDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSecretSharingDemo/@Header}"/>
+        <TreeViewItem Name="MenuItemRSACryptoSystem" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemRSACryptoSystem/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemProtocols" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemProtocols/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemChineseRemTheoApp" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemChineseRemTheoApp/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemVisualAlgoAnimal" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemVisualAlgoAnimal/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemSecretSharingDemo" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSecretSharingDemo/@Header}" IsEnabled="False"/>
             <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemCodes" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCodes/@Header}"/>
+        <TreeViewItem Name="MenuItemCodes" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCodes/@Header}" IsEnabled="False"/>
             <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemCompress" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCompress/@Header}"/>
-        <TreeViewItem Name="MenuItemGenRandNum" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenRandNum/@Header}"/>
+        <TreeViewItem Name="MenuItemCompress" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCompress/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemGenRandNum" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemGenRandNum/@Header}" IsEnabled="False"/>
             <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemEducatGames" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEducatGames/@Header}"/>
+        <TreeViewItem Name="MenuItemEducatGames" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEducatGames/@Header}" IsEnabled="False"/>
           </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysis/@Header}">
-        <TreeViewItem Name="MenuItemToolsForAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolsForAnalysis/@Header}"/>
+        <TreeViewItem Name="MenuItemToolsForAnalysis" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemToolsForAnalysis/@Header}" IsEnabled="False"/>
             <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemSymmetricEncryptionClassic" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymmetricEncryptionClassic/@Header}"/>
-        <TreeViewItem Name="MenuItemSymmetricEncryptionModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymmetricEncryptionModern/@Header}"/>
-        <TreeViewItem Name="MenuItemAsymmetricEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsymmetricEncryption/@Header}"/>
-        <TreeViewItem Name="MenuItemHashAnalyse" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}"/>
-        <TreeViewItem Name="MenuItemAnalyseRandomness" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalyseRandomness/@Header}"/>
+        <TreeViewItem Name="MenuItemSymmetricEncryptionClassic" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymmetricEncryptionClassic/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemSymmetricEncryptionModern" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemSymmetricEncryptionModern/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemAsymmetricEncryption" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAsymmetricEncryption/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemHashAnalyse" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHash/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemAnalyseRandomness" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalyseRandomness/@Header}" IsEnabled="False"/>
           </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOptions/@Header}">
-        <TreeViewItem Name="MenuItemPlotOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPlotOptions/@Header}"/>
-        <TreeViewItem Name="MenuItemAnalysisOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysisOptions/@Header}"/>
+        <TreeViewItem Name="MenuItemPlotOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemPlotOptions/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemAnalysisOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAnalysisOptions/@Header}" IsEnabled="False"/>
         <TreeViewItem Name="MenuItemTextOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTextOptions/@Header}" Selected="ShowDlgTextOptions">
         </TreeViewItem>
-        <TreeViewItem Name="MenuItemStartingOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStartingOptions/@Header}"/>
-        <TreeViewItem Name="MenuItemFurtherOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFurtherOptions/@Header}"/>
+        <TreeViewItem Name="MenuItemStartingOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStartingOptions/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemFurtherOptions" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFurtherOptions/@Header}" IsEnabled="False"/>
         <TreeViewItem Name="MenuItemLanguage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLanguage/@Header}"/>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWindow/@Header}">
-        <TreeViewItem Name="MenuItemCascade" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCascade/@Header}"/>
-        <TreeViewItem Name="MenuItemTile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTile/@Header}"/>
-        <TreeViewItem Name="MenuItemArrangeIcons" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemArrangeIcons/@Header}"/>
-        <TreeViewItem Name="MenuItemCloseAllWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCloseAll/@Header}"/>
+        <TreeViewItem Name="MenuItemCascade" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCascade/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemTile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemTile/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemArrangeIcons" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemArrangeIcons/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemCloseAllWindow" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemCloseAll/@Header}" IsEnabled="False"/>
       </TreeViewItem>
       <TreeViewItem FontWeight="Bold" Name="MenuItemHelp" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemHelp/@Header}">
-        <TreeViewItem Name="MenuItemStartingPage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStartingPage/@Header}"/>
-        <TreeViewItem Name="MenuItemIndex" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndex/@Header}"/>
-        <TreeViewItem Name="MenuItemScenarios" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemScenarios/@Header}"/>
+        <TreeViewItem Name="MenuItemStartingPage" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemStartingPage/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemIndex" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemIndex/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemScenarios" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemScenarios/@Header}" IsEnabled="False"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemReadme" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemReadme/@Header}"/>
-        <TreeViewItem Name="MenuItemScript" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemScript/@Header}"/>
+        <TreeViewItem Name="MenuItemReadme" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemReadme/@Header}" IsEnabled="False"/>
+        <TreeViewItem Name="MenuItemScript" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemScript/@Header}" IsEnabled="False"/>
         <!--<Separator/>-->
-        <TreeViewItem Name="MenuItemAbout" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAbout/@Header}"/>
+        <TreeViewItem Name="MenuItemAbout" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemAbout/@Header}" IsEnabled="False"/>
       </TreeViewItem>
     </TreeView>
     <StackPanel Margin="10" Grid.Column="0" Grid.Row="1">

@@ -10,6 +10,7 @@ namespace CrypTool.AppLogic
         static private ArrayList searchValues;
         static private ArrayList replaceValues;
         static private bool bHighLightText;
+        static private bool bWhiteSpaces;
 
         static GlobalValues()
         {
@@ -50,6 +51,14 @@ namespace CrypTool.AppLogic
         public static bool getHighLightText()
         {
             return bHighLightText;
+        }
+        public static void setWhiteSpaces(bool bWhtSpcs)
+        {
+            bWhiteSpaces = bWhtSpcs;
+        }
+        public static bool getWhiteSpaces()
+        {
+            return bWhiteSpaces;
         }
     }
 }

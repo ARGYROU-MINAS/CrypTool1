@@ -1,0 +1,6 @@
+-Reading TreeViewItem header to load last opend file
+-Search next, SelectAll - DlgEditor will not take focus
+-Alphabet characters highlighting, works only for "just in time" editing; missing open file and pasting
+-Editor showing visibly Word wrap, CL, RF
+-Docking Windows
+-Controlling Menu Status

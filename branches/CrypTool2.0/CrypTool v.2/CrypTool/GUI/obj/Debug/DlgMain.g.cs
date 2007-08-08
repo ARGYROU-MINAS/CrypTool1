@@ -540,6 +540,12 @@ namespace CrypTool {
             return;
             case 36:
             this.MenuItemWhitespace = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 65 "..\..\DlgMain.xaml"
+            this.MenuItemWhitespace.Selected += new System.Windows.RoutedEventHandler(this.setWhiteSpaces);
+            
+            #line default
+            #line hidden
             return;
             case 37:
             this.MenuItemFont = ((System.Windows.Controls.TreeViewItem)(target));
