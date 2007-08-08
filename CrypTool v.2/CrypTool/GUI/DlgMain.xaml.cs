@@ -429,6 +429,11 @@ namespace CrypTool
             DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.setWordWrap();
         }
+        private void setWhiteSpaces(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setWhiteSpaces();
+        }
         #endregion
     }
 }

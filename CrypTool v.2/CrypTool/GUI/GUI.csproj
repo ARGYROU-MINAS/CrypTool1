@@ -148,6 +148,9 @@
     <Resource Include="lng\english.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="examples\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

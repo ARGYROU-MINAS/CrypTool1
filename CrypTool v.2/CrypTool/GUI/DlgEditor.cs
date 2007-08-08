@@ -460,7 +460,7 @@ namespace CrypTool
         }
         public void showEndOfLine()
         {
-            richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace("a", ((char)Convert.ToInt32("13")).ToString());
+            richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace("\b\n", ((char)Convert.ToInt32("#CL/CR#")).ToString());
         }
         public void setWordWrap()
         {
@@ -468,6 +468,17 @@ namespace CrypTool
                 richTextBoxPlaintext.WordWrap = false;
             else
                 richTextBoxPlaintext.WordWrap = true;
+        }
+        public void setWhiteSpaces()
+        {
+            if (!CrypTool.AppLogic.GlobalValues.getWhiteSpaces())
+            {
+                richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace(" ", Char.ToString((char)129));
+            }
+            else
+            {
+                richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace(((char)Convert.ToInt32(149)).ToString(), " ");
+            }
         }
         #endregion
     }
