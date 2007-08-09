@@ -1,7 +1,0 @@
-bin\Debug\ScintillaNET.dll
-bin\Debug\ScintillaNET.pdb
-obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\Scintilla.ScintillaControl.resources
-obj\Debug\ScintillaNET.csproj.GenerateResource.Cache
-obj\Debug\ScintillaNET.dll
-obj\Debug\ScintillaNET.pdb
