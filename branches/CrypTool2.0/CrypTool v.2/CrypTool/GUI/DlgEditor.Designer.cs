@@ -71,6 +71,7 @@ namespace CrypTool
             // richTextBoxPlaintext
             // 
             this.richTextBoxPlaintext.ContextMenuStrip = this.contextMenuRichTextBoxPlain;
+            this.richTextBoxPlaintext.Font = new System.Drawing.Font("Arial", 10);
             this.richTextBoxPlaintext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxPlaintext.Location = new System.Drawing.Point(3, 3);
             this.richTextBoxPlaintext.Name = "richTextBoxPlaintext";

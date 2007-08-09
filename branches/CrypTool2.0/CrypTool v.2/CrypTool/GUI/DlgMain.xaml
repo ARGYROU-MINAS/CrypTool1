@@ -63,7 +63,14 @@
         <TreeViewItem Name="MenuItemEndOfLine" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemEndOfLine/@Header}" Selected="showEndOfLine"/>
         <TreeViewItem Name="MenuItemLineWrap" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemLineWrap/@Header}" Selected="setWordWrap"/>
         <TreeViewItem Name="MenuItemWhitespace" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemWhitespace/@Header}" Selected="setWhiteSpaces"/>
-        <TreeViewItem Name="MenuItemFont" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFont/@Header}"/>
+        <TreeViewItem Name="MenuItemFont" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFont/@Header}">
+          <TreeViewItem FontSize="10" FontFamily="Arial" Name="MenuItemFontArial8" Header="Arial 8" Selected="setFontArial8"/>
+          <TreeViewItem FontSize="12" FontFamily="Arial" Name="MenuItemFontArial10" Header="Arial 10" Selected="setFontArial10" IsEnabled="True"/>
+          <TreeViewItem FontSize="14" FontFamily="Arial" Name="MenuItemFontArial12" Header="Arial 12" Selected="setFontArial12"/>
+          <TreeViewItem FontSize="10" FontFamily="Courier" Name="MenuItemFontCourier8" Header="Courier 8" Selected="setFontCourier8"/>
+          <TreeViewItem FontSize="12" FontFamily="Courier" Name="MenuItemFontCourier10" Header="Courier 10" Selected="setFontCourier10"/>
+          <TreeViewItem FontSize="14" FontFamily="Courier" Name="MenuItemFontCourier12" Header="Courier 12" Selected="setFontCourier12"/>
+          </TreeViewItem>
         <!--<Separator/>-->
         <TreeViewItem Name="MenuItemShowBox" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemShowBox/@Header}" IsEnabled="False"/>
       </TreeViewItem>

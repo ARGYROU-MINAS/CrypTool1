@@ -110,6 +110,18 @@ namespace CrypTool {
         
         internal System.Windows.Controls.TreeViewItem MenuItemFont;
         
+        internal System.Windows.Controls.TreeViewItem MenuItemFontArial8;
+        
+        internal System.Windows.Controls.TreeViewItem MenuItemFontArial10;
+        
+        internal System.Windows.Controls.TreeViewItem MenuItemFontArial12;
+        
+        internal System.Windows.Controls.TreeViewItem MenuItemFontCourier8;
+        
+        internal System.Windows.Controls.TreeViewItem MenuItemFontCourier10;
+        
+        internal System.Windows.Controls.TreeViewItem MenuItemFontCourier12;
+        
         internal System.Windows.Controls.TreeViewItem MenuItemShowBox;
         
         internal System.Windows.Controls.TreeViewItem MenuItemEncryption;
@@ -551,259 +563,313 @@ namespace CrypTool {
             this.MenuItemFont = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 38:
-            this.MenuItemShowBox = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemFontArial8 = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 67 "..\..\DlgMain.xaml"
+            this.MenuItemFontArial8.Selected += new System.Windows.RoutedEventHandler(this.setFontArial8);
+            
+            #line default
+            #line hidden
             return;
             case 39:
-            this.MenuItemEncryption = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemFontArial10 = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 68 "..\..\DlgMain.xaml"
+            this.MenuItemFontArial10.Selected += new System.Windows.RoutedEventHandler(this.setFontArial10);
+            
+            #line default
+            #line hidden
             return;
             case 40:
-            this.MenuItemSymetricClass = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemFontArial12 = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 69 "..\..\DlgMain.xaml"
+            this.MenuItemFontArial12.Selected += new System.Windows.RoutedEventHandler(this.setFontArial12);
+            
+            #line default
+            #line hidden
             return;
             case 41:
-            this.MenuItemCaesarRot13 = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemFontCourier8 = ((System.Windows.Controls.TreeViewItem)(target));
             
-            #line 72 "..\..\DlgMain.xaml"
-            this.MenuItemCaesarRot13.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgCaesarRot13);
+            #line 70 "..\..\DlgMain.xaml"
+            this.MenuItemFontCourier8.Selected += new System.Windows.RoutedEventHandler(this.setFontCourier8);
             
             #line default
             #line hidden
             return;
             case 42:
-            this.MenuItemVigenere = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemFontCourier10 = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 71 "..\..\DlgMain.xaml"
+            this.MenuItemFontCourier10.Selected += new System.Windows.RoutedEventHandler(this.setFontCourier10);
+            
+            #line default
+            #line hidden
             return;
             case 43:
-            this.MenuItemHill = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemFontCourier12 = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 72 "..\..\DlgMain.xaml"
+            this.MenuItemFontCourier12.Selected += new System.Windows.RoutedEventHandler(this.setFontCourier12);
+            
+            #line default
+            #line hidden
             return;
             case 44:
-            this.MenuItemSubstitutionAtbash = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemShowBox = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 45:
-            this.MenuItemPalyfair = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 46:
-            this.MenuItemADFGVX = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemSymetricClass = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 47:
-            this.MenuItemByteAddition = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemCaesarRot13 = ((System.Windows.Controls.TreeViewItem)(target));
+            
+            #line 79 "..\..\DlgMain.xaml"
+            this.MenuItemCaesarRot13.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgCaesarRot13);
+            
+            #line default
+            #line hidden
             return;
             case 48:
-            this.MenuItemXOR = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemVigenere = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 49:
-            this.MenuItemVernam = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemHill = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 50:
-            this.MenuItemHomophone = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemSubstitutionAtbash = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 51:
-            this.MenuItemPermutationTransposition = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemPalyfair = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 52:
-            this.MenuItemSolitaire = ((System.Windows.Controls.TreeViewItem)(target));
+            this.MenuItemADFGVX = ((System.Windows.Controls.TreeViewItem)(target));
             return;
             case 53:
+            this.MenuItemByteAddition = ((System.Windows.Controls.TreeViewItem)(target));
+            return;
+            case 54:
+            this.MenuItemXOR = ((System.Windows.Controls.TreeViewItem)(target));
+            return;
+            case 55:
+            this.MenuItemVernam = ((System.Windows.Controls.TreeViewItem)(target));
+            return;
+            case 56:
+            this.MenuItemHomophone = ((System.Windows.Controls.TreeViewItem)(target));
+            return;
+            case 57:
+            this.MenuItemPermutationTransposition = ((System.Windows.Controls.TreeViewItem)(target));
+            return;
+            case 58:
+            this.MenuItemSolitaire = ((System.Windows.Controls.TreeViewItem)(target));
+            return;
+            case 59:
             this.MenuItemSymetricModern = ((System.Windows.Controls.TreeViewItem)(target));
             
-            #line 85 "..\..\DlgMain.xaml"
+            #line 92 "..\..\DlgMain.xaml"
             this.MenuItemSymetricModern.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgKeySymModern);
             
             #line default
             #line hidden
             return;
-            case 54:
+            case 60:
             this.MenuItemAsymmetric = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 55:
+            case 61:
             this.MenuItemRSAEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 56:
+            case 62:
             this.MenuItemRSADecryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 57:
+            case 63:
             this.MenuItemRSADemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 58:
+            case 64:
             this.MenuItemHybrid = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 59:
+            case 65:
             this.MenuItemRSAAESEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 60:
+            case 66:
             this.MenuItemRSAAESDecryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 61:
+            case 67:
             this.MenuItemDigSignature_PKI = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 62:
+            case 68:
             this.MenuItemPKI = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 63:
+            case 69:
             this.MenuItemKeyGenImport = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 64:
+            case 70:
             this.MenuItemKeyDisplayExport = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 65:
+            case 71:
             this.MenuItemSignDocument = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 66:
+            case 72:
             this.MenuItemVerfiySignature = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 67:
+            case 73:
             this.MenuItemExtractSignature = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 68:
+            case 74:
             this.MenuItemSignatureDemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 69:
+            case 75:
             this.MenuItemIndivPrcedures = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 70:
+            case 76:
             this.MenuItemHash = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 71:
+            case 77:
             this.MenuItemGenHash = ((System.Windows.Controls.TreeViewItem)(target));
             
-            #line 108 "..\..\DlgMain.xaml"
+            #line 115 "..\..\DlgMain.xaml"
             this.MenuItemGenHash.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgHash);
             
             #line default
             #line hidden
             return;
-            case 72:
+            case 78:
             this.MenuItemHashValueFile = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 73:
+            case 79:
             this.MenuItemHashDemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 74:
+            case 80:
             this.MenuItemKeyGenFromPass = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 75:
+            case 81:
             this.MenuItemGenMac = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 76:
+            case 82:
             this.MenuItemRSACryptoSystem = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 77:
+            case 83:
             this.MenuItemProtocols = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 78:
+            case 84:
             this.MenuItemChineseRemTheoApp = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 79:
+            case 85:
             this.MenuItemVisualAlgoAnimal = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 80:
+            case 86:
             this.MenuItemSecretSharingDemo = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 81:
+            case 87:
             this.MenuItemCodes = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 82:
+            case 88:
             this.MenuItemCompress = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 83:
+            case 89:
             this.MenuItemGenRandNum = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 84:
+            case 90:
             this.MenuItemEducatGames = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 85:
+            case 91:
             this.MenuItemAnalysis = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 86:
+            case 92:
             this.MenuItemToolsForAnalysis = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 87:
+            case 93:
             this.MenuItemSymmetricEncryptionClassic = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 88:
+            case 94:
             this.MenuItemSymmetricEncryptionModern = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 89:
+            case 95:
             this.MenuItemAsymmetricEncryption = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 90:
+            case 96:
             this.MenuItemHashAnalyse = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 91:
+            case 97:
             this.MenuItemAnalyseRandomness = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 92:
+            case 98:
             this.MenuItemOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 93:
+            case 99:
             this.MenuItemPlotOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 94:
+            case 100:
             this.MenuItemAnalysisOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 95:
+            case 101:
             this.MenuItemTextOptions = ((System.Windows.Controls.TreeViewItem)(target));
             
-            #line 140 "..\..\DlgMain.xaml"
+            #line 147 "..\..\DlgMain.xaml"
             this.MenuItemTextOptions.Selected += new System.Windows.RoutedEventHandler(this.ShowDlgTextOptions);
             
             #line default
             #line hidden
             return;
-            case 96:
+            case 102:
             this.MenuItemStartingOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 97:
+            case 103:
             this.MenuItemFurtherOptions = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 98:
+            case 104:
             this.MenuItemLanguage = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 99:
+            case 105:
             this.MenuItemWindow = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 100:
+            case 106:
             this.MenuItemCascade = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 101:
+            case 107:
             this.MenuItemTile = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 102:
+            case 108:
             this.MenuItemArrangeIcons = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 103:
+            case 109:
             this.MenuItemCloseAllWindow = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 104:
+            case 110:
             this.MenuItemHelp = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 105:
+            case 111:
             this.MenuItemStartingPage = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 106:
+            case 112:
             this.MenuItemIndex = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 107:
+            case 113:
             this.MenuItemScenarios = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 108:
+            case 114:
             this.MenuItemReadme = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 109:
+            case 115:
             this.MenuItemScript = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 110:
+            case 116:
             this.MenuItemAbout = ((System.Windows.Controls.TreeViewItem)(target));
             return;
-            case 111:
+            case 117:
             
-            #line 164 "..\..\DlgMain.xaml"
+            #line 171 "..\..\DlgMain.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.MenuItemNew_OnClick);
             
             #line default
             #line hidden
             return;
-            case 112:
+            case 118:
             
-            #line 165 "..\..\DlgMain.xaml"
+            #line 172 "..\..\DlgMain.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.CloseDlgMain);
             
             #line default
