@@ -434,6 +434,36 @@ namespace CrypTool
             DlgEditor dlgEditor = _lastNotifiedForm;
             dlgEditor.setWhiteSpaces();
         }
+        private void setFontArial8(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setFontArial(8);
+        }
+        private void setFontArial10(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setFontArial(10);
+        }
+        private void setFontArial12(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setFontArial(12);
+        }
+        private void setFontCourier8(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setFontCourier(8);
+        }
+        private void setFontCourier10(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setFontCourier(10);
+        }
+        private void setFontCourier12(object sender, RoutedEventArgs arg)
+        {
+            DlgEditor dlgEditor = _lastNotifiedForm;
+            dlgEditor.setFontCourier(12);
+        }
         #endregion
     }
 }

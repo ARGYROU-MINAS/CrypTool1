@@ -473,12 +473,22 @@ namespace CrypTool
         {
             if (!CrypTool.AppLogic.GlobalValues.getWhiteSpaces())
             {
-                richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace(" ", Char.ToString((char)129));
+                richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace(" ", "•");
+                CrypTool.AppLogic.GlobalValues.setWhiteSpaces(true);
             }
             else
             {
-                richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace(((char)Convert.ToInt32(149)).ToString(), " ");
+                richTextBoxPlaintext.Text = richTextBoxPlaintext.Text.Replace("•"," ");
+                CrypTool.AppLogic.GlobalValues.setWhiteSpaces(false);
             }
+        }
+        public void setFontArial(int iFontSize)
+        {
+            richTextBoxPlaintext.Font = new Font("Arial", iFontSize);
+        }
+        public void setFontCourier(int iFontSize)
+        {
+            richTextBoxPlaintext.Font = new Font("Courier", iFontSize);
         }
         #endregion
     }
