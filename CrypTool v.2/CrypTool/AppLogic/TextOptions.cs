@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 namespace CrypTool.AppLogic
 {
@@ -26,7 +27,8 @@ namespace CrypTool.AppLogic
 
         static TextOptions()
         {
-            setDefault();
+            setDefault(); //later delete setDefault to not overwrite permanent settings
+            readTextOptions();
         }
 
         #region Getter/Setter
@@ -154,6 +156,32 @@ namespace CrypTool.AppLogic
             return m_IgnoreCase;
         }
         #endregion
+
+        private static void readTextOptions()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("CrypTool.xml");
+
+            XmlNodeList nodeList;
+
+            nodeList = doc.GetElementsByTagName("Alphabet");
+
+            m_alphabet = nodeList[0].InnerText;
+            
+        }
+        public static void writeTextOptions()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("CrypTool.xml");
+
+            XmlNodeList nodeList;
+
+            nodeList = doc.GetElementsByTagName("Alphabet");
+
+            nodeList[0].InnerText = m_alphabet;
+
+            doc.Save("CrypTool.xml");
+        }
 
     }
 }
