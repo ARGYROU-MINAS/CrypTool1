@@ -21,6 +21,14 @@ namespace CrypTool.CMD
             #endregion
 
             #region SETTER
+            if (cmdLine["set"] != null)
+            {
+                if (cmdLine["alphabet"] != null)
+                {
+                    CrypTool.AppLogic.TextOptions.setAlphabet(cmdLine["alphabet"]);
+                    CrypTool.AppLogic.TextOptions.writeTextOptions();
+                }
+            }
             #endregion
         }
     }

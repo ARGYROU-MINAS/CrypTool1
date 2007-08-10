@@ -17,4 +17,7 @@
     <ShowHowToStartDialog>1</ShowHowToStartDialog>
     <ShowExampleFileOnStartup>1</ShowExampleFileOnStartup>
   </StartOptions>
+  <TextOptions>
+    <Alphabet>ABCDEFGHIJKLMNOPQRSTUVWXYZ</Alphabet>
+  </TextOptions>
 </CrypTool> 

@@ -6,9 +6,15 @@ namespace CrypTool.CMD
 {
     class TextOptionsCMD
     {
-        public string getAlphabet()
-        {
-            return CrypTool.AppLogic.TextOptions.getAlphabet();
-        }
+        //Um später die Funktionen besser zu trennen und nicht alles in cmd.cs zu schreiben
+        //public string getAlphabet()
+        //{
+        //    return CrypTool.AppLogic.TextOptions.getAlphabet();
+        //}
+        //public string setAlphabet()
+        //{
+        //    CrypTool.AppLogic.TextOptions.setAlphabet();
+        //    CrypTool.AppLogic.TextOptions.writeTextOptions();
+        //}
     }
 }
