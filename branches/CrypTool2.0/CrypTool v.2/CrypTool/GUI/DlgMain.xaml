@@ -2,11 +2,31 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="CrypTool v.2 Alpha" Height="480" Width="240"
-    Background="LightSlateGray" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
+    WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" Topmost="True">
   <Window.Resources>
     <XmlDataProvider x:Key="Lang" Source="/lng/german.xml" XPath="CrypTool"/>
   </Window.Resources>
-  <Grid Background="WhiteSmoke">
+  <Window.Background>
+    <ImageBrush
+      TileMode="Tile"
+      Viewport="0,0,200,200"
+      ViewportUnits="Absolute"
+      ImageSource="images\brushed.jpg"
+      />
+  </Window.Background>
+  <Grid>
+    <Grid.Background >
+      <LinearGradientBrush
+      StartPoint="0,0"
+      EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#50A9A9A9" Offset="0"/>
+          <GradientStop Color="#70FFFFFF" Offset="0.4" />
+          <GradientStop Color="#70FFFFFF" Offset="0.6" />
+          <GradientStop Color="#50A9A9A9" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+    </Grid.Background>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
@@ -14,7 +34,7 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="75"/>
     </Grid.RowDefinitions>
-    <TreeView Margin="10" FontSize="12" Name="Menu" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Background="WhiteSmoke">
+    <TreeView Margin="10" FontSize="12" Name="Menu" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Background="{x:Null}">
       <TreeViewItem FontWeight="Bold" Name="MenuItemFile" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemFile/@Header}">
         <TreeViewItem Name="MenuItemNew" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemNew/@Header}"  Selected="MenuItemNew_OnClick"/>
         <TreeViewItem Name="MenuItemOpen" Header="{Binding Source={StaticResource Lang}, XPath=MenuItemOpen/@Header}" Selected="MenuItemOpen_OnClick"/>
@@ -168,8 +188,8 @@
       </TreeViewItem>
     </TreeView>
     <StackPanel Margin="10" Grid.Column="0" Grid.Row="1">
-      <Button Margin="1,1,1,1" Click="MenuItemNew_OnClick">Neu</Button>
-      <Button Margin="1,1,1,1" Click="CloseDlgMain">Beenden</Button>
+      <Button Margin="1,1,1,1" Background="{x:Null}" Click="MenuItemNew_OnClick">Neu</Button>
+      <Button Margin="1,1,1,1" Background="{x:Null}" Click="CloseDlgMain">Beenden</Button>
     </StackPanel>
 </Grid>
 </Window>

@@ -151,6 +151,9 @@
     <Resource Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\brushed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="examples\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
