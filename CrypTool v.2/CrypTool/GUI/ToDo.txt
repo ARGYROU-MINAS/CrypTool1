@@ -4,3 +4,4 @@
 -Editor showing visibly Word wrap, CL, RF
 -Docking Windows
 -Controlling Menu Status
+-CrypTool-CMD port with Mono to Linux and OSX?

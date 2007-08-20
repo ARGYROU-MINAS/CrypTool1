@@ -55,7 +55,7 @@ namespace CrypTool
             textBoxSHA384.Text = showHashInBlock(this.sha384.getHashValue());
 
             this.sha512 = new CrypTool.AppLogic.SHA512(strPlainText);
-            textBox1SHA512.Text = showHashInBlock(this.sha512.getHashValue());
+            textBoxSHA512.Text = showHashInBlock(this.sha512.getHashValue());
         }
         private void ButtonShowFileMD5_OnClick(object sender, RoutedEventArgs e)
         {
