@@ -4,7 +4,7 @@
 	x:Class="CrypTool.DlgShowKey"
 	x:Name="Window"
 	Title="Schlüssel"
-	Width="640" Height="314" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	Width="640" Height="314" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" WindowStartupLocation="CenterOwner">
 
 	<Grid x:Name="LayoutRoot">
 		<GroupBox Margin="8,8,8,40" Header="Schlüssel"/>

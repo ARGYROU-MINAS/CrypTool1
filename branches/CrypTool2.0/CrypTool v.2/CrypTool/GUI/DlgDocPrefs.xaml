@@ -1,8 +1,7 @@
 ﻿<Window x:Class="CrypTool.DlgDocPrefs"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Dokument-Eigenschaften" Height="410" Width="479"
-    >
+    Title="Dokument-Eigenschaften" Height="410" Width="479" WindowStartupLocation="CenterOwner">
     <Grid>
       <StackPanel>
       <GroupBox Margin="5,5,5,5" Header="Informationen zum aktuell ausgewählten Dokument">

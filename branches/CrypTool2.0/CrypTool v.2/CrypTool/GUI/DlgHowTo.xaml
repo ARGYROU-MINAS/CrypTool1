@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
     x:Class="CrypTool.DlgHowTo"
-    Title="Wie Sie starten" Height="385" Width="480" ResizeMode="NoResize" WindowStyle="SingleBorderWindow">
+    Title="Wie Sie starten" Height="385" Width="480" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
   <Window.Background>
     <ImageBrush
       TileMode="Tile"

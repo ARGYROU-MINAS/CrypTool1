@@ -12,8 +12,9 @@ namespace CrypTool
 {
 	public partial class DlgShowKey
 	{
-		public DlgShowKey()
+		public DlgShowKey(DlgMain _DlgMain)
 		{
+            this.Owner = _DlgMain;
 			this.InitializeComponent();
 			
 			// Insert code required on object creation below this point.

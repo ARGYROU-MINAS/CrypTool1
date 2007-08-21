@@ -21,8 +21,9 @@ namespace CrypTool
         private DlgEditor _lastNotifiedForm = null;
 
 
-        public DlgDocPrefs(DlgEditor _EditForm)
+        public DlgDocPrefs(DlgMain _DlgMain,DlgEditor _EditForm)
         {
+            this.Owner = _DlgMain;
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
             getDocInfo();

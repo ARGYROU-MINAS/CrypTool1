@@ -29,7 +29,6 @@ namespace CrypTool
         System.Windows.Controls.MenuItem[] itemLang;
         System.Drawing.Printing.PrintDocument printDoc;
 
-
         public DlgMain()
         {
             InitializeComponent();
@@ -40,14 +39,37 @@ namespace CrypTool
             System.Windows.Forms.Application.EnableVisualStyles();
             printDoc = new System.Drawing.Printing.PrintDocument();
             getOpenFileHistoryItems();
-            ShowHowToDialog();
-            ShowExampleFile();
+            this.Loaded += new RoutedEventHandler(DlgMain_Loaded);
+            this.Closing += new System.ComponentModel.CancelEventHandler(DlgMain_Closing);
         }
+
+        void DlgMain_Loaded(object sender, RoutedEventArgs e)
+        {
+            ShowExampleFile();
+            ShowHowToDialog();
+        }
+
+        void DlgMain_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            foreach (DlgEditor dlgEditor in _childFormList)
+            {
+                dlgEditor.Close();
+            }
+        }
+
         public void updateLang()
         {
             String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
             XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
             xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
+        }
+        public double getLocationTop()
+        {
+            return this.Top;
+        }
+        public double getLoactionLeft()
+        {
+            return this.Left;
         }
         private void CloseDlgMain(object sender, RoutedEventArgs e)
         {
@@ -55,13 +77,13 @@ namespace CrypTool
         }
         private void ShowDlgCaesarRot13(object sender, RoutedEventArgs e)
         {
-            DlgCaesarRot13 dlgCaesarRot13 = new DlgCaesarRot13(this._lastNotifiedForm);
-            dlgCaesarRot13.Show();
+            DlgCaesarRot13 dlgCaesarRot13 = new DlgCaesarRot13(this,_lastNotifiedForm);
+            dlgCaesarRot13.ShowDialog();
         }
         private void ShowDlgTextOptions(object sender, RoutedEventArgs e)
         {
-            DlgOptions dlgTextOptions = new DlgOptions();
-            dlgTextOptions.Show();
+            DlgOptions dlgTextOptions = new DlgOptions(this);
+            dlgTextOptions.ShowDialog();
         }
         private void MenuItemNew_OnClick(object sender, RoutedEventArgs e)
         {
@@ -158,18 +180,18 @@ namespace CrypTool
         }
         private void ShowDlgHash(object sender, RoutedEventArgs e)
         {
-            DlgHash dlgHash = new DlgHash(_lastNotifiedForm);
-            dlgHash.Show();
+            DlgHash dlgHash = new DlgHash(this,_lastNotifiedForm);
+            dlgHash.ShowDialog();
         }
         private void ShowDlgDocPrefs(object sender, RoutedEventArgs e)
         {
-            DlgDocPrefs dlgDocPrefs = new DlgDocPrefs(_lastNotifiedForm);
-            dlgDocPrefs.Show();
+            DlgDocPrefs dlgDocPrefs = new DlgDocPrefs(this,_lastNotifiedForm);
+            dlgDocPrefs.ShowDialog();
         }
         private void ShowDlgKeySymModern(object sender, RoutedEventArgs e)
         {
-            DlgKeySymModern dlgKeySymModern = new DlgKeySymModern(_lastNotifiedForm);
-            dlgKeySymModern.Show();
+            DlgKeySymModern dlgKeySymModern = new DlgKeySymModern(this,_lastNotifiedForm);
+            dlgKeySymModern.ShowDialog();
         }
         private void PrintDialog(object sender, RoutedEventArgs e)
         {
@@ -294,7 +316,7 @@ namespace CrypTool
             if (startOptions.getShowHowToStartDialog())
             {
                 DlgHowTo dlgHowTo = new DlgHowTo();
-                dlgHowTo.Show();
+                dlgHowTo.ShowDialog();
             }
             
         }
@@ -380,12 +402,12 @@ namespace CrypTool
         }
         private void showKeyDialog(object sender, RoutedEventArgs arg)
         {
-            DlgShowKey dlgShowKey = new DlgShowKey();
+            DlgShowKey dlgShowKey = new DlgShowKey(this);
             dlgShowKey.Show();
         }
         private void showDialogFindReplace(object sender, RoutedEventArgs arg)
         {
-            DlgFindReplace dlgFindReplace = new DlgFindReplace(_lastNotifiedForm);
+            DlgFindReplace dlgFindReplace = new DlgFindReplace(this, _lastNotifiedForm);
             dlgFindReplace.Show();
         }
         private void findNext(object sender, RoutedEventArgs arg)

@@ -148,9 +148,6 @@
     <Resource Include="lng\english.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ToDo.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\brushed.jpg" />
   </ItemGroup>
   <ItemGroup>

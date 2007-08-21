@@ -41,17 +41,23 @@ namespace CrypTool
             getKeyWords();
             _FormMainReference = _MainForm;
             InitializeComponent();
+            setLocation();
             setTitle();
             tabPagePlainText.Text = Title;
             checkSaveStatus(false);
             this.hasSavePath = false;
-            
+        }
+        private void setLocation()
+        {
+            this.Top = (int)_FormMainReference.getLocationTop();
+            this.Left = (int)_FormMainReference.getLoactionLeft() + (int)_FormMainReference.Width;
         }
         public DlgEditor(DlgMain _MainForm, Stream stream,string Title)
         {
             getKeyWords();
             _FormMainReference = _MainForm;
             InitializeComponent();
+            setLocation();
             setTitle();
             richTextBoxPlaintext.LoadFile(stream,RichTextBoxStreamType.PlainText);
             tabPagePlainText.Text = Title;
