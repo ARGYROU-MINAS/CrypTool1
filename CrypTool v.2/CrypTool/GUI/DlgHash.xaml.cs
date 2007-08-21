@@ -28,8 +28,9 @@ namespace CrypTool
         CrypTool.AppLogic.SHA384 sha384;
         CrypTool.AppLogic.SHA512 sha512;
 
-        public DlgHash(DlgEditor _EditForm)
+        public DlgHash(DlgMain _DlgMain,DlgEditor _EditForm)
         {
+            this.Owner = _DlgMain;
             _lastNotifiedForm = _EditForm;
             InitializeComponent();
             getHashValues();

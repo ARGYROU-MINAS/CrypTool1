@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CrypTool.DlgCaesarRot13"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Schlüsseleingabe: Caesar / Rot-13" Height="495" Width="521" WindowStartupLocation="CenterScreen">
+    Title="Schlüsseleingabe: Caesar / Rot-13" Height="495" Width="521" WindowStartupLocation="CenterOwner">
 		<Grid>
 			<GroupBox Margin="14,11,0,0" Name="groupBox1" Height="85" VerticalAlignment="Top" Header="Variante auswählen" HorizontalAlignment="Left" Width="132" />
 			<RadioButton Height="18.2766666666667" HorizontalAlignment="Left" Margin="41.75,35.7233333333333,0,0" Name="radioButtonCeasar" VerticalAlignment="Top" Width="74.25" IsChecked="True" GroupName="Variant">Caesar</RadioButton>

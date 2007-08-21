@@ -22,8 +22,9 @@ namespace CrypTool
         private DlgEditor _lastNotifiedForm = null;
         CrypTool.AppLogic.Rot13Caesar rot13;
 
-        public DlgCaesarRot13(DlgEditor _EditForm)
+        public DlgCaesarRot13(DlgMain _DlgMain, DlgEditor _EditForm)
         {
+            this.Owner = _DlgMain;
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
             this.rot13 = new CrypTool.AppLogic.Rot13Caesar();

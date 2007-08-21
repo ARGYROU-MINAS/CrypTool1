@@ -45,6 +45,7 @@ namespace CrypTool
             this.tabControl1.SuspendLayout();
             this.tabPagePlainText.SuspendLayout();
             this.contextMenuRichTextBoxPlain.SuspendLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.SuspendLayout();
             // 
             // tabControl1

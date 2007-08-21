@@ -24,8 +24,9 @@ namespace CrypTool
         private DlgEditor _lastNotifiedForm = null;
         private CrypTool.AppLogic.CrypSymModern crypModern;
         
-        public DlgKeySymModern(DlgEditor _EditForm)
+        public DlgKeySymModern(DlgMain _DlgMain, DlgEditor _EditForm)
         {
+            this.Owner = _DlgMain;
             _lastNotifiedForm = _EditForm;
             InitializeComponent();
             getAlgItems();

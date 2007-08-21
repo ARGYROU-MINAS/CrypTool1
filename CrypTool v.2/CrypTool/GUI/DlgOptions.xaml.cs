@@ -15,10 +15,11 @@ namespace CrypTool
 
     public partial class DlgOptions : Window
     {
-        CrypTool.AppLogic.StartOptions startOptions;
+        private CrypTool.AppLogic.StartOptions startOptions;
 
-        public DlgOptions()
+        public DlgOptions(DlgMain _DlgMain)
         {
+            this.Owner = _DlgMain;
             InitializeComponent();
             LoadSettings();
         }

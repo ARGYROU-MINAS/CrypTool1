@@ -21,8 +21,9 @@ namespace CrypTool
     {
         private DlgEditor _lastNotifiedForm = null;
 
-        public DlgFindReplace(DlgEditor _EditForm)
+        public DlgFindReplace(DlgMain _DlgMain,DlgEditor _EditForm)
         {
+            this.Owner = _DlgMain;
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
             getSearchValues();

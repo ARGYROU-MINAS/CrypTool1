@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CrypTool.DlgKeySymModern"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Symmetrische Cryptography" Height="291" Width="807">
+    Title="Symmetrische Cryptography" Height="291" Width="807" WindowStartupLocation="CenterOwner">
     <Grid>
     <Label HorizontalAlignment="Left" Margin="673.37,160.723333333333,0,0" Name="label2" Width="93.63" Height="26.2766666666667" VerticalAlignment="Top">Schlüssellänge:</Label>
     <ComboBox Margin="680,187,0,0" Name="comboBoxKeyLen" SelectedIndex="0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72" />
