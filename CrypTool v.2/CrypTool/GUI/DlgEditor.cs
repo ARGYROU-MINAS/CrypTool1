@@ -47,10 +47,31 @@ namespace CrypTool
             checkSaveStatus(false);
             this.hasSavePath = false;
         }
+        private void dockMainLeft()
+        {
+            int maxLeft = (int)_FormMainReference.Left + (int)_FormMainReference.Width + 10;
+            int minLeft = (int)_FormMainReference.Left + (int)_FormMainReference.Width - 10;
+
+            if (this.Left < maxLeft && this.Left > minLeft)
+                this.Left = (int)_FormMainReference.Left + (int)_FormMainReference.Width;
+        }
+        private void dockMainTop()
+        {
+            int maxTop = (int)_FormMainReference.Top + 10;
+            int minTop = (int)_FormMainReference.Top - 10;
+
+            if (this.Top < maxTop && this.Top > minTop)
+                this.Top = (int)_FormMainReference.Top;
+        }
+        void DlgEditor_Move(object sender, System.EventArgs e)
+        {
+            dockMainLeft();
+            dockMainTop();
+        }
         private void setLocation()
         {
-            this.Top = (int)_FormMainReference.getLocationTop();
-            this.Left = (int)_FormMainReference.getLoactionLeft() + (int)_FormMainReference.Width;
+            this.Top = (int)_FormMainReference.Top;
+            this.Left = (int)_FormMainReference.Left + (int)_FormMainReference.Width;
         }
         public DlgEditor(DlgMain _MainForm, Stream stream,string Title)
         {

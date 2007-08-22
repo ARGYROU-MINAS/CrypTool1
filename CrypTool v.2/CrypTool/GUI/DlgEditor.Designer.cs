@@ -46,6 +46,7 @@ namespace CrypTool
             this.tabPagePlainText.SuspendLayout();
             this.contextMenuRichTextBoxPlain.SuspendLayout();
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Move += new System.EventHandler(DlgEditor_Move);
             this.SuspendLayout();
             // 
             // tabControl1
@@ -173,7 +174,6 @@ namespace CrypTool
             this.ResumeLayout(false);
 
         }
-
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
