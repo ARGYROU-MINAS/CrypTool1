@@ -43,6 +43,11 @@ namespace CrypTool
             this.Closing += new System.ComponentModel.CancelEventHandler(DlgMain_Closing);
         }
 
+        void DlgMain_LocationChanged(object sender, EventArgs e)
+        {
+            System.Windows.MessageBox.Show("hallo");
+        }
+
         void DlgMain_Loaded(object sender, RoutedEventArgs e)
         {
             ShowExampleFile();
@@ -62,14 +67,6 @@ namespace CrypTool
             String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
             XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
             xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
-        }
-        public double getLocationTop()
-        {
-            return this.Top;
-        }
-        public double getLoactionLeft()
-        {
-            return this.Left;
         }
         private void CloseDlgMain(object sender, RoutedEventArgs e)
         {
