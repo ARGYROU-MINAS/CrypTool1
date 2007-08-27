@@ -41,11 +41,12 @@ namespace CrypTool
             getOpenFileHistoryItems();
             this.Loaded += new RoutedEventHandler(DlgMain_Loaded);
             this.Closing += new System.ComponentModel.CancelEventHandler(DlgMain_Closing);
+            this.LocationChanged += new EventHandler(DlgMain_LocationChanged);
         }
 
         void DlgMain_LocationChanged(object sender, EventArgs e)
         {
-            System.Windows.MessageBox.Show("hallo");
+            
         }
 
         void DlgMain_Loaded(object sender, RoutedEventArgs e)
