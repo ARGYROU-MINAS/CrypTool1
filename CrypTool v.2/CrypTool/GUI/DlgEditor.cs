@@ -63,10 +63,21 @@ namespace CrypTool
             if (this.Top < maxTop && this.Top > minTop)
                 this.Top = (int)_FormMainReference.Top;
         }
+        private void dockMainRight()
+        {
+            int maxRight = (int)_FormMainReference.Left + 10;
+            int minRight = (int)_FormMainReference.Left - 10;
+
+            int thisRight = this.Left + this.Width;
+
+            if (thisRight > minRight && thisRight < maxRight)
+                this.Left = (int)_FormMainReference.Left - this.Width;
+        }
         void DlgEditor_Move(object sender, System.EventArgs e)
         {
             dockMainLeft();
             dockMainTop();
+            dockMainRight();
         }
         private void setLocation()
         {

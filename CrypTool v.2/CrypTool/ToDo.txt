@@ -7,3 +7,4 @@
 -CrypTool-CMD port with Mono to Linux and OSX?
 -Crypto++ soll es eine Wrapper-Klasse für .NET geben
 -Edito RichTextBox austauschen. Zu langsam bei großen Dateien
+-Wenn Docken wie Winamp gefällt, dann alle Varianten noch implementieren
