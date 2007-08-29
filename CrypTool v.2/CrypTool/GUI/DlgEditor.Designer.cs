@@ -58,6 +58,8 @@ namespace CrypTool
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(584, 380);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.ShowToolTips = true;
+            
             // 
             // tabPagePlainText
             // 
