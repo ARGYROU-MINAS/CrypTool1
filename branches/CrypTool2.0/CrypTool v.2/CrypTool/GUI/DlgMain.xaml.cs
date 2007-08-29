@@ -114,7 +114,7 @@ namespace CrypTool
                     {
                         DlgEditor dlgEditor = new DlgEditor(this, myStream,fileInfo.FullName);
                         _childFormList.Add(dlgEditor);
-                        dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
+//                        dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
                         dlgEditor.Show();
                         CrypTool.AppLogic.OpenFileHistory openFile = new CrypTool.AppLogic.OpenFileHistory();
                         openFile.inserNewFileItem(fileInfo.FullName);
@@ -297,7 +297,6 @@ namespace CrypTool
                 {
                     DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
                     _childFormList.Add(dlgEditor);
-                    dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
                     dlgEditor.Show();
                 }
                 fileStream.Close();
@@ -341,7 +340,6 @@ namespace CrypTool
                     {
                         DlgEditor dlgEditor = new DlgEditor(this, myStream, fileInfo.FullName);
                         _childFormList.Add(dlgEditor);
-                        dlgEditor.setPlainTextTabTitle(fileInfo.FullName);
                         dlgEditor.Show();
                     }
                 }

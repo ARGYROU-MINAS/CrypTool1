@@ -14,9 +14,8 @@ namespace CrypTool
     {
         private DlgMain _FormMainReference = null;
         private Be.Windows.Forms.HexBox hexText;
-        private string DlgText;
-        private bool hasSavePath; //true: file hast save path
         
+        private string DlgText;
         private string sPlainTextPath;
         private string strLastFind;
       
@@ -26,7 +25,8 @@ namespace CrypTool
         private bool MatchCase;
         private bool RegularExpression;
         private bool isFirstFind = true;
-        
+        private bool hasSavePath; //true: file hast save path
+
         private Regex regex;
         private Match match;
 
@@ -47,6 +47,21 @@ namespace CrypTool
             checkSaveStatus(false);
             this.hasSavePath = false;
         }
+
+        public DlgEditor(DlgMain _MainForm, Stream stream,string strPath)
+        {
+            getKeyWords();
+            _FormMainReference = _MainForm;
+            InitializeComponent();
+            setLocation();
+            setTitle();
+            richTextBoxPlaintext.LoadFile(stream,RichTextBoxStreamType.PlainText);
+            tabPagePlainText.Text = getShortPath(strPath);
+            tabPagePlainText.ToolTipText = strPath;
+            checkSaveStatus(true);
+            this.hasSavePath = true;
+        }
+        #region Docking, Location Forms
         private void dockMainLeft()
         {
             int maxLeft = (int)_FormMainReference.Left + (int)_FormMainReference.Width + 10;
@@ -84,18 +99,7 @@ namespace CrypTool
             this.Top = (int)_FormMainReference.Top;
             this.Left = (int)_FormMainReference.Left + (int)_FormMainReference.Width;
         }
-        public DlgEditor(DlgMain _MainForm, Stream stream,string Title)
-        {
-            getKeyWords();
-            _FormMainReference = _MainForm;
-            InitializeComponent();
-            setLocation();
-            setTitle();
-            richTextBoxPlaintext.LoadFile(stream,RichTextBoxStreamType.PlainText);
-            tabPagePlainText.Text = Title;
-            checkSaveStatus(true);
-            this.hasSavePath = true;
-        }
+        #endregion
         public void savePlainText(Stream stream)
         {
             richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
@@ -109,8 +113,9 @@ namespace CrypTool
             rtCipherText.Dock = DockStyle.Fill;
             rtCipherText.Text = cipherText;
 
-            TabPage tpCipherText = new TabPage(Title);
+            TabPage tpCipherText = new TabPage(getShortPath(Title));
             tpCipherText.Name = "tpCipherText";
+            tpCipherText.ToolTipText = Title;
             tpCipherText.Controls.Add(rtCipherText);
             tabControl1.TabPages.Add(tpCipherText);
 
@@ -135,8 +140,9 @@ namespace CrypTool
             Be.Windows.Forms.FileByteProvider fileByteProvider = new Be.Windows.Forms.FileByteProvider(cipherText);
             hexBoxCipherText.ByteProvider = fileByteProvider;
             
-            TabPage tpCipherText = new TabPage(Title);
+            TabPage tpCipherText = new TabPage(getShortPath(Title));
             tpCipherText.Name = "tpCipherText";
+            tpCipherText.ToolTipText = Title;
             tpCipherText.Controls.Add(hexBoxCipherText);
             tabControl1.TabPages.Add(tpCipherText);
 
@@ -161,8 +167,9 @@ namespace CrypTool
             Be.Windows.Forms.FileByteProvider fileByteProvider = new Be.Windows.Forms.FileByteProvider(plainText);
             hexText.ByteProvider = fileByteProvider;
 
-            TabPage tpCipherText = new TabPage(Title);
+            TabPage tpCipherText = new TabPage(getShortPath(Title));
             tpCipherText.Name = "tpPlainText";
+            tpCipherText.ToolTipText = Title;
             tpCipherText.Controls.Add(hexText);
             tabControl1.TabPages.Add(tpCipherText);
 
@@ -176,8 +183,9 @@ namespace CrypTool
             rtPlainText.Dock = DockStyle.Fill;
             rtPlainText.Text = plainText;
 
-            TabPage tpPlainText = new TabPage(Title);
+            TabPage tpPlainText = new TabPage(getShortPath(Title));
             tpPlainText.Name = "tpPlainText";
+            tpPlainText.ToolTipText = Title;
             tpPlainText.Controls.Add(rtPlainText);
             tabControl1.TabPages.Add(tpPlainText);
 
@@ -222,6 +230,12 @@ namespace CrypTool
         private void setActiveText()
         {
             this.Text = this.DlgText + " - [Active]";
+        }
+        private string getShortPath(String strPath)
+        {
+            System.IO.FileInfo fileInfo = new System.IO.FileInfo(strPath);
+
+            return fileInfo.Name;
         }
         private void checkSaveStatus(bool saveStatus)
         {
