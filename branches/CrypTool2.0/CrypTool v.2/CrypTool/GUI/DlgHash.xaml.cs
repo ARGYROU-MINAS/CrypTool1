@@ -57,6 +57,8 @@ namespace CrypTool
 
             this.sha512 = new CrypTool.AppLogic.SHA512(strPlainText);
             textBoxSHA512.Text = showHashInBlock(this.sha512.getHashValue());
+
+            setTitle(_lastNotifiedForm.getPlainTextTabTitle());
         }
         private void ButtonShowFileMD5_OnClick(object sender, RoutedEventArgs e)
         {
@@ -101,6 +103,10 @@ namespace CrypTool
         private void showHashFile(string HashString,string Title)
         {
             _lastNotifiedForm.setCipherTextHEX(HashString,Title);
+        }
+        private void setTitle(String strTitle)
+        {
+            Title = String.Format("Hashwert von <{0}>",strTitle);
         }
     }
 }

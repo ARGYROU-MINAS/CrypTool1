@@ -169,4 +169,6 @@
   <MenuItemReadme Header="Readme"/>
   <MenuItemScript Header="Script"/>
   <MenuItemAbout Header="About CrypTool"/>
+  <ButtonCreateNewEditorWindow Header="Create new editor window"/>
+  <ButtonQuit Header="Quit"/>
 </CrypTool>

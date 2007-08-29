@@ -3,8 +3,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
     x:Class="CrypTool.DlgOptions"
-    Title="Textoptionen" Height="648.000149687994" Width="581" WindowStartupLocation="CenterOwner">
+    Title="Textoptionen" Height="648.000149687994" Width="581" WindowStartupLocation="CenterOwner" Icon="images\idr_main.ico">
+  <Window.Background>
+    <ImageBrush
+      TileMode="Tile"
+      Viewport="0,0,200,200"
+      ViewportUnits="Absolute"
+      ImageSource="images\brushed.jpg"
+      />
+  </Window.Background>
   <Grid>
+    <Grid.Background >
+      <LinearGradientBrush
+      StartPoint="0,0"
+      EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#50A9A9A9" Offset="0"/>
+          <GradientStop Color="#70FFFFFF" Offset="0.4" />
+          <GradientStop Color="#70FFFFFF" Offset="0.6" />
+          <GradientStop Color="#50A9A9A9" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+    </Grid.Background>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
@@ -13,10 +33,10 @@
       <RowDefinition Height="0.075*" />
     </Grid.RowDefinitions>
     <WrapPanel FlowDirection="RightToLeft" Grid.Column="0" Margin="0,1.274,0,-4" Grid.Row="1">
-    <Button Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" x:Name="buttonCancel" VerticalAlignment="Top" Width="100" Click="ButtonCancel_OnClick" Content="Abbrechen"/>
-    <Button Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" Name="buttonApply" VerticalAlignment="Top" Width="100" Click="ButtonApply_OnClick" Content="Übernehmen"/>
+    <Button Background="{x:Null}" Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" x:Name="buttonCancel" VerticalAlignment="Top" Width="100" Click="ButtonCancel_OnClick" Content="Abbrechen"/>
+    <Button Background="{x:Null}" Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" Name="buttonApply" VerticalAlignment="Top" Width="100" Click="ButtonApply_OnClick" Content="Übernehmen"/>
     </WrapPanel>
-    <TabControl Grid.Column="0" Grid.Row="0" Margin="10,10,10,8.726" TabStripPlacement="Top" Name="TcOptions">
+    <TabControl Background="{x:Null}" Grid.Column="0" Grid.Row="0" Margin="10,10,10,8.726" TabStripPlacement="Top" Name="TcOptions">
       <TabItem Header="Textoptionen">
         <Grid>
           <GroupBox Header="Formatierungsoptionen" Height="52" Margin="11,15,0,0" Name="groupBoxFormatOpt" VerticalAlignment="Top" HorizontalAlignment="Left" Width="516" />
@@ -36,10 +56,10 @@
           <Label Margin="24.37,239.723333333333,117.63,0" Name="labelUsedAlphabet" Height="29.2766666666666" VerticalAlignment="Top" />
           <TextBox Margin="22,272.723333333333,26,0" Name="textBoxAlph" Height="26.2766666666666" VerticalAlignment="Top"/>
           <TextBox Height="25.2766666666666" Margin="20,334.723333333333,0,0" Name="textBoxRefFile" VerticalAlignment="Top" HorizontalAlignment="Left" Width="413"/>
-          <Button Height="30" HorizontalAlignment="Left" Margin="441,334.723,0,0" Name="buttonSearch" VerticalAlignment="Top" Width="Auto" Content="Suchen..."/>
+          <Button Background="{x:Null}" Height="30" HorizontalAlignment="Left" Margin="441,334.723,0,0" Name="buttonSearch" VerticalAlignment="Top" Width="Auto" Content="Suchen..."/>
           <Label Height="28.277" HorizontalAlignment="Right" Margin="0,401.723,152.63,0" Name="labelSeparator" VerticalAlignment="Top" Width="90" Content="Trennzeichen"/>
           <TextBox Height="25.2766666666666" HorizontalAlignment="Left" Margin="395,401.723333333333,0,0" Name="textBoxSeparator" VerticalAlignment="Top" Width="25"/>
-          <Button Height="30" Margin="159.01,0,165.99,8" Name="buttonDefault" VerticalAlignment="Bottom" Click="ButtonDefault_OnClick" Content="Standard wiederherstellen"/>
+          <Button Background="{x:Null}" Height="30" Margin="159.01,0,165.99,8" Name="buttonDefault" VerticalAlignment="Bottom" Click="ButtonDefault_OnClick" Content="Standard wiederherstellen"/>
         </Grid>
       </TabItem>
       <TabItem Header="Startoptionen">
