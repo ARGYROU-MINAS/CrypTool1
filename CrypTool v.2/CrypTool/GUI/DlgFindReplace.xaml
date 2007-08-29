@@ -3,17 +3,40 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
     x:Class="CrypTool.DlgFindReplace"
-    Title="Suchen und Ersetzen" Height="301" Width="486" WindowStartupLocation="CenterOwner">
+    Title="Suchen und Ersetzen" Height="301" Width="486" WindowStartupLocation="CenterOwner"
+    Icon="images\idr_main.ico"
+    >
+
+  <Window.Background>
+    <ImageBrush
+      TileMode="Tile"
+      Viewport="0,0,200,200"
+      ViewportUnits="Absolute"
+      ImageSource="images\brushed.jpg"
+      />
+  </Window.Background>
+  
     <Grid>
-        
+      <Grid.Background >
+        <LinearGradientBrush
+        StartPoint="0,0"
+        EndPoint="1,0">
+          <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#50A9A9A9" Offset="0"/>
+            <GradientStop Color="#70FFFFFF" Offset="0.4" />
+            <GradientStop Color="#70FFFFFF" Offset="0.6" />
+            <GradientStop Color="#50A9A9A9" Offset="1" />
+          </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+      </Grid.Background> 
     	<Label HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Content="Suchen:"/>
     	<Label HorizontalAlignment="Left" Margin="8,36.107,0,0" VerticalAlignment="Top" Content="Ersetzen:"/>
     	<ComboBox Margin="96,12,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxFind" IsEditable="True"/>
     	<ComboBox Margin="96,40.107,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxReplace" IsEditable="True"/>
-    	<Button d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,10,17.35,0" x:Name="ButtonFind" VerticalAlignment="Top" Height="Auto" Content="Suchen" Click="ButtonFind_OnClick"/>
-    	<Button Content="Ersetzen" HorizontalAlignment="Right" Margin="0,38.107,9.257,0" x:Name="ButtonReplace" VerticalAlignment="Top" Click="ButtonReplace_OnClick"/>
-    	<Button Content="Alle ersetzen" HorizontalAlignment="Right" Margin="0,92,8,0" x:Name="ButtonReplaceAll" VerticalAlignment="Top" Click="ButtonReplaceAll_OnClick"/>
-    	<Button Content="Abbrechen" d:LayoutOverrides="Height" HorizontalAlignment="Right" Margin="0,0,8,11.893" x:Name="ButtonCancel" VerticalAlignment="Bottom" Click="ButtonCancel_OnClick"/>
+    	<Button Background="{x:Null}" d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,10,17.35,0" x:Name="ButtonFind" VerticalAlignment="Top" Height="Auto" Content="Suchen" Click="ButtonFind_OnClick"/>
+    	<Button Background="{x:Null}" Content="Ersetzen" HorizontalAlignment="Right" Margin="0,38.107,9.257,0" x:Name="ButtonReplace" VerticalAlignment="Top" Click="ButtonReplace_OnClick"/>
+    	<Button Background="{x:Null}" Content="Alle ersetzen" HorizontalAlignment="Right" Margin="0,92,8,0" x:Name="ButtonReplaceAll" VerticalAlignment="Top" Click="ButtonReplaceAll_OnClick"/>
+    	<Button Background="{x:Null}" Content="Abbrechen" d:LayoutOverrides="Height" HorizontalAlignment="Right" Margin="0,0,8,11.893" x:Name="ButtonCancel" VerticalAlignment="Bottom" Click="ButtonCancel_OnClick"/>
     	<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,97.893" VerticalAlignment="Bottom" Content="Groß-/Kleinschreibung beachten" x:Name="CheckBoxMatchCase" Click="setFirstFind"/>
     	<CheckBox Content="Suchrichtung umkehren" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,75.786" VerticalAlignment="Bottom" x:Name="CheckBoxFindReverse" Click="setFirstFind"/>
     	<CheckBox Content="Reguläre Ausdrücke im Suchfeld erlauben" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,53.68" VerticalAlignment="Bottom" x:Name="CheckBoxRegularExpression" Click="setFirstFind"/>

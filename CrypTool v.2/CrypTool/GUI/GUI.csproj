@@ -11,6 +11,7 @@
     <ApplicationVersion>1.0.0.*</ApplicationVersion>
     <!-- Most people will use Publish dialog in Visual Studio to increment this -->
     <BootstrapperEnabled>false</BootstrapperEnabled>
+    <ApplicationIcon>images\idr_main.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -149,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\brushed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\idr_main.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="examples\" />

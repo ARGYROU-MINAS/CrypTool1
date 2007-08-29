@@ -6,5 +6,8 @@
 -Controlling Menu Status
 -CrypTool-CMD port with Mono to Linux and OSX?
 -Crypto++ soll es eine Wrapper-Klasse für .NET geben
--Edito RichTextBox austauschen. Zu langsam bei großen Dateien
+-Bouncycastle einbinden
+-Editor RichTextBox austauschen. Zu langsam bei großen Dateien
 -Wenn Docken wie Winamp gefällt, dann alle Varianten noch implementieren
+-View der Editoren ändern
+-Klasse ReadLangString für Messageboxen usw.

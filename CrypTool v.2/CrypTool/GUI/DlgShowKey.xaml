@@ -4,11 +4,34 @@
 	x:Class="CrypTool.DlgShowKey"
 	x:Name="Window"
 	Title="Schlüssel"
-	Width="640" Height="314" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" WindowStartupLocation="CenterOwner">
+	Width="640" Height="314" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" WindowStartupLocation="CenterOwner"
+  Icon="images\idr_main.ico"
+  >
 
+  <Window.Background>
+    <ImageBrush
+      TileMode="Tile"
+      Viewport="0,0,200,200"
+      ViewportUnits="Absolute"
+      ImageSource="images\brushed.jpg"
+      />
+  </Window.Background>
+  
 	<Grid x:Name="LayoutRoot">
+    <Grid.Background >
+      <LinearGradientBrush
+      StartPoint="0,0"
+      EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+          <GradientStop Color="#50A9A9A9" Offset="0"/>
+          <GradientStop Color="#70FFFFFF" Offset="0.4" />
+          <GradientStop Color="#70FFFFFF" Offset="0.6" />
+          <GradientStop Color="#50A9A9A9" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+    </Grid.Background>
 		<GroupBox Margin="8,8,8,40" Header="Schlüssel"/>
-		<Button d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,0,82.877,6" VerticalAlignment="Bottom" Height="30" Content="Schlüssel kopieren" Click="ButtonCopyKey_OnClick"/>
-		<Button d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,0,8,6" VerticalAlignment="Bottom" Height="30" Content="Schließen" Click="ButtonClose_OnClick"/>
+		<Button Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,82.877,6" VerticalAlignment="Bottom" Height="30" Content="Schlüssel kopieren" Click="ButtonCopyKey_OnClick"/>
+		<Button Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,8,6" VerticalAlignment="Bottom" Height="30" Content="Schließen" Click="ButtonClose_OnClick"/>
 	</Grid>
 </Window>

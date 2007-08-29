@@ -42,6 +42,7 @@ namespace CrypTool
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Icon = new System.Drawing.Icon("images\\idr_main.ico");
             this.tabControl1.SuspendLayout();
             this.tabPagePlainText.SuspendLayout();
             this.contextMenuRichTextBoxPlain.SuspendLayout();
@@ -59,7 +60,7 @@ namespace CrypTool
             this.tabControl1.Size = new System.Drawing.Size(584, 380);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.ShowToolTips = true;
-            
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(tabControl1_Selecting);
             // 
             // tabPagePlainText
             // 

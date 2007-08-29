@@ -42,7 +42,7 @@ namespace CrypTool
             _FormMainReference = _MainForm;
             InitializeComponent();
             setLocation();
-            setTitle();
+            setTitle(getShortPath(Title));
             tabPagePlainText.Text = Title;
             checkSaveStatus(false);
             this.hasSavePath = false;
@@ -54,7 +54,7 @@ namespace CrypTool
             _FormMainReference = _MainForm;
             InitializeComponent();
             setLocation();
-            setTitle();
+            setTitle(getShortPath(strPath));
             richTextBoxPlaintext.LoadFile(stream,RichTextBoxStreamType.PlainText);
             tabPagePlainText.Text = getShortPath(strPath);
             tabPagePlainText.ToolTipText = strPath;
@@ -100,6 +100,12 @@ namespace CrypTool
             this.Left = (int)_FormMainReference.Left + (int)_FormMainReference.Width;
         }
         #endregion
+
+        void tabControl1_Selecting(object sender, System.EventArgs e)
+        {
+            setTitle(tabControl1.SelectedTab.Text);
+        }
+
         public void savePlainText(Stream stream)
         {
             richTextBoxPlaintext.SaveFile(stream, RichTextBoxStreamType.PlainText);
@@ -209,27 +215,29 @@ namespace CrypTool
             setActiveText();
             setOtherFormNonActive();
         }
-        public void setTitle()
+        public void setTitle(String strTabTitle)
         {
-            this.DlgText = "CrypTool-Editor";
+            DlgText = "CrypTool-Editor";
+            if (strTabTitle.Length > 0)
+                DlgText += " - " + strTabTitle;
             setActiveText();
         }
         public void setPlainTextTabTitle(string sTitle)
         {
-            this.sPlainTextPath = sTitle;
-            this.tabPagePlainText.Text = this.sPlainTextPath;
+            sPlainTextPath = sTitle;
+            tabPagePlainText.Text = sPlainTextPath;
         }
         public string getPlainTextTabTitle()
         {
-            return this.tabPagePlainText.Text;
+            return tabPagePlainText.Text;
         }
         public string getPlainTextPath()
         {
-            return this.sPlainTextPath;
+            return sPlainTextPath;
         }
         private void setActiveText()
         {
-            this.Text = this.DlgText + " - [Active]";
+            Text = DlgText + " - [Active]";
         }
         private string getShortPath(String strPath)
         {
@@ -543,5 +551,6 @@ namespace CrypTool
             richTextBoxPlaintext.Font = new Font("Courier", iFontSize);
         }
         #endregion
+
     }
 }
