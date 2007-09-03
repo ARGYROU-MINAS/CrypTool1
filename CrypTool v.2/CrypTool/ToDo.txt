@@ -11,3 +11,5 @@
 -Wenn Docken wie Winamp gefällt, dann alle Varianten noch implementieren
 -View der Editoren ändern
 -Klasse ReadLangString für Messageboxen usw.
+-EditorTabs löschen
+-Alle Buttons/Menü enable/disable

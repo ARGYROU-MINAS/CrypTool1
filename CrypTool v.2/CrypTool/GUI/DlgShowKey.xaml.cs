@@ -16,9 +16,17 @@ namespace CrypTool
 		{
             this.Owner = _DlgMain;
 			this.InitializeComponent();
-			
-			// Insert code required on object creation below this point.
+
+            updateLang();
 		}
+        public void updateLang()
+        {
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
+
+            Title = String.Format("{0}", CrypTool.AppLogic.XmlLangReader.getXMLItem("Labels/Key", "Header"));
+        }
         private void ButtonClose_OnClick(object sender, RoutedEventArgs arg)
         {
             Close();

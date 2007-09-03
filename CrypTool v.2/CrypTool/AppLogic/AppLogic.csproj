@@ -55,6 +55,7 @@
     <Compile Include="TextOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TripleDES.cs" />
+    <Compile Include="XmlLangReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
