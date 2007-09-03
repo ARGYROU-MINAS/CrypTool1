@@ -7,7 +7,9 @@
 	Width="640" Height="314" xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" WindowStartupLocation="CenterOwner"
   Icon="images\idr_main.ico"
   >
-
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/english.xml" XPath="CrypTool"/>
+  </Window.Resources>
   <Window.Background>
     <ImageBrush
       TileMode="Tile"
@@ -30,8 +32,8 @@
         </LinearGradientBrush.GradientStops>
       </LinearGradientBrush>
     </Grid.Background>
-		<GroupBox Margin="8,8,8,40" Header="Schlüssel"/>
-		<Button Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,82.877,6" VerticalAlignment="Bottom" Height="30" Content="Schlüssel kopieren" Click="ButtonCopyKey_OnClick"/>
-		<Button Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,8,6" VerticalAlignment="Bottom" Height="30" Content="Schließen" Click="ButtonClose_OnClick"/>
+		<GroupBox Margin="8,8,8,40" Header="{Binding Source={StaticResource Lang}, XPath=Labels/Key/@Header}"/>
+		<Button Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,82.877,6" VerticalAlignment="Bottom" Height="30" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonCopyKey/@Header}" Click="ButtonCopyKey_OnClick"/>
+		<Button Background="{x:Null}" HorizontalAlignment="Right" Margin="0,0,8,6" VerticalAlignment="Bottom" Height="30" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonClose/@Header}" Click="ButtonClose_OnClick"/>
 	</Grid>
 </Window>

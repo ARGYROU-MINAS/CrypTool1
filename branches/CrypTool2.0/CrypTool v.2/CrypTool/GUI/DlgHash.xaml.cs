@@ -33,7 +33,14 @@ namespace CrypTool
             this.Owner = _DlgMain;
             _lastNotifiedForm = _EditForm;
             InitializeComponent();
+            updateLang();
             getHashValues();
+        }
+        public void updateLang()
+        {
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
         }
         private void OnButtonClose(object sender, RoutedEventArgs e)
         {
@@ -106,7 +113,8 @@ namespace CrypTool
         }
         private void setTitle(String strTitle)
         {
-            Title = String.Format("Hashwert von <{0}>",strTitle);
+            Title = String.Format("{0} <{1}>", CrypTool.AppLogic.XmlLangReader.getXMLItem("./Labels/HashvalueOf","Header"),
+                strTitle);
         }
     }
 }

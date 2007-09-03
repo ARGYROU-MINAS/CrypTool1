@@ -22,6 +22,15 @@ namespace CrypTool
         public DlgHowTo()
         {
             InitializeComponent();
+            updateLang();
+        }
+        public void updateLang()
+        {
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
+
+            Title = String.Format("{0}", CrypTool.AppLogic.XmlLangReader.getXMLItem("Labels/HowToStart", "Header"));
         }
         private void ButtonClose_OnClick(object sender, RoutedEventArgs arg)
         {

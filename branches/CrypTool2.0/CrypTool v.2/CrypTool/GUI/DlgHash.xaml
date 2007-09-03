@@ -1,7 +1,10 @@
 ﻿<Window x:Class="CrypTool.DlgHash"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Hash" Height="262" Width="800" WindowStartupLocation="CenterOwner" Icon="images\idr_main.ico">
+    Title="Hashvalue" Height="262" Width="1008" WindowStartupLocation="CenterOwner" Icon="images\idr_main.ico">
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/english.xml" XPath="CrypTool"/>
+  </Window.Resources>
   <Window.Background>
     <ImageBrush
       TileMode="Tile"
@@ -33,25 +36,25 @@ EndPoint="1,0">
           <Label Name="labelSHA512" Height="30" Margin="1,1,1,5" Width="Auto" Content="SHA512"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Left">
-          <TextBox IsReadOnly="True" Name="textBoxMD5" Height="30" Margin="5,1,1,5" MinWidth="500" Width="Auto"/>
-          <TextBox IsReadOnly="True" Name="textBoxSHA1" Height="30" Margin="5,1,1,5" MinWidth="500" Width="Auto"/>
-          <TextBox IsReadOnly="True" Name="textBoxSHA256" Height="30" Margin="5,1,1,5" MinWidth="500" Width="Auto"/>
-          <TextBox IsReadOnly="True" Name="textBoxSHA384" Height="30" Margin="5,1,1,5" MinWidth="500" Width="Auto"/>
-          <TextBox IsReadOnly="True" Name="textBoxSHA512" Height="30" Margin="5,1,1,5" MinWidth="500" Width="Auto"/>
+          <TextBox IsReadOnly="True" Name="textBoxMD5" Height="30" Margin="5,1,1,5" MinWidth="700" MaxWidth="200" />
+          <TextBox IsReadOnly="True" Name="textBoxSHA1" Height="30" Margin="5,1,1,5" MinWidth="700" MaxWidth="200" />
+          <TextBox IsReadOnly="True" Name="textBoxSHA256" Height="30" Margin="5,1,1,5" MinWidth="700" MaxWidth="200" />
+          <TextBox IsReadOnly="True" Name="textBoxSHA384" Height="30" Margin="5,1,1,5" MinWidth="700" MaxWidth="200" />
+          <TextBox IsReadOnly="True" Name="textBoxSHA512" Height="30" Margin="5,1,1,5" MinWidth="700" MaxWidth="200" />
         </StackPanel>
         <StackPanel DockPanel.Dock="Left">
-          <Button Background="{x:Null}" Name="buttonShowFileMD5" Height="30" Margin="5,1,5,5" Width="Auto" Content="Im Editorfenster anzeigen" Click="ButtonShowFileMD5_OnClick"/>
-          <Button Background="{x:Null}" Name="buttonShowFileSHA1" Height="30" Margin="5,1,5,5" Width="Auto" Content="Im Editorfenster anzeigen" Click="ButtonShowFileSHA1_OnClick"/>
-          <Button Background="{x:Null}" Name="buttonShowFileSHA256" Height="30" Margin="5,1,5,5" Width="Auto" Content="Im Editorfenster anzeigen" Click="ButtonShowFileSHA256_OnClick"/>
-          <Button Background="{x:Null}" Name="buttonShowFileSHA384" Height="30" Margin="5,1,5,5" Width="Auto" Content="Im Editorfenster anzeigen" Click="ButtonShowFileSHA384_OnClick"/>
-          <Button Background="{x:Null}" Name="buttonShowFileSHA512" Height="30" Margin="5,1,5,5" Width="Auto" Content="Im Editorfenster anzeigen" Click="ButtonShowFileSHA512_OnClick"/>
+          <Button Background="{x:Null}" Name="buttonShowFileMD5" Height="30" Margin="5,1,5,5" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonShowHashInEditor/@Header}" Click="ButtonShowFileMD5_OnClick"/>
+          <Button Background="{x:Null}" Name="buttonShowFileSHA1" Height="30" Margin="5,1,5,5" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonShowHashInEditor/@Header}" Click="ButtonShowFileSHA1_OnClick"/>
+          <Button Background="{x:Null}" Name="buttonShowFileSHA256" Height="30" Margin="5,1,5,5" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonShowHashInEditor/@Header}" Click="ButtonShowFileSHA256_OnClick"/>
+          <Button Background="{x:Null}" Name="buttonShowFileSHA384" Height="30" Margin="5,1,5,5" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonShowHashInEditor/@Header}" Click="ButtonShowFileSHA384_OnClick"/>
+          <Button Background="{x:Null}" Name="buttonShowFileSHA512" Height="30" Margin="5,1,5,5" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonShowHashInEditor/@Header}" Click="ButtonShowFileSHA512_OnClick"/>
         </StackPanel>
       </DockPanel>
     </ScrollViewer>
     <DockPanel DockPanel.Dock="Bottom">
       <WrapPanel HorizontalAlignment="Right">
-        <Button Background="{x:Null}" Name="buttonShowAllInFiles" Height="30" Margin="5,1,1,5" Width="Auto" Click="ButtonShowAllInFiles_OnClick" Content="Anzeigen aller Hashwerte in verschiedenen Editorfenstern"></Button>
-        <Button Background="{x:Null}" Name="buttonClose" Height="30" Margin="5,1,5,5" Content="Schließen" Width="Auto" Click="OnButtonClose"></Button>
+        <Button Background="{x:Null}" Name="buttonShowAllInFiles" Height="30" Margin="5,1,1,5" Width="Auto" Click="ButtonShowAllInFiles_OnClick" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonShowAllHashInEditor/@Header}"></Button>
+        <Button Background="{x:Null}" Name="buttonClose" Height="30" Margin="5,1,5,5" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonClose/@Header}" Width="Auto" Click="OnButtonClose"></Button>
       </WrapPanel>
     </DockPanel>
   </DockPanel>

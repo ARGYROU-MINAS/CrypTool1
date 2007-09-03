@@ -4,8 +4,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
     x:Class="CrypTool.DlgHowTo"
     Title="Wie Sie starten" Height="385" Width="480" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen"
-    Icon="images\idr_main.ico"
-    >
+    Icon="images\idr_main.ico">
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/english.xml" XPath="CrypTool"/>
+  </Window.Resources>
   <Window.Background>
     <ImageBrush
       TileMode="Tile"
@@ -42,8 +44,8 @@
       </TextBlock.RenderTransform>
     	<Run Language="de-de">rypTool - HowTo ...</Run>
     </TextBlock>
-    <Button Click="ButtonClose_OnClick" HorizontalAlignment="Right" Margin="0,0,8,8" x:Name="buttonClose" VerticalAlignment="Bottom" Width="111" Height="30" Content="Schließen" Grid.Column="1" Background="{x:Null}" Foreground="#FF000000"/>
-    <CheckBox Grid.Column="1" Height="18.106" Margin="8,0,132.93,13.947" Name="checkBoxShowAgain" VerticalAlignment="Bottom" Content="Diesen Dialog in Zukunft nicht mehr zeigen." Foreground="#FF000000" />
+    <Button Click="ButtonClose_OnClick" HorizontalAlignment="Right" Margin="0,0,8,8" x:Name="buttonClose" VerticalAlignment="Bottom" Width="111" Height="30" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonClose/@Header}" Grid.Column="1" Background="{x:Null}" Foreground="#FF000000"/>
+    <CheckBox Grid.Column="1" Height="18.106" Margin="8,0,132.93,13.947" Name="checkBoxShowAgain" VerticalAlignment="Bottom" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DontShowDialogAgain/@Header}" Foreground="#FF000000" />
   	<TextBlock RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="4,8.683,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Column="1" FontSize="45" FontWeight="Bold" Foreground="#FF000000" Text="C" TextWrapping="Wrap">
   		<TextBlock.RenderTransform>
   			<TransformGroup>
@@ -54,7 +56,7 @@
   			</TransformGroup>
   		</TextBlock.RenderTransform>
   	</TextBlock>
-    <TextBlock Margin="15,81.922,15,52" Background="{x:Null}" Grid.Column="1" TextWrapping="Wrap">CrypTool ist ein freies Demonstrationsprogramm. mit dessen Hilfe Sie kryptographische Verfahren anwenden und analysieren können.<LineBreak/><LineBreak/>CrypTool bietet eine umfangreiche Online-Hilfe. Zu jeden Menüpunkt und zu jeder Dialogbox können Sie mit F1 Kontexthilfe aktivieren.<LineBreak/><LineBreak/>Wenn Sie jetzt die Taste F1 drücken, erhalten Sie die Online-Hilfe für den Einstieg in CrypTool.<LineBreak/><LineBreak/><TextBlock Margin="30,0,0,0">Viel Spaß!</TextBlock>
+    <TextBlock Margin="15,81.922,15,52" Background="{x:Null}" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Source={StaticResource Lang}, XPath=Text/HowTo}">
   </TextBlock>
   	<Border RenderTransformOrigin="0.5,0.5" Margin="8,75.922,8,42" Grid.Column="1" Background="{x:Null}" BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5">
   		<Border.RenderTransform>
