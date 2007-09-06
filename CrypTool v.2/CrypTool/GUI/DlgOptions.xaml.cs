@@ -21,7 +21,16 @@ namespace CrypTool
         {
             this.Owner = _DlgMain;
             InitializeComponent();
+            updateLang();
             LoadSettings();
+        }
+        public void updateLang()
+        {
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
+
+            Title = String.Format("{0}", CrypTool.AppLogic.XmlLangReader.getXMLItem("Titles/Preferences", "Header"));
         }
         private void LoadSettings()
         {
@@ -33,9 +42,8 @@ namespace CrypTool
             checkBoxCif.IsChecked = CrypTool.AppLogic.TextOptions.getZahlVal();
             checkBoxPunctuation.IsChecked = CrypTool.AppLogic.TextOptions.getSatzVal();
 
-            labelUsedAlphabet.Content = "Zu verwendetes Alphabet (";
-            labelUsedAlphabet.Content += CrypTool.AppLogic.TextOptions.getAlphabet().Length.ToString();
-            labelUsedAlphabet.Content += " Zeichen):";
+            labelUsedAlphabet.Content = String.Format(AppLogic.XmlLangReader.getXMLItem("Labels/AlphabetToUse", "Header"),
+                CrypTool.AppLogic.TextOptions.getAlphabet().Length.ToString());
 
             textBoxRefFile.Text = CrypTool.AppLogic.TextOptions.getStrRefFile();
             textBoxAlph.Text = CrypTool.AppLogic.TextOptions.getAlphabet();

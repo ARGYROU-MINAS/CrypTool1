@@ -29,10 +29,19 @@ namespace CrypTool
             this.Owner = _DlgMain;
             _lastNotifiedForm = _EditForm;
             InitializeComponent();
+            updateLang();
             getAlgItems();
             getPadModes();
             getCipherModes();
             setKeyInputMethod();
+        }
+        public void updateLang()
+        {
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
+
+            Title = String.Format("{0}", CrypTool.AppLogic.XmlLangReader.getXMLItem("Title/SymmetricCryptographie", "Header"));
         }
         private void getAlgItems()
         {

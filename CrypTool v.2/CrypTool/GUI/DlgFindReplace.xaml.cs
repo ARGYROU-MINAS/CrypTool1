@@ -26,8 +26,17 @@ namespace CrypTool
             this.Owner = _DlgMain;
             this._lastNotifiedForm = _EditForm;
             InitializeComponent();
+            updateLang();
             getSearchValues();
             getReplaceValues();
+        }
+        public void updateLang()
+        {
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
+
+            Title = String.Format("{0}", CrypTool.AppLogic.XmlLangReader.getXMLItem("Titles/FindAndReplace", "Header"));
         }
         private void ButtonFind_OnClick(object sender, RoutedEventArgs arg)
         {

@@ -4,6 +4,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2006" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
     x:Class="CrypTool.DlgOptions"
     Title="Textoptionen" Height="648.000149687994" Width="581" WindowStartupLocation="CenterOwner" Icon="images\idr_main.ico">
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/english.xml" XPath="CrypTool"/>
+  </Window.Resources>
   <Window.Background>
     <ImageBrush
       TileMode="Tile"
@@ -33,36 +36,36 @@
       <RowDefinition Height="0.075*" />
     </Grid.RowDefinitions>
     <WrapPanel FlowDirection="RightToLeft" Grid.Column="0" Margin="0,1.274,0,-4" Grid.Row="1">
-    <Button Background="{x:Null}" Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" x:Name="buttonCancel" VerticalAlignment="Top" Width="100" Click="ButtonCancel_OnClick" Content="Abbrechen"/>
-    <Button Background="{x:Null}" Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" Name="buttonApply" VerticalAlignment="Top" Width="100" Click="ButtonApply_OnClick" Content="Übernehmen"/>
+    <Button Background="{x:Null}" Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" x:Name="buttonCancel" VerticalAlignment="Top" Width="100" Click="ButtonCancel_OnClick" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonCancel/@Header}"/>
+    <Button Background="{x:Null}" Height="30" HorizontalAlignment="Right" Margin="5,5,5,5" Name="buttonApply" VerticalAlignment="Top" Width="100" Click="ButtonApply_OnClick" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Apply/@Header}"/>
     </WrapPanel>
     <TabControl Background="{x:Null}" Grid.Column="0" Grid.Row="0" Margin="10,10,10,8.726" TabStripPlacement="Top" Name="TcOptions">
-      <TabItem Header="Textoptionen">
+      <TabItem Header="{Binding Source={StaticResource Lang}, XPath=Labels/TextOptions/@Header}">
         <Grid>
-          <GroupBox Header="Formatierungsoptionen" Height="52" Margin="11,15,0,0" Name="groupBoxFormatOpt" VerticalAlignment="Top" HorizontalAlignment="Left" Width="516" />
-          <GroupBox Header="Groß-/Kleinschreibung" Height="64" Margin="11,76,0,0" Name="groupBoxUpperLowerCase" VerticalAlignment="Top" HorizontalAlignment="Left" Width="516" />
-          <GroupBox Header="Alphabet für Texte definieren" Margin="11,150,0,0" Name="groupBoxAlphForText" HorizontalAlignment="Left" Width="517" Height="155" VerticalAlignment="Top" />
-          <GroupBox Header="Referenzdatei für statische Anwendungen" Height="59" Margin="12,314,0,0" Name="groupBoxRefFile" VerticalAlignment="Top" HorizontalAlignment="Left" Width="516" />
-          <GroupBox Header="Playfair" Height="56" Margin="13,386,0,0" Name="groupBoxPlayfair" VerticalAlignment="Top" HorizontalAlignment="Left" Width="513" />
-          <CheckBox Height="Auto" Margin="23.01,39.7233333333333,47,0" Name="checkBoxNotInAlph" VerticalAlignment="Top" Content="Nicht im Alphabet enthaltene Zeichen unverändert beibehalten"/>
-          <CheckBox Height="Auto" Margin="21.01,96.723333333333,22,0" Name="checkBoxKeepUpperLower" VerticalAlignment="Top" Content="Wenn möglich bei der Ver-/Entschlüsselung Informationen zur Groß-/Kleinschreibung beibehalten" />
-          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="21.01,117.723333333333,0,0" Name="checkBoxDistinguishUpperLower" VerticalAlignment="Top" Width="Auto" Content="Groß-/Kleinschreibung beachten"/>
-          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="22.01,175.723,0,0" Name="checkBoxUpper" VerticalAlignment="Top" Width="Auto" Content="Großbuchstaben"/>
-          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="22.01,197.723333333333,0,0" Name="checkBoxSpace" VerticalAlignment="Top" Width="Auto" Content="Leerzeichen"/>
-          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="23.01,219.723333333333,0,0" Name="checkBoxCif" VerticalAlignment="Top" Width="Auto" Content="Ziffern"/>
-          <CheckBox Height="Auto" Margin="159.01,175.723333333333,0,0" Name="checkBoxPunctuation" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Content="Satzzeichen"/>
-          <CheckBox Height="Auto" Margin="159.01,201.723333333333,240,0" Name="checkBoxLower" VerticalAlignment="Top"  Content="Kleinbuchstaben"  />
-          <CheckBox Height="18.277" HorizontalAlignment="Left" Margin="27.01,411.723,0,0" Name="checkBoxSeparatePairs" VerticalAlignment="Top" Width="206.99" Content="Doppelbuchstaben trennen"/>
+          <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/FormattingOptions/@Header}" Height="52" Margin="11,15,0,0" Name="groupBoxFormatOpt" VerticalAlignment="Top" HorizontalAlignment="Left" Width="516" />
+          <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/UpperLowercase/@Header}" Height="64" Margin="11,76,0,0" Name="groupBoxUpperLowerCase" VerticalAlignment="Top" HorizontalAlignment="Left" Width="516" />
+          <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/DefineAlphabetUserTextCipher/@Header}" Margin="11,150,0,0" Name="groupBoxAlphForText" HorizontalAlignment="Left" Width="517" Height="155" VerticalAlignment="Top" />
+          <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/RefFileForStaticApps/@Header}" Height="59" Margin="12,314,0,0" Name="groupBoxRefFile" VerticalAlignment="Top" HorizontalAlignment="Left" Width="516" />
+          <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/Playfair/@Header}" Height="56" Margin="13,386,0,0" Name="groupBoxPlayfair" VerticalAlignment="Top" HorizontalAlignment="Left" Width="513" />
+          <CheckBox Height="Auto" Margin="23.01,39.7233333333333,47,0" Name="checkBoxNotInAlph" VerticalAlignment="Top" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/KeepCharNotPresentedInAlphUnchanged/@Header}"/>
+          <CheckBox Height="Auto" Margin="21.01,96.723333333333,22,0" Name="checkBoxKeepUpperLower" VerticalAlignment="Top" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/KeepEncrypDecrypLowerUpperCaseInfo/@Header}"/>
+          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="21.01,117.723333333333,0,0" Name="checkBoxDistinguishUpperLower" VerticalAlignment="Top" Width="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/DistringuishUpperLower/@Header}"/>
+          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="22.01,175.723,0,0" Name="checkBoxUpper" VerticalAlignment="Top" Width="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/UppercaseLetters/@Header}"/>
+          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="22.01,197.723333333333,0,0" Name="checkBoxSpace" VerticalAlignment="Top" Width="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Space/@Header}"/>
+          <CheckBox Height="Auto" HorizontalAlignment="Left" Margin="23.01,219.723333333333,0,0" Name="checkBoxCif" VerticalAlignment="Top" Width="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Numerals/@Header}"/>
+          <CheckBox Height="Auto" Margin="159.01,175.723333333333,0,0" Name="checkBoxPunctuation" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Punctuation/@Header}"/>
+          <CheckBox Height="Auto" Margin="159.01,201.723333333333,240,0" Name="checkBoxLower" VerticalAlignment="Top"  Content="{Binding Source={StaticResource Lang}, XPath=Buttons/LowercaseLetters/@Header}"  />
+          <CheckBox Height="18.277" HorizontalAlignment="Left" Margin="27.01,411.723,0,0" Name="checkBoxSeparatePairs" VerticalAlignment="Top" Width="206.99" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/SeperatePairsIdentLetters/@Header}"/>
           <Label Margin="24.37,239.723333333333,117.63,0" Name="labelUsedAlphabet" Height="29.2766666666666" VerticalAlignment="Top" />
           <TextBox Margin="22,272.723333333333,26,0" Name="textBoxAlph" Height="26.2766666666666" VerticalAlignment="Top"/>
           <TextBox Height="25.2766666666666" Margin="20,334.723333333333,0,0" Name="textBoxRefFile" VerticalAlignment="Top" HorizontalAlignment="Left" Width="413"/>
-          <Button Background="{x:Null}" Height="30" HorizontalAlignment="Left" Margin="441,334.723,0,0" Name="buttonSearch" VerticalAlignment="Top" Width="Auto" Content="Suchen..."/>
-          <Label Height="28.277" HorizontalAlignment="Right" Margin="0,401.723,152.63,0" Name="labelSeparator" VerticalAlignment="Top" Width="90" Content="Trennzeichen"/>
+          <Button Background="{x:Null}" Height="30" HorizontalAlignment="Left" Margin="441,334.723,0,0" Name="buttonSearch" VerticalAlignment="Top" Width="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Find.../@Header}"/>
+          <Label Height="28.277" HorizontalAlignment="Right" Margin="0,401.723,152.63,0" Name="labelSeparator" VerticalAlignment="Top" Width="90" Content="{Binding Source={StaticResource Lang}, XPath=Labels/Separators/@Header}"/>
           <TextBox Height="25.2766666666666" HorizontalAlignment="Left" Margin="395,401.723333333333,0,0" Name="textBoxSeparator" VerticalAlignment="Top" Width="25"/>
-          <Button Background="{x:Null}" Height="30" Margin="159.01,0,165.99,8" Name="buttonDefault" VerticalAlignment="Bottom" Click="ButtonDefault_OnClick" Content="Standard wiederherstellen"/>
+          <Button Background="{x:Null}" Height="30" Margin="159.01,0,165.99,8" Name="buttonDefault" VerticalAlignment="Bottom" Click="ButtonDefault_OnClick" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RestoreStandard/@Header}"/>
         </Grid>
       </TabItem>
-      <TabItem Header="Startoptionen">
+      <TabItem Header="{Binding Source={StaticResource Lang}, XPath=Labels/StartingOptions/@Header}">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -71,49 +74,49 @@
             <RowDefinition/>
             <RowDefinition/>
           </Grid.RowDefinitions>
-          <CheckBox Margin="5,5,5,0" Grid.Column="0" Grid.Row="0" x:Name="checkBoxShowHowToStartDialog" Content="Den &quot;Wie Sie starten&quot; - Dialog beim Programmstart von CrypTool anzeigen." VerticalAlignment="Top" Height="24.597"/>
-          <CheckBox Margin="5,33.597,5,188.403" Grid.Column="0" x:Name="checkBoxShowExampleDialog" Content="Die Beispieldatei wird nach dem Start von CrypTool automatisch geöffnet." d:LayoutOverrides="VerticalAlignment"/>
+          <CheckBox Margin="5,5,5,0" Grid.Column="0" Grid.Row="0" x:Name="checkBoxShowHowToStartDialog" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ShowHowToStart/@Header}" VerticalAlignment="Top" Height="24.597"/>
+          <CheckBox Margin="5,33.597,5,188.403" Grid.Column="0" x:Name="checkBoxShowExampleDialog" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ShowSampleFileOnStart/@Header}" d:LayoutOverrides="VerticalAlignment"/>
         </Grid>
       </TabItem>
-    	<TabItem Header="Grafikoptionen">
+    	<TabItem Header="{Binding Source={StaticResource Lang}, XPath=Labels/PlotOptions/@Header}">
     		<Grid>
-    			<Label HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Balkenstärke (1, ...,10):"/>
-    			<Label HorizontalAlignment="Left" Margin="8,40.107,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Kurvenstärke (1, ...,10):"/>
+    			<Label HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Labels/BarWidth/@Header}"/>
+    			<Label HorizontalAlignment="Left" Margin="8,40.107,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Labels/CurveWidth/@Header}"/>
     			<TextBox HorizontalAlignment="Left" Margin="179.66,10,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Text="1" TextWrapping="Wrap"/>
     			<TextBox HorizontalAlignment="Left" Margin="179.66,42.107,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Text="1" TextWrapping="Wrap"/>
-    			<CheckBox HorizontalAlignment="Left" Margin="8,101.893,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Nulllinie anzeigen"/>
-    			<CheckBox d:LayoutOverrides="HorizontalAlignment" HorizontalAlignment="Left" Margin="8,124,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Relative Anzeige bei Autokorrelation"/>
+    			<CheckBox HorizontalAlignment="Left" Margin="8,101.893,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ShowZero/@Header}"/>
+    			<CheckBox d:LayoutOverrides="HorizontalAlignment" HorizontalAlignment="Left" Margin="8,124,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/AutocorrelationInRelative/@Header}"/>
     		</Grid>
     	</TabItem>
-    	<TabItem Header="Analyseoptionen">
+    	<TabItem Header="{Binding Source={StaticResource Lang}, XPath=Labels/AnalysisOptions/@Header}">
     		<Grid>
-    			<GroupBox Margin="8,8,8,0" VerticalAlignment="Top" Height="207.893" Header="Umfang der Ausgabe bei der automatischen Analyse"/>
-    			<GroupBox Margin="197.35,51.5,17,0" VerticalAlignment="Top" Height="150" Header="Vigenère, XOR, Addition"/>
-    			<GroupBox HorizontalAlignment="Left" Margin="17,51.5,0,0" VerticalAlignment="Top" Width="176.35" Height="150" Header="Caesar"/>
-    			<CheckBox d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" Margin="29,85.786,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Ermittelter Schlüssel"/>
-    			<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,107.893,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Korrelation"/>
-    			<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,130,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Histogramme"/>
-    			<CheckBox d:LayoutOverrides="Width, Height" Margin="228,85.786,164.65,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Ermittelter Schlüssel"/>
-    			<CheckBox d:LayoutOverrides="HorizontalAlignment, Width, Height" HorizontalAlignment="Right" Margin="0,107.893,134.207,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Ermittelte Schlüssellänge"/>
-    			<CheckBox d:LayoutOverrides="Width, Height" Margin="228,130,197.91,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Autokorrelation"/>
-    			<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="228,152.107,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Analysen der Basischiffren ausgeben"/>
-    			<GroupBox Margin="8,219.893,8,8" Header="Optionen für Brute-Force Angriffe"/>
-    			<Label d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" Margin="29,0,0,187.087" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="Anzahl Byte für den Entropietest:"/>
-    			<GroupBox RenderTransformOrigin="0.502,0.529" Header="IDEA, RC2,  RC4, DES, 3DES, Mars, RC6, Rijndael (AES), Serpent, Twofish" Margin="17,0,20.143,20.301" VerticalAlignment="Bottom" Height="223.893"/>
+    			<GroupBox Margin="8,8,8,0" VerticalAlignment="Top" Height="207.893" Header="{Binding Source={StaticResource Lang}, XPath=Labels/OutputOptionsForAutoAnalysis/@Header}"/>
+    			<GroupBox Margin="197.35,51.5,17,0" VerticalAlignment="Top" Height="150" Header="{Binding Source={StaticResource Lang}, XPath=Labels/VigenereXorAddition/@Header}"/>
+    			<GroupBox HorizontalAlignment="Left" Margin="17,51.5,0,0" VerticalAlignment="Top" Width="176.35" Height="150" Header="{Binding Source={StaticResource Lang}, XPath=Labels/Caesar/@Header}"/>
+    			<CheckBox d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" Margin="29,85.786,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/DerivedKey/@Header}"/>
+    			<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,107.893,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Correlation/@Header}"/>
+    			<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,130,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Histograms/@Header}"/>
+    			<CheckBox d:LayoutOverrides="Width, Height" Margin="228,85.786,164.65,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/DerivedKey/@Header}"/>
+    			<CheckBox d:LayoutOverrides="HorizontalAlignment, Width, Height" HorizontalAlignment="Right" Margin="0,107.893,134.207,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/DerivedKeyLength/@Header}"/>
+    			<CheckBox d:LayoutOverrides="Width, Height" Margin="228,130,197.91,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/Autocorrelation/@Header}"/>
+    			<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="228,152.107,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ShowBaseCiphersAnalysis/@Header}"/>
+    			<GroupBox Margin="8,219.893,8,8" Header="{Binding Source={StaticResource Lang}, XPath=Labels/OptionsForBruteForceAttacks/@Header}"/>
+    			<Label d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" Margin="29,0,0,187.087" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Labels/NumberOfBytesForEntropyTest/@Header}"/>
+    			<GroupBox RenderTransformOrigin="0.502,0.529" Header="{Binding Source={StaticResource Lang}, XPath=Labels/IDEARC2RC4DESTRipleDESMarsRC6RijndaelSerpentTwofish/@Header}" Margin="17,0,20.143,20.301" VerticalAlignment="Bottom" Height="223.893"/>
     			<TextBox d:LayoutOverrides="Width, Height" Margin="262.64,0,240.79,187.087" Style="{DynamicResource SimpleTextBox}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Text="128" TextWrapping="Wrap"/>
-    			<Label d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,0,0,156.087" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="Alphabetoptionen:"/>
-    			<RadioButton d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,0,0,124.087" Style="{DynamicResource SimpleRadioButton}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="Alle 256 Zeichen"/>
-    			<RadioButton d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" Margin="29,0,0,101.98" Style="{DynamicResource SimpleRadioButton}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="Druckbare Zeichen (ASCII 32-256)"/>
-    			<RadioButton d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,0,0,79.873" Style="{DynamicResource SimpleRadioButton}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="Zeichensatz, wie Textoptionen"/>
+    			<Label d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,0,0,156.087" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Labels/AlphabetOptions/@Header}"/>
+    			<RadioButton d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,0,0,124.087" Style="{DynamicResource SimpleRadioButton}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/All256Chars/@Header}"/>
+    			<RadioButton d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" Margin="29,0,0,101.98" Style="{DynamicResource SimpleRadioButton}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/PrintableChars/@Header}"/>
+    			<RadioButton d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="29,0,0,79.873" Style="{DynamicResource SimpleRadioButton}" VerticalAlignment="Bottom" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/CharsAsDefinedInMenu/@Header}"/>
     		</Grid>
     	</TabItem>
-    	<TabItem Header="Weitere Optionen">
+    	<TabItem Header="{Binding Source={StaticResource Lang}, XPath=Labels/FurtherOptions/@Header}">
     		<Grid>
-    			<GroupBox Margin="8,8,8,0" VerticalAlignment="Top" Height="92" Header="Optionen für die Diffie-Hellman-Demonstration"/>
-    			<CheckBox d:LayoutOverrides="Width, Height" Margin="77,56.068,204.15,0" Style="{DynamicResource SimpleCheckBox}" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Einleitungsdialog beim Start anzeigen"/>
-    			<GroupBox Margin="8,104,8,142.087" Header="Option für die Seitenkanalangriff-Demonstration"/>
+    			<GroupBox Margin="8,8,8,0" VerticalAlignment="Top" Height="92" Header="{Binding Source={StaticResource Lang}, XPath=Labels/OptionsForDiffieHellmanDemo/@Header}"/>
+    			<CheckBox d:LayoutOverrides="Width, Height" Margin="77,56.068,204.15,0" Style="{DynamicResource SimpleCheckBox}" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ShowIntroOnStartup/@Header}"/>
+    			<GroupBox Margin="8,104,8,142.087" Header="{Binding Source={StaticResource Lang}, XPath=Labels/OptionsForSideChannelAttackDemo/@Header}"/>
     			<Label Margin="59,0,216,39.3" Style="{DynamicResource SimpleLabel}" VerticalAlignment="Bottom" Height="49" Content=""/>
-    			<TextBox Margin="20,140.787,19,0" VerticalAlignment="Top" Height="Auto" BorderThickness="0,0,0,0" Text="Bob kann erkennen, ob die erhaltene Nachricht von Alice gesendet wurde, wenn die Nachricht das folgende Schlüsselwort enthält:" TextWrapping="Wrap"/>
+    			<TextBox Margin="20,140.787,19,0" VerticalAlignment="Top" Height="Auto" BorderThickness="0,0,0,0" Text="{Binding Source={StaticResource Lang}, XPath=Text/BobKeyword}" TextWrapping="Wrap"/>
     			<TextBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="20,187,0,0" Style="{DynamicResource SimpleTextBox}" VerticalAlignment="Top" Width="120" Height="Auto" Text="Alice" TextWrapping="Wrap"/>
     		</Grid>
     	</TabItem>

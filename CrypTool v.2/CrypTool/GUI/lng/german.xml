@@ -179,15 +179,133 @@
     <ButtonClose Header="Schließen"/>
     <ButtonShowHashInEditor Header="Im Editorfenster anzeigen"/>
     <ButtonCopyKey Header="Schlüssel kopieren"/>
+    <RadioButtonCaesar Header="Caesar"/>
+    <RadioButtonRot13 Header="Rot-13"/>
+    <RadioButtonValueOfTheFirstAlphabetCharacter0 Header="Wert des ersten Alphabetzeichens = 0 (z.B. 'A'=0)"/>
+    <RadioButtonValueOfTheFirstAlphabetCharacter1 Header="Wert des ersten Alphabetzeichens = 1 (z.B. 'A'=0)"/>
+    <RadioButtonAlphabetCharacter Header="Alphabetzeichen"/>
+    <RadioButtonNumberValue Header="Zahlenwerte"/>
+    <ButtonEncrypt Header="Verschlüsseln"/>
+    <ButtonDecrypt Header="Entschlüsseln"/>
+    <ButtonTextOptions Header="Textoptionen"/>
+    <ButtonCancel Header="Abbrechen"/>
+    <ButtonFind Header="Suchen"/>
+    <ButtonReplace Header="Ersetzen"/>
+    <ButtonReplaceAll Header="Alle ersetzen"/>
+    <RadioButtonCaseSensitive Header="Groß-/Kleinschreibung beachten"/>
+    <RadioButtonFindBackwards Header="Suchrichtung umkehren"/>
+    <RadioButtonRegularExpressions Header="Reguläre Ausdrücke im Suchfeld erlauben"/>
+    <RadioButtonWildcards Header="Platzhalter erlauben"/>
+    <RadioButtonWholeWords Header="Gesamten Wörter"/>
+    <RadioButtonDefault Header="Standard"/>
+    <RadioButtonManual Header="Manuell"/>
+    <RadioButtonInternalRandomNumberGenerator Header="Interner zufälliger Ziffern-Generator"/>
+    <ButtonGenerate Header="Generate"/>
+    <KeepCharNotPresentedInAlphUnchanged Header="Nicht im Alphabet enthaltene Zeichen unverändert beibehalten"/>
+    <KeepEncrypDecrypLowerUpperCaseInfo Header="Wenn möglich bei der Ver-/Entschlüsselung Informationen zur Groß-/Kleinschreibung beibehalten"/>
+    <DistringuishUpperLower Header="Groß-/Kleinschreibung beachten"/>
+    <UppercaseLetters Header="Großbuchstaben"/>
+    <Space Header="Leerzeichen"/>
+    <Numerals Header="Ziffern"/>
+    <Punctuation Header="Satzzeichen"/>
+    <LowercaseLetters Header="Kleinbuchstaben"/>
+    <Find... Header="Suchen..."/>
+    <SeperatePairsIdentLetters Header="Doppelbuchstaben trennen"/>
+    <Apply Header="Übernehmen"/>
+    <RestoreStandard Header="Standard wiederherstellen"/>
+    <ShowHowToStart Header="Den 'Wie Sie starten'-Dialog beim Programmstart von CrypTool anzeigen."/>
+    <ShowSampleFileOnStart Header="Die Beispieldatei wird nach dem Start von CrypTool automatisch geöffnet."/>
+    <OK Header="OK"/>
+    <ShowZero Header="Nulllinie anzeigen"/>
+    <AutocorrelationInRelative Header="Relative Anzeige bei Autokorrelation"/>
+    <DerivedKey Header="Ermittelter Schlüssel"/>
+    <Correlation Header="Korrelation"/>
+    <Histograms Header="Histogramme"/>
+    <DerivedKeyLength Header="Ermittelte Schlüssellänge"/>
+    <Autocorrelation Header="Autokorrelation"/>
+    <ShowBaseCiphersAnalysis Header="Analysen der Basischiffren ausgeben"/>
+    <All256Chars Header="Alle 256 Zeichen"/>
+    <PrintableChars Header="Druckbare Zeichen (ASCII 32-256)"/>
+    <CharsAsDefinedInMenu Header="Zeichensatz, wie in Menü: Optionen -> Textptionen definiert"/>
+    <ShowIntroOnStartup Header="Einleitungsdialog beim Start anzeigen"/>
   </Buttons>
   <Labels>
+    <OptionsForSideChannelAttackDemo Header="Optionen für die Seitenkanalangriff-Demonstration"/>    
+    <OptionsForDiffieHellmanDemo Header="Optionen für die Diffie-Hellman-Demonstration"/>
+    <FurtherOptions Header="Weitere Optionen"/>
+    <OutputOptionsForAutoAnalysis Header="Umfang der Ausgabe bei der automatischen Analyse"/>
+    <AlphabetOptions Header="Alphabetoptionen:"/>
+    <NumberOfBytesForEntropyTest Header="Anzahl Bytes für den Entropietest:"/>
+    <IDEARC2RC4DESTRipleDESMarsRC6RijndaelSerpentTwofish Header="IDEA, RC2, RC4, DES, Mars, RC6, Rijndael(AES), Serpent, Twofish"/>
+    <OptionsForBruteForceAttacks Header="Optionen für Brute-Force Angriffe"/>
+    <VigenereXorAddition Header="Vigenère, Xor, Addition"/>
+    <Caesar Header="Caesar"/>
+    <AnalysisOptions Header="Analyseoptionen"/>
+    <BarWidth Header="Balkenstärke (1,...,10):"/>
+    <CurveWidth Header="Kurvenstärke (1,...,10):"/>
+    <PlotOptions Header="Grafikoptionen"/>
+    <StartingOptions Header="Startoptionen"/>
+    <Separators Header="Trennzeichen:"/>
+    <Playfair Header="Playfair"/>
+    <RefFileForStaticApps Header="Referenzdatei für statische Anwendungen"/>
+    <AlphabetToUse Header="Zu verwendetes Alphabet ({0} Zeichen):"/>
+    <DefineAlphabetUserTextCipher Header="Alphabet für Text definieren"/>
+    <UpperLowerCase Header="Groß-/Kleinschreibug"/>
     <DontShowDialogAgain Header="Diesen Dialog in Zukunft nicht mehr anzeigen."/>
     <Hashvalue Header="Hashwert"/>
     <HashvalueOf Header="Hashwert von"/>
     <HowToStart Header="Wie Sie starten"/>
     <Key Header="Schlüssel"/>
+    <SelectVariant Header="Variante auswählen"/>
+    <KeyEntryAs Header="Schlüsseleingabe"/>
+    <OptionsToInterpretTheAlphabetCharacters Header="Optionen zur Interpretation des Alphabetzeichens"/>
+    <PropertiesOfTheChoosenEncryption Header="Informationen zur Verschlüsselung"/>
+    <ShiftOf Header="Verschiebung um"/>
+    <MappingOfTheAlphabet Header="Das Alphabet ({0} Zeichen) wird bei der Verschlüsselung abgebildet"/>
+    <From Header="von:"/>
+    <To Header="auf:"/>
+    <DisabledRot13 Header="Die Rot-13-Verschlüsselung wurde deaktiviert, weil das Alphabet keine gerade Anzahl von Zeichen hat!"/>
+    <InformationAboutActuallySelDoc Header="Informationen zum aktuell ausgewählten Dokument"/>
+    <WindowTitle Header="Fenster-Titel"/>
+    <NameOfFile Header="Name der Datei:"/>
+    <DocumentType Header="Dokument-Typ:"/>
+    <DocumentSize Header="Dokument-Größe:"/>
+    <DocumentAttribute Header="Dokument-Attribut:"/>
+    <DocumentCreate Header="Dokument-Erstellt:"/>
+    <DocumentLastAccess Header="Dokument-Letzter-Zugriff:"/>
+    <DocumentLastWrite Header="Dokument-Geändert-Am:"/>
+    <DocumentNameTempFile Header="Name der temporären Datei:"/>
+    <Path Header="Pfad"/>
+    <ForFiles Header="für Dateien:"/>
+    <ForDocuments Header="für Dokumente:"/>
+    <ForTempFiles Header="für temporäre Dateien:"/>
+    <WindowActive Header="[Aktiv]"/>
+    <Find Header="Suchen"/>
+    <Replace Header="Ersetzen"/>
+    <CryptographicAlgorithm Header="Kryptographischer Algorithmus"/>
+    <Round Header="Runden"/>
+    <BlockCipherPadding Header="Blockchiffre padden"/>
+    <CipherMode Header="Chiffre-Modus"/>
+    <InitializationVector Header="Initialisierungs-Vektor"/>
+    <Information Header="Information"/>
+    <KeyLength Header="Schlüssellänge"/>
+    <Bit Header="Bit"/>
+    <TextOptions Header="Textoptionen"/>
+    <FormattingOptions Header="Formatierungsoptionen"/>
   </Labels>
+  <Titles>
+    <KeyEntry Header="Schlüsseleingabe:"/>
+    <DocumentProperties Header="Dokument-Eigenschaften"/>
+    <CrypToolEditor Header="CrypTool-Editor"/>
+    <SymmetricCryptographie Header="Symmetrische Kryptographie"/>
+    <Preferences Header="Einstellungen"/>
+  </Titles>
   <Text>
+    <BobKeyword>Bob kann erkennen, ob die erhaltene Nachricht von Alice gesendet wurde, wenn die Nachricht das folgende Schlüsselword enthält:</BobKeyword>
     <HowTo>CrypTool ist ein freies Demonstrationsprogramm. mit dessen Hilfe Sie kryptographische Verfahren anwenden und analysieren können.<LineBreak/><LineBreak/>CrypTool bietet eine umfangreiche Online-Hilfe. Zu jeden Menüpunkt und zu jeder Dialogbox können Sie mit F1 Kontexthilfe aktivieren.<LineBreak/><LineBreak/>Wenn Sie jetzt die Taste F1 drücken, erhalten Sie die Online-Hilfe für den Einstieg in CrypTool.<LineBreak/><LineBreak/>Viel Spaß!</HowTo>
   </Text>
+  <Messages>
+    <NoMoreOccurrencesFound>Keine weitere Übereinstimmung für {0} gefunden.</NoMoreOccurrencesFound>
+    <AllOccurrencesReplaced>Alle Übereinstimmungen wurden ersetzt.</AllOccurrencesReplaced>
+  </Messages>
 </CrypTool>
