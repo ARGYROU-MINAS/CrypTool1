@@ -107,14 +107,14 @@ namespace CrypTool
             // 
             this.menuItemUndo.Name = "menuItemUndo";
             this.menuItemUndo.Size = new System.Drawing.Size(152, 22);
-            this.menuItemUndo.Text = "Undo";
+            this.menuItemUndo.Text = AppLogic.XmlLangReader.getXMLItem("MenuItems/MenuItemUndo", "Header");
             this.menuItemUndo.Click += new System.EventHandler(this.menuItemUndo_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Text = AppLogic.XmlLangReader.getXMLItem("MenuItems/MenuItemRedo","Header");
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
@@ -126,28 +126,28 @@ namespace CrypTool
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cutToolStripMenuItem.Text = "Cut";
+            this.cutToolStripMenuItem.Text = AppLogic.XmlLangReader.getXMLItem("MenuItems/MenuItemCut", "Header");
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Text = AppLogic.XmlLangReader.getXMLItem("MenuItems/MenuItemCopy", "Header");
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Text = AppLogic.XmlLangReader.getXMLItem("MenuItems/MenuItemPaste", "Header");
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Text = AppLogic.XmlLangReader.getXMLItem("MenuItems/MenuItemDelete", "Header");
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
@@ -159,7 +159,7 @@ namespace CrypTool
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.selectAllToolStripMenuItem.Text = "Select All";
+            this.selectAllToolStripMenuItem.Text = AppLogic.XmlLangReader.getXMLItem("MenuItems/MenuItemSelAll", "Header");
             this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
             // 
             // DlgEditor

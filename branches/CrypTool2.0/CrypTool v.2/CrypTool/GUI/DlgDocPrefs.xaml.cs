@@ -23,10 +23,19 @@ namespace CrypTool
 
         public DlgDocPrefs(DlgMain _DlgMain,DlgEditor _EditForm)
         {
-            this.Owner = _DlgMain;
-            this._lastNotifiedForm = _EditForm;
+            Owner = _DlgMain;
+            _lastNotifiedForm = _EditForm;
             InitializeComponent();
+            updateLang();
             getDocInfo();
+        }
+        public void updateLang()
+        {
+            String selLangFullPath = CrypTool.AppLogic.LanguageOptions.getSelLangFullPath();
+            XmlDataProvider xmlData = (XmlDataProvider)(this.FindResource("Lang"));
+            xmlData.Source = new Uri(selLangFullPath, UriKind.Relative);
+
+            Title = String.Format("{0}", CrypTool.AppLogic.XmlLangReader.getXMLItem("Titles/DocumentProperties", "Header"));
         }
         private void ButtonClose_OnClick(object sender, RoutedEventArgs arg)
         {
@@ -34,7 +43,7 @@ namespace CrypTool
         }
         private void getDocInfo()
         {
-            DlgEditor dlgEditor = this._lastNotifiedForm;
+            DlgEditor dlgEditor = _lastNotifiedForm;
             CrypTool.AppLogic.DocProperties docProp = new CrypTool.AppLogic.DocProperties(dlgEditor.getPlainTextPath());
 
             this.labelWindowTitle.Content = dlgEditor.getPlainTextTabTitle();

@@ -4,7 +4,9 @@
     Title="Dokument-Eigenschaften" Height="479" Width="479" WindowStartupLocation="CenterOwner"
         Icon="images\idr_main.ico"
         >
-
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/english.xml" XPath="CrypTool"/>
+  </Window.Resources>
   <Window.Background>
     <ImageBrush
       TileMode="Tile"
@@ -28,7 +30,7 @@
         </LinearGradientBrush>
       </Grid.Background>
       <StackPanel>
-      <GroupBox Margin="5,5,5,5" Header="Informationen zum aktuell ausgewählten Dokument">
+      <GroupBox Margin="5,5,5,5" Header="{Binding Source={StaticResource Lang}, XPath=Labels/InformationAboutActuallySelDoc/@Header}">
           <Grid>
             <Grid.RowDefinitions>
               <RowDefinition Height="Auto"/>
@@ -45,35 +47,35 @@
               <ColumnDefinition Width="*"/>
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">Fenster-Titel:</Label>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/WindowTitle/@Header}"/>
             <Label Name="labelWindowTitle" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"></Label>
           
-            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Name der Datei:</Label>
+            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/NameOfFile/@Header}"/>
             <Label Name="labelFileName" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"></Label>            
             
-            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Dokument-Typ:</Label>
+            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DocumentType/@Header}"/>
             <Label Name="labelDocumentType" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"></Label>
           
-            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Dokument-Größe:</Label>
+            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DocumentSize/@Header}"/>
             <Label Name="labelDocumentSize" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"></Label>
 
-            <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Dokument-Attribute:</Label>
+            <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DocumentAttribute/@Header}"/>
             <Label Name="labelDocumentAttributes" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left"></Label>
 
-            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right">Dokument-Erstellt:</Label>
+            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DocumentCreate/@Header}"/>
             <Label Name="labelDocumentCreationTime" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left"></Label>
 
-            <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Dokument-Letzter-Zugriff:</Label>
+            <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DocumentLastAccess/@Header}"/>
             <Label Name="labelDocumentLastAccessTime" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left"></Label>
 
-            <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right">Dokument-Geändert am:</Label>
+            <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DocumentLastWrite/@Header}"/>
             <Label Name="labelDocumentLastWriteTime" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left"></Label>
             
-            <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right">Name der temporären Datei:</Label>
+            <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/DocumentNameTempFile/@Header}"/>
             <Label Name="labelTempFile" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left"></Label>
           </Grid>
         </GroupBox>
-      <GroupBox Margin="5,5,5,5" Header="Pfad">
+      <GroupBox Margin="5,5,5,5" Header="{Binding Source={StaticResource Lang}, XPath=Labels/Path/@Header}">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -84,15 +86,15 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
           </Grid.RowDefinitions>
-          <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">für Datei:</Label>
+          <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/ForFiles/@Header}"/>
           <Label Name="labelFilePath" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"></Label>
-          <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">für Dokumente:</Label>
+          <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/ForDocuments/@Header}"/>
           <Label Name="labelDocumentPath" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"></Label>
-          <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">für temporäre Dateien:</Label>
+          <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Content="{Binding Source={StaticResource Lang}, XPath=Labels/ForTempFiles/@Header}"/>
           <Label Name="labelTempFilePath" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"></Label>
         </Grid>
       </GroupBox>
-        <Button Background="{x:Null}" Name="buttonClose" Margin="5,5,5,5" DockPanel.Dock="Right" Click="ButtonClose_OnClick">Schließen</Button>
+        <Button Background="{x:Null}" Name="buttonClose" Margin="5,5,5,5" DockPanel.Dock="Right" Click="ButtonClose_OnClick" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonClose/@Header}"/>
       </StackPanel>
     </Grid>
 </Window>

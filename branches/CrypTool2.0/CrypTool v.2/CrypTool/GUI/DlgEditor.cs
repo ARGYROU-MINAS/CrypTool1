@@ -10,6 +10,8 @@ using System.Text.RegularExpressions;
 
 namespace CrypTool
 {
+    //Will be complete changed with new Editor like Scinitlla.NET
+
     public partial class DlgEditor : Form
     {
         private DlgMain _FormMainReference = null;
@@ -60,6 +62,7 @@ namespace CrypTool
             tabPagePlainText.ToolTipText = strPath;
             checkSaveStatus(true);
             this.hasSavePath = true;
+            sPlainTextPath = strPath;
         }
         #region Docking, Location Forms
         private void dockMainLeft()
@@ -217,15 +220,14 @@ namespace CrypTool
         }
         public void setTitle(String strTabTitle)
         {
-            DlgText = "CrypTool-Editor";
+            DlgText = AppLogic.XmlLangReader.getXMLItem("Titles/CrypToolEditor", "Header");
             if (strTabTitle.Length > 0)
                 DlgText += " - " + strTabTitle;
             setActiveText();
         }
         public void setPlainTextTabTitle(string sTitle)
         {
-            sPlainTextPath = sTitle;
-            tabPagePlainText.Text = sPlainTextPath;
+            tabPagePlainText.Text = sTitle;
         }
         public string getPlainTextTabTitle()
         {
@@ -237,7 +239,7 @@ namespace CrypTool
         }
         private void setActiveText()
         {
-            Text = DlgText + " - [Active]";
+            Text = DlgText + " - " + AppLogic.XmlLangReader.getXMLItem("Labels/WindowActive","Header");
         }
         private string getShortPath(String strPath)
         {
@@ -396,7 +398,7 @@ namespace CrypTool
             }
             else
             {
-                MessageBox.Show(String.Format("No more occurences found for '{0}'.   ", strFindText));
+                MessageBox.Show(String.Format(AppLogic.XmlLangReader.getXMLItem("Messages/NoMoreOccurrencesFound"), strFindText));
                 isFirstFind = true;
             }
         }
@@ -435,12 +437,12 @@ namespace CrypTool
             if (richTextBoxPlaintext.Text != strReplacedText)
             {
                 richTextBoxPlaintext.Text = strReplacedText;
-                MessageBox.Show("All occurences replaced.");
+                MessageBox.Show(AppLogic.XmlLangReader.getXMLItem("Messages/AllOccurrencesReplaced"));
                 richTextBoxPlaintext.SelectionStart = iSelPos;
             }
             else
             {
-                MessageBox.Show(String.Format("No more occurences found for '{0}'.", strFindText));
+                MessageBox.Show(String.Format(AppLogic.XmlLangReader.getXMLItem("Messages/NoMoreOccurrencesFound"), strFindText));
             }
 
             this.richTextBoxPlaintext.Focus();

@@ -6,6 +6,9 @@
     Title="Suchen und Ersetzen" Height="301" Width="486" WindowStartupLocation="CenterOwner"
     Icon="images\idr_main.ico"
     >
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/english.xml" XPath="CrypTool"/>
+  </Window.Resources>
 
   <Window.Background>
     <ImageBrush
@@ -29,21 +32,21 @@
           </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
       </Grid.Background> 
-    	<Label HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Content="Suchen:"/>
-    	<Label HorizontalAlignment="Left" Margin="8,36.107,0,0" VerticalAlignment="Top" Content="Ersetzen:"/>
+    	<Label HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Content="{Binding Source={StaticResource Lang}, XPath=Labels/Find/@Header}"/>
+    	<Label HorizontalAlignment="Left" Margin="8,36.107,0,0" VerticalAlignment="Top" Content="{Binding Source={StaticResource Lang}, XPath=Labels/Replace/@Header}"/>
     	<ComboBox Margin="96,12,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxFind" IsEditable="True"/>
     	<ComboBox Margin="96,40.107,82,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" Name="ComboBoxReplace" IsEditable="True"/>
-    	<Button Background="{x:Null}" d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,10,17.35,0" x:Name="ButtonFind" VerticalAlignment="Top" Height="Auto" Content="Suchen" Click="ButtonFind_OnClick"/>
-    	<Button Background="{x:Null}" Content="Ersetzen" HorizontalAlignment="Right" Margin="0,38.107,9.257,0" x:Name="ButtonReplace" VerticalAlignment="Top" Click="ButtonReplace_OnClick"/>
-    	<Button Background="{x:Null}" Content="Alle ersetzen" HorizontalAlignment="Right" Margin="0,92,8,0" x:Name="ButtonReplaceAll" VerticalAlignment="Top" Click="ButtonReplaceAll_OnClick"/>
-    	<Button Background="{x:Null}" Content="Abbrechen" d:LayoutOverrides="Height" HorizontalAlignment="Right" Margin="0,0,8,11.893" x:Name="ButtonCancel" VerticalAlignment="Bottom" Click="ButtonCancel_OnClick"/>
-    	<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,97.893" VerticalAlignment="Bottom" Content="Groß-/Kleinschreibung beachten" x:Name="CheckBoxMatchCase" Click="setFirstFind"/>
-    	<CheckBox Content="Suchrichtung umkehren" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,75.786" VerticalAlignment="Bottom" x:Name="CheckBoxFindReverse" Click="setFirstFind"/>
-    	<CheckBox Content="Reguläre Ausdrücke im Suchfeld erlauben" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,53.68" VerticalAlignment="Bottom" x:Name="CheckBoxRegularExpression" Click="setFirstFind"/>
+    	<Button Background="{x:Null}" d:LayoutOverrides="Width" HorizontalAlignment="Right" Margin="0,10,17.35,0" x:Name="ButtonFind" VerticalAlignment="Top" Height="Auto" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonFind/@Header}" Click="ButtonFind_OnClick"/>
+    	<Button Background="{x:Null}" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonReplace/@Header}" HorizontalAlignment="Right" Margin="0,38.107,9.257,0" x:Name="ButtonReplace" VerticalAlignment="Top" Click="ButtonReplace_OnClick"/>
+    	<Button Background="{x:Null}" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonReplaceAll/@Header}" HorizontalAlignment="Right" Margin="0,92,8,0" x:Name="ButtonReplaceAll" VerticalAlignment="Top" Click="ButtonReplaceAll_OnClick"/>
+    	<Button Background="{x:Null}" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonCancel/@Header}" d:LayoutOverrides="Height" HorizontalAlignment="Right" Margin="0,0,8,11.893" x:Name="ButtonCancel" VerticalAlignment="Bottom" Click="ButtonCancel_OnClick"/>
+    	<CheckBox d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,97.893" VerticalAlignment="Bottom" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonCaseSensitive/@Header}" x:Name="CheckBoxMatchCase" Click="setFirstFind"/>
+    	<CheckBox Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonFindBackwards/@Header}" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,75.786" VerticalAlignment="Bottom" x:Name="CheckBoxFindReverse" Click="setFirstFind"/>
+    	<CheckBox Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonRegularExpressions/@Header}" d:LayoutOverrides="Height" HorizontalAlignment="Left" Margin="8,0,0,53.68" VerticalAlignment="Bottom" x:Name="CheckBoxRegularExpression" Click="setFirstFind"/>
         
-    	<CheckBox Content="Platzhalter erlauben" x:Name="checkBoxUseWildcards" d:LayoutOverrides="Width" Margin="8,0,179.46,31.573" VerticalAlignment="Bottom" Click="setFirstFind"/>
+    	<CheckBox Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonWildcards/@Header}" x:Name="checkBoxUseWildcards" d:LayoutOverrides="Width" Margin="8,0,179.46,31.573" VerticalAlignment="Bottom" Click="setFirstFind"/>
         
-    	<CheckBox Content="Gesamten Wörter" x:Name="checkBoxWholeWords" d:LayoutOverrides="Width" Margin="8,0,179.46,9.466" VerticalAlignment="Bottom" Click="setFirstFind"/>
+    	<CheckBox Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonWholeWords/@Header}" x:Name="checkBoxWholeWords" d:LayoutOverrides="Width" Margin="8,0,179.46,9.466" VerticalAlignment="Bottom" Click="setFirstFind"/>
         
     </Grid>
 </Window>

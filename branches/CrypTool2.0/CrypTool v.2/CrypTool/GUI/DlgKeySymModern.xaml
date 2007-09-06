@@ -4,6 +4,9 @@
     Title="Symmetrische Cryptography" Height="291" Width="807" WindowStartupLocation="CenterOwner"
         Icon="images\idr_main.ico"
         >
+  <Window.Resources>
+    <XmlDataProvider x:Key="Lang" Source="/lng/english.xml" XPath="CrypTool"/>
+  </Window.Resources>
   <Window.Background>
     <ImageBrush
       TileMode="Tile"
@@ -25,35 +28,35 @@
           </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
       </Grid.Background>
-    <Label HorizontalAlignment="Left" Margin="673.37,160.723333333333,0,0" Name="label2" Width="93.63" Height="26.2766666666667" VerticalAlignment="Top">Schlüssellänge:</Label>
+    <Label HorizontalAlignment="Left" Margin="673.37,160.723333333333,0,0" Name="label2" Width="93.63" Height="26.2766666666667" VerticalAlignment="Top" Content="{Binding Source={StaticResource Lang}, XPath=Labels/KeyLength/@Header}"/>
     <ComboBox Margin="680,187,0,0" Name="comboBoxKeyLen" SelectedIndex="0" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72" />
-    <Label HorizontalAlignment="Left" Margin="754.37,188.723333333333,0,0" Name="label3" Width="25.63" Height="26.2766666666667" VerticalAlignment="Top">Bit</Label>
-    <Button Background="{x:Null}" Height="23" Margin="469,230,0,0" Name="buttonEncrypt" VerticalAlignment="Top" Click="Encrypt" HorizontalAlignment="Left" Width="106">Verschlüsseln</Button>
-    <Button Background="{x:Null}" Height="23" Margin="582,230,0,0" Name="buttonDecrypt" VerticalAlignment="Top" Click="Decrypt" HorizontalAlignment="Left" Width="104">Entschlüsseln</Button>
-    <Button Background="{x:Null}" Height="23" HorizontalAlignment="Left" Margin="692,230,0,0" Name="buttonCancel" VerticalAlignment="Top" Width="94" Click="Cancel">Abbrechen</Button>
+    <Label HorizontalAlignment="Left" Margin="754.37,188.723333333333,0,0" Name="label3" Width="25.63" Height="26.2766666666667" VerticalAlignment="Top" Content="{Binding Source={StaticResource Lang}, XPath=Labels/Bit/@Header}"/>
+    <Button Background="{x:Null}" Height="23" Margin="469,230,0,0" Name="buttonEncrypt" VerticalAlignment="Top" Click="Encrypt" HorizontalAlignment="Left" Width="106" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonEncrypt/@Header}"/>
+    <Button Background="{x:Null}" Height="23" Margin="582,230,0,0" Name="buttonDecrypt" VerticalAlignment="Top" Click="Decrypt" HorizontalAlignment="Left" Width="104" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonDecrypt/@Header}"/>
+    <Button Background="{x:Null}" Height="23" HorizontalAlignment="Left" Margin="692,230,0,0" Name="buttonCancel" VerticalAlignment="Top" Width="94" Click="Cancel" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonCancel/@Header}"/>
     <TextBox Margin="98,188,0,0" Name="textBoxKey" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="574"></TextBox>
-     <GroupBox Header="Cryptographic Algorithm" Margin="10,6,0,0" Name="groupBoxCryptographicAlgorithm" Height="82" VerticalAlignment="Top" HorizontalAlignment="Left" Width="481"></GroupBox>
+     <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/CryptographicAlgorithm/@Header}" Margin="10,6,0,0" Name="groupBoxCryptographicAlgorithm" Height="82" VerticalAlignment="Top" HorizontalAlignment="Left" Width="481"></GroupBox>
     <ComboBox Height="26" HorizontalAlignment="Left" Margin="17,47,0,0" Name="comboBoxAlgTitle" VerticalAlignment="Top" Width="97" SelectionChanged="setAlgID"></ComboBox>
     <TextBox Height="26" HorizontalAlignment="Left" Margin="118,47,0,0" Name="textBoxRounds" VerticalAlignment="Top" Width="48"></TextBox>
     <ComboBox Height="26" HorizontalAlignment="Left" Margin="170,47,0,0" Name="comboBoxPadding" VerticalAlignment="Top" Width="121" />
-    <Label Height="23.2766666666667" Margin="118.37,23.7233333333333,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45.63">Rounds</Label>
-    <Label Height="29.2766666666667" Margin="169.37,23.7233333333333,0,0" Name="label4" VerticalAlignment="Top" HorizontalAlignment="Left" Width="123.63">Block Cipher Padding</Label>
-    <GroupBox Header="Initialization Vector"  Height="140" Margin="496,5.5441176470588,0,0" Name="groupBoxInitializationVector" VerticalAlignment="Top" HorizontalAlignment="Left" Width="291" IsEnabled="True">
+    <Label Height="23.2766666666667" Margin="118.37,23.7233333333333,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45.63" Content="{Binding Source={StaticResource Lang}, XPath=Labels/Rounds/@Header}"/>
+    <Label Height="29.2766666666667" Margin="169.37,23.7233333333333,0,0" Name="label4" VerticalAlignment="Top" HorizontalAlignment="Left" Width="123.63" Content="{Binding Source={StaticResource Lang}, XPath=Labels/BlockCipherPadding/@Header}"/>
+    <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/InitializationVector/@Header}"  Height="140" Margin="496,5.5441176470588,0,0" Name="groupBoxInitializationVector" VerticalAlignment="Top" HorizontalAlignment="Left" Width="291" IsEnabled="True">
         <StackPanel>
-        <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonDefault" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV" IsChecked="True" Click="getDefaultIV">Default</RadioButton>
-          <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonManual" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV" Click="getManualIV">Manual</RadioButton>
-          <RadioButton Height="18" Margin="5,5,5,5" Name="radioButtonInternalRandomNumberGen" VerticalAlignment="Top" HorizontalAlignment="Left" Width="210" GroupName="IV" Click="getInternalRandomIV">Internal Random Number Generator</RadioButton>
+        <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonDefault" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV" IsChecked="True" Click="getDefaultIV" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonDefault/@Header}"/>
+          <RadioButton Height="13.2766666666667" Margin="5,5,5,5" Name="radioButtonManual" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72.25" GroupName="IV" Click="getManualIV" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonManual/@Header}"/>
+          <RadioButton Height="18" Margin="5,5,5,5" Name="radioButtonInternalRandomNumberGen" VerticalAlignment="Top" HorizontalAlignment="Left" Width="210" GroupName="IV" Click="getInternalRandomIV" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/RadioButtonInternalRandomNumberGenerator/@Header}"/>
           <WrapPanel>
-            <Button Background="{x:Null}" Height="23" Margin="5,5,5,5" Name="buttonGetIV" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" Click="getInternalRandomIV">Generate</Button>
+            <Button Background="{x:Null}" Height="23" Margin="5,5,5,5" Name="buttonGetIV" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" Click="getInternalRandomIV" Content="{Binding Source={StaticResource Lang}, XPath=Buttons/ButtonGenerate/@Header}"/>
             <TextBox Height="26" Margin="0,5,5,5" Name="textBoxIV" VerticalAlignment="Top" HorizontalAlignment="Right" Width="204"></TextBox>
           </WrapPanel>
         </StackPanel>
       </GroupBox>
-    <GroupBox Header="Key" Margin="11,145,0,0" Name="groupBoxKey" HorizontalAlignment="Left" Width="776" Height="80" VerticalAlignment="Top" />
-    <GroupBox Header="Information"  Height="59" Margin="10,88,0,0" Name="groupBoxInfo" VerticalAlignment="Top" HorizontalAlignment="Left" Width="482" />
+    <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/Key/@Header}" Margin="11,145,0,0" Name="groupBoxKey" HorizontalAlignment="Left" Width="776" Height="80" VerticalAlignment="Top" />
+    <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=Labels/Information/@Header}"  Height="59" Margin="10,88,0,0" Name="groupBoxInfo" VerticalAlignment="Top" HorizontalAlignment="Left" Width="482" />
     <TextBox Height="24" Margin="22,111,0,0" Name="textBoxInfo" VerticalAlignment="Top" IsReadOnly="True" IsEnabled="False" HorizontalAlignment="Left" Width="459"></TextBox>
     <ComboBox Height="26" Margin="295,46,0,0" Name="comboBoxCipherMode" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186" />
-    <Label Height="25.96" Margin="332.006666666667,21.04,0,0" Name="label5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99.9933333333333">Cipher mode</Label>
+    <Label Height="25.96" Margin="332.006666666667,21.04,0,0" Name="label5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99.9933333333333" Content="{Binding Source={StaticResource Lang}, XPath=Labels/CipherMode/@Header}"/>
     <ComboBox HorizontalAlignment="Left" Margin="21,187,0,0" Name="comboBoxKeyInputMethod" Width="70" Height="26" VerticalAlignment="Top" />
   </Grid>
 </Window>
