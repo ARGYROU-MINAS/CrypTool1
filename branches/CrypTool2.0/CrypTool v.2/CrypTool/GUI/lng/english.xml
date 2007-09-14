@@ -302,7 +302,7 @@
   </Titles>
   <Text>
     <BobKeyword>Bob can recognize a message as sent by Alice by finding the following keyword within the message (i.e. "Yours Alice"):</BobKeyword>
-    <HowTo>CrypTool is a freeware demonstration program, which enables you to apply and analyse encryption algorithms.<LineBreak/><LineBreak/>CrypTool provides an extensive online help. For each menu item and for each dialog box you'll be able to activate the context help by pressing the F1 key.<LineBreak/><LineBreak/>If you select the F1 key now, the online help will give you an introduction into CrypTool.<LineBreak/><LineBreak/>Have fun!</HowTo>
+    <HowTo>CrypTool is a freeware demonstration program, which enables you to apply and analyse encryption algorithms. <LineBreak/><LineBreak/>CrypTool provides an extensive online help. For each menu item and for each dialog box you'll be able to activate the context help by pressing the F1 key. <LineBreak/><LineBreak/>If you select the F1 key now, the online help will give you an introduction into CrypTool. <LineBreak/><LineBreak/>Have fun!</HowTo>
   </Text>
   <Messages>
     <NoMoreOccurrencesFound>No more occurrences found for '{0}'.</NoMoreOccurrencesFound>

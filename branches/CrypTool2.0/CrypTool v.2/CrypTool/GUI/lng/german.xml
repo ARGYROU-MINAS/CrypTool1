@@ -302,7 +302,7 @@
   </Titles>
   <Text>
     <BobKeyword>Bob kann erkennen, ob die erhaltene Nachricht von Alice gesendet wurde, wenn die Nachricht das folgende Schlüsselword enthält:</BobKeyword>
-    <HowTo>CrypTool ist ein freies Demonstrationsprogramm. mit dessen Hilfe Sie kryptographische Verfahren anwenden und analysieren können.<LineBreak/><LineBreak/>CrypTool bietet eine umfangreiche Online-Hilfe. Zu jeden Menüpunkt und zu jeder Dialogbox können Sie mit F1 Kontexthilfe aktivieren.<LineBreak/><LineBreak/>Wenn Sie jetzt die Taste F1 drücken, erhalten Sie die Online-Hilfe für den Einstieg in CrypTool.<LineBreak/><LineBreak/>Viel Spaß!</HowTo>
+    <HowTo>CrypTool ist ein freies Demonstrationsprogramm, mit dessen Hilfe Sie kryptographische Verfahren anwenden und analysieren können. <LineBreak/><LineBreak/>CrypTool bietet eine umfangreiche Online-Hilfe. Zu jeden Menüpunkt und zu jeder Dialogbox können Sie mit F1 Kontexthilfe aktivieren. <LineBreak/><LineBreak/>Wenn Sie jetzt die Taste F1 drücken, erhalten Sie die Online-Hilfe für den Einstieg in CrypTool. <LineBreak/><LineBreak/>Viel Spaß!</HowTo>
   </Text>
   <Messages>
     <NoMoreOccurrencesFound>Keine weitere Übereinstimmung für {0} gefunden.</NoMoreOccurrencesFound>
