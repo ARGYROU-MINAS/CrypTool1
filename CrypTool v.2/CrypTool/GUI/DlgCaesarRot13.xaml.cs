@@ -43,16 +43,17 @@ namespace CrypTool
         }
         private void Encode(object sender, RoutedEventArgs e)
         {
-            byte[] plainText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
-            
+            byte[] plainText = System.Text.Encoding.Default.GetBytes(_lastNotifiedForm.getPlainText());
+
+            this.rot13.setKey(textBoxKey.Text[0]);
             byte[] cipherText = this.rot13.Encrypt(plainText);
-            _lastNotifiedForm.setCipherText(System.Text.Encoding.Unicode.GetString(cipherText),"CeasarRot13");
+            _lastNotifiedForm.setCipherText(System.Text.Encoding.Default.GetString(cipherText),"CeasarRot13");
         }
         private void Decode(object sender, RoutedEventArgs e)
         {
-            byte[] cipherText = System.Text.Encoding.Unicode.GetBytes(_lastNotifiedForm.getPlainText());
+            byte[] cipherText = System.Text.Encoding.Default.GetBytes(_lastNotifiedForm.getPlainText());
             byte[] plainText = this.rot13.Decrypt(cipherText);
-            _lastNotifiedForm.setCipherText(System.Text.Encoding.Unicode.GetString(plainText), "CeasarRot13");
+            _lastNotifiedForm.setCipherText(System.Text.Encoding.Default.GetString(plainText), "CeasarRot13");
         }
         private void CloseDlgCaesarRot13(object sender, RoutedEventArgs e)
         {

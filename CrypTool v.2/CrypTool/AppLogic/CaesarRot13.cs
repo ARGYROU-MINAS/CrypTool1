@@ -69,30 +69,33 @@ namespace CrypTool.AppLogic
         }
         public byte[] Encrypt(byte[] PlainText)
         {
-            char[] cPlainText = System.Text.Encoding.Unicode.GetString(PlainText).ToUpper().ToCharArray();
+          //ToDo
+            //  char[] cPlainText = System.Text.Encoding.Unicode.GetString(PlainText).ToUpper().ToCharArray();
+            char[] cPlainText = System.Text.Encoding.Default.GetString(PlainText).ToUpper().ToCharArray();
             char[] cCipherText = new char[cPlainText.Length];
 
-            int iPos;
             for (int i = 0; i < cPlainText.Length; i++)
             {
-                iPos = (cPlainText[i] + this.cKey + this.iFirstPos) % this.cAlphArray.Length;
-                cCipherText[i] = cAlphArray[iPos];
+                
+                int a = cKey;
+                int b = cPlainText[i];
+          //      cCipherText[i] = (a + b) % cAlphArray.Length;
             }
 
-            byte[] bCipherText = System.Text.Encoding.Unicode.GetBytes(cCipherText);
+            byte[] bCipherText = System.Text.Encoding.Default.GetBytes(cCipherText);
             return bCipherText;
         }
         public byte[] Decrypt(byte[] CipherText)
         {
-            char[] cCipherText = System.Text.Encoding.Unicode.GetString(CipherText).ToUpper().ToCharArray();
+            char[] cCipherText = System.Text.Encoding.Default.GetString(CipherText).ToUpper().ToCharArray();
             char[] cPlainText = new char[cCipherText.Length];
-            int iPos;
+
             for (int i = 0; i < cCipherText.Length; i++)
             {
-                iPos = (cCipherText[i] - this.cKey - this.iFirstPos) % this.cAlphArray.Length;
+                int iPos = (cCipherText[i] - this.cKey - this.iFirstPos) % this.cAlphArray.Length;
                 cPlainText[i] = cAlphArray[iPos];
             }
-            byte[] bPlainText = System.Text.Encoding.Unicode.GetBytes(cPlainText);
+            byte[] bPlainText = System.Text.Encoding.Default.GetBytes(cPlainText);
             return bPlainText;
         }
     }

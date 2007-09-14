@@ -13,3 +13,4 @@
 -Klasse ReadLangString für Messageboxen usw.
 -EditorTabs löschen
 -Alle Buttons/Menü enable/disable
+-Neues Editorfenster immer tiefer als vorheriges Fenster anzeigen
