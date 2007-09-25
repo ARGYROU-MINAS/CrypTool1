@@ -1,0 +1,10 @@
+Z:\CrypTool 2.0\CrypPluginBase\obj\Debug\ResolveAssemblyReference.cache
+Z:\CrypTool 2.0\CrypPluginBase\bin\Debug\CrypPluginBase.dll
+Z:\CrypTool 2.0\CrypPluginBase\bin\Debug\CrypPluginBase.pdb
+Z:\CrypTool 2.0\CrypPluginBase\obj\Debug\CrypPluginBase.dll
+Z:\CrypTool 2.0\CrypPluginBase\obj\Debug\CrypPluginBase.pdb
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\CrypPluginBase\bin\Debug\CrypPluginBase.dll
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\CrypPluginBase\bin\Debug\CrypPluginBase.pdb
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\CrypPluginBase\obj\Debug\ResolveAssemblyReference.cache
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\CrypPluginBase\obj\Debug\CrypPluginBase.dll
+C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\CrypPluginBase\obj\Debug\CrypPluginBase.pdb
