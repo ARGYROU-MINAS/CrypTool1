@@ -70,7 +70,6 @@ namespace CrypTool.AppLogic
         public byte[] Encrypt(byte[] PlainText)
         {
           //ToDo
-            //  char[] cPlainText = System.Text.Encoding.Unicode.GetString(PlainText).ToUpper().ToCharArray();
             char[] cPlainText = System.Text.Encoding.Default.GetString(PlainText).ToUpper().ToCharArray();
             char[] cCipherText = new char[cPlainText.Length];
 
