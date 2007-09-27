@@ -1,5 +1,0 @@
-Z:\CrypTool 2.0\PluginBase\bin\Debug\PluginBase.dll
-Z:\CrypTool 2.0\PluginBase\bin\Debug\PluginBase.pdb
-Z:\CrypTool 2.0\PluginBase\obj\Debug\ResolveAssemblyReference.cache
-Z:\CrypTool 2.0\PluginBase\obj\Debug\PluginBase.dll
-Z:\CrypTool 2.0\PluginBase\obj\Debug\PluginBase.pdb
