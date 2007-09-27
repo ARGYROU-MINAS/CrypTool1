@@ -8,7 +8,7 @@ using CrypTool.PluginBase;
 
 namespace CrypTool.MD5
 {
-    public class MD5 : IHashAlgorithmSettings
+    public class MD5 : IHashAlgorithm, IHashAlgorithmSettings
     {
         public MD5()
         {
@@ -43,5 +43,19 @@ namespace CrypTool.MD5
                 return false;
             }
         }
+
+        #region IPlugin Members
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

@@ -8,7 +8,7 @@ using CrypTool.PluginBase;
 
 namespace CrypTool.RIPE160
 {
-    public class RIPE160
+    public class RIPE160 : IHashAlgorithm, IHashAlgorithmSettings
     {
         public string getRipe160Hash(Stream inputData)
         {
@@ -40,5 +40,19 @@ namespace CrypTool.RIPE160
                 return false;
             }
         }
+
+        #region IPlugin Members
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }
