@@ -1,7 +1,0 @@
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\SHA1\bin\Debug\SHA1.dll
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\SHA1\bin\Debug\SHA1.pdb
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\SHA1\bin\Debug\CrypPluginBase.dll
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\SHA1\bin\Debug\CrypPluginBase.pdb
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\SHA1\obj\Debug\ResolveAssemblyReference.cache
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\SHA1\obj\Debug\SHA1.dll
-C:\Daten\IMG\Subversion\CrypTool2.0\CrypToolPlugins\SHA1\obj\Debug\SHA1.pdb
