@@ -12,7 +12,8 @@ namespace CrypTool.MACTripleDES
     {
         public string getMacTripleDesHash(Stream inputData)
         {
-
+            MACTripleDES macTripleDesHash = new MACTripleDES();
+            
         }
     }
 }

@@ -8,7 +8,7 @@ using CrypTool.PluginBase;
 
 namespace CrypTool.SHA512
 {
-    public class SHA512
+    public class SHA512 : IHashAlgorithm, IHashAlgorithmSettings
     {
         public string getSha512Hash(Stream inputData)
         {
@@ -40,5 +40,19 @@ namespace CrypTool.SHA512
                 return false;
             }
         }
+
+        #region IPlugin Members
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

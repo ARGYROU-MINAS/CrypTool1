@@ -8,7 +8,7 @@ using System.IO;
 
 namespace CrypTool.SHA1
 {
-    public class SHA1
+    public class SHA1 : IHashAlgorithm, IHashAlgorithmSettings
     {
         public string getSha1Hash(Stream inputData)
         {
@@ -39,5 +39,19 @@ namespace CrypTool.SHA1
                 return false;
             }
         }
+
+        #region IPlugin Members
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

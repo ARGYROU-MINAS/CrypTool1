@@ -8,7 +8,7 @@ using CrypTool.PluginBase;
 
 namespace CrypTool.SHA256
 {
-    public class SHA256
+    public class SHA256 : IHashAlgorithm, IHashAlgorithmSettings
     {
         public string getSha256Hash(Stream inputData)
         {
@@ -40,5 +40,19 @@ namespace CrypTool.SHA256
                 return false;  
             }
         }
+
+        #region IPlugin Members
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }
