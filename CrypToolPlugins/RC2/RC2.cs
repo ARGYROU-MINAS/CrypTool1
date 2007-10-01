@@ -6,28 +6,25 @@ using System.IO;
 using System.Security.Cryptography;
 using CrypTool.PluginBase;
 
-namespace CrypTool.DES
+namespace CrypTool.RC2
 {
-    public class DES : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
+    public class RC2 : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
     {
+
         /// <summary>
         /// Encrypt a stream
         /// </summary>
         /// <param name="inputData">The original stream</param>
-        /// <param name="desKey">The des key to encrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="rc2Key">The RC2 key to encrypt</param>
+        /// <param name="rc2IV">The RC2 initial vector</param>
         /// <returns>The encrypted stream</returns>
-        public Stream Encrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Encrypt(Stream inputData, byte[] rc2Key, byte[] rc2IV)
         {
-            //ToDo - Exception handling
+            RC2CryptoServiceProvider rc2Cipher = new RC2CryptoServiceProvider();
+            rc2Cipher.Key = rc2Key;
+            rc2Cipher.IV = rc2IV;
 
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
-            //desCipher.Padding = 
-            //desCipher.Mode = 
-
-            ICryptoTransform encryptor = desCipher.CreateEncryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform encryptor = rc2Cipher.CreateEncryptor(rc2Cipher.Key, rc2Cipher.IV);
             MemoryStream outputData = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(outputData, encryptor, CryptoStreamMode.Write);
 
@@ -44,16 +41,16 @@ namespace CrypTool.DES
         /// Decrypt a crypted stream
         /// </summary>
         /// <param name="inputData">The encrypted stream</param>
-        /// <param name="desKey">The des key to decrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="rc2Key">The RC2 key to decrypt</param>
+        /// <param name="rc2IV">The RC2 initial vector</param>
         /// <returns>The decrypted stream</returns>
-        public Stream Decrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Decrypt(Stream inputData, byte[] rc2Key, byte[] rc2IV)
         {
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
+            RC2CryptoServiceProvider rc2Cipher = new RC2CryptoServiceProvider();
+            rc2Cipher.Key = rc2Key;
+            rc2Cipher.IV = rc2IV;
 
-            ICryptoTransform decryptor = desCipher.CreateDecryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform decryptor = rc2Cipher.CreateDecryptor(rc2Cipher.Key, rc2Cipher.IV);
             MemoryStream outputData = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(outputData, decryptor, CryptoStreamMode.Read);
 

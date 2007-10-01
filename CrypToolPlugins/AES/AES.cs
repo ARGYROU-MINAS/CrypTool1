@@ -6,28 +6,24 @@ using System.IO;
 using System.Security.Cryptography;
 using CrypTool.PluginBase;
 
-namespace CrypTool.DES
+namespace AES
 {
-    public class DES : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
+    public class AES : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
     {
         /// <summary>
         /// Encrypt a stream
         /// </summary>
         /// <param name="inputData">The original stream</param>
-        /// <param name="desKey">The des key to encrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="aesKey">The aes key to encrypt</param>
+        /// <param name="aesIV">The aes initial vector</param>
         /// <returns>The encrypted stream</returns>
-        public Stream Encrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Encrypt(Stream inputData, byte[] aesKey, byte[] aesIV)
         {
-            //ToDo - Exception handling
+            AesCryptoServiceProvider aesCipher = new AesCryptoServiceProvider();
+            aesCipher.Key = aesKey;
+            aesCipher.IV = aesIV;
 
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
-            //desCipher.Padding = 
-            //desCipher.Mode = 
-
-            ICryptoTransform encryptor = desCipher.CreateEncryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform encryptor = aesCipher.CreateEncryptor(aesCipher.Key, aesCipher.IV);
             MemoryStream outputData = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(outputData, encryptor, CryptoStreamMode.Write);
 
@@ -44,16 +40,16 @@ namespace CrypTool.DES
         /// Decrypt a crypted stream
         /// </summary>
         /// <param name="inputData">The encrypted stream</param>
-        /// <param name="desKey">The des key to decrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="aesKey">The aes key to decrypt</param>
+        /// <param name="aesIV">The aes initial vector</param>
         /// <returns>The decrypted stream</returns>
-        public Stream Decrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Decrypt(Stream inputData, byte[] aesKey, byte[] aesIV)
         {
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
+            AesCryptoServiceProvider aesCipher = new AesCryptoServiceProvider();
+            aesCipher.Key = aesKey;
+            aesCipher.IV = aesIV;
 
-            ICryptoTransform decryptor = desCipher.CreateDecryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform decryptor = aesCipher.CreateDecryptor(aesCipher.Key, aesCipher.IV);
             MemoryStream outputData = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(outputData, decryptor, CryptoStreamMode.Read);
 
