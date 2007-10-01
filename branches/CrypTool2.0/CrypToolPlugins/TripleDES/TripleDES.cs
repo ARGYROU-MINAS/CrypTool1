@@ -6,28 +6,24 @@ using System.IO;
 using System.Security.Cryptography;
 using CrypTool.PluginBase;
 
-namespace CrypTool.DES
+namespace CrypTool.TripleDES
 {
-    public class DES : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
+    public class TripleDES : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
     {
         /// <summary>
         /// Encrypt a stream
         /// </summary>
         /// <param name="inputData">The original stream</param>
-        /// <param name="desKey">The des key to encrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="tripleDesKey">The triple des key to encrypt</param>
+        /// <param name="tripleDesIV">The triple des initial vector</param>
         /// <returns>The encrypted stream</returns>
-        public Stream Encrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Encrypt(Stream inputData, byte[] tripleDesKey, byte[] tripleDesIV)
         {
-            //ToDo - Exception handling
+            TripleDESCryptoServiceProvider tripleDesCipher = new TripleDESCryptoServiceProvider();
+            tripleDesCipher.Key = tripleDesKey;
+            tripleDesCipher.IV = tripleDesIV;
 
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
-            //desCipher.Padding = 
-            //desCipher.Mode = 
-
-            ICryptoTransform encryptor = desCipher.CreateEncryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform encryptor = tripleDesCipher.CreateEncryptor(tripleDesCipher.Key, tripleDesCipher.IV);
             MemoryStream outputData = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(outputData, encryptor, CryptoStreamMode.Write);
 
@@ -44,18 +40,18 @@ namespace CrypTool.DES
         /// Decrypt a crypted stream
         /// </summary>
         /// <param name="inputData">The encrypted stream</param>
-        /// <param name="desKey">The des key to decrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="tripleDesKey">The triple des key to decrypt</param>
+        /// <param name="tripleDesIV">The triple des initial vector</param>
         /// <returns>The decrypted stream</returns>
-        public Stream Decrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Decrypt(Stream inputData, byte[] tripleDesKey, byte[] tripleDesIV)
         {
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
+            TripleDESCryptoServiceProvider tripleDesCipher = new TripleDESCryptoServiceProvider();
+            tripleDesCipher.Key = tripleDesKey;
+            tripleDesCipher.IV = tripleDesIV;
 
-            ICryptoTransform decryptor = desCipher.CreateDecryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform decryptor = tripleDesCipher.CreateDecryptor(tripleDesCipher.Key, tripleDesCipher.IV);
             MemoryStream outputData = new MemoryStream();
-            CryptoStream cryptoStream = new CryptoStream(outputData, decryptor, CryptoStreamMode.Read);
+            CryptoStream cryptoStream = new CryptoStream(outputData,decryptor,CryptoStreamMode.Read);
 
             StreamReader streamReader = new StreamReader(cryptoStream);
 

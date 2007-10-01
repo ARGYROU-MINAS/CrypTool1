@@ -6,28 +6,25 @@ using System.IO;
 using System.Security.Cryptography;
 using CrypTool.PluginBase;
 
-namespace CrypTool.DES
+
+namespace CrypTool.Rijndael
 {
-    public class DES : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
+    public class Rijndael : IEncryptionAlgorithm, IEncryptionAlgorithmSettings
     {
         /// <summary>
         /// Encrypt a stream
         /// </summary>
         /// <param name="inputData">The original stream</param>
-        /// <param name="desKey">The des key to encrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="rijndaelKey">The rijndael key to encrypt</param>
+        /// <param name="rijndaelIV">The rijndael initial vector</param>
         /// <returns>The encrypted stream</returns>
-        public Stream Encrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Encrypt(Stream inputData, byte[] rijndaelKey, byte[] rijndaelIV)
         {
-            //ToDo - Exception handling
+            RijndaelManaged rijndaelCipher = new RijndaelManaged();
+            rijndaelCipher.Key = rijndaelKey;
+            rijndaelCipher.IV = rijndaelIV;
 
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
-            //desCipher.Padding = 
-            //desCipher.Mode = 
-
-            ICryptoTransform encryptor = desCipher.CreateEncryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform encryptor = rijndaelCipher.CreateEncryptor(rijndaelCipher.Key, rijndaelCipher.IV);
             MemoryStream outputData = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(outputData, encryptor, CryptoStreamMode.Write);
 
@@ -44,16 +41,16 @@ namespace CrypTool.DES
         /// Decrypt a crypted stream
         /// </summary>
         /// <param name="inputData">The encrypted stream</param>
-        /// <param name="desKey">The des key to decrypt</param>
-        /// <param name="desIV">The des initial vector</param>
+        /// <param name="rijndaelKey">The rijndael key to decrypt</param>
+        /// <param name="rijndaelIV">The rijndael initial vector</param>
         /// <returns>The decrypted stream</returns>
-        public Stream Decrypt(Stream inputData, byte[] desKey, byte[] desIV)
+        public Stream Decrypt(Stream inputData, byte[] rijndaelKey, byte[] rijndaelIV)
         {
-            DESCryptoServiceProvider desCipher = new DESCryptoServiceProvider();
-            desCipher.Key = desKey;
-            desCipher.IV = desIV;
+            RijndaelManaged rijndaelCipher = new RijndaelManaged();
+            rijndaelCipher.Key = rijndaelKey;
+            rijndaelCipher.IV = rijndaelIV;
 
-            ICryptoTransform decryptor = desCipher.CreateDecryptor(desCipher.Key, desCipher.IV);
+            ICryptoTransform decryptor = rijndaelCipher.CreateDecryptor(rijndaelCipher.Key, rijndaelCipher.IV);
             MemoryStream outputData = new MemoryStream();
             CryptoStream cryptoStream = new CryptoStream(outputData, decryptor, CryptoStreamMode.Read);
 
