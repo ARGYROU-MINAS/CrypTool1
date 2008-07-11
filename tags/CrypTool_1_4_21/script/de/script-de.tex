@@ -1,0 +1,173 @@
+% $Id$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin1]{inputenc} % Umlaute
+% \usepackage[dvips]{graphics}
+% \usepackage{graphicx}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{makeidx}
+% \usepackage{flafter} Versuch von Hrn. Koy, zu erzwingen, dass 
+%     Grafiken/Verschiebbare Objekte (floats) immer an der Stelle eingefügt
+%     werden, wo sie aufgerufen werden. Tat nicht.
+
+%\usepackage{myThanks}
+%\usepackage{thumbpdf}
+\usepackage[bookmarksnumbered=true]{hyperref}
+%\usepackage[T1]{fontenc}
+%\usepackage{times}
+%\usepackage{pslatex}
+%\usepackage{ae,aecompl}
+
+% Formatierung der Fußnoten
+\usepackage[flushmargin]{footmisc}
+
+% Literaturverzeichnis kapitelweise
+\usepackage[labelstoglobalaux]{bibunits} % ohne labelstoglobalaux scheint man thebibilograpy und bibtex nicht mischen zu können
+%\bibliographyunit[\section] % bibunits für das ganze Dokument aktivieren
+\defaultbibliography{references}
+\defaultbibliographystyle{abbrv}
+
+\makeindex
+\hypersetup{colorlinks=true}
+
+%\newlength{\myFootnoteWidth}
+%\newlength{\myFootnoteLabel}
+%\setlength{\myFootnoteLabel}{2.2em}%  <-- can be changed to any valid value
+
+\setlength{\textwidth}{460 pt}
+\hoffset-0.7in
+\newtheorem{definition}{Definition}[section]
+\newtheorem{satz}{Satz}[section]
+\newenvironment{Beweis}[1]
+  {\textbf{Beweis #1} \\}
+  {\hfill$\Box$ \\}
+
+%\pdfinfo{ /Title (CrypTool-Skript) /Creator (TeX) /Producer
+%(pdfTeX 0.14a) /Author (Deutsche Bank AG) /CreationDate
+%(D:20000920201000) } ???????????????
+
+\usepackage[german]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hack, damit Aufruf von \tableofcontents auch gleich \addcontentsline
+% enthält. Damit steht im Inhaltsverzeichnis das Inhaltsverzeichnis
+% mit korrekter Seitenzahl und Hyperlink.
+% Ohne das ergab sich per:
+%   \newpage
+%   \addcontentsline{toc}{section}{Inhaltsverzeichnis}  ==> NOT USED
+%       --> --- springt auf eine Seite zu früh,
+%       --> +   zeigt korrekte Seitenzahl im Inhaltsverzeichnis an. 
+%   \tableofcontents
+%   \addcontentsline{toc}{section}{Inhaltsverzeichnis}  ==> USED, da Springen
+%       --> -   springt eine Zeile zu weit,                       wichtiger.
+%       --> -   zeigt S. 8 statt S. 3 (also das Ende des Verzeichnisses)
+\makeatletter
+\renewcommand\tableofcontents{%
+    \section*{\contentsname
+        \@mkboth{%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+    \addcontentsline{toc}{section}{\contentsname}
+    \@starttoc{toc}%
+    }
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{%\vskip -20 pt 
+	{ Das CrypTool-Skript: \\ 
+	Kryptographie, Mathematik und mehr} \\
+        \vspace{30pt}
+        {\large Hintergrundmaterial und Zusatzinformationen\\%*[-8pt]
+         zum freien E-Learning-Programm CrypTool\\
+         (9. Auflage -- zu Version 1.4.20)}
+        \vspace{60pt}
+}
+
+\vspace{32pt}
+
+\author{
+(c) Prof.\ Bernhard Esslinger (Mitautor und Herausgeber), 1998-2008 \\
+Frankfurt am Main\\*[1ex]
+www.cryptool.org
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\pagestyle{plain}
+\setlength{\fboxrule}{.5mm}
+\setlength{\fboxsep}{1.75mm}
+\setlength{\footnotesep}{6pt}
+\addtolength{\footskip}{8pt}
+
+%space between text and footnote 
+\renewcommand\footnoterule{
+\vspace{2em}%   <-- one line space between text and footnoterule
+%\kern-3\p@
+\hrule width .4\columnwidth
+\vspace{4pt}
+%kern 2.6\p@
+}
+
+%\long\def\@makefntext#1{%
+%\parindent 1em%
+%\noindent
+%\hbox to 1.8em{\hss\@makefnmark}#1}
+
+
+\maketitle
+
+
+% Vergleichbar zur Nutzung von Texten aus der Wikipedia (=GNU Free Documentation Licence, GFDL)
+\vspace{200pt}
+Dies ist ein freies Dokument, d.h. Inhalte des Dokuments können kopiert und
+verbreitet werden, auch zu kommerziellen Zwecken. \\
+Im Gegenzug sind Autor, Titel und die CrypTool-Webseite (www.cryptool.org) zu
+nennen. Selbstverständlich darf aus dem CrypTool-Skript, genau wie aus jedem
+anderen Werk auch, zitiert werden. Diese Lizenzbedingungen sind angelehnt an
+die GNU-Lizenz für freie Dokumentation.
+
+% be_2005: a) Auf erste Seite nur den Titel ! -> Newpage eingefügt.
+%          b) "aboutcryptool.tex" hier und nicht unten vor "introduction.tex"
+%             einfügen, damit es VOR dem Inhaltsverzeichnis steht.
+\newpage
+\input{chapters/aboutcryptool.tex}
+
+\newpage
+\tableofcontents  % --> is redefined !
+
+\newpage
+\normalsize
+\parindent 0cm
+\parskip 4pt
+
+\input{chapters/introduction.tex}
+\input{chapters/cryptomethods.tex}
+\input{chapters/paper_and_pencil.tex}
+\input{chapters/primes.tex}
+\input{chapters/numbertheory.tex}
+\input{chapters/moderncryptography.tex}
+\input{chapters/digitalsignatures.tex}
+\input{chapters/ellipticcurves.tex}
+\begin{bibunit}
+\input{chapters/crypto2020.tex}
+\end{bibunit}
+
+%\appendix \addcontentsline{toc}{section}{Appendix} %be_2005 raus
+\begin{appendix}
+  \newpage
+  \input{chapters/menus.tex}
+  \input{chapters/authors.tex}
+\end{appendix}
+
+%\addcontentsline{toc}{section}{Index} %moved to style.ist
+\printindex
+
+\end{document}
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Signatur eines Dokuments erstellen</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+	<PARAM NAME="Keyword" VALUE="Signatur">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Signatur eines Dokuments erstellen</h3>
+
+<P>Sie erreichen diesen Dialog über den Menüeintrag <a href="menu_digitalsignaturespki.html">Digitale Signaturen/PKI</a> \ <a href="hid_crypt_sign.html">Dokument signieren</a>.</P>
+
+<P>In diesem Dialog kann ein <A href="hid_crypt_sign.html">Dokument signiert</A> werden.</P>
+
+<P>Der Dialog besteht aus den beiden Gruppenfeldern <B>Hashfunktion wählen</B> und <B>Signaturverfahren wählen</B>. Es stehen fünf <A href="hashfunktion.html">Hashfunktionen</A> (<A href="hid_crypt_hash_md2.html">MD2</A>, <A href="hid_crypt_hash_md5.html">MD5</A>, <A href="hid_crypt_hash_ripemd160.html">RIPEMD-160</A>, <A href="hid_crypt_hash_sha.html">SHA</A> und <A href="hid_crypt_hash_sha1.html">SHA-1</A>) und vier Signaturverfahren (RSA, <A href="dsa.html">DSA</A>, ECSP-DSA und ECSP-NR) zur Verfügung. Den kryptographischen Standards entsprechend kann nicht jedes Signaturverfahren mit jeder Hashfunktion benutzt werden. Folgende Tabelle gibt einen Überblick über die erlaubten Kombinationen:</P>
+
+<TABLE cols=6 width="0*" class="pad20">
+
+<TR VALIGN="top">
+<TD>&nbsp;</TD>
+<TD><B>MD2</B></TD>
+<TD><B>MD5</B></TD>
+<TD><B>RIPEMD-160</B></TD>
+<TD><B>SHA</B></TD>
+<TD><B>SHA-1</B></TD>
+</TR>
+
+<TR VALIGN="top">
+<TD><B>RSA</B></TD>
+<TD>Ja</TD>
+<TD>Ja</TD>
+<TD>Ja</TD>
+<TD>Ja</TD>
+<TD>Ja</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD><B>DSA</B></TD>
+<TD>Nein</TD>
+<TD>Nein</TD>
+<TD>Nein</TD>
+<TD>Ja</TD>
+<TD>Ja</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD><B>ECSP-DSA</B></TD>
+<TD>Nein</TD>
+<TD>Nein</TD>
+<TD>Ja</TD>
+<TD>Nein</TD>
+<TD>Ja </TD>
+</TR>
+
+<TR VALIGN="top">
+<TD><B>ECSP-NR</B></TD>
+<TD>Nein</TD>
+<TD>Nein</TD>
+<TD>Ja</TD>
+<TD>Nein</TD>
+<TD>Ja</TD>
+</TR>
+</TABLE><BR>
+
+<P>Um das <!--ZZZPOPUP--><A href="dokument.html">Dokument</A> zu <!--ZZZPOPUP--><A href="signatur.html">signieren</A>, wird ein - dem Signaturverfahren entsprechender - geheimer <!--ZZZPOPUP--><A href="schluessel.html">Schlüssel</A> benötigt. In einem Auswahlfeld sind alle verfügbaren Schlüssel aufgelistet. Durch die <B>Wahl eines Schlüsselbezeichners</B> (der unter anderem aus dem Namen des Erstellers besteht) und die Eingabe des (bei der Schlüsselerzeugung gewählten) <B>PIN-Codes</B> kann man eine digitale Signatur des aktiven Dokuments erstellen. Das Dokument wird mit dem gewählten Signaturverfahren und der gewählten Hashfunktion signiert, wenn man <B>Signieren</B> drückt. </P>
+
+<P>Bei der Auswahl des <!--ZZZPOPUP--><A href="schluesselbezeichner.html">Schlüssel-Bezeichners</A> erkennt <!--ZZZPOPUP--><A href="cryptool.html">CrypTool</A> automatisch, welcher Schlüssel darin gespeichert ist, so dass nur diejenigen Signaturverfahren und Hashfunktionen zur Auswahl stehen, die sich untereinander "vertragen" und zu dem Schlüssel korrespondieren.</P>
+
+<P>Es ist möglich, mit dem Befehl <A href="hid_crypt_extract.html">Signatur extrahieren</A> aus dem Menü <A href="menu_digitalsignaturespki.html">Digitale Signaturen/PKI</A> die Signatur zu extrahieren.</P>
+
+<P>Beim Signieren mittels ECSP-DSA und ECSP-NR ist es ferner möglich, durch ein Häkchen im Feld <B>Zwischenschritte anzeigen</B> die Zwischenschritte bei der Signaturerstellung auszugeben. Die Ausgabe erfolgt im Dialog <A href="hidd_ecsignatrure_stepbystep.html">Signaturerzeugung – Schritt für Schritt</A>.</P>
+
+<P>Die Details beim Signieren mittels RSA und DSA können über diesen Dialog nicht angezeigt werden. Für RSA-Signaturen gibt es eine auf die Visualisierung des Verfahrens spezialisierte <A href="hid_einzelverfahren_sign_doc.html">Signaturerzeugung</A>.</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Serial-Test</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Zufall">
+	<PARAM NAME="Keyword" VALUE="Serial-Test">
+	<PARAM NAME="Keyword" VALUE="Analyse">
+</OBJECT>
+
+<BODY>
+
+<h3>Serial-Test (Menü <A href="menu_analyze.html"> Analyse</A> \ <a href="menu_analysis_randomanalysis.html">Zufallsanalyse</a>)</h3>
+<p>Beim Aufruf dieses Menüeintrags öffnet sich der Dialog 
+				für den <a href="dialog_serial.html">Serial-Test</a>.
+				
+				
+		<P>Dieser Test untersucht, ob Paare aufeinanderfolgender Zahlen <A href="gleichver.html">
+				gleichverteilt</A> sind und prüft somit deren Unabhängigkeit voneinander.</p>
+				<p>Bei einer Binärfolge s wird bestimmt, ob die Wahrscheinlichkeit dafür, dass aufeinanderfolgende 
+			Elemente der Folge gleich oder unterschiedlich sind, in etwa gleich groß ist. 
+			Dies ist ein Indiz dafür, dass jedes Bit unabhängig von seinem Vorgängerbit 
+			ist. Bei Binärfolgen gibt es 4 verschiedene Paarungen: 00, 01, 10, 11. Die Anzahl jeder der vier Paarungen (Teilfolgen) in s soll annähernd der bei einer 
+			echten Zufallsfolge erwarteten Anzahl entsprechen. Da bei diesem Test stets 
+			zwei Bits auf einmal untersucht werden, wird der Test in der Literatur auch als <I>Zwei-Bit-Test</I>
+			bezeichnet.</P>
+		<P>Seien n<sub>0</sub> und n<sub>1</sub> die Anzahl der Nullen bzw. der Einsen in s; und seien n<sub>00</sub>, n<sub>01</sub>, 
+			n<sub>10</sub> und n<sub>11</sub> die jeweilige Anzahl der Teilsequenzen 00, 01, 10, 11 in <I>s</I>. Da 
+			sich die Teilfolgen überlappen dürfen, gilt (mit n = Bitlänge von s):
+		</P>
+		<div style="TEXT-ALIGN:center">
+			<P>n<sub>00</sub> + n<sub>01</sub> + n<sub>10</sub> + n<sub>11</sub> = n - 1</P>
+		</div>
+		<P>Die verwendete Teststatistik ist gegeben durch</P>
+		<div style="TEXT-ALIGN:center">
+			<P>X<sub>2</sub> = [4 / (n –1)] * (n<sub>00</sub>^2 + n<sub>01</sub>^2 + n<sub>10</sub>^2 + n<sub>11</sub>^2) – (2 / n) * (n<sub>0</sub>^2 + 
+				n<sub>1</sub>^2) + 1,</P>
+		</div>
+		<P>wobei X<sub>2</sub> annähernd einer <A href="chi_2_verteilung.html">chi^2 – Verteilung</A> mit 
+			zwei Freiheitsgraden entspricht, vorausgesetzt n &gt;= 21.</P>
+		<P>In dem <A href="dialog_serial.html">Serial-Test-Dialogfenster</A> kann man <!--ZZZPOPUP--><A href="sign_niv.html">Signifikanzniveau</A>,  <!--ZZZPOPUP--><A href="offset.html">Offset</A>
+			und <!--ZZZPOPUP--><A href="testlen.html">Testlänge</A> bestimmen.</P>
+		<P><B>Ein Serial-Test-Beispiel:</B></P>
+		<P>Im folgenden wird an der kurzen Binärfolge</P>
+		<PRE><CODE>s =
+00010111 01101101 01111101 11110011 00101111 
+00001111 10100100 11001111 11000011 11010001
+11010001 00101110 11010100 11000011 01010001
+11010110 00110010 10001111 00000111 01000111</CODE></PRE>
+		<P>mit der Länge n = 160 (20 Byte) der klassische Serial-Test durchgeführt. Das <!--ZZZPOPUP--><A href="sign_niv.html">Signifikanzniveau</A>
+			wird mit alpha = 0,05 festgelegt.</P>
+		<P>Die Anzahl der sich überlappenden Paare 00, 01, 10 und 11 in <I>s</I> beträgt
+		</P>
+		<div class="indent">
+			<TABLE cols="2" width="0*" class="pad20">
+				<TR VALIGN="top">
+					<TD>n<sub>00</sub> = 35</TD>
+					<TD>n<sub>10</sub> = 38</TD>
+				</TR>
+				<TR VALIGN="top">
+					<TD>n<sub>01</sub> = 39</TD>
+					<TD>n<sub>11</sub> = 47</TD>
+				</TR>
+			</TABLE>
+			<BR>
+		</div>
+		<P>Die Prüfgröße für den <I>Zwei-Bit-Test</I> wird ermittelt durch
+		</P>
+		<div style="TEXT-ALIGN:center">
+			<P>X<sub>2</sub> = [4 / (160 –1)] * (35^2 + 39^2 + 38^2 + 47^2) – (2 / 160) * (74^2 + 86^2) + 
+				1 = 1,081</P>
+		</div>
+		<P>Der Grenzwert für X<sub>2</sub> ist bei einer <A href="chi_2_verteilung.html">chi^2 – 
+				Verteilung</A> mit zwei Freiheitsgraden und einem <!--ZZZPOPUP--><A href="sign_niv.html">Signifikanzniveau</A>
+			von alpha = 0,05 gegeben mit 5,991 . </p><p>Mit X<sub>2</sub> = 1,081 &lt;= 5,991 besteht die 
+			Folge s den Serial-Test.</P>
+		<P>Literatur: Christian Schiestl, <I>Pseudozufallszahlen in der Kryptographie</I>, 
+			Klagenfurt, 1999.</P>
+	</BODY>
+</HTML>
