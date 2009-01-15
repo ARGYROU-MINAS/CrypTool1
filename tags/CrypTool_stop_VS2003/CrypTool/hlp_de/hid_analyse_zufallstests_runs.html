@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Runs-Test</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Zufall">
+	<PARAM NAME="Keyword" VALUE="Runs-Test">
+	<PARAM NAME="Keyword" VALUE="Analyse">
+</OBJECT>
+
+<BODY>
+
+<h3>Runs-Test (Menü <A href="menu_analyze.html">Analyse</A> \ Zufallsanalyse)</h3>
+<p>Beim Aufruf dieses Menüeintrags öffnet sich der Dialog 
+				für den <a href="HIDD_RUNS_TEST.html">Runs-Test</a>.
+		<P>Mit dem klassischen Runs-Test untersucht man monoton steigend bzw. fallende 
+			Teilsequenzen einer Zahlenfolge. Unter einem "Run - up" der Länge k versteht 
+			man eine Teilfolge X<sub>i</sub>; ... ; X<sub>(i + k – 1)</sub> mit X<sub>(i + r)</sub> &lt;= X<sub>(i + r + 1)</sub>
+			für alle r, 0 &lt;= r &lt;= k - 1. Analog werden "Run-downs" der Länge k 
+			definiert. Schlechte Generatoren erzeugen tendenziell zu lange Runs.</P>
+		<P>Der Runs Test vergleicht nun die beobachteten Häufigkeiten unterschiedlicher Run 
+			- Längen mit den erwarteten Häufigkeiten. Für die erwartete Häufigkeit eines 
+			Run - up' s der Länge k in einer Folge der Länge n gilt:</P>
+		<div style="TEXT-ALIGN:center">
+			<P>E<sub>k</sub> = [(k ^ 2 + k + 1) * (n - k - 1)] / (k + 2)!</P>
+		</div>
+		<P>Da hintereinander folgende Runs nicht voneinander unabhängig sind (auf einen 
+			langen Run folgt mit größerer Wahrscheinlichkeit ein kurzer Run als ein langer 
+			Run und umgekehrt), darf der <A href="chi_2_verteilung.html">chi^2</A> -Test 
+			nicht ohne weiteres zum Vergleich der beobachteten Runs mit den erwarteten 
+			Häufigkeiten herangezogen werden. Knuth schlägt als einfache Problemlösung vor, 
+			jede Zahl, die unmittelbar auf das Ende eines Runs folgt, zu verwerfen. Dadurch 
+			erhält man voneinander unabhängige Runs, die mit dem <A href="chi_2_verteilung.html">
+				chi^2</A> -Test mit k - 1 Freiheitsgraden auf ihre Verteilung überprüft 
+			werden können. Die Häufigkeitsverteilung wird in k Klassen eingeteilt, wobei 
+			die i-te Klasse,0 &lt;= i &lt;= k - 1, Runs mit der Länge i und die Klasse k - 
+			1 Runs der Länge &gt;= k enthält. Die Wahrscheinlichkeiten für Runs der Länge k 
+			ist gegeben durch</P>
+		<div style="TEXT-ALIGN:center">
+			<P>P(<I>Run hat Länge k</I>) = k / (k + 1)!</P>
+		</div>
+		<P>Im Falle der Überprüfung von binären Folgen vereinfacht sich die Betrachtung der 
+			Runs – up / Runs - Down auf die Länge der zu beobachtenden <!--ZZZPOPUP--><A href="block_lueck.html">Lücken 
+				und Blöcke</A>. Der Zweck des Runs-Tests - angewendet auf Binärfolgen - ist 
+			es, zu bestimmen, ob die Anzahl der binären Runs verschiedener Längen in der 
+			Folge s sich wie bei einer echten Zufallsfolge verhält.</P>
+		<P>Die in einer n-Bit Zufallsfolge erwartete Anzahl an <!--ZZZPOPUP--><A href="block_lueck.html">Lücken</A>
+			(bzw. <!--ZZZPOPUP--><A href="block_lueck.html">Blöcken</A>) der Länge i ist 
+			gegeben durch</P>
+		<div style="TEXT-ALIGN:center">
+			<P>E<sub>i</sub> = (n - i + 3) / 2 ^ (i + 2)</P>
+		</div>
+		<P>Sei k gleich der größten Zahl i, für die gilt E<sub>5</sub>, und seien B<sub>i</sub>; G<sub>i</sub> die 
+			Anzahl der <!--ZZZPOPUP--><A href="block_lueck.html">Blöcke und Lücken</A> der 
+			Länge i in s für alle i, 1 &lt;= i &lt;= k. Die verwendete Teststatistik ist gegeben 
+			durch</P>
+		<div style="TEXT-ALIGN:center">
+			<P>X<sub>4</sub> =sum[i = 1; i = k] (B<sub>i</sub> – E<sub>i</sub>) ^ 2 / E<sub>i</sub> + sum[i = 1; i = k] (G<sub>i</sub> – E<sub>i</sub>) ^ 2 
+				/ E<sub>i</sub></P>
+		</div>
+		<P>wobei X4 annähernd einer <A href="chi_2_verteilung.html">chi^2-Verteilung</A> mit 
+			2k - 2 Freiheitsgraden gehorcht.</P>
+		<P><B>Ein Runs-Test-Beispiel:</B></P>
+		<P>Im folgenden werden beispielhaft an der kurzen Binärfolge</P>
+		<PRE><CODE>s =
+00010111 01101101 01111101 11110011 00101111 
+00001111 10100100 11001111 11000011 11010001
+11010001 00101110 11010100 11000011 01010001
+11010110 00110010 10001111 00000111 01000111</CODE></PRE>
+		<P>mit der Länge n = 160 (20 Byte) klassischen Runs-Test durchgeführt. Das 
+			Signifikanzniveau wird mit alpha = 0.05 festgelegt.</P>
+		<P>Durch absolute(s) = 160 gilt in unserem konkreten Runs-Test für s: k = 3. Die 
+			erwartete Anzahl von Runs der Länge i = 1, 2, 3 in einer 160 - Bit Folge 
+			beträgt E<sub>i</sub> = (160 – i + 3) / 2 ^ (i + 2), 1 &lt;= i &lt;= 3.</P>
+		<div class="indent">
+			<TABLE cols="3" width="0*" class="pad20">
+				<TR VALIGN="top">
+					<TD>E<sub>1</sub> = 20.25<BR>
+					</TD>
+					<TD>E<sub>2</sub> = 10.0625<BR>
+					</TD>
+					<TD>E<sub>3</sub> = 5<BR>
+					</TD>
+				</TR>
+			</TABLE>
+			<BR>
+		</div>
+		<P>In der Sequenz <I>s</I> gibt es die folgende Anzahl von <!--ZZZPOPUP--><A href="block_lueck.html">Blöcke</A>
+			B<sub>i</sub> bzw. <!--ZZZPOPUP--><A href="block_lueck.html">Lücken</A> G<sub>i</sub> der Längen i 
+			= 1, 2, 3:</P>
+		<div class="indent">
+			<TABLE cols="2" width="0*" class="pad20">
+				<TR VALIGN="top">
+					<TD>
+						<PRE><CODE>B<sub>1</sub> = 17</CODE></PRE>
+					</TD>
+					<TD>
+						<PRE><CODE>G<sub>1</sub> = 20</CODE></PRE>
+					</TD>
+				</TR>
+				<TR VALIGN="top">
+					<TD>
+						<PRE><CODE>B<sub>2</sub> = 9</CODE></PRE>
+					</TD>
+					<TD>
+						<PRE><CODE>G<sub>2</sub> = 8</CODE></PRE>
+					</TD>
+				</TR>
+				<TR VALIGN="top">
+					<TD>
+						<PRE><CODE>B<sub>3</sub> = 6</CODE></PRE>
+					</TD>
+					<TD>
+						<PRE><CODE>G<sub>3</sub> = 7</CODE></PRE>
+					</TD>
+				</TR>
+			</TABLE>
+			<BR>
+		</div>
+		<P>Bestimmen wir nun die Prüfgröße für den Runs-Test:</P>
+		<div class="indent">
+			<TABLE cols="2" width="0*" class="pad20">
+				<TR VALIGN="top">
+					<TD>X<sub>4</sub>=</TD>
+					<TD>[(17 – 20.25) ^ 2 / 20.25] + [(9 – 10.0625) ^ 2 / 10.0625] + [(6 – 5) ^ 2 / 5] 
+						+
+					</TD>
+				</TR>
+				<TR VALIGN="top">
+					<TD>&nbsp;</TD>
+					<TD>[(20 – 20.25) ^ 2 / 20.25] + [(8 – 10.0625) ^ 2 / 10.0625] + [(7 – 5) ^ 2 / 5]</TD>
+				</TR>
+				<TR VALIGN="top">
+					<TD>
+						=
+					</TD>
+					<TD>2.0596</TD>
+				</TR>
+			</TABLE>
+			<BR>
+		</div>
+		<P>Für ein Signifikanzniveau von alpha = 0.05 gibt bei 2 * 3 - 2 = 4 
+			Freiheitsgraden einen kritischen Bereich über 9.488 an. Mit X<sub>4</sub> = 2.0596 &lt;= 
+			9.488 besteht die Folge <I>s</I> den Runs-Test.</P>
+		<P><B>Literatur</B>:</P>
+		<P>Christian Schiestl, <I>Pseudozufallszahlen in der Kryptographie</I>, Klagenfurt, 
+			1999.</P>
+	</BODY>
+</HTML>
