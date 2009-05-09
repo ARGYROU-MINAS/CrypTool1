@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+	<HEAD>
+		<TITLE>FIPS-PUB-140-1 Testbatterie</TITLE>
+		<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+		<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+		<!-- multiple keywords for CrypTool HTML help index -->
+	</HEAD>
+	<BODY>
+		<OBJECT type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e"
+			VIEWASTEXT>
+			<PARAM NAME="Keyword" VALUE="Zufall">
+			<PARAM NAME="Keyword" VALUE="FIPS-PUB-140-1 Testbatterie">
+			<PARAM NAME="Keyword" VALUE="Analyse">
+		</OBJECT>
+		<h3>FIPS-PUB-140-1 Test-Batterie (Menü <A href="menu_analyze.html">Analyse</A> \ 
+			<a href="menu_analysis_randomanalysis.html">Zufallsanalyse)</a></h3>
+		<p>Bei Aufruf dieses Menüeintrags öffnet sich der Dialog <a href="HIDD_FIPS_PUB_140_1.html">
+				FIPS-PUB-140-1-Testbatterie</a>.</p>
+				<p>Hiermit kann ein standardisierter Zufallszahlentest, der eine Kombination (battery) von 4 Einzeltests darstellt, durchgeführt werden. 
+				FIPS-PUB-140-1 untersucht genau 2500 Bytes. Kürzere Dokumente werden gar nicht untersucht; bei längeren werden genau die ersten 2500 Bytes untersucht.</p>
+		
+		<P>FIPS PUB 140-1 spezifiziert Sicherheitsanforderungen für den Entwurf und die 
+			Implementierung von kryptographischen Modulen, u.a. auch von 
+			Pseudozufallsgeneratoren. Für Pseudozufallsgeneratoren werden vier statistische 
+			Test - Verfahren vorgeschlagen, anhand derer einfach die Ausgabe eines 
+			Pseudozufallsgenerators auf Zufälligkeit geprüft werden kann. Dabei wird dem 
+			Anwender die Wahl eines entsprechenden <!--ZZZPOPUP--><A href="sign_niv.html">Signifikanzniveaus</A>
+			abgenommen und konkrete Grenzwerte für die einzelnen Teststatistiken angegeben. 
+			Für Anwendungen im Hochsicherheitsbereich empfehlen die Autoren von FIPS 
+			PUB-140-1, nach jedem Neustart eines Zufallsbitgenerators die vier 
+			statistischen Tests durchzuführen.</P>
+		<P>Eine 20000-Bit Binärfolge, die von einem Pseudozufallsgenerator erzeugt wurde, 
+			wird vier statistischen Tests unterzogen. Wenn die Sequenz auch nur bei einem 
+			Test durchfällt, so besteht der Generator den Test nicht. Die folgenden Tests 
+			sind durchzuführen:</P>
+		<P><B>Mono-Bit-Test</B>
+			<div class="indent">
+				Die Anzahl der Einsen in s sollte zwischen 9654 und 10346 liegen.
+				<P></P>
+			</div>
+		<P><B>Poker-Test</B>
+			<div class="indent">
+				Die Teststatistik X<sub>3</sub> (vgl. Abschnitt 3.3.3) wird für m = 4 (Tupelgröße) 
+				berechnet. Der Poker-Test wird bestanden, wenn gilt: 1.03 &lt; X<sub>3</sub> &lt; 57.4.
+				<P></P>
+			</div>
+		<P><B>Run-Test</B>
+			<div class="indent">
+				Die Anzahl B<sub>i</sub> bzw. G<sub>i</sub> der <!--ZZZPOPUP--><A href="block_lueck.html">Blöcke bzw. 
+					Lücken</A> der Länge i in <I>s</I> werden für alle i; 1 &lt;= i &lt;= 6 
+				gezählt. Längere Runs werden als Runs der Länge 6 angesehen. Der Test wird 
+				bestanden, wenn die ermittelten Werte B<sub>i</sub> ;G<sub>i</sub> ; 1 &lt;= i &lt;= 6 in den 
+				entsprechenden, spezifizierten Intervallen liegen. Unterliegende Tabelle listet 
+				diese Intervalle auf.
+				<P></P>
+			</div>
+			<div style="TEXT-ALIGN:center">
+				<TABLE cols="2" width="0*" class="pad20">
+					<TR VALIGN="top">
+						<TD><B><nobr>Länge der Runs<nobr></B></NOBR></TD>
+						<TD><B><nobr>Gültiges Intervall<nobr></B></NOBR></TD>
+					</TR>
+					<TR VALIGN="top">
+						<TD><I>1</I></TD>
+						<TD>2267 – 2733</TD>
+					</TR>
+					<TR VALIGN="top">
+						<TD><I>2</I></TD>
+						<TD>1079 – 1421</TD>
+					</TR>
+					<TR VALIGN="top">
+						<TD><I>3</I></TD>
+						<TD>502 – 748</TD>
+					</TR>
+					<TR VALIGN="top">
+						<TD><I>4</I></TD>
+						<TD>223 – 402</TD>
+					</TR>
+					<TR VALIGN="top">
+						<TD><I>5</I></TD>
+						<TD>90 – 223</TD>
+					</TR>
+					<TR VALIGN="top">
+						<TD><I>&gt;= 6</I></TD>
+						<TD>90 – 223</TD>
+					</TR>
+				</TABLE>
+				<BR>
+			</div>
+		<P><B>Long Run-Test</B>
+			<div class="indent">
+				Dieser Test wird bestanden, wenn es keine Runs der Länge 34 oder mehr gibt.
+				<P></P>
+			</div>
+			<BR>
+		<P>Literatur: Christian Schiestl, <I>Pseudozufallszahlen in der Kryptographie</I>, 
+			Klagenfurt, 1999.</P>
+	</BODY>
+</HTML>

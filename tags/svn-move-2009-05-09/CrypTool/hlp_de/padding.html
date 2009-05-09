@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Padding</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Padding">
+	<PARAM NAME="Keyword" VALUE="Null-Padding">
+	<PARAM NAME="Keyword" VALUE="PKCS #7-Padding">
+	<PARAM NAME="Keyword" VALUE="01-00-Padding">
+	<PARAM NAME="Keyword" VALUE="X.923-Padding">
+</OBJECT>
+
+<BODY>
+
+<h3>Padding</h3>
+
+<P>Padding bedeutet, dass die zu verarbeitenden Daten - zum Beispiel ein zu verschlüsselndes Dokument - 
+nach einem bestimmten Muster mit Daten aufgefüllt werden. Padding-Mechanismen sind ein wichtiger 
+Bestandteil der modernen Kryptographie.</P>
+
+<P><a href="hashfunktion.html">Hashfunktionen</a> verarbeiten Daten zum Beispiel in Blöcken fixer Länge. 
+Deswegen werden die Daten, die gehasht werden sollen, im Vorfeld nach bestimmten Regeln aufgefüllt. 
+Ähnlich verhält es sich mit manchen symmetrischen Verschlüsselungsverfahren. Sie verlangen, dass die 
+Länge der zu verschlüsselnden Daten ein Vielfaches einer bestimmten Blockgröße beträgt. Ein Beispiel für 
+solche Verfahren sind <a href="HID_CRYPT_DES_DESCBC.html">DES (CBC)</a> und 
+<a href="HID_CRYPT_3DES_CBC.html">Triple-DES (CBC)</a>, die beide den Modus des 
+<a href="cbcmodus.html">Cipher-Block-Chaining</a> nutzen.</P>
+
+<P>Abhängig vom Verschlüsselungsmodus kann es deshalb vorkommen, dass ein null Byte langes Dokument nach 
+der Verschlüsselung länger als null Byte ist.</P>
+
+<p>Die folgenden Padding-Verfahren werden in CrypTool bei Blockchiffren eingesetzt. Als Beispiel soll die Nachricht 61 62 63 auf 8 Byte aufgefüllt werden.</p>
+<dl>
+<dt><a name="p7">PKCS #7</a></dt>
+<dd>Die Anzahl der erforderlichen Padding-Bytes (&gt; 0) wird als Binärzahl in ein Byte codiert. Dieses Byte wird zum Auffüllen des Blocks verwendet.<br>
+Beispiel: 61 62 63 05 05 05 05 05</dd>
+</dl>
+<dl>
+<dt><a name="null">Null</a></dt>
+<dd>Hängt (sofern erforderlich) solange Null-Bytes an, bis die Blocklänge erreicht ist. Dieses Padding-Verfahren lässt sich nur dann eindeutig umkehren, wenn die Nachricht nicht mit einem Null-Byte endet.<br>
+Beispiel: 61 62 63 00 00 00 00</dd>
+</dl>
+<dl>
+<dt><a name="x923">ANSI X.923</a></dt>
+<dd>Hängt Nullbytes an, gefolgt von einem Byte, in welchem die Anzahl der Nachrichten-Bytes im letzten Block binär codiert ist. In einer anderen Variante dieses Verfahrens wird im letzten Byte die Anzahl der Padding-Bytes codiert. CrypTool verwendet die erste Alternative.<br>
+Beispiel: 61 62 63 00 00 00 00 03</dd>
+</dl>
+<dl>
+<dt><a name="0100">01 00 ...</a></dt>
+<dd>Hängt das Byte 01 an und füllt dann den Rest des Blockes mit Null-Bytes auf.<br>
+Beispiel: 61 62 63 01 00 00 00 00</dd>
+</dl>
+</BODY>
+</HTML>

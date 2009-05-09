@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<!-- Title of the help page (important for HTML help index) -->
+<TITLE>Visualisierung von Zufallszahlen</TITLE>
+<!-- Various styles -->
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+<!-- Script to handle special links (for example file links -->
+<script language="JScript" src="helper.js"></script>
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT ID="Object1">
+	<PARAM NAME="Keyword" VALUE="Pseudozufallsgenerator">
+	<PARAM NAME="Keyword" VALUE="3D-Visualisierung">
+	<PARAM NAME="Keyword" VALUE="Zufallszahlenvisualisierung">
+</OBJECT>
+
+<BODY>
+
+<h3>Visualisierung von Zufallszahlen (Menü <A href="menu_analyze.html">Analyse</A> \ Zufallsanalyse)</h3>
+
+<p>
+Zufallszahlen spielen eine wichtige Rolle in der Kryptographie, die dort
+beispielsweise zur Erzeugung von Schlüsselmaterial verwendet werden.
+Für die Beurteilung der Qualität von Zufallszahlen können verschiedene
+Kriterien herangezogen werden - statistisch gute Zufallszahlen sind nicht
+notwendigerweise auch kryptographisch sichere. Kann ein Angreifer eine
+wie auch immer geartete Struktur innerhalb der Zahlenfolge ausnutzen, 
+um ausgehend von bekannten Zahlen zukünftige Werte mit einer 
+gewissen Wahrscheinlichkeit vorherzusagen, so sind die aus diesen 
+Zufallszahlen erzeugten kryptographischen Schlüssel auf diese Weise angreifbar,
+auch wenn der Kryptoalgorithmus an sich selbst sicher ist.
+</p>
+<p>
+Für die Bewertung der Qualität von Zufallszahlen gibt es viele verschiedene
+Kriterien und Tests, die in der Regel die Zahlenfolgen numerisch
+analysieren und von denen einige auch in CrypTool implementiert sind.
+</p>
+<p>
+Neben rein numerischen Methoden können Strukturen in Zahlenfolgen auch
+grafisch dargestellt werden. CrypTool implementiert dazu die so genannte
+<b>Phasenraumvisualisierung</b>, die zuerst von Dan Kaminsky von 
+<a href="http://www.doxpara.com/" target="_new">DoxPara</a> in dem 
+Programm <em>Phentropy</em> (Teil des 
+<a href="http://www.doxpara.com/read.php/code/paketto.html" target="_new">
+Paketto Keiretsu</a> Toolkits)
+umgesetzt wurde.
+</p>
+
+<p>Die Anzeigeoptionen können Sie im Dialog <a href="hidd_set_visopt.html">3D-Visualisierung - Optionen</a> anpassen.</p>
+
+</BODY>
+</HTML>

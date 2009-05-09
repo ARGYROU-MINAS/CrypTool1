@@ -1,0 +1,186 @@
+# PURPOSE OF THIS FILE
+#
+# This file introduces some redundancy by storing the popup menu ids,
+# which are generated automatically during run-time when a user presses
+# F1 while a menu with sub menu is selected. Those popup menu ids (pmenuids)
+# must be present in the online help source (*.rtf) as A-footnotes (similar 
+# to K-footnotes that are used to introduce key words, see help compiler 
+# online help for details). 
+#
+# The redundancy was introduced to aid in maintaining the menus consitent 
+# with the online help: whenever someone adds/changes/removes a menu entry
+# with sub menu, this change is detected during compile time and an error is 
+# flagged (s. below for possible errors). This is done to make people aware 
+# that the online help has to be updated manually (drawback: this file also
+# has to be updated manually).
+#
+# BACKGROUND
+# 
+# F1 does not work in MFC for menus with sub menus. This is because the 
+# ressource file syntax for popup menus does not include the ID that is used
+# for all other menu items. This ID is normally used to invoke the online
+# help topic corresponding to a menu item. To make F1 work on menu items 
+# with sub menus we generated a new identifier derived from the menu label.
+#
+# FILE FORMAT
+#
+# lines starting with # are ignored. 
+# for each menu with sub menu (called popup menu in *.rc) there must 
+# exist a line of the following form:
+#
+# language[white space]pmenuid[white space]# menu labels from ressources
+#
+# where
+# - language is ENGLISH or GERMAN
+# - pmenuid is derived from the menu labels up to the root by removing all
+#		non alphanumerical characters and appending the labels separated by _ 
+# - #... has the unmodified menue lables separated by | for reference
+#
+# ERROR MESSAGES
+# error: CrypTool.rc:line#: This menu entry is the same as an earlier one (<menu label sequence>) except for non alpha-numerical characters. Both will be treated the same w.r.t. F1
+#	this flags inconsistency between two copies of a menu item. Possible reason: inconsitent keyboard accelerators
+# error: CrypToolPopupMenuIDs.txt:line#: Menu text was changed in CrypTool.rc:line#? Please update CrypToolPopupMenuIDs.txt to # <menu label sequence>
+#   this means in most cases that a menu entry was changed in the resources, 
+#	so that online help and this files have to be updated
+# error: CrypToolPopupMenuIDs.txt:line#: Popup menu deleted from CrypTool.rc? Please check and possibly delete this line
+#	this means in most cases that a menu entry was deleted from the resources,
+#	so that the online help and this file have to be updated
+# error: CrypTool.rc:line#: New menu entry? Please update CrypToolPopupMenuIDs.txt: <language> <pmenuid> # <menu label sequence>
+#	this means in most cases that a new menu entry was introduced,
+#	so that the online help and this file have to be updated
+
+
+ENGLISH Edit # &Edit
+ENGLISH File # &File
+ENGLISH Help # &Help
+ENGLISH IndivProcedures # &Indiv. Procedures
+ENGLISH IndivProcedures_Hash # &Indiv. Procedures|&Hash
+ENGLISH Options # &Options
+ENGLISH	Analysis	# &Analysis
+ENGLISH Analysis_AnalyseRandomness # &Analysis|&Analyse Randomness
+ENGLISH Analysis_AsymmetricEncryption # &Analysis|&Asymmetric Encryption
+ENGLISH Analysis_AsymmetricEncryption_LatticeBasedAttacksonRSA # &Analysis|&Asymmetric Encryption|&Lattice Based Attacks on RSA
+ENGLISH Analysis_Hash # &Analysis|&Hash
+ENGLISH Analysis_ToolsforAnalysis # &Analysis|&Tools for Analysis
+ENGLISH Analysis_SymmetricEncryptionclassic # &Analysis|Symmetric Encryption (classic)
+ENGLISH Analysis_SymmetricEncryptionclassic_CiphertextOnly # &Analysis|Symmetric Encryption (classic)|&Ciphertext-Only
+ENGLISH Analysis_SymmetricEncryptionclassic_KnownPlaintext # &Analysis|Symmetric Encryption (classic)|Known &Plaintext
+ENGLISH Analysis_SymmetricEncryptionclassic_ManualAnalysis # &Analysis|Symmetric Encryption (classic)|&Manual Analysis
+ENGLISH Analysis_SymmetricEncryptionmodern # &Analysis|Symmetric Encryption (modern)
+ENGLISH CryptDecrypt # &Crypt/Decrypt
+ENGLISH CryptDecrypt_Asymmetric # &Crypt/Decrypt|&Asymmetric
+ENGLISH CryptDecrypt_Symmetricclassic # &Crypt/Decrypt|Symmetric (&classic)
+ENGLISH CryptDecrypt_Symmetricmodern # &Crypt/Decrypt|Symmetric (&modern)
+ENGLISH CryptDecrypt_Hybrid # &Crypt/Decrypt|&Hybrid
+ENGLISH DigitalSignaturesPKI # Digital Signatures/&PKI
+ENGLISH DigitalSignaturesPKI_PKI # Digital Signatures/&PKI|&PKI
+ENGLISH IndivProcedures_Protocols # &Indiv. Procedures|&Protocols
+ENGLISH IndivProcedures_EducationalGames # &Indiv. Procedures|&Educational Games
+ENGLISH IndivProcedures_RSACryptosystem # &Indiv. Procedures|&RSA Cryptosystem
+ENGLISH IndivProcedures_ChineseRemainderTheoremApplications # &Indiv. Procedures|Chinese Remainder &Theorem Applications
+ENGLISH View # &View
+ENGLISH Window # &Window
+ENGLISH IndivProcedures_RSACryptosystem_LatticeBasedAttacksonRSA # &Indiv. Procedures|&RSA Cryptosystem|&Lattice Based Attacks on RSA
+ENGLISH PopUp # PopUp
+ENGLISH View_Font # &View|&Font
+ENGLISH IndivProcedures_EducationalGames # &Indiv. Procedures|&Educational Games
+ENGLISH CryptDecrypt_Symmetricmodern_FurtherAlgorithms # &Crypt/Decrypt|Symmetric (&modern)|&Further Algorithms
+ENGLISH IndivProcedures_Tools # &Indiv. Procedures|&Tools
+ENGLISH IndivProcedures_Tools_Codes # &Indiv. Procedures|&Tools|C&odes
+ENGLISH IndivProcedures_Tools_Codes_Base64EncodeDecode # &Indiv. Procedures|&Tools|C&odes|&Base64 Encode/Decode
+ENGLISH IndivProcedures_Tools_Codes_UUEncodeDecode # &Indiv. Procedures|&Tools|C&odes|&UU Encode/Decode
+ENGLISH IndivProcedures_Tools_Compress # &Indiv. Procedures|&Tools|&Compress
+ENGLISH IndivProcedures_VisualizationofAlgorithms # &Indiv. Procedures|&Visualization of Algorithms
+ENGLISH IndivProcedures_VisualizationofAlgorithms_AES # &Indiv. Procedures|&Visualization of Algorithms|&AES
+ENGLISH IndivProcedures_NumberTheoryInteractive # &Indiv. Procedures|&Number Theory - Interactive
+ENGLISH Analysis_SymmetricEncryptionmodern_FurtherAlgorithms # &Analysis|Symmetric Encryption (modern)|&Further Algorithms
+GERMAN	Analyse	# A&nalyse
+GERMAN Bearbeiten # &Bearbeiten
+GERMAN Datei # &Datei
+GERMAN Einzelverfahren # &Einzelverfahren
+GERMAN Einzelverfahren_Protokolle # &Einzelverfahren|&Protokolle
+GERMAN Einzelverfahren_Lernspiele # &Einzelverfahren|&Lernspiele
+GERMAN Hilfe # &Hilfe
+GERMAN Optionen # &Optionen
+GERMAN VerEntschlsseln # &Ver-/Entschlüsseln
+GERMAN VerEntschlsseln_Asymmetrisch # &Ver-/Entschlüsseln|&Asymmetrisch
+GERMAN Analyse_AsymmetrischeVerfahren # A&nalyse|&Asymmetrische Verfahren
+GERMAN Analyse_AsymmetrischeVerfahren_GitterbasierteAngriffeaufRSA # A&nalyse|&Asymmetrische Verfahren|&Gitterbasierte Angriffe auf RSA
+GERMAN Analyse_Hashverfahren # A&nalyse|&Hashverfahren
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch # A&nalyse|Symmetrische Verschlüsselung (&klassisch)
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch_CiphertextOnly # A&nalyse|Symmetrische Verschlüsselung (&klassisch)|&Ciphertext-Only
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch_KnownPlaintext # A&nalyse|Symmetrische Verschlüsselung (&klassisch)|Known &Plaintext
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch_ManuelleAnalyse # A&nalyse|Symmetrische Verschlüsselung (&klassisch)|&Manuelle Analyse
+GERMAN Analyse_SymmetrischeVerschlsselungmodern # A&nalyse|Symmetrische Verschlüsselung (&modern)
+GERMAN Analyse_WerkzeugezurAnalyse # A&nalyse|&Werkzeuge zur Analyse
+GERMAN Analyse_Zufallsanalyse # A&nalyse|&Zufallsanalyse
+GERMAN DigitaleSignaturenPKI # Digitale Signaturen/&PKI
+GERMAN DigitaleSignaturenPKI_PKI # Digitale Signaturen/&PKI|&PKI
+GERMAN Einzelverfahren_Hashverfahren # &Einzelverfahren|&Hashverfahren
+GERMAN Einzelverfahren_RSAKryptosystem # &Einzelverfahren|&RSA-Kryptosystem
+GERMAN Einzelverfahren_AnwendungendesChinesischenRestsatzes # &Einzelverfahren|Anwendungen des &Chinesischen Restsatzes
+GERMAN Einzelverfahren_RSAKryptosystem_GitterbasierteAngriffeaufRSA # &Einzelverfahren|&RSA-Kryptosystem|&Gitterbasierte Angriffe auf RSA
+GERMAN VerEntschlsseln_Hybrid # &Ver-/Entschlüsseln|&Hybrid
+GERMAN VerEntschlsseln_Symmetrischklassisch # &Ver-/Entschlüsseln|Symmetrisch (&klassisch)
+GERMAN VerEntschlsseln_Symmetrischmodern # &Ver-/Entschlüsseln|Symmetrisch (&modern)
+GERMAN Einzelverfahren_RSAKryptosystem # &Einzelverfahren|&RSA-Kryptosystem
+GERMAN VerEntschlsseln_Hybrid # &Ver-/Entschlüsseln|&Hybrid
+GERMAN VerEntschlsseln_Symmetrischklassisch # &Ver-/Entschlüsseln|Symmetrisch (&klassisch)
+GERMAN VerEntschlsseln_Symmetrischmodern # &Ver-/Entschlüsseln|Symmetrisch (&modern)
+GERMAN Ansicht # &Ansicht
+GERMAN Fenster # &Fenster
+GERMAN Ansicht_Schriftart # &Ansicht|S&chriftart
+GERMAN PopUp # PopUp
+GERMAN Einzelverfahren_Tools # &Einzelverfahren|&Tools
+GERMAN Einzelverfahren_Tools_Codierungen # &Einzelverfahren|&Tools|C&odierungen
+GERMAN Einzelverfahren_Tools_Codierungen_Base64CodierungDecodierung # &Einzelverfahren|&Tools|C&odierungen|&Base64-Codierung/Decodierung
+GERMAN Einzelverfahren_Tools_Codierungen_UUCodierungDecodierung # &Einzelverfahren|&Tools|C&odierungen|&UU-Codierung/Decodierung
+GERMAN Einzelverfahren_Tools_Komprimieren # &Einzelverfahren|&Tools|&Komprimieren
+GERMAN Einzelverfahren_VisualisierungvonAlgorithmen # &Einzelverfahren|&Visualisierung von Algorithmen
+GERMAN Einzelverfahren_VisualisierungvonAlgorithmen_AES # &Einzelverfahren|&Visualisierung von Algorithmen|&AES
+GERMAN Einzelverfahren_Zahlentheorieinteraktiv # &Einzelverfahren|&Zahlentheorie interaktiv
+GERMAN Analyse_SymmetrischeVerschlsselungmodern_WeitereAlgorithmen # A&nalyse|Symmetrische Verschlüsselung (&modern)|&Weitere Algorithmen
+GERMAN VerEntschlsseln_Symmetrischmodern_WeitereAlgorithmen # &Ver-/Entschlüsseln|Symmetrisch (&modern)|&Weitere Algorithmen
+POLISH Algorytmy # &Algorytmy
+POLISH Algorytmy_Gryedukacyjne # &Algorytmy|Gry &edukacyjne
+POLISH Algorytmy_Hasz # &Algorytmy|&Hasz
+POLISH Algorytmy_KryptosystemRSA # &Algorytmy|Kryptosystem RSA
+POLISH Algorytmy_Narzdzia_Kodowanie # &Algorytmy|&Narzêdzia|Kodowanie
+POLISH Algorytmy_Narzdzia_Kompresja # &Algorytmy|&Narzêdzia|&Kompresja
+POLISH Algorytmy_Protokoy # &Algorytmy|&Protoko³y
+POLISH Algorytmy_Teorialiczb # &Algorytmy|Teoria liczb
+POLISH Algorytmy_Wizualizacjaalgorytmw # &Algorytmy|&Wizualizacja algorytmów
+POLISH Algorytmy_Wizualizacjaalgorytmw_AES # &Algorytmy|&Wizualizacja algorytmów|&AES
+POLISH Algorytmy_ZastosowaniaChTR # &Algorytmy|Zastosowania ChTR
+POLISH Edycja # &Edycja
+POLISH Kryptoanaliza # &Kryptoanaliza
+POLISH Kryptoanaliza_Algorytmyasymetryczne # &Kryptoanaliza|&Algorytmy asymetryczne
+POLISH Kryptoanaliza_Algorytmyhistoryczne_Tekstjawny # &Kryptoanaliza|Algorytmy historyczne|Tekst jawny
+POLISH Kryptoanaliza_Analizalosowoci # &Kryptoanaliza|&Analiza losowoœci
+POLISH Kryptoanaliza_Hasz # &Kryptoanaliza|&Hasz
+POLISH Kryptoanaliza_Narzdziaanalizy # &Kryptoanaliza|&Narzêdzia analizy
+POLISH Okno # &Okno
+POLISH Opcje # &Opcje
+POLISH Plik # &Plik
+POLISH Podpiscyfrowy # Podpis cyfrowy
+POLISH Podpiscyfrowy_PKI # Podpis cyfrowy|&PKI
+POLISH Pomoc # &Pomoc
+POLISH PopUp # PopUp
+POLISH Szyfrowanie # &Szyfrowanie
+POLISH Szyfrowanie_Asymetryczne # &Szyfrowanie|&Asymetryczne
+POLISH Szyfrowanie_Historyczne # &Szyfrowanie|Historyczne
+POLISH Szyfrowanie_Hybrydowe # &Szyfrowanie|&Hybrydowe
+POLISH Szyfrowanie_Symetryczne # &Szyfrowanie|Symetryczne
+POLISH Szyfrowanie_Symetryczne_Wicejalgorytmw # &Szyfrowanie|Symetryczne|&Wiêcej algorytmów
+POLISH Widok # &Widok
+POLISH Widok_Czcionka # &Widok|&Czcionka
+POLISH Algorytmy_KryptosystemRSA_Atakiopartenakracie # &Algorytmy|Kryptosystem RSA|Ataki oparte na kracie
+POLISH Algorytmy_Narzdzia # &Algorytmy|&Narzêdzia
+POLISH Algorytmy_Narzdzia_Kodowanie_KodowaniedekodowanieUU # &Algorytmy|&Narzêdzia|Kodowanie|Kodowanie/dekodowanie UU
+POLISH Kryptoanaliza_Algorytmyasymetryczne_Atakopartynakracie # &Kryptoanaliza|&Algorytmy asymetryczne|&Atak oparty na kracie
+POLISH Kryptoanaliza_Algorytmyhistoryczne_Analizamanualna # &Kryptoanaliza|Algorytmy historyczne|Analiza &manualna
+POLISH Kryptoanaliza_Algorytmyhistoryczne_Tylkoszyfr # &Kryptoanaliza|Algorytmy historyczne|&Tylko szyfr
+POLISH Algorytmy_Narzdzia_Kodowanie_KodowaniedekodowanieBase64 # &Algorytmy|&Narzêdzia|Kodowanie|Kodowanie/dekodowanie Base64
+POLISH Kryptoanaliza_Algorytmyhistoryczne # &Kryptoanaliza|Algorytmy historyczne
+POLISH Kryptoanaliza_Algorytmysymetryczne # &Kryptoanaliza|Algorytmy &symetryczne
+POLISH Kryptoanaliza_Algorytmysymetryczne_Wicejalgorytmw # &Kryptoanaliza|Algorytmy &symetryczne|&Wiêcej algorytmów

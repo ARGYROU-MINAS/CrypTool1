@@ -1,0 +1,147 @@
+% $Id$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt]{article}
+\setlength{\fboxrule}{.5mm}
+\setlength{\fboxsep}{1.75mm}
+\setlength{\footnotesep}{6pt}
+\usepackage[bookmarksnumbered=true]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{makeidx}
+\usepackage[pdftex]{graphicx}
+
+\usepackage[flushmargin]{footmisc}
+
+% Literaturverzeichnis kapitelweise
+\usepackage[labelstoglobalaux]{bibunits} % ohne labelstoglobalaux scheint man thebibilograpy und bibtex nicht mischen zu können
+%\bibliographyunit[\section] % bibunits für das ganze Dokument aktivieren
+\defaultbibliography{references}
+\defaultbibliographystyle{abbrv}
+
+\makeindex
+\hypersetup{colorlinks=true}
+
+\setlength{\textwidth}{460 pt}
+\hoffset-0.7in
+\newtheorem{definition}{Definition}[section]
+%\newcommand{\href}[2]{#2}
+\newcommand{\hypertag}[2]{#1}
+%\newcommand{\hyperlink}[2]{#2}
+%\newcommand{\hypertarget}[2]{#2}
+\newtheorem{theorem}{Theorem}[section]
+\newenvironment{Proof}[1]
+  {\textbf{Proof #1} \\}
+  {\hfill$\Box$ \\}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hack, damit Aufruf von \tableofcontents auch gleich \addcontentsline
+% enthält. Damit steht im Inhaltsverzeichnis das Inhaltsverzeichnis
+% mit korrekter Seitenzahl und Hyperlink.
+\makeatletter
+\renewcommand\tableofcontents{%
+    \section*{\contentsname
+        \@mkboth{%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+    \addcontentsline{toc}{section}{\contentsname}
+    \@starttoc{toc}%
+    }
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{ 
+	The CrypTool Script: \\
+	Cryptography, Mathematics and more \\
+        \vspace{30pt}
+        {\large	Background reading\\%*[-8pt] 
+        for the free eLearning program CrypTool\\
+       (9th edition -- distributed with CrypTool version 1.4.20)}
+        \vspace{60pt}
+}
+
+\vspace{32pt}
+
+\author{
+(c) Prof.\ Bernhard Esslinger (co-author and editor), 1998-2008 \\
+Frankfurt am Main, Germany\\*[1ex]
+www.cryptool.org
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagestyle{plain}
+\setlength{\fboxrule}{.5mm}
+\setlength{\fboxsep}{1.75mm}
+\setlength{\footnotesep}{6pt}
+\addtolength{\footskip}{8pt}
+%\setlength{\footskip}{4cm}
+%\renewcommand{\footnoterule}{\parindent0cm\rule{13cm}{.1pt}\vspace{.2cm}}
+%Formatierung der Fu"snoten
+
+%space between text and footnote 
+\renewcommand\footnoterule{%
+  \vspace{2em}%   <-- one line space between text and footnoterule
+%\kern-3\p@
+  \hrule width .4\columnwidth
+ \vspace{4pt}
+%kern 2.6\p@
+}
+
+%\long\def\@makefntext#1{%
+%    \parindent 1em%
+%    \noindent
+%    \hbox to 1.8em{\hss\@makefnmark}#1}
+
+
+\maketitle
+
+
+% Vergleichbar zur Nutzung von Texten aus der Wikipedia (=GNU Free Documentation Licence, GFDL)
+\vspace{200pt}
+This is a free document, so the content of the document can be copied and
+distributed, also for commercial purposes -- as long as the author, title and
+the CrypTool web site (www.cryptool.org) are acknowledged. \\
+Naturally, citations from the CrypTool script are possible, as in all other
+documents. This licence is abutted on the GNU Free Documentation Licence.
+
+\newpage
+\input{chapters/aboutcryptool.tex}
+
+\newpage
+\tableofcontents  % --> is redefined !
+
+\newpage
+\normalsize
+\parindent 0cm
+\parskip 4pt
+
+\input{chapters/introduction.tex}
+\input{chapters/cryptomethods.tex}
+\input{chapters/paper_and_pencil.tex}
+\input{chapters/primes.tex}
+\input{chapters/numbertheory.tex}
+\input{chapters/moderncryptography.tex}
+\input{chapters/digitalsignatures.tex}
+\input{chapters/ellipticcurves.tex}
+\bibliographyunit[\section]
+\bibliography*{../de/references}
+\bibliographystyle*{plain}
+\input{chapters/crypto2020.tex}
+\bibliographyunit
+
+\begin{appendix}
+  \newpage
+  \input{chapters/menus.tex}
+  \input{chapters/authors.tex}
+\end{appendix}
+
+\printindex
+
+\end{document}
+
+
