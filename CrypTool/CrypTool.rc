@@ -15264,13 +15264,9 @@ BEGIN
             MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
             MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
             MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
             MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
             MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
             MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
         END
         MENUITEM "&Textdokument formatieren...", ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -15528,7 +15524,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Testbatterie", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401, GRAYED
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY, GRAYED
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY, GRAYED
             MENUITEM "&3D-Visualisierung...",       ID_ANALYSIS_RANDOM_3D_VISUALIZATION, GRAYED
         END
     END
@@ -15612,16 +15608,12 @@ BEGIN
         MENUITEM "&Leerzeichen",                ID_VIEW_WHITESPACE, GRAYED
         POPUP "S&chriftart"
         BEGIN
-            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
+            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08
             MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
             MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
             MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
             MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
             MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
         END
         MENUITEM "&Textdokument formatieren...", ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -15879,7 +15871,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Testbatterie", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY
             MENUITEM "&3D-Visualisierung...",       ID_ANALYSIS_RANDOM_3D_VISUALIZATION
         END
     END
@@ -15963,16 +15955,12 @@ BEGIN
         MENUITEM "&Leerzeichen",                ID_VIEW_WHITESPACE
         POPUP "S&chriftart"
         BEGIN
-            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
-            MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
-            MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
-            MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
-            MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
-            MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
+            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08
+            MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10
+            MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12
+            MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08
+            MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10
+            MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12
         END
         MENUITEM "&Textdokument formatieren...", ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -16230,7 +16218,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Testbatterie", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY
             MENUITEM "&3D-Visualisierung...",       ID_ANALYSIS_RANDOM_3D_VISUALIZATION
         END
     END
@@ -16314,16 +16302,12 @@ BEGIN
         MENUITEM "&Leerzeichen",                ID_VIEW_WHITESPACE
         POPUP "S&chriftart"
         BEGIN
-            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
-            MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
-            MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
-            MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
-            MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
-            MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
+            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08
+            MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10
+            MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12
+            MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08
+            MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10
+            MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12
         END
         MENUITEM "&Textdokument formatieren...", ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -16581,7 +16565,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Testbatterie", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY
             MENUITEM "&3D-Visualisierung...",       ID_ANALYSIS_RANDOM_3D_VISUALIZATION
         END
     END
@@ -16695,13 +16679,9 @@ BEGIN
             MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
             MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
             MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
             MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
             MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
             MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
         END
         MENUITEM "&Textdokument formatieren...", ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -16959,7 +16939,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Testbatterie", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401, GRAYED
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY, GRAYED
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY, GRAYED
             MENUITEM "&3D-Visualisierung...",       ID_ANALYSIS_RANDOM_3D_VISUALIZATION, GRAYED
         END
     END
@@ -18719,7 +18699,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    ID_FILE_NEW             "Erstellt ein neues Dokument\nNeu"
+    ID_FILE_NEW             "Erzeugt ein neues Dokument\nNeu"
     ID_FILE_OPEN            "Öffnet ein bestehendes Dokument\nÖffnen"
     ID_FILE_CLOSE           "Schließt das aktive Dokument\nSchließen"
     ID_FILE_SAVE            "Speichert das aktive Dokument\nSpeichern"
@@ -18737,13 +18717,13 @@ STRINGTABLE
 BEGIN
     IDS_PLAYFAIR            "Playfair"
     IDS_REL_MATCH           "Relative Übereinstimmung [%]"
-    IDS_STRING_DIAGRAM_VITANY "Vitányi-Diagramm von <%s>"
+    IDS_STRING_DIAGRAM_VITANY "Vitany-Diagramm von <%s>"
 END
 
 STRINGTABLE 
 BEGIN
-    IDS_STRING_ANALYZE_VITANY "Vitányi-Analyse"
-    IDS_STRING_END_ANALYZE_VITANY "Vitányi-Analyse %d%% beendet"
+    IDS_STRING_ANALYZE_VITANY "Vitany-Analyse"
+    IDS_STRING_END_ANALYZE_VITANY "Vitany-Analyse %d%% beendet"
     IDS_STRING_REQUEST_FOR_PIN 
                             "Um die öffentlichen und geheimen Parameter von '%s' einzusehen geben Sie bitte den entsprechenden PIN-Code ein."
     IDS_STRING_SHOW_ALL_PARAM "Alle Parameter anzeigen"
@@ -18829,19 +18809,19 @@ BEGIN
     ID_EDIT_CLEAR           "Löscht die Auswahl"
     ID_EDIT_COPY            "Kopiert die Auswahl in die Zwischenablage\nKopieren"
     ID_EDIT_CUT             "Schneidet die Auswahl (markierte Zeichen) aus und überträgt sie in die Zwischenablage\nAusschneiden"
-    ID_EDIT_FIND            "Durchsucht das aktive Dokument nach einem Suchbegriff und ersetzt diesen bei Bedarf"
+    ID_EDIT_FIND            "Sucht den angegebenen Text im aktiven Dokument"
     ID_EDIT_PASTE           "Fügt den Inhalt der Zwischenablage an der Einfügemarke ein\nEinfügen"
     57640                   "Weitersuchen"
     ID_EDIT_REPLACE         "Der angegebene Text wird durch einen anderen Text ersetzt"
-    ID_EDIT_SELECT_ALL      "Markiert den gesamten Inhalt des aktiven Dokuments"
+    ID_EDIT_SELECT_ALL      "Der ganze Text im aktiven Dokument wird markiert (ausgewählt)"
     ID_EDIT_UNDO            "Macht die letzte Änderung rückgängig"
-    ID_EDIT_REDO            "Stellt die zuletzt rückgängig gemachte Änderung wieder her"
+    ID_EDIT_REDO            "Stellt die zuletzt Änderung gemachte Aktion wieder her"
 END
 
 STRINGTABLE 
 BEGIN
-    ID_VIEW_TOOLBAR         "Blendet die Symbolleiste ein oder aus"
-    ID_VIEW_STATUS_BAR      "Blendet die Statusleiste ein oder aus"
+    ID_VIEW_TOOLBAR         "Ein- oder Ausblenden der Symbolleiste"
+    ID_VIEW_STATUS_BAR      "Ein- oder Ausblenden der Statusleiste"
 END
 
 STRINGTABLE 
@@ -18949,7 +18929,7 @@ BEGIN
     IDS_STRING_FLOATING_FREQ "Gleitende Häufigkeit"
     IDS_STRING_FLOATING_FREQ_FINISHED "Gleitende Häufigkeit erledigt: %d%%"
     ID_FLOATING             "Gleitende Häufigkeit des Dokumentes berechnen"
-    ID_SHOW_KEY             "Zeigt den Schlüssel an, der von CrypTool für die Verschlüsselung des aktiven Dokuments benutzt wurde\nSchlüssel anzeigen"
+    ID_SHOW_KEY             "Zeigt den Schlüssel an, der von CrypTool für die Verschlüsselung dieses Dokuments benutzt wurde\nSchlüssel anzeigen"
     ID_GOTO_VATER           "Wechselt zum übergeordneten Fenster\nÜbergeordnetes Fenster"
     IDS_STRING_ASSURE_DEL_ASYM_KEY 
                             "Sind Sie sicher das die zu dem Schlüsselbezeichner\n'%1'\ngehörenden Schlüsseldateien GELÖSCHT werden sollen?\n\nDrücken Sie OK um den Vorgang fortzusetzen."
@@ -18979,7 +18959,7 @@ BEGIN
     ID_ANALYSE_AES_RIJNDAEL "Automatische Brute-Force-Analyse einer Rijndael(AES)-Verschlüsselung"
     ID_ANALYSE_AES_SERPENT  "Automatische Brute-Force-Analyse einer Serpent-Verschlüsselung"
     ID_ANALYSE_AES_TWOFISH  "Automatische Brute-Force-Analyse einer Twofish-Verschlüsselung"
-    ID_PLOTBAR              "Zeigt die Grafik im aktiven Dokument als Balkendiagramm an"
+    ID_PLOTBAR              "Zeigt die Grafik im aktiven Fenster als Balkendiagramm an"
     ID_VERNAM_BIN           "Vernam-Verschlüsselung"
     ID_CRYPT_RC4            "Ver-/Entschlüsseln mit RC4"
     ID_CRYPT_3DES_ECB       "Ver-/Entschlüsseln mit Triple-DES (ECB Modus)"
@@ -19333,11 +19313,11 @@ END
 
 STRINGTABLE 
 BEGIN
-    ID_TOTXT                "Zeigt das aktive Dokument als Text an"
-    ID_TOHEX                "Zeigt das aktive Dokument als HexDump an"
+    ID_TOTXT                "Zeigt aktives Fenster als ASCII-Text an"
+    ID_TOHEX                "Zeigt aktives Fenster als Hex Dump an"
     ID_PLAYFAIR_ANALYSE     "Manuelle Analyse der Playfair-Verschlüsselung"
-    IDS_STRING_VITANY_ANALYSE "Vitányi-Analyse"
-    ID_ANALYSE_VITANY       "Führt die Vitányi-Analyse durch, um die statistische Unabhängigkeit der Daten im aktiven Dokument zu bewerten"
+    IDS_STRING_VITANY_ANALYSE "Vitany-Analyse"
+    ID_ANALYSE_VITANY       "Führt die Vitany-Analyse durch, um die statistische Unabhängigkeit der Daten im aktiven Dokument zu bewerten"
     IDS_STRING_KEY_GENERATION_DATE "Schlüssel erstellt am:"
     IDS_STRING_MSG_FILENAME_TO_LONG 
                             "Der vom Programm erzeugte Dateiname\n%s\nist ZU LANG. Sie müssen einen kürzeren Namen, Vornamen oder Schlüsselbezeichner wählen."
@@ -20340,7 +20320,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_VITANY_ERR_FILESIZE "Für die Vitányi-Analyse muss die Eingabedatei mindestens 500 Bytes lang sein!"
+    IDS_VITANY_ERR_FILESIZE "Für die Vitany-Analyse muss die Eingabedatei mindestens 500 Bytes lang sein!"
     IDS_UU_DECODE_MISSING_NL_AFTER_END 
                             "Im Abschluss-Block fehlt ein Newline nach dem Schlüsselwort ""end"". Die Dekodierung ist möglicherweise fehlerhaft."
     IDS_UU_DECODE_MISSING_NL_BEFORE_END 
@@ -20458,7 +20438,7 @@ BEGIN
     ID_RSA_FACTORHINT       "Angriff auf RSA mit Gitterreduktionsverfahren, sofern ein Teil eines der beiden Primfaktoren von N bekannt ist"
     ID_RSA_STEREOTYPED      "Angriff auf RSA mit Gitterreduktionsverfahren, sofern ein Teil des Klartextes einer Nachricht bekannt und e klein ist"
     ID_RSA_BLOEMERMAY       "Angriff auf RSA mit Gitterreduktionsverfahren, sofern d im Verhältnis zu N zu klein gewählt ist"
-    ID_FILEPROPERTIES       "Zeigt die Eigenschaften des aktiven Dokuments an"
+    ID_FILEPROPERTIES       "Zeigt die Eigenschaften das aktuellen Dokuments an."
     ID_ENCRYPT_ADFGVX       "ADFGVX-Verschlüsselung"
     ID_GENERATE_MACS        "Erzeugt verschiedene Keyed-Hash Message Authentication Codes (HMACs)"
     ID_MASS_PATTERN_SEARCH  "Sucht vorgegebene Muster in einem Dokument"
@@ -20978,28 +20958,28 @@ BEGIN
     IDS_TITLE_DLG_RSADECRYPTION 
                             "Auswahl eines Schlüssels zur RSA-Entschlüsselung von <%s>"
     ID_POPUP_OPENGL_SHOW_BOX 
-                            "Schaltet die Anzeige der Würfelkanten in der OpenGL-Visualisierung ein oder aus"
-    ID_VIEW_ENDOFLINE       "Schaltet die Anzeige von Leerzeichen als besondere Zeichen ein oder aus"
-    ID_VIEW_LINEWRAP        "Schaltet die Anzeige von Zeilenumbrüchen als besondere Zeichen ein oder aus"
-    ID_VIEW_WHITESPACE      "Schaltet die Anzeige von Leerzeichen als besondere Zeichen ein oder aus"
+                            "Anzeige von Würfelkanten in der OpenGL-Visualisierung"
+    ID_VIEW_ENDOFLINE       "Ein- oder Ausschalten besonderer Zeichen anstelle von Zeilenenden"
+    ID_VIEW_LINEWRAP        "Ein- oder Ausschalten besonderer Zeichen anstelle von Zeilenumbrüchen"
+    ID_VIEW_WHITESPACE      "Ein- oder Ausschalten besonderer Zeichen anstelle von Leerzeichen"
     IDS_CONTROL_COPY        "Kopieren"
     IDS_CONTROL_PASTE       "Einfügen"
     ID_ZEICHENFORMAT_COURIER10 
-                            "Legt für das aktive Dokument die Schriftart Courier 10 fest"
+                            "Darstellung der Zeichen in Courier 10 Punkte-Schrift (feste Zeichenlänge)"
     ID_ZEICHENFORMAT_COURIER12 
-                            "Legt für das aktive Dokument die Schriftart Courier 12 fest"
+                            "Darstellung der Zeichen in Courier 12 Punkte-Schrift (feste Zeichenlänge)"
     ID_ZEICHENFORMAT_ARIAL10 
-                            "Legt für das aktive Dokument die Schriftart Arial 10 fest"
+                            "Darstellung der Zeichen in Arial 10 Punkte-Schrift"
 END
 
 STRINGTABLE 
 BEGIN
     ID_ZEICHENFORMAT_ARIAL12 
-                            "Legt für das aktive Dokument die Schriftart Arial 12 fest"
+                            "Darstellung der Zeichen in Arial 12 Punkte-Schrift"
     ID_ZEICHENFORMAT_ARIAL08 
-                            "Legt für das aktive Dokument die Schriftart Arial 8 fest"
+                            "Darstellung der Zeichen in Arial 8 Punkte-Schrift"
     ID_ZEICHENFORMAT_COURIER08 
-                            "Legt für das aktive Dokument die Schriftart Courier 8 fest"
+                            "Darstellung der Zeichen in Courier 8 Punkte-Schrift (feste Zeichenlänge)"
     ID_DECODE_BASE64        "Decodieren des aktiven Dokuments mittels Base64"
     ID_ENCODE_BASE64        "Codieren des aktiven Dokuments mittels Base64"
     IDS_CONTROL_CUT         "Ausschneiden"
@@ -21083,7 +21063,7 @@ BEGIN
     ID_HYBRID_ECCDEC        "Entschlüsselt eine mit dem ECC-Algorithmus verschlüsselte Datei"
     ID_INDIV_POINTADDITIONONELLIPTICCURVES 
                             "Veranschaulicht die Punktaddition auf einer Elliptischen Kurve"
-    ID_VIEW_ALPHABET        "Graut nicht-Alphabet-Zeichen im aktiven Dokument aus"
+    ID_VIEW_ALPHABET        "Nicht-Alphabet-Zeichen ausgrauen"
 END
 
 STRINGTABLE 
@@ -21095,7 +21075,6 @@ BEGIN
     ID_FLASH_ENIGMADEMO     "Visualisiert die Enigma-Maschine mittels Flash"
     ID_FLASH_RIJNDAEL_INSPECTOR 
                             "Zeigt die AES-Zwischenergebnisse nach jedem Schritt in jeder Runde für frei wählbare Daten an"
-    ID_EDIT_FIND_NEXT       "Setzt die Suche nach einem bestehenden Suchbegriff fort"
 END
 
 STRINGTABLE 
@@ -21463,8 +21442,6 @@ BEGIN
                             "Benötigte Zeit für die Durchführung der Analyse:"
     IDS_STRING_VIGENERE_ANALYSIS_SCHROEDEL_CIPHERTEXT_LENGTH_TAG 
                             "Länge des analysierten Geheimtexts:"
-    IDS_AUTHORS_FILE_CORRUPTED 
-                            "Die Datei authors.txt wurde seit der Installation von CrypTool verändert."
 END
 
 #endif    // German (Germany) resources
@@ -25984,13 +25961,9 @@ BEGIN
             MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
             MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
             MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
             MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
             MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
             MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
         END
         MENUITEM "&Format Text Document...",    ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -26248,7 +26221,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Test Battery", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401, GRAYED
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY, GRAYED
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY, GRAYED
             MENUITEM "&3D Visualization...",        ID_ANALYSIS_RANDOM_3D_VISUALIZATION, GRAYED
         END
     END
@@ -26332,16 +26305,12 @@ BEGIN
         MENUITEM "&Whitespace",                 ID_VIEW_WHITESPACE, GRAYED
         POPUP "&Font"
         BEGIN
-            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
+            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08
             MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
             MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
             MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
             MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
             MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
         END
         MENUITEM "&Format Text Document...",    ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -26599,7 +26568,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Test Battery", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY
             MENUITEM "&3D Visualization...",        ID_ANALYSIS_RANDOM_3D_VISUALIZATION
         END
     END
@@ -26683,16 +26652,12 @@ BEGIN
         MENUITEM "&Whitespace",                 ID_VIEW_WHITESPACE, GRAYED
         POPUP "&Font"
         BEGIN
-            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
+            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08
             MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
             MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
             MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
             MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
             MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
         END
         MENUITEM "&Format Text Document...",    ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -26950,7 +26915,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Test Battery", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401, GRAYED
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY, GRAYED
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY, GRAYED
             MENUITEM "&3D Visualization...",        ID_ANALYSIS_RANDOM_3D_VISUALIZATION, GRAYED
         END
     END
@@ -27034,16 +26999,12 @@ BEGIN
         MENUITEM "&Whitespace",                 ID_VIEW_WHITESPACE
         POPUP "&Font"
         BEGIN
-            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
-            MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
-            MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
-            MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
-            MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
-            MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
+            MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08
+            MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10
+            MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12
+            MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08
+            MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10
+            MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12
         END
         MENUITEM "&Format Text Document...",    ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -27301,7 +27262,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Test Battery", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY
             MENUITEM "&3D Visualization...",        ID_ANALYSIS_RANDOM_3D_VISUALIZATION
         END
     END
@@ -27415,13 +27376,9 @@ BEGIN
             MENUITEM "Arial 8",                     ID_ZEICHENFORMAT_ARIAL08, GRAYED
             MENUITEM "Arial 10",                    ID_ZEICHENFORMAT_ARIAL10, GRAYED
             MENUITEM "Arial 12",                    ID_ZEICHENFORMAT_ARIAL12, GRAYED
-            MENUITEM "Arial 14",                    ID_ZEICHENFORMAT_ARIAL14, GRAYED
-            MENUITEM "Arial 16",                    ID_ZEICHENFORMAT_ARIAL16, GRAYED
             MENUITEM "Courier 8",                   ID_ZEICHENFORMAT_COURIER08, GRAYED
             MENUITEM "Courier 10",                  ID_ZEICHENFORMAT_COURIER10, GRAYED
             MENUITEM "Courier 12",                  ID_ZEICHENFORMAT_COURIER12, GRAYED
-            MENUITEM "Courier 14",                  ID_ZEICHENFORMAT_COURIER14, GRAYED
-            MENUITEM "Courier 16",                  ID_ZEICHENFORMAT_COURIER16, GRAYED
         END
         MENUITEM "&Format Text Document...",    ID_FORMAT_TEXT_DOCUMENT
         MENUITEM SEPARATOR
@@ -27679,7 +27636,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "F&IPS PUB-140-1 Test Battery", ID_ANALYSE_ZUFALLSTESTS_FIPSPUB1401, GRAYED
             MENUITEM SEPARATOR
-            MENUITEM "&Vitányi",                    ID_ANALYSE_VITANY, GRAYED
+            MENUITEM "&Vitany",                     ID_ANALYSE_VITANY, GRAYED
             MENUITEM "&3D Visualization...",        ID_ANALYSIS_RANDOM_3D_VISUALIZATION, GRAYED
         END
     END
@@ -29648,13 +29605,13 @@ STRINGTABLE
 BEGIN
     IDS_PLAYFAIR            "Playfair"
     IDS_REL_MATCH           "Relative agreement [%]"
-    IDS_STRING_DIAGRAM_VITANY "Vitányi Diagram of <%s>"
+    IDS_STRING_DIAGRAM_VITANY "Vitany Diagram of <%s>"
 END
 
 STRINGTABLE 
 BEGIN
-    IDS_STRING_ANALYZE_VITANY "Vitányi Analysis"
-    IDS_STRING_END_ANALYZE_VITANY "Vitányi analysis %d%% complete"
+    IDS_STRING_ANALYZE_VITANY "Vitany Analysis"
+    IDS_STRING_END_ANALYZE_VITANY "Vitany analysis %d%% complete"
     IDS_STRING_REQUEST_FOR_PIN 
                             "You want to see the public and private parameters of '%s'. Enter the appropriate PIN code to continue."
     IDS_STRING_SHOW_ALL_PARAM "Show all parameters"
@@ -30233,7 +30190,7 @@ BEGIN
     ID_TOTXT                "Shows current window as text"
     ID_TOHEX                "Shows current window as hexdump"
     ID_PLAYFAIR_ANALYSE     "Manual analysis of a document encrypted with the Playfair algorithm"
-    IDS_STRING_VITANY_ANALYSE "Vitányi Analyse"
+    IDS_STRING_VITANY_ANALYSE "Vitany Analyse"
     ID_ANALYSE_VITANY       "Checks the statistic independence of the active document"
     IDS_STRING_KEY_GENERATION_DATE "Date key created:"
     IDS_STRING_MSG_FILENAME_TO_LONG 
@@ -31168,7 +31125,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_VITANY_ERR_FILESIZE "For Vitányi analysis, the input file size must exceed 500 bytes!"
+    IDS_VITANY_ERR_FILESIZE "For Vitany analysis, the input file size must exceed 500 bytes!"
     IDS_UU_DECODE_MISSING_NL_AFTER_END 
                             "An newline is missing after the ""end"" statement. Decoding could be faulty"
     IDS_UU_DECODE_MISSING_NL_BEFORE_END 
@@ -32285,7 +32242,7 @@ STRINGTABLE
 BEGIN
     IDS_AES_FLOWVISUALIZATION_JAVA_FILE "AES_Flussvisualisierung.jar"
     IDS_STRING_SMIME_DEMO_PROGRAM_COMPLETE_CALL 
-                            "-cp "".;./lib/*"" main.Programm EN"
+                            "-cp "".;./lib/*"" main.Programm"
     IDS_VIGENERE_ANALYSIS_SCHROEDEL_INFO 
                             "As soon as the analysis is finished, the result is display in a new document."
     IDS_AUTHORS_FILE_MISSING 
@@ -32310,8 +32267,6 @@ BEGIN
                             "Time needed to perfom analysis:"
     IDS_STRING_VIGENERE_ANALYSIS_SCHROEDEL_CIPHERTEXT_LENGTH_TAG 
                             "Length of analyzed ciphertext:"
-    IDS_AUTHORS_FILE_CORRUPTED 
-                            "The file authors.txt was changed after CrypTool was installed."
 END
 
 #endif    // English (U.K.) resources
