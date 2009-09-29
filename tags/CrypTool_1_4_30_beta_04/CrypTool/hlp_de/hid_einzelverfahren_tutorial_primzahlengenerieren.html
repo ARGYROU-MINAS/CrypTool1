@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Primzahlen generieren</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+<script language="JScript" src="helper.js"></script>
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Primzahlen">
+	<PARAM NAME="Keyword" VALUE="Generieren">
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Primzahlen generieren</h3>
+
+<P>Sie können diesen Dialog über das Menü <a href="menu_related_methods.html">Einzelverfahren</a> \ <a href="menu_individualprocedures_rsacryptosystem.html">RSA-Kryptosystem</a> \ <a href="hid_einzelverfahren_tutorial_primzahlengenerieren.html">Primzahlen generieren</a> aufrufen.</P>
+
+<P>Primzahlen sind natürliche Zahlen größer 1, die nur durch die 1 und durch sich selbst teilbar sind. Sie spielen in der Kryptographie eine wichtige Rolle. In dieser Demonstration können Sie sich selbst Primzahlen erzeugen, wobei die Primzahlen zufällig innerhalb frei definierbarer Grenzen bestimmt werden:</P>
+
+<P><IMG SRC="images/generatepz.gif" ALT="generatepz.gif" BORDER=0></P>
+
+<P>Wenn Sie den Knopf <B>Primzahlen generieren</B> drücken, wird mit Hilfe von <!--ZZZPOPUP--><A href="zufall.html">Zufall</A> nach Primzahlen für p und q gesucht. Eine Zahl X wird zufällig aus dem Wertebereich [Untergrenze, Obergrenze] gezogen. Danach wird "getestet", ob X eine Primzahl sein kann. Für diesen Test wird wiederum Zufall eingesetzt: </P>
+
+<UL>
+
+	<LI>Falls X keine Primzahl ist, dann gibt der gewählte Test mit der Wahrscheinlichkeit 1/2 an, dass X keine Primzahl ist, im anderen Fall ist die Rückmeldung stets positiv. Wenn der Primzahltest 80 mal "unabhängig" wiederholt wird und stets positiv ausfällt, dann ist die Wahrscheinlichkeit, dass X doch keine Primzahl ist mit 2^(-80) vernachlässigbar klein und die so gefundene Zahl wird als Primzahl aufgefasst und als Primzahl p bzw. als Primzahl q ausgegeben.</LI>
+
+	<LI>Ist einer der k Primzahltests negativ, dann ist X nicht prim und der Test wird mit einer neuen zufällig gewählten Zahl X wiederholt.</LI>
+
+</UL>
+
+<P>In diesem Dialog können Sie zwischen den folgenden Primzahltests wählen:</P>
+
+<UL>
+	<LI>Miller-Rabin-Test,</LI>
+
+	<LI>Solovay-Strassen-Test und </LI>
+
+	<LI>Fermat-Test.</LI>
+</UL>
+
+<P>Für den Fall, dass für 1000 zufällig gezogene Zahlen X keine Primzahl gefunden wurde, erhalten Sie eine entsprechende Fehlermeldung. Sie sollten dann den zulässigen Wertebereich [Untergrenze, Obergrenze] für die Primzahlen entsprechend vergrößern. </P>
+
+<P>Ausführliche Informationen zum Thema Primzahlen finden Sie im <A class="filelink" onclick="parser('script-de.pdf')">Skript</A>.</P>
+
+<P><B>Generation aller Primzahlen in einem bestimmten Wertebereich</B></P>
+
+<P>Wenn Sie das Optionsfeld <B>Alle Primzahlen in einem Wertebereich generieren</B> markiert haben, wird versucht, alle 
+Primzahlen zu finden, die sich in dem für die Primzahl p eingestellten Wertebereich befinden. Anders 
+als bei der Generation von nur zwei Primzahlen wird hier nicht zufällig eine Zahl aus dem Wertebereich 
+gegriffen, sondern es wird nacheinander jede Zahl im Wertebereich darauf getestet, ob sie prim ist. 
+Beachten Sie bitte, dass dieser Prozess sehr lange dauern kann. Allerdings können Sie den Prozess 
+mit Hilfe des erscheinenden Fortschrittsbalkens vorzeitig abbrechen.</P>
+
+<P>Ist der Prozess abgeschlossen, werden die gefundenen Primzahlen in ein neues Dokument 
+geschrieben. Welches Trennzeichen für die Ausgabe der Primzahlen verwendet wird, können Sie über 
+das Eingabefeld <b>Trennzeichen für die Ausgabe der Primzahlen</b> einstellen.</P>
+
+</BODY>
+</HTML>

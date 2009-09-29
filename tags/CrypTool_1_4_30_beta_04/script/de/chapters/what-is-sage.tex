@@ -1,0 +1,441 @@
+% ---------------------------------------------------------------------------
+\newpage
+\hypertarget{appendix-using-sage}{}
+\section{Kurzeinführung in das Computeralgebrasystem Sage}
+\label{s:appendix-using-sage}
+\index{Sage}
+\index{Sage!Programmbeispiele}
+
+Dieses Skript enthält zahlreiche mit Sage erstellte Programmbeispiele. Sage ist
+ein Open-Source Computer-Algebra-System (CAS), das für Lehre, Studium und Forschung
+in Mathematik eingesetzt wird.
+Sage kombiniert viele hochwertige Open-Source-Packete\footnote{%
+Einen Eindruck von der Größe von Sage erhält man, wenn man es selbst compiliert:
+Die heruntergeladenen Sourcen von Sage 4.1 brauchten zur Compilierung auf einem
+durchschnittlichen Linux-PC rund 5 h (inklusive aller Bibliotheken).
+Danach nahm es 1,8 GB Plattenplatz ein.
+}
+und liefert den Zugang zu deren Funktionalität über ein gemeinsames, auf der
+Programmiersprache Python basierendes Interface\footnote{%
+Es gibt auch ein relativ einfaches Interface für die Sprache C, genannt Cython,
+mit der man eigene Funktionen in Sage stark beschleunigen kann.\\
+Siehe \url{http://openwetware.org/wiki/Open_writing_projects/Sage_and_cython_a_brief_introduction}.
+}.
+
+\noindent Sage kann man wie andere CAS auch auf vielfältige Weise nutzen:
+als mächtigen Taschenrechner; als Tool, das Studenten beim Mathematikstudium hilft;
+oder als Programmier-Umgebung, um Algorithmen zu prototypen oder um Forschung im
+Bereich der algorithmischen Aspekte der Mathematik zu betreiben.
+
+\noindent Einen schnellen Eindruck von Sage erhält man mit der
+\glqq Einladung zu Sage\grqq~von David Joyner\footnote{%
+\url{http://sage.math.washington.edu/home/wdj/teaching/calc1-sage/an-invitation-to-sage.pdf}\\
+(Letztes Update 2009).}.
+  
+\noindent Die offizielle Sage Online-Dokumentation\footnote{%
+  Die entsprechenden offiziellen PDF-Dokuments können herunter geladen werden von\\
+  \url{http://www.sagemath.org/help.html}
+} ist verfügbar unter: \url{http://www.sagemath.org/doc}.
+
+
+\noindent Es gibt inzwischen viele PDF- oder HTML-Dokumente über Sage:
+Ein guter Startpunkt ist die \glqq Bibliothek\grqq von der Sage-Hauptseite,
+das \glqq Dokumentationsprojekt\grqq und das \glqq Lehrmaterial\grqq\footnote{%
+- \glqq Bibliothek\grqq: {\centering \url{http://www.sagemath.org/library/index.html}},\\
+- \glqq Dokumentationsprojekt\grqq:
+  {\centering \url{http://wiki.sagemath.org/DocumentationProject}},\\
+- \glqq Lehrmaterial\grqq: {\centering \url{http://wiki.sagemath.org/Teaching_with_SAGE}}.
+}.
+
+\noindent Auch beim Studium der Kryptologie können fertige Sage-Module genutzt
+werden\footnote{%
+- Sourcen der Module im Verzeichnis \url{SAGE_ROOT/devel/sage-main/sage/crypto}.
+
+\noindent\hangindent=6pt\makebox[6pt][l]{-}Überblick,
+   welche Kryptographie momentan in Sage enthalten ist:\\
+   \url{http://www.sagemath.org/doc/reference/sage/crypto/}
+
+\noindent\hangindent=6pt\makebox[6pt][l]{-}Diskussionen
+   über Lernaspekte beim Entwickeln weiterer Krypto-Module in Sage:\\
+   \url{http://groups.google.com/group/sage-devel/browse_thread/thread/c5572c4d8d42d081}
+   % Leerzeile am Ende nötig, sonst hat die zweite Zeile KEINEN hängenden Einzug?! (TODO)
+
+}.
+
+\noindent Ein fertiger Kryptographie-Kurs von David Kohel, der Sage nutzt,
+findet sich unter\\
+{\centering \url{http://www.sagemath.org/library/crypto.pdf} }\\
+bzw. derselbe Kurs in einer eventuell neueren Fassung\\
+{\centering \url{http://sage.math.washington.edu/home/wdj/teaching/kohel-crypto.pdf} }.
+
+
+% ---------------------------------------------------------------------------
+\section*{Sage-Benutzerschnittstellen}
+Sage ist kostenlos und kann von folgender Webseite herunter geladen werden:
+\begin{center}
+  \url{http://www.sagemath.org} \\
+\end{center}
+Standardmäßig nutzt man die Sage-Kommandozeile als Interface, wie im folgenden
+Bild~\ref{fig:sage_cmd_interfaces} zu sehen ist.
+Es gibt jedoch auch ein grafisches Benutzerinterface für diese Software
+in Form des Sage-Notebooks (siehe Bild~\ref{fig:sage_gui_interfaces}).
+Und schließlich kann man Sage auch online auf verschiedenen Servern nutzen, z.B.
+\begin{center}
+\url{http://www.sagenb.org} oder \\
+\url{http://sage.mathematik.uni-siegen.de:8000}
+\end{center}
+ohne Sage lokal zu installieren.
+
+Sage läuft unter den Betriebssystemen Linux, Mac OS X und Windows.
+Auf der Windows-Plattform läuft die komplette Sage-Distribution momentan
+nur als a VMware-Image. Allerdings wird gerade an einem vollen, native Port
+von Sage auf Windows gearbeitet.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[scale=0.6]{figures/sage-cmd}
+\caption{Sage-Kommandozeilen-Interface}
+\label{fig:sage_cmd_interfaces}
+\end{figure}
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[scale=0.4]{figures/sage-gui}
+\caption[Sage-Notebook-Interface]{Sage-Notebook-Interface\footnotemark}
+\label{fig:sage_gui_interfaces}
+\end{figure}
+
+\footnotetext{%
+Um das grafische Interface von Sage zu starten, muss man auf der Sage Kommandozeile
+\verb#notebook()# eingeben. Danach startet der eingestellte Browser (Iceweasel,
+Firefox, IE, ...) z.B. mit der URL \url{http://localhost:8000}.
+}
+
+
+
+% ---------------------------------------------------------------------------
+\newpage
+\section*{Hilfe beim Benutzen von Sage}
+
+Wenn man Sage auf der Kommandozeile startet, erhält etwas wie die folgenden Zeilen:
+%
+\begin{Verbatim}%
+[fontsize=\footnotesize,fontshape=tt]
+mnemonic:~$ sage
+----------------------------------------------------------------------
+| Sage Version 4.1, Release Date: 2009-07-09                         |
+| Type notebook() for the GUI, and license() for information.        |
+----------------------------------------------------------------------
+
+sage: help
+Type help() for interactive help, or help(object) for help about object.
+sage:
+sage:
+sage: help()
+
+Welcome to Python 2.6!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+\end{Verbatim}
+%
+Viele weitere Hilfen gibt es als offizielle Sage-Dokumentation, die mit jedem
+Release von Sage verteilt wird~(siehe Bild~\ref{fig:sage_standard_doc}).
+%
+\begin{figure}[!htpb]
+\centering
+\includegraphics[scale=0.4]{figures/sage-online-doc}
+\caption{Die Standard-Dokumentation von Sage}
+\label{fig:sage_standard_doc}
+\end{figure}
+%
+Zur offiziellen Sage-Standard-Dokumentation gehören folgende Dokumente:
+
+\begin{itemize}
+\item Tutorial --- Das Tutorial ist für Sage-Einsteiger.
+  Es ist dafür gedacht, sich in ein bis drei Stunden mit den
+  wichtigsten Funktionen vertraut zu machen.
+
+\item Constructions --- Dieses Dokument ist im Stil eines \glqq Kochbuchs\grqq~mit
+  einer Sammlung von Antworten auf Fragen zur Konstruktion von Sage-Objekten.
+
+\item Developers' Guide --- Dieser Führer ist für Entwickler, die selbst Sage
+  mit weiter entwickeln wollen. Enthalten sind darin z.B. Hinweise zum
+  Stil und zu Konventionen beim Programmieren, zur Modifikation von
+  Sage-Kern-Bibliotheken oder von Sage-Standard-Dokumentation, und zum Code-Review
+  und zur Software-Verteilung.
+
+\item Reference Manual --- Dieses Handbuch enthält die komplette Dokumentation
+  aller wichtigen Sage-Funktionen. Zu jeder Klassen-Beschreibung gibt es
+  mehrere Code-Beispiele. Alle Code-Beispiele im Referenz-Handbuch werden
+  bei jedem neuen Sage-Release getestet.
+
+\item Installation Guide --- Dieser Führer erklärt, wie man Sage auf
+  verschiedenen Plattformen installiert.
+
+\item A Tour of Sage --- Diese Tour durch Sage zeigt exemplarisch verschiedene
+  Funktionen, die für Einsteiger sinnvoll sind.
+
+\item Numerical Sage --- Dieses Dokument führt Werkzeuge auf, die in Sage
+  für numerische Mathematik verfügbar sind.
+
+\item Three Lectures about Explicit Methods in Number Theory Using
+  Sage --- Drei Vorlesungen über Methoden der Zahlentheorie, die explizit
+  Sage nutzen. Dieses Dokument zeigt wie man mit Sage Berechnungen in
+  fortgeschrittener Zahlentheorie durchführt.
+\end{itemize}
+
+\noindent Von der Sage-Kommandozeile erhält man eine Liste aller verfügbaren Kommandos
+(Funktionsnamen etc.), die ein bestimmtes Muster haben, wenn man die ersten Zeichen tippt,
+und dann die \glqq Tab\grqq-Taste drückt:
+%
+\begin{Verbatim}%
+[fontsize=\footnotesize,fontshape=tt]
+sage: Su[TAB]
+Subsets                   Subwords                  SuzukiGroup
+SubstitutionCryptosystem  SupersingularModule
+\end{Verbatim}
+%
+Wenn man den genauen Namen eines Kommandos kennt, kann man die \texttt{help}-Funktion
+nutzen oder das Fragezeichen \glqq ?\grqq~anfügen, um weitere Informationen zu
+diesem Kommando zu erhalten.  Zum Beispiel liefert das Kommando
+\texttt{help(SubstitutionCryptosystem)} die Dokumentation zur der eingebauten
+Klasse \texttt{SubstitutionCryptosystem}. Mit dem Fragezeichen erhalten wir die
+Dokumentation zu dieser Klasse auf folgende Weise:
+%
+\begin{Verbatim}%
+[fontsize=\footnotesize,fontshape=tt]
+sage: SubstitutionCryptosystem?
+Type:type
+Base Class:<type 'type'>
+String Form:<class 'sage.crypto.classical.SubstitutionCryptosystem'>
+Namespace:Interactive
+File:/home/mvngu/usr/bin/sage-3.4.1/local/lib/python2.5/site-packages/sage/crypto/classical.py
+Docstring:
+
+        Create a substitution cryptosystem.
+
+        INPUT:
+
+        - ``S`` - a string monoid over some alphabet
+
+        OUTPUT:
+
+        - A substitution cryptosystem over the alphabet ``S``.
+
+        EXAMPLES::
+
+            sage: M = AlphabeticStrings()
+            sage: E = SubstitutionCryptosystem(M)
+            sage: E
+            Substitution cryptosystem on Free alphabetic string monoid
+            on A-Z
+            sage: K = M([ 25-i for i in range(26) ])
+            sage: K
+            ZYXWVUTSRQPONMLKJIHGFEDCBA
+            sage: e = E(K)
+            sage: m = M(``THECATINTHEHAT'')
+            sage: e(m)
+            GSVXZGRMGSVSZG
+
+        TESTS::
+
+            sage: M = AlphabeticStrings()
+            sage: E = SubstitutionCryptosystem(M)
+            sage: E == loads(dumps(E))
+            True
+\end{Verbatim}
+%
+\vspace{30pt}
+Weitere Unterstützung für spezifische Probleme gibt es in den Archiven der
+\texttt{sage-support} Mailing-Liste unter
+%
+\begin{center}
+  \url{http://groups.google.com/group/sage-support}
+\end{center}
+
+
+
+
+% ---------------------------------------------------------------------------
+\newpage
+\section*{Beispiele für in Sage eingebaute mathematische Funktionen}
+
+Hier sind ein paar kleine Beispiele\footnote{%
+Diese Beispiele stammen aus dem Blog von Dr. Alasdair McAndrew, Victoria University,\\
+\url{http://amca01.wordpress.com/2008/12/19/sage-an-open-source-mathematics-software-system}}
+(alle für das Kommandozeilen-Interface -- zur einfacheren Nutzung), um zu sehen,
+was man mit Sage machen kann:
+
+\begin{sagecode}
+\begin{Verbatim}%
+[fontsize=\footnotesize,fontshape=tt]
+# * Analysis (Infinitesimalrechnung):
+    sage: x=var('x')
+    sage: p=diff(exp(x^2),x,10)*exp(-x^2)
+    sage: p.simplify_exp()
+     1024 x^10 + 23040 x^8 + 161280 x^6 + 403200 x^4 + 302400 x^2 + 30240
+
+# * Lineare Algebra:
+    sage: M=matrix([[1,2,3],[4,5,6],[7,8,10]])
+    sage: c=random_matrix(ZZ,3,1);c
+     [ 7 ]
+     [-2 ]
+     [-2 ]
+    sage: b=M*c
+    sage: M^-1*b
+     [ 7 ]
+     [-2 ]
+     [-2 ]
+
+# * Zahlentheorie:
+    sage: p=next_prime(randint(2^49,2^50));p
+      1022095718672689
+    sage: r=primitive_root(p);r
+      7
+    sage: pl=log(mod(10^15,p),r);pl
+      1004868498084144
+    sage: mod(r,p)^pl
+      1000000000000000
+
+# * Endliche Körper (\url{http://de.wikipedia.org/wiki/Endlicher_K%C3%B6rper}):
+    sage: F.<x>=GF(2)[]
+    sage: G.<a>=GF(2^4,name='a',modulus=x^4+x+1)
+    sage: a^2/(a^2+1)
+      a^3 + a
+    sage: a^100
+      a^2 + a + 1
+    sage: log(a^2,a^3+1)
+      13
+    sage: (a^3+1)^13
+      a^2
+\end{Verbatim}
+\caption{Einige kleine Beispiele in Sage aus verschiedenen Gebieten der Mathematik}
+\end{sagecode}
+
+
+
+% ---------------------------------------------------------------------------
+\newpage
+\section*{Programmieren mit Sage}
+
+Wenn man ein CAS (Computer-Algebra-System) nutzt, schreibt man zu Beginn einzelne
+Befehle in die Kommandozeile wie im obigen Beispiel\footnote{%
+  Standardmäßig wird Sage-Code auch so präsentiert: Dabei beginnen die Zeilen
+  mit  \glqq sage:\grqq~und \glqq ...\grqq.
+  \begin{Verbatim}%
+  [fontsize=\footnotesize,fontshape=tt]
+  sage: m = 11
+  sage: for a in xrange(1, m):
+  ....:     print [power_mod(a, i, m) for i in xrange(1, m)]
+  ....:
+  \end{Verbatim}
+
+  \noindent Auch dieses Skript benutzt normalerweise die obige Konvention, um
+  Sage-Code zu präsentieren, solange der Code nicht aus einer Sage-Skriptdatei kommt.
+  Wenn man den Sage-Code aus diesem Skript kopiert und per Paste auf der Sage-Kommandozeile
+  wieder einfügt, sollte man \glqq sage:\grqq~und \glqq ...\grqq~ weglassen
+  (obwohl das Kommandozeilen-Interface in den meisten Fällen mit diesen Präfixen
+  korrekt umgehen kann).}.
+
+Wenn man eigene Funktionen entwickelt, sie ändert und aufruft, dann ist es viel einfacher,
+die Entwicklung in einem eigenen Editor vorzunehmen, den Code als Sage-Skriptdatei zu
+speichern und die Funktionen nicht-interaktiv auf der Kommandozeile auszuführen.
+Beide Arten, Code zu entwickeln, wurde in den Beispielen in
+Kapitel \ref{PaP_Sage_samples} (\glqq \nameref{PaP_Sage_samples}\grqq) und in
+Kapitel \ref{NumberTheory_Appendix_E} (\glqq\nameref{NumberTheory_Appendix_E}\grqq) angewandt.
+
+\noindent Um Sage-Code in einem eigenen Editor zu entwickeln und zu testen, gibt es zwei
+nützliche Befehle: \verb!load()! und \verb!attach()!\footnote{%
+Vergleiche das Sage-Tutorial über Programmierung, Kapitel
+\glqq Loading and Attaching Sage files\grqq,\\
+\url{http://www.sagemath.org/doc/tutorial/programming.html\#loading-and-attaching-sage-files}.}.\\
+Angenommen Sie haben die folgende Funktions-Definition:
+\begin{Verbatim}%
+   [fontsize=\footnotesize,fontshape=tt]
+   def function(var1):
+       r"""
+       DocText.
+       """
+       ...
+       return (L)
+\end{Verbatim}
+\noindent die in der Datei \texttt{primroots.sage} gespeichert wurde.
+
+\noindent Um diese Funktion zu laden (und syntaktisch gleich zu testen),
+wird der Befehl \verb!load()! benutzt:
+
+\texttt{sage: load primroots.sage}
+
+\noindent Danach kann man auf der Kommandzeile alles benutzen, was im
+Sage-Skript definiert wurde\footnote{%
+Anmerkungen:
+
+\noindent\hangindent=6pt\makebox[6pt][l]{-}Bitte keine Leerzeichen
+oder White Spaces im Dateinamen.
+
+\noindent\hangindent=6pt\makebox[6pt][l]{-}Es empfiehlt sich,
+der Sage-Skriptdatei die Datei-Extension
+\glqq .sage\grqq~statt \glqq .py\grqq~zu geben.
+Hat ein Sage-Skript die Dateinamens-Endung \glqq .sage\grqq, dann wird
+beim Laden der Datei in Sage auch gleich die normale Sage-Umgebung mit geladen,
+um die Syntax zu prüfen. Genauso funktioniert es, wenn man ein Sage-Skript direkt
+von einer Bash-Shell aufruft mit~~\texttt{\$ sage primroots.sage}.
+
+\noindent\hangindent=6pt\makebox[6pt][l]{-}Beim Laden des obigen
+Sage-Skripts wird es von Sage zuerst geparst, und dann
+in eine andere Datei namens \glqq primroots.py\grqq~kopiert. Sage ergänzt
+dann alle notwendigen Variablen in \glqq primroots.py\grqq~und alle Import-Statements.
+Somit wird das Sage-Skript genauso ausgeführt, als hätte man die Befehle einzeln
+auf der Kommandozeile eingetippt. Ein Unterschied mag sein, dass Ausgaben explizit
+mit \glqq print\grqq~erfolgen müssen.
+
+}.
+
+Normalerweise editiert man ein eigenes Sage-Skript wieder und möchte dann den
+Inhalt des geänderten Skripts wieder in Sage laden. Dafür kann man den Befehl
+\verb!attach()! nutzen. In unserem obigen Beispiel sieht das auf der Sage-Kommandozeile
+folgendermaßen aus (man kann auch direkt nach dem \verb!load()! das \verb!attach()! aufrufen, und
+nicht erst, wenn man das Skript ändert):
+
+\texttt{sage: attach primroots.sage}
+
+Nun kann man das Sage-Skript ändern und die geänderte Funktionsdefinition
+wird -- solange man die Sage-Session nicht beendet -- beim nächsten Enter
+in Sage geladen (und syntaktisch gleich geprüft). Diese Neuladen passiert
+vollkommen automatisch. Der Befehl attach() lässt Sage also permanent die
+genannte Datei auf Änderungen überwachen. Damit spart man sich das Kopieren
+und Pasten zwischen dem eigenen Texteditor und dem Sage-Kommandozeilen-Interface.
+
+Hier ist ein Bild, das Sage-Code im Editor GVIM zeigt -- mit aktiviertem
+Syntax-Highlighting (siehe Bild~\ref{fig:sage-highlighted-code-in-editor}).
+%
+\begin{figure}[!htpb]
+\centering
+\includegraphics[scale=0.7]{figures/sage-highlighted-code-in-editor}
+\caption{Sage-Beispiel in einem Editor mit aktiviertem Code-Highlighting}
+\label{fig:sage-highlighted-code-in-editor}
+\end{figure}
+
+
+\vspace{30pt}
+\noindent Weitere Hinweise:
+\begin{itemize}
+  \item Abfrage der Version Ihrer Sage-Umgebung mit: \texttt{version()}
+  \item Um sich schnell die Sage-Programmbeispiele in diesem Skript anzusehen, können Sie
+  \begin{itemize}
+    \item im Index nach \verb#Sage -> Programmbeispiele# schauen, oder 
+    \item sich im Anhang das \glqq \nameref{sc:List-of-Sage-Code-Examples}\grqq~ansehen.
+  \end{itemize}
+\end{itemize}
+
+
