@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Verifikation einer Signatur</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Signatur">
+	<PARAM NAME="Keyword" VALUE="Verifikation einer Signatur">
+</OBJECT>
+
+<BODY>
+
+<h3>Signatur überprüfen (Menü <A href="menu_digitalsignaturespki.html">Digitale Signaturen/PKI</A>)</h3>
+
+<P>Der Dialog <A href="hidd_verify_signature.html">Verifizieren einer Signatur</A> dient dazu, eine mit <!--ZZZPOPUP--><A href="cryptool.html">CrypTool</A> erstellte <!--ZZZPOPUP--><A href="signatur.html">Signatur</A> zu verifizieren. Dazu muss das aktive <!--ZZZPOPUP--><A href="dokument.html">Dokument</A> die Ausgabe enthalten, die mit dem Befehl <A href="hid_crypt_sign.html">Dokument signieren</A> oder mit dem Befehl <B>Signatur speichern</B> aus der <A href="hid_einzelverfahren_sign_doc.html">Signatur-Demonstration</A> erzeugt wurde.</P>
+
+<P>Um eine Signatur zu überprüfen, muss man CrypTool manuell (durch entsprechende Auswahl in dem Dialog <A href="hidd_verify_signature.html">Verifizieren einer Signatur</A>) mitteilen, wer die Signatur erstellt hat (genauer: mit welchem <!--ZZZPOPUP--><A href="schluesselpaar.html">Schlüsselpaar</A> die Signatur erstellt wurde):</P>
+
+<UL>
+
+	<LI>Für RSA- und DSA-Signaturen werden aus der Signaturausgabe die restlichen zur Signaturüberprüfung nötigen Informationen (wie zum Beispiel das benutzte Verfahren, die benutzte <A href="hashfunktion.html">Hashfunktion</A>, die signierte Nachricht) von CrypTool automatisch herausgefiltert und vorgeschlagen.</LI>
+
+	<LI>Bei den beiden <A href="ellipkurven.html">Elliptischen Kurven</A>-Signaturverfahren (ECSP-DSA und ECSP-NR) ist neben der Angabe des Signaturerstellers auch noch die benutzte Hashfunktion und das benutzte Verfahren auszuwählen. Alle diese Informationen befinden sich in dem Ausgabefenster, das mit dem Befehl <A href="hid_crypt_sign.html">Dokument signieren</A> erzeugt wurde. Auf eine automatische Erkennung der benutzten Hashfunktion und des benutzen Verfahrens wurde hier verzichtet, um das Experimentieren zu fördern.</LI>
+	
+</UL>
+
+<P>Mit dem Befehl <A href="hid_crypt_extract.html">Signatur extrahieren</A> aus dem Menü <A href="menu_digitalsignaturespki.html">Digitale Signaturen/PKI</A> kann man die Signatur extrahieren.</P>
+
+</BODY>
+</HTML>

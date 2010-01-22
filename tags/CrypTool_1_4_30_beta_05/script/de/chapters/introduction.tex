@@ -1,0 +1,156 @@
+% $Id$
+% ............................................................................
+%      V O R W O R T  und  E I N F U E H R U N G (Zusammenspiel Skript-CT) 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+% --------------------------------------------------------------------------
+\clearpage\phantomsection
+% \vspace{-10pt}  wirkungslos!
+\addcontentsline{toc}{chapter}{Vorwort zur 10. Auflage des CrypTool-Skripts}
+\chapter*{Vorwort zur 10. Auflage des CrypTool-Skripts}
+
+\vspace{-12pt}
+Ab dem Jahr 2000 wurde mit dem CrypTool-Paket\index{CrypTool} auch ein
+Skript ausgeliefert, das die Mathematik einzelner Themen genauer, aber doch 
+möglichst verständlich erläutern sollte.
+
+Um auch hier die Möglichkeit zu schaffen, dass getrennte Entwickler/Autoren
+mitarbeiten können, wurden die Themen sinnvoll unterteilt und dafür jeweils
+eigenständig lesbare Kapitel geschrieben. In der anschließenden
+redaktionellen Arbeit wurden in TeX Querverweise ergänzt und Fußnoten
+hinzugefügt, die zeigen, an welchen Stellen man die entsprechenden
+Funktionen in CrypTool v1\index{CrypTool 1.x} aufrufen kann 
+\hyperlink{appendix-menutree}{(vgl. den Menübaum} im Anhang \ref{s:appendix-menutree}).
+%\hypertarget{appendix-menutree}{}\label{s:appendix-menutree}
+Natürlich gäbe es viel mehr Themen in Mathematik und Kryptographie, die
+man vertiefen könnte -- deshalb ist diese Auswahl auch nur eine von
+vielen möglichen.
+
+Der Erfolg des Internets hat zu einer verstärkten 
+Forschung der damit verbundenen Technologien geführt, was auch im
+Bereich Kryptographie viele neue Erkenntnisse schaffte.
+
+%In dieser Ausgabe des Skripts wurden einige Themen ergänzt und andere auf
+%den aktuellen Stand gebracht (z.B. die Zusammenfassungen zu aktuellen 
+%Forschungsergebnissen):                   
+In dieser Ausgabe des Skripts wurden die TeX-Sourcen des Dokuments komplett
+überarbei"-tet, und etliche Themen korrigiert,
+ergänzt und auf den aktuellen Stand gebracht, z.B.:
+\vspace{-5pt}
+\begin{itemize}
+  \item die größten Primzahlen (Kap. \ref{search_for_very_big_primes}),
+        neue Faktorisierungsrekorde (Kap. \ref{RSA-768}),
+  \item Fortschritte bei der Kryptoanalyse von AES 
+        (Kap. \ref{NeueAES-Analyse}) und
+%  \item Fortschritte bei der Kryptoanalyse von Hashverfahren 
+%        (Kap. \ref{collision-attacks-against-sha-1}) und
+%  \item Fortschritte bei den Ideen für neue Kryptoverfahren (RSA-Nachfolger)
+%	(Kap. \ref{xxxxBrute-force-gegen-Symmetr})\index{xxxxxxxxxxxxxxxxxxxxx} und
+  \item die Auflistung, in welchen Filmen und Romanen Kryptographie eine
+        wesentliche Rolle spielt (siehe Anhang \ref{s:appendix-movies}),
+        und Kurioses zu Primzahlen (siehe \ref{HT-Quaint-curious-Primes-usage}).
+  \item Neu hinzu gekommen sind z.B. der Absatz zu Benfords Gesetz und Primzahlen
+        (Kap. \ref{primes:Benford-Law}), und der Anhang \ref{s:appendix-using-sage} über
+        das Computer-Algebra-System Sage. Sage wird mehr und mehr zum
+        Standard-Open-Source CAS. Entsprechend
+	wurden alle Codebeispiele, die vorher in PARI-GP und Mathematica
+	geschrieben waren, durch Sage-Code ersetzt.
+	Außerdem kamen dank Nguyen und Massierer etliche neue Code-Beispiele hinzu
+        (vgl. auch Kap.~\ref{ec:Sage_Massierer}).
+\end{itemize}
+
+Seit das Skript dem CrypTool-Paket in Version 1.2.01 das erste Mal beigelegt
+wurde, ist es mit fast jeder neuen Version von CrypTool ebenfalls erweitert
+und aktualisiert worden.
+
+Herzlichen Dank an alle, die mit Ihrem großem Einsatz zum 
+Erfolg und zur weiten Verbreitung dieses Projekts beigetragen haben.
+Danke auch an die Leser, die uns Feedback sandten. 
+
+Ich hoffe, dass viele Leser mit diesem Skript mehr Interesse an und 
+Verständnis für dieses moderne und zugleich uralte Thema finden.
+\\
+\\
+% [1.5\baselineskip]
+% \enlargethispage*{2\baselineskip}
+% \nopagebreak
+Bernhard Esslinger
+\\
+\\
+% [\baselineskip]
+% \nopagebreak
+Frankfurt, Januar 2010
+
+
+
+% --------------------------------------------------------------------------
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Einführung -- Zusammenspiel von Skript
+                               und CrypTool}
+\chapter*{Einführung -- Zusammenspiel von Skript und CrypTool}
+
+\textbf{Das Skript}
+
+Dieses Skript wird zusammen mit dem Open-Source-Programm CrypTool\index{CrypTool}
+ausgeliefert.
+
+Die Artikel dieses Skripts sind weitgehend in sich abgeschlossen und können
+auch unabhängig von CrypTool\index{CrypTool} gelesen werden.
+
+Während für das Verständnis der meisten Kapitel Abiturwissen ausreicht,
+erfordern Kapitel \ref{Chapter_ModernCryptography} (Moderne Kryptografie)
+und \ref{Chapter_EllipticCurves} (Elliptische Kurven) tiefere mathematische
+Kenntnisse.
+
+Die \hyperlink{appendix-authors}{Autoren}
+% \hyperlink{appendix-authors}{(Autoren)}
+% in \ref{s:appendix-authors}
+% \hypertarget{appendix-authors}{}\label{s:appendix-authors}
+haben sich bemüht, Kryptographie für eine möglichst 
+breite Leserschaft darzustellen -- ohne mathematisch unkorrekt zu werden. 
+Dieser didaktische Anspruch ist am besten geeignet, die Awareness
+für die IT-Sicherheit und die Bereitschaft für den Einsatz 
+standardisierter, moderner Kryptographie zu fördern.
+\par \vskip + 15pt
+
+
+\noindent \textbf{Das Programm CrypTool\index{CrypTool}}
+
+CrypTool\index{CrypTool} ist ein Lernprogramm mit umfangreicher Online-Hilfe,
+mit dem Sie unter einer einheitlichen Oberfläche
+kryptographische Verfahren anwenden und analysieren können.
+
+Inzwischen wird CrypTool\index{CrypTool} weltweit
+in Ausbildung und Lehre eingesetzt und von mehreren Hochschulen
+mit weiterentwickelt.
+\par \vskip + 15pt
+
+
+\noindent \textbf{Dank}
+
+An dieser Stelle möchte ich explizit folgenden Personen danken, 
+die bisher in ganz besonderer Weise zu CrypTool\index{CrypTool} 
+beigetragen haben.
+Ohne ihre besonderen Fähigkeiten und ihr großes Engagement wäre CrypTool
+nicht, was es heute ist:
+\vspace{-7pt}
+\begin{list}{\textbullet}{\addtolength{\itemsep}{-0.5\baselineskip}}
+   \item Hr.\ Henrik Koy
+   \item Hr.\ Jörg-Cornelius Schneider
+   \item Hr.\ Florian Marchal
+   \item Dr.\ Peer Wichmann
+   \item Mitarbeiter von Prof.\ Claudia Eckert, Prof.\ Johannes Buchmann und Prof.\ Torben Weis.
+\end{list}
+Auch allen hier nicht namentlich Genannten ganz herzlichen Dank für das 
+(meist in der Freizeit) geleistete Engagement.
+\\
+\\
+Bernhard Esslinger
+\\
+\\
+Frankfurt, November 2009
+
+% Local Variables:
+% TeX-master: "../script-de.tex"
+% End:
