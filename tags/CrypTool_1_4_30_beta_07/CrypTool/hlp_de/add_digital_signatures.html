@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Digitale Signaturen</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+<script language="JScript" src="helper.js"></script>
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Digitale Signaturen / PKI">
+	<PARAM NAME="Keyword" VALUE="Signatur">
+	<PARAM NAME="Keyword" VALUE="DSA">
+	<PARAM NAME="Keyword" VALUE="RSA-Verschlüsselungsverfahren">
+	<PARAM NAME="Keyword" VALUE="Elliptische Kurven">
+</OBJECT>
+
+<BODY>
+
+<h3><A NAME="add_digital_signatures"></A><B>Digitale Signaturen</B></h3>
+
+<P>Über Signaturverfahren ist ein Abschnitt Digitale Signaturen in dem <A class="filelink" onclick="parser('script-de.pdf')">Skript</A>. zu finden. Dort wird u.a. beschrieben, welche Bedeutung Hashfunktionen für digitale Signaturen haben. Sie erhalten weitere Informationen mit Hilfe unserer <A href="literatur.html">Literaturliste</A>. Mit CrypTool werden Signaturverfahren unterstützt, die auf folgenden kryptographisch relevanten Problemen basieren:
+
+<UL>
+<LI>Die Schwierigkeit, eine große ganze Zahl in ihre (beiden) Primfaktoren zu zerlegen (Problemklasse "Faktorisieren").Das RSA-Signaturverfahren basiert auf diesem Problem.</LI>
+
+	<LI>Das Problem, den diskreten Logarithmus in endlichen Gruppen zu bestimmen. Das DSA-Signaturverfahren <A href="dsa.html">DSA</A> basiert auf diesem Problem.</LI>
+
+	<LI>Das diskreter Logarithmus-Problem auf Elliptischen Kurven Gruppen. In CrypTool gibt es die beiden folgenden Verfahren, die auf diesem Problem beruhen: Elliptische Kurven-Signatur nach Nyberg-Rueppel und DSA auf Elliptischen Kurven-Gruppen.</LI>
+</UL>
+
+<P>Die CrypTool-Implementierung der beiden eben angesprochenen Verfahren basiert auf dem vorläufigen Entwurf (Draft Version 8 – Oktober 1998) der Arbeitsgruppe IEEE P1363 Standard Specifications for Public Key Cryptography. In diesem Entwurf sind die benutzen Elliptischen Kurven Signaturverfahren - die in CrypTool implementiert sind - unter den folgenden Bezeichnungen zu finden:</P>
+
+<P class="tindent"><B> ECSP-DSA</B> (Elliptic Curve Signature Primitiv – DSA Variante) ist eine Variante des DSA, die sich das Elliptische Kurven-Diskreter Logarithmus-Problem zunutze macht, ansonsten aber dem DSA sehr ähnlich ist.</P>
+
+<P class="tindent"><B> ECSP-NR</B> (Elliptic Curve Signature Primitiv – Nyberg-Rueppel Variante) ist ein Signaturverfahren, das nach seinen Erfindern (Nyberg und Rueppel) benannt ist.</P>
+
+</BODY>
+</HTML>

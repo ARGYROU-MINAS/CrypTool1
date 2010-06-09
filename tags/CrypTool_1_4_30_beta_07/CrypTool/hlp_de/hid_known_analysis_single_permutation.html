@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Einstufige Spaltentransposition</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+	<PARAM NAME="Keyword" VALUE="Analyse">
+	<PARAM NAME="Keyword" VALUE="Spaltentransposition">
+	<PARAM NAME="Keyword" VALUE="Permutations-Verschlüsselungsverfahren">
+</OBJECT>
+
+<BODY>
+
+<h3>Einstufige Spaltentransposition (Menü <A href="menu_analyze.html">Analyse</A> \ Symmetrische Verschlüsselung (klassisch) \ Known Plaintext)</h3>
+
+		<p>
+		Für die einstufige Spaltentransposition steht ein Known-Plaintext-Angriff zur Verfügung. 
+		Dieser Angriff ermittelt aus einem Klartext und dem, mittels <a href="hid_permutation.html">Permutationsverschlüsselung</a> erzeugten Geheimtext den Schlüssel, 
+		mit dem der Klartext verschlüsselt worden ist. <br>
+		<br>
+		Für die automatische Analyse müssen sowohl der Klartext als auch der Geheimtext bekannt sein. Beide Texte müssen im 
+		<!--ZZZPOPUP--><A href="hidd_automated_perm_analysis.html">Dialog Analyse einer einfachen Spaltentransposition (Known-Plaintext)</A> ausgewählt werden.
+		Korrespondierende Texte haben immer die gleiche Länge.<br>
+		<br>Die Analyse funktioniert wie folgt: Sowohl der Klar- als auch der Geheimtext werden jeweils
+		in eine Tabelle eingelesen. Abhängig von den Parametern (Verfahrensvarianten) hat die jeweilige Tabelle n Spalten oder n Zeilen (n = Länge der Permutation = Schlüssellänge).
+		Im Anschluss vergleicht CrypTool die jeweiligen Spalten beider Texttabellen und ermittelt so die Permutation, 
+		also die Vertauschung der Spalten. Diese Permutation ist der gesuchte Schlüssel (zusammen mit den Parametern des Permutationsverfahrens).<br>
+		<br>Werden vom Benutzer keine genauen Angaben zur Länge des Schlüssels und zu den Parametern getroffen, so durchläuft CrypTool eine automatische Analyse. 
+		Hierbei können auch mehrere Schlüssel gefunden werden. Es wird allerdings nur der erste gefundene Schlüssel 
+		im <!--ZZZPOPUP--><A href="hidd_automated_perm_analysis_output.html">
+		Dialog Schlüsselausgabe: Spaltentransposition</A> angezeigt. Bei einer Eingrenzung der Schlüssellänge durch den Benutzer muss die Länge der ausgewählten Texte
+		ein Vielfaches der Schlüssellänge sein.</p>
+		<p><u>Beispiel zur Berechnung des Permutationsschlüssels:</u></p>
+		<TABLE cols="2" width="0*" class="pad10">
+			<TR VALIGN="top">
+				<TD>Der Klartext lautet:</TD>
+				<TD>ABCDEFGHIJKL.</TD>
+			</TR>
+			<TR VALIGN="top">
+				<TD>Der Geheimtext ist:</TD>
+				<TD>IEAJFBKGCLHD.</TD>
+			</TR>
+		</TABLE><br>
+		Für die beispielhafte Analyse der einstufigen Spaltentransposition werden im Folgenden diese Parameter angenommen:<br>
+		<br>
+		<TABLE cols="2" width="0*" class="pad10">
+			<TR VALIGN="top">
+				<TD>Einlesen:</TD>
+				<TD>Spaltenweise</TD>
+			</TR>
+			<TR VALIGN="top">
+				<TD>Permutieren:</TD>
+				<TD>Spaltenweise</TD>
+			</TR>
+			<TR VALIGN="top">
+				<TD>Auslesen:</TD>
+				<TD>Zeilenweise</TD>
+			</TR>
+			<TR VALIGN="top">
+				<TD>Schlüssellänge:</TD>
+				<TD>3</TD>
+			</TR>
+		</TABLE><br>
+		Wie oben beschrieben beginnt die Analyse mit dem Einlesen des Klar- und Geheimtextes in eine eigene Tabelle. Aufgrund der Schlüssellänge von 3
+		und der spaltenweisen Permutation müssen beide Tabellen aus genau 3 Spalten bestehen. Wie groß die jeweiligen Spalten sind, ermittelt sich
+		aus der Textgröße und der Schlüssellänge. <br>
+		In unserem Beispiel bestehen die 3 Spalten damit jeweils aus 4 Zeichen, womit man auch auf die Textlänge von 12 kommt.<br>
+		<br>
+		Zuerst wird der Klartext in eine Tabelle spaltenweise eingelesen.
+		&nbsp;</FONT></p>
+		<table border="1" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111"
+			width="10%" id="AutoNumber1">
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">A</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">E</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">I</font></td>
+			</tr>
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">B</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">F</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">J</font></td>
+			</tr>
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">C</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">G</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">K</font></td>
+			</tr>
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">D</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">H</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">L</font></td>
+			</tr>
+		</table>
+        	<br>
+       	Danach wird auch vom Geheimtext eine Tabelle erstellt. 
+        	Da laut der angegebenen Parameter spaltenweise permutiert und zeilenweise der Klartext ausgelesen werden soll, 
+       	muss der Geheimtext zeilenweise eingelesen werden. Die Tabelle des eingelesen Geheimtextes sieht dann wie folgt aus:
+       	&nbsp;</p>
+		<table border="1" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111"
+			width="10%" id="Table1">
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">I</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">E</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">A</font></td>
+			</tr>
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">J</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">F</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">B</font></td>
+			</tr>
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">K</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">G</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">C</font></td>
+			</tr>
+			<tr>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">L</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">H</font></td>
+				<td width="10%" align="center" bgcolor="#ffefd5"><font face="Arial">D</font></td>
+
+			</tr>
+		</table>
+		<br>
+                CrypTool vergleicht nun die Spalten beider Tabellen miteinander. Man erkennt, 
+                dass sich die in der Klartexttabelle an erster Stelle befindliche Spalte nun in der Tabelle des 
+                Geheimtextes an dritter Position befindet. Die Spalte an zweiter Position behielt ihren Platz, 
+                die dritte wurde jedoch an die erste Stelle im Geheimtext verschoben.<br>
+                Damit ergibt die Analyse der Spaltentransposition den Permutationsschlüssel: 3,2,1.
+		&nbsp;</p>
+		<p><u>Bemerkungen:</u></p>
+		<p>1) Für einen Known-Plaintext-Angriff müssen Klar- und Geheimtext angegeben werden. 
+		Der Geheimtext kann einfach in CrypTool im Menü Ver-/Entschlüsseln \ Symmetrisch (klassisch) \ <a href="hid_permutation.html">Permutation/Transposition</a> erstellt werden. 
+		Die Analyse der einstufigen Spaltentransposition ermittelt dann den Permutationsschlüssel, mit dem der Klartext verschlüsselt worden ist.
+		</p>
+		<p>2) Die Größe der angegebenen Texte darf maximal 2 Gigabyte betragen. Das ergibt sich aus dem Wertebereich eines 32-Bit Integers. 
+		Dieser Datentyp wurde für die Dateigröße (= Textlänge) verwendet und bestimmt somit auch die Maximalgrenze der Textgröße. 
+		Weil die maximale Schlüssellänge die maximale Textlänge nicht überschreiten kann, gilt für die Länge des Permutationsschlüssels dieselbe Obergrenze. 
+		</p>
+	</BODY>
+</HTML>
