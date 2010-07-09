@@ -1,0 +1,274 @@
+# PURPOSE OF THIS FILE
+#
+# This file introduces some redundancy by storing the popup menu ids,
+# which are generated automatically during run-time when a user presses
+# F1 while a menu with sub menu is selected. Those popup menu ids (pmenuids)
+# must be present in the online help source (*.rtf) as A-footnotes (similar 
+# to K-footnotes that are used to introduce key words, see help compiler 
+# online help for details). 
+#
+# The redundancy was introduced to aid in maintaining the menus consitent 
+# with the online help: whenever someone adds/changes/removes a menu entry
+# with sub menu, this change is detected during compile time and an error is 
+# flagged (s. below for possible errors). This is done to make people aware 
+# that the online help has to be updated manually (drawback: this file also
+# has to be updated manually).
+#
+# BACKGROUND
+# 
+# F1 does not work in MFC for menus with sub menus. This is because the 
+# ressource file syntax for popup menus does not include the ID that is used
+# for all other menu items. This ID is normally used to invoke the online
+# help topic corresponding to a menu item. To make F1 work on menu items 
+# with sub menus we generated a new identifier derived from the menu label.
+#
+# FILE FORMAT
+#
+# lines starting with # are ignored. 
+# for each menu with sub menu (called popup menu in *.rc) there must 
+# exist a line of the following form:
+#
+# language[white space]pmenuid[white space]# menu labels from ressources
+#
+# where
+# - language is ENGLISH or GERMAN
+# - pmenuid is derived from the menu labels up to the root by removing all
+#		non alphanumerical characters and appending the labels separated by _ 
+# - #... has the unmodified menue lables separated by | for reference
+#
+# ERROR MESSAGES
+# error: CrypTool.rc:line#: This menu entry is the same as an earlier one (<menu label sequence>) except for non alpha-numerical characters. Both will be treated the same w.r.t. F1
+#	this flags inconsistency between two copies of a menu item. Possible reason: inconsitent keyboard accelerators
+# error: CrypToolPopupMenuIDs.txt:line#: Menu text was changed in CrypTool.rc:line#? Please update CrypToolPopupMenuIDs.txt to # <menu label sequence>
+#   this means in most cases that a menu entry was changed in the resources, 
+#	so that online help and this files have to be updated
+# error: CrypToolPopupMenuIDs.txt:line#: Popup menu deleted from CrypTool.rc? Please check and possibly delete this line
+#	this means in most cases that a menu entry was deleted from the resources,
+#	so that the online help and this file have to be updated
+# error: CrypTool.rc:line#: New menu entry? Please update CrypToolPopupMenuIDs.txt: <language> <pmenuid> # <menu label sequence>
+#	this means in most cases that a new menu entry was introduced,
+#	so that the online help and this file have to be updated
+
+ENGLISH File # &File
+ENGLISH Edit # &Edit
+ENGLISH View # &View
+ENGLISH View_Font # &View|&Font
+ENGLISH EncryptDecrypt # En&crypt/Decrypt
+ENGLISH EncryptDecrypt_Symmetricclassic # En&crypt/Decrypt|Symmetric (&classic)
+ENGLISH EncryptDecrypt_Symmetricmodern # En&crypt/Decrypt|Symmetric (&modern)
+ENGLISH EncryptDecrypt_Symmetricmodern_FurtherAlgorithms # En&crypt/Decrypt|Symmetric (&modern)|&Further Algorithms
+ENGLISH EncryptDecrypt_Asymmetric # En&crypt/Decrypt|&Asymmetric
+ENGLISH EncryptDecrypt_Hybrid # En&crypt/Decrypt|&Hybrid
+ENGLISH DigitalSignaturesPKI # Digital Signatures/&PKI
+ENGLISH DigitalSignaturesPKI_PKI # Digital Signatures/&PKI|&PKI
+ENGLISH IndivProcedures # &Indiv. Procedures
+ENGLISH IndivProcedures_Hash # &Indiv. Procedures|&Hash
+ENGLISH IndivProcedures_RSACryptosystem # &Indiv. Procedures|&RSA Cryptosystem
+ENGLISH IndivProcedures_RSACryptosystem_LatticeBasedAttacksonRSA # &Indiv. Procedures|&RSA Cryptosystem|&Lattice Based Attacks on RSA
+ENGLISH IndivProcedures_Protocols # &Indiv. Procedures|&Protocols
+ENGLISH IndivProcedures_ChineseRemainderTheoremApplications # &Indiv. Procedures|Chinese Remainder &Theorem Applications
+ENGLISH IndivProcedures_VisualizationofAlgorithms # &Indiv. Procedures|&Visualization of Algorithms
+ENGLISH IndivProcedures_VisualizationofAlgorithms_AES # &Indiv. Procedures|&Visualization of Algorithms|&AES
+ENGLISH IndivProcedures_Tools # &Indiv. Procedures|&Tools
+ENGLISH IndivProcedures_Tools_Codes # &Indiv. Procedures|&Tools|C&odes
+ENGLISH IndivProcedures_Tools_Codes_Base64EncodeDecode # &Indiv. Procedures|&Tools|C&odes|&Base64 Encode/Decode
+ENGLISH IndivProcedures_Tools_Codes_UUEncodeDecode # &Indiv. Procedures|&Tools|C&odes|&UU Encode/Decode
+ENGLISH IndivProcedures_Tools_Compress # &Indiv. Procedures|&Tools|&Compress
+ENGLISH IndivProcedures_EducationalGames # &Indiv. Procedures|&Educational Games
+ENGLISH IndivProcedures_NumberTheoryInteractive # &Indiv. Procedures|&Number Theory - Interactive
+ENGLISH	Analysis # &Analysis
+ENGLISH Analysis_ToolsforAnalysis # &Analysis|&Tools for Analysis
+ENGLISH Analysis_SymmetricEncryptionclassic # &Analysis|Symmetric Encryption (classic)
+ENGLISH Analysis_SymmetricEncryptionclassic_CiphertextOnly # &Analysis|Symmetric Encryption (classic)|&Ciphertext-Only
+ENGLISH Analysis_SymmetricEncryptionclassic_KnownPlaintext # &Analysis|Symmetric Encryption (classic)|Known &Plaintext
+ENGLISH Analysis_SymmetricEncryptionclassic_ManualAnalysis # &Analysis|Symmetric Encryption (classic)|&Manual Analysis
+ENGLISH Analysis_SymmetricEncryptionmodern # &Analysis|Symmetric Encryption (modern)
+ENGLISH Analysis_SymmetricEncryptionmodern_FurtherAlgorithms # &Analysis|Symmetric Encryption (modern)|&Further Algorithms
+ENGLISH Analysis_AsymmetricEncryption # &Analysis|&Asymmetric Encryption
+ENGLISH Analysis_AsymmetricEncryption_LatticeBasedAttacksonRSA # &Analysis|&Asymmetric Encryption|&Lattice Based Attacks on RSA
+ENGLISH Analysis_AsymmetricEncryption # &Analysis|&Asymmetric Encryption
+ENGLISH Analysis_AsymmetricEncryption_LatticeBasedAttacksonRSA # &Analysis|&Asymmetric Encryption|&Lattice Based Attacks on RSA
+ENGLISH Analysis_AsymmetricEncryption # &Analysis|&Asymmetric Encryption
+ENGLISH Analysis_AsymmetricEncryption_LatticeBasedAttacksonRSA # &Analysis|&Asymmetric Encryption|&Lattice Based Attacks on RSA
+ENGLISH Analysis_Hash # &Analysis|&Hash
+ENGLISH Analysis_AnalyzeRandomness # &Analysis|&Analyze Randomness
+ENGLISH Options # &Options
+ENGLISH Window # &Window
+ENGLISH Help # &Help
+ENGLISH PopUp # PopUp
+
+GERMAN Datei # &Datei
+GERMAN Bearbeiten # &Bearbeiten
+GERMAN Ansicht # &Ansicht
+GERMAN Ansicht_Schriftart # &Ansicht|S&chriftart
+GERMAN VerEntschlsseln # &Ver-/Entschlüsseln
+GERMAN VerEntschlsseln_Symmetrischklassisch # &Ver-/Entschlüsseln|Symmetrisch (&klassisch)
+GERMAN VerEntschlsseln_Symmetrischmodern # &Ver-/Entschlüsseln|Symmetrisch (&modern)
+GERMAN VerEntschlsseln_Symmetrischmodern_WeitereAlgorithmen # &Ver-/Entschlüsseln|Symmetrisch (&modern)|&Weitere Algorithmen
+GERMAN VerEntschlsseln_Asymmetrisch # &Ver-/Entschlüsseln|&Asymmetrisch
+GERMAN VerEntschlsseln_Hybrid # &Ver-/Entschlüsseln|&Hybrid
+GERMAN DigitaleSignaturenPKI # Digitale Signaturen/&PKI
+GERMAN DigitaleSignaturenPKI_PKI # Digitale Signaturen/&PKI|&PKI
+GERMAN Einzelverfahren # &Einzelverfahren
+GERMAN Einzelverfahren_Hashverfahren # &Einzelverfahren|&Hashverfahren
+GERMAN Einzelverfahren_RSAKryptosystem # &Einzelverfahren|&RSA-Kryptosystem
+GERMAN Einzelverfahren_RSAKryptosystem_GitterbasierteAngriffeaufRSA # &Einzelverfahren|&RSA-Kryptosystem|&Gitterbasierte Angriffe auf RSA
+GERMAN Einzelverfahren_Protokolle # &Einzelverfahren|&Protokolle
+GERMAN Einzelverfahren_AnwendungendesChinesischenRestsatzes # &Einzelverfahren|Anwendungen des &Chinesischen Restsatzes
+GERMAN Einzelverfahren_VisualisierungvonAlgorithmen # &Einzelverfahren|&Visualisierung von Algorithmen
+GERMAN Einzelverfahren_VisualisierungvonAlgorithmen_AES # &Einzelverfahren|&Visualisierung von Algorithmen|&AES
+GERMAN Einzelverfahren_Tools # &Einzelverfahren|&Tools
+GERMAN Einzelverfahren_Tools_Codierungen # &Einzelverfahren|&Tools|C&odierungen
+GERMAN Einzelverfahren_Tools_Codierungen_Base64CodierungDecodierung # &Einzelverfahren|&Tools|C&odierungen|&Base64-Codierung/Decodierung
+GERMAN Einzelverfahren_Tools_Codierungen_UUCodierungDecodierung # &Einzelverfahren|&Tools|C&odierungen|&UU-Codierung/Decodierung
+GERMAN Einzelverfahren_Tools_Komprimieren # &Einzelverfahren|&Tools|&Komprimieren
+GERMAN Einzelverfahren_Lernspiele # &Einzelverfahren|&Lernspiele
+GERMAN Einzelverfahren_Zahlentheorieinteraktiv # &Einzelverfahren|&Zahlentheorie interaktiv
+GERMAN Analyse # A&nalyse
+GERMAN Analyse_WerkzeugezurAnalyse # A&nalyse|&Werkzeuge zur Analyse
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch # A&nalyse|Symmetrische Verschlüsselung (&klassisch)
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch_CiphertextOnly # A&nalyse|Symmetrische Verschlüsselung (&klassisch)|&Ciphertext-Only
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch_KnownPlaintext # A&nalyse|Symmetrische Verschlüsselung (&klassisch)|Known &Plaintext
+GERMAN Analyse_SymmetrischeVerschlsselungklassisch_ManuelleAnalyse # A&nalyse|Symmetrische Verschlüsselung (&klassisch)|&Manuelle Analyse
+GERMAN Analyse_SymmetrischeVerschlsselungmodern # A&nalyse|Symmetrische Verschlüsselung (&modern)
+GERMAN Analyse_SymmetrischeVerschlsselungmodern_WeitereAlgorithmen # A&nalyse|Symmetrische Verschlüsselung (&modern)|&Weitere Algorithmen
+GERMAN Analyse_AsymmetrischeVerfahren # A&nalyse|&Asymmetrische Verfahren
+GERMAN Analyse_AsymmetrischeVerfahren_GitterbasierteAngriffeaufRSA # A&nalyse|&Asymmetrische Verfahren|&Gitterbasierte Angriffe auf RSA
+GERMAN Analyse_Hashverfahren # A&nalyse|&Hashverfahren
+GERMAN Analyse_Zufallsanalyse # A&nalyse|&Zufallsanalyse
+GERMAN Optionen # &Optionen
+GERMAN Fenster # &Fenster
+GERMAN Hilfe # &Hilfe
+GERMAN PopUp # PopUp
+
+POLISH Plik # &Plik
+POLISH Edycja # &Edycja
+POLISH Widok # &Widok
+POLISH Widok_Czcionka # &Widok|&Czcionka
+POLISH Szyfrowanie # &Szyfrowanie
+POLISH Szyfrowanie_Historyczne # &Szyfrowanie|Historyczne
+POLISH Szyfrowanie_Symetryczne # &Szyfrowanie|Symetryczne
+POLISH Szyfrowanie_Symetryczne_Wicejalgorytmw # &Szyfrowanie|Symetryczne|&Wiêcej algorytmów
+POLISH Szyfrowanie_Asymetryczne # &Szyfrowanie|&Asymetryczne
+POLISH Szyfrowanie_Hybrydowe # &Szyfrowanie|&Hybrydowe
+POLISH Podpiscyfrowy # Podpis cyfrowy
+POLISH Podpiscyfrowy_PKI # Podpis cyfrowy|&PKI
+POLISH Algorytmy # &Algorytmy
+POLISH Algorytmy_Hasz # &Algorytmy|&Hasz
+POLISH Algorytmy_KryptosystemRSA # &Algorytmy|Kryptosystem RSA
+POLISH Algorytmy_KryptosystemRSA_Atakiopartenakracie # &Algorytmy|Kryptosystem RSA|Ataki oparte na kracie
+POLISH Algorytmy_Protokoy # &Algorytmy|&Protoko³y
+POLISH Algorytmy_ZastosowaniaChTR # &Algorytmy|Zastosowania ChTR
+POLISH Algorytmy_Wizualizacjaalgorytmw # &Algorytmy|&Wizualizacja algorytmów
+POLISH Algorytmy_Wizualizacjaalgorytmw_AES # &Algorytmy|&Wizualizacja algorytmów|&AES
+POLISH Algorytmy_Narzdzia # &Algorytmy|&Narzêdzia
+POLISH Algorytmy_Narzdzia_Kodowanie # &Algorytmy|&Narzêdzia|Kodowanie
+POLISH Algorytmy_Narzdzia_Kodowanie_KodowaniedekodowanieBase64 # &Algorytmy|&Narzêdzia|Kodowanie|Kodowanie/dekodowanie Base64
+POLISH Algorytmy_Narzdzia_Kodowanie_KodowaniedekodowanieUU # &Algorytmy|&Narzêdzia|Kodowanie|Kodowanie/dekodowanie UU
+POLISH Algorytmy_Narzdzia_Kompresja # &Algorytmy|&Narzêdzia|&Kompresja
+POLISH Algorytmy_Gryedukacyjne # &Algorytmy|Gry &edukacyjne
+POLISH Algorytmy_Teorialiczb # &Algorytmy|Teoria liczb
+POLISH Kryptoanaliza # &Kryptoanaliza
+POLISH Kryptoanaliza_Narzdziaanalizy # &Kryptoanaliza|&Narzêdzia analizy
+POLISH Kryptoanaliza_Algorytmyhistoryczne # &Kryptoanaliza|Algorytmy historyczne
+POLISH Kryptoanaliza_Algorytmyhistoryczne_Tylkoszyfr # &Kryptoanaliza|Algorytmy historyczne|&Tylko szyfr
+POLISH Kryptoanaliza_Algorytmyhistoryczne_Tekstjawny # &Kryptoanaliza|Algorytmy historyczne|Tekst jawny
+POLISH Kryptoanaliza_Algorytmyhistoryczne_Analizamanualna # &Kryptoanaliza|Algorytmy historyczne|Analiza &manualna
+POLISH Kryptoanaliza_Algorytmysymetryczne # &Kryptoanaliza|Algorytmy &symetryczne
+POLISH Kryptoanaliza_Algorytmysymetryczne_Wicejalgorytmw # &Kryptoanaliza|Algorytmy &symetryczne|&Wiêcej algorytmów
+POLISH Kryptoanaliza_Algorytmyasymetryczne # &Kryptoanaliza|&Algorytmy asymetryczne
+POLISH Kryptoanaliza_Algorytmyasymetryczne_Atakopartynakracie # &Kryptoanaliza|&Algorytmy asymetryczne|&Atak oparty na kracie
+POLISH Kryptoanaliza_Hasz # &Kryptoanaliza|&Hasz
+POLISH Kryptoanaliza_Analizalosowoci # &Kryptoanaliza|&Analiza losowoœci
+POLISH Opcje # &Opcje
+POLISH Okno # &Okno
+POLISH Pomoc # &Pomoc
+POLISH PopUp # PopUp
+
+SPANISH Archivo # &Archivo
+SPANISH Edicin # &Edición
+SPANISH Ver # &Ver
+SPANISH Ver_Fuente # &Ver|F&uente
+SPANISH CifrarDescifrar # &Cifrar/Descifrar
+SPANISH CifrarDescifrar_Simtricoclsico # &Cifrar/Descifrar|Simétrico (&clásico)
+SPANISH CifrarDescifrar_Simtricomoderno # &Cifrar/Descifrar|Simétrico (&moderno)
+SPANISH CifrarDescifrar_Simtricomoderno_OtrosAlgoritmos # &Cifrar/Descifrar|Simétrico (&moderno)|&Otros Algoritmos
+SPANISH CifrarDescifrar_Asimtrico # &Cifrar/Descifrar|&Asimétrico
+SPANISH CifrarDescifrar_Hbrido # &Cifrar/Descifrar|&Híbrido
+SPANISH FirmaDigitalPKI # Firma Digital/&PKI
+SPANISH FirmaDigitalPKI_PKI # Firma Digital/&PKI|&PKI
+SPANISH ProcedimientosIndiv # Procedimientos &Indiv.
+SPANISH ProcedimientosIndiv_Hash # Procedimientos &Indiv.|&Hash
+SPANISH ProcedimientosIndiv_RSACriptosistema # Procedimientos &Indiv.|&RSA Criptosistema
+SPANISH ProcedimientosIndiv_RSACriptosistema_AtaquesaRSAbasadosenCelosa # Procedimientos &Indiv.|&RSA Criptosistema|Ataques a RSA basad&os en Celosía
+SPANISH ProcedimientosIndiv_Protocolos # Procedimientos &Indiv.|&Protocolos
+SPANISH ProcedimientosIndiv_AplicacindelTeoremaChinodelosRestos # Procedimientos &Indiv.|&Aplicación del Teorema Chino de los Restos
+SPANISH ProcedimientosIndiv_VisualizacindeAlgoritmos # Procedimientos &Indiv.|&Visualización de Algoritmos
+SPANISH ProcedimientosIndiv_VisualizacindeAlgoritmos_AES # Procedimientos &Indiv.|&Visualización de Algoritmos|&AES
+SPANISH ProcedimientosIndiv_Herramientas # Procedimientos &Indiv.|H&erramientas
+SPANISH ProcedimientosIndiv_Herramientas_Cdigos # Procedimientos &Indiv.|H&erramientas|Códig&os
+SPANISH ProcedimientosIndiv_Herramientas_Cdigos_Base64CodificarDescodificar # Procedimientos &Indiv.|H&erramientas|Códig&os|&Base64 Codificar/Descodificar
+SPANISH ProcedimientosIndiv_Herramientas_Cdigos_UUCodificarDescodificar # Procedimientos &Indiv.|H&erramientas|Códig&os|&UU Codificar/Descodificar
+SPANISH ProcedimientosIndiv_Herramientas_Comprimir # Procedimientos &Indiv.|H&erramientas|&Comprimir
+SPANISH ProcedimientosIndiv_JuegosEducativos # Procedimientos &Indiv.|&Juegos Educativos
+SPANISH ProcedimientosIndiv_TeoradeNmerosInteractiva # Procedimientos &Indiv.|Teoría de &Números - Interactiva
+SPANISH Anlisis # A&nálisis
+SPANISH Anlisis_HerramientasparaelAnlisis # A&nálisis|&Herramientas para el Análisis
+SPANISH Anlisis_CifradoSimtricoclsico # A&nálisis|&Cifrado Simétrico (clásico)
+SPANISH Anlisis_CifradoSimtricoclsico_SloTextoCifrado # A&nálisis|&Cifrado Simétrico (clásico)|&Sólo Texto Cifrado
+SPANISH Anlisis_CifradoSimtricoclsico_TextoClaroConocido # A&nálisis|&Cifrado Simétrico (clásico)|&Texto Claro Conocido
+SPANISH Anlisis_CifradoSimtricoclsico_AnlisisManual # A&nálisis|&Cifrado Simétrico (clásico)|Análisis &Manual
+SPANISH Anlisis_CifradoSimtricomoderno # A&nálisis|Cifrado Simétrico (&moderno)
+SPANISH Anlisis_CifradoSimtricomoderno_OtrosAlgoritmos # A&nálisis|Cifrado Simétrico (&moderno)|&Otros Algoritmos
+SPANISH Anlisis_CifradoAsimtrico # A&nálisis|Cifrado &Asimétrico
+SPANISH Anlisis_CifradoAsimtrico_AtaquesaRSAbasadosenCelosa # A&nálisis|Cifrado &Asimétrico|Ataques a RSA basados en &Celosía
+SPANISH Anlisis_Hash # A&nálisis|Ha&sh
+SPANISH Anlisis_AnlisisdeAleatoriedad # A&nálisis|A&nálisis de Aleatoriedad
+SPANISH Opciones # &Opciones
+SPANISH Ventana # Ven&tana
+SPANISH Ayuda # Ay&uda
+SPANISH PopUp # PopUp
+
+SERBIAN Datoteka # &Datoteka
+SERBIAN Uredi # &Uredi
+SERBIAN Pogled # &Pogled
+SERBIAN Pogled_Font # &Pogled|&Font
+SERBIAN ifrovanjeDeifrovanje # &Šifrovanje/Dešifrovanje
+SERBIAN ifrovanjeDeifrovanje_Simetricnoklasicno # &Šifrovanje/Dešifrovanje|Simetricno (&klasicno)
+SERBIAN ifrovanjeDeifrovanje_Simetricnomoderno # &Šifrovanje/Dešifrovanje|Simetricno (&moderno)
+SERBIAN ifrovanjeDeifrovanje_Simetricnomoderno_DaljiAlgoritmi # &Šifrovanje/Dešifrovanje|Simetricno (&moderno)|&Dalji Algoritmi
+SERBIAN ifrovanjeDeifrovanje_Asimetricno # &Šifrovanje/Dešifrovanje|&Asimetricno
+SERBIAN ifrovanjeDeifrovanje_Hibridno # &Šifrovanje/Dešifrovanje|&Hibridno
+SERBIAN DigitalniPotpisiPKI # Digitalni Potpisi/&PKI
+SERBIAN DigitalniPotpisiPKI_PKI # Digitalni Potpisi/&PKI|&PKI
+SERBIAN IndividualneProcedure # &Individualne Procedure
+SERBIAN IndividualneProcedure_He # &Individualne Procedure|&Heš
+SERBIAN IndividualneProcedure_RSAKriptosistem # &Individualne Procedure|&RSA Kriptosistem
+SERBIAN IndividualneProcedure_RSAKriptosistem_NapadnaRSAZasnovannaReetki # &Individualne Procedure|&RSA Kriptosistem|&Napad na RSA Zasnovan na Rešetki
+SERBIAN IndividualneProcedure_Protokoli # &Individualne Procedure|&Protokoli
+SERBIAN IndividualneProcedure_PrimenaKineskeTeorijeOstatka # &Individualne Procedure|Primena &Kineske Teorije Ostatka
+SERBIAN IndividualneProcedure_VizualizacijaAlgoritama # &Individualne Procedure|&Vizualizacija Algoritama
+SERBIAN IndividualneProcedure_VizualizacijaAlgoritama_AES # &Individualne Procedure|&Vizualizacija Algoritama|&AES
+SERBIAN IndividualneProcedure_Alatke # &Individualne Procedure|&Alatke
+SERBIAN IndividualneProcedure_Alatke_Kdovi # &Individualne Procedure|&Alatke|K&ôdovi
+SERBIAN IndividualneProcedure_Alatke_Kdovi_Base64ifrovanjeDeifrovanje # &Individualne Procedure|&Alatke|K&ôdovi|&Base64 Šifrovanje/Dešifrovanje
+SERBIAN IndividualneProcedure_Alatke_Kdovi_UUifrovanjeDeifrovanje # &Individualne Procedure|&Alatke|K&ôdovi|&UU Šifrovanje/Dešifrovanje
+SERBIAN IndividualneProcedure_Alatke_Komprimuj # &Individualne Procedure|&Alatke|&Komprimuj
+SERBIAN IndividualneProcedure_EdukativneIgre # &Individualne Procedure|&Edukativne Igre
+SERBIAN IndividualneProcedure_TeorijaBrojevaInteraktivno # &Individualne Procedure|&Teorija Brojeva - Interaktivno
+SERBIAN Analiza # &Analiza
+SERBIAN Analiza_AlatkezaAnalizu # &Analiza|&Alatke za Analizu
+SERBIAN Analiza_Simetricnoifrovanjeklasicno # &Analiza|Simetricno Šifrovanje (klasicno)
+SERBIAN Analiza_Simetricnoifrovanjeklasicno_SamoifrovanTekst # &Analiza|Simetricno Šifrovanje (klasicno)|&Samo Šifrovan Tekst
+SERBIAN Analiza_Simetricnoifrovanjeklasicno_PoznatiObicanTekst # &Analiza|Simetricno Šifrovanje (klasicno)|Poznati &Obican Tekst
+SERBIAN Analiza_Simetricnoifrovanjeklasicno_RucnaAnaliza # &Analiza|Simetricno Šifrovanje (klasicno)|&Rucna Analiza
+SERBIAN Analiza_Simetricnoifrovanjemoderno # &Analiza|Simetricno Šifrovanje (moderno)
+SERBIAN Analiza_Simetricnoifrovanjemoderno_DaljiAlgoritmi # &Analiza|Simetricno Šifrovanje (moderno)|&Dalji Algoritmi
+SERBIAN Analiza_Asimetricnoifrovanje # &Analiza|&Asimetricno Šifrovanje
+SERBIAN Analiza_Asimetricnoifrovanje_NapadnaRSAZasnovannaReetki # &Analiza|&Asimetricno Šifrovanje|&Napad na RSA Zasnovan na Rešetki
+SERBIAN Analiza_He # &Analiza|&Heš
+SERBIAN Analiza_AnalizirajNasumicnost # &Analiza|&Analiziraj Nasumicnost
+SERBIAN Opcije # &Opcije
+SERBIAN Prozor # &Prozor
+SERBIAN Pomoc # &Pomoc
+SERBIAN IskacuciProzor # Iskacuci Prozor

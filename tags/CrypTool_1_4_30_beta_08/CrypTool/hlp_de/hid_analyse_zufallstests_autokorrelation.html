@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Autokorrelationstest</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Zufall">
+	<PARAM NAME="Keyword" VALUE="Autokorrelation">
+	<PARAM NAME="Keyword" VALUE="Statistik">
+	<PARAM NAME="Keyword" VALUE="Analyse">
+</OBJECT>
+
+<BODY>
+
+<h3>Autokorrelationstest (Menü <A href="menu_analyze.html">Analyse</A> \ Zufallstests)</h3>
+
+<P>Mit diesem statistischen Test wird für eine Bitfolge (S<sub>i</sub>) [i=1,2, ...] das Merkmal der Unabhängigkeit überprüft. Der Autokorrelationstest bestimmt für die Zahlen k = 1, 2, 3, ... die Korrelation zwischen der zu untersuchenden Bitfolge (S<sub>i</sub>) und der gleichen um k Bitpositionen verschobenen Bitfolge (S<sub>[i+k]</sub>).</P>
+
+<P>Die Anzahl der übereinstimmenden Bitpositionen D(k) der Bitfolgen (S<sub>i</sub>) und (S<sub>[i+k]</sub>) wird für eine Teilfolge der Länge n durch die Formel bestimmt</P>
+
+<div style="text-align:center">
+
+<P>D(k) = (S<sub>1</sub> XOR S<sub>[1 + k]</sub>) + .... + (S<sub>[n-k+1]</sub> XOR S<sub>n</sub>).</P>
+
+</div>
+
+<P>Die Teststatistik ist gegeben durch</P>
+
+<div style="text-align:center">
+
+<P>X<sub>5</sub> = 2 * [(D(k) – [(n – k) / 2]) / (n – k) ^ (1 / 2)].</P>
+
+</div>
+
+<P>Wenn die Folgenlänge n größer als 10 ist, dann ist für eine unabhängige, gleichverteilte Zufalls-Binärfolge die Variable X<sub>5</sub> annähernd Standard-normalverteilt. Da sowohl kleine Werte für D(k) wie auch große Werte für D(k) unerwartet sind, ist ein zweiseitiger Test empfehlenswert.</P>
+
+<P><B>Beispiel für einen Autokorrelationstest:</B></P>
+
+<P>Der Autokorrelationstest wird an der kurzen 160 Bit(= 20 Bytes )-Binärfolge</P>
+
+<PRE><CODE>s =
+00010111 01101101 01111101 11110011 00101111
+00001111 10100100 11001111 11000011 11010001
+11010001 00101110 11010100 11000011 01010001
+11010110 00110010 10001111 00000111 01000111</CODE></PRE>
+
+<P>mit <!--ZZZPOPUP--><A href="sign_niv.html">Signifikanzniveau</A> alpha = 0.05 ausgeführt:</P>
+
+<P>Wir wählen als Verschiebung k = 8. Hier stimmt die Folge mit der um 8 Positionen verschobenen Kopie der Bitfolge an genau D(8) = 68 Stellen nicht überein. Die Teststatistik für den Autokorrelationstest ergibt somit als Prüfgröße</P>
+
+<div style="text-align:center">
+
+<P>X<sub>5</sub> = 2 * (68 – [(160 – 8) / 2) / (160 – 8) ^ (1 / 2) = -1.29777</P>
+
+</div>
+
+<P>Der Grenzwert für eine <A href="norm_vert.html">normalverteilte</A> Prüfgröße X<sub>5</sub> liegt bei einem <!--ZZZPOPUP--><A href="sign_niv.html">Signifikanzniveau</A> von alpha = 0.05 bei 1.6449. </P>
+
+<P>Mit X<sub>5</sub> = - 1.29777 &lt;= 1.6449 besteht die Folge s den Autokorrelationstest.</P>
+
+<P>In CrypTool wird der Autokorrelationstest auf Bytes statt auf Bits abgewandt. </P>
+
+<P>Literatur: Christian Schiestl, <I>Pseudozufallszahlen in der Kryptographie</I>, Klagenfurt, 1999.</P>
+
+</BODY>
+</HTML>
