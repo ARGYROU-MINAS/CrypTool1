@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+	<TITLE>Rijndael-Flussvisualisierung</TITLE>
+	<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+	<script language="JScript" src="helper.js"></script>
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="AES-Verschlüsselungsverfahren">
+	<PARAM NAME="Keyword" VALUE="Rijndael">
+	<PARAM NAME="Keyword" VALUE="Visualisierung">
+</OBJECT>
+
+<BODY>
+
+<h3>Rijndael-Flussvisualisierung (Menü <a href="menu_related_methods.html">Einzelverfahren</a> \ Visualisierung von Algorithmen \ AES)</h3>
+
+<P>Die AES-Flussvisualisierung stellt farblich dar, wie sich die Daten während der einzelnen Runden der 
+AES-Verschlüsselung ändern. Gezeigt wird dies in der AES128-Variante mit 10 Runden, wo sowohl Daten als auch 
+Schlüssel jeweils aus einem 16-Byte-Block (128 Bit) bestehen.</P>
+
+<P>Jedes Byte des 16-Byte-Datenblocks ist durch einen Farbstrom dargestellt. Die Farbe spiegelt den aktuellen 
+Wert wider (durch direkte Ableitung der RGB-Werte aus dem Zahlenwert des Bytes – siehe 
+<a href="http://de.wikipedia.org/wiki/RGB-Farbraum">http://de.wikipedia.org/wiki/RGB-Farbraum</a>). So kann 
+man leicht verfolgen, wie selbst ein Datenblock aus lauter Nullen selbst bei einem Schlüssel aus lauter 
+Nullen sehr schnell "bunt" wird.</P>
+
+<P><IMG SRC="images/aes_flow_visualization.jpg" ALT="images/aes_flow_visualization.jpg" BORDER="0"></P>
+
+<P><B>Bedienung</B>:</P>
+
+<P>Sie können jedes Byte von Hand eingeben – sowohl für den 16-Byte-Datenblock als auch für den 
+16-Byte-Schlüsselblock.</P>
+
+<P>Die Buttons darunter erlauben es, entweder Nullen oder zufällige Hexwerte für den Datenblock oder für den 
+Schlüssel einzugeben. Der <B>Reset</B>-Button fängt mit den aktuellen Hexwerten noch einmal bei der ersten 
+Runde an.</P>
+
+<P>Durch einen Klick auf den Button <B>Berechnung</B> (ganz links in der Reihe) wird die Visualisierung im 
+unteren Bereich gestartet. Dort wird jeweils eine Runde von AES auf dem Bildschirm angezeigt (leider kann man 
+nicht durch alle 10 Runden scrollen, es wird in der gegenwärtigen Implementierung immer nur eine Runde 
+angezeigt und gespeichert).</P>
+
+<P>Wie selbstständig die Visualisierung abläuft, lässt sich mit der Checkbox <B>Pausen</B> rechts außen 
+steuern:</P>
+
+<UL>
+<LI>Ist diese Checkbox <u>angekreuzt</u>, stoppt die Visualisierung nach Vollendung jeder Runde: Durch Klick 
+auf den Button <B>Neue Runde</B> wird zur nächten Runde weiterscrollt. Drückt man anschließend den Button 
+<B>Berechnung</B>, wird die neue Runde berechnet.</LI>
+<LI>Ist diese Checkbox <u>nicht angekreuzt</u>, läuft die Visualisierung automatisch in einer Endlosschleife 
+von Runde zu Runde weiter.</LI>
+</UL>
+
+<P>Pro Runde werden folgende Schritte visualisiert:</P>
+
+<ol>
+	<li>Addition der Rundenschlüssel</li>
+	<li>Ersetzungen mit Hilfe von S-Boxen</li>
+	<li>Vertauschungen innerhalb der Zeilen (ShiftRow)</li>
+	<li>Vermischungen innerhalb der Spalten (MixColumn)</li>
+</ol>
+
+<P>Eine genauere Beschreibung der einzelnen Schritte sowie weitere Dokumentation finden Sie unter:</P>
+
+<ul>
+    <li><a href="aes_gewinner.html">Der AES-Gewinner Rijndael</a></li>
+	<li><a href="http://www.math.uni-paderborn.de/~aggathen/rijndael/2002/experimente.html" target="_blank">www.math.uni-paderborn.de/~aggathen/rijndael/2002/experimente.html</a></li>
+	<li><a href="http://de.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">de.wikipedia.org/wiki/Advanced_Encryption_Standard</a></li>
+	<li>oder im beigelegten <A class="filelink" onclick="parser('rijndael-poster-a4.pdf')">Poster</A>
+	    (Quelle: <a href="http://www.math.uni-paderborn.de/~aggathen/rijndael/2002/experimente.html" target="_blank">math.uni-paderborn.de/~aggathen/rijndael/2002/experimente.html</a>).</li>
+</ul>
+
+</BODY>
+</HTML>
