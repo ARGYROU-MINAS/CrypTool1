@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>RSA-Signaturdemo</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+<script language="JScript" src="helper.js"></script>
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT ID="Object1">
+	<PARAM NAME="Keyword" VALUE="Signatur">
+	<PARAM NAME="Keyword" VALUE="Demonstrationen / Szenarien">
+	<PARAM NAME="Keyword" VALUE="RSA-Verschlüsselungsverfahren">
+</OBJECT>
+		
+<BODY>
+
+<h3>Signaturdemo (Signaturerzeugung) (Menü <A href="menu_digitalsignaturespki.html">Digitale Signaturen/PKI</A>)</h3>
+
+<P>Die <A href="hid_crypt_sign.html">digitale Signatur</A> entspricht einer handschriftlichen Unterschrift für Dokumente, die in digitaler Form vorliegen.</P>
+
+<P>Sie erfüllt hohe Sicherheitsanforderungen bezüglich der Anforderungen Authentizität, Integrität und Verbindlichkeit. In vielen Ländern (z.B. Europäische Union) ist die elektronische Unterschrift auch rechtlich der Unterschrift von Hand gleichgestellt (abhängig von verschiedenen Voraussetzungen). Nähere Informationen dazu finden Sie im <A class="filelink" onclick="parser('script-de.pdf')">Skript</A>.</P>
+
+<P>Zur Erzeugung einer elektronischen Signatur braucht man:</P>
+
+<UL>
+	<LI>Zugriff auf den geheimen (privaten) Teil des eigenen elektronischen Ausweises (PSE)</LI>
+
+	<LI>das Dokument in elektronischer Form</LI>
+
+	<LI>Programme für die Berechnung von Hashwerten für das Dokument</LI>
+
+	<LI>Programme für die Verschlüsselung des Hashwertes</LI>
+
+	<LI>Programme für die standardkonforme PKCS #7-Formatierung der Signatur.</LI>
+</UL>
+
+<P>Die <A href="hidd_signature_demo.html">RSA-Signaturdemo</A> visualisiert den Ablauf der Erzeugung einer digitalen Signatur aus allen zugehörigen Komponenten mit Hilfe eines interaktiven Flussdiagramms. Der Ablauf der Signaturerzeugung, mit Hilfe der Werkzeuge RSA-Verfahren und Hashwert-Berechnung, wird so transparent dargestellt.</P>
+
+<P><IMG SRC="images/flowchartsignaturegeneration.gif" ALT="flowchartsignaturegeneration.gif" BORDER=0></P>
+
+<P>Weitere Details zum RSA-Verfahren können Sie im Dialog für das <A href="hid_einzelverfahren_tutorial_rsaalgorithmus.html">RSA-Kryptosystem</A> erfahren.</P>
+
+</BODY>
+</HTML>

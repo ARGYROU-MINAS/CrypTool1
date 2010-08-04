@@ -1,0 +1,250 @@
+% $Id$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt,oneside]{book}
+\overfullrule=5pt % uncomment to mark overfull boxes
+\setlength{\fboxrule}{.5mm}
+\setlength{\fboxsep}{1.75mm}
+\setlength{\footnotesep}{6pt}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{makeidx}
+\usepackage[pdftex]{graphicx}
+\usepackage{pdfpages}   % SR_2009: added new cover
+
+\usepackage[flushmargin]{footmisc}
+\usepackage{fullpage}
+\usepackage[hyphens]{url} % options "hyphens" enables linebreaks in \url{}
+% Literaturverzeichnis kapitelweise
+\usepackage[labelstoglobalaux]{bibunits} % ohne labelstoglobalaux scheint man thebibilograpy und bibtex nicht mischen zu können
+%\bibliographyunit[\section] % bibunits für das ganze Dokument aktivieren
+\defaultbibliography{references}
+\defaultbibliographystyle{abbrv}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{shorttoc}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,bookmarksnumbered=true,pdfpagelabels,plainpages=false,hyperfootnotes=false]{hyperref}
+%To reduce the number of hyperlink related 'pdfTeX warning's we use options 
+%pdfpagelabels, plainpages=false and, hyperfootnotes=false and place hyperref after float.
+%Option debug helps finding problems.
+
+\floatstyle{ruled}
+\newfloat{sagecode}{!ht}{loc}[chapter]
+\floatname{sagecode}{Sage sample}
+\newfloat{cryptoprocedure}{!ht}{lop}[chapter]
+\floatname{cryptoprocedure}{Crypto Procedure}
+
+
+\makeindex
+\hypersetup{colorlinks=true}
+
+% \setlength{\textwidth}{460 pt}
+% \hoffset-0.7in
+\newtheorem{definition}{Definition}[section]
+%\newcommand{\href}[2]{#2}
+\newcommand{\hypertag}[2]{#1}
+%\newcommand{\hyperlink}[2]{#2}
+%\newcommand{\hypertarget}[2]{#2}
+\newtheorem{theorem}{Theorem}[section]
+\newenvironment{Proof}[1]{\noindent\textbf{Proof #1} \\}{\hfill$\Box$\par}
+\newenvironment{example}[1]{\noindent\textbf{Example#1}}{}
+\newenvironment{remark}[1]{\noindent\textbf{Comment#1}}{}
+
+
+% Define title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{ % Keine Leerzeilen, sonst Meldung: "Paragraph ended before \title was complete."
+	{\Huge The CrypTool Script: \\
+	 \vspace{5pt}
+	 Cryptography, Mathematics, and More} \\
+        \vspace{20pt}
+	{\LARGE	Background reading for CrypTool\\ 
+         the free e-learning program\\
+	 (with number theory code samples for Sage)} \\
+        \vspace{15pt}
+        {\large (10th edition -- distributed with CrypTool version 1.4.30)}
+        \vspace{180pt}
+}
+
+% Hier wird \vspace{32pt} einfach ignoriert
+\author{ % Die Klammer zur Fontänderung funktioniert bei author nur einzeilig im Gegensatz zu title?!
+        {\LARGE Copyright (c) Prof.\ Bernhard Esslinger (co-author and editor)}\\[5pt]
+        {\LARGE and the CrypTool Development Team, 1998-2010}\\[5pt]
+        {\LARGE Frankfurt am Main, Germany} \\*[15pt]
+        \url{www.cryptool.org}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\VerbatimFootnotes
+
+\includepdf[page=1]{figures/coverv1_en-300dpi.pdf}  % SR_2009, 2010: added new cover
+
+\frontmatter
+
+\pagestyle{plain}
+\setlength{\fboxrule}{.5mm}
+\setlength{\fboxsep}{1.75mm}
+\setlength{\footnotesep}{6pt}
+\addtolength{\footskip}{8pt}
+%\setlength{\footskip}{4cm}
+%\renewcommand{\footnoterule}{\parindent0cm\rule{13cm}{.1pt}\vspace{.2cm}}
+%Formatierung der Fu"snoten
+
+%space between text and footnote 
+\renewcommand\footnoterule{%
+  \vspace{2em}%   <-- one line space between text and footnoterule
+%\kern-3\p@
+  \hrule width .4\columnwidth
+ \vspace{4pt}
+%kern 2.6\p@
+}
+
+%\long\def\@makefntext#1{%
+%    \parindent 1em%
+%    \noindent
+%    \hbox to 1.8em{\hss\@makefnmark}#1}
+
+
+\maketitle
+
+
+% Vergleichbar zur Nutzung von Texten aus der Wikipedia (=GNU Free Documentation Licence, GFDL)
+% \vspace{200pt}
+\begin{quote}
+This is a free document, so the content of the document can
+be copied and distributed, also for commercial purposes --- as long as
+the authors, title and the CrypTool web site (\url{www.cryptool.org})
+are acknowledged. Naturally, citations from the CrypTool script are
+possible, as in all other documents.\\
+The specific license for this document is the GNU Free Documentation Licence.
+
+    Copyright \copyright{} 1998--2010 Bernhard Esslinger and the
+    CrypTool Development Team. Permission is granted to copy,
+    distribute and/or modify this document under the terms of the GNU
+    Free Documentation License, Version 1.3 or any later version
+    published by the Free Software Foundation; with no Invariant
+    Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of
+    the license is included in the section entitled
+    \hyperlink{appendix-GNU-fdl}{``GNU Free Documentation License''}.
+\end{quote}
+
+\vspace{460pt}
+Source cover photograph: \url{www.photocase.com}, Andre Guenther\\
+
+Typesetting software: \LaTeX
+
+Version control software: Subversion
+
+
+
+\input{chapters/aboutcryptool.tex}
+
+\newpage
+\pdfbookmark[0]{Contents Overview}{ShortContents}
+\shorttoc{Contents Overview}{0}
+\clearpage\phantomsection
+\pdfbookmark[0]{\contentsname}{Contents}
+\tableofcontents 
+
+\newpage
+\normalsize
+
+%\parindent 0cm
+
+% \parskip 4pt
+% Setting the default for the vertical distance before a paragraph as distinguished variable
+\newcounter{mycounterDefaultParskip}
+\setcounter{mycounterDefaultParskip}{4}
+\parskip \value{mycounterDefaultParskip} pt 
+
+
+\input{chapters/introduction.tex}
+
+\mainmatter
+
+\input{chapters/cryptomethods.tex}
+\input{chapters/paper_and_pencil.tex}
+\input{chapters/primes.tex}
+\input{chapters/numbertheory.tex}
+\input{chapters/moderncryptography.tex}
+\input{chapters/digitalsignatures.tex}
+\input{chapters/ellipticcurves.tex}
+\bibliographyunit[\chapter]
+\bibliography*{../de/references}
+\bibliographystyle*{plain}
+\input{chapters/crypto2020.tex}
+\bibliographyunit
+
+
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{appendix}
+\newpage
+\hypertarget{appendix-start}{}\label{s:appendix-start}
+\chapter{Appendix}
+    \begin{itemize}
+      \item[1] \hyperlink{appendix-menutree}{CrypTool Menu Tree}
+      \item[2] \hyperlink{appendix-authors}{Authors of the CrypTool Script}
+      \item[3] \hyperlink{appendix-authors}{Bibliography of Movies and
+                     Fictional Literature with Relation to Cryptography,
+                     Books for Kids with Collections of Simple Ciphers}
+      \item[4] \hyperlink{appendix-Learn-NT}
+                     {Learning Tool for Elementary Number Theory}
+      \item[5] \hyperlink{appendix-using-sage}
+                     {Using Sage with this Script}
+    \end{itemize}
+  \newpage
+  \input{chapters/menus.tex}
+  \input{chapters/authors.tex}
+  \input{chapters/what-is-sage.tex}
+\end{appendix}
+
+\input{chapters/gnu-fdl-1.3.tex}
+
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begingroup
+% remove extra vertical space from \listoffigure and \listoftables so that 
+% it look similar to \listof{sagecode}
+%\setlength{\parskip}{0pt}
+\renewcommand*{\addvspace}[1]{}
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{List of Crypto Procedures}
+\listof{cryptoprocedure}{List of Crypto Procedures}
+\endgroup
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{List of Sage Code Examples}
+\listof{sagecode}{List of Sage Code Examples}
+\label{sc:List-of-Sage-Code-Examples}
+
+\vspace{30pt}
+\begin{itemize}
+  \item All samples have been tested with Sage v 4.2.1 (release date 2009-11-14).
+  \item The source code of the Sage samples in this script is delivered as
+        Sage program files within the CrypTool setup program.
+        After installing CrypTool 1.x \index{CrypTool 1.x} you find
+        them within the subdirectory \verb#sage# within the CrypTool directory:\\
+        - SAGE-Samples-in-Chap01.sage \\
+        - SAGE-Samples-in-Chap02.sage \\
+        - SAGE-Samples-in-Chap03.sage \\
+        - SAGE-Samples-in-Chap04.sage
+\end{itemize}
+
+
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}

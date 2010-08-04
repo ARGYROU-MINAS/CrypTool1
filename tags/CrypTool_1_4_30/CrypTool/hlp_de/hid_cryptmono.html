@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+	<HEAD>
+		<TITLE>Monoalphabetisches Substitutions- / Atbash-Verschlüsselungsverfahren</TITLE>
+		<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+		<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+	</HEAD>
+	<!-- multiple keywords for CrypTool HTML help index -->
+	<OBJECT type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e"
+		VIEWASTEXT>
+		<PARAM NAME="Keyword" VALUE="Symmetrisch">
+		<PARAM NAME="Keyword" VALUE="Verschlüsselung">
+		<PARAM NAME="Keyword" VALUE="Monoalphabetisches Substitutions-Verschlüsselungsverfahren">
+		<PARAM NAME="Keyword" VALUE="Substitutions-Verschlüsselungsverfahren">
+		<PARAM NAME="Keyword" VALUE="Atbash-Verschlüsselungsverfahren">
+				<PARAM NAME="Keyword" VALUE="involutorisch">
+	</OBJECT>
+	<BODY>
+		<h3>Substitution / Atbash (Menü <A href="menu_crypt.html">Ver-/Entschlüsseln</A>
+			\ Symmetrisch (klassisch))</h3>
+		<P>Bei diesem <!--ZZZPOPUP--><A href="verschluesselung.html">Verschlüsselungsverfahren</A>
+			handelt es sich um eine monoalphabetische Buchstabensubstitution, das 
+			heißt jeder Buchstabe des <!--ZZZPOPUP--><A href="klartext.html">Klartextes</A> 
+			wird durch einen anderen Buchstaben des Alphabets ersetzt. Dabei werden gleiche 
+			Buchstaben im Klartext auch immer durch den gleichen Buchstaben ersetzt und 
+			keine zwei (verschiedenen) Buchstaben werden durch den gleichen Buchstaben 
+			ersetzt, d.h. das Alphabet wird durch eine Permutation des Alphabets ersetzt.</P>
+		<P>Der Unterschied zum <A href="hid_rot13caesar_asc.html">Caesar-Verschlüsselungsverfahren</A>
+			besteht darin, dass die Buchstaben nicht in einer bestimmten Reihenfolge 
+			einander zugeordnet werden, sondern durcheinandergemischt werden können. Dies 
+			macht sich auch in der Anzahl der möglichen <!--ZZZPOPUP--><A href="schluessel.html">Schlüssel</A>
+			bemerkbar: Gibt es beim Caesar-Verschlüsselungsverfahren 26 mögliche Schlüssel, 
+			so hat man bei dieser Art von Ersetzung bereits 26! = 26 * 25 * ... * 2 * 1 = 
+			403.291.461.126.605.635.584.000.000 (ca. 4*10^26) mögliche Schlüssel.</P>
+		<P>Die Eingabe des Schlüssels erfolgt im Dialog <A href="hidd_key_monsubst.html">Schlüssel 
+				monoalphabetische Substitution / Atbash</A>.</P>
+		<P>Ein <A href="szenarien_monosubst.html">Beispiel</A> zur <!--ZZZPOPUP--><A href="verschluesselung.html">Verschlüsselung</A>
+			mittels monoalphabetischer Substitution befindet sich im Kapitel <A href="hid_hilfe_szenarien.html">
+				Szenarien</A>.</P>
+		<P>Dieses Verschlüsselungsverfahren kann mit Ihrer Unterstützung durch einen <!--ZZZPOPUP--><A href="textboock_attack.html">Wörterbuchangriff</A>
+			gebrochen werden (siehe <A href="hid_analyze_subst.html">automatische Analyse für 
+				monoalphabetische Substitution</A>). Ein <A href="szenarien_monosubst.html">Beispiel</A>
+			dazu befindet sich im Kapitel Szenarien.</P>
+		<P><b>Atbash</b> ist der Sonderfall einer monoalphabetischen Substitution mit festem 
+			Schlüssel: Dabei wird der erste Buchstabe des Alphabets durch den letzten 
+			Buchstaben ersetzt, der zweite durch den vorletzten usw..
+			<br><br>
+			Atbash ist ebenso wie <a href="HID_ROT13CAESAR_ASC.html">Rot-13</a> und 
+			<a href="HID_XOR_BIN.html">XOR</a> ein <b>involutorisches</b> Verfahren, d.h. wenn 
+			man das Chiffrat demselben Vorgang unterwirft, erhält man wieder den Klartext.</P>
+			
+		<P><B>Bemerkung</B>:</P>
+		
+		<P>Die Implementierung der monoalphabetischen Substitution erlaubt die Definition eines eigenen 
+		Alphabets über den Dialog <a href="hidd_text_options.html">Textoptionen</a>. Damit ist diese 
+		Implementierung variabler als viele andere, die nur die 26 Buchstaben des lateinischen Alphabets 
+		verwenden.</P>
+		
+	</BODY>
+</HTML>
