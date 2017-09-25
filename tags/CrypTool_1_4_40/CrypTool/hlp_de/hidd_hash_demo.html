@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Hash-Demonstration</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT ID="Object1">
+	<PARAM NAME="Keyword" VALUE="Hashfunktion">
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Hash-Demonstration</h3>
+
+<P>Diesen Dialog erreichen Sie über das Menü <a href="menu_related_methods.html">Einzelverfahren</a> \ <a href="menu_individualprocedures_hashprocedures.html">Hashverfahren</a> \ <A href="hid_einzelverfahren_hashwerte_hashdemo.html">Hash-Demo</A>.</P>
+
+<P>Zur Veranschaulichung der Sicherheitseigenschaft kryptographischer Hashfunktionen können Sie in diesem Dialog den Hashwert einer in CrypTool geöffneten Textdatei mit dem Hashwert einer Modifikation davon vergleichen.</P>
+
+<P>In diesem Dialog sind die <A href="hashfunktion.html">Hashfunktionen</A> MD2, MD4, MD5, SHA, SHA-1, SHA-256, SHA-512 und RIPEMD-160 implementiert. Die Hashwerte können als Zahlen mit hexadezimaler, dezimaler oder binärer Basis dargestellt werden.</P>
+
+<P>Im Textfenster "Aktuelle Datei" können Sie die geöffnete Datei nach Belieben ändern -- mit der Einschränkung, dass eine Eingabedatei, die größer als 16.000 Zeichen ist, zunächst auf 16.000 Zeichen abgeschnitten wird (dies geschieht aus Performance-Gründen).</P>
+
+<P>Nach jeder Änderung im Textfenster wird mit der gewählten Hash-Funktion der Hashwert der aktuellen Datei neu berechnet und angezeigt (siehe Ausgabezeile "Hashwert der aktuellen Datei").</P>
+
+<P>Im untersten Ausgabefenster erhalten Sie die Information, an welchen Bitpositionen sich der Hashwert der aktuellen Datei vom Hashwert der Ausgangsdatei unterscheidet (markiert durch rote 1). Unterhalb dieser Bitfolge werden zwei statistische Werte eingeblendet:</P>
+
+<UL>
+	<LI>Zum einen erfahren Sie, wie viel Prozent der Bitpositionen der beiden Hashwerte unterschiedlich sind; die absoluten Werte stehen in Klammern dahinter.</LI>
+
+	<LI>Zum anderen wird die längste unveränderte Bitfolge, die sowohl im Hashwert der aktuellen Datei als auch im Hashwert der Ausgangsdatei vorkommt, mit Position und Länge beschrieben.</LI>
+</UL>
+
+<P>Zur Analyse der beiden Hashfunktionen betrachtet man den jeweiligen Hashwert als Bitfolge in Binärdarstellung. Der Vergleich der beiden Hashwerte bildet ebenfalls eine Bitfolge, in der zwei verschiedene Teilfolgen vorkommen. Nur aus Nullen bestehende Teilfolgen heißen ‚0‘-Runs, ausschließlich aus Einsen bestehende Teilfolgen nennt man ‚1‘-Runs. Ein Null-Run bezeichnet eine Bitfolge, innerhalb welcher die Bits der beiden untersuchten Hashwerte identisch sind. Die längste Null-Run-Folge wird mitsamt ihrer Länge und ihrem Null-basierten <a href="offset.html">Offset</a> in der letzten Zeile angegeben. Die statistische Analyse der längsten Null-Run-Folge war Ansatz für die erfolgreiche Analyse des MD-4-Hashverfahrens.</P>
+
+<P><B>Bemerkung:</B></P>
+
+<P>Bitte beachten Sie, dass diese Demonstration nur für Textdateien zur Verfügung steht.</P>
+
+</BODY>
+</HTML>

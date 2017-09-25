@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Seitenkanalangriff auf das Hybridverschlüsselungsprotokoll</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+<script language="JScript" src="helper.js"></script>
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT ID="Object1">
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+	<PARAM NAME="Keyword" VALUE="Visualisierung">
+	<PARAM NAME="Keyword" VALUE="Seitenkanalangriff">
+	<PARAM NAME="Keyword" VALUE="Demonstrationen / Szenarien">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Seitenkanalangriff auf das Hybridverschlüsselungsprotokoll</h3>
+
+<P>Sie erreichen den Dialog über den Menüeintrag <a href="menu_analyze.html">Analyse</a> \ <a href="menu_analysis_asymmetric.html">Asymmetrische Verfahren</a> \ <a href="hid_einzelverfahren_sidechannelattack_on_hybridencryption.html">Seitenkanalangriff auf "Textbook-RSA"</a>.</P>
+
+<P>Mit diesem Dialog können Sie den <A href="hid_einzelverfahren_sidechannelattack_on_hybridencryption.html">Seitenkanalangriff auf das Hybridverschlüsselungsprotokoll</A> durchführen und verstehen.</P>
+
+<P><IMG SRC="images/sca_maindialogue.gif" ALT="sca_maindialogue.gif" BORDER=0></P>
+
+<P>Zur besseren Bedienung gibt es sowohl <B>inaktive Schaltflächen</B> als auch <B>aktive Schaltflächen</B>: Die aktiven Schaltflächen erscheinen in einem kräftigen Farbton und lassen sich drücken. Inaktive Schaltflächen können nicht gedrückt werden und erscheinen deshalb in einem grauen, leicht verblassten Ton. Einige Buttons werden erst dann aktiv, wenn ein bestimmter Kontext erreicht ist. </P>
+
+<P>Das Dialogfenster ist vertikal unterteilt: Auf der linken Seite finden Sie die <B>Navigationsleiste</B>, mit der Sie den Seitenkanalangriff schrittweise steuern können, auf der rechten Seite die Infobuttons der drei Akteure und Bilder des Kommunikations- und Seitenkanals. Die Schaltflächen der <B>Navigationsleiste</B> erscheinen in den zwei Farben rot und grün. Eine rote Schaltfläche bedeutet, dass der korrespondierende Einzelschritt des Seitenkanalangriffs noch nicht ausgeführt wurde. Eine grüne Schaltfläche hingegen signalisiert, dass der Einzelschritt bereits ausgeführt wurde. </P>
+
+<P>In der Mitte des Dialogs befindet sich der <B>Kommunikationskanal</B>, über den Alice und Bob miteinander kommunizieren wollen. Der Kanal ist öffentlich, weshalb auch Trudy diesen zum Empfangen und Versenden von Informationen nutzen darf.</P>
+
+<P>Um den Kommunikationskanal herum befinden sich drei <B>Infobuttons</B>, die die drei Akteure Alice, Bob und Trudy darstellen. Bitte klicken Sie auf einen dieser Buttons, wenn Sie nähere Informationen über den momentanen Status einer einzelnen Partei wünschen.</P>
+
+<P>Weiterhin sehen Sie auf Bobs Seite eine <B>Ampel</B>, <B>die den eigentlichen Seitenkanal symbolisiert</B>. Über diesen gibt der Server von Bob Informationen preis, nachdem er von Trudy mit „ungeplanten” Informationen gereizt wurde: Kann der Server eine empfangene Nachricht nicht korrekt entschlüsseln, so leuchtet die Ampel rot auf. Gelingt die Entschlüsselung hingegen, so leuchtet die Ampel grün auf.</P>
+
+<P>Der Ablauf des Seitenkanalangriffs auf das Hybridverschlüsselungsprotokoll ist in <B>sieben Einzelschritte</B> unterteilt, die Sie nacheinander durchführen können:</P>
+
+<TABLE cols=2 width="0*" class="pad20">
+
+<TR VALIGN="top">
+<TD><B>Beschreibung des Einzelschritts</B></TD>
+<TD><B>Durchführender Akteur</B></TD>
+</TR>
+
+<TR VALIGN="top">
+<TD>
+<UL>
+	<LI>Einleitung in das Szenario</LI>
+</UL>
+</TD>
+<TD>&nbsp;</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD>
+<UL>
+<LI>Vorbereitungen durchführen (eine hybridverschlüsselte<BR> Datei auswählen oder eine beliebige Datei hybridverschlüsseln)</LI>
+</UL>
+</TD>
+<TD>Alice</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD>
+<UL>
+	<LI>Nachricht übertragen</LI>
+</UL>
+</TD>
+<TD>Alice</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD>
+<UL>
+	<LI>Nachricht entschlüsseln</LI>
+</UL>
+</TD>
+<TD>Bob</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD>
+<UL>
+	<LI>Nachricht abfangen</LI>
+</UL>
+</TD>
+<TD>Trudy</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD>
+<UL>
+	<LI>Angriffszyklus starten</LI>
+</UL>
+</TD>
+<TD>Trudy</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD>
+<UL>
+	<LI>Zusammenfassung erstellen</LI>
+</UL>
+</TD>
+<TD>&nbsp;</TD>
+</TR>
+</TABLE><BR>
+
+<P>Sobald Sie durch Klicken des entsprechenden Navigationsbuttons einen Teilschritt des Angriffs einleiten, erscheint eine Dialogbox mit weiter führenden Informationen. Falls dennoch Fragen offen bleiben, so erhalten Sie mit einem Druck auf die Taste F1 eine kontextbezogene Hilfe zum Dialog.</P>
+
+<P><B>Bemerkung 1</B>:</P>
+
+<P>Durch Verwendung der Checkbox in der unteren rechten Ecke des Dialogs können Sie das Erscheinen von zusätzlichen Informationsdialogen bei Bedarf unterbinden. Beachten Sie aber, dass das Anzeigen wesentlicher Informationen dadurch nicht beeinflusst wird.</P>
+
+<P><B>Bemerkung 2</B>:</P>
+
+<P>Sollten Sie Probleme bei der Durchführung des Seitenkanalangriffs haben, dann erhalten Sie <a href="sidechannelattackvisualization_usage.html">hier</a> nützliche Hinweise.</P>
+
+</BODY>
+</HTML>

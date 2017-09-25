@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Dialog Schlüsseleingabe: Permutation / Transposition</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT ID="Object1">
+	<PARAM NAME="Keyword" VALUE="Permutations-Verschlüsselungsverfahren">
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+	<PARAM NAME="Keyword" VALUE="Verschlüsselung">
+	<PARAM NAME="Keyword" VALUE="Schlüssel">
+	<PARAM NAME="Keyword" VALUE="Doppelwürfel-Verschlüsselungsverfahren">
+</OBJECT>
+
+<BODY>
+	
+<h3>Dialog Schlüsseleingabe: Permutation / Transposition</h3>
+
+<P>Sie erreichen den Dialog über den Menüeintrag <A href="menu_crypt.html">Ver-/Entschlüsseln</A> \ <a href="menu_crypt_symmetricclassic.html">Symmetrisch (klassisch)</a> \ <a href="hid_permutation.html">Permutation/Transposition</a>.</P>
+
+
+		<P>Mit diesem Dialog können Sie auf Text und Binärdateien eine <A href="hid_permutation.html">Verschlüsselung 
+				durch Permutation</A> anwenden.</P>
+		<P>Die beiden Eingabefelder dienen zur Eingabe des Schlüssels: Der Schlüssel kann 
+			als ein Schlüsselwort oder als eine numerische Permutation eingegeben werden. 
+			Wie die Permutationsverschlüsselung funktioniert, ist unter <A href="hid_permutation.html">
+				Verschlüsselung durch Permutation</A> beschrieben.</P>
+		<P>Eine Eingabe im ersten Feld ist zwingend. Eine Eingabe im zweiten Eingabefeld 
+			ist optional und führt dazu, dass nicht eine, sondern zwei Permutationen 
+			nacheinander ausgeführt werden.</P>
+		<P>Bei jeder Permutation können Sie festlegen, ob die Daten zeilen- oder 
+			spaltenweise ein- oder ausgelesen werden sollen und ob die eigentliche 
+			Permutation spalten- oder zeilenweise durchgeführt wird.</P>
+		<P>Die maximal zulässige Permutationslänge ist jeweils 100 (als Eingabe: 100 
+			Großbuchstaben bzw. eine beliebige Reihenfolge der Zahlen 1, 2, ..., 100).</P>
+		<P>Unter <B>Optionen</B> kann man durch Ankreuzen der Checkbox festlegen,&nbsp;ob 
+			zum Ver- bzw. Entschlüsseln jeweils die Inverse der Permutationen benutzt wird. 
+			Weiterhin wird dort eingestellt, wie die Eingabedaten verarbeitet werden. Während 
+			im Binärmodus alle Zeichen verarbeitet werden, funktioniert die Verarbeitung im 
+			Textmodus anders: Abhängig von den aktuellen Einstellungen in den Textoptionen 
+			(siehe Button <B>Textoptionen</B>) werden Zeichen, die nicht im eingestellten 
+			Alphabet enthalten sind, entweder unverändert beibehalten (dann werden ihre 
+			Positionen berücksichtigt) oder vor Ausführung der Transposition entfernt.</P>
+		<P>Durch Drücken des Verschlüsseln- bzw. Entschlüsseln-Buttons verlässt man diesen 
+			Dialog und erhält in einem weiteren Dialog Informationen über die <A href="hidd_key_permutation_info.html">
+			benutzte Permutation und ihre Inverse</A>.</P>
+		<P><STRONG>Bemerkung 1</STRONG>:</BR>
+		Historisch wurde die Permutation, bei der die Spalten zweimal vertauscht wurden, 
+		als <a href="hid_permutation.html">Doppelwürfel</a> oder als Double-Column-Transposition bezeichnet.</P>
+		<P><STRONG>Bemerkung 2</STRONG>:</BR>
+		Die erste einfache Variante, die historisch verbürgt ist, war die <A href="hid_encryption_simple_transpositions.html">
+		Skytale von Sparta</A> (500 v. Chr.).</P>
+		<p><STRONG>Bemerkung 3</STRONG>:</BR>
+		Für die einfache Permutation ist eine <a href="hid_known_analysis_single_permutation.html">Known-Plaintext-Analyse</a> implementiert.
+	</BODY>
+</HTML>

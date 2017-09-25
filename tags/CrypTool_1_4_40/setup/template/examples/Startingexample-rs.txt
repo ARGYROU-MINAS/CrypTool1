@@ -1,0 +1,22 @@
+CrypTool (Pocetni primer za CrypTool verzije familije 1.x) (CT1)
+
+CrypTool 1 (CT1) je sveobuhvatan i besplatan program za ucenje o kriptografiji i kriptoanalizi koji nudi obimnu online pomoc i mnoge vizuelne prikaze.
+
+Ova tekstualna datoteka služi kao pomoc pri prvim koracima sa programom CrypTool.
+
+1) Preporucuje se da procitate online pomoc. Ona ce dati koristan pregled svih funkcija koje su dostupne u okviru ove aplikacije. Pocetnoj stranici online pomoci se može pristupiti preko menija „Pomoc -> Pocetna stranica” koji se nalazi u gornjem desnom uglu glavnog prozora ili uz pomoc kljucnih reci za pretragu „Pocetna stranica” u okviru indeksa online pomoci.
+
+Pritisnite taster F1 da biste pokrenuli online pomoc bilo gde u programu CT1.
+
+2) Sledeci korak bi mogao biti šifrovanje datoteke pomocu algoritma poznatog pod nazivom Cezarova šifra (engl. Caesar cipher). To je moguce uraditi koristeci meni „Šifrovanje/Dešifrovanje -> Simetricno (Klasicno)”. 
+
+3) Postoji nekoliko primera (prirucnika) isporucenih uz online pomoc koji nude lak nacin za razumevanje kriptologije. Do ovih primera se može doci putem menija „Pomoc -> Scenarija (Prirucnici)".
+
+4) Svoje znanje možete proširitii koristeci: 
+Navigaciju kroz menije. Za dobijanje više informacija možete pritisnuti taster F1 uz oznacenu stavku menija. 
+Citanje „Procitaj me” datoteke (pogledati meni „Pomoc -> Procitaj”).
+Pregled živopisne prezentacije (Do ove prezentacije se može doci na nekoliko nacina: npr. preko menija "Pomoc" ove aplikacije, ili preko odeljka "Dokumentacija" koja se nalazi na "Pocetnoj" strani online pomoci).
+Pregled web stranice www.cryptool.org.
+
+Februara 2017
+CrypTool tim

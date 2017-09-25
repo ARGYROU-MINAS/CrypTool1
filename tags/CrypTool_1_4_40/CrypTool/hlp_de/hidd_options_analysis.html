@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Analyseoptionen</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT ID="Object1">
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+	<PARAM NAME="Keyword" VALUE="Optionen">
+	<PARAM NAME="Keyword" VALUE="Analyse">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Analyseoptionen</h3>
+
+<P>Sie erreichen diesen Dialog über den Menüeintrag <a href="menu_options.html">Optionen</a> \ <a href="HID_OPTIONS_ANALYSIS.html">Analyseoptionen</a>.</P>
+
+<P>In diesem Dialog können verschiedene Optionen festgelegt werden, die das Verhalten von Verfahren im Menü <A href="menu_analyze.html">Analyse</A> beeinflussen.</P>
+
+<OL>
+
+	<LI>  Im oberen Teil kann die Ausgabe bestimmter Zwischenergebnisse für die <B>automatische Analyse</B> verschiedener <!--ZZZPOPUP--><A href="verschluesselung.html">Verschlüsselungsverfahren</A> festgelegt werden.<BR>
+<BR>
+Für das <A href="hid_rot13caesar_asc.html">Caesar-Verschlüsselungsverfahren</A> sind die Punkte im linken Rechteck maßgeblich.<BR>
+Für das <A href="hid_vigenere_asc.html">Vigenère-Verschlüsselungsverfahren</A>, die <A href="hid_add_bin.html">byteweise Addition</A> und das <A href="hid_xor_bin.html">exklusive Oder</A> die Punkte im Rechteck auf rechten Seite.<BR>
+<BR>
+<B>Weitere Analyse-Werte ausgeben</B> bedeutet bei der Vigenère-Analyse, dass pro "Spalten-Caesar"-Teiltext das Histogramm und die <A href="correlation.html">Korrelation</A> angezeigt werden. <BR>
+Bei binärer Addition und XOR wird nur das Histogramm zusätzlich angezeigt.<BR>
+<BR>
+Die entsprechende Information wird ausgegeben, falls sich ein Häkchen davor befindet. Durch Anklicken mit der Maus kann man das Häkchen entfernen und wiederherstellen. Je mehr Häkchen vorhanden sind, desto mehr Fenster mit Informationen werden im Rahmen der Analyse ausgegeben.<BR><BR></LI>
+
+<LI>Im mittleren Teil des Dialogs können Einstellungen für die 
+<a href="hid_analysis_vigenere_schroedel.html">Vigenère-Analyse nach Schrödel</a> vorgenommen werden: 
+Sie können einstellen, wie ausführlich die Protokollierung der Analyse erfolgt, und Sie können angeben, 
+welche Dateien als statistische Grundlage benutzt werden.<BR><BR></LI>
+
+	<LI>  Der untere Teil diese Dialoges erlaubt Einstellungen für <!--ZZZPOPUP--><A href="bruteforce.html">Brute-Force-Attacken</A> auf symmetrische Algorithmen. Diese Attacke wird in der Hilfe zum Dialog <A href="hidd_bruteforce.html">Brute-Force-Analyse</A> genauer beschrieben.<BR><BR>
+	Die Option <B>Anzahl der Bytes aus dem Geheimtextdokument für den Entropietest</B> legt fest, wieviele Bytes der Entropietest berücksichtigen soll (gezählt vom Anfang des untersuchten Dokuments). Der Standardwert von 128 Byte ist ein guter Kompromiss zwischen Genauigkeit und Geschwindigkeit. Kleinere Werte sind etwas schneller, finden aber möglicherweise nicht den richtigen Schlüssel. Größere Werte können sinnvoll sein, wenn das Dokument mit einem Abschnitt hoher Entropie beginnt.<BR><BR></LI>
+
+</OL>
+
+</BODY>
+</HTML>
