@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+	<HEAD>
+		<TITLE>Benutzte Krypto-Bibliotheken</TITLE>
+		<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+		<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+		<!-- multiple keywords for CrypTool HTML help index -->
+	</HEAD>
+	<BODY>
+		<OBJECT type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e"
+			VIEWASTEXT>
+			<PARAM NAME="Keyword" VALUE="Miracl">
+			<PARAM NAME="Keyword" VALUE="APFLOAT">
+			<PARAM NAME="Keyword" VALUE="MPIR">
+			<PARAM NAME="Keyword" VALUE="GMP">
+			<PARAM NAME="Keyword" VALUE="OpenSSL">
+			<PARAM NAME="Keyword" VALUE="NTL">
+			<PARAM NAME="Keyword" VALUE="Secude">
+			<PARAM NAME="Keyword" VALUE="Krypto-Bibliotheken">
+		</OBJECT>
+		<h3>Benutzte Krypto-Bibliotheken</h3>
+		<P>In CrypTool ist eine umfangreiche Sammlung kryptographischer Algorithmen und 
+			Protokolle implementiert.</P>
+		<P>Die meisten der modernen kryptographischen Basisalgorithmen stammen aus:</P>
+		<UL>
+			<li>
+				der Secude-Bibliothek (Version SDK 7.4.60) (<A HREF="http://www.secude.com/" target="_blank">www.secude.com</A>) 
+			[z.B. für symmetrische und asymmetrische Verschlüsselungsverfahren, Schlüsselmanagement],<br><br>
+			<li>
+				der Miracl-Bibliothek (Version 4.4.3) (<A HREF="http://www.compapp.dcu.ie/~mike/shamus.html" target="_blank">http://www.compapp.dcu.ie/~mike/shamus.html</A>) 
+			[z.B. für RSA-Demo, Faktorisierung],<br><br>
+			<li>
+				die APFLOAT-Bibliothek (Version 2.41)
+				(<A HREF="http://www.apfloat.org/apfloat"
+				target="_blank">http://www.apfloat.org/apfloat</A>) 
+				[für die schnelle Berechnung riesiger Mersenne-Primzahlen],<br><br>
+			<li>
+				der OpenSSL-Bibliothek (Version 1.0.1) (<A HREF="http://www.openssl.org/" target="_blank">www.openssl.org</A>) 
+			[z.B. für Hashfunktionen und für Hashkollisionen in Bezug auf den Signaturangriff],<br><br>
+			<li>
+				der Zahlentheorie-Bibliothek NTL von Victor Shoup (Version 5.5.2) (<A HREF="http://shoup.net/ntl/" target="_blank">http://shoup.net/ntl/</A>) 
+			[z.B. für Gitterbasenreduktion],<br><br>
+			<li>
+				der <B>M</B>ultiple <B>P</B>recision <B>I</B>ntegers and <B>R</B>ationals 
+				Bibliothek MPIR (Version 1.3.1) (<a href="http://mpir.org" target="_blank">http://mpir.org</a>)
+				(z.B. für AKS) und<br><br></li>
+			<li>
+			    der cv act library (Version 1.4.6 mit VS2008, 1.4.18 mit VS2010) von der cv cryptovision Gmbh (<A href="http://www.cryptovision.com/" target="_blank">http://www.cryptovision.com</A>) für ECC-Verfahren.<br><br>		
+			</li>
+		</UL>
+		<P>Die aktuellen Versionsnummern der integrierten Bibliotheken&nbsp;werden im <a href="HIDD_ABOUT.html">Über 
+			CrypTool</a>-Dialog angezeigt (siehe Menü <a href="menu_help.html">Hilfe</a>).</P>
+
+<P><B>Bemerkung (Mai 2010)</B>:</P>
+
+<P>Von dem Open-Source-Projekt, das die anerkannte Langzahl-Bibliothek GMP 
+(<a href="http://gmplib.org" target="_blank">http://gmplib.org</a>) herstellt, wurde bisher 
+keine Windows-Version erstellt. Bis CT 1.4.21 nutzten wir eine GMP-Lib-Portierung von Brian 
+Gladman.</P>
+
+<P>Im MPIR-Projekt (<a href="http://www.mpir.org" target="_blank">http://www.mpir.org</a>) 
+werden nun dauerhaft Langzahl-Bibliotheken für Windows erstellt, die aufrufkompatibel zur GMP 
+sind und die man auch unter den Microsoft-Entwicklungsumgebungen kompilieren kann.</P>
+
+<P>MPIR basiert auf Version 4.2.1 der GMP-Bibliothek (welche unter LGPL v2.1+ lizenziert wurde).</P>
+
+<P><a href="http://www.exploringbinary.com/how-to-install-and-run-gmp-on-windows-using-mpir/" 
+target="_blank">http://www.exploringbinary.com/how-to-install-and-run-gmp-on-windows-using-mpir/</a>
+<br />
+<a href="http://gmplib.org/#PROJECTS" target="_blank">http://gmplib.org/#PROJECTS</a> 
+(Diskussion über die unterschiedliche Open-Source-Lizenz von MPIR aus Sicht des GMP-Projekts)</P>
+			
+</BODY>
+</HTML>

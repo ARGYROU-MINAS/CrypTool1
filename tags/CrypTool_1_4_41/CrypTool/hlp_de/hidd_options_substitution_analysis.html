@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Automatische Substitutionsanalyse 2 - Optionen</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+	<PARAM NAME="Keyword" VALUE="Analyse">
+	<PARAM NAME="Keyword" VALUE="Monoalphabetisches Substitutions-Verschlüsselungsverfahren">
+	<PARAM NAME="Keyword" VALUE="Substitutions-Verschlüsselungsverfahren">
+	<PARAM NAME="Keyword" VALUE="Atbash-Verschlüsselungsverfahren">
+	<PARAM NAME="Keyword" VALUE="Optionen">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Automatische Substitutionsanalyse 2 - Optionen</h3>
+
+<P>Sie erreichen diesen Dialog, indem Sie im Dialog <a href="hidd_auto_substitution_analysis_algorithm_choice.html">Methodenauswahl zur automatischen Substitutionsanalyse</a> <b>Methode 2</b> wählen.</P>
+
+<P>Im oberen Teil des Dialogs können Sie sich zwischen automatischer und manueller Analyse entscheiden.</p>
+
+<P><B><u>Optionen für die automatische Analyse</u></b></p>
+
+<p>Sie können sich für eine der unterstützten Sprachen entscheiden: <b>Deutsch</b> oder <b>Englisch</b>. Für beide Sprachen werden mit CrypTool Wortlisten ausgeliefert, die die häufigsten Wörter der jeweiligen Sprache enthalten. Sie können die Wortlisten mit einem einfachen Texteditor ergänzen. Die einzige Einschränkung besteht darin, dass Worte, die länger als 20 Zeichen sind, ignoriert werden.</p>
+
+<p>Werden keine weiteren Optionen gewählt, so wird eine <A href="pattern_suche.html">Muster-(Pattern-)Suche</A> mit den häufigsten Wörtern der aktuell eingestellten Sprache durchgeführt. Für die englische Sprache bekommt man hier schon recht zufriedenstellende Ergebnisse. Im Deutschen ist das Analyseergebnis jedoch oft verbesserungsfähig.</P>
+
+<P>Aus diesem Grund können weitere Optionen gewählt werden:</P>
+<ul>
+<li>
+<P><U>Option "'e' als häufigstes Zeichen annehmen":</U></P>
+
+<P>Vor der <A href="pattern_suche.html">Pattern-Suche</A> wird das häufigste Zeichen des Textes ermittelt. Es wird angenommen, dass dieses Zeichen dem Klartextbuchstaben "e" entspricht. Mit dieser (partiellen) Substitution wird die Pattern-Suche gestartet.</P>
+
+<P>Die Annahme, dass "e" das häufigste Zeichen eines Textes ist, trifft sowohl im Deutschen als auch im Englischen die Realität sehr gut. Bei extrem kurzen oder sehr speziellen Texten kann diese Annahme allerdings falsch sein.</P>
+
+<P><u>Anmerkung</u>: Es gibt einen kompletten (sinnvollen) Roman in französischer Sprache, der ohne den Buchstaben "e" auskommt. Dieser Roman wurde (erneut unter Vermeidung des "e") ins Deutsche übersetzt.</P>
+</li>
+<li>
+<P><U>Option "Erweiterte Analyse (deutscher Klartext) ":</U></P>
+
+<P>Diese Analyse basiert auf Besonderheiten der deutschen Sprache. Grundsätzlich wäre diese Analyse auch für englischen Klartext möglich. </P>
+
+<P>Vor der Pattern-Suche werden vier Buchstaben auf folgende Art und Weise zugeordnet:</P>
+
+<UL>
+	<LI>Es wird wieder angenommen, dass der häufigste Buchstabe im Text dem Chiffrat des Buchstaben "e" entspricht.</LI>
+
+	<LI>Aus diesem Grunde ist das Abschalten der Option "'e' als häufigstes Zeichen annehmen" nicht sinnvoll und wird vom Programm ausgeschlossen.</LI>
+
+	<LI>Es wird eine Liste mit den häufigsten Buchstaben am Wortanfang, am Wortende und vor und nach dem "e" erstellt. Diese wird in absteigender Reihenfolge sortiert.</LI>
+
+	<LI>Es werden die beiden Buchstaben ermittelt, die in den sortierten Listen der häufigsten Buchstaben am Ende der Wortes und nach dem "e" "am weitesten oben stehen" (Die Summe der Indizes ist minimal). Es wird angenommen, dass diese beiden Buchstaben den Chiffraten von "n" und "r" entsprechen.</LI>
+
+	<LI>Als das Chiffrat von "n" wird der Buchstabe angenommen, der in der Liste der häufigsten Buchstaben am Wortende am weitesten oben steht.</LI>
+
+	<LI>Es werden Listen mit den häufigsten Buchstaben vor und nach dem n angelegt und sortiert.</LI>
+
+	<LI>Der Buchstabe, der in den drei Listen der häufigsten Buchstaben vor und nach dem "e" und vor dem "n" "am weitesten oben steht", wird als das Chiffrat von "i" angenommen.</LI>
+</UL>
+</ul>
+<P>Mit dieser (partiellen) Substitution wird nun wieder eine Pattern-Suche gestartet.</P>
+
+<P><B><u>Optionen für die manuelle Analyse</u></b></p>
+
+<p>Beachten Sie, dass die Checkbox <B>Manuelle Analyse mit dem gespeicherten Schlüssel</B> nur dann aktiv ist, wenn ein geeigneter Schlüssel im <a href="keystore.html">Schlüsselspeicher</a> existiert.</p>
+
+<br><br>
+
+<P>Hat CrypTool die automatische Analyse beendet bzw. wurde die manuelle Analyse ausgewählt, wird ein <A href="hidd_manual_subst_analysis.html">Nachbearbeitungsfenster</A> geöffnet, in das die Ergebnisse eingetragen sind.</P>
+
+<P>Im Kapitel <A href="hid_hilfe_szenarien.html">Szenarien</A> befindet sich ein <A href="szenarien_monosubst.html">Beispiel</A> zum <A href="angriffe.html">Angriff</A> auf das <!--ZZZPOPUP--><A href="verschluesselung.html">Verschlüsselungsverfahren</A>.</P>
+
+<P><b>Voraussetzungen an das Dokument für einen erfolgreichen Angriff:</b></P>
+
+<P>Generell kann man sagen, dass der Schlüssel (also die Substitutionen oder zumindest ein großer Teil der Substitutionen) gefunden werden kann, wenn das <!--ZZZPOPUP--><A href="verschluesselung.html">verschlüsselte</A> <!--ZZZPOPUP--><A href="dokument.html">Dokument</A> aus deutschem oder englischem Text (Länge: mehrere 100 Zeichen) besteht, der zum großen Teil die häufigsten Wörter der Sprache enthält; die häufigsten Wörter der entsprechenden Sprache sind in <!--ZZZPOPUP--><A href="cryptool.html">CrypTool</A> in einer Liste abgelegt. Die Analyse wird fehlschlagen, wenn der zu analysierende Text vorwiegend aus Wörtern besteht, die nicht in der Liste vorkommen.</P>
+
+<P>Beispielsweise liefert eine Verschlüsselung von</P>
+
+<P>THE QUICK BROWN FOX JUMPED OVER THE LAZY DOGS BACK</P>
+
+<P>(ohne manuelle Nachbearbeitung oder erweiterte Analyse) das Ergebnis</P>
+
+<P>thL THEIR brown fox SHOULD ovLr thL MANY Dogs bAIR.</P>
+
+<P>Andererseits kann durch diese Art der Analyse jedoch auch schon für sehr kurze Chiffrate ein erstaunlich gutes Ergebnis erzielt werden.</P>
+
+<P>Ein Chiffrat des Textes</P>
+
+<P>THIS IS A TEST</P>
+
+<P>(ohne manuelle Nachbearbeitung oder erweiterte Analyse) liefert das Ergebnis</P>
+
+<P>THIS IS A TeST.</P>
+
+<P>Ein solcher Text wäre für eine auf Häufigkeitsverteilungen basierende Analysemethode viel zu kurz, um statistisch signifikante Informationen zu enthalten. Eine solche Analyse würde also mit hoher Wahrscheinlichkeit fehlschlagen.</P>
+
+<P>Für deutschen Klartext ist das Ergebnis einer <A href="pattern_suche.html">Pattern-Such-Analyse</A> wesentlich schlechter als für englischen Klartext. Dies liegt wahrscheinlich an den zahlreichen Beugungsformen deutscher Worte. Während im englischen der Artikel "the" nur einmal in der Liste (für englischen Klartext) auftaucht, kommen neben "der" auch noch die Wörter "die", "das", "den", "dem", etc. in der Liste für deutschen Klartext vor.</P>
+
+<P>Aus diesem Grund bietet CrypTool auch die oben beschriebenen erweiterten Analysen an, mit denen man – aufbauend auf der Vorabanalyse durch CrypTool – den Schlüssel ermitteln kann.</P>
+
+</BODY>
+</HTML>

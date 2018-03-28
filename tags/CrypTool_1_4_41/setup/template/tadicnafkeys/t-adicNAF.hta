@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>t-adic NAF GUI v1.3.3b</title>
+<hta:application id=electronix79
+ applicationName=GUI
+ showInTaskBar=yes
+ caption=yes
+ innerBorder=yes
+ selection=yes
+ scroll=yes
+ contextmenu=yes />
+<style type="text/css">
+a:link { font-size:x-small; font-weight:bold; text-decoration:underline; color:#ffffff; }
+a:visited { font-size:x-small; font-weight:bold; text-decoration:underline; color:#ffffff; }
+a:active { font-size:x-small; text-decoration:underline; color:#ffffff; }
+a:hover { font-size:x-small; text-decoration:underline; color:#AAAAAA; }
+.all { font-size:x-small; color:#ffffff; }
+.specialtext { font-size:x-small; background-color:#777777; color:white; font-weight:bold; }
+body { font-size:x-small; background-color:#4D4D4D; font: Verdana, Tahoma; text-align:left; color:#ffffff; }
+input.right { font-size:x-small; text-align:right; }
+input.left { font-size:x-small; text-align:left; } 
+select, option, input, button { font-size:x-small; background-color:#777777; font: Verdana, Tahoma; text-align:center; color:#ffffff; }
+</style>
+<script language="javascript" type="text/javascript">
+function RestoreWindowSize() {
+	window.resizeTo(800, 1100);
+}
+</script>
+<script language="VBScript">
+Sub fRun()
+	Dim my_a, myFILE, myFSO, myShell, myEXE, myCmdLineOutput, myCmdLineInput, myPopupMsg, myFlag, myFileAccess, mySearchIn, mySearchOut, myFinalTextIn, myFinalTextOut, myCounter, myGeneretedLength, myTotalTime
+	Const myCmdLineExeFile  	= "t-adicNAF.exe"
+	Const myOutputFile      	= "key-out.txt"
+	Const myRespond1        	= "Please try to change 'a' parameter."
+	Const myRespond2        	= "ERROR! The digit after"
+	Const myRespond3        	= "ERROR! The character after"
+	Const myRespondOK       	= "SUCCESS! The 't-adic NAF' key was regenerated properly."
+	Const myFileInfo1       	= "The regenerated 't-adic NAF' key (from MSB to LSB):"
+	Const myMessage1        	= "The binary key in the input file should contain only the digits 0 and 1!"
+	Const myFileREAD_Arg    	= 1
+	input_key_size.value        = ""
+	input_binary.value          = ""
+	generated_key_size.value    = ""
+	generated.value             = ""
+	reduced_key_size.value      = ""
+	reduced.value               = ""
+	regenerated_key_size.value  = ""
+	regenerated.value           = ""
+	time_msec.value             = "" 
+	myFILE = myInputFilename.value
+	If myParameter.checked = True Then
+		my_a = "1"
+	Else
+		my_a = "0"
+	End If
+	If Len(myFILE) > 0 Then
+		Set myFSO = CreateObject("Scripting.FileSystemObject")
+		Set myShell = CreateObject("WScript.Shell")
+		If myFSO.FileExists(myFILE) Then
+			If myFSO.FileExists(myCmdLineExeFile) Then
+				Set myEXE = myShell.Exec(myCmdLineExeFile & " " & my_a & " " & myFILE)
+				Set myCmdLineOutput = myEXE.StdOut
+				Do
+					myCmdLineInput = myCmdLineOutput.ReadLine
+					If StrComp(myCmdLineInput,myRespond1) = 0 Then
+						MsgBox myRespond1
+						myFlag = 0
+						Exit Do
+					End If
+					If InStr(myCmdLineInput,myRespond2) > 0 Then
+						MsgBox myMessage1
+						myFlag = 0
+						Exit Do
+					End If
+					If InStr(myCmdLineInput,myRespond3) > 0 Then
+						MsgBox myMessage1
+						myFlag = 0
+						Exit Do
+					End If
+					If InStr(myCmdLineInput,myRespondOK) > 0 Then
+						myFlag = 1
+						Exit Do
+					End If
+				Loop Until myCmdLineOutput.AtEndOfStream = True
+				If myFlag = 1 Then
+          MsgBox "The 't-adic NAF' key generated successfully!"
+          If myFSO.FileExists(myOutputFile) Then
+            Set myFileAccess = myFSO.OpenTextFile(myOutputFile, myFileREAD_Arg)
+            mySearchOut = myFileAccess.ReadAll
+            myFileAccess.Close
+          End If
+					If InStr(mySearchOut,myFileInfo1) > 0 Then
+						Set myFileAccess = myFSO.OpenTextFile(myFILE, myFileREAD_Arg)
+						mySearchIn = myFileAccess.ReadAll
+						myFileAccess.Close
+						myFinalTextIn = Split(mySearchIn,VbCrLf)
+            input_key_size.value = Len(myFinalTextIn(0))
+            input_binary.value = myFinalTextIn(0)
+						reduced_key_size.value = Len(myFinalTextIn(0))
+						regenerated_key_size.value = Len(myFinalTextIn(0))
+						myFinalTextOut = Split(mySearchOut, VbCrLf)
+						myCounter = UBound(myFinalTextOut)
+						generated.value   = myFinalTextOut(myCounter - 11)
+						reduced.value     = myFinalTextOut(myCounter - 7)
+						regenerated.value = myFinalTextOut(myCounter - 3)
+						myGeneretedLength = Split(myFinalTextOut(myCounter - 13), " ")
+						myTotalTime = Split(myFinalTextOut(myCounter - 2), " ")
+						generated_key_size.value = myGeneretedLength(5)
+						time_msec.value = myTotalTime(4)
+						myPopupMsg = myShell.Popup("The generated 't-adic NAF' key is also written into the output file ‘key-out.txt’.", 0, "Info", 64)
+					End If
+				End If
+			Else
+				MsgBox "The " & myCmdLineExeFile & " file is not exist in same folder!"
+			End If
+		Else
+			MsgBox "The " & myFILE & " file does not exist in the same folder!"
+		End If
+	Else
+		MsgBox "The txt file name address is empty!"
+	End If
+End Sub
+</script>
+</head>
+<body onload="RestoreWindowSize()" bgcolor=buttonface style="border:none;font:'10pt sans-serif'" scroll=no text=buttontext>
+<strong>Transform a binary key into the t-adic NAF representation</strong><br>
+<br>This tool requires two input parameters:<br>
+<br>1) The first parameter is the value '<span class="specialtext">a</span>' of the Koblitz curve: y^2 + xy = x^3 + <strong>a</strong>x + 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name=myParameter value="checked"> <em>(checked a=<strong>1</strong>; otherwise a=<strong>0</strong>)</em><br>
+<br>2) The second parameter is the input file containing the binary form of the key as text.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type=text name=myInputFilename size=76 value="k1.txt"><br>
+<p><button style="height: 40px; width: 489px" onClick=fRun()>Click to generate t-adic NAF key</button></p>
+<strong>Input:</strong><br>
+Length of input key:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="right" type=text name=input_key_size size=5> bit<br>
+Binary key from the most significant (MSB) to the least significant bit (LSB):<br>
+<input class="left" type=text name=input_binary size=77><br>
+<br><strong>Output:</strong><br>
+Result of algorithm A:<br>
+Length of the generated key:&nbsp;&nbsp;&nbsp;<input class="right" type=text name=generated_key_size size=5> bit<br>
+Generated 't-adic NAF' key (from MSB to LSB):<br>
+<input class="left" type=text name=generated size=77><br>
+<br>Result of algorithm B:<br>
+Length of the reduced key:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="right" type=text name=reduced_key_size size=5> bit<br>
+Reduced key (from MSB to LSB):<br>
+<input class="left" type=text name=reduced size=77><br>
+<br>Result of algorithm C:<br>
+Length of the regenerated key:&nbsp;<input class="right" type=text name=regenerated_key_size size=5> bit<br>
+The regenerated 't-adic NAF' key (from MSB to LSB):<br>
+<input class="left" type=text name=regenerated size=77><br>
+<br>Total time for calculations: <input class="right" type=text name=time_msec size=9> msec<br>
+<br>(c) 2009 - 2015 by <a href="mailto:electronix79@yahoo.com">PhD Anastasios Kanakis</a><br>
+Acknowledgement: <a href="mailto:m.nabil@sheffield.ac.uk">PhD M. H. Nabil</a>, <a href="mailto:m.benaissa@sheffield.ac.uk">Dr M. Benaissa</a>, and <a href="mailto:bernhard.esslinger@cryptool.org">Prof. B. Esslinger</a><br>
+Department of EEE, <a href="http://www.shef.ac.uk/eee">University of Sheffield</a>. Part of <a href="http://www.cryptool.org">CrypTool</a> from 2012.<br>
+</body>
+</html>

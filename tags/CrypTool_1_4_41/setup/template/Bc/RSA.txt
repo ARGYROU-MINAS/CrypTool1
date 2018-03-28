@@ -1,0 +1,19 @@
+# RSA-Entschlüsselung - braucht prims.txt
+
+
+#define rsa_dec (p, q, pub_expo, geheim_text) {
+define rsa_dec () {
+
+  auto h
+
+  "private Primzahl p: "; p=read()
+  "private Primzahl q: "; q=read()
+  "public Exponent:    "; e=read()
+  print "Geheimtext (Zahl): "; c=read()
+
+  h = euklid( e, (p-1)*(q-1) )
+  print "Klartext (Zahl): "
+  return powermod( c, koeff_x, p*q )
+}
+
+rsa_dec()

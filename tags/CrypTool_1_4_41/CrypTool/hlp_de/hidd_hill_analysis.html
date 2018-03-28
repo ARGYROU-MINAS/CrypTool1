@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dialog Hill-Analyse (Known Plaintext)</TITLE>
+<link rel="stylesheet" type="text/css" href="CrypTool_Help.css">
+</HEAD>
+
+<!-- multiple keywords for CrypTool HTML help index -->
+<OBJECT TYPE="application/x-oleobject" CLASSID="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" VIEWASTEXT>
+	<PARAM NAME="Keyword" VALUE="Dialog (Übersicht aller Dialoge)">
+	<PARAM NAME="Keyword" VALUE="Analyse">
+	<PARAM NAME="Keyword" VALUE="Hill-Verschlüsselungsverfahren">
+</OBJECT>
+
+<BODY>
+
+<h3>Dialog Hill-Analyse (Known Plaintext)</h3>
+
+<P>Sie erreichen diesen Dialog über den Menüeintrag <a href="menu_analyze.html">Analyse</a> \ <a href="menu_analysis_symmetricclassic.html">Symmetrische Verschlüsselung(klassisch)</a> \ <a href="menu_analysis_symmetricclassic_knownplaintext.html">Known Plaintext</a> \ <a href="HID_HILL_AUTO.html">Hill</a>.</P>
+
+<P>Die automatische Analyse (<!--ZZZPOPUP--><A href="knownplaintextangriff.html">Known-Plaintext-Angriff</A>) für das <A href="hid_hill.html">Hill-Verschlüsselungsverfahren</A> benötigt folgende Daten.</P>
+
+
+<OL>
+<LI><P><!--ZZZPOPUP--><A href="klartext.html">Klartext</A> und <!--ZZZPOPUP--><A href="verschluesselung.html">Geheimtext</A> als Textdateien.</P></LI>
+
+<LI><P>Multiplikationsart. Wurden die kodierten Klartext-Blöcke von links mit der Hill-Matrix [(Vektorreihe) x (Matrix)] oder von rechts mit der Hill-Matrix [(Matrix) x (Vektorspalte)] multipliziert.</P></LI>
+
+<LI><P>Wert des ersten Alpahabetzeichens ('0' oder '1'). Wurden das konfigurierte Alphabet der Reihe nach in die Zahlen 0, 1, 2, 3, ... oder -- beginnend mit der '1' -- in die Zahlen 1, 2, 3, 4, ... kodiert.</P></LI>
+
+<LI><P>Mögliche Dimensionen der Hill-Matrix.
+Sie haben die Möglichkeit, die Dimension des zu suchenden <!--ZZZPOPUP--><A href="schluessel.html">Schlüssels</A> einzuschränken. Sofern Sie die Länge des Schlüssels kennen, können Sie das Programm anweisen, die Analyse nur für diese <!--ZZZPOPUP--><A href="schluessellaenge.html">Schlüssellänge</A> zu versuchen. Bei großen <!--ZZZPOPUP--><A href="dokument.html">Dokumenten</A> führt dies zu einer Zeitersparnis. Beachten Sie dabei aber, dass zum Beispiel ein Schlüssel der Dimension 3 nicht gefunden wird, wenn Sie die Dimension von 1 bis 2 einschränken. </P></LI>
+</OL>
+
+<P>Durch Betätigen des <B>Weiter</B>-Knopfes wird die Analyse gestartet; die Analyse wird nicht gestartet, wenn Sie den Dialog mit dem <B>Abbrechen</B>-Knopf beenden.</P>
+
+<P>Sofern ein Schlüssel ermittelt werden konnte, wird er im Dialog
+<A href="hidd_show_key_hill5x5.html">Hill-Schlüsselmatrix</A> ausgegeben,
+ansonsten erfolgt eine Meldung, dass der Schlüssel nicht gefunden werden konnte. </P>
+
+<P><b>Bemerkung 1: Eindeutigkeit der Analyse</b><br>
+	Für das Klartext/Geheimtext-Paar kann es mehrere gültige Hill-Schlüssel geben kann.
+	Es wird immer nur ein gefundener Schlüssel angezeigt. Wenn Sie weitere gültige Schlüssel
+	suchen, dann deselektieren Sie Schritt-für-Schritt die Parameter der gefundenen
+       	Schlüssel und wiederholen die Analyse.</P> 
+
+<p><b>Bemerkung 2: Beispiel für das Deselektieren der Parameter</b><br>
+	Als Schlüssel wird <B>TO LM</B> gefunden, wobei das erste Alphabetzeichen
+	den Wert 1 hat. Sie können nun in den Optionen den Parameter "Wert des
+	ersten Alphabetzeichens" auf den Wert 0 beschränken und erhalten den Schlüssel <B>SN MN</B>.
+</P>
+
+</BODY>
+</HTML>
